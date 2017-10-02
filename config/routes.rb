@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'passengers/index'
+
+  get 'drivers/index'
+
   root to: "trips#index", as: "root"
 
   get "/trips", to: "trips#index", as: "index"

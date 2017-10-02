@@ -13,8 +13,13 @@ class TripsController < ApplicationController
   end
 
   def create
-
-  end 
+    @trip = Trip.new(name: params[:trip][:name], phone_number: params[:passenger][:phone_number])
+    if @trip.save
+      redirect_to passenger_index_path
+    else
+      render :new
+    end
+  end
 
   def edit
     @trip = Trip.find_by(params[:id])
