@@ -1,24 +1,22 @@
 Rails.application.routes.draw do
+  get 'trips/index'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-get '/passengers', to: 'passengers#index'
-  
-  # get '/pages', to: 'pages#index'
-  # #get requests for the pages path should go to the pages controllers index method
-  # post 'pages', to: 'pages#create'
-  # #post requests for the pages path should go the pages controllers create mthod
-  # #the post route takes the form data and sends it to the create method
-  # get 'pages/new', to: 'pages#new', as: 'new_page'
-  # #get requests for the pages/new path should go the pages controllers new method
-  # get 'pages/:id/edit', to: 'pages#edit', as: 'edit_page'
-  # #get requests for the pages/:id/edit path should go the pages controllers edit method
-  # patch 'pages/:id', to: 'pages#update'
-  #
-  # get '/pages/:id', to: 'pages#show', as: 'page'
-  # #get requests for the /pages/:id path should go the pages controllers show method.
-  #
-  # delete '/pages/:id', to: 'pages#destroy'
-  #deelete requests for the /pages/:id path should go the pages controllers destory method.
+  get '/passengers', to: 'passengers#index'
+
+  post 'passengers', to: 'passengers#create'
+
+  get 'passengers/new', to: 'passengers#new', as: 'new_passenger'
+
+  get 'passengers/:id/edit', to: 'passengers#edit', as: 'edit_passenger'
+
+  patch 'passengers/:id', to: 'passengers#update'
+
+  get '/passengers/:id', to: 'passengers#show', as: 'passenger'
+
+  delete '/passengers/:id', to: 'passengers#destroy'
+
 
 
 end
