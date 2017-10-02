@@ -22,7 +22,7 @@ puts "#{driver_failures.length} drivers failed to save"
 
 
 RIDER_FILE = Rails.root.join('db', 'seed_data', 'passengers.csv')
-puts "Loading raw passenger data from #{RIDER_FILE}"
+puts "Loading raw rider data from #{RIDER_FILE}"
 
 rider_failures = []
 CSV.foreach(RIDER_FILE, :headers => true) do |row|
@@ -37,8 +37,8 @@ CSV.foreach(RIDER_FILE, :headers => true) do |row|
   end
 end
 
-puts "Added #{Rider.count} passenger records"
-puts "#{passenger_failures.length} passengers failed to save"
+puts "Added #{Rider.count} rider records"
+puts "#{rider_failures.length} riders failed to save"
 
 
 
