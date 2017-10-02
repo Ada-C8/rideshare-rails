@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   delete 'riders/:id', to: 'riders#destroy', as: 'delete_rider' #delete_rider_path
 
   #DRIVERS
-
   get 'drivers', to: 'drivers#index', as: 'drivers' #drivers_path
 
   get 'drivers/:id/edit', to: 'drivers#edit', as: 'edit_driver' #edit_driver_path
