@@ -1,1 +1,7 @@
 <h1> you're in index passengers</h1>
+
+<% @passengers.each do |passenger| %>
+<div class="passenger">
+  <strong><%= passenger.name %></strong><%=passenger.phonenumber %>
+</div>
+<% end %> 

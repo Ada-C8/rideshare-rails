@@ -1,1 +1,7 @@
 <h1> you're in index drivers</h1>
+
+<% @drivers.each do |driver| %>
+<div class="driver">
+  <strong><%= driver.name %></strong><%=driver.vin %>
+</div>
+<% end %>
