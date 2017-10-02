@@ -21,23 +21,23 @@ puts "#{driver_failures.length} drivers failed to save"
 
 
 
-PASSENGER_FILE = Rails.root.join('db', 'seed_data', 'passengers.csv')
-puts "Loading raw passenger data from #{PASSENGER_FILE}"
+RIDER_FILE = Rails.root.join('db', 'seed_data', 'passengers.csv')
+puts "Loading raw passenger data from #{RIDER_FILE}"
 
-passenger_failures = []
-CSV.foreach(PASSENGER_FILE, :headers => true) do |row|
-  passenger = Passenger.new
-  passenger.id = row['id']
-  passenger.name = row['name']
-  passenger.phone_num = row['phone_num']
-  puts "Created passenger: #{passenger.inspect}"
-  successful = passenger.save
+rider_failures = []
+CSV.foreach(RIDER_FILE, :headers => true) do |row|
+  rider = Rider.new
+  rider.id = row['id']
+  rider.name = row['name']
+  rider.phone_num = row['phone_num']
+  puts "Created rider: #{rider.inspect}"
+  successful = rider.save
   if !successful
-    passenger_failures << passenger
+    rider_failures << rider
   end
 end
 
-puts "Added #{Passenger.count} passenger records"
+puts "Added #{Rider.count} passenger records"
 puts "#{passenger_failures.length} passengers failed to save"
 
 
@@ -50,7 +50,7 @@ CSV.foreach(TRIP_FILE, :headers => true) do |row|
   trip = Trip.new
   trip.id = row['id']
   trip.driver_id = row['driver_id']
-  trip.passenger_id = row['passenger_id']
+  trip.rider_id = row['passenger_id']
   trip.date = Date.strptime(row['date'], '%Y-%m-%d')
   trip.rating = row['rating']
   trip.cost = row['cost']
