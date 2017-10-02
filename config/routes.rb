@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to "trips#index", as: "root"
+
+  root to: "trips#index", as: "root"
 
   get "/trips", to: "trips#index", as: "index"
   get "trips/:id/edit", to: "trips#edit", as: "edit_trip"
