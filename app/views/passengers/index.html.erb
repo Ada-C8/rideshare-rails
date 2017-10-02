@@ -1,2 +1,6 @@
 <h1>Passengers#index</h1>
 <p>Find me in app/views/passengers/index.html.erb</p>
+
+<% @passengers.each do |passenger| %>
+  <p><%= passenger.name %> - <%= passenger.phone_num %></p>
+<% end %>
