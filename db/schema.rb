@@ -16,18 +16,29 @@ ActiveRecord::Schema.define(version: 20171002224430) do
   enable_extension "plpgsql"
 
   create_table "drivers", force: :cascade do |t|
+    t.string "name"
+    t.string "vin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "passengers", force: :cascade do |t|
+    t.string "name"
+    t.string "phone_num"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "trips", force: :cascade do |t|
+    t.bigint "driver_id"
+    t.bigint "passenger_id"
+    t.date "date"
+    t.integer "rating"
+    t.integer "cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["driver_id"], name: "index_trips_on_driver_id"
+    t.index ["passenger_id"], name: "index_trips_on_passenger_id"
   end
 
 end
