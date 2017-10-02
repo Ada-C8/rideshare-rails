@@ -29,7 +29,7 @@ CSV.foreach(RIDER_FILE, :headers => true) do |row|
   rider = Rider.new
   rider.id = row['id']
   rider.name = row['name']
-  rider.phone_num = row['phone_num']
+  rider.phone = row['phone_num']
   puts "Created rider: #{rider.inspect}"
   successful = rider.save
   if !successful
