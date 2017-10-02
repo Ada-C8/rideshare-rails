@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171002225231) do
+ActiveRecord::Schema.define(version: 20171002231047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,12 @@ ActiveRecord::Schema.define(version: 20171002225231) do
     t.integer "cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "driver_id"
+    t.bigint "rider_id"
+    t.index ["driver_id"], name: "index_trips_on_driver_id"
+    t.index ["rider_id"], name: "index_trips_on_rider_id"
   end
 
+  add_foreign_key "trips", "drivers"
+  add_foreign_key "trips", "riders"
 end
