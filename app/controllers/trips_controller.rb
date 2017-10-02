@@ -1,5 +1,9 @@
 class TripsController < ApplicationController
 
+  def home
+
+  end 
+
   def index
     @trips = Trip.order(:id)
   end
