@@ -1,1 +1,30 @@
-<h1>You are in Trips Index</h1>
+<h2>ALL TRIPS</h2>
+<ol>
+  <% @trips.each do |trip|%>
+    <li>
+
+      <%# render partial: "task_details", locals: { task: task }%>
+
+      <p>
+        <strong >
+          <%= link_to "Trip on: #{trip.date}", trip_path(trip) %>
+        </strong>
+      </p>
+      <ul>
+        <li>
+          <%= "Driver: #{trip.driver.name}"%>
+        </li>
+        <li>
+          <%= "Passenger: #{trip.passenger.name}"%>
+        </li>
+        <li>
+          <%= "Cost: #{trip.cost}"%>
+        </li>
+        <li>
+          <%= "Rating: #{trip.rating}"%>
+        </li>
+      </ul>
+
+    </li>
+    <% end %>
+  </ol>
