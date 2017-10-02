@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   get "/passengers", to: "passengers#index"
   get "/drivers", to: "drivers#index"
+  get "/trips", to: "trips#index"
 end
