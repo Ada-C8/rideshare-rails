@@ -1,2 +1,12 @@
-<h1>Passengers#index</h1>
-<p>Find me in app/views/passengers/index.html.erb</p>
+<h1>List of All Passengers</h1>
+
+<ul>
+  <% @passengers.each do |passenger| %>
+
+  <li>
+    <%= passenger.id %>)
+      <%= passenger.name %>
+      <%= passenger.phone_number %>
+  </li>
+    <% end %>
+</ul>
