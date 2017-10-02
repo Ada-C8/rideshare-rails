@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   get 'trips/destroy'
 
-  get 'passengers/index'
+  get '/passengers/index', to: 'passengers#index'
 
   get 'passengers/show'
 
