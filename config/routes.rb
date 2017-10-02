@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get "/trips", to: "trips#index"
 
   get "/passengers/:id", to: "passengers#show", as: "passenger"
-
   get "/drivers/:id", to: "drivers#show", as: "driver"
 
 end
