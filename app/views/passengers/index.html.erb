@@ -1,2 +1,7 @@
 <h1>Passengers#index</h1>
-<p>Find me in app/views/passengers/index.html.erb</p>
+<!-- hotkey command for rails equal sign and tab -->
+<% @passengers.each do |passenger| %>
+<div>
+  <%= passenger.name.to_s%>
+</div>
+<% end %>
