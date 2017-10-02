@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'trips/create'
 
   get 'trips/destroy'
+  
+
 
   get 'drivers/index'
 
@@ -26,6 +28,8 @@ Rails.application.routes.draw do
   get 'drivers/create'
 
   get 'drivers/destroy'
+
+
 
   get 'passengers/index'
 
