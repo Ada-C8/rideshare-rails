@@ -1,4 +1,32 @@
 Rails.application.routes.draw do
+  get 'trips/index'
+
+  get 'trips/show'
+
+  get 'trips/edit'
+
+  get 'trips/update'
+
+  get 'trips/new'
+
+  get 'trips/create'
+
+  get 'trips/destroy'
+
+  get 'passengers/index'
+
+  get 'passengers/show'
+
+  get 'passengers/edit'
+
+  get 'passengers/update'
+
+  get 'passengers/new'
+
+  get 'passengers/create'
+
+  get 'passengers/destroy'
+
   get 'drivers/index'
 
   get 'drivers/show'
