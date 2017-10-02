@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~App~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   root to: 'rideshare#index'
-  get '/rideshare/index', to: 'rideshare#index', as: 'rideshare_index'
+  get '/rideshare/index', to: 'rideshare#index', as: 'rideshares'
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~Passengers~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  get '/passenger/index', to: 'passenger#index', as: 'passenger_index'
+  get '/passenger/index', to: 'passenger#index', as: 'passengers'
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~Drivers~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  get '/driver/index', to: 'driver#index', as: 'driver_index'
-  get 'driver/show'
+  get '/driver/index', to: 'driver#index', as: 'drivers'
+  get 'driver/:id', to: 'driver#show', as: 'driver'
 
   get 'driver/edit'
 
