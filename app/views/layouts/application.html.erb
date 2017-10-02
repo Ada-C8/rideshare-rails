@@ -9,6 +9,34 @@
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+
+    <body>
+  <header class="navigation">
+    <%= link_to "Adryft", root_path %>
+  </header>
+
+  <section class="ride-share-body">
+
+    <div>
+      <ul>
+        <li><%= link_to "All Drivers", driver_index_path %></li>
+        <li><%= link_to "All Passengers", passenger_index_path %></li>
+      </ul>
+      <ul>
+        <li><%= link_to "Create Driver", driver_new_path %></li>
+        <li><%= link_to "Create Passenger", passenger_new_path %></li>
+      </ul>
+    </div>
+
+    <div class="information-box">
+      <%= yield %>
+    </div>
+
+  </section>
+
+  <footer>
+    &copy;Severin Wiggenhorn & Kimberley Mackenzie 2017
+  </footer>
+</body>
+
 </html>
