@@ -1,8 +1,8 @@
 <h1>List of passengers</h1>
 <ul>
   <% @passengers.each do |passenger| %>
-    <li>
-      <%= passenger.name %>
-    </li>
+  <li>
+    <%= passenger.name %>: <%= link_to 'Passenger Details', passenger_path(passenger.id), method: :get %>
+  </li>
   <% end %>
 </ul>
