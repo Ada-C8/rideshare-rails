@@ -5,9 +5,12 @@ class PassengerController < ApplicationController
 
   def show
     @passenger = Passenger.find_by(id: params[:id].to_i)
+
     unless @passenger
       redirect_to passengers_path
     end
+
+    @trips = @passenger.trips
   end
 
   def edit

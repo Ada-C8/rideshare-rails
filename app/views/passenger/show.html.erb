@@ -1,2 +1,36 @@
 <h1>Passenger ID: <%= @passenger.id %></h1>
 <h2>Passenger Name: <%= @passenger.name %></h2>
+
+<section>
+  <table>
+
+    <tr>
+      <th>ID</th>
+      <th>Date</th>
+      <th>Rating</th>
+      <th>Cost</th>
+      <th>Driver</th>
+    </tr>
+  <% @trips.each do |trip| %>
+  <tr>
+  <td>
+    <%= trip.id %> : <%# link_to 'Trip Details', trip_path(trip.id), method: :get %>
+  </td>
+  <td>
+    <%= trip.date %>
+  </td>
+  <td>
+    <%= trip.rating %>
+  </td>
+  <td>
+    <%= trip.cost %>
+  </td>
+  <td>
+    <%= trip.driver.name %>
+  </td>
+  </tr>
+  <% end %>
+
+  </table>
+
+</section>
