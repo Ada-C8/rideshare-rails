@@ -4,32 +4,11 @@
   </header>
   <section>
     <ol>
+      <% @passengers.each do |passenger| %>
       <li>
-        <a href="#">Passenger 1</a>
+        <%= link_to passenger.name, passenger_path(passenger.id) %>
       </li>
-      <li>
-        <a href="#">Passenger 2</a>
-      </li>
-      <li>
-        <a href="#">Passenger 3</a>
-      </li>
-      <li>
-        <a href="#">Passenger 4</a>
-      </li>
+      <% end %>
     </ol>
   </section>
 </article>
-
-
-<%#On the passenger list page I can click on a passenger to see that passenger's details
-On the passenger's details page I can...
-See the total amount the passenger has been charged
-See a list of trips that passenger went on
-Clicking on a trip from the list will take me to a detail page for that trip
-Click links to edit and delete that passenger
-Add a new trip for this passenger
-An available driver is selected by the server
-The trip starts with no rating
-When adding a new passenger:
-The user must provide a name and phone number
-Don't worry about how the phone number is formatted%>
