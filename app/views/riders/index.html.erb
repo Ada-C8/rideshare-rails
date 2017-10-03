@@ -2,6 +2,7 @@
 
 <section>
   <% @riders.each do |rider| %>
-    <p> <%= "#{rider.name}, ID: #{rider.id}" %></p>
+    <p> <%= "#{rider.id}." %> <%= link_to "#{rider.name}", rider_path(rider.id)%></p>
+
   <% end %>
 </section>

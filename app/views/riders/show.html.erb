@@ -8,3 +8,6 @@
     <h2> Rider ID does not found </h2>
   <% end %>
 </section>
+
+<%= link_to "Edit", edit_rider_path(@rider.id)%>
+<%= link_to "Delete", delete_rider_path(@rider.id), method: :delete, data: {confirm: "Are you sure?"}%>

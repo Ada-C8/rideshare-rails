@@ -11,3 +11,6 @@
     <h2> Trip ID does not found </h2>
   <% end %>
 </section>
+
+<%= link_to "Edit", edit_trip_path(@trip.id)%>
+<%= link_to "Delete", delete_trip_path(@trip.id), method: :delete, data: {confirm: "Are you sure?"}%>

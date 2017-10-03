@@ -8,3 +8,6 @@
     <h2> Driver ID does not found </h2>
   <% end %>
 </section>
+
+<%= link_to "Edit", edit_driver_path(@driver.id)%>
+<%= link_to "Delete", delete_driver_path(@driver.id), method: :delete, data: {confirm: "Are you sure?"}%>

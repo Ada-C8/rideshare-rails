@@ -2,6 +2,6 @@
 
 <section>
   <% @drivers.each do |driver| %>
-    <p> <%= "#{driver.name}, ID: #{driver.id}" %></p>
+    <p> <%= "#{driver.id}." %> <%= link_to "#{driver.name}", driver_path(driver.id)%></p>
   <% end %>
 </section>
