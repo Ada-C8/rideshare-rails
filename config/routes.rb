@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root 'main#index'
 
   resources :drivers, :passengers
-  resources :trips, except: [:index]
+  resources :trips, except: [:index, :new]
+
+  get '/trips/new/:id', to: 'trips#new', as: 'new_trip'
 
 end

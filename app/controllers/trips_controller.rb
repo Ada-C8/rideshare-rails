@@ -3,12 +3,19 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
   end
 
-  def create
-
+  def new
+    @trip = Trip.new(passenger_id: Passenger.find(params[:id]).id)
   end
 
-  def new
+  def create
+    @trip = Trip.new(trip_params)
+    result = @trip.save
 
+    if result
+      redirect_to passenger_path(@trip.passenger_id)
+    else
+      render :new
+    end
   end
 
   def edit
