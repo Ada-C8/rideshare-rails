@@ -18,7 +18,7 @@
     <th>Cost</th>
   </tr>
   Trips this Captain has led:
-  <% Trip.where(driver: @driver.id).each do |trip| %>
+  <% (@driver.trips).each do |trip| %>
   <tr>
   <td><%=trip.date%></td>
   <td><%= link_to trip.id, trip_path(trip.id), alt: "link to trip details"%></td>
