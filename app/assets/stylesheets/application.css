@@ -18,42 +18,34 @@
   /*border: 1px solid lawngreen;*/
 }
 
-html, body {
-  height: 100%;
-}
-
 body {
-  background-color: tomato;
+  background-color: whitesmoke;
+  background-image: url(round.png);
   margin: 0;
 }
 
 header {
-  background-color: white;
-  color: tomato;
+  background-color: tomato;
+  color: white;
   height: 5rem;
   left: 0;
-  top: 0;
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 9999;
 }
 
-h1 {
-  display: inline-block;
-  margin: 1rem;
-}
-
 header nav {
-  display: inline-block;
   float: right;
   margin: 0;
   padding: 0;
-  width: 70%;
+  width: 40%;
 }
 
 header nav ul {
   float: right;
   list-style: none;
+  min-width: 16rem;
   padding: 0;
 }
 
@@ -62,27 +54,30 @@ header nav li {
   padding: 1rem 2rem;
 }
 
-footer {
-  background-color: white;
-  color: tomato;
-  height: 3rem;
-  padding: 1rem;
-  position: absolute;
-  width: 100%;
-}
-
-.footer-fix {
-  height: 100%;
-  min-height: 100%;
-  position: relative;
-}
-
 main {
-  background-color: rgba(255, 255, 255, 0.8);
-  height: 100%;
-  margin: 5rem auto 0 auto;
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 0 auto;
   padding: 3%;
   position: relative;
   top: 3.75em;
-  width: 84%;
+  width: 74%;
+}
+
+h1 {
+  display: inline-block;
+  font-size: 2.5rem;
+  font-family: 'Fredoka One', sans-serif;
+  margin: 1rem 1rem 1rem 4rem;
+}
+
+h2 {
+  color: tomato;
+  display: inline-block;
+  font-family: 'Comfortaa', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
