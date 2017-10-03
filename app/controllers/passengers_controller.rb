@@ -14,7 +14,7 @@ class PassengersController < ApplicationController
   def create
     @passenger = Passenger.new(
     name: params[:passenger][:name],
-    phone_number: params[:passenger][:phone_number]
+    phone_num: params[:passenger][:phone_num]
 
     )
     if @passenger.save
@@ -32,7 +32,7 @@ class PassengersController < ApplicationController
     @passenger = Passenger.find(params[:id])
     result = @passenger.update(
     name: params[:passenger][:name],
-    phone_number: params[:passenger][:phone_number]
+    phone_num: params[:passenger][:phone_num]
     )
     if result
       redirect_to passenger_path(params[:id])
