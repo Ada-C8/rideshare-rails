@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RideshareRails</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>RideshareRails</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa|Fredoka+One|Lobster" rel="stylesheet">
+</head>
 
-  <body>
+<body>
+
+  <header>
+    <h1>RideShare</h1>
+    <nav>
+      <ul>
+        <li>
+          <%= link_to "All Drivers", drivers_path %>
+        </li>
+        <li>
+          <%= link_to "New Driver", new_driver_path %>
+        </li>
+        <li>
+          <%= link_to "All Passengers", passengers_path %>
+        </li>
+        <li>
+          <%= link_to "New Passenger", new_passenger_path %>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
     <%= yield %>
-  </body>
+  </main>
+</body>
 </html>

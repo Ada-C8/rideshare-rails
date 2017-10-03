@@ -1,15 +1,84 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+
+* {
+  /*border: 1px solid lawngreen;*/
+}
+
+body {
+  background-color: whitesmoke;
+  background-image: url(round.png);
+  margin: 0;
+}
+
+header {
+  background-color: tomato;
+  color: white;
+  height: 5rem;
+  left: 0;
+  min-width: 48rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+header nav {
+  float: right;
+  margin: 0;
+  padding: 0;
+  width: 60%;
+}
+
+header nav ul {
+  float: right;
+  list-style: none;
+  min-width: 30.5rem;
+  padding: 0;
+}
+
+header nav li {
+  display: inline-block;
+  padding: 1rem 2rem 1rem 0;
+}
+
+main {
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 0 auto;
+  padding: 3%;
+  position: relative;
+  top: 3.75em;
+  width: 74%;
+}
+
+h1 {
+  display: inline-block;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 2.5rem;
+  margin: 1rem 1rem 1rem 4rem;
+}
+
+h2 {
+  color: tomato;
+  display: inline-block;
+  font-family: 'Comfortaa', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
