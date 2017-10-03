@@ -6,6 +6,19 @@
 <h1>Passenger Details for :  <%= @passenger.name %></h1>
 
 <h2>List of trips : </h2>
-<p>
-<!-- <%= @passenger.trips %> -->
+
+  <strong><%= @passenger.name %></strong>'s phone number is: <%= @passenger.phone_num %>
 </p>
+<% total_cost = 0 %>
+<p><% @passenger.trips.each do |trip| %></p>
+
+  <%= "Trip Cost: $" %><% total = ((trip.cost) / 100) %><%= "%.2f"%total %>
+
+  <% total_cost += trip.cost %>
+  <%= "Trip Rating: " %><%= trip.rating %>
+  <%= "Trip Date: " %><%= trip.date %>
+  <%= "Trip Driver: " %><%= trip.driver_id %>
+<% end %>
+
+<%= "Total Cost: $" %>
+<% final_total_cost = total_cost/100%><%= "%.2f"%final_total_cost %>
