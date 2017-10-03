@@ -4,4 +4,5 @@
   <strong></strong><%= @driver.name %></strong>
   <p><%= @driver.vin %></p>
   <%=button_to "Edit", edit_driver_path(@driver.id), method: :get%>
+  <%=button_to "Delete", driver_path(@driver.id), method: :delete%>
 </div>
