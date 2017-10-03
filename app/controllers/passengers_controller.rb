@@ -1,8 +1,8 @@
 class PassengersController < ApplicationController
   def index
-
+    @passengers = Passenger.all
+    return @passengers
   end
-
 
   def new
     @passenger = Passenger.new
