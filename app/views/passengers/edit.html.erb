@@ -1,0 +1,12 @@
+<h1>This is the passenger edit page</h1>
+<p>
+  <%= form_for @passenger do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :phone_num %>
+    <%= f.text_field :phone_num %>
+
+    <%= f.submit "Edit Passenger!" %>
+  <% end %>
+</p>
