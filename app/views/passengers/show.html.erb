@@ -2,7 +2,7 @@
 
 <h2>Params:</h2>
 <h3><%= params %></h3>
-
+<h2><%= link_to("Delete Passenger", passenger_path, method: :delete) %></h2>
 <h3>Name: <%=@passenger.name %></h3>
 <h3>Phone: <%=@passenger.phone_num %></h3>
 <% trips = Trip.all.where(passenger_id: @passenger.id) %>

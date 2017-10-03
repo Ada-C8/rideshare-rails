@@ -19,4 +19,9 @@ class PassengersController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    Passenger.find_by(id: params[:id]).destroy
+    redirect_to passengers_path
+  end
 end
