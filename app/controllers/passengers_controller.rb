@@ -7,8 +7,7 @@ class PassengersController < ApplicationController
 
   def create
     @passenger = Passenger.new(name: params[:passenger][:name],
-                    phone_num: params[:passenger][:phone_num]
-                    )
+                    phone_num: params[:passenger][:phone_num])
 
     if @passenger.save
       redirect_to @passenger
@@ -19,7 +18,7 @@ class PassengersController < ApplicationController
   end
 
   def show
-    @passenger = Passenger.all
+    @passenger = Passenger.find(params[:id])
   end
 
   def index

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   post "/drivers", to: "drivers#create", as: 'drivers'
 
-  get "/drivers", to: "drivers#index", as: 'dindex'
+  get "/drivers", to: "drivers#index", as: 'driver_index'
 
   get "/drivers/:id", to: "drivers#show", as: "driver"
 
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   post "/passengers", to: "passengers#create", as: 'passengers'
 
-  get "/passengers", to: "passengers#index", as: 'pindex'
+  get "/passengers", to: "passengers#index", as: 'passenger_index'
 
   get "/passengers/:id", to: "passengers#show", as: "passenger"
 end
