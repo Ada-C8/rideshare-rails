@@ -3,8 +3,8 @@
 <div>
   <ol>
     <li>Date: <%=@trip.date %> </li>
-    <li>Driver: <%= Driver.find(@trip.driver_id).name %> </li>
-    <li>Passenger: <%= Passenger.find(@trip.passenger_id).name %> </li>
+    <li>Driver: <%= link_to Driver.find(@trip.driver_id).name, driver_path(@trip.driver_id) %> </li>
+    <li>Passenger: <%= link_to Passenger.find(@trip.passenger_id).name, passenger_path(@trip.passenger_id) %> </li>
     <li>Rating: <%= @trip.rating %> </li>
     <li>Cost: <%= @trip.cost %> </li>
   </ol>
