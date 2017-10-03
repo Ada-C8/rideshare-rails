@@ -7,7 +7,10 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  <nav>
+    <h3><%= link_to("See All Drivers", drivers_path) %></h3>
+    <h3><%= link_to("See All Passengers", passengers_path) %></h3>
+  </nav>
   <body>
     <%= yield %>
   </body>
