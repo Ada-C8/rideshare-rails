@@ -14,6 +14,10 @@ class PassengersController < ApplicationController
     redirect_to('/passengers')
   end
 
+  def show
+    @passenger = Passenger.find(params[:id])
+  end
+
   private
   def passenger_params
     return params.require(:passenger).permit(:name, :phone_num)
