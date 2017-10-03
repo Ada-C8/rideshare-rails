@@ -1,0 +1,13 @@
+<h1> Edit Rating </h1>
+
+<h3><%= "Trip ID #{@trip.id}" %></h3>
+  <p><%= "for #{@trip.rider.name} on #{@trip.date} with #{@trip.driver.name}" %>
+</p>
+
+<%= form_for @trip do |f| %>
+
+<%= f.label :rating %>
+<%= f.text_field :rating %>
+
+<%= f.submit "Update Rating" %>
+<% end %>
