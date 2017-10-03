@@ -2,9 +2,18 @@
 
 
 <div>
-  <p>
-    <%= render partial: "driver_summary"%>
-  </p>
+</h2>Driver name: <%= @driver.name%></h2>
+  <ul>
+    <li>
+      Driver's VIN: <%= @driver.vin%>
+    </li>
+    <li>
+        Driver's Average Rating: <%= @driver.average_rating %>
+    </li>
+  <li>
+      Driver's total earnings: $<%= @driver.total_earned %>
+  </li>
+    </ul>
   <p>
   this is where the list of trips should go
 
@@ -17,6 +26,7 @@
 
   <%end%>
   </ol>
+
 
 <%= link_to "Edit driver information", edit_driver_path(@driver.id), class: "link"%>
 <%= link_to "Delete", driver_path(@driver.id), method: :delete, data: {confirm: "Are you sure you want to delete this driver from the database? You can not undo this action."}%>
