@@ -38,6 +38,15 @@ class DriversController < ApplicationController
     end
   end
 
+  def destroy
+    @driver = Driver.find(params[:id])
+    if @driver.destroy
+      redirect_to drivers_path
+    else
+      #error message
+    end
+  end
+
   private
   def drivers_params
     return params.require(:driver).permit(:name, :vin)
