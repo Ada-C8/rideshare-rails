@@ -10,10 +10,14 @@ class DriversController < ApplicationController
 
     def new
       @driver = Driver.new
+      puts
+      puts "I am in new"
     end
 
     def edit
       @driver = Driver.find(params[:id])
+      puts
+      puts "I am in edit"
     end
 
     def create

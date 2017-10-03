@@ -1,14 +1,16 @@
 <h1>This is the driver edit page</h1>
 <p>
-  <form>
-    <%= form_for @driver do |form| %>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-    <br />
-    <%= form.label :vin %>
-    <%= form.text_field :vin %>
-    <br />
-    <%= form.submit "update driver information"%>
+
+  <%= form_for @driver do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <br />
+  <%= form.label :vin %>
+  <%= form.text_field :vin %>
+  <br />
+  <%= form.submit "Update driver information"%>
   <% end %>
-  </form>
+
+
+
 </p>
