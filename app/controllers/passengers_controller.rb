@@ -9,12 +9,14 @@ class PassengersController < ApplicationController
   end
 
   def index
+    @passenger = Passenger.all #order(:name)
   end
 
   def new
   end
 
   def show
+    @passenger = Passenger.find( params[:id].to_i)
   end
 
   def update
