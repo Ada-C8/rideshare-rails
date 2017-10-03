@@ -1,7 +1,7 @@
 class RiderController < ApplicationController
   #CRUD METHODS
   def index
-
+    @riders = Rider.order(:id)
   end
 
   def show
