@@ -27,7 +27,7 @@ Rails.application.routes.draw do
 
   get 'passengers/destroy'
 
-  get 'drivers/index'
+  get 'drivers/index', to: 'drivers#index'
 
   get 'drivers/show'
 
