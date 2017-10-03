@@ -7,6 +7,28 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <%= link_to 'Home', home_path %>
+        </li>
+        <li>
+          <%= link_to 'All Drivers', drivers_path %>
+        </li>
+        <li>
+          <%= link_to 'Make New Driver', new_driver_path %>
+        </li>
+        <li>
+          <%= link_to 'All passengers', passengers_path %>
+        </li>
+        <li>
+          <%= link_to 'Make New Passenger', new_passenger_path %>
+        </li>
+      </ul>
+    </nav>
+
+  </header>
 
   <body>
     <%= yield %>

@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 resources :drivers
 resources :passengers
 resources :trips
+  get '/home', to:'home#index', as:'home'
 end
