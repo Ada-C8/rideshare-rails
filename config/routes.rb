@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :passengers
   resources :trips
 
-  # get '/', to: 'main#index'
+  get '/', to: 'main#index'
 end
