@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'passengers/index'
+
+  get 'passengers/new'
+
+  get 'passengers/show'
+
+  get 'passengers/edit'
+
+  get 'passengers/update'
+
+  get 'passengers/create'
+
+  get 'passengers/destroy'
+
   get 'passenger/index'
 
   get 'passenger/new'
