@@ -8,8 +8,10 @@ class DriversController < ApplicationController
   end
 
   def create
-    @driver = Driver.new(driver_params)
+    driver = Driver.new(driver_params)
 
+    driver.save
+    redirect_to('/drivers')
   end
 
   def edit
