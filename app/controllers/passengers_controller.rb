@@ -4,6 +4,8 @@ class PassengersController < ApplicationController
   end
 
   def show
+    @passenger = Passenger.find_by(id: params[:id].to_i)
+    @trips = Trip.where(passenger_id: params[:id])
   end
 
   def edit
