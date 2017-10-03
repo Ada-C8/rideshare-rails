@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  root 'main#index'
+  # resources :passengers
+  # resources :drivers
+  # resources :trips
   # show all list
-    get "/passengers", to: "passengers#index", as: "passengers"
-    get "/drivers", to: "drivers#index", as: "drivers"
-    get "/trips", to: "trips#index"
+  get "/passengers", to: "passengers#index", as: "passengers"
+  get "/drivers", to: "drivers#index", as: "drivers"
+  get "/trips", to: "trips#index"
 
-# new passenger, drivers, and trips:
+  # new passenger, drivers, and trips:
   get "/passengers/new", to: "passengers#new", as: "passengers_new"
   post "/passengers", to: "passengers#create"
   get "/drivers/new", to: "drivers#new", as: "drivers_new"
@@ -16,7 +19,7 @@ Rails.application.routes.draw do
 
 
 
-# show individual details
+  # show individual details
   get "/passengers/:id", to: "passengers#show", as: "passenger"
   get "/drivers/:id", to: "drivers#show", as: "driver"
   get "/trips/:id", to: "trips#show", as: "trip"
