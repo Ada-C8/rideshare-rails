@@ -9,4 +9,7 @@ Rails.application.routes.draw do
 
   get 'drivers/:id', to: 'drivers#show', as: 'driver'
 
+  get 'trips', to: 'trips#index', as: 'trips'
+
+  get 'trips/:id', to: 'trips#show', as: 'trip'
 end

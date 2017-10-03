@@ -1,0 +1,6 @@
+<h1>Trips Index</h1>
+ <ul>
+  <% @trips.each do |trip| %>
+  <li><%= link_to trip.id, trip_path(trip.id) %> | <%= trip.date.strftime('%m-%d-%Y') %> | <%= trip.cost %> | <%= trip.rating %> | <%= link_to trip.driver_id, driver_path(trip.driver_id) %> | <%= link_to trip.passenger_id, passenger_path(trip.passenger_id) %></li>
+  <% end %>
+ </ul>
