@@ -4,6 +4,7 @@
   Total Lifetime Earnings: $<%='%.02f' % (@driver.total_earnings / 100) %>
   Average Rating: <%= '%.02f' % @driver.average_rating %>
   <%= link_to "Edit Driver Details", edit_driver_path(@driver.id), alt: "link to edit driver details" %>
+  <%= link_to "Delete Driver", destroy_driver_path(@driver.id), method: :delete, alt: "link to delete driver", data: {confirm: "Are you sure you want to delete this driver?"} %>
 
 </p>
 
