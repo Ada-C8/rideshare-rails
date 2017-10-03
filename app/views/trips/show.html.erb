@@ -1,14 +1,14 @@
 <p>
   <strong >
-    <%= link_to "Trip on: #{@trip.date}", trip_path(@trip) %>
+    Trip on: <%= link_to "#{@trip.date}", trip_path(@trip) %>
   </strong>
 </p>
 <ul>
   <li>
-    <%= "Driver: #{@trip.driver.name}"%>
+    Driver:<%= link_to "#{@trip.driver.name}", driver_path(@trip.driver_id)%>
   </li>
   <li>
-    <%= "Passenger: #{@trip.passenger.name}"%>
+    Passenger:<%= link_to "#{@trip.passenger.name}", passenger_path(@trip.passenger_id)%>
   </li>
   <li>
     <%= "Cost: #{@trip.cost}"%>
