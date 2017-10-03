@@ -18,6 +18,7 @@
 
 <%= link_to "Edit Passenger", edit_passenger_path(@passenger) %>
 
-<%= link_to "Add New Trip", new_passenger_path({:driver_id => @driver.driver_id})
-
-new_device_path({:id => @rfid.id, :cabinet_id => @cabinet.id}), :class => "btn btn-primary" %> %>
+<%= link_to 'Delete Passenger',
+  passenger_path(@passenger),
+  method: :delete,
+  data: { confirm: 'Are you sure?' } %>
