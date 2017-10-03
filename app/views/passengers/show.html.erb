@@ -8,3 +8,17 @@
 <p>
   Phone Number: <%= @passenger.phone_number %>
 </p>
+
+<p>
+  All trips taken by <%= @passenger.name %>:
+  <% trips = Trip.where(passenger: @passenger.id) %>
+  <% trips.each do |trip| %>
+
+  Date: <%= trip.date %>
+  Trip ID: <%= trip.id %>
+  Driver ID: <%= trip.driver_id %>
+  Passenger ID <%= trip.passenger_id %>
+  Rating: <%= trip.rating %>
+  Cost: $<%= '%.02f' % (trip.cost / 100) %>
+    <% end %>
+</p>
