@@ -1,0 +1,9 @@
+<%= form_for @driver do |f| %>
+  <%= f.label :driver %>
+  <%= f.text_field :name, placeholder: "Ada Lovelace" %>
+
+  <%= f.label :vin %>
+  <%= f.text_field :vin, placeholder: "A-999999" %>
+
+  <%= f.submit %>
+<% end %>
