@@ -1,10 +1,10 @@
+<h2><%= @passenger.name %></h2>
+
+<h4><%= link_to "New Trip", new_trip_path %></h4>
+
 
 <p>
   ID: <%=  @passenger.id %>
-</p>
-
-<p>
-  Name: <%= @passenger.name %>
 </p>
 
 <p>
@@ -15,3 +15,15 @@
 <%= link_to "Edit", edit_passenger_path(@passenger)%>
 
 <%= link_to 'Delete', passenger_path(@passenger), method: :delete, data: { confirm: "Are you sure?" } %>
+
+<p>
+  Total Spent = $<%= @passenger.total_spent %>
+</p>
+
+<ul>
+  <% @passenger.trips.each do | trip | %>
+    <li>
+      <%= render partial: 'layouts/trip_details', locals: { trip: trip } %>
+    </li>
+  <% end %>
+</ul>
