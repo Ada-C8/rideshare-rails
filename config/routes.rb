@@ -35,9 +35,9 @@ Rails.application.routes.draw do
   #
   # get '/drivers/update'
   #
-  # get '/drivers/new', to: 'drivers#new'
+  get '/drivers/new', to: 'drivers#new', as: "new_driver"
   #
-  # get '/drivers/create'
+  post '/drivers', to: "drivers#create"
   #
   # get '/drivers/destroy'
 
