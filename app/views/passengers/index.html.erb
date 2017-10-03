@@ -1,1 +1,9 @@
 <h1>passengers#index</h1>
+
+<ol>
+  <% @passengers.each do |passenger| %>
+  <li>
+  <%= passenger.name %>
+  </li>
+  <% end %>
+</ol>
