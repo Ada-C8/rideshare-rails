@@ -20,12 +20,20 @@ class PassengersController < ApplicationController
     passenger = Passenger.new(name: params[:passenger][:name], phone_num: params[:passenger][:phone_num] )
     if passenger.save
       flash[:notice] = "#{passenger.name} was successfully saved"
-      redirect_to 'new_passenger_path'
+      redirect_to passengers_path
     else
       render :new
     end
   end
 
   def destroy
+    @passenger = Passenger.find(params[:id].to_i)
+    name = @passenger.name
+    if @passenger.destroy
+      flash[:notice] = "#{name} was successfully deleted, bye!"
+      redirect_to passengers_path
+    else
+      render :index
+    end
   end
 end
