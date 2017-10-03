@@ -6,28 +6,38 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Libre+Baskerville|Open+Sans|Poppins|Arvo" rel="stylesheet">
   </head>
 
   <body>
 
     <body>
+  <div class="nav-image">
+  </div>
   <header class="navigation">
     <%= link_to "Adryft", root_path %>
+    <section class="dropdown">
+        <ul class "view-menu">
+          <button class="dropdown-button-view">View</button>
+          <div class="dropdown-content-view">
+          <li><%= link_to "All Drivers", driver_index_path %></li>
+          <li><%= link_to "All Passengers", passenger_index_path %></li>
+          </div>
+        </ul>
+      <ul class="create-menu">
+      <button class="dropdown-button-create">Create</button>
+        <div class="dropdown-content-create">
+        <li><%= link_to "Create Driver", new_driver_path %></li>
+        <li><%= link_to "Create Passenger", new_passenger_path %></li>
+      </div>
+      </ul>
+    </div>
+  </section>
+
+
   </header>
 
   <section class="ride-share-body">
-
-    <div>
-      <ul>
-        <li><%= link_to "All Drivers", driver_index_path %></li>
-        <li><%= link_to "All Passengers", passenger_index_path %></li>
-      </ul>
-      <ul>
-        <li><%= link_to "Create Driver", new_driver_path %></li>
-        <li><%= link_to "Create Passenger", new_passenger_path %></li>
-      </ul>
-    </div>
 
     <div class="information-box">
       <%= yield %>

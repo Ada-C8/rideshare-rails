@@ -1,6 +1,6 @@
 <h1>List of All Drivers</h1>
 
-<ul>
+<!-- <ul>
   <% @drivers.each do |driver| %>
 
   <li>
@@ -9,4 +9,19 @@
       <%= driver.vin %>
   </li>
     <% end %>
-</ul>
+</ul> -->
+
+<table>
+  <tr>
+    <th>Driver ID</th>
+    <th>Driver Name</th>
+    <th>Yacht Number</th>
+  </tr>
+  <% @drivers.each do |driver| %>
+  <tr>
+    <td><%= driver.id %></td>
+    <td><%= driver.name %></td>
+    <td><%= driver.vin %></td>
+  </tr>
+    <% end %>
+</table>
