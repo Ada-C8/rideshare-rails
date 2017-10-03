@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'rideshare#index'
   get '/rideshare/index', to: 'rideshare#index', as: 'rideshares'
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~Passengers~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  resources :passenger
+  resources :passengers
   # get '/passenger/index', to: 'passenger#index', as: 'passengers'
   # get 'passenger/:id', to: 'passenger#show', as: 'passenger'
   #
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   #
   # get 'passenger/destroy'
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~Drivers~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  resources :driver
+  resources :drivers
   # get '/driver/index', to: 'driver#index', as: 'drivers'
   # get 'driver/:id', to: 'driver#show', as: 'driver'
   #
@@ -32,6 +32,6 @@ Rails.application.routes.draw do
   #
   # get 'driver/destroy'
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~Trips~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  get 'trip/:id', to: 'trip#show', as: 'trip'
-  get 'trip/:id', to: 'trip#edit', as: 'edit_trip'
+  get 'trips/:id', to: 'trips#show', as: 'trip'
+  get 'trips/:id', to: 'trips#edit', as: 'edit_trip'
 end
