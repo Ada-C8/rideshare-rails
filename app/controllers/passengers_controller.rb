@@ -7,10 +7,22 @@ class PassengersController < ApplicationController
   end
 
   def edit
+    @passenger = Passenger.find(params[:id].to_i)
   end
 
   def update
+    @passenger = Passenger.find(params[:id].to_i)
+    redirect_to passengers_path unless @passenger
+    @passenger.name = params[:passenger][:name]
+    @passenger.phone_num = params[:passenger][:phone_num]
+    if @passenger.save
+      flash[:notice] = "#{@passenger.name} was successfully updated"
+      redirect_to passengers_path
+    else
+      render :edit
+    end
   end
+
 
   def new
     @passenger = Passenger.new
