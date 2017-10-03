@@ -7,5 +7,5 @@
 <h3>Phone: <%=@passenger.phone_num %></h3>
 <% trips = Trip.all.where(passenger_id: @passenger.id) %>
 <h3>Trips: <%= Trip.where(passenger_id: @passenger.id).find_each do |trip| %>
-<h4>Trip ID:<%= trip.id %></h4>
+<h4>Trip ID:<%= link_to(trip.id, trip_path(trip.id)) %></h4>
 <% end %>

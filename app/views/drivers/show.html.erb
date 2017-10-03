@@ -7,5 +7,5 @@
 <h3>Vin: <%=@driver.vin %></h3>
 <% trips = Trip.all.where(driver_id: @driver.id) %>
 <h3>Trips: <%= Trip.where(driver_id: @driver.id).find_each do |trip| %>
-<h4>Trip ID:<%= trip.id %></h4>
+<h4>Trip ID:<%= link_to(trip.id, trip_path(trip.id)) %></h4>
 <% end %>
