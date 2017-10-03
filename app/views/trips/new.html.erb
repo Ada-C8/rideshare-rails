@@ -1,11 +1,14 @@
 <h2>New Trip</h2>
 
+<%= render partial: 'layouts/error_messages', locals: { model: @trip } %>
+
 <%= form_for @trip do |f| %>
   <%= f.label :date %>
   <%= f.date_field :date %>
 
   <%= f.label :rating %>
-  <%= f.text_field :rating %>
+  <%= f.text_field :rating, :value => 5  %>
+
 
   <%= f.collection_select(:driver_id, Driver.all, :id, :name)%>
   <!-- this is a dropdown menu with all Drivers listed -->
