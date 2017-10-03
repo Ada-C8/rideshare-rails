@@ -1,2 +1,11 @@
-<h1>Passengers#show</h1>
-<p>Find me in app/views/passengers/show.html.erb</p>
+<% if @passenger %>
+<% else %>
+<h1>404: Not Found</h1>
+<% end %>
+
+<h1>Passenger Details for :  <%= @passenger.name %></h1>
+
+<h2>List of trips : </h2>
+<p>
+<!-- <%= @passenger.trips %> -->
+</p>
