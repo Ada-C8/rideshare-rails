@@ -1,11 +1,10 @@
 <h1>Passenger Details</h1>
-<%= params.inspect %>
 
 <p>
   Passenger Name: <%= @passenger.name %>
   Phone Number: <%= @passenger.phone_number %>
     Passenger Lifetime Cost on Yachts: $<%= '%.02f' % (@passenger.total_cost / 100) %>
-
+    <%= link_to "Edit Passenger Details", edit_passenger_path(@passenger.id), alt: "link to edit passenger details" %>
 </p>
 
 <table>
