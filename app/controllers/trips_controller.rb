@@ -56,4 +56,7 @@ class TripsController < ApplicationController
   #     redirect_to trip_path(params[:id])
   #   end
   # end
+
+  private
+
 end
