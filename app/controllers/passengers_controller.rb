@@ -22,6 +22,9 @@ class PassengersController < ApplicationController
 
   def show
     @passenger = Passenger.find(params[:id])
+
+    @trips = Trip.find_by_passenger_id(params[:id])
+
   end
 
   private

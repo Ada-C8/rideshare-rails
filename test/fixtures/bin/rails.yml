@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  generate: MyString
+  controller: MyString
+  Trips: MyString
+  index: MyString
+
+two:
+  generate: MyString
+  controller: MyString
+  Trips: MyString
+  index: MyString
