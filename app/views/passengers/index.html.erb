@@ -1,13 +1,22 @@
 <h1>List of All Passengers</h1>
-<%= params.inspect %>
 
-<ul>
+<table>
+  <tr>
+    <th>
+      Passenger ID
+    </th>
+    <th>
+      Passenger Name
+    </th>
+    <th>
+      Passenger Phone Number
+    </th>
+  </tr>
   <% @passengers.each do |passenger| %>
-
-  <li>
-    <%= passenger.id %>)
-      <%= link_to passenger.name, passenger_path(passenger.id), alt: "link to individual passenger page" %>
-      <%= passenger.phone_number %>
-  </li>
-    <% end %>
-</ul>
+  <tr>
+    <td><%= passenger.id %>)</td>
+    <td><%= link_to passenger.name, passenger_path(passenger.id), alt: "link to individual passenger page" %></td>
+    <td><%= passenger.phone_number %></td>
+  </tr>
+  <% end %>
+</table>
