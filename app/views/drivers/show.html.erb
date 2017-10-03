@@ -8,3 +8,4 @@
 <h3>Trips: <%= Trip.where(driver_id: @driver.id).find_each do |trip| %>
 <h4>Trip ID:<%= link_to(trip.id, trip_path(trip.id)) %></h4>
 <% end %>
+<h3>Total Earnings: <%=@driver.total_earnings %></h3>
