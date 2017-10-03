@@ -1,0 +1,9 @@
+<%= form_for @driver do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, placeholder: hide_placeholder_text ? "" : "name" %>
+
+  <%= f.label :vin %>
+  <%= f.text_field :vin, placeholder: hide_placeholder_text ? "" : "vin" %>
+
+  <%= f.submit button_text %>
+<% end %>
