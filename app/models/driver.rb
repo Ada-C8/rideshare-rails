@@ -9,7 +9,7 @@ class Driver < ApplicationRecord
     trip.each do |x|
       total += x.cost
     end
-    return total
+    return (total - (total*0.15).round(2))
   end
 
   def average_rating

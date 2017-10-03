@@ -2,13 +2,25 @@
 
 
 <div>
-  <%= render partial: "passenger_summary"%>
+</h2>Passenger name: <%= @passenger.name%></h2>
+  <ul>
+    <li>
+      Passenger's Phone number: <%= @passenger.phone_num%>
+    </li>
+
+  <li>
+      Passenger's total spent: $<%= @passenger.total_spent %>
+  </li>
+    </ul>
 
   <%trips = Trip.all.where(passenger_id: @passenger.id)%>
   <ol>
   <% trips.each do |trip| %>
   <li>
+    <%driver_name = Driver.find(trip.driver_id).name %>
     Trip ID: <%=link_to trip.id, trip_path(trip.id) %>
+    Driver: <%= link_to driver_name, driver_path(trip.driver_id)%>
+    Date: <%= trip.date %>
   </li>
 
   <%end%>
