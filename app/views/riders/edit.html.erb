@@ -1,12 +1,3 @@
 <h1> Edit Rider </h1>
 
-<%= form_for @rider do |f| %>
-
-<%= f.label :name %>
-<%= f.text_field :name %>
-
-<%= f.label :phone %>
-<%= f.text_field :phone %>
-
-<%= f.submit %>
-<% end %>
+<%= render partial: 'form', local: {button_text: 'Update Rider'}%>

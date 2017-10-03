@@ -16,7 +16,7 @@ class RidersController < ApplicationController
   end
 
   def new
-
+    @rider = Rider.new
   end
 
   def update
