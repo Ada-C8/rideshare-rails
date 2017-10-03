@@ -1,7 +1,7 @@
 <%= form_for @passenger do |f| %>
 
 <%= f.label :name %>
-<%= f.text_field :name %>
+<%= f.text_field :name, required: true %>
 
 <%= f.label :phone_num %>
 <%= f.text_field :phone_num, required: true %>

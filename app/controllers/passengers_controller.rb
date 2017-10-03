@@ -40,7 +40,7 @@ class PassengersController < ApplicationController
   def create
     @passenger = Passenger.new passenger_params
     if @passenger.save
-      redirect_to root_path
+      redirect_to passengers_path
     else
       render :new
     end
