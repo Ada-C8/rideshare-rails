@@ -4,6 +4,7 @@ class DriversController < ApplicationController
   end
 
   def show
+    @driver = Driver.find_by(id: params[:id].to_i)
   end
 
   def create
@@ -20,7 +21,10 @@ class DriversController < ApplicationController
   end
 
   def destroy
+    @driver = Driver.find_by(id: params[:id].to_i)
+    @driver.destroy
 
+    redirect_to drivers_path
   end
 
   def edit
