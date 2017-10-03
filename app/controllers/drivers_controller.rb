@@ -15,7 +15,7 @@ class DriversController < ApplicationController
   end
 
   def new
-
+    @driver = Driver.new
   end
 
   def update
@@ -25,4 +25,7 @@ class DriversController < ApplicationController
   def destroy
 
   end
+
+private
+
 end

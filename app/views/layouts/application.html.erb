@@ -9,6 +9,10 @@
   </head>
 
   <body>
+    <header>
+      <%= link_to 'Add Driver', new_driver_path%>
+      <%= link_to 'Add Rider', new_rider_path%>
+    </header>
     <%= yield %>
   </body>
 </html>
