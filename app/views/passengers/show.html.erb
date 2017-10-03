@@ -9,5 +9,20 @@
 
 <!-- I want to create logic that will show all the rides this passenger has taken -->
 <!-- number of trips -->
+<!-- Need to create list of trips taken with a link to the trip details   -->
 
-<%= "Rides passenger has been on #{@passenger.trips}" %>
+<%= "Passenger #{@passenger.name} has taken #{@passenger.trips.length} trips" %>
+
+<ol>
+
+
+<% @passenger.trips.each do |trip| %>
+<li>
+  <%= "Driver Id: #{trip.driver_id}" %>
+  <%= "Cost of trip: #{trip.cost}" %>
+  <%= "Trip rating: #{trip.rating}" %>
+
+</li>
+<% end %>
+<!-- Need to add button to add new trip  -->
+</ol>
