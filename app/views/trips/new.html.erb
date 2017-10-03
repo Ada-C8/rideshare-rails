@@ -1,0 +1,14 @@
+<h2>This is the new trip page</h2>
+
+
+<div>
+  <p>
+    <%= form_for @trip do |form| %>
+    <%= form.label :Passenger %>
+    <%= form.text_field :passenger_id %>
+    <br />
+    <br />
+    <%= form.submit "create new trip"%>
+    <% end %>
+  </p>
+</div>
