@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+header, footer {
+  border-style: solid;
+  border-color: Gold;
+}
