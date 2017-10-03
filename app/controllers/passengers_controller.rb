@@ -11,9 +11,12 @@ class PassengersController < ApplicationController
   end
 
   def destroy
+    Passenger.find_by(id: params[:id]).destroy
+    redirect_to root_path
   end
 
   def edit
+    @passenger = Passenger.find(params[:id])
   end
 
   def index
@@ -30,10 +33,19 @@ class PassengersController < ApplicationController
   end
 
   def update
-  end
-end
+    @passenger = Passenger.find(params[:id])
+    @passenger.update_attributes(passenger_params)
+    if @passenger.save
+      redirect_to(passenger_path(@passenger))
+    else
+      render :new
+    end
 
-private
+  end
+
+  private
   def passenger_params
     return params.require(:passenger).permit(:name, :phone_num)
   end
+
+end #end of class

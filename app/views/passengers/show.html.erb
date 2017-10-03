@@ -8,10 +8,13 @@
 <section class="links">
   <ul>
     <li>
+    <%= link_to "New Trip", new_trip_path %>
+    </li>
+    <li>
       <%=link_to "Edit", passenger_path(@passenger.id), method: :patch%>
     </li>
     <li>
-      <%=link_to "Delete", passenger_path(@passenger.id), method: :delete %>
+      <%=link_to "Delete", passenger_path(@passenger.id), method: :delete, data: { confirm: 'Are you sure?' } %>
     </li>
   </ul>
 </section>

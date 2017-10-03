@@ -1,4 +1,22 @@
-<h1>Trips#index</h1>
-<p>Find me in app/views/trips/index.html.erb</p>
+<h2>ALL TRIPS</h2>
+<ol>
+  <% @trips.each do |trip|%>
+    <li>
 
-<h1> RIDE SHARE! </h1>
+      <p>
+        <strong >
+          <%= link_to "Trip on: #{trip.date}", trip_path(trip) %>
+        </strong>
+      </p>
+      <ul>
+        <li>
+          <%= "Driver: #{trip.driver.name}"%>
+        </li>
+        <li>
+          <%= "Passenger: #{trip.passenger.name}"%>
+        </li>
+      </ul>
+
+    </li>
+    <% end %>
+  </ol>
