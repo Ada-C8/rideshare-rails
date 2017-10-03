@@ -1,1 +1,13 @@
 <h1>You're in Passenger Index</h1>
+
+<p>
+  <% @passengers.each do |passenger| %>
+    <li>
+      Passenger: <% passenger[:name] %>
+    </li>
+
+    <li>
+      Passenger Phone Number: <% passenger[:phone_num] %>
+    </li>
+  <%end%>
+</p>

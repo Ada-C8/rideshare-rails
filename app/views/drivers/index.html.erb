@@ -1,1 +1,13 @@
 <h1>You're in Driver Index</h1>
+
+<p>
+  <% @drivers.each do |driver| %>
+    <li>
+      Driver Name: <% driver[:name] %>
+    </li>
+
+    <li>
+      Driver VIN: <% driver[:vin] %>
+    </li>
+  <%end%>
+</p>
