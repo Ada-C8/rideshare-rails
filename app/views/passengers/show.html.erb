@@ -1,12 +1,28 @@
 <h1>Passengers#show</h1>
 <p>Find me in app/views/passengers/show.html.erb</p>
 
-<%=link_to(@passenger.name, edit_passenger_path(@passenger.id)) %>
+<%=link_to("Edit Passenger", edit_passenger_path(@passenger.id)) %>
+<%= link_to("Delete Passenger", delete_passenger_path, method: :delete, data: { confirm: "Are you sure?" }) %>
 
 
 <% if @passenger %>
-  Id: <%=@passenger[:name] %>
+  Name: <%=@passenger[:name] %>
   Phone Number: <%= @passenger[:phone_num] %>
+
+  <ul>
+    Trips
+    <% @trips.each do |trip| %>
+    <li>
+      Date: <%= trip.date %>
+    </li>
+    <li>
+      Rating: <%= trip.rating %>
+    </li>
+    <li>
+      Cost: $<%= (trip.cost / 100).round(2) %>
+    </li>
+    <% end %>
+  </ul>
 <% else %>
   < h1>404: Not Found</h1>
 <% end %>

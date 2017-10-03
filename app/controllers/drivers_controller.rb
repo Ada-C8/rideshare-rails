@@ -5,6 +5,7 @@ class DriversController < ApplicationController
 
   def show
     @driver = Driver.find_by(id: params[:id].to_i)
+    @trips = Trip.where(driver_id: params[:id].to_i)
   end
 
   def create
@@ -18,6 +19,13 @@ class DriversController < ApplicationController
   end
 
   def update
+    @driver = Driver.find_by(id: params[:id].to_i)
+
+    if @driver.update_attributes(driver_params)
+      redirect_to drivers_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -28,6 +36,7 @@ class DriversController < ApplicationController
   end
 
   def edit
+    @driver = Driver.find_by(id: params[:id].to_i)
   end
 
   def new
