@@ -1,11 +1,3 @@
-<% if @passenger.errors.any? %>
-  <ul class="errors">
-    <% @passenger.errors.each do |column, message| %>
-    <li> <strong><%= column.capitalize %> </strong> <%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
-
 
 <%= form_for @passenger do |f| %>
   <%= f.label :name %>
