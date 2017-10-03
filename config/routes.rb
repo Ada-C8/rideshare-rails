@@ -1,45 +1,61 @@
 Rails.application.routes.draw do
-  get 'drivers/create'
 
-  get 'drivers/destroy'
+  root to: 'trips#index'
 
-  get 'drivers/edit'
 
-  get 'drivers/index'
+  get '/drivers', to: 'drivers#index', as: 'drivers' #drivers_path
 
-  get 'drivers/new'
+  get 'drivers/:id/edit/', to: 'drivers#edit', as: 'edit_book' #edit_driver_path
 
-  get 'drivers/show'
+  get '/drivers/new', to: 'drivers#new', as: 'new_driver' #new_driver_path
 
-  get 'drivers/update'
+  get '/drivers/:id', to: 'drivers#show', as: 'driver' #driver_path
 
-  get 'passengers/create'
+  post '/drivers', to: 'drivers#create', as: 'create_driver' #create_driver_path
 
-  get 'passengers/destroy'
+  delete 'drivers/:id', to: 'drivers#destroy', as: 'delete_driver' #delete_book_path
 
-  get 'passengers/edit'
+  patch 'drivers/:id', to: 'drivers#update', as: 'update_driver' #update_driver_path
 
-  get 'passengers/index'
 
-  get 'passengers/new'
 
-  get 'passengers/show'
 
-  get 'passengers/update'
 
-  get 'trips/create'
 
-  get 'trips/destroy'
+  get '/passengers', to: 'passengers#index', as: 'passengers' #drivers_path
 
-  get 'trips/edit'
+  get 'passengers/:id/edit/', to: 'passengers#edit', as: 'edit_passenger' #edit_driver_path
 
-  get 'trips/index'
+  get '/passengers/new', to: 'passengers#new', as: 'new_passenger' #new_driver_path
 
-  get 'trips/new'
+  get '/passengers/:id', to: 'passengers#show', as: 'passenger' #driver_path
 
-  get 'trips/show'
+  post '/passengers', to: 'passengers#create', as: 'create_passenger' #create_driver_path
 
-  get 'trips/update'
+  delete 'passengers/:id', to: 'passengers#destroy', as: 'delete_passenger' #delete_book_path
+
+  patch 'passengers/:id', to: 'passengers#update', as: 'update_passenger' #update_driver_path
+
+
+
+
+
+
+  get '/trips', to: 'trips#index', as: 'trips' #drivers_path
+
+  get 'trips/:id/edit/', to: 'trips#edit', as: 'edit_trip' #edit_driver_path
+
+  get '/trips/new', to: 'trips#new', as: 'new_trip' #new_driver_path
+
+  get '/trips/:id', to: 'trips#show', as: 'trip' #driver_path
+
+  post '/trips', to: 'trips#create', as: 'create_trip' #create_driver_path
+
+  delete 'trips/:id', to: 'trips#destroy', as: 'delete_trip' #delete_book_path
+
+  patch 'trips/:id', to: 'trips#update', as: 'update_trip' #update_driver_path
+
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
