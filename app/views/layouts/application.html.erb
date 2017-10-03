@@ -9,6 +9,15 @@
   </head>
 
   <body>
+
+    <nav>
+      <%= link_to "All Passengers", passengers_path %>
+      <%= link_to "All Drivers", drivers_path %>
+      <%= link_to "New Passenger", passengers_new_path %>
+      <%= link_to "New Driver", drivers_new_path %>
+
+
+    </nav>
     <%= yield %>
   </body>
 </html>
