@@ -13,6 +13,32 @@
  *= require_tree .
  *= require_self
  */
+ /******** BACKROUND ********/
+
+body {
+   /* The image used */
+   /*background-image: url('forest.jpeg');*/
+
+   /* Set a specific height */
+   height: 100%;
+
+   /* Create the parallax scrolling effect */
+   background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+ /******** HEADER ********/
+
+h1#brand  {
+   float: left;
+   border: 2px green solid;
+ }
+
+ nav {
+   float: right;
+ }
 
  /* Dropdown Button */
 .dropbtn {
@@ -60,3 +86,19 @@
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
+
+/******** CLEARFIX *********/
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
