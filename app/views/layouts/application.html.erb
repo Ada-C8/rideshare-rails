@@ -7,9 +7,50 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <header>
+    <h1>
+      Our application title
+    </h1>
+    <nav>
+      <ul>
+        <li>
+          <%= link_to "All drivers", drivers_path,   class:   "link"%>
+        </li>
+        <li>
+          <%= link_to "All passengers",   passengers_path,   class: "link"%>
+        </li>
+        <li>
+          <%= link_to "Create new driver", new_driver_path, class:"link"%>
+        </li>
+        <li>
+          <%= link_to "Create new passenger", new_passenger_path, class: "link"%>
+        </li>
 
+      </ul>
+    </nav>
+  </header>
 
   <body>
     <%= yield %>
   </body>
+
+  <footer>
+    <nav>
+      <ul>
+        <li>
+          <%= link_to "All drivers", drivers_path,   class:   "link"%>
+        </li>
+        <li>
+          <%= link_to "All passengers",   passengers_path,   class: "link"%>
+        </li>
+        <li>
+          <%= link_to "Create new driver", new_driver_path, class:"link"%>
+        </li>
+        <li>
+          <%= link_to "Create new passenger", new_passenger_path, class: "link"%>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+
 </html>
