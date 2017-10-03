@@ -1,5 +1,9 @@
 <h2>Driver Details</h2>
 
+<%= link_to "Edit", edit_driver_path(@driver.id) %>
+<%= link_to "Delete", driver_path(@driver.id), method: :delete %>
+<%= link_to "Back to index", drivers_path %>
+
 <section>
   <p>
     <strong>Name: </strong>
@@ -10,11 +14,18 @@
     <%= @driver.vin %>
   </p>
   <p>
-    <strong>Rating: </strong>
-    <%=  @driver.average_rating %>    
+    <strong>Average Rating: </strong>
+    <%=  @driver.average_rating %>
   </p>
 
-  <%= link_to "Edit", edit_driver_path(@driver.id) %>
-  <%= link_to "Delete", driver_path(@driver.id), method: :delete %>
-  <%= link_to "Back to index", drivers_path %>
+  <p>
+    <strong>Trips: </strong>
+    <ul>
+      <% @trips.each do |trip| %>
+        <li>
+          <%= link_to "#{trip.passenger.name} #{trip.date.strftime("%B %d, %Y")} #{trip.rating}", trip_path(trip.id)%>
+        </li>
+      <% end %>
+    </ul>
+  </p>
 </section>
