@@ -8,10 +8,16 @@ class PassengersController < ApplicationController
   end
 
   def create
-    passenger = Passenger.new(passenger_params)
+    @passenger = Passenger.new(passenger_params)
 
-    passenger.save
-    redirect_to('/passengers')
+    if @passenger.save
+      redirect_to('/passengers')
+    else
+      # show errors to user
+      render :new
+    end
+
+
   end
 
   def show
