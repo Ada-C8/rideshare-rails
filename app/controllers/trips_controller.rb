@@ -4,9 +4,11 @@ class TripsController < ApplicationController
   end
 
   def create
+
   end
 
   def new
+
   end
 
   def edit
@@ -14,8 +16,21 @@ class TripsController < ApplicationController
   end
 
   def update
+    @trip = Trip.find(params[:id])
+    result = @trip.update(trip_params)
+
+    if result
+      redirect_to trip_path(@trip.id)
+    else
+      render :edit
+    end
   end
 
   def destroy
+  end
+
+  private
+  def trip_params
+    return params.require(:trip).permit(:driver_id, :passenger_id, :rating, :cost)
   end
 end
