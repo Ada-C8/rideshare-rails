@@ -1,2 +1,9 @@
-<h1>Drivers#index</h1>
-<p>Find me in app/views/drivers/index.html.erb</p>
+<h1>Drivers List </h1>
+<ul>
+
+  <% @drivers.each do |driver| %>
+    <li>
+      <%= link_to driver[:name] %>
+    </li>
+    <%end%>
+</ul>
