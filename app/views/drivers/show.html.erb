@@ -18,7 +18,12 @@
   <%= "Trip Passenger: " %><%= trip.passenger_id %>
 <% end %>
 <br>
+
+<% if counter == 0 %>
+<%= "Driver does not have a rating yet. " %>
+<% else %>
 <%= "Average Rating: " %><%= average_rating/counter %>
+<% end %>
 
 <%= link_to "Edit Driver", edit_driver_path(@driver) %>
 
