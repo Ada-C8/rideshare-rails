@@ -1,0 +1,7 @@
+<h1> List of All Riders </h1>
+
+<section>
+  <% @riders.each do |rider| %>
+    <p> <%= "#{rider.name}, ID: #{rider.id}" %></p>
+  <% end %>
+</section>
