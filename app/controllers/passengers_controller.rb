@@ -1,7 +1,11 @@
 class PassengersController < ApplicationController
   def index
     @passengers = Passenger.all
-    return @passengers
+    # return @passengers
+  end
+
+  def show
+  @passenger = Passenger.find(params[:id])
   end
 
   def new
