@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RideshareRails</title>
+    <title>CatsOnRails</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,21 @@
   </head>
 
   <body>
+    <nav>
+      <h1>
+        Cats on Rails
+      </h1>
+      <section class="nav_links">
+        <%= link_to "list of passengers" %>
+        <%= link_to "list of drivers" %>
+      </section>
+      <section class="nav_links">
+        <%= link_to "create new passenger" %>
+        <%= link_to "create new driver" %>
+      </section>
+    </nav>
+    <section class="content">
     <%= yield %>
+  </section>
   </body>
 </html>
