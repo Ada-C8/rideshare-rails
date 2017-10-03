@@ -1,15 +1,88 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+
+* {
+  /*border: 1px solid lawngreen;*/
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: tomato;
+  margin: 0;
+}
+
+header {
+  background-color: white;
+  color: tomato;
+  height: 5rem;
+  left: 0;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+
+h1 {
+  display: inline-block;
+  margin: 1rem;
+}
+
+header nav {
+  display: inline-block;
+  float: right;
+  margin: 0;
+  padding: 0;
+  width: 70%;
+}
+
+header nav ul {
+  float: right;
+  list-style: none;
+  padding: 0;
+}
+
+header nav li {
+  display: inline-block;
+  padding: 1rem 2rem;
+}
+
+footer {
+  background-color: white;
+  color: tomato;
+  height: 3rem;
+  padding: 1rem;
+  position: absolute;
+  width: 100%;
+}
+
+.footer-fix {
+  height: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+main {
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 100%;
+  margin: 5rem auto 0 auto;
+  padding: 3%;
+  position: relative;
+  top: 3.75em;
+  width: 84%;
+}
