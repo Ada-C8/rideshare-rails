@@ -8,6 +8,16 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <header>
+<h1>Ride Share</h1>
+
+<%=button_to "All Passengers", passengers_path, method: :get%>
+<%=button_to "Add New Passenger", new_passenger_path, method: :get%>
+
+
+
+  </header>
+
   <body>
     <%= yield %>
   </body>
