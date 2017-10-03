@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 
   post 'passengers', to: "passengers#create"
 
-  get 'passengers/destroy'
+  delete '/passengers/destroy/:id', to: 'passengers#destroy', as: 'delete_passenger'
 
 
   get '/drivers', to: 'drivers#index'
@@ -41,7 +41,7 @@ Rails.application.routes.draw do
 
   post '/drivers', to: "drivers#create"
 
-  get 'drivers/destroy'
+  delete '/drivers/destroy/:id', to: 'drivers#destroy', as: 'delete_driver'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
