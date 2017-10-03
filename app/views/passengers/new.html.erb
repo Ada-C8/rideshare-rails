@@ -2,19 +2,4 @@
 <p>Find me in app/views/passengers/new.html.erb</p>
 
 
-
-<section>
-  <%= form_for @passenger do |f| %>
-  <article>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </article>
-  <article>
-    <%= f.label :phone_num %>
-    <%= f.text_field :phone_num %>
-  </article>
-  <article>
-    <%= f.submit %>
-  </article>
-  <% end %>
-</section>
+<%= render partial: "form" %>

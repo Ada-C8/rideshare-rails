@@ -1,17 +1,3 @@
 <h1>Drivers#new</h1>
 
-<section>
-  <%= form_for @driver do |f| %>
-  <article>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </article>
-  <article>
-    <%= f.label :vin %>
-    <%= f.text_field :vin %>
-  </article>
-  <article>
-    <%= f.submit %>
-  </article>
-  <% end %>
-</section>
+<%= render partial: "form" %>
