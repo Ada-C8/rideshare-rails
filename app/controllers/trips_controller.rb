@@ -1,6 +1,6 @@
 class TripsController < ApplicationController
   def index
-    @trips = Trips.all
+    @trips = Trip.all
   end
 
   def show

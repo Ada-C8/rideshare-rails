@@ -1,0 +1,7 @@
+<h1> List of All Trips </h1>
+
+<section>
+  <% @trips.each do |trip| %>
+    <p> <%= "ID: #{trip.id}, Date: #{trip.date}" %></p>
+  <% end %>
+</section>
