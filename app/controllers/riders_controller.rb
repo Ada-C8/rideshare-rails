@@ -5,7 +5,7 @@ class RidersController < ApplicationController
   end
 
   def show
-
+    @rider = Rider.find_by(id: params[:id].to_i)
   end
 
   def edit

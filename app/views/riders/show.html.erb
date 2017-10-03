@@ -1,0 +1,10 @@
+<h1> Rider Detail Page </h1>
+<section>
+  <% if @rider %>
+    <h3><%= "NAME: #{@rider.name}" %></h3>
+    <p><%= "ID: #{@rider.id}" %></p>
+    <p><%= "PHONE: #{@rider.phone}" %></p>
+    <% else %>
+    <h2> Rider ID does not found </h2>
+  <% end %>
+</section>

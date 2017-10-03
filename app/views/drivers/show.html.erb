@@ -1,0 +1,10 @@
+<h1> Driver Detail Page </h1>
+<section>
+  <% if @driver %>
+    <h3><%= "NAME: #{@driver.name}" %></h3>
+    <p><%= "ID: #{@driver.id}" %></p>
+    <p><%= "VIN: #{@driver.vin}" %></p>
+    <% else %>
+    <h2> Driver ID does not found </h2>
+  <% end %>
+</section>

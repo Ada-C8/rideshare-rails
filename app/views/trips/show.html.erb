@@ -1,0 +1,13 @@
+<h1> Trip Detail Page </h1>
+<section>
+  <% if @trip %>
+    <h3><%= "ID: #{@trip.id}" %></h3>
+    <p><%= "Date: #{@trip.date}" %></p>
+    <p><%= "Rating: #{@trip.rating}" %></p>
+    <p><%= "Cost: #{@trip.cost}" %></p>
+    <p><%= "Driver: #{@trip.driver.name}, ID: #{@trip.driver.id}" %></p>
+    <p><%= "Rider: #{@trip.rider.name}, ID: #{@trip.rider.id}" %></p>
+    <% else %>
+    <h2> Trip ID does not found </h2>
+  <% end %>
+</section>
