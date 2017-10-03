@@ -1,5 +1,13 @@
 class PassengersController < ApplicationController
   def create
+    @passenger = Passenger.new(
+    passenger_params
+    )
+    if @passenger.save
+      redirect_to passengers_path
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -13,6 +21,7 @@ class PassengersController < ApplicationController
   end
 
   def new
+    @passenger = Passenger.new
   end
 
   def show
