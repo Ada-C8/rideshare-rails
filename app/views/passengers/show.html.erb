@@ -1,8 +1,12 @@
 <h1>Name: <%= @passenger.name %> </h1>
 <h3>Spent a total of: <%= @passenger.calculate_total(@passenger.id) %></h3>
-<h3>All Trips</h3>
+<h3>All Trips:</h3>
 <ul>
+  <% all_trips = Trip.all.order(date: :desc) %>
+  <% all_trips.each do |trip| %>
   <li>
-
+    <%= link_to trip.date, trip_path %>
   </li>
+  <% end %>
+
 </ul>
