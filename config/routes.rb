@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-<<<<<<< HEAD
   # get '/passengers'
-=======
+
   ###### DRIVERS ######
   # VERB    PATH    # CONTROLLERACTION   PREFIX
   get "/drivers", to: "drivers#index", as: "drivers"
->>>>>>> b6335a6af84a5fbd358adc518b9e41f8d3bc0e1e
 
   get "/drivers/new", to: "drivers#new", as: "new_driver"
   post "/drivers", to: "drivers#create"
