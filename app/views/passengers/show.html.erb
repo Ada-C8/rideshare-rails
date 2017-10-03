@@ -17,3 +17,7 @@
 <% final_total_cost = total_cost/100%><%= "%.2f"%final_total_cost %>
 
 <%= link_to "Edit Passenger", edit_passenger_path(@passenger) %>
+
+<%= link_to "Add New Trip", new_passenger_path({:driver_id => @driver.driver_id})
+
+new_device_path({:id => @rfid.id, :cabinet_id => @cabinet.id}), :class => "btn btn-primary" %> %>
