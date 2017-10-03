@@ -16,16 +16,20 @@ class PassengersController < ApplicationController
   end
 
   def create
-    passenger = Passenger.new(name: params[:passenger][:name], phone_num: params[:passenger][:phone_num])
+    strong_params = passenger_params
+    passenger = Passenger.new(strong_params)
+    passenger.save
+    redirect_to passengers_path
   end
 
   def update
-    puts "************ UPDATING ******************"
+    strong_params = passenger_params
     @passenger = Passenger.find(params[:id])
-    @passenger.name = params[:name]
-    @passenger.phone_num = params[:phone_num]
+    @passenger.update_attributes(strong_params)
+    # @passenger.name = params[:passenger][:name]
+    # @passenger.phone_num = params[:passenger][:phone_num]
     @passenger.save
-    redirect_to passengers_path(@passenger.id)
+    redirect_to passengers_path
   end
 
   def destroy
@@ -35,4 +39,11 @@ class PassengersController < ApplicationController
   end
   #YOU DIANE
   #def show def new def create def edit def update def destroy
+
+private
+def passenger_params
+  return params.require(:passenger).permit(:name, :phone_num)
+end
+
+
 end
