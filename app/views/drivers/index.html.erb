@@ -2,15 +2,18 @@
 <table>
   <% @drivers.each do |driver|  %>
   <tr>
-    <td><%= driver[:id] %></td>
-
+    <!-- <td><%= driver[:id] %></td> -->
+    <!-- Add emoji icon here -->
+    <td>
+      Emoji
+    </td>
     <td>
       <%= link_to driver_path(driver[:id]) do %>
         <%= driver[:name] %>
       <% end %>
     </td>
-      
-    <td><%= driver[:vin] %></td>
+
+    <!-- <td><%= driver[:vin] %></td> -->
   </tr>
   <% end  %>
 </table>
