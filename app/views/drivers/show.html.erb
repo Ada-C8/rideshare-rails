@@ -3,5 +3,5 @@
 <div>
   <strong></strong><%= @driver.name %></strong>
   <p><%= @driver.vin %></p>
-  <%= link_to "Edit Driver", edit_driver_path(@driver.id) %>
+  <%=button_to "Edit", edit_driver_path(@driver.id), method: :get%>
 </div>
