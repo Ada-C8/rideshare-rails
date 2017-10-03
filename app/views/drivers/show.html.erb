@@ -1,13 +1,10 @@
 <h1>Driver Details</h1>
-
-<%= params.inspect %>
-
 <p>
-  Driver Name: <%= @driver.name %>
-</p>
+  Driver Name: <%= @driver.name %> Yacht ID Number: <%= @driver.vin %>
+  Total Lifetime Earnings: $<%='%.02f' % (@driver.total_earnings / 100) %>
+  Average Rating: <%= '%.02f' % @driver.average_rating %>
 
-<p>
-  Yacht ID Number: <%= @driver.vin %>
+
 </p>
 
 <table>
