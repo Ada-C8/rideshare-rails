@@ -67,7 +67,7 @@ ul {
 }
 
 .dropdown-content-view, .dropdown-content-create {
-    display: none;
+    display: block;
     position: absolute;
     width: 20em;
     min-width: 160px;
@@ -85,6 +85,10 @@ ul {
 }
 
 .dropdown-button-view:hover + .dropdown-content-view {
+    display: block;
+}
+
+.dropdown-content-view:hover + .dropdown-content-view {
     display: block;
 }
 

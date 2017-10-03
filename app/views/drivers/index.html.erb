@@ -1,5 +1,4 @@
 <h1>List of All Drivers</h1>
-<%= params.inspect %>
 
 <!-- <ul>
   <% @drivers.each do |driver| %>
@@ -7,7 +6,7 @@
   <li>
     <%= driver.id %>)
       <%= driver.name %>
-      Yacht ID Number: <%= driver.vin %>
+      <%= driver.vin %>
   </li>
     <% end %>
 </ul> -->
@@ -21,7 +20,7 @@
   <% @drivers.each do |driver| %>
   <tr>
     <td><%= driver.id %></td>
-    <td><%= driver.name %></td>
+    <td><%= link_to driver.name, driver_path(driver.id)%></td>
     <td><%= driver.vin %></td>
   </tr>
     <% end %>
