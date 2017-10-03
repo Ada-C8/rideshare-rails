@@ -1,7 +1,7 @@
 <h1>Drivers#index</h1>
 
 <% @drivers.each do |driver| %>
-<div>
-  <%= driver.name%>
-</div>
+<p>
+  <%= link_to(driver.name, driver_path(driver.id), alt:'Link to show driver show view')%>
+</p>
 <% end %>

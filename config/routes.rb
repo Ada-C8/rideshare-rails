@@ -16,11 +16,11 @@ Rails.application.routes.draw do
 
   get '/passengers', to: 'passengers#index'
 
-  get '/passengers/new', to: "passengers#new", as: "new_passenger"
+  get '/passengers/new', to: "passengers#new", as: 'new_passenger'
 
   post 'passengers', to: "passengers#create"
 
-  get 'passengers/show'
+  get 'passengers/:id', to: "passengers#show", as: 'passenger'
 
   get 'passengers/edit'
 
@@ -31,11 +31,11 @@ Rails.application.routes.draw do
 
   get '/drivers', to: 'drivers#index'
 
-  get '/drivers/new', to: "drivers#new", as: "new_driver"
+  get '/drivers/new', to: "drivers#new", as: 'new_driver'
 
   post '/drivers', to: "drivers#create"
 
-  get 'drivers/show'
+  get 'drivers/:id', to: "drivers#show", as: 'driver'
 
   get 'drivers/edit'
 
