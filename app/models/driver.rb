@@ -1,6 +1,8 @@
 class Driver < ApplicationRecord
   has_many :trips
 
+  validates :name, presence: true
+
   def total_earning
     trips = Trip.where(driver_id: id)
     sum = 0
@@ -24,6 +26,8 @@ class Driver < ApplicationRecord
       return "no rating"
     end
   end
+
+
 
 
 

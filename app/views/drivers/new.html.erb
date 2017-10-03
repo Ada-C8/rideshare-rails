@@ -1,3 +1,20 @@
+
+<% if @driver.errors.messages.length > 0 %>
+  <section>
+      <h3> Oops Error!</h3>
+      <ul>
+        <% @driver.errors.messages.each do |field, problems|%>
+          <% problems.each do |problem|%>
+            <li>
+              <strong><%= field %></strong>
+              <%= problem %>
+            </li>
+          <%end%>
+        <%end%>
+      </ul>
+  </section>
+<%end%>
+
 <%= form_for @driver do |f| %>
   <%= f.label :name %>
   <%= f.text_field:name %>
