@@ -9,6 +9,10 @@
     <strong>VIN: </strong>
     <%= @driver.vin %>
   </p>
+  <p>
+    <strong>Rating: </strong>
+    <%=  @rating %>    
+  </p>
 
   <%= link_to "Edit", edit_driver_path(@driver.id) %>
   <%= link_to "Delete", driver_path(@driver.id), method: :delete %>

@@ -21,6 +21,7 @@ class DriversController < ApplicationController
 
   def show
     @driver = Driver.find(params[:id])
+    @rating = Driver.average_rating(params[:id])
   end
 
   def edit
