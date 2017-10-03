@@ -1,1 +1,21 @@
 <%= render partial: 'layouts/nav' %>
+
+
+<h2> Driver: <%= @driver.name%> </h2>
+  <ul>
+    <li> VIN: <%= @driver.vin%> </li>
+    <li> Number of Trips Completed: Add this later </li>
+    <li> Trips: <% @driver.trips.each do |trip| %>
+                  <ul>
+                    <li>
+                      <h4> Trip #<%= link_to @trip.id, trip_path(trip.id) %> </h4>
+                      <h4> Date: <%= @trip.date %> </h4>
+                    </li>
+                    <!-- <li> Rating: <%= @trip.rating %> </li>
+                    <li> Cost: <%= @trip.cost %> </li>
+                    <li> Passenger: <%= @trip.passenger_id %> </li> -->
+                  </ul>
+                <% end %>
+    </li>
+  </ul>
+</h2>
