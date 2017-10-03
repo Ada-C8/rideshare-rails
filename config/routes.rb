@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   get '/passengers/new', to: "passengers#new", as: 'new_passenger'
 
-  get '/passengers/:id/edit', to: 'passengers#edit'
+  get '/passengers/:id/edit', to: 'passengers#edit', as: 'edit_passenger'
 
   get '/passengers/:id', to: "passengers#show", as: 'passenger'
 
@@ -33,7 +33,7 @@ Rails.application.routes.draw do
 
   get '/drivers/new', to: "drivers#new", as: 'new_driver'
 
-  get '/drivers/:id/edit', to: 'drivers#edit'
+  get '/drivers/:id/edit', to: 'drivers#edit', as: 'edit_driver'
 
   get 'drivers/:id', to: "drivers#show", as: 'driver'
 

@@ -3,3 +3,8 @@
 <h2><%= @driver.name %></h2>
 
 <h3><%= @driver.vin %></h3>
+
+<section>
+
+  <%= link_to("Edit Driver", edit_driver_path(@driver.id)) %>
+</section>

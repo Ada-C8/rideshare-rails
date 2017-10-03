@@ -3,3 +3,8 @@
 <h2><%= @passenger.name %></h2>
 
 <h3><%= @passenger.phone_num %></h3>
+
+<section>
+
+  <%= link_to("Edit Passenger", edit_passenger_path(@passenger.id)) %>
+</section>
