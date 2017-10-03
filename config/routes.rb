@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root 'main#index'
 
-  resources :drivers, :passengers, :trips
+  resources :drivers, :passengers
+  resources :trips, except: [:index]
 
 end
