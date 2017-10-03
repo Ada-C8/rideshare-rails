@@ -20,9 +20,10 @@ class PassengersController < ApplicationController
   end
 
   def update
+    puts "************ UPDATING ******************"
     @passenger = Passenger.find(params[:id])
-    @passenger.name = passenger_updates[:name]
-    @passenger.phone_num = passenger_updates[:phone_num]
+    @passenger.name = params[:name]
+    @passenger.phone_num = params[:phone_num]
     @passenger.save
     redirect_to passengers_path(@passenger.id)
   end
