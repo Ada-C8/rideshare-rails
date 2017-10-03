@@ -3,12 +3,22 @@
 
 <section class="driver_details">
 <h2><%= @driver.name%></h2>
+<section class="edit_delete">
+  <ul>
+    <li>
+      <%=link_to "Edit", driver_path(@driver.id), method: :patch%>
+    </li>
+    <li>
+      <%=link_to "Delete", driver_path(@driver.id), method: :delete %>
+    </li>
+  </ul>
+</section>
 
 <section class="drivers_trips" >
   <% @driver.trips.each do |trip| %>
   <article>
       <p>
-        Trip id: <%=trip.id%>
+        Trip id: <%= link_to trip.id, trip_path(trip.id) %>
       </p>
       <p>
         Passenger: <%=trip.passenger.name %>
