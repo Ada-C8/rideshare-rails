@@ -2,6 +2,6 @@
 
 <% @passengers.each do |p|  %>
 <p>
-<%=  p.name  %>
+<%=  link_to(p.name, passenger_path(p.id), alt: 'passenger link to')  %>
 </p>
 <% end  %>

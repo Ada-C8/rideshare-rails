@@ -2,6 +2,6 @@
 
 <% @drivers.each do |d|  %>
 <p>
-<%=  d.name  %>
+<%=  link_to(d.name, driver_path(d.id))  %>
 </p>
 <% end  %>
