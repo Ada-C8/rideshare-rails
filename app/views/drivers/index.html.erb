@@ -1,10 +1,12 @@
-<h1> All Drivers! </h1>
+<h1> List of All Drivers! </h1>
 <p>
   <%= link_to "add driver", drivers_new_path %>
 </p>
 
-<% @drivers.each do |driver| %>
-<div class="driver">
-  <strong><%= link_to driver.name, drivers_path(driver.id) %></strong> Vin Number: <%=driver.vin %>
-</div>
-<% end %>
+<p>
+  <% @drivers.each do |driver| %>
+  <div class="driver">
+    <strong><%= link_to driver.name, driver_path(driver.id) %></strong>
+  </div>
+  <% end %>
+</p>

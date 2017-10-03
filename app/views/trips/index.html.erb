@@ -1,7 +1,15 @@
 <h1>All Trips!</h1>
+<p>
+  <%= link_to "add trip", trips_new_path %>
+</p>
 
+<p>
 <% @trips.each do |trip| %>
 <div class="trip">
-  <strong> driver id: <%= trip.driver_id %></strong> | passenger id: <%=trip.passenger_id %> | trip date: <%=trip.date %> <%=trip.rating %> | cost: <%=trip.cost %>
+  <%= link_to trip.date, trip_path(trip.id) %>
+   <!-- <strong> driver id: <%= trip.driver_id %></strong> | passenger id: <%=trip.passenger_id %> | trip date: <%=trip.date %> <%=trip.rating %> | cost: <%=trip.cost %> -->
 </div>
 <% end %>
+</p>
+
+<!-- not sure how best to display the WHOLE list, should it be by date? Or by driver id? Or by passenger id?-->
