@@ -5,4 +5,7 @@
 
 <h3>Name: <%=@passenger.name %></h3>
 <h3>Phone: <%=@passenger.phone_num %></h3>
-<h3>Trips: </h3>
+<% trips = Trip.all.where(passenger_id: @passenger.id) %>
+<h3>Trips: <%= Trip.where(passenger_id: @passenger.id).find_each do |trip| %>
+<h4>Trip ID:<%= trip.id %></h4>
+<% end %>

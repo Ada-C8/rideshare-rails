@@ -5,4 +5,7 @@
 
 <h3>Driver: <%=@driver.name %> </h3>
 <h3>Vin: <%=@driver.vin %></h3>
-<h3>Trips: </h3>
+<% trips = Trip.all.where(driver_id: @driver.id) %>
+<h3>Trips: <%= Trip.where(driver_id: @driver.id).find_each do |trip| %>
+<h4>Trip ID:<%= trip.id %></h4>
+<% end %>
