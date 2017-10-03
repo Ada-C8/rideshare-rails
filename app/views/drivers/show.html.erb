@@ -4,14 +4,47 @@
 <section class="driver_details">
 <h2><%= @driver.name%></h2>
 
-  <% Ride.all.each do |ride| %>
-    <%if ride.driver == @driver %>
+<section class="drivers_trips" >
+  <% @driver.trips.each do |trip| %>
+  <article>
       <p>
-        <%= link_to ride %>
+        Trip id: <%=trip.id%>
       </p>
+      <p>
+        Passenger: <%=trip.passenger.name %>
+      </p>
+      <p>
+        trip date: <%=trip.date %>
+      </p>
+      <p>
+        total cost: <%=trip.cost %>
+      </p>
+      <p>
+        rating: <%=trip.rating%>
+      </p>
+  </article>
     <%end%>
-  <%end>
+</section>
 
 
+<section class="driver_earnings">
+  <h3>Total Earnings</h3>
+  <%@earnings = 0 %>
+  <% @driver.trips.each do |trip| %>
+    <%@earnings += trip.cost%>
+  <% end %>
+  <% @earnings *= 0.85/100 %>
+  <%= @earnings.round(2) %>
+</section>
+
+<section class="driver_rating">
+  <h3>Average Rating</h3>
+  <%@rating = 0 %>
+  <% @driver.trips.each do |trip| %>
+    <%@rating += trip.rating %>
+  <% end %>
+  <% @rating /= @driver.trips.count/1.0 %>
+  <%= @rating.round(2) %>
+</section>
 
 </section>
