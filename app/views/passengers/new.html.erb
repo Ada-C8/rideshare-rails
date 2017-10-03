@@ -1,3 +1,9 @@
+<% if @passenger.errors.any? %>
+  <% @passenger.errors.each do |column, message| %>
+    <strong><%= column.capitalize %></strong> <%= message %>
+  <% end %>
+<% end %>
+
 <%= form_for @passenger do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>

@@ -10,4 +10,7 @@ class Passenger < ApplicationRecord
     end
     return sum
   end
+
+  validates :name, presence: true, format: {with: /[AZ-az]/}
+  validates :phone_num, presence: true
 end

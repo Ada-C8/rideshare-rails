@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # get '/passengers'
   # root 'main#index'
 
-  get '/', to: 'main#index'
+  get '/', to: 'main#index', as: 'root'
 
   ###### DRIVERS ######
   # # VERB    PATH    # CONTROLLERACTION   PREFIX
