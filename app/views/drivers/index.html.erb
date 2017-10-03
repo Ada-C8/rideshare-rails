@@ -1,2 +1,13 @@
-<h1>Drivers#index</h1>
-<p>Find me in app/views/drivers/index.html.erb</p>
+<%= render partial: 'layouts/nav' %>
+
+<h1>Drivers</h1>
+
+  <ol>
+    <%@drivers.each do |driver|%>
+      <li>
+        <h3> <%=link_to driver.name, passenger_path(driver.id)%> </h3>
+        <p> VIN: <%= driver.vin %> </p>
+        <p> Number of trips: insert code or delete later </p>
+      </li>
+          <%end%>
+  </ol>

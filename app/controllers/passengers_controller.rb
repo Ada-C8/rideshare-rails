@@ -1,11 +1,10 @@
 class PassengersController < ApplicationController
   def index
     @passengers = Passenger.all
-    # return @passengers
   end
 
   def show
-  @passenger = Passenger.find(params[:id])
+    @passenger = Passenger.find(params[:id])
   end
 
   def new
@@ -17,18 +16,19 @@ class PassengersController < ApplicationController
     passenger.save
     redirect_to passengers_path
   end
-end
 
-def update
-  @passenger = Passenger.find(params[:id])
-  @passenger = Passenger.update(passenger_params)
-  @passenger.save
+  def update
+    @passenger = Passenger.find(params[:id])
+    @passenger = Passenger.update(passenger_params)
+    @passenger.save
 
-  redirect_to task_path(@task)
-end
+    redirect_to passenger_path(@passenger)
+  end
 
-private
+  private
 
-def passenger_params
-  return params.require(:passenger).permit(:name, :phone_num)
+  def passenger_params
+    return params.require(:passenger).permit(:name, :phone_num)
+  end
+
 end
