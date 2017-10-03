@@ -34,6 +34,7 @@ class DriversController < ApplicationController
       name: params[:driver][:name],
       VIN: params[:driver][:VIN]
     )
+
     if result
       redirect_to driver_path(params[:id])
     else

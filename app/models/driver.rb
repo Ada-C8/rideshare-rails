@@ -18,6 +18,13 @@ class Driver < ApplicationRecord
       result += r.rating
       counter += 1
     end
-    return (result/counter)
+    if counter > 0
+      return (result/counter)
+    else
+      return "no rating"
+    end
   end
+
+
+
 end

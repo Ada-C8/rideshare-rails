@@ -8,10 +8,12 @@
     <ul>
       <% all_trips = Trip.all.order(date: :desc) %>
       <% all_trips.each do |trip| %>
-        <li>
-          <%= link_to trip.date, trip_path %>
-        </li>
-      <% end %>
+        <% if trip.driver_id == @driver.id %>
+          <li>
+            <%= link_to trip.date, trip_path %>
+          </li>
+        <% end %>
+      <% end %>  
     </ul>
   </p>
 
