@@ -10,9 +10,9 @@
 
   <body>
 
-    <header>
-      <h1>Journey</h1>
-      <nav>
+    <header class="clearfix">
+      <h1 id="brand">Journey</h1>
+      <nav class="clearfix">
         <div class="dropdown">
           <button class="dropbtn">Passengers</button>
           <div class="dropdown-content">
@@ -27,7 +27,6 @@
             <a href="#">Create New Driver</a>
           </div>
         </div>
-
       </nav>
     </header>
 
@@ -37,8 +36,7 @@
     Create a new passenger
     Create a new driver
     From any form in the site, if processing the form submission fails, the user should be politely informed of what went wrong and how they can correct it%>
-
-    <%= yield %>
+      <%= yield %>
 
     <footer>
       <header>
