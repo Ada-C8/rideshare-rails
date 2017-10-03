@@ -1,24 +1,14 @@
-<article>
-  <header>
-    <h1>All Drivers</h1>
-  </header>
-  <section>
-    <ol>
-      <li>
-        <a href="#">Driver 1</a>
-      </li>
-      <li>
-        <a href="#">Driver 2</a>
-      </li>
-      <li>
-        <a href="#">Driver 3</a>
-      </li>
-      <li>
-        <a href="#">Driver 4</a>
-      </li>
-    </ol>
-  </section>
-</article>
+
+<h2> All drivers : </h2>
+<% @drivers.each do |driver| %>
+  <div class = "driver">
+    <strong>
+      <%= link_to driver.name, driver_path(driver.id)%>
+    </strong>
+  </div>
+<% end %>
+
+
 <%#Working with Drivers
 
 On the driver list page I can click on a driver to see that driver's details
