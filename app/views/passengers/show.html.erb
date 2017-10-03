@@ -5,7 +5,7 @@
 <% total_cost = 0 %>
 <p><% @passenger.trips.each do |trip| %></p>
 
-  <%= "Trip Cost: " %><%= trip.cost %>
+  <%= "Trip Cost: $" %><% total = ((trip.cost) / 100) %><%= "%.2f"%total %>
 
   <% total_cost += trip.cost %>
   <%= "Trip Rating: " %><%= trip.rating %>
@@ -13,4 +13,5 @@
   <%= "Trip Driver: " %><%= trip.driver_id %>
 <% end %>
 
-<%= "Total Cost: $" %><%= total_cost %>
+<%= "Total Cost: $" %>
+<% final_total_cost = total_cost/100%><%= "%.2f"%final_total_cost %>
