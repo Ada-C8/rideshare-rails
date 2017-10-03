@@ -1,12 +1,3 @@
 <h1>New Passenger</h1>
 
-<%= form_for @passenger do |f| %>
-
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.label :phone_num %>
-  <%= f.text_field :phone_num %>
-
-  <%= f.submit %>
-<% end %>
+<%= render partial: "form_passenger", locals: { button_name: "Add Passenger" } %>

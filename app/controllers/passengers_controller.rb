@@ -4,6 +4,8 @@ class PassengersController < ApplicationController
   end
 
   def show
+    @passenger = Passenger.find_by(id: params[:id].to_i)
+
   end
 
   def create
@@ -23,6 +25,7 @@ class PassengersController < ApplicationController
   end
 
   def edit
+    @passenger = Passenger.find_by(id: params[:id])
   end
 
   def new

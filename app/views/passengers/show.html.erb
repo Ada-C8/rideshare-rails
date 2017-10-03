@@ -1,2 +1,12 @@
 <h1>Passengers#show</h1>
 <p>Find me in app/views/passengers/show.html.erb</p>
+
+<%=link_to(@passenger.name, edit_passenger_path(@passenger.id)) %>
+
+
+<% if @passenger %>
+  Id: <%=@passenger[:name] %>
+  Phone Number: <%= @passenger[:phone_num] %>
+<% else %>
+  < h1>404: Not Found</h1>
+<% end %>
