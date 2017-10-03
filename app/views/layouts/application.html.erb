@@ -9,6 +9,19 @@
   </head>
 
   <body>
+    <header>
+      <h1>Welcome to Rideshare Rails!</h1>
+
+      <!-- <a href="drivers/index.html.erb">view passengers</a>
+      <a href="passengers/index.html.erb">view drivers</a> -->
+
+      <%= link_to "Home", root_path %>
+      <%= link_to "View passengers", passengers_path %>
+      <%= link_to "View drivers", drivers_path %>
+
+      <%= link_to "Create new passengers", new_passenger_path %>
+      <%= link_to "Create new drivers", new_driver_path %>
+    </header>
     <%= yield %>
   </body>
 </html>
