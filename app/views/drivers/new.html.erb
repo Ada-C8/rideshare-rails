@@ -1,0 +1,13 @@
+<h2>New Driver</h2>
+
+<div>
+  <%= form_for @driver do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :vin %>
+    <%= f.text_field :vin %>
+
+    <%= f.submit %>
+  <% end %>
+</div>
