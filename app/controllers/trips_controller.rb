@@ -15,7 +15,7 @@ class TripsController < ApplicationController
     @trip = Trip.new(
     driver_id: params[:trip][:driver_id],
     passenger_id: params[:trip][:passenger_id],
-    date: params[:trip][:date].
+    date: params[:trip][:date],
     rating: params[:trip][:rating],
     cost: params[:trip][:cost]
 

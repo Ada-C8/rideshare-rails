@@ -32,7 +32,7 @@ class PassengersController < ApplicationController
     @passenger = Passenger.find(params[:id])
     result = @passenger.update(
     name: params[:passenger][:name],
-    phone_number: params[:passenger][:phone_number],
+    phone_number: params[:passenger][:phone_number]
     )
     if result
       redirect_to passenger_path(params[:id])

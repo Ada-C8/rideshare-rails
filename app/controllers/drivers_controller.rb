@@ -32,7 +32,7 @@ class DriversController < ApplicationController
     @driver = Driver.find(params[:id])
     result = @driver.update(
       name: params[:driver][:name],
-      VIN: params[:driver][:VIN],
+      VIN: params[:driver][:VIN]
     )
     if result
       redirect_to driver_path(params[:id])
