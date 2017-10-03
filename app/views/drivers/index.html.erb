@@ -1,15 +1,9 @@
 <h2>Index Drivers!!!</h2>
 
-<% button_text ||= "The button" %>
-<% form_class ||= "" %>
-
-<%= form_for @driver do |f| %>
-  <%= f.label :name %>
-<%= f.text_field :name %>
-
-<%= f.label :vin %>
-<%= f.text_field :vin %>
-
-<%= f.submit %>
-
-<% end %>
+<ol>
+  <% @drivers.each do |driver| %>
+    <div class="driver">
+        <strong><li><%= driver.name %></li></strong>
+    </div>
+  <% end %>
+</ol>
