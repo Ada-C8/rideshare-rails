@@ -12,7 +12,7 @@
   <ol>
   <% trips.each do |trip| %>
   <li>
-    Trip ID: <%=trip.id %>
+    Trip ID: <%=link_to trip.id, trip_path(trip.id) %>
   </li>
 
   <%end%>
