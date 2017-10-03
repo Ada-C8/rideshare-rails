@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  
-  get 'passengers', to: 'passengers#index', as: 'passengers'
+  resources :drivers
+  # get 'drivers', to: 'drivers#index', as: 'drivers'
+  # get 'drivers/:id', to: 'drivers#show', as: 'driver'
 
-  get 'drivers', to: 'drivers#index', as: 'drivers'
+  resources :passengers
+  # get 'passengers', to: 'passengers#index', as: 'passengers'
+  # get 'passengers/:id', to: 'passengers#show', as: 'passenger'
 
-  get 'passengers/:id', to: 'passengers#show', as: 'passenger'
-
-  get 'drivers/:id', to: 'drivers#show', as: 'driver'
 
   get 'trips', to: 'trips#index', as: 'trips'
 
