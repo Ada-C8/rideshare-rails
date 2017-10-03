@@ -1,0 +1,10 @@
+<div class="requested">
+  <h1> <%=@driver.name%> </h1>
+  <!-- <p><strong>Total Earnings: </strong><%= @driver.?%></p>
+  <p><strong>Average Rating: </strong><%= @task.?%></p>
+  <p><%= link_to "List of trips" ????? %></p> -->
+
+  <p><%= link_to "Edit", edit_driver_path(@driver.id) %></p>
+  <p><%= link_to "Delete", driver_path(@driver), method: :delete , data: {confirm: "Are you sure?" }  %></p>
+
+</div>
