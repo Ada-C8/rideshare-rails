@@ -3,3 +3,6 @@
 <div>
   <%= render partial: "form", locals: {action_name: "Edit details"} %>
 </div>
+<div>
+  <%= render partial: "/layouts/error_messages", locals: {model: @driver} %>
+</div>

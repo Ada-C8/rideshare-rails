@@ -1,0 +1,16 @@
+<% if model.errors.messages.values.any? {|message| message.length > 0} %>
+  <% puts "weird error?" %>
+  <% puts model.errors.messages %>
+    <section class="error-messages">
+      <h3>Errors!</h3>
+        <ul>
+          <% model.errors.messages.each do |field, messages| %>
+            <% messages.each do |message| %>
+            <li>
+              <strong><%= message %></strong>
+            </li>
+            <% end %>
+          <% end %>
+        </ul>
+    </section>
+<% end %>
