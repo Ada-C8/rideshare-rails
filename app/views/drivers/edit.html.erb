@@ -1,12 +1,2 @@
 <h1>This is the driver edit page</h1>
-<p>
-  <%= form_for @driver do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-  <br />
-  <%= form.label :vin %>
-  <%= form.text_field :vin %>
-  <br />
-  <%= form.submit "Update driver information"%>
-  <% end %>
-</p>
+<%= render partial: 'form', locals:  {button_text: "Update Driver!"} %>

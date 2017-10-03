@@ -1,4 +1,7 @@
-<%= button_text ||= "The button"%>
+
+
+<%= render partial: 'layouts/error_messages', locals: {model: @passenger} %>
+
 
 <%= form_for @passenger do |f| %>
   <%= f.label :name %>

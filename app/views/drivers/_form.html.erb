@@ -1,19 +1,7 @@
-<% if @driver.errors.messages.length > 0 %>
-<section class= "error-messages">
-  <h3>Errors Happened!</h3>
-  <ul>
-    <% @driver.errors.messages.each do |field, problems| %>
-      <% problems.each do |problem| %>
-      <li> <%= field %>
-      <%= problem %>
-    </li>
-    <% end %>
-  <%end%>
-  </ul>
-</section>
-<%=end%>
 
-<%#= render partial: './layouts/error_messages', locals {model: @passengers} %>
+
+<%= render partial: 'layouts/error_messages', locals: {model: @driver} %>
+
 <div>
   <%= form_for @driver do |form| %>
   <%= form.label :name %>
@@ -22,6 +10,6 @@
   <%= form.label :vin %>
   <%= form.text_field :vin %>
   <br />
-  <%= form.submit "update driver information"%>
+  <%= form.submit button_text%>
 <% end %>
 </div>

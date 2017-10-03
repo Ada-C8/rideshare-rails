@@ -1,13 +1,3 @@
 <h1>This is the new driver page</h1>
 
-<p>
-  <%= form_for @driver do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-  <br />
-  <%= form.label :vin %>
-  <%= form.text_field :vin %>
-  <br />
-  <%= form.submit "create new driver"%>
-  <% end %>
-</p>
+<%= render partial: 'form', locals:  {button_text: "Add Driver!"} %>

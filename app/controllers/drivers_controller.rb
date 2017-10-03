@@ -17,15 +17,20 @@ class DriversController < ApplicationController
     end
 
     def create
-     driver = Driver.new(driver_params)
-     driver.save
-     redirect_to drivers_path
+     @driver = Driver.new(driver_params)
+     @driver.save
+     if @driver.save
+       redirect_to drivers_path
+     else
+       render :new
+     end
     end
 
     def update
     @driver = Driver.find(params[:id])
     @driver.update_attributes(driver_params)
     @driver.save
+
     redirect_to drivers_path
     end
 
