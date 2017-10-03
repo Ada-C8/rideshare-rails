@@ -2,13 +2,5 @@
 
 
 <div>
-  <p>
-    <%= form_for @trip do |form| %>
-    <%= form.label :Passenger %>
-    <%= form.text_field :passenger_id %>
-    <br />
-    <br />
-    <%= form.submit "create new trip"%>
-    <% end %>
-  </p>
+  passenger id: <%= @trip.passenger_id%>
 </div>

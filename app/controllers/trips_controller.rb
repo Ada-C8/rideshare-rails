@@ -13,8 +13,9 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
   end
 
-  def new
+  def new(passenger)
     @trip = Trip.new
+    create(passenger)
   end
 
   def edit
@@ -22,8 +23,8 @@ class TripsController < ApplicationController
   end
 
   def create
-    strong_params = trip_params
-    trip = Trip.new(strong_params)
+    # strong_params = trip_params
+    trip = Trip.new(passenger.id)
     trip.save
     redirect_to trips_path
   end
