@@ -13,7 +13,7 @@ def new
 end
 
 def create
-  @passenger = Page.new(params[:name, :phone_num])
+  @passenger = Passenger.new(name: params[:passenger][:name], phone_num: params[:passenger][:phone_num])
   @passenger.save
   redirect_to @passenger
 end
@@ -23,15 +23,15 @@ def edit
 end
 
 def update
-  @passenger = Page.find(params[:id])
-  @passenger.update(params[:name, :phone_num])
+  @passenger = Passenger.find(params[:id])
+  @passenger.update(name: params[:passenger][:name], phone_num: params[:passenger][:phone_num])
   redirect_to @passenger
 end
 
 def destroy
   @passenger = Passenger.find(params[:id])
   @passenger.destroy
-  redirect_to pages_path
+  redirect_to @passenger
 end
 
 
