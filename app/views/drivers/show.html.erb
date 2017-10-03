@@ -1,1 +1,8 @@
 <h1>Driver show!</h1>
+<p>
+  Name:<%= @driver[:name] %> <br />
+  Vin:<%= @driver[:vin] %> <br />
+  Id:<%= @driver[:id] %> <br />
+  Total: <%= @driver.total_earnings %> <br />
+  Average Rating: <%= @driver.average_rating %>
+</p>
