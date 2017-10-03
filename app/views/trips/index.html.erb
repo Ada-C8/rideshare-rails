@@ -1,1 +1,7 @@
-<h1>you're in index trips</h1>
+<h1>All Trips!</h1>
+
+<% @trips.each do |trip| %>
+<div class="trip">
+  <strong> driver id: <%= trip.driver_id %></strong> | passenger id: <%=trip.passenger_id %> | trip date: <%=trip.date %> <%=trip.rating %> | cost: <%=trip.cost %>
+</div>
+<% end %>

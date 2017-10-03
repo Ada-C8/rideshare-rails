@@ -7,5 +7,5 @@ Rails.application.routes.draw do
 
   get "/passengers/:id", to: "passengers#show", as: "passenger"
   get "/drivers/:id", to: "drivers#show", as: "driver"
-
+  get "/trips/:id", to: "trips#show", as: "trip"
 end
