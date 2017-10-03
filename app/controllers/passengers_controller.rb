@@ -9,9 +9,13 @@ class PassengersController < ApplicationController
   end
 
   def create
-    passenger = Passenger.new(passenger_params)
-    passenger.save
-    redirect_to('/passengers')
+    @passenger = Passenger.new(passenger_params)
+
+    if @passenger.save
+      redirect_to '/passengers'
+    else
+      render :new
+    end
   end
 
   def show
@@ -25,6 +29,9 @@ class PassengersController < ApplicationController
   def update
     @passenger = Passenger.find (params[:id])
     @passenger.update_attributes(passenger_params)
+    @passenger.save
+
+    redirect_to passenger_path(@passenger)
   end
 
   def destroy

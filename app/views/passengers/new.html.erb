@@ -1,7 +1,5 @@
 <h2>We have a new passenger!!!</h2>
 
-
-
 <%= form_for @passenger do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -10,4 +8,5 @@
   <%= f.text_field :phone_num %>
 
   <%= f.submit "Create new passenger!" %>
+
 <% end %>

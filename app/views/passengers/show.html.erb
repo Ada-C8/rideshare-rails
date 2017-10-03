@@ -4,6 +4,9 @@
 
 <%= "Phone number: #{@passenger.phone_num}" %>
 
+<%=button_to "Edit", edit_passenger_path(@passenger.id), method: :get%>
+<%=button_to "Delete", passenger_path(@passenger), method: :delete, data: {confirm: "Are you sure you want to delete this passenger?"} %>
+
 <!-- I want to create logic that will show all the rides this passenger has taken -->
 <!-- number of trips -->
 
