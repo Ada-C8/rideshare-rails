@@ -1,4 +1,8 @@
 class TripsController < ApplicationController
+  def show
+    @trip = Trip.find(params[:id])
+  end
+  
   def create
   end
 
@@ -6,10 +10,6 @@ class TripsController < ApplicationController
   end
 
   def edit
-  end
-
-  def show
-    @trip = Trip.find(params[:id])
   end
 
   def update
