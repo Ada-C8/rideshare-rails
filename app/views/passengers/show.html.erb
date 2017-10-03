@@ -1,7 +1,10 @@
 <h2>
-<%= "#{@passenger.id}: #{@passenger.name}" %>
+<%= "Passenger #{@passenger.id}: #{@passenger.name}" %>
 </h2>
 
-<%= link_to "Edit", edit_passenger_path %>
-<%= link_to "Delete", destroy_passenger_path %>
-<%= link_to "Return to list of Passengers", passengers_path %>
+<%= "Phone number: #{@passenger.phone_num}" %>
+
+<!-- I want to create logic that will show all the rides this passenger has taken -->
+<!-- number of trips -->
+
+<%= "Rides passenger has been on #{@passenger.trips}" %>
