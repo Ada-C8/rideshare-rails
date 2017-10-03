@@ -4,9 +4,10 @@
 <ul>
   <% all_trips = Trip.all.order(date: :desc) %>
   <% all_trips.each do |trip| %>
-  <li>
-    <%= link_to trip.date, trip_path %>
-  </li>
+    <% if trip.passenger_id == @passenger.id %>
+      <li>
+          <%= link_to trip.date, trip_path %>
+      </li>
+    <% end %>
   <% end %>
-
 </ul>

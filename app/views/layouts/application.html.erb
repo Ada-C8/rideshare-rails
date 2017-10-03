@@ -16,15 +16,15 @@
         <div class="dropdown">
           <button class="dropbtn">Passengers</button>
           <div class="dropdown-content">
-            <a href="#">All Passengers</a>
-            <a href="#">Create New Passenger</a>
+            <%= link_to "All Passengers", passengers_path %>
+            <%= link_to "Create New Passenger", new_passenger_path %>
           </div>
         </div>
         <div class="dropdown">
           <button class="dropbtn">Drivers</button>
           <div class="dropdown-content">
-            <a href="#">All Drivers</a>
-            <a href="#">Create New Driver</a>
+            <%= link_to "All Drivers", drivers_path %>
+            <%= link_to "Create New Driver", new_driver_path %>
           </div>
         </div>
       </nav>
