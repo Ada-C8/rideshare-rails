@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~App~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   root to: 'rideshare#index'
   get '/rideshare/index', to: 'rideshare#index', as: 'rideshares'
@@ -31,4 +32,6 @@ Rails.application.routes.draw do
   #
   # get 'driver/destroy'
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~Trips~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  get 'trip/:id', to: 'trip#show', as: 'trip'
+  get 'trip/:id', to: 'trip#edit', as: 'edit_trip'
 end
