@@ -16,6 +16,14 @@ class DriversController < ApplicationController
   end
 
   def update
+    @driver = Driver.find_by(id: params[:id])
+    redirect_to driver_path unless @driver
+
+    if @driver.update_attributes(driver_params)
+      redirect_to driver_path(@driver.id)
+    else
+      render :edit
+    end
   end
 
   def new
