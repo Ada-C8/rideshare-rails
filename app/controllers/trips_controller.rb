@@ -17,9 +17,9 @@ class TripsController < ApplicationController
   end
 
   def create
-    @trip = Trip.new(name: params[:trip][:name], phone_number: params[:passenger][:phone_number])
+    @trip = Trip.new(date: params[:trip][:date], passenger_id: params[:trip][:passenger_id], cost: params[:trip][:cost], rating: nil)
     if @trip.save
-      redirect_to passenger_index_path
+      redirect_to passenger_path(@trip.passenger_id)
     else
       render :new
     end

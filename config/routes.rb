@@ -25,7 +25,7 @@ delete "drivers/:id", to: "drivers#destroy"
 
 get "/passengers", to: "passengers#index", as: "passengers"
 get "passengers/:id/edit", to: "passengers#edit", as: "edit_passenger"
-get "passenger/new", to: "passenger#new", as: "new_passenger"
+get "passengers/new", to: "passengers#new", as: "new_passenger"
 get "passengers/:id", to: "passengers#show", as: "passenger"
 patch "passengers/:id", to: "passengers#update"
 post "passengers", to: "passengers#create"
