@@ -18,13 +18,13 @@ Rails.application.routes.draw do
 
   get '/passengers/new', to: "passengers#new", as: 'new_passenger'
 
+  get '/passengers/:id/edit', to: 'passengers#edit'
+
+  get '/passengers/:id', to: "passengers#show", as: 'passenger'
+
+  patch 'passengers/:id', to: 'passengers#update'
+
   post 'passengers', to: "passengers#create"
-
-  get 'passengers/:id', to: "passengers#show", as: 'passenger'
-
-  get 'passengers/edit'
-
-  get 'passengers/update'
 
   get 'passengers/destroy'
 
@@ -33,13 +33,13 @@ Rails.application.routes.draw do
 
   get '/drivers/new', to: "drivers#new", as: 'new_driver'
 
-  post '/drivers', to: "drivers#create"
+  get '/drivers/:id/edit', to: 'drivers#edit'
 
   get 'drivers/:id', to: "drivers#show", as: 'driver'
 
-  get 'drivers/edit'
+  patch 'drivers/:id', to: 'drivers#update'
 
-  get 'drivers/update'
+  post '/drivers', to: "drivers#create"
 
   get 'drivers/destroy'
 
