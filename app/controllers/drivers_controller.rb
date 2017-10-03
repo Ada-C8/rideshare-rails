@@ -58,7 +58,7 @@ class DriversController < ApplicationController
   end
 
   def rating(trips)
-    return trips.sum {|trip| trip.rating} / trips.length.to_f
+    return (trips.sum {|trip| trip.rating} / trips.length.to_f).round(2)
   end
 
   def total(trips)

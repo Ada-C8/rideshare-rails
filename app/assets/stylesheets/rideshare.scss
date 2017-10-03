@@ -1,3 +1,53 @@
 // Place all the styles related to the Rideshare controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//General
+body {
+  background: #E8E8E8;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+//Nav
+
+
+//Main
+main {
+  width: 75%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 20px;
+  background: white;
+}
+
+//Tables
+table {
+  width: 100%;
+}
+
+table {
+  border: 1px solid #E8E8E8;
+}
+
+th, td {
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background: #fafafa;
+}
+
+//Footer
+footer {
+  margin-top: 20px;
+  text-align: center;
+}

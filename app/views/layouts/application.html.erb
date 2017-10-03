@@ -9,6 +9,37 @@
   </head>
 
   <body>
+    <header>
+      <h2><%= link_to "Tandemshare", root_path %></h2>
+    </header>
+
+    <nav>
+      <ul>
+        <li>
+          <%= link_to "Drivers", drivers_path %>
+          <ul>
+            <li>
+              <%= link_to "Add Driver", new_driver_path %>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <%= link_to "Passengers", passengers_path %>
+        </li>
+        <ul>
+          <li>
+            <%= link_to "Add Passenger", new_passenger_path %>
+          </li>
+        </ul>
+      </ul>
+    </nav>
+
+    <main>
     <%= yield %>
+    </main>
+
+    <footer>
+      Ⓒ 2017 Victoria & Laura
+    </footer>
   </body>
 </html>
