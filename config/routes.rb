@@ -27,14 +27,13 @@ Rails.application.routes.draw do
 
   get '/passengers/:id', to: "passengers#show", as: 'passenger'
 
+  get '/passengers/destroy/:id', to: "passengers#destroy", as: "delete_passenger"
 
 
-  #
-  # get '/passengers/destroy'
 
   get '/drivers', to: 'drivers#index'
 
-  get '/drivers/:id/edit', to: "drivers#edit"
+  get '/drivers/:id/edit', to: "drivers#edit", as: "edit_driver"
 
   patch '/drivers/:id', to: "drivers#update"
 
@@ -44,7 +43,9 @@ Rails.application.routes.draw do
 
   get '/drivers/:id', to: 'drivers#show', as: 'driver'
 
-  # get '/drivers/destroy'
+  get '/drivers/destroy/:id', to:"drivers#destroy", as: "delete_driver"
+
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
