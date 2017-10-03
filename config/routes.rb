@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-# resources :trips
-# resources :drivers
-# resources :passengers
+
+  root to: "home#index"
+  get 'home/index', to: 'home#index', as: 'home' #home#path
+
+
 
   get '/trips/', to: 'trips#index', as: 'trips' #trips_path
 

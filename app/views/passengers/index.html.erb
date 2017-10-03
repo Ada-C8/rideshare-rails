@@ -1,13 +1,13 @@
 <h1>Passengers#index</h1>
 <p>Find me in app/views/passengers/index.html.erb</p>
 
+<%=link_to("Drivers", drivers_path, alt: "All Drivers") %>
+<%= button_to 'Drivers', drivers_path, method: :get %>
+
 
 <%=link_to("New Passenger", new_passenger_path, alt: "Add Passenger form") %>
 
 <%= link_to("New Driver", new_driver_path, alt: "add driver form") %>
-
-<%=link_to("Drivers", drivers_path, alt: "All Drivers") %>
-
 
 
 <ul>
