@@ -30,8 +30,12 @@ class DriversController < ApplicationController
   def update
     @driver = Driver.find(params[:id])
     @driver.update_attributes(driver_params)
-    @driver.save
-    redirect_to driver_path(@driver)
+
+    if @driver.save
+      redirect_to(driver_path(@driver))
+    else
+      render :new
+    end
   end
 
   def destroy

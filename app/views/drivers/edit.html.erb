@@ -1,14 +1,14 @@
 <h2> Edit Driver </h2>
 
+<%= render partial: 'layouts/error_messages', locals: { model: @driver } %>
+
 <%= form_for  @driver do |f| %>
 
   <%= f.label :name %>
   <%= f.text_field :name %>
-  <br />
 
   <%= f.label :vin %>
   <%= f.text_field :vin %>
-  <br />
 
   <%= f.submit %>
 <% end %>
