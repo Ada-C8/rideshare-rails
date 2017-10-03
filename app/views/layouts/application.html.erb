@@ -9,6 +9,44 @@
   </head>
 
   <body>
+    <header>
+      <h1 class="nav-bar">
+        <div class="logo">
+          <%= link_to root_path do %>
+            <img src="http://placehold.it/200x50" alt="rideshare logo">
+          <% end %>
+        </div>
+        <div class="nav-menu">
+          <ul>
+            <li class="driver-dropdown">
+              <a href="javascript:void(0)" class="drop-title">Drivers <i class="fa fa-caret-down"></i></a>
+                <div class="driver-content">
+                  <%= link_to drivers_path do %>
+                    <i class="fa fa-list-alt"></i> List All
+                  <% end %>
+                  <%= link_to new_driver_path do %>
+                    <i class="fa fa-plus-circle"></i> Add New
+                  <% end %>
+                </div>
+            </li>
+            <li class="passenger-dropdown">
+              <a href="javascript:void(0)" class="drop-title">Passengers <i class="fa fa-caret-down"></i></a>
+                <div class="passenger-content">
+                  <%= link_to passengers_path do %>
+                    <i class="fa fa-list-alt"></i> List All
+                  <% end %>
+                  <%= link_to new_passenger_path do %>
+                    <i class="fa fa-plus-circle"></i> Add New
+                  <% end %>
+                </div>
+            </li>
+          </ul>
+        </div>
+      </h1>
+    </header>
     <%= yield %>
+    <footer>
+      <p>Copyright &copy; 2017</p>
+    </footer>
   </body>
 </html>
