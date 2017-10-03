@@ -6,11 +6,12 @@ class DriversController < ApplicationController
 
   def show
     @driver = Driver.find_by(id: params[:id].to_i)
+    @trips = @driver.trips
   end
 
   def edit
     @driver = Driver.find_by(id: params[:id].to_i)
-    redirect_to drivers_path unless @driver 
+    redirect_to drivers_path unless @driver
   end
 
   def new

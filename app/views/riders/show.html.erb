@@ -9,5 +9,10 @@
   <% end %>
 </section>
 
+<section>
+  <h3>Rider's Trips</h3>
+  <%= render partial: '/partial_views/trips_list'%>
+</section>
+
 <%= link_to "Edit", edit_rider_path(@rider.id)%>
 <%= link_to "Delete", delete_rider_path(@rider.id), method: :delete, data: {confirm: "Are you sure?"}%>

@@ -6,11 +6,13 @@ class RidersController < ApplicationController
 
   def show
     @rider = Rider.find_by(id: params[:id].to_i)
+
+    @trips = @rider.trips
   end
 
   def edit
     @rider = Rider.find_by(id: params[:id].to_i)
-    redirect_to riders_path unless @rider 
+    redirect_to riders_path unless @rider
   end
 
   def new
