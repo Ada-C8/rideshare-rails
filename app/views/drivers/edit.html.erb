@@ -1,1 +1,5 @@
 <h1>Edit driver data</h1>
+
+<%= render partial: 'layouts/errors', locals: { model: @driver } %>
+
+<%= render partial: "form", locals: { hide_placeholder_text: true, form_class: "blue", button_text: "Update Driver!" }%>
