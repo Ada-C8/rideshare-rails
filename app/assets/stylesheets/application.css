@@ -29,6 +29,7 @@ header {
   color: white;
   height: 5rem;
   left: 0;
+  min-width: 48rem;
   position: fixed;
   top: 0;
   width: 100%;
@@ -39,19 +40,19 @@ header nav {
   float: right;
   margin: 0;
   padding: 0;
-  width: 40%;
+  width: 60%;
 }
 
 header nav ul {
   float: right;
   list-style: none;
-  min-width: 16rem;
+  min-width: 30.5rem;
   padding: 0;
 }
 
 header nav li {
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: 1rem 2rem 1rem 0;
 }
 
 main {
