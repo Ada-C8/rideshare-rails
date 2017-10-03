@@ -9,6 +9,10 @@ class PassengersController < ApplicationController
   end
 
   def edit
+    @passenger = Passenger.find_by(id: params[:id].to_i)
+    unless @passenger
+      redirect_to passenger_path
+    end
   end
 
   def update
