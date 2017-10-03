@@ -1,13 +1,17 @@
 <h1>You're in Driver Index</h1>
 
 <p>
-  <% @drivers.each do |driver| %>
+   <%= link_to 'Make New Driver', new_driver_path %>
+</p>
+
+
+<p>
+  <% @driver.each do |drive| %>
     <li>
-      Driver Name: <% driver[:name] %>
+      Driver Name: <%= drive[:name] %>
     </li>
 
-    <li>
-      Driver VIN: <% driver[:vin] %>
-    </li>
+      <%= link_to 'Show',  driver_path(drive)%>
+
   <%end%>
 </p>

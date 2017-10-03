@@ -1,13 +1,16 @@
 <h1>You're in Passenger Index</h1>
 
 <p>
-  <% @passengers.each do |passenger| %>
+   <%= link_to 'Make New Passenger', new_passengers_path %>
+</p>
+
+
+<p>
+  <% @passenger.each do |passengers| %>
     <li>
-      Passenger: <% passenger[:name] %>
+      Passenger: <%= passengers[:name] %>
     </li>
 
-    <li>
-      Passenger Phone Number: <% passenger[:phone_num] %>
-    </li>
+    <%= link_to 'Show',  passenger_path(passengers)%>
   <%end%>
 </p>

@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get "/drivers/new", to: "drivers#new", as: "new_drivers"
+  get "/drivers/new", to: "drivers#new", as: "new_driver"
 
   post "/drivers", to: "drivers#create", as: 'drivers'
 
-  get "/drivers", to: "drivers#index", as: 'driver_index'
+  get "/drivers", to: "drivers#index", as: 'index'
 
   get "/drivers/:id", to: "drivers#show", as: "driver"
 

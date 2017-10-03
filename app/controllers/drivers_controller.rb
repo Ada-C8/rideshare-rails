@@ -1,4 +1,9 @@
 class DriversController < ApplicationController
+
+  def index
+    @driver = Driver.all
+  end
+
   def new
     @driver = Driver.new
   end
@@ -22,7 +27,4 @@ class DriversController < ApplicationController
     @driver = Driver.find(params[:id])
   end
 
-  def index
-    @driver = Driver.all
-  end
 end
