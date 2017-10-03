@@ -1,7 +1,7 @@
 <h1> List of All Drivers </h1>
 
 <section>
-<% @drivers.each do |driver| %>
-<p> <%= #{driver.name}, ID: #{driver.id} %></p>
-<% end %>
+  <% @drivers.each do |driver| %>
+    <p> <%= "#{driver.name}, ID: #{driver.id}" %></p>
+  <% end %>
 </section>
