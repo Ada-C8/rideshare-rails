@@ -8,7 +8,15 @@ class DriversController < ApplicationController
   end
 
   def create
-
+    @driver = Driver.new(
+      name: params[:driver][:name],
+      vin: params[:driver][:vin]
+    )
+    if @driver.save
+      redirect_to drivers_path
+    else
+      render :new
+    end
   end
 
   def edit
