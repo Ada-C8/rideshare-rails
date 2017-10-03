@@ -3,3 +3,18 @@
 <p>
   <strong><%= @driver.name %></strong>'s VIN # is: <%= @driver.vin %>
 </p>
+
+<% average_rating = 0 %>
+<% counter = 0 %>
+<p><% @driver.trips.each do |trip| %></p>
+
+  <%= "Trip Earning: $" %><%= trip.cost - (trip.cost * 0.15) %>
+
+  <%= "Trip Rating: " %><%= trip.rating %>
+  <% average_rating += trip.rating %>
+  <% counter += 1 %>
+  <%= "Trip Date: " %><%= trip.date %>
+  <%= "Trip Passenger: " %><%= trip.passenger_id %>
+<% end %>
+<br>
+<%= "Average Rating: " %><%= average_rating/counter %>

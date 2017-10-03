@@ -1,12 +1,27 @@
 <h1> Add a passenger: </h1>
 
+<% if @passenger.errors.messages.length > 0 %>
+<section class="error-messages" >
+  <h3>Error!</h3>
+  <ul>
+    <% @passenger.errors.messages.each do |field, problems| %>
+    <% problems.each do |problem| %>
+    <li>
+      <%= field %> : <%= problem %>
+    </li>
+    <% end %>
+    <% end %>
+  </ul>
+</section>
+<% end  %>
+
 
 <%= form_for @passenger do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<%= f.label :name %>
+<%= f.text_field :name %>
 <br>
-  <%= f.label :phone_num %>
-  <%= f.text_field :phone_num %>
+<%= f.label :phone_num %>
+<%= f.text_field :phone_num %>
 <br>
-  <%= f.submit %>
+<%= f.submit %>
 <% end %>
