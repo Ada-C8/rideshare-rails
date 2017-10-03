@@ -1,49 +1,11 @@
 Rails.application.routes.draw do
-  get 'trips/index'
 
-  get 'trips/show'
+  root to: 'welcome#index'
 
-  get 'trips/edit'
-
-  get 'trips/update'
-
-  get 'trips/new'
-
-  get 'trips/create'
-
-  get 'trips/destroy'
-  
-
-
-  get 'drivers/index'
-
-  get 'drivers/show'
-
-  get 'drivers/edit'
-
-  get 'drivers/update'
-
-  get 'drivers/new'
-
-  get 'drivers/create'
-
-  get 'drivers/destroy'
-
-
-
-  get 'passengers/index'
-
-  get 'passengers/show'
-
-  get 'passengers/edit'
-
-  get 'passengers/update'
-
-  get 'passengers/new'
-
-  get 'passengers/create'
-
-  get 'passengers/destroy'
+  resources :trips
+  resources :drivers
+  resources :passengers
+  resources :welcome, only: [:index]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
