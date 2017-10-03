@@ -9,16 +9,26 @@
   Phone Number: <%= @passenger.phone_number %>
 </p>
 
-<p>
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Trip ID</th>
+    <th>Driver ID</th>
+    <th>Passenger ID</th>
+    <th>Rating</th>
+    <th>Cost</th>
+</tr>
   All trips taken by <%= @passenger.name %>:
   <% trips = Trip.where(passenger: @passenger.id) %>
   <% trips.each do |trip| %>
+  <tr>
+  <td><%=trip.date%></td>
+  <td><%=trip.id%></td>
+  <td><%=trip.driver_id%></td>
+  <td><%=trip.passenger_id%></td>
+  <td><%=trip.rating%></td>
+  <td>$<%='%.02f' % (trip.cost / 100)%></td>
+</tr>
 
-  Date: <%= trip.date %>
-  Trip ID: <%= trip.id %>
-  Driver ID: <%= trip.driver_id %>
-  Passenger ID <%= trip.passenger_id %>
-  Rating: <%= trip.rating %>
-  Cost: $<%= '%.02f' % (trip.cost / 100) %>
-    <% end %>
-</p>
+<% end %>
+</table>
