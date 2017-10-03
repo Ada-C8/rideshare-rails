@@ -1,4 +1,4 @@
 class Driver < ApplicationRecord
-  validates :name, presence: true
-  validates :vin, presence: true
+  validates :name, presence: { message: "Please enter a name" }
+  validates :vin, presence:  {message: "Please enter a VIN" }
 end
