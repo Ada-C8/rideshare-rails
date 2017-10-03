@@ -1,5 +1,7 @@
 <h1>Passenger ID: <%= @passenger.id %></h1>
 <h2>Passenger Name: <%= @passenger.name %></h2>
+<h5><%= link_to "Edit", edit_passenger_path(@passenger.id)%></h5>
+<h5><%= link_to "Delete", passenger_path(@passenger.id), method: :delete %></h5>
 
 <section>
   <table>
