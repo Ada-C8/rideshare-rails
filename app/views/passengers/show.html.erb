@@ -2,3 +2,15 @@
 <p>
   <strong><%= @passenger.name %></strong>'s phone number is: <%= @passenger.phone_num %>
 </p>
+<% total_cost = 0 %>
+<p><% @passenger.trips.each do |trip| %></p>
+
+  <%= "Trip Cost: " %><%= trip.cost %>
+
+  <% total_cost += trip.cost %>
+  <%= "Trip Rating: " %><%= trip.rating %>
+  <%= "Trip Date: " %><%= trip.date %>
+  <%= "Trip Driver: " %><%= trip.driver_id %>
+<% end %>
+
+<%= "Total Cost: $" %><%= total_cost %>
