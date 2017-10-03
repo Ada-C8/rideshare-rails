@@ -1,0 +1,10 @@
+<h1>driver#edit</h1>
+<h2>Params are <%= params %></h2>
+
+<%= form_for @driver do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :vin %>
+<%= f.text_field :vin %>
+<%= f.submit %>
+<% end %>

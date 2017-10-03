@@ -21,6 +21,21 @@ def create
   end
 end
 
+def edit
+  @driver = Driver.find_by(id: params[:id].to_i)
+end
+
+def update
+  @driver = Driver.find_by(id: params[:id].to_i)
+  redirect_to drivers_path unless @driver
+
+  if @driver.update_attributes drivers_params
+    redirect_to drivers_path
+  else
+    render :edit
+  end
+end
+
 def destroy
   Driver.find_by(id: params[:id]).destroy
   redirect_to drivers_path
@@ -28,6 +43,6 @@ end
 private
 
 def drivers_params
-
+  return params.require(:driver).permit(:name, :vin)
 end
 end
