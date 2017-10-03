@@ -11,18 +11,38 @@ class DriversController < ApplicationController
 
 
   def create
-    @driver = Driver.new(name: params[:driver][:name], vin: params[:driver][:vin])
+    # strong_params = driver_params
+    # prevents handrolling http requests from messing up your data
+
+    # @driver = Driver.new(strong_params)
+    @driver = Driver.new(driver_params)
 
     if @driver.save
-      redirect_to @driver
+      redirect_to('/drivers')
     else
-      render 'new'
+      render :new
     end
 
   end
 
   def show
     @driver = Driver.find(params[:id])
+  end
+
+  def edit
+    @driver = Driver.find(params[:id])
+  end
+
+  def update
+    @driver = Driver.find(params[:id])
+    @driver.update_attributes(driver_params)
+    @driver.save
+    redirect_to driver_path(@driver)
+  end
+
+private
+  def driver_params
+    return params.require(:driver).permit(:name, :vin)
   end
 
 end
