@@ -1,20 +1,3 @@
 <h1> Add a trip: </h1>
 
-<%= form_for @trip do |f| %>
-<%= f.label :driver_id, "Driver's ID:" %>
-<%= f.text_field :driver_id %>
-<br>
-<%= f.label :passenger_id, "Passenger's ID:" %>
-<%= f.text_field :passenger_id %>
-<br>
-<%= f.label :date %>
-<%= f.date_field :date %>
-<br>
-<!-- <%= f.label :cost, "Cost:" %>
-<%= f.text_field :cost %> -->
-<!-- <br> -->
-<!-- <%= f.label :rating, "Rating:" %>
-<%= f.text_field :rating %> -->
-<!-- <sbr> -->
-<%= f.submit %>
-<% end %>
+<%= link_to "New Trip", trips_path(@trip), method: :post %>
