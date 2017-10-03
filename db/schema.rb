@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171003000540) do
+ActiveRecord::Schema.define(version: 20171003202016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "drivers", force: :cascade do |t|
     t.string "name"
-    t.string "vim"
+    t.string "vin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 20171003000540) do
     t.datetime "updated_at", null: false
     t.bigint "passenger_id"
     t.bigint "driver_id"
+    t.integer "rating"
+    t.decimal "cost"
     t.index ["driver_id"], name: "index_trips_on_driver_id"
     t.index ["passenger_id"], name: "index_trips_on_passenger_id"
   end
