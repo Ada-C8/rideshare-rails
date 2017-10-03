@@ -25,6 +25,10 @@ class DriversController < ApplicationController
     redirect_to driver_path(@driver)
   end
 
+  def show
+    @driver = Driver.find(params[:id])
+  end
+
   private
   def driver_params
     return params.require(:driver).permit(:name, :vin)
