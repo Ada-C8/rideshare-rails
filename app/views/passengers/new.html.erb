@@ -1,0 +1,13 @@
+<h1>New Passenger </h1>
+
+<%= form_for  @passenger do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br />
+
+  <%= f.label :phone_num %>
+  <%= f.text_field :phone_num %>
+  <br />
+
+  <%= f.submit %>
+<% end %>
