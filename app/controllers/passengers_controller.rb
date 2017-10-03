@@ -13,11 +13,9 @@ class PassengersController < ApplicationController
   end
 
   def create
-    @passenger = Passenger.new(
-    name: params[:passenger][:name],
-    phone_num: params[:passenger][:phone_num]
-
-    )
+    @passenger = Passenger.new(passenger_params)
+    # name: params[:passenger][:name],
+    # phone_num: params[:passenger][:phone_num]
     if @passenger.save
       redirect_to passengers_path
     else
@@ -51,4 +49,10 @@ class PassengersController < ApplicationController
   #     redirect_to passenger_path(params[:id])
   #   end
   # end
+
+  private
+
+  def passenger_params
+    params.require(:passenger).permit(:name, :phone_num)
+  end
 end
