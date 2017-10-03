@@ -1,0 +1,32 @@
+<%# @trips.each do |trip| %>
+<h1>Trip Details</h1>
+<ul>
+<li>
+  <strong>Driver Name:</strong> <%= @trip.driver.name %>
+</li>
+<li>
+  <strong>Driver Vin:</strong> <%= @trip.driver.vin %>
+</li>
+<li>
+  <strong>Passenger Name:</strong> <%= @trip.passenger.name %>
+</li>
+<li>
+<strong>Passenger Phone Number: </strong><%= @trip.passenger.phone_num %>
+</li>
+<li>
+  TODO: Assign Rating, if it does not already have one
+</li>
+<li>
+  <strong> Trip Rating:</strong> <%=@trip.rating %>
+</li>
+<li>
+  <strong> Trip Cost:</strong> <%=@trip.cost %>
+</li>
+</ul>
+<!-- View details of the trip
+Assign a rating (1-5) to the trip, if it does not already have one
+Click links to detail pages for the trip's driver and passenger
+Click links to edit and delete the trip -->
+
+
+<%# end %>

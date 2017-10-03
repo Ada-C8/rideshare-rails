@@ -1,3 +1,4 @@
+<%# require 'money' %>
 <h1> Driver Details </h1>
 <h2><%= @driver.name %></h2>
 <ul>
@@ -11,6 +12,24 @@
     list of trips this driver has driven:
     Clicking on a trip from the list will take me to a detail page for that trip
   </li>
+  <li>
+    Trips:
+  </li>
+  <ul>
+    <% i = 1 %>
+    <% @driver.trips.each do |trip| %>
+    <li>
+      <%=link_to "Trip #{i}:", trip_path(trip) %>
+      Date: <%= trip.date %>,
+      Rating: <%= trip.rating %>,
+      Cost: <%= trip.cost %>,
+      <% i += 1%>
+    </li>
+    <% end %>
+  </ul>
+  <!-- <li>
+    <%= link_to "View Trips", trips_path %>
+  </li> -->
   <li>
     <%= link_to "Edit", edit_driver_path(@driver.id) %>
   </li>
