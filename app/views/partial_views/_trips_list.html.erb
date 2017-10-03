@@ -1,5 +1,7 @@
 <section>
-  <%@trips.each do |trip| %>
-    <%= trip.date%>
-  <%end%>
+  <ul>
+    <%@trips.each do |trip| %>
+      <li><%= link_to "Trip #{trip.id} on #{trip.date}", trip_path(trip.id)%></li>
+    <%end%>
+  </ul>
 </section>
