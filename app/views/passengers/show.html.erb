@@ -5,6 +5,17 @@
 
 <h1>Passenger Details for :  <%= @passenger.name %></h1>
 
+<section class="links">
+  <ul>
+    <li>
+      <%=link_to "Edit", passenger_path(@passenger.id), method: :patch%>
+    </li>
+    <li>
+      <%=link_to "Delete", passenger_path(@passenger.id), method: :delete %>
+    </li>
+  </ul>
+</section>
+
 <h2>List of trips : </h2>
 
   <strong><%= @passenger.name %></strong>'s phone number is: <%= @passenger.phone_num %>
@@ -18,6 +29,7 @@
   <%= "Trip Rating: " %><%= trip.rating %>
   <%= "Trip Date: " %><%= trip.date %>
   <%= "Trip Driver: " %><%= trip.driver_id %>
+  <%= "Trip ID: " %> <%= link_to trip.id, trip_path(trip.id) %>
 <% end %>
 
 <%= "Total Cost: $" %>
