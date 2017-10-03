@@ -26,7 +26,9 @@ class DriversController < ApplicationController
   end
 
   def create
+    @driver = Driver.new(name: params[:driver][:name], vin: params[:driver][:vin]) 
 
+    @driver.save ? (redirect_to drivers_path) : (render :new)
   end
 
   def destroy

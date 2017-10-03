@@ -27,9 +27,11 @@ class RidersController < ApplicationController
   end
 
   def create
+    @rider = Rider.new(name: params[:rider][:name], phone: params[:rider][:phone])
 
+    @rider.save ? (redirect_to riders_path) : (render :new)
   end
-  
+
   def destroy
 
   end
