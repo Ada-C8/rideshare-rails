@@ -13,16 +13,17 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(
-    driver_id: params[:trip][:driver_id],
-    passenger_id: params[:trip][:passenger_id],
-    date: params[:trip][:date],
-    cost: params[:trip][:cost],
-    rating: params[:trip][:rating]
+    trips_params
     )
     if @trip.save
-    redirect_to trips_path
+      redirect_to trips_path
     else
       render :new
     end
+  end
+
+  private
+  def trips_params
+    return params.require(:trip).permit(:driver_id, :passenger_id, :date, :cost, :rating)
   end
 end

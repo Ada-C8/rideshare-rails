@@ -14,13 +14,18 @@ class PassengersController < ApplicationController
 
   def create
     @passenger = Passenger.new(
-    name: params[:passenger][:name],
-    phone_num: params[:passenger][:phone_num]
+    passenger_params
     )
     if @passenger.save
-    redirect_to passengers_path
+      redirect_to passengers_path
     else
       render :new
     end
+  end
+
+
+  private
+  def passenger_params
+    return params.require(:passenger).permit(:name, :phone_num)
   end
 end
