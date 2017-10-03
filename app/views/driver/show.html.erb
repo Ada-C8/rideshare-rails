@@ -32,7 +32,7 @@
     <%= trip.cost %>
   </td>
   <td>
-    <%= trip.passenger.name %>
+    <%= link_to trip.passenger.name, passenger_path(id: trip.passenger.id)%>
   </td>
   </tr>
   <% end %>

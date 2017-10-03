@@ -26,7 +26,7 @@
     <%= @trip.cost %>
   </td>
   <td>
-    <%= link_to @trip.driver.name%>
+    <%= link_to @trip.driver.name, driver_path(id: @trip.driver.id)%>
   </td>
   <td>
     <%= link_to @trip.passenger.name, passenger_path(id: @trip.passenger.id) %>

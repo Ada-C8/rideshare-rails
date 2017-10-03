@@ -29,7 +29,7 @@
     <%= trip.cost %>
   </td>
   <td>
-    <%= trip.driver.name %>
+    <%= link_to trip.driver.name, driver_path(id: trip.driver.id)%>
   </td>
   </tr>
   <% end %>
