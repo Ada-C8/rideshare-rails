@@ -9,7 +9,7 @@ class TripsController < ApplicationController
   end
 
   def show
-    @trip = Trip.find_by(params[:id])
+    @trip = Trip.find_by(id: params[:id])
   end
 
   def new
@@ -26,18 +26,28 @@ class TripsController < ApplicationController
   end
 
   def edit
-    @trip = Trip.find_by(params[:id])
+    @trip = Trip.find_by(id: params[:id])
+    unless @trip
+      redirect_to trip_index_path
+    end
   end
 
-  def update_trip
-
+  def update
+    @trip = Trip.find_by(id: params[:id])
+    result = @trip.update({
+      rating: params[:trip][:rating]})
+      if result
+        redirect_to trip_path(@trip.id)
+      else
+        render :edit
+      end
   end
 
   def delete
-    trip = Trip.find_by(params[:id])
+    trip = Trip.find_by(id: params[:id])
 
     if trip.destroy
-      redirect_to trips_path
+      redirect_to trips_index_path
     else
 
     end

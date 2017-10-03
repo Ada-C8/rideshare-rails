@@ -1,0 +1,9 @@
+<h1>Trip Details</h1>
+<p>
+  Date: <%= @trip.date %>
+  Trip ID: <%= @trip.id %>
+  Driver Name: <%= @trip.driver.name %>
+  Passenger Name: <%= @trip.passenger.name %>
+  Rating: <%= @trip.rating %>
+  Cost: $<%='%.02f' % (@trip.cost / 100) %>
+</p>
