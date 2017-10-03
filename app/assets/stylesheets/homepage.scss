@@ -1,9 +1,37 @@
 // Place all the styles related to the homepage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Nosifer');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 
 body {
-  background-image: url("background.jpeg");
-  background-position: center;
+  margin: 0;
+  background-image: url("background.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+#homepage-container {
+
+}
+
+#homepage-container section{
+  position: absolute;
+  top: 9%;
+  left: 10%;
+  font-size: 50pt;
+}
+
+#homepage-container section h1{
+  text-shadow: 7px 7px 5px #1e1d1d;
+  color: #8c2c02;
+  font-family: 'Nosifer', cursive;
+}
+
+#homepage-container section p{
+  font-family: 'Permanent Marker', cursive;
+  color: white;
+  margin: 0;
 }
