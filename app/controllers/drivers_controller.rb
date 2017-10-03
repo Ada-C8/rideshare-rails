@@ -1,4 +1,4 @@
-class DriverController < ApplicationController
+class DriversController < ApplicationController
   #CRUD METHODS
   def index
     @drivers = Driver.order(:id)

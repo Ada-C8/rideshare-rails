@@ -1,4 +1,4 @@
-class RiderController < ApplicationController
+class RidersController < ApplicationController
   #CRUD METHODS
   def index
     @riders = Rider.order(:id)
