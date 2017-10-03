@@ -23,30 +23,33 @@ class PassengersController < ApplicationController
   def edit
     @passenger = Passenger.find_by(params[:passenger_id])
     unless @passenger
-      redirect_to passenger_path
+      redirect_to passenger_path(@passenger.id)
     end
   end
 
-  def update_trip
-    @passenger = Passenger.find_by(params[:id].to_i)
-    @passenger.update_attributes passenger_params
-    if @passenger.save
-      redirect_to passenger_index_path
-    else
-      render :new
+  def update
+    @passenger = Passenger.find_by(params[:passenger_id])
+    result = @passenger.update({
+      name: params[:passenger][:name],
+      phone_number: params[:passenger][:phone_number]
+      })
+      if result
+        redirect_to passenger_path(@passenger.id)
+        # this takes me to the results for a different passenger and I have no idea why ?!
+      else
+        render :edit
+      end
     end
 
-  end
+    def delete
+      passenger = Passenger.find_by(params[:passenger_id])
 
-  def delete
-    passenger = Passenger.find_by(params[:id])
+      if passenger.destroy
+        redirect_to passenger_index_path
+      else
 
-    if passenger.destroy
-      redirect_to passenger_index_path
-    else
-
+      end
     end
+
+
   end
-
-
-end
