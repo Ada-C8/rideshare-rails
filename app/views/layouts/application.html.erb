@@ -14,12 +14,12 @@
         Cats on Rails
       </h1>
       <section class="nav_links">
-        <%= link_to "list of passengers" %>
-        <%= link_to "list of drivers" %>
+        <%= link_to "list of passengers", passengers_path %>
+        <%= link_to "list of drivers", drivers_path %>
       </section>
       <section class="nav_links">
-        <%= link_to "create new passenger" %>
-        <%= link_to "create new driver" %>
+        <%= link_to "create new passenger", new_passenger_path  %>
+        <%= link_to "create new driver", new_driver_path %>
       </section>
     </nav>
     <section class="content">
