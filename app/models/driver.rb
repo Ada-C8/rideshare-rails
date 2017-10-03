@@ -4,4 +4,6 @@ class Driver < ApplicationRecord
   #
   # # must provide a vin
   # validates :vin, presence: true
+
+  has_many :trips
 end

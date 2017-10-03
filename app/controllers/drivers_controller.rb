@@ -1,6 +1,6 @@
 class DriversController < ApplicationController
   def index
-    @drivers = Driver.all
+    @drivers = Driver.all.order(:name)
   end
 
   def show
@@ -12,7 +12,8 @@ class DriversController < ApplicationController
   end
 
   def create
-    @driver = Driver.new(name: params[:driver][:name], vin: params[:driver][:vin])
+    # @driver = Driver.new(name: params[:driver][:name], vin: params[:driver][:vin])
+    @driver = Driver.new(driver_params)
     @driver.save
     redirect_to driver_path(@driver.id)
   end
@@ -23,8 +24,8 @@ class DriversController < ApplicationController
 
   def update
     @driver = Driver.find(params[:id])
-    driver_updates = params.require(:driver).permit(:name, :vin)
-    @driver.update_attributes(driver_updates)
+    # driver_updates = params.require(:driver).permit(:name, :vin)
+    @driver.update_attributes(driver_params)
     @driver.save
     redirect_to driver_path
   end
@@ -33,5 +34,11 @@ class DriversController < ApplicationController
     @driver = Driver.find(params[:id])
     @driver.destroy
     redirect_to drivers_path
+  end
+
+  private
+
+  def driver_params
+    return params.require(:driver).permit(:name, :vin)
   end
 end
