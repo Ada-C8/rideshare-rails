@@ -1,0 +1,18 @@
+<h2>New Trip</h2>
+
+<%= form_for @trip do |f| %>
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+
+  <%= f.label :rating %>
+  <%= f.text_field :rating %>
+
+  <%= f.collection_select(:driver_id, Driver.all, :id, :name)%>
+  <!-- this is a dropdown menu with all Drivers listed -->
+  <%= f.collection_select(:passenger_id, Passenger.all, :id, :name)%>
+
+  <%= f.label :cost %>
+  <%= f.text_field :cost %>
+
+  <%= f.submit %>
+<%end%>

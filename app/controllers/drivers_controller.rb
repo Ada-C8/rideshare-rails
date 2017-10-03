@@ -4,17 +4,7 @@ class DriversController < ApplicationController
     @drivers = Driver.all
   end
 
-  def new
-    @driver = Driver.new
-  end
-
-
-
   def create
-    # strong_params = driver_params
-    # prevents handrolling http requests from messing up your data
-
-    # @driver = Driver.new(strong_params)
     @driver = Driver.new(driver_params)
 
     if @driver.save
@@ -25,11 +15,15 @@ class DriversController < ApplicationController
 
   end
 
-  def show
-    @driver = Driver.find(params[:id])
+  def new
+    @driver = Driver.new
   end
 
   def edit
+    @driver = Driver.find(params[:id])
+  end
+
+  def show
     @driver = Driver.find(params[:id])
   end
 
@@ -40,6 +34,12 @@ class DriversController < ApplicationController
     redirect_to driver_path(@driver)
   end
 
+  def destroy
+    @driver = Driver.find(params[:id])
+    @driver.destroy
+
+    redirect_to drivers_path
+  end
 private
   def driver_params
     return params.require(:driver).permit(:name, :vin)

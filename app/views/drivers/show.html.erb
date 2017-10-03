@@ -1,4 +1,3 @@
-<h1>Single Driver</h1>
 
 <p>
   ID: <%=  @driver.id %>
@@ -13,3 +12,5 @@
 </p>
 
 <%= link_to "Edit", edit_driver_path(@driver) %>
+
+<%= link_to 'Delete', driver_path(@driver), method: :delete, data: { confirm: "Are you sure?" } %>

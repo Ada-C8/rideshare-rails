@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :drivers
-  resources :passengers, only: [:index, :new, :create, :show] #no option to delete, edit, don't have extras lying around.
+  resources :passengers
+   #only: [:index, :new, :create, :show] #no option to delete, edit, don't have extras lying around.
   resources :trips
 end

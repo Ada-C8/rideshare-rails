@@ -1,26 +1,48 @@
 class PassengersController < ApplicationController
+
+  def index
+    @passengers = Passenger.all
+  end
+
+  def create
+    @passenger = Passenger.new(passenger_params)
+
+    if @passenger.save
+      redirect_to('/passengers')
+    else
+      render :new
+    end
+
+  end
+
   def new
     @passenger = Passenger.new
   end
 
-
-
-  def create
-    @passenger = Passenger.new(name: params[:passenger][:name], phone_num: params[:passenger][:phone_num])
-
-    if @passenger.save
-      redirect_to @passenger
-    else
-      render 'new'
-    end
-
+  def edit
+    @passenger = Passenger.find(params[:id])
   end
 
   def show
     @passenger = Passenger.find(params[:id])
   end
 
-  def index
-    @passengers = Passenger.all
+  def update
+    @passenger = Passenger.find(params[:id])
+    @passenger.update_attributes(passenger_params)
+    @passenger.save
+    redirect_to passenger_path(@passenger)
+  end
+
+  def destroy
+    @passenger = Passenger.find(params[:id])
+    @passenger.destroy
+
+    redirect_to passengers_path
+  end
+
+private
+  def passenger_params
+    return params.require(:passenger).permit(:name, :phone_num)
   end
 end
