@@ -4,7 +4,7 @@ class PassengersController < ApplicationController
   end
 
   def show
-    @passenger = Passenger.find_by(params[:id])
+    @passenger = Passenger.find_by(params[:passenger_id])
   end
 
   def new
@@ -21,11 +21,14 @@ class PassengersController < ApplicationController
   end
 
   def edit
-    @passenger = Passenger.find_by(params[:id])
+    @passenger = Passenger.find_by(params[:passenger_id])
+    unless @passenger
+      redirect_to passenger_path
+    end
   end
 
   def update_trip
-    @passenger = Passenger.find(params[:id].to_i)
+    @passenger = Passenger.find_by(params[:id].to_i)
     @passenger.update_attributes passenger_params
     if @passenger.save
       redirect_to passenger_index_path
