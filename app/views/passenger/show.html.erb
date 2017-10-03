@@ -16,7 +16,7 @@
   <% @trips.each do |trip| %>
   <tr>
   <td>
-    <%= trip.id %> : <%# link_to 'Trip Details', trip_path(trip.id), method: :get %>
+    <%= link_to trip.id, trip_path(trip.id), method: :get %>
   </td>
   <td>
     <%= trip.date %>
