@@ -23,6 +23,9 @@
       </section>
     </nav>
     <section class="content">
+    <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
     <%= yield %>
   </section>
   </body>
