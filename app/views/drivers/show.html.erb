@@ -10,9 +10,7 @@
     <%= @driver.vin %>
   </p>
 
-<%= link_to "Back to index", drivers_path %>
+  <%= link_to "Edit", edit_driver_path(@driver.id) %>
+  <%= link_to "Delete", driver_path(@driver.id), method: :delete %>
+  <%= link_to "Back to index", drivers_path %>
 </section>
-
-
-<%#<%= link_to "Edit", edit_driver_path(@driver.id) %>
-<%#<%= link_to "Delete", delete_driver_path(@driver.id), method: :delete %>
