@@ -20,7 +20,7 @@
   <% @drivers.each do |driver| %>
   <tr>
     <td><%= driver.id %></td>
-    <td><%= link_to driver.name, driver_path(driver.id)%></td>
+    <td><%= link_to driver.name, driver_path(driver.id), alt: "Link to individual driver pages."%></td>
     <td><%= driver.vin %></td>
   </tr>
     <% end %>

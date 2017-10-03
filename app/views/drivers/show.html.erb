@@ -9,3 +9,15 @@
 <p>
   Yacht ID Number: <%= @driver.vin %>
 </p>
+
+<p>
+  Trips this Captain has led:
+  <% Trip.where(driver: @driver.id).each do |trip| %>
+  Date:<%=trip.date%>
+  Trip ID:<%=trip.id%>
+  Driver ID:<%=trip.driver_id%>
+  Passenger ID:<%trip.passenger_id%>
+  Rating:<%=trip.rating%>
+  Cost: $<%='%.02f' % (trip.cost / 100)%>
+  <% end %>
+</p>
