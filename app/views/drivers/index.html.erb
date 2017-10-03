@@ -3,7 +3,13 @@
   <% @drivers.each do |driver|  %>
   <tr>
     <td><%= driver[:id] %></td>
-    <td><%= driver[:name] %></td>
+
+    <td>
+      <%= link_to driver_path(driver[:id]) do %>
+        <%= driver[:name] %>
+      <% end %>
+    </td>
+      
     <td><%= driver[:vin] %></td>
   </tr>
   <% end  %>
