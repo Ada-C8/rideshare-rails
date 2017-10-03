@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root to: 'passengers#index'
+  root to: 'homepage#index'
 
   get '/passengers', to: 'passengers#index', as: 'passengers'
 
