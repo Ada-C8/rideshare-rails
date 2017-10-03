@@ -1,0 +1,14 @@
+<h1> Edit Driver Information</h1>
+<%= form_for @driver do |f| %>
+<ul>
+  <li>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-field"%>
+  </li>
+  <li>
+    <%= f.label :vin %>
+    <%= f.text_field :vin, class: "form-field" %>
+  </li>
+  <%= f.submit%>
+<%end%>
+</ul>

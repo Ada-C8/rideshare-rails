@@ -1,0 +1,21 @@
+<h1> Driver Details </h1>
+<h2><%= @driver.name %></h2>
+<ul>
+  <li>
+    Total Earnings: NOTE (total of each trip minus 15%)
+  </li>
+  <li>
+    Average Rating:
+  </li>
+  <li>
+    list of trips this driver has driven:
+    Clicking on a trip from the list will take me to a detail page for that trip
+  </li>
+  <li>
+    <%= link_to "Edit", edit_driver_path(@driver.id) %>
+  </li>
+  <li>
+    <%= link_to "Delete", driver_path(@driver.id), method: :delete, data: {:confirm => "Are you sure you want to delete this driver?"} %>
+  </li>
+
+</ul>
