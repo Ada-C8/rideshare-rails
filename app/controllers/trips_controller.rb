@@ -30,7 +30,8 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @trip.update_attributes(trip_params)
     if @trip.save
-      redirect_to(driver_path(@trip))
+      redirect_to(trip_path(@trip))
+      #redirect_back(fallback_location: trip_path(@trip))
     else
       render :new
     end

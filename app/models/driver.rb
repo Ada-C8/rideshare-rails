@@ -18,4 +18,16 @@ class Driver < ApplicationRecord
     total = ((total * 0.85) / 100).round(2)
     #pretty sure this wont give .00 cents but its good enough for now
   end
+
+  def average_rating
+    total = 0
+
+    trips.each do |trip|
+      total += trip.rating
+    end
+
+    average = (total.to_f / trips.length).round(1)
+
+    return average
+  end
 end

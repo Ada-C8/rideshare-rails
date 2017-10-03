@@ -16,5 +16,17 @@
 <%= link_to 'Delete', driver_path(@driver), method: :delete, data: { confirm: "Are you sure?" } %>
 
 <p>
-  Total Earned  = $<%= @driver.total_earned %>
+  Total Earned = $<%= @driver.total_earned %>
 </p>
+
+<p>
+  Average Rating = <%= @driver.average_rating %> stars
+</p>
+
+<ul>
+  <% @driver.trips.each do | trip | %>
+    <li>
+      <%= render partial: 'layouts/trip_details', locals: { trip: trip } %>
+    </li>
+  <% end %>
+</ul>
