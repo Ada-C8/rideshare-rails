@@ -27,7 +27,7 @@ Rails.application.routes.draw do
 
   get '/passengers/:id', to: "passengers#show", as: 'passenger'
 
-  get '/passengers/destroy/:id', to: "passengers#destroy", as: "delete_passenger"
+  delete '/passengers/destroy/:id', to: "passengers#destroy", as: "delete_passenger"
 
 
 
@@ -43,7 +43,7 @@ Rails.application.routes.draw do
 
   get '/drivers/:id', to: 'drivers#show', as: 'driver'
 
-  get '/drivers/destroy/:id', to:"drivers#destroy", as: "delete_driver"
+  delete '/drivers/destroy/:id', to:"drivers#destroy", as: "delete_driver"
 
 
 

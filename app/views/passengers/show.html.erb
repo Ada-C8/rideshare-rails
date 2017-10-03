@@ -1,7 +1,7 @@
 <h1>Passengers#show</h1>
 
 <%= link_to("Edit Passenger", edit_passenger_path(@passenger.id)) %>
-
+<%= link_to("Delete Passenger", delete_passenger_path(@passenger.id), method: :delete, data: {confirm: "Noooooooo! I'm pregnant! It's your baby!"}) %>
 <section>
     <h1><%= @passenger.name  %></h1>
     <p>
