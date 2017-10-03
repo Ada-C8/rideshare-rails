@@ -3,10 +3,9 @@
 
 <p>
   Passenger Name: <%= @passenger.name %>
-</p>
-
-<p>
   Phone Number: <%= @passenger.phone_number %>
+    Passenger Lifetime Cost on Yachts: $<%= '%.02f' % (@passenger.total_cost / 100) %>
+
 </p>
 
 <table>
@@ -19,11 +18,10 @@
     <th>Cost</th>
 </tr>
   All trips taken by <%= @passenger.name %>:
-  <% trips = Trip.where(passenger: @passenger.id) %>
-  <% trips.each do |trip| %>
+  <% (@passenger.trips).each do |trip| %>
   <tr>
   <td><%=trip.date%></td>
-  <td><%=trip.id%></td>
+  <td><%=link_to trip.id, trip_path(trip.id), alt: "link to trip details"%></td>
   <td><%=trip.driver_id%></td>
   <td><%=trip.passenger_id%></td>
   <td><%=trip.rating%></td>
