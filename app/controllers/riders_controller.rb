@@ -9,7 +9,8 @@ class RidersController < ApplicationController
   end
 
   def edit
-
+    @rider = Rider.find_by(id: params[:id].to_i)
+    redirect_to riders_path unless @rider 
   end
 
   def new

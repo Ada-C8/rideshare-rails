@@ -8,7 +8,8 @@ class TripsController < ApplicationController
   end
 
   def edit
-
+    @trip = Trip.find_by(id: params[:id].to_i)
+    redirect_to trips_path unless @trip
   end
 
   def new
