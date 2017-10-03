@@ -26,8 +26,6 @@ class PassengersController < ApplicationController
     strong_params = passenger_params
     @passenger = Passenger.find(params[:id])
     @passenger.update_attributes(strong_params)
-    # @passenger.name = params[:passenger][:name]
-    # @passenger.phone_num = params[:passenger][:phone_num]
     @passenger.save
     redirect_to passengers_path
   end
@@ -37,6 +35,8 @@ class PassengersController < ApplicationController
     passenger.destroy
     redirect_to passengers_path
   end
+
+  
   #YOU DIANE
   #def show def new def create def edit def update def destroy
 

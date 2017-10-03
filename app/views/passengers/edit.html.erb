@@ -1,12 +1,2 @@
 <h1>This is the passenger edit page</h1>
-<p>
-  <%= form_for @passenger do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-  <br />
-  <%= form.label :phone_num %>
-  <%= form.text_field :phone_num %>
-  <br />
-  <%= form.submit "Update passenger information"%>
-  <% end %>
-</p>
+<%= render partial: 'form', locals:  {button_text: "Edit Passenger!"} %>
