@@ -4,5 +4,6 @@
   Vin:<%= @driver[:vin] %> <br />
   Id:<%= @driver[:id] %> <br />
   Total: <%= @driver.total_earnings %> <br />
-  Average Rating: <%= @driver.average_rating %>
+  Average Rating: <%= @driver.average_rating %> <br />
+  <%= link_to 'Delete Driver', driver_path(@driver), method: :delete, data: { confrim: 'Are you sure you want to delete this driver?'} %>
 </p>
