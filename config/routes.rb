@@ -8,8 +8,7 @@ Rails.application.routes.draw do
   # get 'passengers', to: 'passengers#index', as: 'passengers'
   # get 'passengers/:id', to: 'passengers#show', as: 'passenger'
 
-
-  get 'trips', to: 'trips#index', as: 'trips'
-
-  get 'trips/:id', to: 'trips#show', as: 'trip'
+  resources :trips
+  #get 'trips', to: 'trips#index', as: 'trips'
+  #get 'trips/:id', to: 'trips#show', as: 'trip'
 end
