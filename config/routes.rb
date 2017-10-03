@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
   get 'trips/index'
 
   get 'passengers/index'
@@ -7,4 +9,5 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :drivers, :passengers, :trips
+  root 'home#index'
 end
