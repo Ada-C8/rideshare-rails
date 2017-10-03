@@ -1,6 +1,6 @@
 <h2>Trip #<%= @trip.id %></h2><br />
 <%= link_to "Edit", edit_trip_path %> |
-<%= link_to "Delete", delete_trip_path, method: :destroy, prompt: "Are you sure??" %>
+<%= link_to "Delete", trip_path, method: :delete, data: {confirm: "Are you sure??"} %>
 
 <ul>
   <li>
