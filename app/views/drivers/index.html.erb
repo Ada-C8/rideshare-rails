@@ -5,13 +5,10 @@
 </p>
 
 
-<p>
-  <% @driver.each do |drive| %>
+<ul>
+  <% @drivers.each do |driver| %>
     <li>
-      Driver Name: <%= drive[:name] %>
+      Driver Name: <%= link_to "#{driver.name}",  driver_path(driver)%>
     </li>
-
-      <%= link_to 'Show',  driver_path(drive)%>
-
   <%end%>
-</p>
+</ul>

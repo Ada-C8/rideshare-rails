@@ -6,8 +6,7 @@ class PassengersController < ApplicationController
 
 
   def create
-    @passenger = Passenger.new(name: params[:passenger][:name],
-                    phone_num: params[:passenger][:phone_num])
+    @passenger = Passenger.new(name: params[:passenger][:name], phone_num: params[:passenger][:phone_num])
 
     if @passenger.save
       redirect_to @passenger
@@ -22,6 +21,6 @@ class PassengersController < ApplicationController
   end
 
   def index
-    @passenger = Passenger.all
+    @passengers = Passenger.all
   end
 end
