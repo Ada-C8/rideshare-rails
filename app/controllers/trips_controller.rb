@@ -12,14 +12,18 @@ class TripsController < ApplicationController
     redirect_to trips_path unless @trip
   end
 
-  def new
-
-  end
-
   def update
 
   end
 
+  def new
+
+  end
+
+  def create
+
+  end
+  
   def destroy
 
   end

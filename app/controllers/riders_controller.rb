@@ -15,10 +15,6 @@ class RidersController < ApplicationController
     redirect_to riders_path unless @rider
   end
 
-  def new
-    @rider = Rider.new
-  end
-
   def update
     rider = Rider.find_by(id: params[:id])
     redirect_to riders_path unless rider
@@ -26,6 +22,14 @@ class RidersController < ApplicationController
     rider.update_attributes(rider_params) ? (redirect_to riders_path) : (render :edit)
   end
 
+  def new
+    @rider = Rider.new
+  end
+
+  def create
+
+  end
+  
   def destroy
 
   end
