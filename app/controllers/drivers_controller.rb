@@ -21,6 +21,10 @@ def create
   end
 end
 
+def destroy
+  Driver.find_by(id: params[:id]).destroy
+  redirect_to drivers_path
+end
 private
 
 def drivers_params
