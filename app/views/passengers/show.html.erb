@@ -1,4 +1,4 @@
-<h1>Passenger <%= @passenger.name %></h1>
+<h1>Passenger information for: <%= @passenger.name %></h1>
 
 <h2><%= @passenger.name %></h2>
 <h4>Phone number: <%= @passenger.phone_num %></h4>
@@ -12,6 +12,6 @@
 <h4> List of Trips: </h4>
   <ul>
   <% @trips.each do |trip| %>
-    <li><%= trip.date %>  </li>
+    <li><%= link_to(trip.date, trip_path(trip.id)) %></li>
   <% end %>
   </ul>
