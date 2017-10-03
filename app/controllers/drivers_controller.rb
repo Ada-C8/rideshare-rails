@@ -10,31 +10,22 @@ class DriversController < ApplicationController
 
     def new
       @driver = Driver.new
-      puts
-      puts "I am in new"
     end
 
     def edit
       @driver = Driver.find(params[:id])
-      puts
-      puts "I am in edit"
     end
 
     def create
-     driver = Driver.new(name: params[:driver][:name], vin: params[:driver][:vin])
+     driver = Driver.new(driver_params)
      driver.save
      redirect_to drivers_path
     end
 
     def update
     @driver = Driver.find(params[:id])
-    @driver.name = params[:driver][:name]
-    @driver.vin = params[:driver][:vin]
-    puts
-    puts @driver.name
+    @driver.update_attributes(driver_params)
     @driver.save
-    puts
-    puts @driver.name
     redirect_to drivers_path
     end
 
@@ -42,6 +33,11 @@ class DriversController < ApplicationController
     driver = Driver.find(params[:id])
     driver.destroy
     redirect_to drivers_path
+    end
+
+    private
+    def driver_params
+      return params.require(:driver).permit(:name, :vin)
     end
 
 
