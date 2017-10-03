@@ -1,10 +1,19 @@
 <div class="requested">
   <h1> <%=@driver.name%> </h1>
-  <p><strong>Total Earnings: </strong><%= @driver.total_earning%></p>
-  <p><strong>Average Rating: </strong><%= @driver.average_rating%></p>
-
-
   <p><%= link_to "Edit", edit_driver_path(@driver.id) %></p>
   <p><%= link_to "Delete", driver_path(@driver), method: :delete , data: {confirm: "Are you sure?" }  %></p>
+  <p><strong>Total Earnings: </strong><%= @driver.total_earning%></p>
+  <p><strong>Average Rating: </strong><%= @driver.average_rating%></p>
+  <p><strong>List of Trips: </strong>
+    <ul>
+      <% all_trips = Trip.all.order(date: :desc) %>
+      <% all_trips.each do |trip| %>
+        <li>
+          <%= link_to trip.date, trip_path %>
+        </li>
+      <% end %>
+    </ul>
+  </p>
+
 
 </div>
