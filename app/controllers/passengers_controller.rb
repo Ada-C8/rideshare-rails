@@ -1,10 +1,12 @@
 class PassengersController < ApplicationController
   def index
-    @passengers = Passenger.order(:id)
+    @passengers = Passenger.order([:id])
+    # get different results if I order by params[:passenger_id]
   end
 
   def show
-    @passenger = Passenger.find_by(params[:passenger_id])
+    @passenger = Passenger.find_by(id: params[:id])
+    # this gets page to load but shows wrong passenger??
   end
 
   def new
@@ -21,28 +23,27 @@ class PassengersController < ApplicationController
   end
 
   def edit
-    @passenger = Passenger.find_by(params[:passenger_id])
+    @passenger = Passenger.find_by(id: params[:id])
     unless @passenger
-      redirect_to passenger_path(@passenger.id)
+      redirect_to passenger_index_path
     end
   end
 
   def update
-    @passenger = Passenger.find_by(params[:passenger_id])
+    @passenger = Passenger.find_by(id: params[:id])
     result = @passenger.update({
       name: params[:passenger][:name],
       phone_number: params[:passenger][:phone_number]
       })
       if result
         redirect_to passenger_path(@passenger.id)
-        # this takes me to the results for a different passenger and I have no idea why ?!
       else
         render :edit
       end
     end
 
     def delete
-      passenger = Passenger.find_by(params[:passenger_id])
+      passenger = Passenger.find_by(id: params[:id])
 
       if passenger.destroy
         redirect_to passenger_index_path
@@ -51,5 +52,10 @@ class PassengersController < ApplicationController
       end
     end
 
+    private
+
+    def passenger_params
+      return params.require(:passenger).permit(:name, :phone_number)
+    end
 
   end

@@ -2,7 +2,7 @@ class TripsController < ApplicationController
 
   def home
 
-  end 
+  end
 
   def index
     @trips = Trip.order(:id)
@@ -43,5 +43,10 @@ class TripsController < ApplicationController
     end
   end
 
+private
+
+def passenger_params
+  return params.require(:trip).permit(:date, :rating, :cost, :passenger_id, :driver_id)
+end
 
 end
