@@ -3,4 +3,5 @@
 <div>
   <strong></strong><%= @driver.name %></strong>
   <p><%= @driver.vin %></p>
+  <%= link_to "Edit Driver", edit_driver_path(@driver.id) %>
 </div>
