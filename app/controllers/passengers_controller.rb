@@ -42,7 +42,7 @@ class PassengersController < ApplicationController
       end
     end
 
-    def delete
+    def destroy
       passenger = Passenger.find_by(id: params[:id])
 
       if passenger.destroy

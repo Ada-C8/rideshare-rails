@@ -3,7 +3,8 @@
   Driver Name: <%= @driver.name %> Yacht ID Number: <%= @driver.vin %>
   Total Lifetime Earnings: $<%='%.02f' % (@driver.total_earnings / 100) %>
   Average Rating: <%= '%.02f' % @driver.average_rating %>
-
+  <%= link_to "Edit Driver Details", edit_driver_path(@driver.id), alt: "link to edit driver details" %>
+  <%= link_to "Delete Driver", destroy_driver_path(@driver.id), method: :delete, alt: "link to delete driver", data: {confirm: "Are you sure you want to delete this driver?"} %>
 
 </p>
 
@@ -20,7 +21,7 @@
   <% Trip.where(driver: @driver.id).each do |trip| %>
   <tr>
   <td><%=trip.date%></td>
-  <td><%=trip.id%></td>
+  <td><%= link_to trip.id, trip_path(trip.id), alt: "link to trip details"%></td>
   <td><%=trip.driver_id%></td>
   <td><%=trip.passenger_id%></td>
   <td><%=trip.rating%></td>

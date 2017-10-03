@@ -1,5 +1,5 @@
 class Passenger < ApplicationRecord
-  has_many :trips
+  has_many :trips, dependent: :destroy
 
 
   def total_cost
@@ -9,5 +9,5 @@ class Passenger < ApplicationRecord
     end
     return sum
   end
-  
+
 end
