@@ -13,7 +13,10 @@ class TripsController < ApplicationController
   end
 
   def update
+    trip = Trip.find_by(id: params[:id])
+    redirect_to trips_path unless trip
 
+    trip.update_attributes(trip_params) ? (redirect_to trip_path) : (render :edit)
   end
 
   def new
@@ -23,8 +26,13 @@ class TripsController < ApplicationController
   def create
 
   end
-  
+
   def destroy
 
+  end
+
+  private
+  def trip_params
+    return params.require(:trip).permit(:rating)
   end
 end
