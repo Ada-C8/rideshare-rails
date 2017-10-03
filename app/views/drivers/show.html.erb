@@ -20,7 +20,7 @@
   <% Trip.where(driver: @driver.id).each do |trip| %>
   <tr>
   <td><%=trip.date%></td>
-  <td><%=trip.id%></td>
+  <td><%= link_to trip.id, trip_path(trip.id), alt: "link to trip details"%></td>
   <td><%=trip.driver_id%></td>
   <td><%=trip.passenger_id%></td>
   <td><%=trip.rating%></td>
