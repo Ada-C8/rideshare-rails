@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RideshareRails</title>
+    <title>Journey</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,42 @@
   </head>
 
   <body>
+
+    <header>
+      <h1>Journey</h1>
+      <nav>
+        <div class="dropdown">
+          <button class="dropbtn">Passengers</button>
+          <div class="dropdown-content">
+            <a href="#">All Passengers</a>
+            <a href="#">Create New Passenger</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Drivers</button>
+          <div class="dropdown-content">
+            <a href="#">All Drivers</a>
+            <a href="#">Create New Driver</a>
+          </div>
+        </div>
+
+      </nav>
+    </header>
+
+    <%#From any page, I can click a menu entry to...
+    View a list of all passengers
+    View a list of all drivers
+    Create a new passenger
+    Create a new driver
+    From any form in the site, if processing the form submission fails, the user should be politely informed of what went wrong and how they can correct it%>
+
     <%= yield %>
+
+    <footer>
+      <header>
+        <p>&copy; COPYRIGHT 2017 S.A. I.D</p>
+      </header>
+    </footer>
+
   </body>
 </html>
