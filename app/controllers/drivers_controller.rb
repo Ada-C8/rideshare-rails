@@ -20,10 +20,20 @@ class DriversController < ApplicationController
   end
 
   def edit
-
+    @driver = Driver.find(params[:id])
   end
 
   def update
+    @driver = Driver.find(params[:id])
+    result = @driver.update({
+      name: params[:driver][:name],
+      vin: params[:driver][:vin]
+      })
+      if result
+        redirect_to driver_path(@driver.id)
+      else
+        render :edit
+      end
   end
 
   def show

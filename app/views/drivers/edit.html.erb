@@ -1,1 +1,12 @@
-<h2>Edit some Drivers!!!</h2>
+<h2>Edit Driver</h2>
+
+<%= form_for @driver do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :vin %>
+  <%= f.text_field :vin %>
+
+  <%= f.submit %>
+
+<% end %>
