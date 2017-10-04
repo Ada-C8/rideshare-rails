@@ -31,9 +31,7 @@ class DriversController < ApplicationController
   def show
     @driver = Driver.find(params[:id])
 
-    @trips = Trip.where(passenger_id: params[:id])
-
-
+    @trips = Trip.where(driver_id: params[:id])
   end
 
   private

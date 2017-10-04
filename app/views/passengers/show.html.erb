@@ -5,7 +5,12 @@
 
 
 <h3> Trip details</h3>
-<p> Date:<%= @trips.date %></p>
-<p> Driver: <%= @trips.driver_id %></p>
-<p> Cost: <%= @trips.cost %></p>
-<p> Rating: <%= @trips.rating %></p>
+
+<ul>
+  <%@trips.each do |trip|%>
+  <li> Date:<%= trip.date %> </li>
+  <li> Passenger: <%= trip.passenger_id %></li>
+  <li> Cost: <%= trip.cost %></li>
+  <li> Rating: <%= trip.rating %></li>
+  <% end %>
+</ul>
