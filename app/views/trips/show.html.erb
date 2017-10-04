@@ -2,7 +2,11 @@
 
 <% if @trip.rating.nil? %>
   <p>Add a rating to this trip!</p>
-  <%= %>
+  <%= form_for @trip do |f| %>
+  <%= f.label :rating %>
+  <%= f.range_field :rating, in: 1..5, :step => 1 %>
+  <%= f.submit %>
+  <% end %>
 <% end %>
 
 <p>ID: <%= @trip.id %></p>
