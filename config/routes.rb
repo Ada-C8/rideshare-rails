@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   patch '/trips/:id', to: 'trips#update'
 
-  post '/trips', to: 'trips#create'
+  post '/trips', to: 'trips#create', as: 'create_trip'
 
   get '/trips/destroy/:id', to: 'trips#destroy', as: 'delete_trip'
 

@@ -17,13 +17,19 @@ class TripsController < ApplicationController
   end
 
   def create
-    @passenger = Passenger.new(passenger_params)
+    @trip = Trip.new
 
-    if @passenger.save
-      redirect_to passengers_path
-    else
-      redirect_to :new
-    end
+    passenger = Passenger.find_by(id: params[:passenger])
+
+    @trip.passenger = passenger
+    @trip.driver = Driver.all.sample
+
+    @trip.date = Date.today.to_s
+
+    @trip.cost = 1000 #$10
+
+     @trip.save
+      redirect_to passenger_path(params[:passenger])
   end
 
   def destroy
