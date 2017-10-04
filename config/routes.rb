@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   root to: 'homepage#index'
 
+  get '/trips', to: 'trips#index'
+
   resources :passengers do
     resources :trips
   end

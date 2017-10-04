@@ -1,2 +1,18 @@
 <h1>Trips#index</h1>
 <p>Find me in app/views/trips/index.html.erb</p>
+
+<ol>
+  <% if @trips.length > 0  %>
+    <% @trips.each do |trip| %>
+    <li>
+      <p>Date: <%= trip.date %></p>
+      <p>Rating: <%= trip.rating %></p>
+      <p>Cost: $<%= (trip.cost / 100).to_f.round(2) %></p>
+      <p>Driver: <%= trip.driver.name %></p>
+
+    </li>
+    <% end %>
+  <% else  %>
+    <p>No trips for this passenger.</p>
+  <% end  %>
+</ol>
