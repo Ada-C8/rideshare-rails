@@ -1,6 +1,7 @@
 class TripsController < ApplicationController
   def index
-    @trips = Trip.where(params[:driver_id])
+    # CHECK IF NEEDED
+    # @trips = Trip.where(params[:driver_id])
   end
 
   def show
@@ -13,15 +14,28 @@ class TripsController < ApplicationController
     redirect_to trips_path
   end
 
+  def new
+    @trip = Trip.new
+  end
+
+  def create
+    @trip = Trip.new(trip_params)
+    if @trip.save
+      redirect_to trip_path(@trip.id)
+    else
+      render :new
+    end
+  end
+
   def edit
     @trip = Trip.find(params[:id])
   end
 
   def update
-    trip = Trip.find(params[:id])
-    trip.update_attributes(trip_params)
-    if trip.save
-      redirect_to trip_path(params[:id])
+    @trip = Trip.find(params[:id])
+    @trip.update_attributes(trip_params)
+    if @trip.save
+      redirect_to trip_path(@trip.id)
     else
       render :new
     end
@@ -30,7 +44,6 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    # add
     return params.require(:trip).permit(:date, :rating, :cost)
   end
 end

@@ -1,0 +1,18 @@
+<%= form_for @trip do |f| %>
+<ul>
+  <li>
+    <%=f.label :date%>
+    <%=f.date_field :date, class: "form-field" %>
+  </li>
+  <li>
+    <%=f.label :rating %>
+    <%=f.text_field :rating, class: "form-field" %>
+  </li>
+  <li>
+    <%=f.label :cost %>
+    <%=f.text_field :cost, class: "form-field" %>
+  </li>
+  <%=f.submit %>
+
+</ul>
+<% end %>
