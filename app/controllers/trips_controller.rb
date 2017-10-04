@@ -14,10 +14,12 @@ end
 
 def update
   @trip = Trip.find(params[:id])
-  @trip = Trip.update(trip_params)
-  @trip.save
-
-  redirect_to trip_path(@trip)
+  @trip.update_attributes(trip_params)
+  if @trip.save
+    redirect_to trip_path(@trip)
+  else
+    render :edit
+  end
 end
 
 private

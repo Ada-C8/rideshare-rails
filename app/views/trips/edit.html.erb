@@ -1,23 +1,23 @@
 <%= render partial: 'layouts/nav' %>
-<%# render partial: 'layouts/error_messages',
+<%= render partial: 'layouts/error_messages',
       locals: { model: @trip } %>
 
 <%= form_for @trip do |f| %>
 <!-- readonly: true so people cannot edit the ride, just the rating/cost -->
   <%= f.label :id %>
-  <% f.text_field :id, readonly: true %>
+  <% f.text_field :id %>
 
   <% f.label :driver_id %>
-  <% f.text_field :driver_id, readonly: true %>
+  <% f.text_field :driver_id %>
 
   <% f.label :passenger_id %>
-  <% f.text_field :passenger_id, readonly: true %>
+  <% f.text_field :passenger_id %>
 
   <% f.label :date %>
-  <% f.text_field :date, readonly: true %>
+  <% f.text_field :date %>
 
   <%= f.label :rating %>
-  <%= f.text_field :name, placeholder: "5" %>
+  <%= f.text_field :rating, placeholder: "5" %>
 
   <% f.label :cost %>
   <% f.text_field :cost, placeholder: "20.00" %>
