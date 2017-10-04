@@ -4,6 +4,15 @@
 
 <%= "Phone number: #{@passenger.phone_num}" %>
 
+
+<% total_cost = 0 %>
+<% @passenger.trips.each do |trip| %>
+  <% total_cost += trip.cost %>
+  <% end %>
+<%= "passenger has spent $#{total_cost/100.round(2)}" %>
+
+
+
 <%=button_to "Edit", edit_passenger_path(@passenger.id), method: :get%>
 <%=button_to "Delete", passenger_path(@passenger), method: :delete, data: {confirm: "Are you sure you want to delete this passenger?"} %>
 
@@ -11,18 +20,17 @@
 <!-- number of trips -->
 <!-- Need to create list of trips taken with a link to the trip details   -->
 
-<%= "Passenger #{@passenger.name} has taken #{@passenger.trips.length} trips" %>
+<%= "Passenger #{@passenger.name} has taken #{@passenger.trips.length} trip(s)" %>
 
 <ol>
-
-
 <% @passenger.trips.each do |trip| %>
 <li>
   <%= "Driver Id: #{trip.driver_id}" %>
   <%= "Cost of trip: #{trip.cost}" %>
   <%= "Trip rating: #{trip.rating}" %>
-
 </li>
 <% end %>
-<!-- Need to add button to add new trip  -->
 </ol>
+
+
+<!-- Need to add button to add new trip  -->
