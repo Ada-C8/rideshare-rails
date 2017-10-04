@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
 # trip routes
   root to: "trips#home", as: "root"
-#
+
+  patch '/drivers/:id/status', to: 'drivers#status', as: 'status' #status_path
 #   get "/trips", to: "trips#index", as: "trips"
 #   get "trips/:id/edit", to: "trips#edit", as: "edit_trip"
 #   get "trips/new", to: "trips#new", as: "new_trip"
