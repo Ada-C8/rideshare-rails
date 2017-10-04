@@ -32,6 +32,13 @@ class PassengersController < ApplicationController
     redirect_to passenger_path(@passenger)
   end
 
+  def delete
+  @passenger = Passenger.find(params[:id])
+  @passenger.destroy
+
+  redirect_to drivers_path
+  end
+
   private
 
   def passenger_params
