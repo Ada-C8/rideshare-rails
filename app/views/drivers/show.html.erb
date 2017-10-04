@@ -11,12 +11,10 @@
     VIN number: <%= @driver.vin %>
   </li>
   <li>
-    Average rating: $<%= @driver.average_rating.round(1) %>
-    <!-- <% @rating = @trips.sum { |trip| trip.rating } %> -->
-    <!-- Average rating: <%= (@rating.to_f / @trips.length).round(1) %> -->
-  </li>
+    Average rating: <%= @driver.average_rating.round(1) %>
+
   <li>
-    Total earnings: <%= @driver.total_earnings.round(2) %>
+    Total earnings: $<%= @driver.total_earnings.round(2) %>
   </li>
   <li>
     Trips

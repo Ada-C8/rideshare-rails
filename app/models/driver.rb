@@ -4,9 +4,18 @@ class Driver < ApplicationRecord
   validates_presence_of :name, :vin
 
   def average_rating
-    rating = trips.sum { |trip| trip.rating }
-    (rating.to_f / trips.length)
+    counter = 0
+    rating = 0
+    trips.each do |trip|
+      if trip.rating != nil
+        rating += trip.rating
+        counter =+ 1
+      end
+    end
+    rating.to_f / counter
+
   end
+
 
   def total_earnings
     earnings = trips.sum { |trip| trip.cost }
