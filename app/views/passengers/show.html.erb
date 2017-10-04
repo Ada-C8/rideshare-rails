@@ -16,6 +16,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Date</th>
       <th>Cost</th>
       <th>Driver Name</th>
@@ -27,6 +28,9 @@
   <tbody>
     <% @passenger.trips.each do |t|  %>
     <tr>
+      <td>
+        <%= link_to(t.id, trip_path(t.id)) %>
+      </td>
       <td>
         <%= t.date %>
       </td>
@@ -43,3 +47,5 @@
     <% end  %>
   </tbody>
 </table>
+
+<%= link_to("New Trip", new_trip_path(:passenger => @passenger)) %>

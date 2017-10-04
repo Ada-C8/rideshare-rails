@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   # get '/trips'
+
+  get '/trips/new', to: "trips#new", as: "new_trip"
   #
-  # get '/trips/show'
-  #
-  # get '/trips/new'
-  #
-  # get '/trips/create'
-  #
+  get '/trips/:id', to: "trips#show", as: "trip"
+
+
+
+  post '/trips', to: "trips#create"
+
   # get '/trips/edit'
   #
   # get '/trips/update'

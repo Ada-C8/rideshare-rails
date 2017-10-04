@@ -12,6 +12,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Date</th>
       <th>Cost</th>
       <th>Passenger Name</th>
@@ -28,6 +29,9 @@
   <tbody>
     <% @driver.trips.each do |t|  %>
     <tr>
+      <td>
+        <%= link_to(t.id, trip_path(t.id)) %>
+      </td>
       <td>
         <%= t.date %>
       </td>

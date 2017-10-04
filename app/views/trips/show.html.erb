@@ -1,2 +1,17 @@
 <h1>Trips#show</h1>
 <p>Find me in app/views/trips/show.html.erb</p>
+
+<article>
+  <ul>
+    <li>
+      <%= @trip.id %>
+    </li>
+    <li><%= @trip.cost %></li>
+    <li><%= @trip.date %></li>
+    <li><%= @trip.rating %></li>
+    <li><%= @trip.driver.name %></li>
+    <li><%= @trip.passenger.name %></li>
+
+  </ul>
+
+</article>
