@@ -2,10 +2,10 @@
       locals: { model: @passenger } %>
 
 <%= form_for @passenger do |f| %>
-  <%= f.label :passenger %>
+  <%= f.label "Passenger" %>
   <%= f.text_field :name, placeholder: "Ada Lovelace" %>
 
-  <%= f.label :phone_num %>
+  <%= f.label "Phone Number"%>
   <%= f.text_field :phone_num, placeholder: "(206)123-4567" %>
 
   <%= f.submit %>
