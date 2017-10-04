@@ -11,9 +11,14 @@
   <%= "Trip Earning: $" %><% total = ((trip.cost - (trip.cost * 0.15)) /100)
    %><%="%.2f"%total %>
 
-  <%= "Trip Rating: " %><%= trip.rating %>
+  <%= "Trip Rating: " %>
+  <% if trip.rating == nil %>
+  <%= "no rating yet" %>
+  <% else %>
+  <%= trip.rating %>
   <% average_rating += trip.rating %>
   <% counter += 1 %>
+  <%end%>
   <%= "Trip Date: " %><%= trip.date %>
   <%= "Trip Passenger: " %><%= trip.passenger_id %>
 <% end %>
@@ -31,5 +36,3 @@
   driver_path(@driver),
   method: :delete,
   data: { confirm: 'Are you sure?' } %>
-
-  
