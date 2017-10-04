@@ -1,10 +1,8 @@
 <h2>ALL TRIPS</h2>
 <ol>
-  <% @trips.each do |trip|%>
+  <% @trips.order(date: :asc).each do |trip|%>
     <li>
-
-      <%# render partial: "task_details", locals: { task: task }%>
-
+      
       <p>
         <strong >
           <%= link_to "Trip on: #{trip.date}", trip_path(trip) %>

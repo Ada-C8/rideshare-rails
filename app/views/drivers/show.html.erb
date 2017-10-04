@@ -22,10 +22,10 @@
   Average Rating = <%= @driver.average_rating %> stars
 </p>
 
-<ul>
-  <% @driver.trips.each do | trip | %>
+<ol>
+  <% @driver.trips.order(date: :desc).each do | trip | %>
     <li>
       <%= render partial: 'layouts/trip_details', locals: { trip: trip, route: @driver } %>
     </li>
   <% end %>
-</ul>
+</ol>
