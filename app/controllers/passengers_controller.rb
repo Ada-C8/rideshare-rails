@@ -35,10 +35,21 @@ class PassengersController < ApplicationController
 
     @passenger.name = passenger_updates[:name]
     @passenger.phone_num = passenger_updates[:phone_num]
-    @passenger.save
-
-    redirect_to passenger_path(@passenger)
+  
+    if @passenger.save
+      redirect_to passenger_path(@passenger)
+    else
+      # show errors to user
+      render :edit
+    end
   end
+
+def destroy
+  @passenger = Passenger.find(params[:id])
+  @passenger.destroy
+
+  redirect_to passengers_path
+end
 
 private
   def passenger_params
