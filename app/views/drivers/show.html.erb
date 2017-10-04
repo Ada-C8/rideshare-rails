@@ -2,7 +2,7 @@
 <ul>
   <li>Name: <%= @driver[:name] %></li>
   <li>Vin: <%= @driver[:vin] %></li>
-  <li>Id: <%= @driver[:id] %></li>
+  <li>ID: <%= @driver[:id] %></li>
   <li>Total Earning: <%= @driver.total_earnings %></li>
   <li>Average Rating: <%= @driver.average_rating %><br /> <%= link_to 'Delete Driver', driver_path(@driver), method: :delete, data: { confrim: 'Are you sure you want to delete this driver?'} %>  <%= link_to 'Edit Driver', edit_driver_path(@driver) %></li>
 </ul>

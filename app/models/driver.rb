@@ -21,6 +21,10 @@ class Driver < ApplicationRecord
       total += trip.rating
     end
 
+    if trips.any? == false
+      return "Nil"
+    end
+
     total /= trips.length
     return total
   end

@@ -4,11 +4,11 @@ class DriversController < ApplicationController
   end
 
   def new
-    @driver = Driver.new(driver_params)
+    @driver = Driver.new
   end
 
   def create
-    driver = Driver.new(name: params[:driver][:name], vin: params[:driver][:vin])
+    driver = Driver.new(driver_params)
     driver.save
     redirect_to drivers_path
   end
