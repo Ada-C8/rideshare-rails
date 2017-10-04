@@ -4,12 +4,12 @@
 
 <%= form_for @trip do |f| %>
 <!-- readonly: true so people cannot edit the ride, just the rating/cost?? -->
-<!-- there's gotta be a way to get the driver's name and the passenger's name to show up in the field instead of their IDs -->
+<!-- there's gotta be a better way to get the driver's name and the passenger's name to show up in the field instead of their IDs -->
   <%= f.label :driver_id %>
-  <%= f.text_field(:driver, :name) %>
+  <input type=text value="<%= @trip.driver.name %>" readonly="readonly">
 
   <%= f.label :passenger_id %>
-  <%= f.text_field :passenger_id, readonly: true %>
+  <input type=text value="<%= @trip.passenger.name %>" readonly="readonly">
 
   <%= f.label :date %>
   <%= f.text_field :date, readonly: true %>
@@ -19,9 +19,8 @@
 
   <%= f.label :cost %>
   <%= f.text_field :cost, placeholder: "20.00" %>
+  <!-- limit rating and cost to integers/floats -->
   <!-- Is there a way to input dollar amounts with decimals and convert to cents in db? -->
-
   <!-- Not sure what other information would need to be edited in trips  -->
-
   <%= f.submit %>
 <% end %>

@@ -2,12 +2,12 @@
 
 <h1>Trips</h1>
 
-  <ol>
-    <% @trips.each do |trip| %>
-      <li>
-        <h3> Trip# <%= link_to trip.id, trip_path(trip.id) %> </h3>
-        <p> Date: <%= trip.date %> </p>
-        <p> Total Number of Trips: insert code or delete later </p>
-      </li>
-          <% end %>
-  </ol>
+<ol>
+  <% @trips.each do |trip| %>
+    <li>
+      <h3> Trip# <%= link_to trip.id, trip_path(trip.id) %> </h3>
+      <p> Date: <%= trip.date %> </p>
+      <p> Total Number of Trips: insert code or delete later </p>
+    </li>
+  <% end %>
+</ol>
