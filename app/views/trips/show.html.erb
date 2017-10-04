@@ -10,6 +10,9 @@
     Passenger: <%= link_to @trip.passenger.name, passenger_path(@trip.passenger.id) %>
   </li>
   <li>
+    Date: <%= @trip.date.strftime("%B %d, %Y") %>
+  </li>
+  <li>
     Rating: <%= @trip.rating %>
   </li>
   <li>

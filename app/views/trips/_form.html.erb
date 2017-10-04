@@ -5,6 +5,9 @@
   <%= f.label :passenger_id %>
   <%= f.collection_select(:passenger_id, Passenger.all.order(:name), :id, :name) %>
 
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+
   <%= f.label :rating %>
   <%= f.text_field :rating %>
 
