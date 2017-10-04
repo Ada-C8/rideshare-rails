@@ -15,7 +15,9 @@ class Driver < ApplicationRecord
   def average_rating
     total = 0.0
     trip.each do |x|
+      unless x.rating == nil
       total += x.rating
+    end
     end
     answer = total/trip.length
     return answer.round(2)

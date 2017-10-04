@@ -29,7 +29,7 @@ class TripsController < ApplicationController
   end
 
   def create
-    driver = driver_select 
+    driver = driver_select
     cost = rand(1000..5000)
     trip = Trip.new(passenger_id: 2, cost: cost, driver_id: driver, rating: nil, date: Date.today)
     trip.save
