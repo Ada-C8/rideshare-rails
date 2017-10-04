@@ -1,11 +1,17 @@
 <%# @trips.each do |trip| %>
 <h1>Trip Details</h1>
 <ul>
+  <li>
+     <%= link_to "Driver Details",  driver_path(@trip.driver)%>
+  </li>
 <li>
   <strong>Driver Name:</strong> <%= @trip.driver.name %>
 </li>
 <li>
   <strong>Driver Vin:</strong> <%= @trip.driver.vin %>
+</li>
+<li>
+   <%= link_to "Passenger Details", passenger_path(@trip.passenger.id) %>
 </li>
 <li>
   <strong>Passenger Name:</strong> <%= @trip.passenger.name %>
@@ -17,12 +23,22 @@
   TODO: Assign Rating, if it does not already have one
 </li>
 <li>
+  <strong> Trip Date:</strong> <%=@trip.date %>
+</li>
+<li>
   <strong> Trip Rating:</strong> <%=@trip.rating %>
 </li>
 <li>
   <strong> Trip Cost:</strong> <%=@trip.cost %>
 </li>
+<li>
+  <%= link_to "Edit Trip", edit_trip_path(@trip.id) %>
+</li>
+<li>
+  <%= link_to "Delete Trip", trip_path(@trip.id), method: :delete, data: {:confirm => "Are you sure you want to delete this trip?"} %>
+</li>
 </ul>
+
 <!-- View details of the trip
 Assign a rating (1-5) to the trip, if it does not already have one
 Click links to detail pages for the trip's driver and passenger

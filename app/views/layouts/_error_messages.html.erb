@@ -1,0 +1,16 @@
+<% if model.errors.messages.length > 0 %>
+  <section class="error-messages">
+
+    <h3> Errors Happened!</h3>
+    <ul>
+      <% model.errors.messages.each do |field, problems| %>
+      <% problems.each do |problem| %>
+      <li>
+        <strong><%= field.capitalize %></strong> <%= problem %>
+      </li>
+    <% end %>
+      <% end %>
+    </ul>
+  </section>
+
+<% end %>

@@ -1,37 +1,6 @@
 <h1>Add New Driver</h1>
 
-<% if @driver.errors.messages.length > 0 %>
-  <section class="error-messages">
-
-    <h3> Errors Happened!</h3>
-    <ul>
-      <% @driver.errors.messages.each do |field, problems| %>
-      <% problems.each do |problem| %>
-      <li>
-        <strong><%= field.capitalize %></strong> <%= problem %>
-      </li>
-    <% end %>
-      <% end %>
-    </ul>
-  </section>
-
-<% end %>
+<%= render partial: 'layouts/error_messages', locals: {model: @driver} %>
 
 
-<%= form_for @driver do |f| %>
-<ul>
-  <li>
-<%= f.label :name%>
-<%= f.text_field :name, class: "form-field"%>
-</li>
-<li>
-<%= f.label :vin %>
-<%= f.text_field :vin, class: "form-field"%>
-</li>
-<li>
-<%= f.submit %>
-</li>
-
-</ul>
-
-<% end %>
+<%= render partial: 'form' %>
