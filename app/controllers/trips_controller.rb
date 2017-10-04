@@ -26,7 +26,7 @@ class TripsController < ApplicationController
     driver_ids = find_driver_ids()
     @trip = Trip.new(date: Date.today, cost: rand(100..2000), driver_id: driver_ids.sample.to_i, passenger_id: params[:passenger_id], rating: nil)
     @trip.save!
-    
+
     # if @trip.save
     #   redirect_to passenger_path(params[:passenger_id])
     # else

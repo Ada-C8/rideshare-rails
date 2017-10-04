@@ -1,6 +1,6 @@
 <h1>All Trips!</h1>
 <p>
-  <%= link_to "add trip", new_trip_path %>
+  <%= link_to "add trip", new_trip_path(:passenger_id) %>
 </p>
 
 <!-- <p>
@@ -12,8 +12,6 @@
 <!-- </div>
 <% end %>
 </p> -->
-
-<!-- not sure how best to display the WHOLE list, should it be by date? Or by driver id? Or by passenger id?-->
 
 <table>
   <tr>

@@ -19,8 +19,8 @@
 <%= link_to "Edit Passenger", edit_passenger_path(@passenger) %>
 
 <%= link_to 'Delete Passenger',
-  passenger_path(@passenger),
+  passenger_path(:passenger_id),
   method: :delete,
   data: { confirm: 'Are you sure?' } %>
 
-  <%= link_to "New Trip", new_trip_path %>
+  <%= link_to "New Trip", new_trip_path(:passenger_id) %>
