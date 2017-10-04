@@ -1,5 +1,5 @@
 class Driver < ApplicationRecord
-  has_many :trips
+  has_many :trips, dependent: :nullify
   def total_earnings
     total_earnings = 0
     self.trips.each do |trip|

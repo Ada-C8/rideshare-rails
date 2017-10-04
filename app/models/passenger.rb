@@ -1,5 +1,5 @@
 class Passenger < ApplicationRecord
-  has_many :trips
+  has_many :trips, dependent: :nullify
 
   def total_trip_cost
     trips = Trip.where(passenger_id: self.id).collect { |trip| trip.cost }
