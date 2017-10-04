@@ -9,6 +9,12 @@
   </head>
 
   <body>
+    <nav>
+      <%= link_to "Add new passenger", new_passenger_path(@passenger) %>
+      <%= link_to "Add new driver", new_driver_path(@driver) %>
+      <%= link_to "All passengers", passengers_path %>
+      <%= link_to "All drivers", drivers_path %>
+    </nav>
     <%= yield %>
   </body>
 </html>
