@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
 
 
-  post '/trips', to: "trips#create"
+  post '/trips', to: "trips#create", as: "create_trip"
 
   # get '/trips/edit'
   #
