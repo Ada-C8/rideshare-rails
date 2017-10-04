@@ -14,5 +14,10 @@
   <%= render partial: '/partial_views/trips_list'%>
 </section>
 
+<section>
+  <h3>Driver's Total Earnings</h3>
+  $<%= @driver.total_earnings %>
+</section>
+
 <%= link_to "Edit", edit_driver_path(@driver.id)%>
 <%= link_to "Delete", delete_driver_path(@driver.id), method: :delete, data: {confirm: "Are you sure?"}%>
