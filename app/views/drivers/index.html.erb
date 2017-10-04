@@ -2,12 +2,12 @@
 
 <h1>Drivers</h1>
 
-  <ol>
-    <%@drivers.each do |driver|%>
-      <li>
-        <h3> <%=link_to driver.name, driver_path(driver.id)%> </h3>
-        <p> VIN: <%= driver.vin %> </p>
-        <p> Number of trips: insert code or delete later </p>
-      </li>
-          <%end%>
-  </ol>
+<ul>
+  <% @drivers.each do |driver| %>
+    <li>
+      <h3> <%= link_to driver.name, driver_path(driver.id) %> </h3>
+      <p> VIN: <%= driver.vin %> </p>
+      <p> Number of trips: insert code or delete later </p>
+    </li>
+  <%end%>
+</ul>
