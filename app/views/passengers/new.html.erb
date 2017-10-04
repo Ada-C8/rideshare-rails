@@ -1,3 +1,6 @@
 <h1>This is the passenger new page</h1>
 
-<%= render 'form', passenger: @passenger %>
+<%= render partial: 'layouts/error_messages', locals: {model: @passenger} %>
+
+<%# render 'form', passenger: @passenger %>
+<%= render partial: 'form' %>

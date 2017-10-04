@@ -5,3 +5,45 @@
 <p>
   <%= @passenger.phone_num %>
 </p>
+
+<p>
+  See the total amount the passenger has been charged
+</p>
+<p>
+  Passenger's Trips
+</p>
+<% i = 1 %>
+<% @passenger.trips.each do |trip| %>
+<p>
+  <%= link_to "Trip #{i}:", trip_path(trip.id) %>
+  Date: <%= trip.date %>,
+  Rating: <%= trip.rating %>,
+  Cost: <%= trip.cost %>,
+</p>
+
+<% i += 1 %>
+<%end%>
+
+<li>
+  Add a new trip for this passenger
+An available driver is selected by the server
+The trip starts with no rating
+</li>
+<li>
+<%= link_to 'Add trip', new_trip_path(:passenger_id => @passenger.id) %>
+</li>
+<li>
+  <%= link_to "Edit", edit_passenger_path(@passenger.id) %>
+</li>
+<li>
+  <%= link_to "Delete", passenger_path(@passenger.id), method: :delete, data: {:confirm => "Are you sure you want to delete this driver?"} %>
+</li>
+
+<!-- Clicking on a trip from the list will take me to a detail page for that trip
+Click links to edit and delete that passenger
+Add a new trip for this passenger
+An available driver is selected by the server
+The trip starts with no rating
+When adding a new passenger:
+The user must provide a name and phone number
+Don't worry about how the phone number is formatted -->
