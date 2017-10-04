@@ -17,13 +17,16 @@
   <header class="navigation">
     <%= link_to "Adryft", root_path %>
     <section class="dropdown">
-        <ul class "view-menu">
+      <ul class "view-menu">
+
           <button class="dropdown-button-view">View</button>
           <div class="dropdown-content-view">
           <li><%= link_to "All Drivers", drivers_path %></li>
           <li><%= link_to "All Passengers", passengers_path %></li>
           </div>
         </ul>
+    </section>
+    <section class="dropdown">
       <ul class="create-menu">
       <button class="dropdown-button-create">Create</button>
         <div class="dropdown-content-create">

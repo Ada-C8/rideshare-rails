@@ -51,11 +51,12 @@ ul {
 .dropdown-button-view, .dropdown-button-create  {
     background-color: transparent;
     color: white;
-    padding: 16px;
+    padding: 0;
     font-size: 3em;
     border: none;
     cursor: pointer;
     font-family: 'Arvo', serif;
+    margin: 0;
 
 }
 
@@ -73,6 +74,7 @@ ul {
     min-width: 160px;
     text-align: left;
     overflow: visible;
+    margin: 0;
     /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
     z-index: 1;
 }
@@ -84,15 +86,16 @@ ul {
     display: block;
 }
 
-.dropdown-button-view:hover + .dropdown-content-view {
+/*.dropdown:hover + .dropdown-content-view {
+    display: block;
+}*/
+
+
+.dropdown:hover .dropdown-content-view {
     display: block;
 }
 
-.dropdown-content-view:hover + .dropdown-content-view {
-    display: block;
-}
-
-.dropdown-button-create:hover + .dropdown-content-create {
+.dropdown:hover .dropdown-content-create {
     display: block;
 }
 
