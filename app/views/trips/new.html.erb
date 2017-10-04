@@ -1,2 +1,8 @@
 <h1>Trips#new</h1>
 <p>Find me in app/views/trips/new.html.erb</p>
+
+<!-- does not work yet -->
+<% form_for @trip do |f| %>
+<%= f.select :driver_id, options_from_collection_for_select(Driver.all, "id", "name") %>
+<%= f.submit %>
+<% end %>
