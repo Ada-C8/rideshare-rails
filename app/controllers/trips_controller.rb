@@ -23,12 +23,21 @@ class TripsController < ApplicationController
 
   def update
     @trip = Trip.find(params[:id])
-    @trip.update(trips_params)
-    # if result
+    result = @trip.update(trips_params)
+    if result
        redirect_to trips_path(@trip.id)
-    # else
-    #   render :edit
-    # end
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    trip = Trip.find(params[:id])
+    if trip.destroy
+      redirect_to trips_path
+    else
+      #error message
+    end
   end
 
   private
