@@ -1,17 +1,13 @@
-<h1> Add a trip: </h1>
+<h1> Add a Trip: </h1>
+<%= render partial: 'layouts/error_messages', locals: {model: @trip} %>
 
-<!-- <%= link_to "New Trip", new_trip_path%> -->
+<%= form_for @trip do |f| %>
+<%= f.label :date %>
+<%= f.text_field :date %>
 
-<!-- <%= form_for @trip do |f| %>
-
-  <%= f.label :date %>
-  <%= f. text_field :date %>
-
-  <%= f.label :passenger_id %>
-  <%= f. text_field :passenger_id %>
-
-  <%= f.label :cost %>
-  <%= f. text_field :cost %>
-
-  <%= f.submit %>
-<% end %> -->
+<%= f.hidden_field :passenger_id, :value => params[:passenger_id] %>
+<%= f.hidden_field :driver_id, :value => Driver.all.sample.id %>
+<%= f.hidden_field :rating, :value => nil  %>
+<%= f.hidden_field :cost, :value => rand(1000..10000) %>
+<%= f.submit %>
+<% end %>

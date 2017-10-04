@@ -22,3 +22,5 @@
   passenger_path(:passenger_id),
   method: :delete,
   data: { confirm: 'Are you sure?' } %>
+
+  <%= link_to 'Add NEW trip', new_passenger_trip_path(@passenger.id) %> 
