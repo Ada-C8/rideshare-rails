@@ -1,6 +1,4 @@
-<% if model.errors.messages.values.any? {|message| message.length > 0} %>
-  <% puts "weird error?" %>
-  <% puts model.errors.messages %>
+<% if model.errors.any? %>
     <section class="error-messages">
       <h3>Errors!</h3>
         <ul>
