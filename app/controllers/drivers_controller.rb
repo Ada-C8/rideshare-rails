@@ -1,14 +1,25 @@
 class DriversController < ApplicationController
   def index
+    @driver = Driver.order(:id)
   end
 
   def show
+    @driver = Driver.find(params[:id])
   end
 
   def edit
+    @driver = Driver.find(params[:id])
   end
 
   def update
+    @driver = Driver.find(params[:id])
+    @driver.name = params[:driver][:name]
+    @driver.vin = params[:driver][:vin]
+    if @driver.save
+      redirect_to drivers_path
+    else
+      render :edit
+    end
   end
 
   def new
@@ -25,5 +36,7 @@ class DriversController < ApplicationController
   end
 
   def destroy
+    @driver = Driver.find(params[:id]).destroy
+    redirect_to drivers_path
   end
 end
