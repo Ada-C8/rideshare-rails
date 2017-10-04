@@ -1,8 +1,14 @@
 <%= render partial: 'layouts/nav' %>
 
+<section>
+<h2>Passenger: <%= @passenger.name %> </h2>
+<p>Phone Number: <%= @passenger.phone_num %> </p>
+<%= link_to "Edit", edit_passenger_path(@passenger.id) %>
 
-<h2>Passenger: <%= @passenger.name%> </h2>
-<h3>Phone Number: <%= @passenger.phone_num%> </h3>
+<%= link_to "Delete", passenger_path(@passenger.id), method: :delete,
+    data: { confirm: "Are you sure you'd like to delete this passenger?" } %>
+</section>
+
 <p>Total charged: <%= @passenger.total_charged %></p>
   <ul>
     <!-- <li> Number of Trips Completed: Add this later </li> -->

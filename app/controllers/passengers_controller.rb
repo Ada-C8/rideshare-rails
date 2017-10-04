@@ -20,6 +20,10 @@ class PassengersController < ApplicationController
     end
   end
 
+  def edit
+    @passenger = Passenger.find(params[:id])
+  end
+  
   def update
     @passenger = Passenger.find(params[:id])
     @passenger = Passenger.update(passenger_params)
