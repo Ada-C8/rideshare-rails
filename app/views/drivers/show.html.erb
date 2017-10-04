@@ -13,6 +13,7 @@
   <<table>
     <thead>
       <tr>
+        <th>Id</th>
         <th>Date</th>
         <th>Cost</th>
         <th>Passenger Name</th>
@@ -25,6 +26,7 @@
       <% @driver.trips.each do |t| %>
 
         <tr>
+          <td> <%=link_to(t.id, trip_path(t.id))%></td>
           <td> <%= t.date %></td>
           <td> <%= format("%.2f", t.cost/100)%></td>
           <td> <%= t.passenger.name  %> </td>
@@ -40,4 +42,9 @@
 <section>
   <h3>Total Earnings:</h3>
   <%= (@driver.total_earnings/100).round(2) %>
+</section>
+
+<section>
+  <h3>Average Rating:</h3>
+  <%= @driver.ave_rating %>
 </section>

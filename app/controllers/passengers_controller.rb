@@ -37,7 +37,6 @@ class PassengersController < ApplicationController
       redirect_to passengers_path
     else
       redirect_to :new
-
     end
   end
 

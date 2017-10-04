@@ -19,8 +19,8 @@ class Driver < ApplicationRecord
       total += t.rating
     end
 
-    average = (total / trip.count)
+    average = (total / trips.count)
 
-    return average
+    return average.round(1)
   end
 end

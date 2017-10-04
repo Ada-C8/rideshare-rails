@@ -13,6 +13,7 @@
   <<table>
     <thead>
       <tr>
+        <th>Trip ID</th>
         <th>Date</th>
         <th>Cost</th>
         <th>Driver Name</th>
@@ -25,6 +26,7 @@
       <% @passenger.trips.each do |t| %>
 
       <tr>
+        <td><%= link_to(t.id, trip_path(t.id)) %></td>
         <td> <%= t.date %></td>
         <td> <%= format("%.2f", t.cost/100) %></td>
         <td> <%= t.driver.name  %> </td>

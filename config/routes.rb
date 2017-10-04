@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
-  get 'trips/index'
 
-  get 'trips/show'
+  get '/trips', to: 'trips#index'
 
-  get 'trips/edit'
+  get '/trips/new', to: 'trips#new', as: 'new_trip'
 
-  get 'trips/update'
+  get '/trips/:id/edit', to: 'trips#edit', as: 'edit_task'
 
-  get 'trips/new'
+  get '/trips/:id', to: 'trips#show', as: 'trip'
 
-  get 'trips/create'
+  patch '/trips/:id', to: 'trips#update'
 
-  get 'trips/destroy'
+  post '/trips', to: 'trips#create'
+
+  get '/trips/destroy/:id', to: 'trips#destroy', as: 'delete_trip'
 
 
   get '/passengers', to: 'passengers#index'
