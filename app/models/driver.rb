@@ -1,6 +1,10 @@
 class Driver < ApplicationRecord
   has_many :trips, dependent: :destroy
 
+  validates :name, presence: true
+  validates :vin, presence: true
+
+
 def total_earnings
   sum = 0
 
