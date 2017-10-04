@@ -20,6 +20,7 @@
 
   <p>
     <strong>Trips: </strong>
+    <%= link_to "Add Trip", new_passenger_trip_path(@passenger.id) %>
     <ul>
       <% @trips.each do |trip| %>
         <li>

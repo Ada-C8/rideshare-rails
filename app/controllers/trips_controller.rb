@@ -4,7 +4,7 @@ class TripsController < ApplicationController
   end
 
   def new
-    @trip = Trip.new(passenger_id: Passenger.find(params[:id]).id)
+    @trip = Trip.new(passenger_id: params[:passenger_id], date: Date.today)
   end
 
   def create

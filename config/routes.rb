@@ -3,9 +3,12 @@ Rails.application.routes.draw do
 
   root 'main#index'
 
-  resources :drivers, :passengers
+  resources :drivers
+  resources :passengers do
+    resources :trips, only: [:new]
+  end
   resources :trips, except: [:index, :new]
-
-  get '/trips/new/:id', to: 'trips#new', as: 'new_trip'
+  #
+  # get '/trips/new/:id', to: 'trips#new', as: 'new_trip'
 
 end
