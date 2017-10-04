@@ -1,6 +1,27 @@
 class TripsController < ApplicationController
   def index
-    @trips = Trip.order(:id)
+    if params[:id]
+      @trips = Passenger.find(params[:id]).trips
+    else
+      @trips = Trip.order(:id)
+    end
+  end
+
+  def new
+    @trip = Trip.new
+    if params[:passenger_id]
+      @trip.passenger_id = params[:passenger_id]
+    end
+  end
+
+  def create
+    @trip = Trip.new(trips_params
+    )
+    if @trip.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   # def show
@@ -23,12 +44,21 @@ class TripsController < ApplicationController
 
   def update
     @trip = Trip.find(params[:id])
-    @trip.update(trips_params)
-    # if result
-       redirect_to trips_path(@trip.id)
-    # else
-    #   render :edit
-    # end
+    result = @trip.update(trips_params)
+    if result
+      redirect_to trips_path(@trip.id)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    trip = Trip.find(params[:id])
+    if trip.destroy
+      redirect_to trips_path
+    else
+      #error message
+    end
   end
 
   private

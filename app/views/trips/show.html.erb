@@ -14,3 +14,7 @@
 <p>trip ID: <%= @trip.id %></p>
 
 <%= link_to "edit", edit_trip_path %>
+<%= link_to 'delete',
+  trip_path(@trip),
+  method: :delete,
+  data: { confirm: 'Are you sure?' } %>

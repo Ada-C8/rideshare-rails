@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'main#index'
-  resources :passengers
   resources :drivers
+  resources :passengers do
+    # get 'trips/:id/passengers', to: 'trips#index', as: 'passenger_trips'
+    resources :trips, only: [:index, :new]
+  end
   resources :trips
+
   # get '/trips', to: 'trips#index', as: 'trips'
   # get '/trips/new/:passenger_id', to: 'trips#new', as: 'new_trip'
   # post '/trips/create', to: 'trips#create', as: 'create_trip'
