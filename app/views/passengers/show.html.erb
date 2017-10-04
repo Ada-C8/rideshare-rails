@@ -16,6 +16,9 @@
     <li>
       <%=link_to "Delete", passenger_path(@passenger.id), method: :delete, data: { confirm: 'Are you sure?' } %>
     </li>
+    <li>
+    <%= link_to "All Trips", passengers_path %>
+    </li>
   </ul>
 </section>
 

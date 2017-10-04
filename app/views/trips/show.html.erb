@@ -13,6 +13,9 @@
   <li>
     <%= "Cost: #{@trip.cost}"%>
   </li>
+  <%if @trip.rating == nil%>
+    <% @trip.rating = 5 %>
+    <% end %>
   <li>
     <%= "Rating: #{@trip.rating}"%>
   </li>

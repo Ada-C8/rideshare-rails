@@ -42,4 +42,9 @@ class TripsController < ApplicationController
       render :new
     end
   end
+
+  private
+   def trip_params
+     return params.require(:trip).permit(:date, :rating, :driver_id, :passenger_id, :cost)
+   end
 end
