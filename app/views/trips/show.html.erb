@@ -1,8 +1,12 @@
 <h1> Individual trip detail </h1>
-<p>trip id: <%= @trip.driver_id %></p>
+
 <p>driver id: <%= @trip.driver_id %></p>
 <p>passenger id: <%= @trip.passenger_id %></p>
 <p>date: <%= @trip.date %></p>
 <p>rating: <%= @trip.rating %></p>
 <p>cost: <%= '%.02f' % (@trip.cost / 100) %></p>
 <p>trip ID: <%= @trip.id %></p>
+
+<%= link_to "edit trip", edit_trip_path(@trip) %>
+
+<%= link_to "delete trip", delete_trip_path(@trip.id), method: :delete %>

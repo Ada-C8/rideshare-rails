@@ -30,6 +30,7 @@ class TripsController < ApplicationController
     driver_id: driver_ids.sample.to_i, passenger_id: params[:passenger_id],
     rating: nil)
     @trip.save!
+    redirect_to trips_path
 
     # if @trip.save
     #   redirect_to passenger_path(params[:passenger_id])
@@ -37,6 +38,48 @@ class TripsController < ApplicationController
     #   redirect_to root_path
     # end
   end
+
+  def edit
+    @trip = Trip.find(params[:id])
+  end
+
+  def update
+    @trip = Trip.find(params[:id])
+    @trip.update(trip.params)
+    # if result
+    #   redirect_to trips_path(@trip.id)
+    # else
+    #   render :edit
+    # end
+  end
+
+  def destroy
+    trip = Trip.find(params[:id])
+    if trip.destroy
+      redirect_to trips_path
+    else
+      #error message
+    end
+  end
+  #
+  # def update
+  #   driver_ids = find_driver_ids()
+  #   result = @trip = Trip.find(params[:id])
+  #   @trip.update(
+  #   date: Date.today,
+  #   cost: rand(100..2000),
+  #   driver_id: driver_ids.sample.to_i, passenger_id: params[:passenger_id],
+  #   rating: nil)
+  #
+  #   if result
+  #     redirect_to trips_path(@trip.id)
+  #   else
+  #     render :edit
+  #   end
+  # end
+
+
+
 
   # trip = Trip.new(
   # driver_id: Driver.first,
@@ -54,9 +97,11 @@ class TripsController < ApplicationController
   # end
 
   private
-  # def trips_params
-  #   return params.require(:trip).permit(:driver_id, :passenger_id, :date, :cost, :rating)
-  # end
+
+  def trips_params
+    return params.require(:trip).permit(:driver_id, :passenger_id, :date, :cost, :rating)
+  end
+
   def find_driver_ids
     driver_ids = []
     Driver.all.each do |driver|
