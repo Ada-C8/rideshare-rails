@@ -1,9 +1,16 @@
 <h1> Individual trip detail </h1>
 
 <p> driver id: <%= link_to @trip.driver_id, driver_path %></p>
-<p>passenger id: <%= link_to @trip.passenger_id, passenger_path(@passenger) %></p>
+
+<% if @trip.passenger_id == nil || @trip.passenger_id == 0 %>
+<p>passenger id does not exist </p>
+<% else %>
+<p> passenger id: <%= link_to @trip.passenger_id, passenger_path(@passenger) %></p>
+<%end %>
+
 <p>date: <%= @trip.date %></p>
 <p>rating: <%= @trip.rating %></p>
 <p>cost: <%= '%.02f' % (@trip.cost / 100) %></p>
 <p>trip ID: <%= @trip.id %></p>
+
 <%= link_to "edit", edit_trip_path %>
