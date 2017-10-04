@@ -2,7 +2,6 @@ body {
   font-family: 'Open Sans', sans-serif;
   background: linear-gradient(to bottom right, #8BDAEE, #17849F);
   background-size: cover;
-
 }
 
 .homepage {
@@ -13,6 +12,10 @@ body {
 
 ul {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 .navigation {
@@ -38,7 +41,6 @@ ul {
 
   text-shadow: 1;
   padding-left: .5em;
-  text-decoration: none;
   font-weight: bold;
 }
 
@@ -49,7 +51,7 @@ ul {
 .navigation .dropdown a{
   font-family: 'Arvo', serif;
   font-size: 2em;
-  color: #1FA1C2;
+  color: #0F5364;
   text-shadow: 1;
   text-decoration: none;
 }
@@ -84,10 +86,10 @@ ul {
     margin: 0;
     /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
     z-index: 1;
+
 }
 
 .dropdown-content-view a, .dropdown-content-create a {
-    color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -109,7 +111,7 @@ ul {
 .information-box {
   align-items: center;
   width: 100%;
-  height: 500px;
+  height: 90%;
   min-width: 350px;
   overflow: scroll;
   display: flex;
@@ -117,13 +119,28 @@ ul {
   opacity: .75;
 }
 
+.individual-details {
+
+}
+
+/*.ride-share-body {
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  min-width: 350px;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  opacity: .75;
+}*/
+
 footer {
   font-size: 1em;
   width:100%;
   height:44px;
   padding-top:20px;
   background:transparent;
-  position:fixed;
+  position: fixed;
   bottom:0;
   text-align: center;
   color: white;
@@ -229,88 +246,74 @@ table, th, td {
 th {
   font-weight: bold;
 }*/
+h1 {
+  font-family: 'Slabo 13px', serif;
+  font-size: 3em;
+  color: #0F5364;
+  font-weight: bold;
 
-table {
+}
+
+table, table a{
   display: table;
-  width: 100%;
+  width: 80%;
+  height: 50%;
   background: transparent;
-  text-align: center;
-  box-sizing: border-box;
-
+  text-align: left;
+  color: white;
+  font-family: 'Slabo 13px', serif;
 }
 
-table,thead,tbody,tfoot,tr, td,th{
+table,thead,th, td{
   text-align: center;
   margin: auto;
-  border:1px solid #dedede;
-  padding: 1rem;
-  width: 50%;
-}
-.table    { display: table; width: 50%; }
-.tr       { display: table-row;  }
-.thead    { display: table-header-group }
-.tbody    { display: table-row-group }
-.tfoot    { display: table-footer-group }
-.col      { display: table-column }
-.colgroup { display: table-column-group }
-.td, .th   { display: table-cell; width: 50%; }
-.caption  { display: table-caption }
-
-.table,
-.thead,
-.tbody,
-.tfoot,
-.tr,
-.td,
-.th{
-  text-align: center;
-  margin: auto;
+  border:1px solid #B5E7F4;
   padding: 1rem;
 }
-.table{
-  background: #fff;
-  margin: auto;
-  border:none;
-  padding: 0;
-  margin-bottom: 5rem;
+
+tr:hover, tr:hover a{
+  background-color: white;
+  color: #0F5364;
 }
 
-.th{
-  font-weight: 700;
-  border:1px solid #dedede;
-  &:nth-child(odd){
-    border-right:none;
-  }
-}
-.td{
-  font-weight: 300;
-  border:1px solid #dedede;
-  border-top:none;
-  &:nth-child(odd){
-    border-right:none;
-  }
+
+
+/*crazy stuff trying out*/
+.profiles {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
 }
 
-.aa_htmlTable{
-  background: tomato;
-  padding: 5rem;
-  display: table;
-  width: 100%;
-  height: 100vh;
-  vertical-align: middle;
-}
-.aa_css{
-  background: skyblue;
-  padding: 5rem;
-  display: table;
-  width: 100%;
-  height: 100vh;
-  vertical-align: middle;
+.row {
+    clear: both;
+    margin-left: -15px;
+    margin-right: -15px;
+    overflow: hidden;
 }
 
-.aa_ahmadawais{
-  display: table;
-  width: 100%;
-  font: 100 1.2rem/2 Roboto;
-  margin: 5rem auto;
+.profile-pic {
+  display: flex;
+  flex-flow: column;
+  padding: 1em;
+  text-align: center;
+  color: #0F5364;
+  font-family: 'Slabo 13px', serif;
+}
+
+.profile-pic a {
+  color: #0F5364;
+}
+
+.profile-pic img{
+  padding-bottom: 1em;
+}
+
+.profile-pic:hover, .profile-pic:hover a{
+  color: white;
+
+}
+
+.profile-pic img{
+  border-radius: 50%;
 }

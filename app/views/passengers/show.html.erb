@@ -1,12 +1,15 @@
-<h1>Passenger Details</h1>
-
-<p>
-  Passenger Name: <%= @passenger.name %>
-  Phone Number: <%= @passenger.phone_number %>
-    Passenger Lifetime Cost on Yachts: $<%= '%.02f' % (@passenger.total_cost / 100) %>
-    <%= link_to "Edit Passenger Details", edit_passenger_path(@passenger.id), alt: "link to edit passenger details" %>
-    <%= link_to "Delete Passenger", passenger_path(@passenger.id), method: :delete, alt: "link to delete passenger", data: {confirm: "Are you sure you want to delete this passenger?"} %>
-</p>
+<section class="individual-details">
+<!-- <h1>Passenger Details</h1> -->
+<ul>
+  <li>Passenger Name: <%= @passenger.name %></li>
+  <li>Phone Number: <%= @passenger.phone_number %></li>
+  <li>Passenger Lifetime Cost on Yachts: $<%= '%.02f' % (@passenger.total_cost / 100) %></li>
+</ul>
+  <ul class="buttons">
+    <li><%= link_to "Edit Passenger Details", edit_passenger_path(@passenger.id), alt: "link to edit passenger details" %></li>
+    <li><%= link_to "Delete Passenger", passenger_path(@passenger.id), method: :delete, alt: "link to delete passenger", data: {confirm: "Are you sure you want to delete this passenger?"} %></li>
+  </ul>
+</section>
 
 <table>
   <tr>
@@ -17,7 +20,6 @@
     <th>Rating</th>
     <th>Cost</th>
 </tr>
-  All trips taken by <%= @passenger.name %>:
   <% (@passenger.trips).each do |trip| %>
   <tr>
   <td><%=trip.date%></td>

@@ -1,15 +1,43 @@
+
+
+<section class="profiles">
+
+  <% @drivers.each do |driver| %>
+  <ul class="row">
+
+  <li class="profile-pic">
+    <img src="http://placekitten.com/150/150" alt: "Driver image" />
+    <span class="name">Captain ID <%= driver.id %></span>
+    <span><%= link_to driver.name, driver_path(driver.id), alt: "Link to individual driver pages."%></span>
+    <span class="vin"><%= driver.vin %></span>
+  </li>
+</ul>
+
+  <% end %>
+
+</section>
+
+
 <h1>List of All Drivers</h1>
 <table>
-  <tr>
+  <div class="table-header">
+    <tr>
     <th>Driver ID</th>
     <th>Driver Name</th>
     <th>Yacht Number</th>
   </tr>
+</div>
+
+<div class="table-content">
   <% @drivers.each do |driver| %>
-  <tr>
+  <tbody>
+    <tr>
     <td><%= driver.id %></td>
     <td><%= link_to driver.name, driver_path(driver.id), alt: "Link to individual driver pages."%></td>
     <td><%= driver.vin %></td>
   </tr>
     <% end %>
+  </tbody>
+
+  </div>
 </table>

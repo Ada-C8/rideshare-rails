@@ -1,12 +1,15 @@
-<h1>Driver Details</h1>
-<p>
-  Driver Name: <%= @driver.name %> Yacht ID Number: <%= @driver.vin %>
-  Total Lifetime Earnings: $<%='%.02f' % (@driver.total_earnings / 100) %>
-  Average Rating: <%= '%.02f' % @driver.average_rating %>
-  <%= link_to "Edit Driver Details", edit_driver_path(@driver.id), alt: "link to edit driver details" %>
-  <%= link_to "Delete Driver", driver_path(@driver.id), method: :delete, alt: "link to delete driver", data: {confirm: "Are you sure you want to delete this driver?"} %>
-
-</p>
+<section class="individual-details">
+<!-- <h1>Driver Details</h1> -->
+<ul>
+  <li>Driver Name: <%= @driver.name %> Yacht ID Number: <%= @driver.vin %></li>
+  <li>Total Lifetime Earnings: $<%='%.02f' % (@driver.total_earnings / 100) %></li>
+  <li>Average Rating: <%= '%.02f' % @driver.average_rating %></li>
+</ul>
+  <ul class="buttons">
+    <li><%= link_to "Edit Driver Details", edit_driver_path(@driver.id), alt: "link to edit driver details" %></li>
+    <li><%= link_to "Delete Driver", driver_path(@driver.id), method: :delete, alt: "link to delete driver", data: {confirm: "Are you sure you want to delete this driver?"} %></li>
+  </ul>
+</section>
 
 <table>
   <tr>
@@ -17,7 +20,6 @@
     <th>Rating</th>
     <th>Cost</th>
   </tr>
-  Trips this Captain has led:
   <% (@driver.trips).each do |trip| %>
   <tr>
   <td><%=trip.date%></td>
