@@ -2,6 +2,7 @@ body {
   font-family: 'Slabo 13px', serif;
   background: linear-gradient(to bottom right, #8BDAEE, #17849F);
   background-size: cover;
+  min-height: 100%;
 }
 
 .homepage {

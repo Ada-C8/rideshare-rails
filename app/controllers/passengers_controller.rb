@@ -16,7 +16,7 @@ class PassengersController < ApplicationController
   def create
     @passenger = Passenger.new(name: params[:passenger][:name], phone_number: params[:passenger][:phone_number])
     if @passenger.save
-      redirect_to passenger_index_path
+      redirect_to passengers_path
     else
       render :new
     end
@@ -25,7 +25,7 @@ class PassengersController < ApplicationController
   def edit
     @passenger = Passenger.find_by(id: params[:id])
     unless @passenger
-      redirect_to passenger_index_path
+      redirect_to passengers_path
     end
   end
 
@@ -46,7 +46,7 @@ class PassengersController < ApplicationController
       passenger = Passenger.find_by(id: params[:id])
 
       if passenger.destroy
-        redirect_to passenger_index_path
+        redirect_to passengers_path
       else
 
       end
