@@ -7,7 +7,7 @@ class RidersController < ApplicationController
   def show
     @rider = Rider.find_by(id: params[:id].to_i)
 
-    @trips = @rider.trips
+    @trips = @rider.trips.order(:id)
   end
 
   def edit

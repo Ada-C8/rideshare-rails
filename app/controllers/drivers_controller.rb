@@ -6,7 +6,7 @@ class DriversController < ApplicationController
 
   def show
     @driver = Driver.find_by(id: params[:id].to_i)
-    @trips = @driver.trips
+    @trips = @driver.trips.order(:id)
   end
 
   def edit
@@ -26,7 +26,7 @@ class DriversController < ApplicationController
   end
 
   def create
-    @driver = Driver.new(name: params[:driver][:name], vin: params[:driver][:vin]) 
+    @driver = Driver.new(name: params[:driver][:name], vin: params[:driver][:vin])
 
     @driver.save ? (redirect_to drivers_path) : (render :new)
   end
