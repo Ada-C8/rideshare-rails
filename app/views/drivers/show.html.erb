@@ -9,3 +9,35 @@
     <%= @driver.vin %>
     </p>
 </section>
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Cost</th>
+      <th>Passenger Name</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+
+  <h3>Driver Total Earnings:</h3>
+  <p><%= @driver.total_charged %></p>
+
+  <tbody>
+    <% @driver.trips.each do |t|  %>
+    <tr>
+      <td>
+        <%= t.date %>
+      </td>
+      <td>
+        <%= t.cost %>
+      </td>
+      <td>
+        <%= t.passenger.name %>
+      </td>
+      <td>
+        <%= t.rating %>
+      </td>
+    </tr>
+    <% end  %>
+  </tbody>
+</table>
