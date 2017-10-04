@@ -3,9 +3,8 @@
 
 <%=link_to("Edit Passenger", edit_passenger_path(@passenger.id)) %>
 <%= link_to("Delete Passenger", delete_passenger_path, method: :delete, data: { confirm: "Are you sure?" }) %>
-
-
-<%=button_to("New Trip", create_trip_passenger_path(@passenger.id), method: :post) %>
+<%= link_to("New Trip", create_trip_passenger_path(@passenger.id), method: :post) %>
+<%#button_to("New Trip", create_trip_passenger_path(@passenger.id), method: :post) %>
 
 <!-- <%# button_to 'Edit', edit_task_path(@task.id), method: :get %> -->
 
