@@ -1,0 +1,11 @@
+<h1>In Partial Form</h1>
+
+<h2>Params are <%=params%></h2>
+
+<%= form_for @driver do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :vin %>
+<%= f.text_field :vin %>
+<%= f.submit button_name%>
+<% end %>
