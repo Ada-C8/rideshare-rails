@@ -13,8 +13,11 @@ class DriversController < ApplicationController
 
   def create
     @driver = Driver.new(driver_params)
-    @driver.save
-    redirect_to drivers_path
+    if @driver.save
+      redirect_to drivers_path
+    else
+      render :new
+    end
   end
 
   def update

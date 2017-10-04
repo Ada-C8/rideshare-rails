@@ -1,6 +1,9 @@
+<%= render partial: 'layouts/error_messages',
+      locals: { model: @driver } %>
+
 <%= form_for @driver do |f| %>
   <%= f.label :driver %>
-  <%= f.text_field :name, placeholder: "Ada Lovelace" %>
+  <%= f.text_field :name, placeholder: "Grace Hopper" %>
 
   <%= f.label :vin %>
   <%= f.text_field :vin, placeholder: "A-999999" %>
