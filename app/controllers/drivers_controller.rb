@@ -10,6 +10,9 @@ class DriversController < ApplicationController
   end
 
   def destroy
+    @driver = Driver.find(params[:id])
+    @driver.destroy
+    redirect_to drivers_path
   end
 
   def edit
@@ -24,17 +27,24 @@ class DriversController < ApplicationController
     @driver = Driver.new()
   end
 
+  #### ^^^^^ work on that later
+
   def show
     @driver = Driver.find(params[:id])
   end
 
   def update
-    # @driver = Driver.find(params[:id])
-    # @driver.update_attributes(driver_params)
-    # if @passenger.save
-    #   redirect_to(driver_path(@driver))
-    # else
-    #   render :new
-    # end
+    @driver = Driver.find(params[:id])
+    @driver.update_attributes(driver_params)
+    if @driver.save
+      redirect_to(driver_path(@driver))
+    else
+      render :new
+    end
   end
+end
+
+private
+def driver_params
+  return params.require(:driver).permit(:name, :vin)
 end
