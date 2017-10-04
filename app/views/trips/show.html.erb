@@ -4,7 +4,16 @@
   <ol>
     <li>ID: <%=@trip.id %></li>
     <li>Date: <%=@trip.date %> </li>
-    <li>Driver: <%= link_to Driver.find(@trip.driver_id).name, driver_path(@trip.driver_id) %> </li>
+
+
+    <% if Driver.find_by_id(@trip.driver_id) == nil %>
+      <li>Driver: driver account deleted </li>
+    <%else %>
+      <%driver_name = Driver.find(@trip.driver_id).name %>
+      <li>Driver: <%= link_to driver_name, driver_path(@trip.driver_id) %> </li>
+    <% end %>
+
+
     <li>Passenger: <%= link_to Passenger.find(@trip.passenger_id).name, passenger_path(@trip.passenger_id) %> </li>
     <li>Rating:
     <% if @trip.rating%>

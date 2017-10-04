@@ -14,7 +14,12 @@ class TripsController < ApplicationController
   end
 
   def new
+    # **** TRIED TO ADD if params[:id]
     @trip = Trip.new
+    if params[:id]
+      @trip.passenger_id = params[:id]
+    end
+    # ***********
     create
   end
 
@@ -31,7 +36,10 @@ class TripsController < ApplicationController
   def create
     driver = driver_select
     cost = rand(1000..5000)
-    trip = Trip.new(passenger_id: 2, cost: cost, driver_id: driver, rating: nil, date: Date.today)
+    passenger_id = @trip.passenger_id
+    # ************ TOOK OUT PASSENGER ID??
+    trip = Trip.new(passenger_id: passenger_id, cost: cost, driver_id: driver, rating: nil, date: Date.today)
+    # ************
     trip.save
     puts "I am saving"
     redirect_to trips_path

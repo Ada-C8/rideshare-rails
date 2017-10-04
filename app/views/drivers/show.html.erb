@@ -11,7 +11,7 @@
         Driver's Average Rating: <%= @driver.average_rating %>
     </li>
   <li>
-      Driver's total earnings: $<%= @driver.total_earned %>
+      Driver's total earnings: $<%= "%.2f" % @driver.total_earned %>
   </li>
   <li>
     Driver Id: <%=@driver.id %>

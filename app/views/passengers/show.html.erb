@@ -3,32 +3,38 @@
 
 <div>
 </h2>Passenger name: <%= @passenger.name%></h2>
-  <ul>
-    <li>
-      Passenger's Phone number: <%= @passenger.phone_num%>
-    </li>
+<ul>
+  <li>
+    Passenger's Phone number: <%= @passenger.phone_num%>
+  </li>
 
   <li>
-      Passenger's total spent: $<%= @passenger.total_spent %>
+    Passenger's total spent: $ <%= "%.2f" % @passenger.total_spent %>
   </li>
-    </ul>
+</ul>
 
-  <%trips = Trip.all.where(passenger_id: @passenger.id)%>
-  <ol>
+<%trips = Trip.all.where(passenger_id: @passenger.id)%>
+<ol>
   <% trips.each do |trip| %>
   <li>
-    <%driver_name = Driver.find(trip.driver_id).name %>
-    Trip ID: <%=link_to trip.id, trip_path(trip.id) %>
-    Driver: <%= link_to driver_name, driver_path(trip.driver_id)%>
-    Date: <%= trip.date %>
-  </li>
+  <% if Driver.find_by_id(trip.driver_id) == nil %>
+  Driver: driver account deleted
+  <%else %>
+  <%driver_name = Driver.find(trip.driver_id).name %>
+  Driver: <%= link_to driver_name, driver_path(trip.driver_id) %>
+  <% end %>
+
+  Trip ID: <%=link_to trip.id, trip_path(trip.id) %>
+  Date: <%= trip.date %> 
+</li>
 
   <%end%>
-  </ol>
+</ol>
 
 <%= link_to "Edit passenger information", edit_passenger_path(@passenger.id), class: "link"%>
 
-<%= link_to "Create a new trip", new_trip_path, class: "link" %>
+<%= link_to "Create a new trip", new_passenger_trip_path, class: "link" %>
+<%#= link_to "Create a new trip", new_trip_path, class: "link" %>
 
 <%= link_to "Delete", passenger_path(@passenger.id), method: :delete, data: {confirm: "Are you sure you want to delete this passenger from the database? You can not undo this action."}%>
 </div>
