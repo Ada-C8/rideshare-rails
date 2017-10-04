@@ -2,10 +2,10 @@
 
 
 <section>
-  <!-- Why do these need to be instance var? -->
 <h2> Driver: <%= @driver.name %> </h2>
 <p> VIN: <%= @driver.vin %> </p>
 <%= link_to "Edit", edit_driver_path(@driver.id) %>
+
 <%= link_to "Delete", driver_path(@driver.id), method: :delete,
     data: { confirm: "Are you sure you'd like to delete this driver?" } %>
 </section>
