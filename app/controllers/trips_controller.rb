@@ -24,6 +24,7 @@ class TripsController < ApplicationController
 
   def create
     # strong_params = trip_params
+    #TRIED TO MAKE DEFAULT RATING O DOWN THERE
     trip = Trip.new(passenger.id)
     trip.save
     redirect_to trips_path
