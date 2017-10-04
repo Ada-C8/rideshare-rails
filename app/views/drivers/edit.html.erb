@@ -1,2 +1,2 @@
 <%= render partial: 'layouts/nav' %>
-<%= render partial: 'drivers/form' %>
+<%= render partial: 'drivers/form', locals: { button_text: "Update" }, data: { confirm: "Are you sure you'd like to make changes to this driver?" } %>
