@@ -24,14 +24,20 @@
 
       <% @driver.trips.each do |t| %>
 
-      <tr>
-        <td> <%= t.date %></td>
-        <td> <%= t.cost %></td>
-        <td> <%= t.passenger.name  %> </td>
-        <td> <%= t.rating %></td>
-      </tr>
+        <tr>
+          <td> <%= t.date %></td>
+          <td> <%= format("%.2f", t.cost/100)%></td>
+          <td> <%= t.passenger.name  %> </td>
+          <td> <%= t.rating %></td>
+        </tr>
+
       <% end %>
-      
+
     </tbody>
   </table>
+</section>
+
+<section>
+  <h3>Total Earnings:</h3>
+  <%= (@driver.total_earnings/100).round(2) %>
 </section>

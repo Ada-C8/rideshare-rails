@@ -4,5 +4,12 @@ class Passenger < ApplicationRecord
   validates :phone_num, presence: true
 
   def total_charged
+
+    total = 0
+    trips.each do |t|
+      total += t.cost
+    end
+
+    return total
   end
 end

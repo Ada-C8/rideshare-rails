@@ -26,7 +26,7 @@
 
       <tr>
         <td> <%= t.date %></td>
-        <td> <%= t.cost %></td>
+        <td> <%= format("%.2f", t.cost/100) %></td>
         <td> <%= t.driver.name  %> </td>
         <td> <%= t.rating %></td>
       </tr>
@@ -34,4 +34,10 @@
       <% end %>
     </tbody>
   </table>
+</section>
+
+
+<section>
+  <h3>Total Trips Charged:</h3>
+  <%= (@passenger.total_charged)/100 %>
 </section>
