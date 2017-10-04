@@ -8,6 +8,10 @@ def show
   @trip = Trip.find(params[:id])
 end
 
+def edit
+  @trip = Trip.find(params[:id])
+end
+
 def update
   @trip = Trip.find(params[:id])
   @trip = Trip.update(trip_params)

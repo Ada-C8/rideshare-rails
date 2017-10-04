@@ -1,5 +1,5 @@
 <%= render partial: 'layouts/nav' %>
-<%= render partial: 'layouts/error_messages',
+<%# render partial: 'layouts/error_messages',
       locals: { model: @trip } %>
 
 <%= form_for @trip do |f| %>
@@ -25,5 +25,5 @@
 
   <!-- Not sure what other information would need to be edited in trips  -->
 
-  <%= f.submit, button_text: "Update Trip" %>
+  <%= f.submit %>
 <% end %>
