@@ -6,15 +6,11 @@
 
 body {
   margin: 0;
-  background-image: url("background.jpg");
+  // background-image: url("background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 100vh;
-}
-
-#homepage-container {
-
 }
 
 #homepage-container section{
@@ -32,6 +28,5 @@ body {
 
 #homepage-container section p{
   font-family: 'Permanent Marker', cursive;
-  color: white;
   margin: 0;
 }

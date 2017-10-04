@@ -11,18 +11,18 @@
 
   <nav>
     <ul>
-      <li>
-        <%= link_to("Passengers", passengers_path)%>
-        Passenger
+      <li><%= link_to("Home", root_path) %></li>
+      <li class="dropdown">
+        <%= link_to("Passengers", passengers_path, class: "dropbtn")%>
         <div class="dropdown-content">
           <%= link_to("Add Passenger", new_passenger_path) %>
         </div>
       </li>
-      <li>
-        Driver
-      </li>
-      <li>
-        Trip
+      <li class="dropdown">
+        <%= link_to("Drivers", href: "#", class: "dropbtn")%>
+        <div class="dropdown-content">
+          <%= link_to("Add Driver", href: "#") %>
+        </div>
       </li>
     </ul>
   </nav>

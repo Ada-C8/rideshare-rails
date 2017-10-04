@@ -22,11 +22,11 @@ nav ul {
     background-color: #333;
 }
 
-nav li {
+nav ul li {
     float: left;
 }
 
-nav li a, .dropbtn {
+nav ul li a, .dropbtn {
     display: inline-block;
     color: white;
     text-align: center;
@@ -34,15 +34,16 @@ nav li a, .dropbtn {
     text-decoration: none;
 }
 
-nav li a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
+nav ul li a:hover, .dropdown:hover .dropbtn {
+  color: black;
+  background-color: #ccc;
 }
 
-nav li.dropdown {
+nav ul li.dropdown {
     display: inline-block;
 }
 
-nav .dropdown-content {
+.dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -51,7 +52,7 @@ nav .dropdown-content {
     z-index: 1;
 }
 
-nav .dropdown-content a {
+.dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
@@ -59,8 +60,8 @@ nav .dropdown-content a {
     text-align: left;
 }
 
-nav .dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {background-color: #f1f1f1}
 
-nav .dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content {
     display: block;
 }
