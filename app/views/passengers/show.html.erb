@@ -4,7 +4,7 @@
 <%= link_to("Delete Passenger", delete_passenger_path(@passenger.id), method: :delete, data: {confirm: "Noooooooo! I'm pregnant! It's your baby!"}) %>
 
 <h3>Passenger Total Charged:</h3>
-<p><%= @passenger.total_charged %></p>
+<p><%= (@passenger.total_charged / 100).round(2) %></p>
 
 <section>
     <h1><%= @passenger.name  %></h1>
@@ -31,7 +31,7 @@
         <%= t.date %>
       </td>
       <td>
-        <%= t.cost %>
+        <%= format("%.2f", t.cost / 100) %>
       </td>
       <td>
         <%= t.driver.name %>

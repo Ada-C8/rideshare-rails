@@ -20,7 +20,10 @@
   </thead>
 
   <h3>Driver Total Earnings:</h3>
-  <p><%= @driver.total_charged %></p>
+  <%=(@driver.total_earnings / 100).round(2) %>
+
+  <h3>Driver Rating Average:</h3>
+  <%= @driver.average_rating %>
 
   <tbody>
     <% @driver.trips.each do |t|  %>
@@ -29,7 +32,7 @@
         <%= t.date %>
       </td>
       <td>
-        <%= t.cost %>
+        <%= format("%.2f", t.cost / 100) %>
       </td>
       <td>
         <%= t.passenger.name %>
