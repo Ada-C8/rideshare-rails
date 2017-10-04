@@ -6,7 +6,7 @@
 <section class="edit_delete">
   <ul>
     <li>
-      <%=link_to "Edit", driver_path(@driver.id), method: :patch%>
+      <%=link_to "Edit", edit_driver_path(@driver.id)%>
     </li>
     <li>
       <%=link_to "Delete", driver_path(@driver.id), method: :delete %>

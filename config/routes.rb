@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get '/drivers', to: 'drivers#index', as: 'drivers' #drivers_path
 
-  get 'drivers/:id/edit/', to: 'drivers#edit', as: 'edit_book' #edit_driver_path
+  get 'drivers/:id/edit/', to: 'drivers#edit', as: 'edit_driver' #edit_driver_path
 
   get '/drivers/new', to: 'drivers#new', as: 'new_driver' #new_driver_path
 

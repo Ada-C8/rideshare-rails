@@ -1,2 +1,13 @@
 <h1>Drivers#edit</h1>
 <p>Find me in app/views/drivers/edit.html.erb</p>
+
+<%= params %>
+
+<%= form_for @driver do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :vin %>
+  <%= f.text_field :vin %>
+  <%= f.submit %>
+<%end%>
