@@ -1,6 +1,6 @@
 <h1>Edit Trip Details</h1>
 
-<%= form_for @trip do |f| %>
+<!-- <%= form_for @trip do |f| %>
 <%= f.label :date %>
 <%= f.date_select :date %>
 <%= f.label :rating %>
@@ -14,4 +14,6 @@
 
 <%= f.submit %>
 <% end %>
-<%= button_to "Cancel", trip_path(@trip.id), method: :get %>
+<%= button_to "Cancel", trip_path(@trip.id), method: :get %> -->
+
+<%= render partial: "shared/form" %>
