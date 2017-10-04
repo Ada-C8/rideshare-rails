@@ -1,8 +1,17 @@
 <h2>Driver Details</h2>
 
+
 <div>
   <strong></strong><%= @driver.name %></strong>
   <p><%= @driver.vin %></p>
+
+  <% total = 0 %>
+  <% @driver.trips.each do |trip| %>
+  <% "Sub total is #{total += trip.cost}" %>
+  <% end %>
+  <% total_earning = total * (1 - 0.15) %>
+    <%= "driver earned $#{(total_earning/100).round(2)}" %>
+
   <%=button_to "Edit", edit_driver_path(@driver.id), method: :get%>
   <%=button_to "Delete", driver_path(@driver.id), method: :delete%>
 </div>
