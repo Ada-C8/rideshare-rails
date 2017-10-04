@@ -35,7 +35,7 @@ class DriversController < ApplicationController
     if @driver.save
       redirect_to drivers_path
     else
-      redirect_to :new
+      render :new
     end
   end
 

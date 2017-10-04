@@ -36,7 +36,7 @@ class PassengersController < ApplicationController
     if @passenger.save
       redirect_to passengers_path
     else
-      redirect_to :new
+      render :new
     end
   end
 
