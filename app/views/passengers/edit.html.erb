@@ -1,11 +1,12 @@
 <h1>Edit Passenger</h1>
 
 <%= form_for @passenger do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %>
-<br>
-<%= f.label :phone_num %>
-<%= f.text_field :phone_num %>
-<br>
-<%= f.submit %>
-<% end %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :phone_num %>
+  <%= f.text_field :phone_num %>
+
+
+  <%= f.submit %>
+<%end%>
