@@ -12,8 +12,12 @@ class Passenger < ApplicationRecord
       driver: Driver.all.sample,
       date: Date.current,
       cost: rand(500..2000))
-
       trips << trip
+  end
+
+
+  def total_spent_on_all_trips
+
   end
 
 end
