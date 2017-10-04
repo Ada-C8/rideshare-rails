@@ -26,7 +26,7 @@ class DriversController < ApplicationController
 
   def update
     @driver = Driver.find(params[:id])
-    @driver = Driver.update(driver_params)
+    @driver.update(driver_params)
     @driver.save
 
     redirect_to driver_path(@driver)
