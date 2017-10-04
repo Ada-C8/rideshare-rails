@@ -32,7 +32,7 @@ class DriversController < ApplicationController
     @driver = Driver.find(params[:id])
     result = @driver.update(
       name: params[:driver][:name],
-      VIN: params[:driver][:VIN]
+      vin: params[:driver][:vin]
     )
 
     if result
@@ -54,6 +54,6 @@ class DriversController < ApplicationController
 
   private
   def driver_params
-    return params.require(:driver).permit(:name, :VIN)
+    return params.require(:driver).permit(:name, :vin)
   end
 end
