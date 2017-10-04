@@ -7,17 +7,17 @@ Rails.application.routes.draw do
 
   ###### DRIVERS ######
   # # VERB    PATH    # CONTROLLERACTION   PREFIX
-  # get "/drivers", to: "drivers#index", as: "drivers"
+  # get "/drivers", to: "drivers#index", as: "drivers" YES
   #
-  # get "/drivers/new", to: "drivers#new", as: "new_driver"
-  # post "/drivers", to: "drivers#create"
+  # get "/drivers/new", to: "drivers#new", as: "new_driver" YES
+  # post "/drivers", to: "drivers#create" YES
   #
-  # get "/drivers/:id", to: "drivers#show", as: "driver"
+  # get "/drivers/:id", to: "drivers#show", as: "driver" YES
   #
-  # get "/driver/:id/edit", to: "drivers#edit", as: "edit_driver"
-  # patch "/drivers/:id", to: "drivers#update"
+  # get "/driver/:id/edit", to: "drivers#edit", as: "edit_driver" YES
+  # patch "/drivers/:id", to: "drivers#update" YES
   #
-  # delete "/driver/:id", to: "drivers#destroy"
+  # delete "/driver/:id", to: "drivers#destroy" YES
 
   resources :drivers
 
@@ -37,16 +37,16 @@ Rails.application.routes.draw do
   resources :passengers
 
   ###### TRIPS ######
-  # get "/trips", to: "trips#index", as: "trips"
+  # get "/trips", to: "trips#index", as: "trips" NO?
   #
-  # get "/trips/new", to: "trips#new", as: "new_trip"
-  # post "/trips", to: "trips#create"
+  # get "/trips/new", to: "trips#new", as: "new_trip" YES
+  # post "/trips", to: "trips#create" YES
   #
-  # get "/trips/:id", to: "trips#show", as: "trip"
+  # get "/trips/:id", to: "trips#show", as: "trip" YES
   #
-  # get "/trip/:id/edit", to: "trips#edit", as: "edit_trip"
-  # patch "/trips/:id", to: "trips#update"
+  # get "/trip/:id/edit", to: "trips#edit", as: "edit_trip" YES
+  # patch "/trips/:id", to: "trips#update" YES
   #
-  # delete "/trip/:id", to: "trips#destroy"
+  # delete "/trip/:id", to: "trips#destroy" NO?
    resources :trips
 end

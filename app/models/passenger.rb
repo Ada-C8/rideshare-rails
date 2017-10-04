@@ -11,6 +11,12 @@ class Passenger < ApplicationRecord
     return sum
   end
 
+
+  def passenger_trips # From Passenger Show Page
+    trips = Trip.where(passenger_id: id).order(date: :desc)
+    return trips
+  end
+
   validates :name, presence: true, format: {with: /[AZ-az]/}
   validates :phone_num, presence: true
 end
