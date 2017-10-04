@@ -11,8 +11,9 @@
     VIN number: <%= @driver.vin %>
   </li>
   <li>
-    <% @rating = @trips.sum { |trip| trip.rating } %>
-    Average rating: <%= (@rating.to_f / @trips.length).round(1) %>
+    Average rating: <%= @driver.average_rating.round(1) %>
+    <!-- <% @rating = @trips.sum { |trip| trip.rating } %> -->
+    <!-- Average rating: <%= (@rating.to_f / @trips.length).round(1) %> -->
   </li>
   <li>
     Trips

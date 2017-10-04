@@ -36,6 +36,8 @@ Rails.application.routes.draw do
 
   delete '/passengers/:id', to: 'passengers#destroy', as: 'delete_passenger' #delete_passenger_path
 
+  post '/passengers/:id/trips', to: 'passengers#create_trip', as: 'create_trip_passenger'
+
 
 
 

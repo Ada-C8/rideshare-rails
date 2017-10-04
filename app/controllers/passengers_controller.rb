@@ -44,10 +44,18 @@ class PassengersController < ApplicationController
     @passenger = Passenger.new
   end
 
+  def create_trip
+    @passenger = Passenger.find_by(id: params[:id].to_i)
+    @passenger.create_trip
+    redirect_to passenger_path(@passenger.id)
+  end
+
   private
 
   def passenger_params
     return params.require(:passenger).permit(:name, :phone_num)
   end
+
+
 
 end
