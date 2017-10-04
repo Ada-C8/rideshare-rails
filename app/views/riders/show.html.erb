@@ -16,7 +16,7 @@
 
 <section>
   <h3>Rider's Total Spent</h3>
-  <%= "$#{@rider.total_cost.to_s.insert(-3,".")}" %>
+  <%= "$#{@rider.total_cost}" %>
 </section>
 
 <%= link_to "Edit", edit_rider_path(@rider.id)%>
