@@ -17,8 +17,8 @@ class Driver < ApplicationRecord
     trips.each do |t|
       total += t.rating
     end
-    total /= trips.count
-    return total
+    total /= trips.count.to_f
+    return total.round(1)
   end
 
 end
