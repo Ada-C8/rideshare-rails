@@ -1,0 +1,34 @@
+<h2>Driver Passenger</h2>
+
+<%= link_to "Edit", edit_passenger_path(@passenger.id) %>
+<%= link_to "Delete", passenger_path(@passenger.id), method: :delete %>
+<%= link_to "Back to index", passengers_path %>
+
+<section>
+  <p>
+    <strong>Name: </strong>
+    <%= @passenger.name %>
+  </p>
+  <p>
+    <strong>Phone: </strong>
+    <%= @passenger.phone_num %>
+  </p>
+  <p>
+    <strong>Total amount charged: </strong>
+    <%=  "$#{(@passenger.total_spent.to_f / 100).round(2)}" %>
+  </p>
+
+  <p>
+    <strong>Trips: </strong>
+    <ul>
+      <% @trips.each do |trip| %>
+        <li>
+          <%= link_to "#{trip.driver.name}
+          #{trip.date.strftime("%B %d, %Y")}
+          #{render partial: "/layouts/stars", locals: {rating: trip.rating}}",
+          trip_path(trip.id)%>
+        </li>
+      <% end %>
+    </ul>
+  </p>
+</section>

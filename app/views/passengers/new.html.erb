@@ -1,0 +1,8 @@
+<h2>New Passenger</h2>
+
+<div>
+  <%= render partial: "form", locals: {action_name: "Create new passenger"} %>
+</div>
+<div>
+  <%= render partial: "/layouts/error_messages", locals: {model: @passenger} %>
+</div>
