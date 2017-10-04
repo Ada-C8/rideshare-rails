@@ -30,7 +30,7 @@ An available driver is selected by the server
 The trip starts with no rating
 </li>
 <li>
-<%= link_to 'Add trip', new_trip_path(:passenger_id => @passenger.id) %>
+<%= link_to 'Add trip', new_passenger_trip_path(:passenger_id => @passenger.id) %>
 </li>
 <li>
   <%= link_to "Edit", edit_passenger_path(@passenger.id) %>

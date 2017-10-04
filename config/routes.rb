@@ -12,11 +12,16 @@ Rails.application.routes.draw do
   # delete 'drivers/:id', to: 'drivers#destroy'
 
   resources :drivers
-  resources :passengers
-  resources :trips
+  # resources :passengers
+  resources :trips, only: [:show, :edit]
 
   root "main#index"
 
+  resources :passengers  do
+    resources :trips, only: [:index, :new]
+  end
+
+#
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # get '/passengers', to: 'passengers#index'
