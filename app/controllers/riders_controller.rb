@@ -33,7 +33,7 @@ class RidersController < ApplicationController
   end
 
   def destroy
-
+    redirect_to riders_path if Rider.find_by(id: params[:id]).destroy
   end
 
   private

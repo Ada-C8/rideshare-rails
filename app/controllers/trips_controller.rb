@@ -28,7 +28,7 @@ class TripsController < ApplicationController
   end
 
   def destroy
-
+    redirect_to trips_path if Trip.find_by(id: params[:id]).destroy
   end
 
   private

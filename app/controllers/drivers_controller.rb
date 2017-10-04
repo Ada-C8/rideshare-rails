@@ -32,7 +32,7 @@ class DriversController < ApplicationController
   end
 
   def destroy
-    redirect_to drivers_path if Driver.find(params[:id]).destroy
+    redirect_to drivers_path if Driver.find_by(id: params[:id]).destroy
   end
 
 private
