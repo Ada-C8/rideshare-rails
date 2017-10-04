@@ -27,6 +27,19 @@ class PassengersController < ApplicationController
     @passenger = Passenger.find(params[:id])
   end
 
+  def update
+    passenger_updates = params[:passenger]
+    @passenger = Passenger.find(params[:id])
+    # @passenger.update_attributes(task_updates)
+    # @passenger.save
+
+    @passenger.name = passenger_updates[:name]
+    @passenger.phone_num = passenger_updates[:phone_num]
+    @passenger.save
+
+    redirect_to passenger_path(@passenger)
+  end
+
 private
   def passenger_params
     return params.require(:passenger).permit(:name, :phone_num)
