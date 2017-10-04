@@ -4,7 +4,9 @@
 <section>
 <h2> Driver: <%= @driver.name%> </h2>
 <p> VIN: <%= @driver.vin%> </p>
-  <%= link_to 'Edit Driver', edit_driver_path %>
+<%= link_to "Edit", edit_driver_path(@driver.id) %>
+<%= link_to "Delete", driver_path(@driver.id), method: :delete,
+    data: { confirm: "Are you sure you'd like to delete this driver?" } %>
 </section>
 
   <!-- <li> Number of Trips Completed: Add this later </li> -->
