@@ -16,18 +16,18 @@ class PassengersController < ApplicationController
       # show errors to user
       render :new
     end
-
-
   end
 
   def show
     @passenger = Passenger.find(params[:id])
-
     @trips = Trip.where(passenger_id: params[:id])
-
   end
 
-  private
+  def edit
+    @passenger = Passenger.find(params[:id])
+  end
+
+private
   def passenger_params
     return params.require(:passenger).permit(:name, :phone_num)
   end
