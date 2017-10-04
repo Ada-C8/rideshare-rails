@@ -3,4 +3,9 @@ class Rider < ApplicationRecord
 
   validates :name, presence: true
   validates :phone, presence: true
+
+  def total_cost
+    total = self.trips.map {|trip| trip.cost}.reduce(:+)
+    return total
+  end
 end

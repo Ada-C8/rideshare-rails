@@ -14,5 +14,10 @@
   <%= render partial: '/partial_views/trips_list'%>
 </section>
 
+<section>
+  <h3>Rider's Total Spent</h3>
+  <%= "$#{@rider.total_cost.to_s.insert(-3,".")}" %>
+</section>
+
 <%= link_to "Edit", edit_rider_path(@rider.id)%>
 <%= link_to "Delete", delete_rider_path(@rider.id), method: :delete, data: {confirm: "Are you sure?"}%>
