@@ -1,7 +1,7 @@
 class TripsController < ApplicationController
 
   def home
-
+    @homepage = true
   end
 
   def index

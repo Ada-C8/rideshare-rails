@@ -9,16 +9,13 @@
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Libre+Baskerville|Open+Sans|Poppins|Arvo" rel="stylesheet">
   </head>
 
-  <body>
-
-    <body>
+    <body class="<%= @homepage ? 'homepage' : ''%>">
   <div class="nav-image">
   </div>
   <header class="navigation">
     <%= link_to "Adryft", root_path %>
     <section class="dropdown">
       <ul class "view-menu">
-
           <button class="dropdown-button-view">View</button>
           <div class="dropdown-content-view">
           <li><%= link_to "All Drivers", drivers_path %></li>
