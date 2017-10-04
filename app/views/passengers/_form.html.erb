@@ -1,0 +1,9 @@
+<%= form_for @passenger do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, placeholder: hide_placeholder_text ? "" : "name" %>
+
+  <%= f.label :phone_num %>
+  <%= f.text_field :phone_num, placeholder: hide_placeholder_text ? "" : "phone number" %>
+
+  <%= f.submit button_text %>
+<% end %>
