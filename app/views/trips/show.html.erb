@@ -1,20 +1,27 @@
 <h2> This is the show page for Trip</h2>
 
 <div>
-  <ol>
-    <li>ID: <%=@trip.id %></li>
+  <ul>
+    <li>Trip ID: <%=@trip.id %></li>
     <li>Date: <%=@trip.date %> </li>
-
-
+  <li>
     <% if Driver.find_by_id(@trip.driver_id) == nil %>
-      <li>Driver: driver account deleted </li>
+      Driver: driver account deleted
     <%else %>
       <%driver_name = Driver.find(@trip.driver_id).name %>
-      <li>Driver: <%= link_to driver_name, driver_path(@trip.driver_id) %> </li>
+      Driver: <%= link_to driver_name, driver_path(@trip.driver_id) %>
     <% end %>
+  </li>
 
+    <li>
+      <% if Passenger.find_by_id(@trip.passenger_id) == nil %>
+      Passenger: passenger account deleted
+      <%else %>
+      <%passenger_name = Passenger.find(@trip.passenger_id).name %>
+      Passenger: <%= link_to passenger_name, passenger_path(@trip.passenger_id) %>
+      <% end %>
+    </li>
 
-    <li>Passenger: <%= link_to Passenger.find(@trip.passenger_id).name, passenger_path(@trip.passenger_id) %> </li>
     <li>Rating:
     <% if @trip.rating%>
         <%= @trip.rating  %>
@@ -26,8 +33,8 @@
     <% end %>
 
        </li>
-    <li>Cost: <%= @trip.cost %> </li>
-  </ol>
+    <li>Cost: $<%= "%.2f" % @trip.cost %> </li>
+  </ul>
 
 
 

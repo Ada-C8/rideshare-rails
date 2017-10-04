@@ -24,9 +24,13 @@
   <ol>
   <% trips.each do |trip| %>
     <li>
+      <% if Passenger.find_by_id(trip.passenger_id) == nil %>
+      Passenger: passenger account deleted
+      <%else %>
       <%passenger_name = Passenger.find(trip.passenger_id).name %>
+      Passenger: <%= link_to passenger_name, passenger_path(trip.passenger_id) %>
+      <% end %>
       Trip ID: <%=link_to trip.id, trip_path(trip.id) %>
-      Passenger: <%= link_to passenger_name, passenger_path(trip.passenger_id)%>
       Date: <%= trip.date %>
     </li>
   <%end%>
