@@ -10,6 +10,7 @@ class Passenger < ApplicationRecord
       total += trip.cost
     end
 
-    total = (total / 100).round(2)
+
+    total = '%.2f' % [total/100.0]
   end
 end

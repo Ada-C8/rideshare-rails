@@ -9,10 +9,16 @@
   <%= f.label :rating %>
   <%= f.text_field :rating, :value => 5  %>
 
-
+  <%= f.label :driver_id %>
   <%= f.collection_select(:driver_id, Driver.all.order('name asc'), :id, :name)%>
   <!-- this is a dropdown menu with all Drivers listed -->
-  <%= f.collection_select(:passenger_id, Passenger.all.order('name asc'), :id, :name)%>
+  <% if @trip.passenger_id %>
+    <%= f.hidden_field :passenger_id %>
+  <% else %>
+    <%= f.label :passenger_id %>
+    <%= f.collection_select(:passenger_id, Passenger.all.order('name asc'), :id, :name)%>
+  <% end %>
+
 
   <%= f.label :cost %>
   <%= f.text_field :cost %>

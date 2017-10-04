@@ -1,6 +1,10 @@
 class TripsController < ApplicationController
   def index
-    @trips = Trip.all.order('date desc')
+    if params[:passenger_id]
+      @trips = Passenger.find(params[:passenger_id]).trips
+    else
+      @trips = Trip.all.order('date desc')
+    end
   end
 
   def create
@@ -16,6 +20,9 @@ class TripsController < ApplicationController
 
   def new
     @trip = Trip.new
+    if params[:passenger_id]
+      @trip.passenger_id = params[:passenger_id]
+    end
   end
 
   def show

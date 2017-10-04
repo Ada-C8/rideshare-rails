@@ -11,7 +11,7 @@
     Passenger:<%= link_to "#{trip.passenger.name}", passenger_path(trip.passenger_id)%>
   </li>
   <li>
-    <%= "Cost: $#{ '%.2f' % [trip.cost/100.0]}"%>
+    Cost: $<%='%.2f' % [trip.cost/100.0]%>
   </li>
   <li>
     <%= "Rating: #{trip.rating}"%>
