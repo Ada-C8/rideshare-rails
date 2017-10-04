@@ -4,7 +4,6 @@ class Passenger < ApplicationRecord
   validates :name, presence: true
   validates :phone_number, presence: true
 
-
   def total_cost
     sum = 0
     trips.each do |trip|
