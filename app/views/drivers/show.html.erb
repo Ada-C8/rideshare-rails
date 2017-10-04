@@ -5,4 +5,18 @@
   <li>ID: <%= @driver[:id] %></li>
   <li>Total Earning: <%= @driver.total_earnings %></li>
   <li>Average Rating: <%= @driver.average_rating %><br /> <%= link_to 'Delete Driver', driver_path(@driver), method: :delete, data: { confrim: 'Are you sure you want to delete this driver?'} %>  <%= link_to 'Edit Driver', edit_driver_path(@driver) %></li>
+  <li>
+    Trips:
+    <table>
+      <% @driver.trips.each do |trip|%>
+        <tr>
+          <td><%= trip.passenger_id%></td>
+          <td><%= trip.date%></td>
+          <td><%= trip.rating%></td>
+          <td><%= trip.cost%></td>
+          <td>TRIP DEETS</td>
+        </tr>
+      <% end %>
+    </table>
+  </li>
 </ul>
