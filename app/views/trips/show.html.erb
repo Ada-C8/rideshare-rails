@@ -13,7 +13,7 @@
     Date: <%= @trip.date.strftime("%B %d, %Y") %>
   </li>
   <li>
-    Rating: <%= @trip.rating %>
+    Rating: <%= render partial: "/layouts/stars", locals: {rating: @trip.rating} %>
   </li>
   <li>
     Cost: <%= @trip.cost %>
