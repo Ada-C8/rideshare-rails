@@ -13,11 +13,11 @@ class TripsController < ApplicationController
 
   def create
     trip = Trip.new(
-    driver_id: Driver.first,
-    passenger_id: Passenger.find_by(params[:id]),
-    date: Date.today,
-    cost: rand(10..100),
-    rating: 0
+      driver_id: Driver.all.sample.id,
+      passenger_id: Passenger.find(params[:id]).id,
+      date: Date.today,
+      cost: rand(10..100),
+      rating: 0
     )
     trip.save!
     # puts @trip.errors.inspect
