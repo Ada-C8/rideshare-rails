@@ -19,7 +19,7 @@
     Trips
     <% @trips.each do |trip| %>
     <li>
-      Date: <%= trip.date %>
+      <%= link_to("Date: #{trip.date}", trip_path(trip.id)) %>
     </li>
     <li>
       Rating: <%= trip.rating %>

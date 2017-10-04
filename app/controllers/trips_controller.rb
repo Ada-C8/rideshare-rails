@@ -4,6 +4,7 @@ class TripsController < ApplicationController
   end
 
   def show
+    @trip = Trip.find_by(id: params[:id].to_i)
   end
 
   def create
