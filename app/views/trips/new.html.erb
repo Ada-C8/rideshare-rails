@@ -1,10 +1,10 @@
-<% if @passenger.errors.any? %>
-  <% @passenger.errors.each do |column, message| %>
+<% if @trip.errors.any? %>
+  <% @trip.errors.each do |column, message| %>
     <strong><%= column.capitalize %></strong> <%= message %>
   <% end %>
 <% end %>
 
-<%= form_for @trips do |f| %>
+<%= form_for @trip do |f| %>
   <%= f.label :driver_id %>
   <%= f.text_field :driver_id %>
 

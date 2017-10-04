@@ -27,9 +27,4 @@ class Driver < ApplicationRecord
       return "no rating"
     end
   end
-
-
-
-
-
 end
