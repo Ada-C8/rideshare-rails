@@ -11,26 +11,28 @@
   <body>
 
     <header class="clearfix">
-      <h1 id="brand">Journey</h1>
-      <nav class="clearfix">
-        <div class="dropdown">
-          <button class="dropbtn"><%= link_to "Home", root_path %></button>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">Passengers</button>
-          <div class="dropdown-content">
-            <%= link_to "All Passengers", passengers_path %>
-            <%= link_to "Create New Passenger", new_passenger_path %>
+      <div id="h1-nav-wrapper" class="clearfix">
+        <h1 id="brand">Journey</h1>
+        <nav class="clearfix">
+          <div class="dropdown">
+            <button class="dropbtn"><%= link_to "HOME", root_path %></button>
           </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">Drivers</button>
-          <div class="dropdown-content">
-            <%= link_to "All Drivers", drivers_path %>
-            <%= link_to "Create New Driver", new_driver_path %>
+          <div class="dropdown">
+            <button class="dropbtn">PASSENGERS</button>
+            <div class="dropdown-content">
+              <%= link_to "ALL PASSENGERS", passengers_path, class: "inside-dropdown" %>
+              <%= link_to "CREATE NEW PASSSENGER", new_passenger_path, class: "inside-dropdown" %>
+            </div>
           </div>
-        </div>
-      </nav>
+          <div class="dropdown">
+            <button class="dropbtn">DRIVERS</button>
+            <div class="dropdown-content">
+              <%= link_to "ALL DRIVERS", drivers_path, class: "inside-dropdown"  %>
+              <%= link_to "CREATE NEW DRIVER", new_driver_path, class: "inside-dropdown"  %>
+            </div>
+          </div>
+        </nav>
+      </div>
     </header>
 
     <%#From any page, I can click a menu entry to...
