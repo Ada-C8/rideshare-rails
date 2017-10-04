@@ -1,12 +1,11 @@
-
-
+<h1>List of All Drivers</h1>
 <section class="profiles">
 
   <% @drivers.each do |driver| %>
   <ul class="row">
 
   <li class="profile-pic">
-    <img src="http://placekitten.com/150/150" alt: "Driver image" />
+    <img src="http://placekitten.com/150/150" alt: "Driver images" />
     <span class="name">Captain ID <%= driver.id %></span>
     <span><%= link_to driver.name, driver_path(driver.id), alt: "Link to individual driver pages."%></span>
     <span class="vin"><%= driver.vin %></span>
@@ -17,8 +16,7 @@
 
 </section>
 
-
-<h1>List of All Drivers</h1>
+<!--
 <table>
   <div class="table-header">
     <tr>
@@ -40,4 +38,4 @@
   </tbody>
 
   </div>
-</table>
+</table> -->

@@ -1,5 +1,5 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Slabo 13px', serif;
   background: linear-gradient(to bottom right, #8BDAEE, #17849F);
   background-size: cover;
 }
@@ -10,7 +10,7 @@ body {
   background-size: cover;
 }
 
-ul {
+ul, li{
   list-style: none;
 }
 
@@ -45,7 +45,7 @@ a {
 }
 
 .navigation a:hover{
-  color: #79D2E9;
+  color: #188BA9;
 }
 
 .navigation .dropdown a{
@@ -305,15 +305,33 @@ tr:hover, tr:hover a{
   color: #0F5364;
 }
 
-.profile-pic img{
-  padding-bottom: 1em;
-}
-
 .profile-pic:hover, .profile-pic:hover a{
   color: white;
-
 }
 
-.profile-pic img{
+.profile-pic img, .individual-image img {
+  padding-bottom: 1em;
   border-radius: 50%;
+}
+
+.show-header {
+  display: flex;
+  flex-flow: row;
+  width: 80%;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: 1.5em;
+}
+
+.individual-details, .buttons a{
+  font-size: 1.5em;
+  color: white;
+}
+
+.buttons a:hover {
+  color: #0F5364;
+}
+
+.individual-details {
+  color: #0F5364;
 }

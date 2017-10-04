@@ -1,6 +1,25 @@
 <h1>List of All Passengers</h1>
 
-<table>
+
+<section class="profiles">
+
+  <% @passengers.each do |passenger| %>
+  <ul class="row">
+
+  <li class="profile-pic">
+    <img src="http://placekitten.com/150/150" alt: "Driver images" />
+    <span class="name">Passenger ID <%= passenger.id %></span>
+    <span><%= link_to passenger.name, passenger_path(passenger.id), alt: "link to individual passenger page" %></span>
+    <span class="vin"><%= passenger.phone_number %></span>
+  </li>
+</ul>
+
+  <% end %>
+
+</section>
+
+
+<!-- <table>
   <tr>
     <th>
       Passenger ID
@@ -14,9 +33,9 @@
   </tr>
   <% @passengers.each do |passenger| %>
   <tr>
-    <td><%= passenger.id %>)</td>
+    <td><%= passenger.id %></td>
     <td><%= link_to passenger.name, passenger_path(passenger.id), alt: "link to individual passenger page" %></td>
     <td><%= passenger.phone_number %></td>
   </tr>
   <% end %>
-</table>
+</table> -->
