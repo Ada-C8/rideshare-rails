@@ -1,3 +1,20 @@
 <h1>Passengers#show</h1>
 <%= "Hi my name is #{@passenger.name}.  You can reach me at #{@passenger.phone_num}" %>
+<hr />
+<% @trips.each do |trip| %>
+Trip ID: <%= trip.id %>
+<ul>
+  <li>Date: <%=trip.date%>
+  </li>
+  <li>
+    Driver: <%= trip.driver.name %>
+  </li>
+  <li>
+    Rating: <%= trip.rating %>
+  </li>
+  <li>
+    Cost: $<%= trip.cost %>
+  </li>
+</ul>
+<% end %>
 <p>Find me in app/views/passengers/show.html.erb</p>
