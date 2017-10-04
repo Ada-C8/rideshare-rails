@@ -1,0 +1,24 @@
+<h2>This is the edit trip page</h2>
+
+<%= form_for @trip do |f| %>
+  Trip ID:<%=@trip.id%>
+  <% if Driver.find_by_id(@trip.driver_id) == nil %>
+    Driver: driver account deleted
+  <%else %>
+    <%driver_name = Driver.find(@trip.driver_id).name %>
+    Driver: <%= link_to driver_name, driver_path(@trip.driver_id) %>
+  <% end %>
+
+  <% if Passenger.find_by_id(@trip.passenger_id) == nil %>
+  Passenger: passenger account deleted
+  <%else %>
+  <%passenger_name = Passenger.find(@trip.passenger_id).name %>
+  Passenger: <%= link_to passenger_name, passenger_path(@trip.passenger_id) %>
+  <% end %>
+
+
+  <%= f.label :cost %>
+  <%= f.text_field :cost %>
+  <%= f.select :rating, [1, 2, 3, 4, 5]%>
+  <%= f.submit "submit trip update" %>
+<% end %>
