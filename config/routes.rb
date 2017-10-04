@@ -27,12 +27,15 @@ Rails.application.routes.draw do
   # get "/passengers/new", to: "passengers#new", as: "new_passenger"
   # post "/passengers", to: "passengers#create"
   #
-  # get "/passengers/:id", to: "passengers#show", as: "passenger"
+    # get "/passengers/:id", to: "passengers#show", as: "passenger"
   #
   # get "/passenger/:id/edit", to: "passengers#edit", as: "edit_passenger"
   # patch "/passengers/:id", to: "passengers#update"
   #
   # delete "/passenger/:id", to: "passengers#destroy"
+  get "/passengers/:id/trips/new", to: "trips#new", as: "new_passenger_trip"
+
+  post "/passengers/:id/trips", to: "trips#create"
 
   resources :passengers
 
