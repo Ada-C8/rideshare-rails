@@ -19,11 +19,18 @@ end
 
 def average_rating
   rating = 0.0
+
+  counter = 0
   trips.each do |trip|
-    rating += trip.rating
+    if trip.rating == nil
+      next
+    else
+      rating += trip.rating
+      counter += 1
+    end
   end
 
-  rating /= trips.count
+  rating /= counter
 
   return rating
 
