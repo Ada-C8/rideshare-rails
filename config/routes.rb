@@ -3,14 +3,14 @@ Rails.application.routes.draw do
   root 'main#index'
   resources :passengers
   resources :drivers
-  # resources :trips
-  get '/trips', to: 'trips#index', as: 'trips'
-  get '/trips/new/:passenger_id', to: 'trips#new', as: 'new_trip'
-  post '/trips/create', to: 'trips#create', as: 'create_trip'
-  get '/trips/:id', to: 'trips#show', as: 'trip'
-  get '/trips/:id', to: 'trips#edit', as: 'edit_trip'
-  patch '/trips/:id', to: 'trips#update', as: 'update_trip'
-  delete '/trips/:id', to: 'trips#destroy', as: 'delete_trip'
+  resources :trips
+  # get '/trips', to: 'trips#index', as: 'trips'
+  # get '/trips/new/:passenger_id', to: 'trips#new', as: 'new_trip'
+  # post '/trips/create', to: 'trips#create', as: 'create_trip'
+  # get '/trips/:id', to: 'trips#show', as: 'trip'
+  # get '/trips/:id', to: 'trips#edit', as: 'edit_trip'
+  # patch '/trips/:id', to: 'trips#update', as: 'update_trip'
+  # delete '/trips/:id', to: 'trips#destroy', as: 'delete_trip'
 
   # get "/passengers", to: "passengers#index", as: "passengers"
   # get "/passengers/new", to: "passengers#new", as: "passengers_new"
