@@ -11,8 +11,6 @@ class Trip < ApplicationRecord
   validates :cost, presence: { message: "Cost must not be empty!"}, numericality: { only_integer: true, greater_than: 0 }
 
   def dollars
-    cost = self.cost.to_f
-    cost /= 100
-    return cost
+    return self.cost.to_f / 100
   end
 end

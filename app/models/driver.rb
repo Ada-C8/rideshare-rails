@@ -8,10 +8,10 @@ class Driver < ApplicationRecord
   def total_earnings
     total = 0
     trips.each do |trip|
-      total += trip.dollars
+      total += trip.cost
     end
     total = total - (total * 0.15)
-    return '%.2f' % total
+    return '%.2f' % (total / 100)
   end
 
   def average_rating
