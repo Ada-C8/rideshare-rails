@@ -3,3 +3,15 @@
 
 <p><%= @driver.name %></p>
 <p><%= @driver.vin %> </p>
+
+<h3> Trip details</h3>
+
+
+<ul>
+  <%@trips.each do |trip|%>
+  <li> Date:<%= trip.date %> </li>
+  <li> Passenger: <%= trip.passenger_id %></li>
+  <li> Cost: <%= trip.cost %></li>
+  <li> Rating: <%= trip.rating %></li>
+  <% end %>
+</ul>

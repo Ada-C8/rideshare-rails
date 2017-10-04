@@ -9,7 +9,7 @@ class DriversController < ApplicationController
 
   def create
     @driver = Driver.new(driver_params)
-    
+
     if @driver.save
       redirect_to('/drivers')
     else
@@ -30,6 +30,10 @@ class DriversController < ApplicationController
 
   def show
     @driver = Driver.find(params[:id])
+
+    @trips = Trip.where(passenger_id: params[:id])
+
+
   end
 
   private
