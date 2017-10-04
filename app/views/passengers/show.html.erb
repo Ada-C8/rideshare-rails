@@ -1,6 +1,7 @@
 <h1>Passengers#show</h1>
 <%= "Hi my name is #{@passenger.name}.  You can reach me at #{@passenger.phone_num}" %>
 <hr />
+<% if !@trips.empty? %>
 <% @trips.each do |trip| %>
 Trip ID: <%= trip.id %>
 <ul>
@@ -16,5 +17,11 @@ Trip ID: <%= trip.id %>
     Cost: $<%= trip.cost %>
   </li>
 </ul>
+<% end %>
+<% else %>
+<p>
+  This passenger has not gone on any rides wow.
+</p>
+
 <% end %>
 <p>Find me in app/views/passengers/show.html.erb</p>

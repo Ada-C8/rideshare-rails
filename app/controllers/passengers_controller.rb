@@ -5,7 +5,8 @@ class PassengersController < ApplicationController
 
   def show
     @passenger = Passenger.find(params[:id].to_i)
-    @trips = @passenger.trips(params[:id].to_i)
+    @trips = @passenger.trips
+    # @trips = @passenger.trips(params[:id].to_i)
   end
 
   def edit
