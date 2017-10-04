@@ -10,6 +10,7 @@ end
 
 def edit
   @trip = Trip.find(params[:id])
+  @driver = @trip.driver
 end
 
 def update
@@ -26,8 +27,8 @@ end
 
 private
 
-def trip_params #may need to update this later depending what we want to allow to be updated
-  return params.require(:trip).permit(:driver_id, :passenger_id, :date, :rating, :cost)
+def trip_params # may need to update this later depending what we want to allow to be updated
+  return params.require(:trip).permit(:rating, :cost)
 end
 
 end

@@ -4,14 +4,15 @@
 
 <%= form_for @trip do |f| %>
 <!-- readonly: true so people cannot edit the ride, just the rating/cost?? -->
+<!-- there's gotta be a way to get the driver's name and the passenger's name to show up in the field instead of their IDs -->
   <%= f.label :driver_id %>
-  <%= f.text_field :driver_id %>
+  <%= f.text_field(:driver, :name) %>
 
   <%= f.label :passenger_id %>
-  <%= f.text_field :passenger_id %>
+  <%= f.text_field :passenger_id, readonly: true %>
 
   <%= f.label :date %>
-  <%= f.text_field :date %>
+  <%= f.text_field :date, readonly: true %>
 
   <%= f.label :rating %>
   <%= f.text_field :rating, placeholder: "5" %>
