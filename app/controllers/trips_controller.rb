@@ -38,7 +38,7 @@ class TripsController < ApplicationController
     @trip.update_attributes(trip_params)
     if @trip.save
       redirect_to(trip_path(@trip))
-      #redirect_back(fallback_location: trip_path(@trip))
+      # redirect_back(fallback_location: @trip)
     else
       render :new
     end
@@ -49,6 +49,8 @@ class TripsController < ApplicationController
     @trip.destroy
 
     redirect_to trips_path
+    # redirect_back(fallback_location: trips_path)
+
   end
 
   private

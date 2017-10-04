@@ -25,7 +25,7 @@
 <ul>
   <% @driver.trips.each do | trip | %>
     <li>
-      <%= render partial: 'layouts/trip_details', locals: { trip: trip } %>
+      <%= render partial: 'layouts/trip_details', locals: { trip: trip, route: @driver } %>
     </li>
   <% end %>
 </ul>

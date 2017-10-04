@@ -4,12 +4,16 @@
   </strong>
 </p>
 <ul>
-  <li>
-    Driver:<%= link_to "#{trip.driver.name}", driver_path(trip.driver_id)%>
-  </li>
-  <li>
-    Passenger:<%= link_to "#{trip.passenger.name}", passenger_path(trip.passenger_id)%>
-  </li>
+  <% unless route.class == Driver %>
+    <li>
+      Driver:<%= link_to "#{trip.driver.name}", driver_path(trip.driver_id)%>
+    </li>
+  <% end %>
+  <% unless route.class == Passenger %>
+    <li>
+      Passenger:<%= link_to "#{trip.passenger.name}", passenger_path(trip.passenger_id)%>
+    </li>
+  <% end %>
   <li>
     Cost: $<%='%.2f' % [trip.cost/100.0]%>
   </li>
