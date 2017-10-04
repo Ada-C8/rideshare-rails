@@ -16,16 +16,11 @@
   </li>
   <li>
     Trips
-    <% @rating = 0 %>
     <ul>
       <% @trips.each do |trip| %>
 
       <li>
         Date: <%= trip.date %>
-      </li>
-      <li>
-        <% @rating += trip.rating %>
-        Rating: <%= trip.rating %>
       </li>
       <li>
         Cost $<%= (trip.cost / 100).round(2) %>
