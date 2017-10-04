@@ -1,0 +1,16 @@
+<h1>Edit Trip Details</h1>
+
+<%= form_for @trip do |f| %>
+<%= f.label :date %>
+<%= f.date_select :date %>
+<%= f.label :rating %>
+<%= f.range_field :rating, in: 1..5 %>
+<%= f.label :cost %>
+<%= f.text_field :cost %>
+<%= f.label :driver %>
+<%= f.select :driver_id, options_from_collection_for_select(Driver.all, "id", "name") %>
+<%= f.label :passenger %>
+<%= f.select :passenger_id, options_from_collection_for_select(Passenger.all, "id", "name") %>
+
+<%= f.submit %>
+<% end %>

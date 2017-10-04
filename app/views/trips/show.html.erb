@@ -5,3 +5,6 @@
 <p>Cost: <%= @trip.cost %></p>
 <p>Driver: <%= link_to @trip.driver_id, driver_path(@trip.driver_id) %></p>
 <p> Passenger: <%= link_to @trip.passenger_id, passenger_path(@trip.passenger_id) %></p>
+
+<%= link_to "Edit", edit_trip_path(@trip.id) %>
+<%= link_to "Delete", trip_path(@trip.id), method: :delete, data: { confirm: "Delete trip?" } %>
