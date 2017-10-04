@@ -1,0 +1,19 @@
+<h2>TRIPS SHOW!!</h2>
+
+<h3>TRIPS DETAILS</h3>
+<ul>
+  <li><%= @trip[:id]%></li>
+  <li><%= @trip[:driver_id]%></li>
+  <li><%= @trip[:passenger_id]%></li>
+  <li><%= @trip[:date]%></li>
+  <li><%= @trip[:rating]%></li>
+  <li><%= @trip[:cost]%></li>
+</ul>
+
+<h3>TRIP LINKS</h3>
+<p><%= link_to 'DRIVER DETAILS', driver_path(@trip[:driver_id])%></p>
+<p>PASSENGER DETAILS</p>
+
+<h3>TRIP ACTIONS</h3>
+<p><%= link_to 'EDIT', edit_trip_path%></p>
+<p><%= link_to 'Delete', trip_path(@trip), method: :delete, data: { confirm: 'Are you sure you want to delete this trip?'} %></p>
