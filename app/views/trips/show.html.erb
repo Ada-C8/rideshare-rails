@@ -13,11 +13,12 @@
   <li>
     <%= "Cost: #{@trip.cost}"%>
   </li>
-  <%if @trip.rating == nil%>
-    <% @trip.rating = 5 %>
-    <% end %>
   <li>
     <%= "Rating: #{@trip.rating}"%>
+    <%= form_for @trip do |f| %>
+    <%=f.select :rating, [[1], [2], [3], [4], [5]]%>
+    <%= f.submit %>
+  <%end%>
   </li>
 </ul>
 <ul>

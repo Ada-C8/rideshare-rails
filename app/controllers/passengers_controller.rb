@@ -46,4 +46,9 @@ class PassengersController < ApplicationController
     return params.require(:passenger).permit(:name, :phone_num)
   end
 
+# def nilpass
+#   if Passenger.find(params[:id])!= Passenger.find(params[:id])
+#     @passenger = nil
+
+
 end #end of class

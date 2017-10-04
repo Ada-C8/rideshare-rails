@@ -1,22 +1,33 @@
 <h2>ALL TRIPS</h2>
 <ol>
   <% @trips.each do |trip|%>
-    <li>
+  <li>
 
-      <p>
-        <strong >
-          <%= link_to "Trip on: #{trip.date}", trip_path(trip) %>
-        </strong>
-      </p>
-      <ul>
-        <li>
-          <%= "Driver: #{trip.driver.name}"%>
-        </li>
-        <li>
-          <%= "Passenger: #{trip.passenger.name}"%>
-        </li>
-      </ul>
+    <p>
+      <strong >
+        <%= link_to "Trip on: #{trip.date}", trip_path(trip) %>
+      </strong>
+    </p>
+    <ul>
+      <% if !trip.driver.nil? %>
+      <li>
+        <%= "Driver: #{trip.driver.name}"%>
 
-    </li>
-    <% end %>
-  </ol>
+        <% else %>
+        <%= "Passenger: Deactivated"%>
+        <% end %>
+      </li>
+
+      <% if !trip.passenger.nil? %>
+      <li>
+        <%= "Passenger: #{trip.passenger.name}"%>
+      </li>
+      <% else %>
+      <%= "Passenger: Deactivated"%>
+      <% end %>
+
+    </ul>
+
+  </li>
+  <% end %>
+</ol>
