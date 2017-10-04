@@ -4,7 +4,7 @@
 <%= f.label :date %>
 <%= f.date_select :date %>
 <%= f.label :rating %>
-<%= f.range_field :rating, in: 1..5 %>
+<%= f.range_field :rating, in: 1..5, :step => 1 %>
 <%= f.label :cost %>
 <%= f.text_field :cost %>
 <%= f.label :driver %>
@@ -14,3 +14,4 @@
 
 <%= f.submit %>
 <% end %>
+<%= button_to "Cancel", trip_path(@trip.id), method: :get %>

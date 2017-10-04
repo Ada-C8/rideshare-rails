@@ -1,8 +1,14 @@
 <h1>Trip Details</h1>
 
+<% if @trip.rating.nil? %>
+  <p>Add a rating to this trip!</p>
+  <%= %>
+<% end %>
+
 <p>ID: <%= @trip.id %></p>
 <p>Date: <%= @trip.date %></p>
-<p>Cost: <%= @trip.cost %></p>
+<p>Cost: $<%= @trip.cost/100.0 %></p>
+<p>Rating: <%= @trip.rating %></p>
 <p>Driver: <%= link_to @trip.driver_id, driver_path(@trip.driver_id) %></p>
 <p> Passenger: <%= link_to @trip.passenger_id, passenger_path(@trip.passenger_id) %></p>
 
