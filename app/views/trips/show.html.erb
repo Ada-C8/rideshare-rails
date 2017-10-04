@@ -12,3 +12,8 @@
   <% @driver = Driver.find_by(id: @trip.driver_id) %>
   Your driver was: <%= @driver.name %>
 </p>
+
+<p>
+  <% @passenger = Passenger.find_by(id: @trip.passenger_id) %>
+  Your passenger was: <%= @passenger.name %>
+</p>
