@@ -6,11 +6,12 @@ class Driver < ApplicationRecord
 
   def average_rating
     avg = 0
-    trips = Trip.where(driver_id: self.id)
+    # trips = Trip.where(driver_id: self.id)
+
     if trips.length == 0
       return 0
     end
-    
+
     trips.each do |trip|
       avg += trip.rating
     end
