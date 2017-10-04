@@ -1,6 +1,16 @@
 <h1>Drivers#new</h1>
 <p>Find me in app/views/drivers/new.html.erb</p>
 
+<% if @driver.errors.any? %>
+  <ul class="errors">
+    <% @driver.errors.each do |column, message| %>
+      <li>
+        <strong><%= column.capitalize %></strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @driver do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %>

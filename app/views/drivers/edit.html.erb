@@ -1,7 +1,15 @@
 <h1>Drivers#edit</h1>
 <p>Find me in app/views/drivers/edit.html.erb</p>
 
-<%= params %>
+<% if @driver.errors.any? %>
+  <ul class="errors">
+    <% @driver.errors.each do |column, message| %>
+      <li>
+        <strong><%= column.capitalize %></strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
 
 <%= form_for @driver do |f| %>
   <%= f.label :name %>
