@@ -13,19 +13,27 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
   end
 
-  def new(passenger)
+  def new
     @trip = Trip.new
-    create(passenger)
+    create
   end
 
   def edit
     @trip = Trip.find(params[:id])
   end
 
+  def driver_select
+    answer = Driver.find(rand(1..Driver.all.length)).id
+    puts "driver id #{answer}"
+    return answer
+  end
+
   def create
-    # strong_params = trip_params
-    trip = Trip.new(passenger.id)
+    driver = driver_select 
+    cost = rand(1000..5000)
+    trip = Trip.new(passenger_id: 2, cost: cost, driver_id: driver, rating: nil, date: Date.today)
     trip.save
+    puts "I am saving"
     redirect_to trips_path
   end
 

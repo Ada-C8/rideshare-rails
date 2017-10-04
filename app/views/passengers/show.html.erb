@@ -17,9 +17,9 @@
   <ol>
   <% trips.each do |trip| %>
   <li>
-    <%driver_name = Driver.find(trip.driver_id).name %>
+    <%#driver_name = Driver.find(trip.driver_id).name %>
     Trip ID: <%=link_to trip.id, trip_path(trip.id) %>
-    Driver: <%= link_to driver_name, driver_path(trip.driver_id)%>
+    Driver: <%#= link_to driver_name, driver_path(trip.driver_id)%>
     Date: <%= trip.date %>
   </li>
 

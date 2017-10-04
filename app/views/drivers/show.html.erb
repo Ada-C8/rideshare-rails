@@ -13,19 +13,28 @@
   <li>
       Driver's total earnings: $<%= @driver.total_earned %>
   </li>
+  <li>
+    Driver Id: <%=@driver.id %>
+  </li>
     </ul>
   <p>
-  this is where the list of trips should go
+  <h2>All the trips!</h2>
 
   <%trips = Trip.all.where(driver_id: @driver.id)%>
   <ol>
   <% trips.each do |trip| %>
-  <li>
-    Trip ID: <%=link_to trip.id, trip_path(trip.id) %>
-  </li>
-
+    <li>
+      <%passenger_name = Passenger.find(trip.passenger_id).name %>
+      Trip ID: <%=link_to trip.id, trip_path(trip.id) %>
+      Passenger: <%= link_to passenger_name, passenger_path(trip.passenger_id)%>
+      Date: <%= trip.date %>
+    </li>
   <%end%>
   </ol>
+
+
+
+
 
 
 <%= link_to "Edit driver information", edit_driver_path(@driver.id), class: "link"%>
