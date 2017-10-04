@@ -22,10 +22,15 @@ class DriversController < ApplicationController
   end
 
   def update
+    driver_updates = params[:driver]
     @driver = Driver.find(params[:id])
-    @driver.update_attributes(driver_params)
-    @driver.save
-    redirect_to driver_path(@driver)
+    @driver.name = driver_updates[:name]
+    @driver.vin = driver_updates[:vin]
+    if @driver.save
+      redirect_to driver_path(@driver)
+    else
+      render :new
+    end
   end
 
   def show
