@@ -30,6 +30,8 @@
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 html, body { height: 100%; }
+body { display: flex; flex-direction: column; }
+section.content { flex: 1 0 auto; }
 body {
  width: 100%;
  color: var(--black);
