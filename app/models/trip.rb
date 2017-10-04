@@ -9,4 +9,10 @@ class Trip < ApplicationRecord
   validates :passenger_id, presence: { message: "Oh shit trip has no passenger_id, fix that"}
   validates :date, presence: { message: "Date must not be empty!"}
   validates :cost, presence: { message: "Cost must not be empty!"}, numericality: { only_integer: true, greater_than: 0 }
+
+  def dollars
+    cost = self.cost.to_f
+    cost /= 100
+    return cost
+  end
 end
