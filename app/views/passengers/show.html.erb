@@ -1,8 +1,18 @@
 <h2>Driver Passenger</h2>
 
-<%= link_to "Edit", edit_passenger_path(@passenger.id) %>
-<%= link_to "Delete", passenger_path(@passenger.id), method: :delete %>
-<%= link_to "Back to index", passengers_path %>
+<nav class="page-menu">
+  <ul>
+    <li>
+      <%= link_to "Edit", edit_passenger_path(@passenger.id) %>
+    </li>
+    <li>
+      <%= link_to "Delete", passenger_path(@passenger.id), method: :delete %>
+    </li>
+    <li>
+      <%= link_to "Back to index", passengers_path %>
+    </li>
+  </ul>
+</nav>
 
 <section>
   <p>
@@ -20,15 +30,15 @@
 
   <p>
     <strong>Trips: </strong>
-    <%= link_to "Add Trip", new_passenger_trip_path(@passenger.id) %>
+    <span class="page-menu"><%= link_to "Add Trip", new_passenger_trip_path(@passenger.id) %></span>
     <ul>
       <% @trips.each do |trip| %>
-        <li>
-          <%= link_to "#{trip.driver.name}
-          #{trip.date.strftime("%B %d, %Y")}
-          #{render partial: "/layouts/stars", locals: {rating: trip.rating}}",
-          trip_path(trip.id)%>
-        </li>
+      <li>
+        <%= link_to "#{trip.driver.name}
+        #{trip.date.strftime("%B %d, %Y")}
+        #{render partial: "/layouts/stars", locals: {rating: trip.rating}}",
+        trip_path(trip.id)%>
+      </li>
       <% end %>
     </ul>
   </p>
