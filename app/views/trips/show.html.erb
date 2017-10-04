@@ -4,4 +4,5 @@
 <p>passenger id: <%= @trip.passenger_id %></p>
 <p>date: <%= @trip.date %></p>
 <p>rating: <%= @trip.rating %></p>
-<p>cost: <%= @trip.cost %></p>
+<p>cost: <%= '%.02f' % (@trip.cost / 100) %></p>
+<p>trip ID: <%= @trip.id %></p>

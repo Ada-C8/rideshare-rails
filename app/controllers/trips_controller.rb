@@ -1,16 +1,18 @@
 class TripsController < ApplicationController
   def index
-    @trips = Trip.all
+    @trips = Trip.order(:id)
   end
 
   # def show
   #   @trip = Trip.find(params[:id])
   # end
   def show
-    @trip = Trip.find(params[:id])
+    @trip = Trip.find_by(id: params[:id].to_i)
+
     unless @trip
       redirect_to root_path
     end
+
     @passenger = @trip.passenger
     @driver = @trip.driver
   end
@@ -22,13 +24,16 @@ class TripsController < ApplicationController
   # def create
   def new
     driver_ids = find_driver_ids()
-    @trip = Trip.new(driver_id: driver_ids.sample.to_i, passenger_id: params[:passenger_id], date: Date.today, cost: rand(100..2000), rating: nil)
-    if @trip.save
-      redirect_to passenger_path(params[:passenger_id])
-    else
-      redirect_to root_path
-    end
+    @trip = Trip.new(date: Date.today, cost: rand(100..2000), driver_id: driver_ids.sample.to_i, passenger_id: params[:passenger_id], rating: nil)
+    @trip.save!
+    
+    # if @trip.save
+    #   redirect_to passenger_path(params[:passenger_id])
+    # else
+    #   redirect_to root_path
+    # end
   end
+
   # trip = Trip.new(
   # driver_id: Driver.first,
   # passenger_id: Passenger.find_by(params[:id]),
