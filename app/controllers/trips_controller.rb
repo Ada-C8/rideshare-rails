@@ -24,7 +24,11 @@ class TripsController < ApplicationController
   # def create
   def new
     driver_ids = find_driver_ids()
-    @trip = Trip.new(date: Date.today, cost: rand(100..2000), driver_id: driver_ids.sample.to_i, passenger_id: params[:passenger_id], rating: nil)
+    @trip = Trip.new(
+    date: Date.today,
+    cost: rand(100..2000),
+    driver_id: driver_ids.sample.to_i, passenger_id: params[:passenger_id],
+    rating: nil)
     @trip.save!
 
     # if @trip.save
