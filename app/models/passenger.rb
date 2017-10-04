@@ -16,8 +16,8 @@ class Passenger < ApplicationRecord
   end
 
 
-  def total_spent_on_all_trips
-
+  def total_cost
+    return (trips.sum { |trip| trip.cost }) / 100
   end
 
 end

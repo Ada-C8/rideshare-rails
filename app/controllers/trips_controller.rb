@@ -1,5 +1,6 @@
 class TripsController < ApplicationController
   def index
+    #are we goign to use this??
   end
 
   def show

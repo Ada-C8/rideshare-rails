@@ -7,4 +7,9 @@ class Driver < ApplicationRecord
     rating = trips.sum { |trip| trip.rating }
     (rating.to_f / trips.length)
   end
+
+  def total_earnings
+    earnings = trips.sum { |trip| trip.cost }
+    return ((earnings / 100) * 0.85)
+  end
 end

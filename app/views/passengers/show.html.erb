@@ -13,6 +13,7 @@
 <% if @passenger %>
   Name: <%=@passenger[:name] %>
   Phone Number: <%= @passenger[:phone_num] %>
+  Total Spent: $<%= @passenger.total_cost %>
 
   <ul>
     Trips
