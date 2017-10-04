@@ -19,5 +19,10 @@
   $<%= @driver.total_earnings %>
 </section>
 
+<section>
+  <h3>Driver's Average Rating</h3>
+  <%= @driver.avg_rating %>
+</section>
+
 <%= link_to "Edit", edit_driver_path(@driver.id)%>
 <%= link_to "Delete", delete_driver_path(@driver.id), method: :delete, data: {confirm: "Are you sure?"}%>
