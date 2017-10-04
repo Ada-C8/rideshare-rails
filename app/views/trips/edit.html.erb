@@ -3,24 +3,21 @@
       locals: { model: @trip } %>
 
 <%= form_for @trip do |f| %>
-<!-- readonly: true so people cannot edit the ride, just the rating/cost -->
-  <%= f.label :id %>
-  <% f.text_field :id %>
+<!-- readonly: true so people cannot edit the ride, just the rating/cost?? -->
+  <%= f.label :driver_id %>
+  <%= f.text_field :driver_id %>
 
-  <% f.label :driver_id %>
-  <% f.text_field :driver_id %>
+  <%= f.label :passenger_id %>
+  <%= f.text_field :passenger_id %>
 
-  <% f.label :passenger_id %>
-  <% f.text_field :passenger_id %>
-
-  <% f.label :date %>
-  <% f.text_field :date %>
+  <%= f.label :date %>
+  <%= f.text_field :date %>
 
   <%= f.label :rating %>
   <%= f.text_field :rating, placeholder: "5" %>
 
-  <% f.label :cost %>
-  <% f.text_field :cost, placeholder: "20.00" %>
+  <%= f.label :cost %>
+  <%= f.text_field :cost, placeholder: "20.00" %>
   <!-- Is there a way to input dollar amounts with decimals and convert to cents in db? -->
 
   <!-- Not sure what other information would need to be edited in trips  -->

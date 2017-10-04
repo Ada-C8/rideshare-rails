@@ -13,6 +13,8 @@ def edit
 end
 
 def update
+  puts "does it work?????"
+  puts trip_params
   @trip = Trip.find(params[:id])
   @trip.update_attributes(trip_params)
   if @trip.save
@@ -25,7 +27,7 @@ end
 private
 
 def trip_params #may need to update this later depending what we want to allow to be updated
-  return params.require(:trip).permit(:driver, :passenger)
+  return params.require(:trip).permit(:driver_id, :passenger_id, :date, :rating, :cost)
 end
 
 end
