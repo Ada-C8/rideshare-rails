@@ -17,11 +17,23 @@ class TripsController < ApplicationController
     @driver = @trip.driver
   end
 
+  def edit
+    @trip = Trip.find(params[:id])
+  end
 
+  def update
+    @trip = Trip.find(params[:id])
+    @trip.update(trips_params)
+    # if result
+       redirect_to trips_path(@trip.id)
+    # else
+    #   render :edit
+    # end
+  end
 
   private
 
   def trips_params
     return params.require(:trip).permit(:driver_id, :passenger_id, :date, :cost, :rating)
   end
-end 
+end
