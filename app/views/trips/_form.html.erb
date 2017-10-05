@@ -11,7 +11,7 @@
   <!-- <div class="form-item"> -->
     <%#<%= f.label :passenger_id %>
     <%#<%= f.collection_select(:passenger_id, Passenger.all.order(:name), :id, :name) %>
-  <%#</div>
+  <%#</div>%>
 
   <div class="form-item">
     <%= f.label :date %>
@@ -19,6 +19,9 @@
 
   <%#<%= f.label :rating %>
   <%#<%= f.text_field :rating %>
+
+
+  <% if rating_visible %>
   <div class="form-item">
     <%= f.label :rating %>
 
@@ -29,8 +32,11 @@
       end %>
 
     <%= f.select :rating, rating_array, {include_blank: 'Select a rating'}, :selected => rating_array[:rating.to_s.to_i - 1] %>
-
   </div>
+  <% else %>
+    <%= f.hidden_field :rating, :value => 0 %>
+  <% end %>
+
 
   <div class="form-item">
     <%= f.label :cost %>
