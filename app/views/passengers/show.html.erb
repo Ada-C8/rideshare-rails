@@ -15,7 +15,7 @@
         <% else %>
           <% trips.each do |trip| %>
             <li>
-              <%= link_to trip.date, trip_path %>
+              <%= link_to trip.date, trip_path(trip.id) %>
             </li>
           <% end %>
         <% end %>
