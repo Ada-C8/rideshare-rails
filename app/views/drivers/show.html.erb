@@ -1,41 +1,40 @@
+<section class="information">
 <h1>Driver ID: <%= @driver.id %></h1>
 <h3>Name: <%= @driver.name %></h3>
 <h3>VIN: <%= @driver.vin%></h3>
 <h5>Average rating: <%= @rating%> Total Earnings: $<%= @total%></h5>
-
 <p><%= link_to "Edit", edit_driver_path(@driver.id)%> | <%= link_to "Delete", driver_path(@driver.id), method: :delete %></p>
+</section>
 
 <section>
   <table>
-  <thead>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Rating</th>
+        <th>Cost</th>
+        <th>Passenger</th>
+      </tr>
+    </thead>
+    <% @trips.each do |trip| %>
     <tr>
-      <th>ID</th>
-      <th>Date</th>
-      <th>Rating</th>
-      <th>Cost</th>
-      <th>Passenger</th>
+      <td data-label='ID'>
+        <%= link_to trip.id, trip_path(trip.id), method: :get %>
+      </td>
+      <td data-label='Date'>
+        <%= trip.date %>
+      </td>
+      <td data-label='Rating'>
+        <%= trip.rating %>
+      </td>
+      <td data-label='Cost'>
+        <%= trip.cost %>
+      </td>
+      <td data-label='Passenger'>
+        <%= link_to trip.passenger.name, passenger_path(id: trip.passenger.id)%>
+      </td>
     </tr>
-  </thead>
-  <% @trips.each do |trip| %>
-  <tr>
-  <td data-label='ID'>
-    <%= link_to trip.id, trip_path(trip.id), method: :get %>
-  </td>
-  <td data-label='Date'>
-    <%= trip.date %>
-  </td>
-  <td data-label='Rating'>
-    <%= trip.rating %>
-  </td>
-  <td data-label='Cost'>
-    <%= trip.cost %>
-  </td>
-  <td data-label='Passenger'>
-    <%= link_to trip.passenger.name, passenger_path(id: trip.passenger.id)%>
-  </td>
-  </tr>
-  <% end %>
-
+    <% end %>
   </table>
-
 </section>

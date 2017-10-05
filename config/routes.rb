@@ -37,6 +37,7 @@ Rails.application.routes.draw do
   post '/trips/create', to: 'trips#create', as: 'create_trip'
   get '/trips/:id', to: 'trips#show', as: 'trip'
   get '/trips/:id/edit', to: 'trips#edit', as: 'edit_trip'
+  patch '/trips/:id/rate', to: 'trips#add_rating', as: 'rate_trip'
   patch '/trips/:id', to: 'trips#update', as: 'update_trip'
   delete '/trips/:id', to: 'trips#destroy', as: 'delete_trip'
 end

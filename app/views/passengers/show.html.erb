@@ -1,3 +1,4 @@
+<section class="information">
 <h1>Passenger ID: <%= @passenger.id %></h1>
 <h3>Passenger Name: <%= @passenger.name %></h3>
 <h3>Phone: <%= @passenger.phone_num %></h3>
@@ -14,9 +15,9 @@
     <%= link_to "Create a new trip", new_trip_path(@passenger.id)%>
   <% end %>
 </p>
+</section>
 
 <section>
-
   <table>
     <thead>
       <tr>
@@ -46,7 +47,5 @@
       </td>
     </tr>
     <% end %>
-
   </table>
-
 </section>

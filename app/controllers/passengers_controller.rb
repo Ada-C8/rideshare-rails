@@ -12,7 +12,6 @@ class PassengersController < ApplicationController
     end
 
     @trips = @passenger.trips
-
     @needs_rating = (@trips.find {|trip| trip.rating == nil})
 
   end

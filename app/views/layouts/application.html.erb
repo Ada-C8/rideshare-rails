@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>RideshareRails</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,11 +10,6 @@
   </head>
 
   <body>
-    <header>
-      <h2><%= link_to "Tandemshare", root_path %></h2>
-    </header>
-
-
     <nav>
         <label for="show-menu" class="show-menu">Menu</label>
         <input type="checkbox" id="show-menu" role="button">
@@ -32,6 +28,10 @@
             </li>
         </ul>
     </nav>
+    
+    <header>
+      <h2><%= link_to "Tandemshare", root_path %></h2>
+    </header>
 
     <main>
     <%= yield %>
