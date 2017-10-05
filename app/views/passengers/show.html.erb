@@ -1,15 +1,15 @@
-require 'app/helpers/application_helper'
+<!-- require 'app/helpers/application_helper' -->
 <h1>Passengers#show</h1>
 <%= "Hi my name is #{@passenger.name}.  You can reach me at #{@passenger.phone_num}.  I have spent $#{@passenger.total_spent}" %>
 <hr />
 <% if !@trips.empty? %>
 <% @trips.each do |trip| %>
-Trip ID: <%= trip.id %>
+Trip ID: <%= link_to(trip.id, trip_path(trip.id))  %>
 <ul>
   <li>Date: <%=trip.date%>
   </li>
   <li>
-    Driver: <%= trip.driver.name %>
+    Driver: <%= link_to(trip.driver.name, driver_path(trip.driver.id)) %>
   </li>
   <li>
     Rating: <%= trip.rating %>
