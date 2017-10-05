@@ -36,21 +36,31 @@
 }
 
 .link_to-style {
-  section {
-    text-decoration: none;
-    height: 125px;
+
+
+
+   * {
+     margin-bottom:5px;
+   }
+
+   li {
+   display: block;	margin-left:20px;
+   text-decoration: none;color:black;
   }
 
-  section:hover {
-    background-color: green;
-    // transition: all 500ms ease-in-out;
+  li:hover {
+    background: none;
   }
 
-  section:hover .edit-link p {
+  li span {
     display: none;
   }
 
-  section .edit-link:before {
-    content: "EDIT"
+  li:hover span {
+    display: inline;
+    padding: 25px;
+    width:250px;
+    float: right;
   }
+
 }
