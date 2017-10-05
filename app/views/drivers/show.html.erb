@@ -1,15 +1,5 @@
 <h1> Driver Detail Page </h1>
 
-<% if @driver.errors.any? %>
-  <ul class="errors">
-    <% @driver.errors.each do |column, message| %>
-      <li>
-        <strong><%= column.capitalize %></strong> <%= message %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
-
 <section>
   <% if @driver %>
     <h3><%= "NAME: #{@driver.name}" %></h3>
