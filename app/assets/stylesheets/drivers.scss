@@ -53,3 +53,15 @@ ol{
 .single_trip{
   padding: 0px;
 }
+
+.edit_driver{
+  background-color: blue;
+  width: 200px;
+  margin-left: 10px;
+  padding: 5px;
+  color: white;
+}
+
+.edit_driver input[name='commit']{
+  margin-left: 25%;
+}

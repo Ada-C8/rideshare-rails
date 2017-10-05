@@ -11,7 +11,7 @@
   <ul >
     <% unless route.class == Driver %>
       <li>
-        Driver:<%= link_to "#{trip.driver.name}", driver_path(trip.driver_id)%>
+        Driver: <%= link_to "#{trip.driver.name}", driver_path(trip.driver_id)%>
       </li>
     <% end %>
     <% unless route.class == Passenger %>
