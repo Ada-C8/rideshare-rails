@@ -1,7 +1,5 @@
 <div class="requested">
-  <h1> <%=@driver.name%> </h1>
-  <p><%= link_to "Edit", edit_driver_path(@driver.id) %></p>
-  <p><%= link_to "Delete", driver_path(@driver), method: :delete , data: {confirm: "Are you sure?" }  %></p>
+  <h2> Name: <%=@driver.name%> </h2>
   <p><strong>Total Earnings: </strong><%= @driver.total_earning%></p>
   <p><strong>Average Rating: </strong><%= @driver.average_rating%></p>
   <p><strong>List of Trips: </strong>
@@ -13,9 +11,10 @@
             <%= link_to trip.date, trip_path %>
           </li>
         <% end %>
-      <% end %>  
+      <% end %>
     </ul>
   </p>
-
+  <p><%= link_to "Edit", edit_driver_path(@driver.id) %></p>
+  <p><%= link_to "Delete", driver_path(@driver), method: :delete , data: {confirm: "Are you sure?" }  %></p>
 
 </div>
