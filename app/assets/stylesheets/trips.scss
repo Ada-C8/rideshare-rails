@@ -12,3 +12,19 @@
 .single_trip ul{
   padding: 0px;
 }
+
+#new_trip{
+  background-color: blue;
+  width: 300px;
+  color: white;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+#new_trip input[name='commit']{
+  margin-left: 25%;
+}
+
+#trip_driver_id{
+  float: right;
+}

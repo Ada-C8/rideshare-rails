@@ -3,25 +3,28 @@
 <%= render partial: 'layouts/error_messages', locals: { model: @trip } %>
 
 <%= form_for @trip do |f| %>
-  <%= f.label :date %>
-  <%= f.date_field :date %>
-
-  <%= f.label :rating %>
-  <%= f.text_field :rating, :value => 5  %>
-
-  <%= f.label :driver_id %>
+  <%= f.label :date, :class => 'label' %>
+  <%= f.date_field :date, :class => 'field' %>
+  <br/>
+  <br/>
+  <%= f.label :rating, :class => 'label' %>
+  <%= f.text_field :rating, :value => 5, :class => 'field'  %>
+  <br/>
+  <br/>
+  <%= f.label :driver_id, :class => 'label' %>
   <%= f.collection_select(:driver_id, Driver.all.order('name asc'), :id, :name)%>
   <!-- this is a dropdown menu with all Drivers listed -->
+  <br/>
+  <br/>
   <% if @trip.passenger_id %>
     <%= f.hidden_field :passenger_id %>
   <% else %>
-    <%= f.label :passenger_id %>
-    <%= f.collection_select(:passenger_id, Passenger.all.order('name asc'), :id, :name)%>
+    <%= f.label :passenger_id, :class => 'label' %>
+    <%= f.collection_select(:passenger_id, Passenger.all.order('name asc'), :id, :class => 'field')%>
   <% end %>
-
-
-  <%= f.label :cost %>
-  <%= f.text_field :cost %>
-
+  <%= f.label :cost, :class => 'label' %>
+  <%= f.text_field :cost, :class => 'field' %>
+  <br/>
+  <br/>
   <%= f.submit %>
 <%end%>
