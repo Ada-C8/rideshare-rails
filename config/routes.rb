@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
   resources :passengers do
-    post '/new_trip', to: 'trips#create '
+    post '/new_trip', to: 'trips#create'
   end
 
   resources :trips
