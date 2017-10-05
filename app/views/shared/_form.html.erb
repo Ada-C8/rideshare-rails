@@ -31,12 +31,12 @@
 <%= f.label :cost %>
 <%= f.text_field :cost %>
 <%= f.label :driver %>
-<%= f.select :driver_id, options_from_collection_for_select(Driver.all, "id", "name") %>
+<%= f.collection_select(:driver_id, Driver.all, :id, :name) %>
 <%= f.label :passenger %>
-<%= f.select :passenger_id, options_from_collection_for_select(Passenger.all, "id", "name") %>
+<%= f.collection_select(:passenger_id, Passenger.all, :id, :name) %>
 
 <%= f.submit %>
 <% end %>
-<%= button_to "Cancel", trip_path(@trip.id), method: :get %>
+
 
 <% end %>
