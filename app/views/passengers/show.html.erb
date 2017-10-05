@@ -19,21 +19,7 @@
         <% if Trip.all.where(passenger_id: @passenger.id).length == 0 %>
           No trips taken yet!
         <%else%>
-          <%trips = Trip.all.where(passenger_id: @passenger.id)%>
-          <ol>
-              <% trips.each do |trip| %>
-            <li>
-              <% if Driver.find_by_id(trip.driver_id) == nil %>
-              Driver: driver account deleted
-              <%else %>
-              <%driver_name = Driver.find(trip.driver_id).name %>
-              Driver: <%= link_to driver_name, driver_path(trip.driver_id) %>
-              <% end %>
-              Trip ID: <%=link_to trip.id, trip_path(trip.id) %>
-              Date: <%= trip.date %>
-            </li>
-            <%end%>
-            </ol>
+        <%= render partial: 'table'%>
           <%end%>
       </li>
     </ul>
