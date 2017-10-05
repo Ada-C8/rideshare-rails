@@ -7,7 +7,7 @@ class Driver < ApplicationRecord
   def total_earnings
     sum = 0
 
-    driver.trips.each do |trip|
+    trips.each do |trip|
       sum += trip.cost
     end
 
@@ -16,10 +16,10 @@ class Driver < ApplicationRecord
 
   def avg_rating
     sum = 0
-    driver.trips.each do |trip|
+    trips.each do |trip|
       sum += trip.rating
     end
 
-    return (sum/driver.trips.count)
+    return (sum/trips.count)
   end
 end
