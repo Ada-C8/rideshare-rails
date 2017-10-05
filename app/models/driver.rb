@@ -13,7 +13,8 @@ class Driver < ApplicationRecord
   end
 
   def avg_rating
-    avg = self.trips.map { |trip| trip.rating}.reduce(:+).to_f / self.trips.count
+    count = self.trips.select{|trip| trip.rating > 0}.count
+    avg = self.trips.map { |trip| trip.rating}.reduce(:+).to_f / count
     return '%.01f' % avg
   end
 end

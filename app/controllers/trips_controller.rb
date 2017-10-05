@@ -20,6 +20,7 @@ class TripsController < ApplicationController
   end
 
   def create
+    #TODO: Refactor into Rider model method, so only Riders can create a new trip
     rider_passed_in = Rider.find_by(id: params[:id])
     @trip = Trip.new(rider: rider_passed_in, driver: Driver.all.sample, cost: rand(100..15000), rating: 0, date: Date.today)
     #later logic could be put in respective models: driver would be next available & cost would be based on something
