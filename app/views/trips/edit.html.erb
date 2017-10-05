@@ -1,6 +1,8 @@
 <h1>Edit Rating</h1>
 
-Current Rating: <%= @trip.rating %>
-<!-- New Rating: <%= select(:person, [['Lisbon', 1], ['Madrid', 2], ...]) %> -->
 
-<!-- f.select :country, [['Philippines', 1], ['Hong Kong', 2], ['Indonesia', 3]] -->
+<%= form_for @trip do |f| %>
+  <%= f.label "Rating" %>
+  <%= f.select :rating, 1..5 %>
+  <p><%= f.submit "Update Rating"%></p>
+<% end %>
