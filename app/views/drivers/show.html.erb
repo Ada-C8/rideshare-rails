@@ -25,7 +25,7 @@
 </div>
 <ol>
   <% @driver.trips.order(date: :desc).each do | trip | %>
-    <li class = 'driver_trip'>
+    <li >
       <%= render partial: 'layouts/trip_details', locals: { trip: trip, route: @driver } %>
     </li>
   <% end %>

@@ -1,27 +1,29 @@
-<p>
-  <strong>
-    Trip on: <%= link_to "#{trip.date}", trip_path(trip) %>
-  </strong>
+<div class='single_trip'>
+  <p>
+    <strong>
+      Trip on: <%= link_to "#{trip.date}", trip_path(trip) %>
+    </strong>
 
-  <%= link_to "Edit", edit_trip_path(trip)%>
-  <%= link_to 'Delete', trip_path(trip), method: :delete, data: { confirm: "Are you sure?" } %>
+    <%= link_to "Edit", edit_trip_path(trip)%>
+    <%= link_to 'Delete', trip_path(trip), method: :delete, data: { confirm: "Are you sure?" } %>
 
-</p>
-<ul class = 'single_trip'>
-  <% unless route.class == Driver %>
+  </p>
+  <ul >
+    <% unless route.class == Driver %>
+      <li>
+        Driver:<%= link_to "#{trip.driver.name}", driver_path(trip.driver_id)%>
+      </li>
+    <% end %>
+    <% unless route.class == Passenger %>
+      <li>
+        Passenger:<%= link_to "#{trip.passenger.name}", passenger_path(trip.passenger_id)%>
+      </li>
+    <% end %>
     <li>
-      Driver:<%= link_to "#{trip.driver.name}", driver_path(trip.driver_id)%>
+      Cost: $<%='%.2f' % [trip.cost/100.0]%>
     </li>
-  <% end %>
-  <% unless route.class == Passenger %>
     <li>
-      Passenger:<%= link_to "#{trip.passenger.name}", passenger_path(trip.passenger_id)%>
+      <%= "Rating: #{trip.rating}"%>
     </li>
-  <% end %>
-  <li>
-    Cost: $<%='%.2f' % [trip.cost/100.0]%>
-  </li>
-  <li>
-    <%= "Rating: #{trip.rating}"%>
-  </li>
-</ul>
+  </ul>
+</div>

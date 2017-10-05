@@ -23,7 +23,7 @@
 </div>
 <ol>
   <% @passenger.trips.order(date: :desc).each do | trip | %>
-    <li class= 'passenger_trip'>
+    <li >
       <%= render partial: 'layouts/trip_details', locals: { trip: trip, route: @passenger } %>
     </li>
   <% end %>
