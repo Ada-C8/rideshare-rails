@@ -8,8 +8,18 @@
   <%= f.label :date %>
   <%= f.date_field :date %>
 
+  <%#<%= f.label :rating %>
+  <%#<%= f.text_field :rating %>
+
   <%= f.label :rating %>
-  <%= f.text_field :rating %>
+
+  <% rating_array = [] %>
+  <% (1..5).each do |rating|
+      stars = render partial: "/layouts/stars", locals: {rating: rating}
+      rating_array << [stars, rating]
+    end %>
+
+  <%= f.select :rating, rating_array, {include_blank: 'Select a rating'}, :selected => rating_array[:rating.to_s.to_i - 1] %>
 
   <%= f.label :cost %>
   <%= f.text_field :cost %>
