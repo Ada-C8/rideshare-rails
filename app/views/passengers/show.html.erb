@@ -23,14 +23,16 @@
 <%= "Passenger #{@passenger.name} has taken #{@passenger.trips.length} trip(s)" %>
 
 <ol>
-<% @passenger.trips.each do |trip| %>
+<% @passenger.trips.order(date: :desc).each do |trip| %>
 <li>
+  <%= link_to "Trip #{trip.id}", trip_path(trip.id) %>
   <%= "Driver Id: #{trip.driver_id}" %>
   <%= "Cost of trip: #{trip.cost}" %>
   <%= "Trip rating: #{trip.rating}" %>
 </li>
 <% end %>
 </ol>
+
 
 
 <!-- Need to add button to add new trip  -->
