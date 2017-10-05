@@ -1,8 +1,10 @@
 <h1>Driver for this trip: <%= Driver.find(@trip.driver_id).name %></h1>
 <%#<h2><%= link_to "Assign a driver rating - This needs to go to the get then update path for the driver of this trip", driver_path %><%#</h2>%>
 <h3>Rating of this trip: <%= @trip.rating %></h3>
-<h2><%= link_to "Rate the trip", edit_trip_path(@trip.passenger_id) %></h2>
+<% if !@trip.has_rating? %>
+  <h2><%= link_to "Rate the trip", edit_trip_path(@trip) %></h2>
+<% end %>
+
 <h3><%= link_to "Driver Details", driver_path(@trip.driver_id) %> </h3>
 <h3><%= link_to "Passenger Details", passenger_path(@trip.passenger_id) %></h3>
-<h3><%= link_to "Edit Trip", edit_trip_path %></h3>
 <h3><%= link_to "Delete Trip", trip_path(@trip), method: :delete , data: {confirm: "Are you sure?" }  %></h3>

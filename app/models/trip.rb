@@ -8,4 +8,8 @@ class Trip < ApplicationRecord
     # How to assign a driver that already has that date taken in the database
     return driver_id
   end
+
+  def has_rating?
+    return (rating > 0)
+  end
 end

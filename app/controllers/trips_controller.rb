@@ -37,13 +37,8 @@ class TripsController < ApplicationController
 
   def update
     @trip = Trip.find(params[:id])
-    result = @trip.update(
-    driver_id: params[:trip][:driver_id],
-    passenger_id: params[:trip][:passenger_id],
-    date: params[:trip][:date],
-    rating: params[:trip][:rating],
-    cost: params[:trip][:cost]
-    )
+    result = @trip.update(rating: params[:trip][:rating])
+
     if result
       redirect_to trip_path(params[:id])
     else
