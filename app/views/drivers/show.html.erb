@@ -5,10 +5,10 @@
 <h3>Status:</h3>
 <% if @driver.available %>
   <p>Available</p>
-  <%= link_to image_tag("Switch On.png"), driver_available_path, method: :patch %>
+  <%= link_to image_tag("Switch On.png"), driver_available_path(@driver.id), method: :patch %>
 <% else %>
   <p>Unavailable</p>
-  <%= link_to image_tag("Switch Off.png"), driver_available_path, method: :patch %>
+  <%= link_to image_tag("Switch Off.png"), driver_available_path(@driver.id), method: :patch %>
 <% end %>
 
 <h2><%= link_to("Delete Driver", driver_path, method: :delete) %></h2>
