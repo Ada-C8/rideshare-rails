@@ -1,6 +1,6 @@
 <ul>
     <li> Date:<%= @trip.date %> </li>
-    <li> Passenger: <%= @trip.passenger_id %></li>
+    <li> Passenger: <%=link_to  @trip.passenger_id, passenger_path(@trip.passenger_id) %></li>
     <li> Cost: <%= @trip.cost %></li>
     <li> Rating: <%= @trip.rating %></li>
 

@@ -35,7 +35,7 @@ class PassengersController < ApplicationController
 
     @passenger.name = passenger_updates[:name]
     @passenger.phone_num = passenger_updates[:phone_num]
-  
+
     if @passenger.save
       redirect_to passenger_path(@passenger)
     else
