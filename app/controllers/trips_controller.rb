@@ -17,7 +17,7 @@ class TripsController < ApplicationController
   def update
     @trip = Trip.find_by(id: params[:id])
     if @trip.update_attributes trip_params
-      redirect_to trip_path
+      redirect_to passenger_path(@trip.passenger.id)
     else
       render :edit
     end
@@ -59,7 +59,8 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    return params.require(:trip).permit(:name, :phone_num)
+    return params.require(:trip).permit(:passenger_id, :date, :rating, :driver_id)
+    # return params.require(:trip).permit(:name, :phone_num)
   end
 
 end

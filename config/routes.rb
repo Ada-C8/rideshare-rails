@@ -10,9 +10,9 @@ Rails.application.routes.draw do
 
   get '/trips/:id', to: 'trips#show', as: 'trip'
 
-  patch '/trips/:id', to:'trips#update_rating'
+  patch '/trips/:id/update_rating', to:'trips#update_rating'
 
-  # patch '/trips/:id', to: 'trips#update'
+  patch '/trips/:id', to: 'trips#update'
 
   post '/trips', to: 'trips#create', as: 'create_trip'
 
