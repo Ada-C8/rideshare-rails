@@ -13,7 +13,12 @@
   Your driver was: <%= link_to(@driver.name, driver_path(@driver.id)) %>
 </p>
 
+
 <p>
   <% @passenger = Passenger.find_by(id: @trip.passenger_id) %>
   Your passenger was: <%= link_to(@passenger.name, passenger_path(@passenger.id)) %>
+</p>
+
+<p>
+  <%= link_to("Delete Trip", delete_trip_path(@trip.id),method: :delete) %>
 </p>
