@@ -1,2 +1,20 @@
-<h1>Trips#edit</h1>
-<p>Find me in app/views/trips/edit.html.erb</p>
+<h1>Trip Info</h1>
+
+<!-- stuff you can't edit -->
+<p>
+  <%= @trip.date %>
+</p>
+
+<p>
+  <%= @trip.cost %>
+</p>
+
+<%= form_for @trip do |f| %>
+  <%= f.label :rating %>
+  <%= f.text_field :rating %>
+
+  <%= f.label "Passenger Name" %>
+  <%= f.select :passenger_id, options_from_collection_for_select(Passenger.all, "id", "name") %>
+
+  <%= f.submit %>
+<% end %>
