@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :drivers, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   resources :passengers, only: [:index, :new, :create, :show, :edit, :update, :destroy]
-  resources :trips, only: [:index, :new, :create, :show]
+  resources :trips, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 
   root 'home#index'
 end

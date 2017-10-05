@@ -20,4 +20,25 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
   end
+
+  def edit
+    @trip = Trip.find(params[:id])
+  end
+
+  def update
+    trip_updates = params[:trip]
+    @trip = Trip.find(params[:id])
+
+    @trip.rating = trip_updates[:rating]
+
+    if @trip.save
+      redirect_to trip_path(@trip)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+  end
+
 end
