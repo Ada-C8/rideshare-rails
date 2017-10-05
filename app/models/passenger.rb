@@ -3,4 +3,6 @@ class Passenger < ApplicationRecord
 
   validates :name, presence: {message: "%{value} must be given"}
   validates :phone_num, presence: {message: "%{value} must be given"}
+
+
 end

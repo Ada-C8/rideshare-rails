@@ -1,19 +1,17 @@
 <%= form_for @trip do |f| %>
 <ul>
-<li>
   <%= f.hidden_field :passenger_id %>
-</li>
-
+  <%= f.hidden_field :driver_id %>
 
   <li>
     <%=f.label :date%>
     <%=f.date_field :date, class: "form-field" %>
   </li>
   <li>
-    <%# if !(current_page?(new_passenger_trip_path)) #%>
+     <% if !(current_page?(new_passenger_trip_path @trip.passenger_id)) %>
     <%=f.label :rating %>
     <%=f.text_field :rating, class: "form-field" %>
-    <%# end #%>
+    <% end %>
   </li>
   <li>
     <%=f.label :cost %>

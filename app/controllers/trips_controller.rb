@@ -19,6 +19,7 @@ class TripsController < ApplicationController
     if params[:passenger_id]
       @trip.passenger_id = params[:passenger_id]
     end
+    @trip.driver_id = Driver.select_driver.id
   end
 
   def create
@@ -50,6 +51,6 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    return params.require(:trip).permit(:date, :rating, :cost, :passenger_id)
+    return params.require(:trip).permit(:date, :rating, :cost, :passenger_id, :driver_id)
   end
 end

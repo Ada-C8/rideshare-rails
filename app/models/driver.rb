@@ -6,4 +6,8 @@ class Driver < ApplicationRecord
 
   # must provide a vin
   validates :vin, presence: {message: "%{value} must be given"}
+
+  def self.select_driver
+    return Driver.all.sample
+  end
 end
