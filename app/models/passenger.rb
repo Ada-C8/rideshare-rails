@@ -5,10 +5,13 @@ class Passenger < ApplicationRecord
 
   def total_spent
     total = 0
-    trip.each do |x|
-      total += x.cost
+    if trip.length == 0
+      total = 0
+    else
+      trip.each do |x|
+        total += x.cost
+      end
     end
-    return total
+  return total
   end
-
 end
