@@ -22,6 +22,7 @@ body {
   background-color: whitesmoke;
   background-image: url(round.png);
   margin: 0;
+  /*min-width: 60rem;*/
 }
 
 header {
@@ -29,7 +30,7 @@ header {
   color: white;
   height: 5rem;
   left: 0;
-  min-width: 48rem;
+  min-width: 60rem;
   position: fixed;
   top: 0;
   width: 100%;
@@ -59,6 +60,7 @@ main {
   background-color: white;
   background-color: rgba(255, 255, 255, 0.7);
   margin: 0 auto;
+  min-width: 32rem;
   padding: 3%;
   position: relative;
   top: 3.75em;
