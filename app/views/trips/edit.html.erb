@@ -1,5 +1,5 @@
 <h3>edit trip:</h3>
-
+<%= render partial: 'layouts/error_messages', locals: {model: @trip} %>
 <%= form_for @trip do |f| %>
 
   <%= f.label :date %>

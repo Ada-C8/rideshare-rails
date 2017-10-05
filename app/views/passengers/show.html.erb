@@ -11,6 +11,8 @@
   <%= "Trip Rating: " %><%= trip.rating %>
   <%= "Trip Date: " %><%= trip.date %>
   <%= "Trip Driver: " %><%= trip.driver_id %>
+  <%= link_to "Edit", edit_trip_path(trip.id) %>
+  <%= link_to "Details", trip_path(trip.id) %>
 <% end %>
 
 <%= "Total Cost: $" %>
@@ -23,4 +25,4 @@
   method: :delete,
   data: { confirm: 'Are you sure?' } %>
 
-  <%= link_to 'Add NEW trip', new_passenger_trip_path(@passenger.id) %> 
+  <%= link_to 'Add NEW trip', new_passenger_trip_path(@passenger.id) %>
