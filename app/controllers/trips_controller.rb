@@ -40,7 +40,7 @@ class TripsController < ApplicationController
     redirect_to edit_trip_path unless @trip
 
     if @trip.update_attributes trip_params
-      redirect_to passenger_path(@trip.passenger_id)
+      redirect_to trip_path
     else
       render :edit
     end
