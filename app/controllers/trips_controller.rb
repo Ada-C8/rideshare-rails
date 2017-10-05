@@ -10,9 +10,20 @@ class TripsController < ApplicationController
   end
 
   def new
+    # @passenger = Passenger.find(params[:passenger_id])
+    @trip = Trip.new
+    @trip.passenger = Passenger.find(params[:passenger_id])
   end
 
   def create
+    @trip = Trip.new(trip_params)
+    @trip.passenger = Passenger.find(params[:passenger_id])
+    # @passenger = Passenger.find(params[:passenger_id])
+    if @trip.save
+     redirect_to passenger_path(@trip.passenger_id)
+    else
+      render :new
+    end
   end
 
   def show
@@ -29,5 +40,12 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @trip.destroy
     redirect_to root_path
+  end
+
+  private
+
+  def trip_params
+    # params.require(:passenger).require(:trip)
+    return params.require(:trip).permit(:date, :cost, :driver_id, :passenger_id, :cost)
   end
 end

@@ -1,0 +1,31 @@
+<%
+if @trip.id
+  form_method = :patch
+  form_action = trip_path(@trip)
+else
+  form_method = :post
+  form_action = passenger_trips_path(passenger_id: @trip.passenger_id)
+end
+%>
+
+<%= form_for @trip, method: form_method, url: form_action do |f| %>
+
+  <%= content_tag :div, class: "date-wrapper" do %>
+    <%= f.label :date do %>
+      <i class="fa fa-calendar"></i> Date
+    <% end %>
+    <%= f.date_field :date %>
+  <% end %>
+
+  <%= content_tag :div, class: "cost-wrapper" do %>
+    <%= f.label :cost do %>
+      <i class="fa fa-used"></i> Cost
+    <% end %>
+    <%= f.text_field :cost, :value=> '$' %>
+  <% end %>
+
+  <%= content_tag :div, class: "submit-wrapper" do %>
+    <%= f.submit button_text %>
+  <% end %>
+
+<% end %>

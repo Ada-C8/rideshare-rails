@@ -12,7 +12,7 @@ class DriversController < ApplicationController
     if @driver.save
       redirect_to drivers_path
     else
-      render :edit
+      render :new
     end
   end
 
