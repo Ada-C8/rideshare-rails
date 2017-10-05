@@ -29,10 +29,8 @@ class PassengersController < ApplicationController
 
   def update
     @passenger = Passenger.find(params[:id])
-    result = @passenger.update(
-    name: params[:passenger][:name],
-    phone_num: params[:passenger][:phone_num]
-    )
+    result = @passenger.update_attributes(passenger_params)
+    
     if result
       redirect_to passenger_path(params[:id])
     else
