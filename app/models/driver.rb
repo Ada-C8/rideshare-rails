@@ -9,4 +9,14 @@ class Driver < ApplicationRecord
     return (sum / 100).to_f.round(2)
   end
 
+  def average_rating
+    average = 0
+    sum = 0
+    self.trips.each do |trip|
+      sum += trip.rating
+    end
+    average = sum / (self.trips.length)
+    return average
+  end
+
 end
