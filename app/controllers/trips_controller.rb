@@ -19,8 +19,9 @@ class TripsController < ApplicationController
     if params[:id]
       @trip.passenger_id = params[:id]
     end
+    @trip.save
     # ***********
-    create
+    create #Is this ok?, if not, how do we get the passenger id into create
   end
 
   def edit
@@ -42,11 +43,11 @@ class TripsController < ApplicationController
     # ************
     trip.save
     puts "I am saving"
-    redirect_to trips_path
+    redirect_to trip_path(trip.id)
   end
 
   def update
-    strong_params = trip_params
+
     @trip = Trip.find(params[:id])
     @trip.update_attributes(strong_params)
     # @passenger.name = params[:passenger][:name]
