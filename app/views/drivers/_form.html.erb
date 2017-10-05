@@ -1,9 +1,16 @@
-<%= form_for @driver do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<div class="form">
+  <%= form_for @driver do |f| %>
+    <div class="form-item">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
 
-  <%= f.label :vin, "VIN" %>
-  <%= f.text_field :vin %>
-
-  <%= f.submit action_name %>
-<% end %>
+    <div class="form-item">
+      <%= f.label :vin, "VIN" %>
+      <%= f.text_field :vin %>
+    </div>
+    <div class="form-item">
+      <%= f.submit action_name %>
+    </div>
+  <% end %>
+</div>

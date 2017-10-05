@@ -1,5 +1,5 @@
 <h2>Log New Trip #<%= @trip.id %></h2><br />
 
-<%= render partial: "form", locals: {action_name: 'Create'} %>
+<%= render partial: "form", locals: {action_name: 'Create', rating_visible: false} %>
 
 <%= render partial: "/layouts/error_messages", locals: {model: @trip} %>

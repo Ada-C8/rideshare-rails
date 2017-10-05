@@ -1,28 +1,43 @@
-<%= form_for @trip do |f| %>
-  <%= f.label :driver_id %>
-  <%= f.collection_select(:driver_id, Driver.all.order(:name), :id, :name, {include_blank: 'Select a driver'}) %>
+<div class="form">
+  <%= form_for @trip do |f| %>
+  <div class="form-item">
+    <%= f.label :driver_id %>
+    <%= f.collection_select(:driver_id, Driver.all.order(:name), :id, :name, {include_blank: 'Select a driver'}) %>
+  </div>
 
   <%= f.hidden_field :passenger_id %>
-  <%#<%= f.collection_select(:passenger_id, Passenger.all.order(:name), :id, :name) %>
 
-  <%= f.label :date %>
-  <%= f.date_field :date %>
+  <!-- <div class="form-item"> -->
+    <%#<%= f.label :passenger_id %>
+    <%#<%= f.collection_select(:passenger_id, Passenger.all.order(:name), :id, :name) %>
+  <%#</div>
+
+  <div class="form-item">
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+  </div>
 
   <%#<%= f.label :rating %>
   <%#<%= f.text_field :rating %>
+  <div class="form-item">
+    <%= f.label :rating %>
 
-  <%= f.label :rating %>
+    <% rating_array = [] %>
+    <% (1..5).each do |rating|
+        stars = render partial: "/layouts/stars", locals: {rating: rating}
+        rating_array << [stars, rating]
+      end %>
 
-  <% rating_array = [] %>
-  <% (1..5).each do |rating|
-      stars = render partial: "/layouts/stars", locals: {rating: rating}
-      rating_array << [stars, rating]
-    end %>
+    <%= f.select :rating, rating_array, {include_blank: 'Select a rating'}, :selected => rating_array[:rating.to_s.to_i - 1] %>
+  </div>
 
-  <%= f.select :rating, rating_array, {include_blank: 'Select a rating'}, :selected => rating_array[:rating.to_s.to_i - 1] %>
+  <div class="form-item">
+    <%= f.label :cost %>
+    <%= f.text_field :cost %>
+  </div>
 
-  <%= f.label :cost %>
-  <%= f.text_field :cost %>
-
-  <%= f.submit action_name %>
-<% end %>
+  <div class="form-item">
+    <%= f.submit action_name %>
+  </div>
+  <% end %>
+</div>

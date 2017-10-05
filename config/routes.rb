@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root 'main#index'
 
+  get '/drivers/by_rating', to: 'drivers#by_rating', as: 'drivers_by_rating'
   resources :drivers
   resources :passengers do
     resources :trips, only: [:new]
@@ -10,5 +11,7 @@ Rails.application.routes.draw do
   resources :trips, except: [:index, :new]
   #
   # get '/trips/new/:id', to: 'trips#new', as: 'new_trip'
+
+
 
 end

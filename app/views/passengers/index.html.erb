@@ -1,13 +1,14 @@
 <h2> Passengers </h2>
 
-<p>
-  <%= link_to "All Passengers", passengers_path %>
-</p>
-<p>
-  <%= link_to "Add New Passenger", new_passenger_path %>
-</p>
+<nav class="page-menu">
+  <ul>
+    <li>
+      <%= link_to "New Passenger", new_driver_path %>
+    </li>
+  </ul>
+</nav>
 
-<ul>
+<ul class="index">
   <% @passengers.each do |passenger| %>
     <li>
       <strong>

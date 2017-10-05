@@ -1,17 +1,27 @@
-<h2> Drivers </h2>
+<h2> All Drivers </h2>
 
-<p>
-  <%= link_to "All Drivers", drivers_path %>
-</p>
-<p>
-  <%= link_to "Add New Driver", new_driver_path %>
-</p>
+<nav class="page-menu">
+  <ul>
+    <li>
+      <%= link_to "New Driver", new_driver_path %>
+    </li>
+    <li>
+      <%= link_to "Sort By Rating", drivers_by_rating_path %>
+    </li>
+    <li>
+      <%= link_to "Sort By Name", drivers_path %>
+    </li>
+  </ul>
+</nav>
 
-<ul>
+<ul class="index">
   <% @drivers.each do |driver| %>
     <li>
       <strong>
-        <%= link_to driver.name, driver_path(driver.id) %>
+        <%= link_to driver_path(driver.id) do %>
+          <span><%= driver.name %></span>
+          <span class="rating"><%= render partial:"/layouts/stars", locals: {rating: driver.average_rating} %></span>
+        <% end %>
       </strong>
     </li>
   <% end %>
