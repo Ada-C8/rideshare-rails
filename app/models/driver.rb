@@ -10,6 +10,7 @@ class Driver < ApplicationRecord
     trips.each do |trip|
       total += trip.cost
     end
+    total -= (total *0.15)
     return total
   end
 
@@ -19,6 +20,12 @@ class Driver < ApplicationRecord
     trips.each do |trip|
       total += trip.rating
     end
-    return total / trips.length
+
+    if trips.length == 0
+      return "No trips yet"
+    else
+      return total / trips.length
+    end
+    
   end
 end
