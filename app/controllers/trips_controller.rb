@@ -4,7 +4,8 @@ class TripsController < ApplicationController
   end
 
   def new
-    @trip = Trip.new(passenger_id: params[:passenger_id], date: Date.today)
+    default_date = Date.today
+    @trip = Trip.new(driver_id: Driver.best_available(default_date).id, passenger_id: params[:passenger_id], date: default_date)
   end
 
   def create

@@ -2,7 +2,8 @@
   <%= form_for @trip do |f| %>
   <div class="form-item">
     <%= f.label :driver_id %>
-    <%= f.collection_select(:driver_id, Driver.all.order(:name), :id, :name, {include_blank: 'Select a driver'}) %>
+    <%= f.collection_select(:driver_id, Driver.all.order(:name), :id, :name) %>
+    <%#  {include_blank: 'Select a driver'} %>
   </div>
 
   <%= f.hidden_field :passenger_id %>
