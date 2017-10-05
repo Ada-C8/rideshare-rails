@@ -35,9 +35,8 @@
       <% @trips.each do |trip| %>
       <li>
         <%= link_to "#{trip.driver.name}
-        #{trip.date.strftime("%B %d, %Y")}
-        #{render partial: "/layouts/stars", locals: {rating: trip.rating}}",
-        trip_path(trip.id)%>
+        #{trip.date.strftime("%B %d, %Y")}",trip_path(trip.id)%>
+        <%= render partial: "/layouts/set_stars", locals: {trip: trip} %>
       </li>
       <% end %>
     </ul>
