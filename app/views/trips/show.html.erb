@@ -33,7 +33,7 @@
     <% end %>
 
        </li>
-    <li>Cost: $<%= "%.2f" % @trip.cost %> </li>
+    <li>Cost: $<%#= "%.2f" % @trip.cost %> </li>
   </ul>
 
 <%= link_to "Edit trip information", edit_trip_path(@trip.id), class: "link"%>
