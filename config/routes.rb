@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/', to: 'trips#index', as: 'home'
 
   get '/trips', to: 'trips#index'
 
