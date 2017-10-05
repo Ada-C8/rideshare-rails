@@ -43,7 +43,6 @@ class TripsController < ApplicationController
     trip = Trip.new(passenger_id: passenger_id, cost: cost, driver_id: driver, rating: nil, date: Date.today)
     # ************
     trip.save
-    puts "I am saving"
     redirect_to trip_path(trip.id)
   end
 
@@ -60,16 +59,13 @@ class TripsController < ApplicationController
   def destroy
     trip = Trip.find(params[:id])
     trip.destroy
-    redirect_to trips_path
+    redirect_to passenger_path(trip.passenger_id)
   end
-  #YOU DIANE
-  #def show def new def create def edit def update def destroy
 
   private
   def trip_params
     return params.require(:trip).permit(:passenger_id, :rating, :cost)
   end
-
 
 
   #def show def new def create def edit def update def destroy

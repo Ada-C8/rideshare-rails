@@ -27,7 +27,7 @@
         <%= @trip.rating  %>
        <% else %>
       <%= form_for @trip do |f| %>
-      <%= f.select :rating, [1, 2, 3, 4, 5]%>
+      <%= f.select :rating, [nil, 1, 2, 3, 4, 5]%>
       <%= f.submit "submit rating" %>
       <% end %>
     <% end %>
