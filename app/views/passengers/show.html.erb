@@ -6,9 +6,9 @@
   </header>
 
   <section>
-    <div class="pass-detail-wrapper">
+    <div class="detail-wrapper">
       <h3>Spent a total of: $ <%= @passenger.calculate_total %></h3>
-      <h3>All Trips:</h3>
+      <h3>All Trips by Date:</h3>
       <ul class="no-list-bullets">
         <% trips = @passenger.passenger_trips %>
         <% if trips.length == 0 %>

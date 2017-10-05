@@ -7,18 +7,18 @@
 
 /******** PASSENGER INDEX ********/
 
-article.bg-color {
+article.bg-color { /*** THIS IS THE SAME ***/
   opacity: 0.9;
   background-color: white;
   padding-bottom: 5px;
 }
 
-header.style {
+header.style { /*** THIS IS THE SAME ***/
   border-bottom: 1px black solid;
   text-align: center;
 }
 
-header.style h1 {
+header.style h1 { /*** THIS IS THE SAME ***/
   margin: 0;
   padding-top: 1em;
 }
@@ -57,12 +57,6 @@ article.height {
 .inline-block {
   display: inline-block;
   padding: 1em;
-}
-
-.pass-detail-wrapper {
-  width: 30%;
-  margin: 0 auto;
-  text-align: center;
 }
 
 /******** PASSENGER NEW ********/

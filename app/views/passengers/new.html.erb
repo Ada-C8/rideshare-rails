@@ -1,5 +1,4 @@
 <%# Look into a partial here - similar to driver index %>
-
 <article class="bg-color height">
   <header class="style">
     <h1>Create New Passenger</h1>
@@ -7,18 +6,18 @@
   <section>
     <% if @passenger.errors.any? %>
       <% @passenger.errors.each do |column, message| %>
-        <strong><%= column.capitalize %></strong> <%= message %>
+        <h2 class="error-color align-center"><%= column.capitalize %> <%= message %></h2>
       <% end %>
     <% end %>
 
-    <div class="pass-detail-wrapper">
+    <div class="detail-wrapper">
       <%= form_for @passenger do |f| %>
         <div class="form-box-wrapper">
           <%= f.label :name %>
           <%= f.text_field :name %>
         </div>
         <div class="form-box-wrapper">
-          <%= f.label :phone_num %>
+          <%= f.label "Phone Number" %>
           <%= f.text_field :phone_num %>
         </div>
         <%= f.submit "Add Passenger" %>

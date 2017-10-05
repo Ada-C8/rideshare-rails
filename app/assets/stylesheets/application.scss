@@ -13,6 +13,24 @@
 *= require_tree .
 *= require_self
 */
+
+/******** STYLING CLASSES ACROSS ALL PAGES *********/
+.error-color {
+  color: red;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.detail-wrapper {
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.visited-color:visited { color: black; }
+
 /******** BACKROUND ********/
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
@@ -27,7 +45,6 @@ body {
   width: 100%;
   margin: 0;
 
-  /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -100,13 +117,13 @@ h1#brand {
   opacity: 0.5;
 }
 
-.visited-color:visited { color: black; }
-
 /******** FOOTER *********/
 
 footer {
   width: 100%;
   text-align: center;
+  color: white;
+  font-size: 12px;
 }
 
 /******** CLEARFIX *********/

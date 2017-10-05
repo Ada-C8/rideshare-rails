@@ -1,7 +1,7 @@
 class Driver < ApplicationRecord
   has_many :trips
 
-  validates :name, presence: true
+  validates :name, presence: true, format: {with: /[a-zA-Z]/}
   validates :vin, presence: true
 
   def total_earning
@@ -26,5 +26,10 @@ class Driver < ApplicationRecord
     else
       return "no rating"
     end
+  end
+
+  def driver_trips # From Driver Show Page
+    trips = Trip.where(passenger_id: id).order(date: :desc)
+    return trips
   end
 end

@@ -1,11 +1,10 @@
 class Passenger < ApplicationRecord
   has_many :trips
 
-  validates :name, presence: true, format: {with: /[AZ-az]/}
+  validates :name, presence: true, format: {with: /[a-zA-Z]/}
   validates :phone_num, presence: true
-  
+
   def calculate_total
-    # @passenger = Passenger.find(params[:id])
     all_trips = Trip.where(passenger_id: id)
     sum = 0
     all_trips.each do |trip|

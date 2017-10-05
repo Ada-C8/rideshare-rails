@@ -1,25 +1,32 @@
-<% if @driver.errors.messages.length > 0 %>
+<%# Look into a partial here - similar to driver index %>
+<article class="bg-color height">
+  <header class="style">
+    <h1>Create New Driver</h1>
+  </header>
   <section>
-      <h3> Oops Error!</h3>
+    <% if @driver.errors.messages.length > 0 %>
       <ul>
         <% @driver.errors.messages.each do |field, problems|%>
           <% problems.each do |problem|%>
-            <li>
-              <strong><%= field %></strong>
-              <%= problem %>
-            </li>
+            <li class="error-color align-center"><%= field.capitalize %> <%= problem %></li>
           <%end%>
         <%end%>
       </ul>
+      </section>
+    <%end%>
+
+    <div class="detail-wrapper">
+      <%= form_for @driver do |f| %>
+        <div class="form-box-wrapper">
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+        </div>
+        <div class="form-box-wrapper">
+          <%= f.label :vin %>
+          <%= f.text_field :vin %>
+        </div>
+        <%= f.submit "Add Driver" %>
+      <% end %>
+    </div>
   </section>
-<%end%>
-
-<%= form_for @driver do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field:name %>
-
-  <%= f.label :vin%>
-  <%= f.text_field:vin%>
-
-  <%= f.submit "Add new driver" %>
-<% end %>
+</article>
