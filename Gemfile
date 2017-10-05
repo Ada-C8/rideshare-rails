@@ -55,6 +55,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # gem 'rails-erd', require: false, group: :development
 
-group :development do
-  gem "rails-erd"
-end
+# group :development do
+#   gem "rails-erd"
+# end
+
+gem 'rails-erd', require: false, group: :development
