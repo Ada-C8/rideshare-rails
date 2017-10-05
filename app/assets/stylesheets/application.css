@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+
+$default-color: black;
+
+/* reset */
+* {
+  margin: 0
+  padding: 0;
+  font-size: 1rem;
+}
+
+h1 {
+  font-family: "Josefin Sans", Arial, sans-serif;
+  font-size: 3rem;
+}
+
+/* ==== NAV BAR STYLING ==== */
+.nav-bar ul {
+  list-style: none;
+}
+
+.nav-bar li {
+  display: inline-block;
+  font-family: "Quicksand", Arial, sans-serif;
+  padding: 1rem;
+}
+
+.nav-bar a:link, .nav-bar a:visited {
+  color: $default-color;
+  text-decoration: none;
+}

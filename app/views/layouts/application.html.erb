@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>RideshareRails</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Quicksand" rel="stylesheet">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,11 +12,12 @@
 
   <body>
     <header>
-      <nav>
+      <nav class="nav-bar">
         <ul>
-          <li><%=link_to("Drivers", drivers_path, alt: "All Drivers") %></li>
-          <li><%=link_to("Passengers", passengers_path, alt: "All Passengers") %></li>
-          <li><%=link_to("New Passenger", new_passenger_path, alt: "Add Passenger form") %></li>
+          <li><%= link_to("Home", root_path, alt: "Home Page") %></li>
+          <li><%= link_to("Drivers", drivers_path, alt: "All Drivers") %></li>
+          <li><%= link_to("Passengers", passengers_path, alt: "All Passengers") %></li>
+          <li><%= link_to("New Passenger", new_passenger_path, alt: "Add Passenger form") %></li>
           <li><%= link_to("New Driver", new_driver_path, alt: "add driver form") %></li>
         </ul>
       </nav>
