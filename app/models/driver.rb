@@ -6,14 +6,14 @@ class Driver < ApplicationRecord
   def average_rating
     counter = 0
     rating = 0
+
     trips.each do |trip|
-      if trip.rating != nil
+      if trip.rating != nil && trip.rating !=0
         rating += trip.rating
         counter =+ 1
       end
     end
     rating.to_f / counter
-
   end
 
 
