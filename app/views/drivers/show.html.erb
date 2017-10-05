@@ -7,29 +7,30 @@
 
 <section>
   <table>
-
+  <thead>
     <tr>
       <th>ID</th>
-      <th>Name</th>
+      <th>Date</th>
       <th>Rating</th>
       <th>Cost</th>
       <th>Passenger</th>
     </tr>
+  </thead>
   <% @trips.each do |trip| %>
   <tr>
-  <td>
+  <td data-label='ID'>
     <%= link_to trip.id, trip_path(trip.id), method: :get %>
   </td>
-  <td>
+  <td data-label='Date'>
     <%= trip.date %>
   </td>
-  <td>
+  <td data-label='Rating'>
     <%= trip.rating %>
   </td>
-  <td>
+  <td data-label='Cost'>
     <%= trip.cost %>
   </td>
-  <td>
+  <td data-label='Passenger'>
     <%= link_to trip.passenger.name, passenger_path(id: trip.passenger.id)%>
   </td>
   </tr>
