@@ -16,10 +16,13 @@ class Driver < ApplicationRecord
 
   def avg_rating
     sum = 0
-    trips.each do |trip|
-      sum += trip.rating
+    if trips > 0
+      trips.each do |trip|
+        sum += trip.rating
+      end
+      return (sum/trips.count)
+    else
+      return 0
     end
-
-    return (sum/trips.count)
   end
 end
