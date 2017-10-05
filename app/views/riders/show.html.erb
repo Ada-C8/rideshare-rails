@@ -1,17 +1,12 @@
 <h1> Rider Detail Page </h1>
 <section>
   <% if @rider %>
-    <h3><%= "NAME: #{@rider.name}" %></h3>
-    <p><%= "ID: #{@rider.id}" %></p>
-    <p><%= "PHONE: #{@rider.phone}" %></p>
+    <h3>NAME: <%= @rider.name %></h3>
+    <p>ID: <%= @rider.id%></p>
+    <p>PHONE: <%= @rider.phone %></p>
     <% else %>
     <h2> Rider ID does not found </h2>
   <% end %>
-</section>
-
-<section>
-  <h3>Rider's Trips</h3>
-  <%= render partial: '/partial_views/trips_list'%>
 </section>
 
 <section>
@@ -19,7 +14,14 @@
   <%= "$#{@rider.total_cost}" %>
 </section>
 
-<%= link_to "Edit", edit_rider_path(@rider.id)%>
-<%= link_to "Delete", delete_rider_path(@rider.id), method: :delete, data: {confirm: "Are you sure?"}%>
+<section>
+  <h3>Rider's Trips</h3>
+  <%= render partial: '/partial_views/trips_list'%>
+</section>
 
-<%= link_to "New Rando Trip", create_trip_path,  data: {confirm: "For real?", method: :post, remote: true, params: {id: @rider.id}.to_param}%>
+<section class = "rider-page-links">
+  <%= link_to "Edit", edit_rider_path(@rider.id)%>
+  <%= link_to "Delete", delete_rider_path(@rider.id), method: :delete, data: {confirm: "Are you sure?"}%>
+
+  <%= link_to "New Rando Trip", create_trip_path,  data: {confirm: "For real?", method: :post, remote: true, params: {id: @rider.id}.to_param}%>
+</section>

@@ -7,9 +7,16 @@ class Driver < ApplicationRecord
   COMMISSION = ".85".to_f
 
   def total_earnings
-    total_charges= self.trips.map{|trip| trip.cost}.reduce(:+)
+    # if loop is for new drivers who don't have any trips, and therefore have no trip costs to add to earnings
+    #think about proper exception handling instead of returning nil
+    if self.trips.count > 0
+      total_charges= (self.trips.map{|trip| trip.cost}.reduce(:+))/100.0
 
-    return '%.02f' % (total_charges * COMMISSION)
+      #rounds up to nearest cent
+      return '%.02f' % (total_charges * COMMISSION)
+    else
+      return nil
+    end
   end
 
   def avg_rating
