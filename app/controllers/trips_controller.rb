@@ -1,6 +1,6 @@
 class TripsController < ApplicationController
   def index
-    @trips = Trips.all
+    @trips = Trip.all
   end
 
   def show
@@ -15,11 +15,19 @@ class TripsController < ApplicationController
   end
 
   def new
+    @trip = Trip.new(driver_id: Driver.all.sample.id, passenger_id: params[:pass_id], date: Date.today, rating: nil, cost: rand(10..50) )
   end
 
   def create
+
   end
 
   def destroy
+  end
+
+  private
+
+  def trip_params
+    return params.require(:trip).permit(:driver_id, :passenger_id, :date, :rating, :cost)
   end
 end

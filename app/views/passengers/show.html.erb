@@ -19,4 +19,5 @@
 <ul>
   <li><%= link_to "Edit Passenger", edit_passenger_path %></li>
   <li><%= link_to "Delete Passenger", passenger_path(@passenger.id), method: :delete%></li>
+  <li><%= link_to "Add a New Trip", new_trip_path(:pass_id => @passenger.id) %></li>
 </ul>
