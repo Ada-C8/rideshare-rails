@@ -18,32 +18,34 @@
 <section>
 
   <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Rating</th>
+        <th>Cost</th>
+        <th>Driver</th>
+      </tr>
+    </thead>
+    <% @trips.each do |trip| %>
     <tr>
-      <th>ID</th>
-      <th>Date</th>
-      <th>Rating</th>
-      <th>Cost</th>
-      <th>Driver</th>
+      <td data-label="ID">
+        <%= link_to trip.id, trip_path(trip.id), method: :get %>
+      </td>
+      <td data-label="Date">
+        <%= trip.date %>
+      </td>
+      <td data-label="Rating">
+        <%= trip.rating %>
+      </td>
+      <td data-label="Cost">
+        <%= trip.cost %>
+      </td>
+      <td data-label="Driver Name">
+        <%= link_to trip.driver.name, driver_path(id: trip.driver.id)%>
+      </td>
     </tr>
-  <% @trips.each do |trip| %>
-  <tr>
-  <td>
-    <%= link_to trip.id, trip_path(trip.id), method: :get %>
-  </td>
-  <td>
-    <%= trip.date %>
-  </td>
-  <td>
-    <%= trip.rating %>
-  </td>
-  <td>
-    <%= trip.cost %>
-  </td>
-  <td>
-    <%= link_to trip.driver.name, driver_path(id: trip.driver.id)%>
-  </td>
-  </tr>
-  <% end %>
+    <% end %>
 
   </table>
 

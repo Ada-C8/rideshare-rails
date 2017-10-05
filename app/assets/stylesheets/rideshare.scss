@@ -6,6 +6,8 @@
 //General
 body {
   background: #E8E8E8;
+  padding: 0;
+  margin:0;
 }
 
 a {
@@ -17,7 +19,93 @@ li {
 }
 
 //Nav
+nav {
+  background: pink;
+  width: 100%;
+  height: 40px;
+}
 
+nav ul,
+nav li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  position: absolute;
+}
+
+nav li {
+  display: inline-block;
+  float: left;
+  background: pink;
+}
+
+nav li a {
+  display: block;
+  min-width: 140px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid white;
+}
+
+nav li:hover a {
+  background: rgba(250, 128, 114, 1);
+}
+
+/*Dropdown*/
+nav li:hover ul a {
+  background: pink;
+  height: 40px;
+  line-height: 40px;
+}
+
+nav li:hover ul a:hover {
+  background: rgba(250, 128, 114, 0.5);
+}
+
+nav li ul li {
+  display: block;
+  float: none;
+}
+
+/*Hide*/
+nav li ul {
+  display: none;
+}
+
+/*Text wrapping*/
+nav li ul li a {
+  width: auto;
+  min-width: 150px;
+  padding: 0 20px;
+}
+
+/*Display on hover*/
+nav ul li a:hover + .hidden,
+.hidden:hover {
+  display: block;
+}
+
+/*Show menu*/
+.show-menu {
+  text-align: center;
+  line-height: 40px;
+  display: none;
+  border-bottom: 1px solid white;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked ~ #menu {
+  display: block;
+}
 
 //Main
 main {
@@ -50,4 +138,71 @@ tr:nth-child(even) {
 footer {
   margin-top: 20px;
   text-align: center;
+}
+
+/*----------------------------------------------*/
+
+@media screen and (max-width: 500px) {
+  /*Dropdown displayed*/
+  nav li ul {
+    display: block;
+  }
+
+  nav li:hover ul a {
+  height: 40px;
+  line-height: 40px;
+}
+
+  nav ul {
+    position: static;
+    display: none;
+  }
+
+  nav ul li,
+  nav li a {
+    width: 100%;
+  }
+
+  .show-menu {
+    display: block;
+  }
+
+  @media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+  table caption {
+    font-size: 1.3em;
+  }
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  table td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
 }

@@ -13,25 +13,24 @@
       <h2><%= link_to "Tandemshare", root_path %></h2>
     </header>
 
+
     <nav>
-      <ul>
-        <li>
-          <%= link_to "Drivers", drivers_path %>
-          <ul>
+        <label for="show-menu" class="show-menu">Menu</label>
+        <input type="checkbox" id="show-menu" role="button">
+            <ul id="menu">
             <li>
-              <%= link_to "Add Driver", new_driver_path %>
+                <%= link_to "Drivers", drivers_path %>
+                <ul class="hidden">
+                    <li><%= link_to "Add Driver", new_driver_path %></li>
+                </ul>
             </li>
-          </ul>
-        </li>
-        <li>
-          <%= link_to "Passengers", passengers_path %>
-        </li>
-        <ul>
-          <li>
-            <%= link_to "Add Passenger", new_passenger_path %>
-          </li>
+            <li>
+                <%= link_to "Passengers", passengers_path %>
+                <ul class="hidden">
+                    <li><%= link_to "Add Passenger", new_passenger_path %></li>
+                </ul>
+            </li>
         </ul>
-      </ul>
     </nav>
 
     <main>
