@@ -1,13 +1,12 @@
-<h1>Passengers#index</h1>
-<p>Find me in app/views/passengers/index.html.erb</p>
+<h1>Passengers</h1>
+<!-- <p>Find me in app/views/passengers/index.html.erb</p> -->
 
 
-<ul>
-  <h4>Passengers</h4>
-
+<ul class="driver_passenger_list">
   <% @passengers.each do |passenger| %>
   <li>
-    <%=link_to(passenger.name, passenger_path(passenger.id)) %>
+    <div><%= image_tag("rider.png") %></div>
+    <div><%=link_to(passenger.name, passenger_path(passenger.id)) %></div>
   </li>
   <% end %>
 </ul>

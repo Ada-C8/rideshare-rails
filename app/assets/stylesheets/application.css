@@ -1,18 +1,18 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
 
 $default-color: black;
 
@@ -37,9 +37,33 @@ h1 {
   display: inline-block;
   font-family: "Quicksand", Arial, sans-serif;
   padding: 1rem;
+  float: right;
 }
 
 .nav-bar a:link, .nav-bar a:visited {
   color: $default-color;
   text-decoration: none;
+}
+
+/* ======= DRIVER/PASSENGER INDEX STYLING ======== */
+
+.driver_passenger_list {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  padding left: 0;
+  height: 95%;
+  width: 95%;
+
+}
+
+.driver_passenger_list li {
+  float: left;
+  display: inline;
+  margin: 0 1% 0 1%;
+  text-align: center;
+}
+
+a, a:visited, a:hover, a:active {
+  color: inherit;
 }
