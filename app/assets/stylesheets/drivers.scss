@@ -6,9 +6,7 @@
   float: right;
 }
 
-h2{
-  text-align: center;
-}
+
 
 #new_driver{
   background-color: blue;
@@ -22,21 +20,29 @@ h2{
 }
 
 .driver{
-  margin-left: 43%;
+  //margin-left: 43%;
 }
 
 .driver_trip{
   border: 1px black solid;
   width: 300px;
-  margin-left: 43%;
+  //margin-left: 43%;
+}
+
+ol{
+  padding-left: 0px;
 }
 
 #driver_metadata{
-  margin-left: 45%;
+  //margin-left: 45%;
   clear: both;
 }
 
 #driver_metadata img{
   float:left;
   margin-right: 10px;
+}
+
+.single_trip{
+  padding: 0px;
 }
