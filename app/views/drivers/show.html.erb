@@ -14,4 +14,7 @@
   <%@trips.each do |trip|%>
   <li><%=  link_to trip.date, trip_path(trip.id)  %>
   <% end %>
+
+  <p> total earnings: <%= @driver.total_amount %></p>
+  <p> average rating: <%= @driver.average_rating %></p>
 </ol>
