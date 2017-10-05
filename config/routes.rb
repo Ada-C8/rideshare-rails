@@ -6,9 +6,9 @@ Rails.application.routes.draw do
 
   get '/trips/:id/edit', to: 'trips#edit', as: 'edit_trip'
 
-  get '/trips/:id', to: 'trips#show', as: 'trip'
-
   get '/trips/:id/edit_rating', to:'trips#edit_rating', as: 'edit_rating'
+
+  get '/trips/:id', to: 'trips#show', as: 'trip'
 
   patch '/trips/:id', to:'trips#update_rating'
 
