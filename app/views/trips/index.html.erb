@@ -8,8 +8,13 @@
       <p>Date: <%= trip.date %></p>
       <p>Rating: <%= trip.rating %></p>
       <p>Cost: $<%= (trip.cost / 100).to_f.round(2) %></p>
-      <p>Driver: <%= trip.driver.name %></p>
-
+      <p>Driver:
+        <% if trip.driver.nil? %>
+        Driver Not in Database
+        <% else  %>
+        <%= trip.driver.name %>
+        <% end %>
+      </p>
     </li>
     <% end %>
   <% else  %>
