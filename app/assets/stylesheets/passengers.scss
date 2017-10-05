@@ -45,6 +45,11 @@ header.style h1 {
 
 /******** PASSENGER SHOW ********/
 
+.no-list-bullets {
+  list-style-type: none;
+  padding: 0;
+}
+
 article.height {
   height: 400px;
 }
