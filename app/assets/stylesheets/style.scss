@@ -27,29 +27,21 @@
   li {
     padding: 10px;
     overflow: auto;
+  border-bottom: 1px solid #ccc;
   }
-  //
-  // li:hover {
-  //   background: #eee;
-  //   cursor: default;
-  // }
 }
 
 .link_to-style {
-
-
-
-   * {
-     margin-bottom:5px;
-   }
-
    li {
-   display: block;	margin-left:20px;
-   text-decoration: none;color:black;
+   display: block;
+   margin-left:20px;
+   text-decoration: none;
+   color:black;
   }
 
   li:hover {
-    background: none;
+    background: #eee;
+    cursor: default;
   }
 
   li span {
@@ -62,5 +54,4 @@
     width:250px;
     float: right;
   }
-
 }
