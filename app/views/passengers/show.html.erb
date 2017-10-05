@@ -20,10 +20,10 @@
   <li>
     Total Spent: <%= number_to_currency(@passenger.total_cost, precision: 2) %>
   </li>
-</ul>
+
   <li>
+    Trips
     <ul>
-      Trips
       <% @trips.each do |trip| %>
       <li>
         <%= link_to("Date: #{trip.date}", trip_path(trip.id)) %>
@@ -37,7 +37,7 @@
       <% end %>
     </ul>
   </li>
-
+</ul>
 
 <% else %>
   <h1>404: Not Found</h1>
