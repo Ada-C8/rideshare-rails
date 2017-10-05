@@ -1,3 +1,5 @@
 <h2>Editing Trip #<%= @trip.id %></h2><br />
 
 <%= render partial: "form", locals: {action_name: 'Edit', rating_visible: true} %>
+
+<%= render partial: "/layouts/error_messages", locals: {model: @trip} %>
