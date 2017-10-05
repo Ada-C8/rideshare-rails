@@ -18,6 +18,9 @@ class TripsController < ApplicationController
   end
 
   def show
+    # @passenger.trip
+    # Trip.where(passenger_id)
+    @trip = Trip.find(params[:id])
   end
 
 
