@@ -19,4 +19,16 @@ class Driver < ApplicationRecord
     end
     return avg / count
   end
+
+  def total_earnings
+
+    total = 0
+
+    trips.each do |trip|
+      total += trip.cost
+    end
+    total *= 0.85
+
+    return total
+  end 
 end

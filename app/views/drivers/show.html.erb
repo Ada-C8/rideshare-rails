@@ -17,6 +17,10 @@
     <strong>Average Rating: </strong>
     <%=  render partial: "/layouts/stars", locals: {rating: @driver.average_rating} %>
   </p>
+  <p>
+    <strong>Total earnings: </strong>
+    <%=  "$#{(@driver.total_earnings.to_f / 100).round(2)}" %>
+  </p>
 
   <p>
     <strong>Trips: </strong>
