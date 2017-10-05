@@ -1,28 +1,29 @@
 <h2><%= @passenger.name %></h2>
 
-<h4><%= link_to "New Trip", new_passenger_trip_path(@passenger) %></h4>
+<div id="passenger_metadata">
+  <h4><%= link_to "New Trip", new_passenger_trip_path(@passenger) %></h4>
 
 
-<p>
-  ID: <%=  @passenger.id %>
-</p>
+  <p>
+    ID: <%=  @passenger.id %>
+  </p>
 
-<p>
-  Phone Number: <%= @passenger.phone_num %>
-</p>
+  <p>
+    Phone Number: <%= @passenger.phone_num %>
+  </p>
 
 
-<%= link_to "Edit", edit_passenger_path(@passenger)%>
+  <%= link_to "Edit", edit_passenger_path(@passenger)%>
 
-<%= link_to 'Delete', passenger_path(@passenger), method: :delete, data: { confirm: "Are you sure?" } %>
+  <%= link_to 'Delete', passenger_path(@passenger), method: :delete, data: { confirm: "Are you sure?" } %>
 
-<p>
-  Total Spent = $<%= @passenger.total_spent %>
-</p>
-
+  <p>
+    Total Spent = $<%= @passenger.total_spent %>
+  </p>
+</div>
 <ol>
   <% @passenger.trips.order(date: :desc).each do | trip | %>
-    <li>
+    <li class= 'passenger_trip'>
       <%= render partial: 'layouts/trip_details', locals: { trip: trip, route: @passenger } %>
     </li>
   <% end %>
