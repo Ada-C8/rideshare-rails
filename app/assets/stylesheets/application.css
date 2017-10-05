@@ -158,7 +158,6 @@ span.rating {
 /*  SHOW  */
 /**********/
 
-
 .trip-list li a {
 }
 
@@ -171,9 +170,9 @@ span.rating {
   border-radius: 1rem;
   color: crimson;
   font-family: 'Comfortaa', sans-serif;
-  text-align: center;
   margin: 1rem auto;
   padding: 1rem;
+  text-align: center;
   width: 15rem;
 }
 
