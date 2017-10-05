@@ -1,2 +1,10 @@
 <h1>Drivers#show</h1>
-<p>Find me in app/views/drivers/show.html.erb</p>
+
+<% if @driver %>
+  <h2><%= @driver.name %></h2>
+  <p>ID: <%= @driver.id %></p>
+  <p>VIN: <%= @driver.vin %></p>
+  <%= link_to "Trips", driver_trips_path(@driver.id) %>
+  <%= link_to "Edit", edit_driver_path(@driver.id) %>
+  <%= link_to "Delete", driver_path(@driver.id), method: :delete %>
+<% end %>
