@@ -4,6 +4,8 @@ class DriversController < ApplicationController
   end
 
   def show
+    @driver = Driver.find_by(id: params[:id].to_i)
+    @trips = Trip.where(driver_id: params[:id])
   end
 
   def edit

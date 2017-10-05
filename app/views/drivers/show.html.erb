@@ -1,2 +1,30 @@
-<h1>Drivers#show</h1>
-<p>Find me in app/views/drivers/show.html.erb</p>
+<h1>Passenger information for: <%= @driver.name %></h1>
+
+<h2><%= @driver.name %></h2>
+<h4>VIN number: <%= @driver.vin %></h4>
+
+  <% total_earned = 0 %>
+  <% @trips.each do |trip| %>
+      <% total_earned += trip[:cost] %>
+  <% end %>
+<h4> Total earned: <%= "$#{"%.02f" % (((total_earned) - ((total_earned)*0.15))/100)}" %> </h4>
+
+<% average_rating = 0 %>
+<% counter = 0 %>
+<% @trips.each do |trip| %>
+    <% average_rating += trip[:rating] %>
+    <% counter += 1 %>
+<% end %>
+<h4>Average rating: <%= "#{((average_rating.to_f) / counter)}" %> </h4>
+
+<h4> List of Trips: </h4>
+  <ul>
+  <% @trips.each do |trip| %>
+    <li><%= link_to(trip.date, trip_path(trip.id)) %></li>
+  <% end %>
+  </ul>
+
+<ul>
+  <li><%= link_to "Edit Driver", edit_driver_path %></li>
+  <li><%= link_to "Delete Driver", driver_path(@driver.id), method: :delete%></li>
+</ul>
