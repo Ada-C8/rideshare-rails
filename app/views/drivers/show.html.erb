@@ -1,12 +1,22 @@
 <%# require 'money' %>
 <h1> Driver Details </h1>
 <h2><%= @driver.name %></h2>
+
+<% i = 1.0 %>
+<% sum = 0 %>
+<% earnings = 0 %>
+<% @driver.trips.each do |trip| %>
+  <% sum += trip.rating %>
+  <% earnings += trip.cost %>
+  <% i += 1%>
+<% end %>
+
 <ul>
   <li>
-    Total Earnings: NOTE (total of each trip minus 15%)
+    Total Earnings: <%= (earnings + (0.15 * earnings)) / 100.0 %>
   </li>
   <li>
-    Average Rating:
+    Average Rating: <%= sum/(i - 1) %>
   </li>
   <li>
     list of trips this driver has driven:
@@ -22,7 +32,7 @@
       <%=link_to "Trip #{i}:", trip_path(trip) %>
       Date: <%= trip.date %>,
       Rating: <%= trip.rating %>,
-      Cost: <%= trip.cost %>,
+      Cost: <%= (trip.cost) / 100.0 %>,
       <% i += 1%>
     </li>
     <% end %>

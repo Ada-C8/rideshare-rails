@@ -1,13 +1,19 @@
-<h1>This is the Passengers Index Page</h1>
-
 
 <h2><%= link_to 'New Passenger', new_passenger_path %></h2>
 
-<% @passengers.each do |passenger|%>
-<p>
-  <%= link_to passenger.name, passenger %>
-  <%= link_to 'Edit', edit_passenger_path(passenger.id) %>
-  <%= link_to "Delete", passenger_path(passenger.id), method: :delete,
-      data: { confirm: "Are You Sure You Want to Delete This Passenger?" } %>
-</p>
-<% end %>
+
+
+<table>
+  <% @passengers.each do |passenger|%>
+  <tr>
+    <td><%= link_to passenger.name, passenger %></td>
+    <div class="edit_delete">
+
+
+    <td ><%= link_to 'Edit', edit_passenger_path(passenger.id) %></td>
+    <td><%= link_to "Delete", passenger_path(passenger.id), method: :delete,
+    data: { confirm: "Are You Sure You Want to Delete This Passenger?" } %></td>
+        </div>
+  </tr>
+  <% end %>
+</table>

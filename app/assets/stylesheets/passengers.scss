@@ -1,3 +1,17 @@
 // Place all the styles related to the Passengers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+table {
+  border-spacing: 10px;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+header nav {
+  background-color: lightgrey;
+  height: 50px;
+  width: 100%;
+}
