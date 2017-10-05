@@ -23,6 +23,14 @@ class TripsController < ApplicationController
     end
   end
 
+  def edit_rating
+    @trip = Trip.find_by(id: params[:id])
+  end
+
+  def update_rating
+
+  end
+
   def edit
   end
 

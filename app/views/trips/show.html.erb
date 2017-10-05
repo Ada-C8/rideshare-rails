@@ -2,16 +2,40 @@
 <p>Find me in app/views/trips/show.html.erb</p>
 
 <article>
-  <ul>
+  <!-- <ul>
     <li>
+      <strong>ID: </strong>
       <%= @trip.id %>
     </li>
-    <li><%= @trip.cost %></li>
-    <li><%= @trip.date %></li>
-    <li><%= @trip.rating %></li>
-    <li><%= @trip.driver.name %></li>
-    <li><%= @trip.passenger.name %></li>
+    <li>
+      <strong>Cost: </strong>
+      <%= @trip.cost/100 %>
+    </li>
+    <li>
+      <strong>Date: </strong>
+      <%= @trip.date %>
+    </li>
+    <li>
+      <strong>Rating: </strong>
+      <% if @trip.rating %>
+        <%= @trip.rating  %>
+      <% else %>
+        <%= form_for @trip do |f| %>
+          <%= f.label :rating %>
+          <%= f.select :rating, options_for_select([1, 2, 3, 4, 5]) %>
+        <% end %>
+      <% end %>
+    </li>
+    <li>
+      <strong>Driver Name: </strong>
+      <%= @trip.driver.name %>
+    </li>
+    <li>
+      <strong>Passenger Name: </strong>
+      <%= @trip.passenger.name %>
+    </li>
 
-  </ul>
+  </ul> -->
 
 </article>
+<!-- <%= link_to("Rate this Trip!", update_rating_path, method: :post %> -->
