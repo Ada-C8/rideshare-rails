@@ -2,6 +2,9 @@ class Trip < ApplicationRecord
   belongs_to :passenger
   belongs_to :driver
 
+  validates :cost, :rating, :date, presence: true
+  validates :rating, :cost, numericality: true
+
   def assign_driver
     driver_id = rand(0..Driver.all.length)
     # Double check that we don't need to have the driver object or just the id of the driver

@@ -50,7 +50,7 @@ class TripsController < ApplicationController
     trip = Trip.find(params[:id])
     result = trip.destroy
     if result
-      redirect_to trips_path
+      redirect_to root_path
     else
       redirect_to trip_path(params[:id])
     end
