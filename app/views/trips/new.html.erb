@@ -2,6 +2,9 @@
 
 
 <div>
-  passenger id: <%= @trip.passenger_id%>
-  driver id: 
+  passenger id: <% @trip.passenger_id%>
+  <%=form_for @trip do |f|%>
+  <%= f.submit "make new trip" %>
+  <%end%>
+
 </div>
