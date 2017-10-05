@@ -4,7 +4,7 @@
 <p><%= @passenger.phone_num %></p>
 
 <%= link_to "Edit Passenger", edit_passenger_path %>
-<%= link_to "Delete Passenger", passengers_path, data: { confirm: "Are you sure you want to delete?" } %>
+<%= link_to "Delete Passenger", passenger_path(@passenger), method: :delete %>
 
 
 <h3> Trip details</h3>
