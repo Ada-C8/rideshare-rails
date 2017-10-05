@@ -6,7 +6,7 @@
   <li>Passenger ID: <%= @trip[:passenger_id]%></li>
   <li>Trip Date: <%= @trip[:date]%></li>
   <li>Rating: <%= @trip[:rating]%></li>
-  <li>Cost: $<%= @trip.dollars%></li>
+  <li>Cost: $<%= @trip.to_dollars%></li>
 </ul>
 <br />
 <h3>TRIP LINKS</h3>
