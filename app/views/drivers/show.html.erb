@@ -1,8 +1,7 @@
 <h2>Driver Details</h2>
 
-
 <div>
-  <strong></strong><%= @driver.name %></strong>
+  <strong><%= @driver.name %></strong>
   <p><%= @driver.vin %></p>
 
   <% total = 0 %>
@@ -11,17 +10,34 @@
   <% end %>
   <% total_earning = total * (1 - 0.15) %>
     <%= "driver earned $#{(total_earning/100).round(2)}" %>
+</div>
 
+<div>
   <% total_rating = 0 %>
   <% counter = 0 %>
     <% @driver.trips.each do |trip| %>
-    <% "Total rating is #{total_rating += trip.rating}" %> 
+    <% "Total rating is #{total_rating += trip.rating}" %>
     <% counter += 1 %>
     <% end %>
     <% avg_rating = (total_rating / counter) %>
       <%= "driver average rating is #{avg_rating}" %>
           <!-- Any chance we could round up if the average is .5 or higher? -->
+</div>
 
+<div>
   <%=button_to "Edit", edit_driver_path(@driver.id), method: :get%>
   <%=button_to "Delete", driver_path(@driver.id), method: :delete%>
+</div>
+
+<div>
+  <ul>
+    <% @driver.trips.order(date: :desc).each do |trip| %>
+      <li>
+        <%= trip.id %>
+        <%= trip.date %>
+        <%= trip.rating %>
+        <%= trip.cost %>
+      </li>
+    <% end %>
+  </ul>
 </div>
