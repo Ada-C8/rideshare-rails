@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   # get 'drivers', to: 'drivers#index', as: 'drivers'
   # get 'drivers/:id', to: 'drivers#show', as: 'driver'
 
-  resources :passengers
-  get 'passengers/:id/trips', to: 'trips#index', as: 'passenger_trips'
-  get 'passengers/:id/trips/new', to: 'trips#new', as: 'new_passenger_trip'
+  resources :passengers do
+    resources :trips, only: [:index, :new]
+  end
   # get 'passengers', to: 'passengers#index', as: 'passengers'
   # get 'passengers/:id', to: 'passengers#show', as: 'passenger'
 
