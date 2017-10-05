@@ -10,5 +10,7 @@ Rails.application.routes.draw do
     resources :trips
   end
 
-  resources :drivers
+  resources :drivers do
+    resources :trips
+  end
 end
