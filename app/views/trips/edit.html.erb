@@ -10,17 +10,16 @@
 </p>
 
 
-
-
-<% if @trip.errors.any? %>
-  <ul class="errors">
-    <% @trip.errors.each do |column, message| %>
-      <li>
-        <strong><%= column.capitalize %></strong> <%= message %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+<!-- ADDED THIS TO RAISE AN ERROR IF AN ADMIN/USER EDITS A RIDE BUT DOES NOT ADD A RATING, HOWEVER WHEN YOU ADD THE VALIDATION FOR RATING, YOU CAN NO LONGER CREATE A NEW RIDE FOR A PASSENGER BECAUSE THE  -->
+ <% if @trip.errors.any? %>
+   <ul class="errors">
+     <% @trip.errors.each do |column, message| %>
+       <li>
+         <strong><%= column.capitalize %></strong> <%= message %>
+       </li>
+     <% end %>
+   </ul>
+ <% end %>
 
 
 
