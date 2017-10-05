@@ -1,28 +1,34 @@
-<h1>This is the Passenger Show page</h1>
+
 
 <h1><%= @passenger.name %></h1>
 
 <p>
-  <%= @passenger.phone_num %>
+  Phone Number: <%= @passenger.phone_num %>
 </p>
 
+
 <p>
-  See the total amount the passenger has been charged
+  Trips Taken:
 </p>
-<p>
-  Passenger's Trips
-</p>
+
 <% i = 1 %>
+<% total = 0 %>
 <% @passenger.trips.each do |trip| %>
 <p>
+
+  <% total += trip.cost %>
   <%= link_to "Trip #{i}:", trip_path(trip.id) %>
   Date: <%= trip.date %>,
   Rating: <%= trip.rating %>,
-  Cost: <%= trip.cost %>,
+  Cost: $<%= sprintf('%.2f', trip.cost / 100.0 )%>
+    <% i += 1 %>
 </p>
 
-<% i += 1 %>
-<%end%>
+<% end %>
+
+<p>
+  Total Amount Charged: $<%= sprintf('%.2f', total / 100.0 )%>
+</p>
 
 <li>
   Add a new trip for this passenger

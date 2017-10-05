@@ -4,11 +4,11 @@
    <%= link_to "Add Driver", new_driver_path %>
    <%= link_to "All Drivers", drivers_path %>
 </p>
-<% @drivers.each do |driver| %>
-<ul>
-  <li>
-    name: <%=link_to driver.name, driver_path(driver.id) %>
-    vin: <%= driver.vin %>
-  </li>
-</ul>
-<% end %>
+<table>
+  <% @drivers.each do |driver| %>
+  <tr>
+    <td><%=link_to driver.name, driver_path(driver.id) %></td>
+    <td>vin: <%= driver.vin %></td>
+  </tr>
+  <% end %>
+</table>

@@ -13,26 +13,22 @@
 
 <ul>
   <li>
-    Total Earnings: <%= (earnings + (0.15 * earnings)) / 100.0 %>
+    Total Earnings: $<%= sprintf('%.2f', (earnings + (0.15 * earnings)) / 100.0 )%>
   </li>
   <li>
-    Average Rating: <%= sum/(i - 1) %>
+    Average Rating: <%= sprintf('%.2f', sum/(i - 1) )%>
   </li>
   <li>
-    list of trips this driver has driven:
-    Clicking on a trip from the list will take me to a detail page for that trip
-  </li>
-  <li>
-    Trips:
+    Trips (Click on trip name for details):
   </li>
   <ul>
     <% i = 1 %>
     <% @driver.trips.each do |trip| %>
     <li>
-      <%=link_to "Trip #{i}:", trip_path(trip) %>
+      <%=link_to "Trip #{i}:", trip_path(trip.id) %>
       Date: <%= trip.date %>,
       Rating: <%= trip.rating %>,
-      Cost: <%= (trip.cost) / 100.0 %>,
+      Cost: $<%= (trip.cost) / 100.0 %>,
       <% i += 1%>
     </li>
     <% end %>
