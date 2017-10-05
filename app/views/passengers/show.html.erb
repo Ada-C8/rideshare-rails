@@ -1,4 +1,4 @@
-<h2>Passenger Details</h2>
+<h2>Driver Passenger</h2>
 
 <nav class="page-menu">
   <ul>
@@ -31,7 +31,7 @@
   <p>
     <strong>Trips: </strong>
     <span class="page-menu"><%= link_to "Add Trip", new_passenger_trip_path(@passenger.id) %></span>
-    <ul>
+    <ul class="trip-list">
       <% @trips.each do |trip| %>
       <li>
         <%= link_to "#{trip.driver.name}
