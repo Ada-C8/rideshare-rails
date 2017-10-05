@@ -16,6 +16,10 @@
 
 /* ======= DRIVER/PASSENGER INDEX STYLING ======== */
 
+a, a:visited, a:hover, a:active {
+  color: inherit;
+}
+
 .driver_passenger_list {
   display: inline-block;
   margin-left: auto;
@@ -29,10 +33,10 @@
 .driver_passenger_list li {
   float: left;
   display: inline;
-  margin: 0 1% 0 1%;
+  margin: 4% 1% 2% 1%;
   text-align: center;
 }
 
-a, a:visited, a:hover, a:active {
-  color: inherit;
+.driver_passenger_list div:last-child {
+
 }
