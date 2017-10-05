@@ -36,8 +36,6 @@ Rails.application.routes.draw do
 
   get 'trips/:id/edit', to: 'trips#edit', as: 'edit_trip' #edit_trip_path
 
-  get 'trips/new', to: 'trips#new', as: 'new_trip' #new_trip_path
-
   get 'trips/:id', to: 'trips#show', as: 'trip' #trip_path
 
   patch 'trips/:id', to: 'trips#update', as: 'update_trip' #update_trip_path
