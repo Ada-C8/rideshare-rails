@@ -3,11 +3,11 @@
 
 <%= form_for @trip do |f| %>
 <%= f.label :date %>
-<%= f.text_field :date %>
+<%= f.date_field :date %>
 
 <%= f.hidden_field :passenger_id, :value => params[:passenger_id] %>
 <%= f.hidden_field :driver_id, :value => Driver.all.sample.id %>
 <%= f.hidden_field :rating, :value => nil  %>
-<%= f.hidden_field :cost, :value => rand(1000..10000) %>
+<%= f.hidden_field :cost, :value => rand(100..1000) %>
 <%= f.submit %>
 <% end %>

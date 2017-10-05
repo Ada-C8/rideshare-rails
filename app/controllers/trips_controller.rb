@@ -34,8 +34,8 @@ class TripsController < ApplicationController
       redirect_to root_path
     end
 
-    @passenger = @trip.passenger
-    @driver = @trip.driver
+    # @passenger = @trip.passenger
+    # @driver = @trip.driver
   end
 
   def edit
