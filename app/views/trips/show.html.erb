@@ -1,7 +1,7 @@
 <h1>Trip on <%= @trip.date %></h1>
 
 <p>
-  Cost: <%= @trip.cost %>
+  Cost: <%= number_to_currency(@trip.cost, precision: 2) %>
 </p>
 
 <p>

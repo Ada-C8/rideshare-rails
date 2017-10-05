@@ -6,7 +6,7 @@
 </p>
 
 <p>
-  <%= @trip.cost %>
+  <%= number_to_currency(@trip.cost, precision: 2) %>
 </p>
 
 <%= form_for @trip do |f| %>

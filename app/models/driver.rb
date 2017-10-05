@@ -19,6 +19,6 @@ class Driver < ApplicationRecord
 
   def total_earnings
     earnings = trips.sum { |trip| trip.cost }
-    return ((earnings / 100) * 0.85)
+    return (earnings * 0.85)
   end
 end

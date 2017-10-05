@@ -13,7 +13,7 @@
 <% if @passenger %>
   Name: <%=@passenger[:name] %>
   Phone Number: <%= @passenger[:phone_num] %>
-  Total Spent: $<%= @passenger.total_cost %>
+  Total Spent: <%= number_to_currency(@passenger.total_cost, precision: 2) %>
 
   <ul>
     Trips
@@ -25,7 +25,7 @@
       Rating: <%= trip.rating %>
     </li>
     <li>
-      Cost: $<%= (trip.cost / 100).round(2) %>
+      Cost: <%= number_to_currency(trip.cost, precision: 2) %>
     </li>
     <% end %>
   </ul>
