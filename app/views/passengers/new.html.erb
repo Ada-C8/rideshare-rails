@@ -3,13 +3,13 @@
 <%= render partial: 'layouts/error_messages', locals: { model: @passenger } %>
 
 <%= form_for  @passenger do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.label :name, :class => "passenger_label" %>
+  <%= f.text_field :name, :class => "passenger_field" %>
   <br />
-
-  <%= f.label :phone_num %>
-  <%= f.text_field :phone_num %>
   <br />
-
+  <%= f.label :phone_num, :class => "passenger_label" %>
+  <%= f.text_field :phone_num, :class => "passenger_field" %>
+  <br />
+  <br />
   <%= f.submit %>
 <% end %>

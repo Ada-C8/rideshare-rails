@@ -1,3 +1,26 @@
-// Place all the styles related to the Passengers controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.passenger_label{
+  float: left;
+}
+
+.passenger_field {
+  float: right;
+}
+
+h2{
+  text-align: center;
+}
+
+#new_passenger{
+  background-color: blue;
+  width: 235px;
+  margin-left: 44%;
+  color: white;
+}
+
+#new_passenger input[name='commit']{
+  margin-left: 25%;
+}
+
+.passenger{
+  margin-left: 43%;
+}

@@ -3,7 +3,7 @@
 
 <ul>
   <% @passengers.each do |passenger| %>
-    <li>
+    <li class='passenger'>
       Passenger Name: <%= link_to "#{passenger.name}",  passenger_path(passenger)%>
     </li>
   <%end%>
