@@ -4,11 +4,15 @@ Rails.application.routes.draw do
 
   get '/trips/new', to: 'trips#new', as: 'new_trip'
 
-  get '/trips/:id/edit', to: 'trips#edit', as: 'edit_task'
+  get '/trips/:id/edit', to: 'trips#edit', as: 'edit_trip'
 
   get '/trips/:id', to: 'trips#show', as: 'trip'
 
-  patch '/trips/:id', to: 'trips#update'
+  get '/trips/:id/edit_rating', to:'trips#edit_rating', as: 'edit_rating'
+
+  patch '/trips/:id', to:'trips#update_rating'
+
+  # patch '/trips/:id', to: 'trips#update'
 
   post '/trips', to: 'trips#create', as: 'create_trip'
 

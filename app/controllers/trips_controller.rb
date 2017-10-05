@@ -9,7 +9,20 @@ class TripsController < ApplicationController
   def edit
   end
 
+  def edit_rating
+    @trip = Trip.find_by(id: params[:id])
+  end
+
   def update
+  end
+
+  def update_rating
+    @trip = Trip.find_by(id: params["id"])
+
+    @trip.rating = params[:trip][:rating].to_i
+    passenger = Trip.find(@trip.id).passenger
+    @trip.save
+    redirect_to passenger_path(passenger.id)
   end
 
   def new
@@ -28,8 +41,9 @@ class TripsController < ApplicationController
 
     @trip.cost = 1000 #$10
 
-     @trip.save
+    if @trip.save
       redirect_to passenger_path(params[:passenger])
+    end
   end
 
   def destroy

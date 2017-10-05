@@ -1,8 +1,42 @@
 <h1>Trips#show</h1>
 
-<%= @trip.id %>
-<%= @trip.date %>
-<%= @trip.cost %>
-<%= @trip.rating %>
-<%= @trip.passenger.name%>
-<%= @trip.driver.name %>
+
+<ul>
+  <li>
+    ID:
+    <%= @trip.id %>
+  </li>
+  <li>
+    Date:
+    <%= @trip.date %>
+  </li>
+  <li>
+    Cost:
+    <%= @trip.cost/100 %>
+  </li>
+  <li>
+    Rate Your Trip Here:
+    <% if @trip.rating %>
+      <%= @trip.rating %>
+    <% else %>
+      <%= form_for @trip do |f| %>
+        <!-- <input type="number" name="rating" id="age" min="1" max="5" step="1"> -->
+        <!-- <%= link_to("Rate this Trip", edit_rating_path) %> -->
+        <!-- <input type="submit" value="Rate This Trip"> -->
+
+        <%= f.label :rating %>
+        <%= f.select :rating, options_for_select([1,2,3,4,5]) %>
+        <%= f.submit %>
+
+      <% end %>
+    <% end %>
+  </li>
+  <li>
+    Passenger Name:
+    <%= @trip.passenger.name%>
+  </li>
+  <li>
+    Driver Name:
+    <%= @trip.driver.name %>
+  </li>
+</ul>
