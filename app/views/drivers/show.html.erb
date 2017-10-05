@@ -33,7 +33,7 @@
   <ul>
     <% @driver.trips.order(date: :desc).each do |trip| %>
       <li>
-        <%= trip.id %>
+        <%= link_to "Trip #{trip.id}", trip_path(trip.id) %>
         <%= trip.date %>
         <%= trip.rating %>
         <%= trip.cost %>
