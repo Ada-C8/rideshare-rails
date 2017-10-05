@@ -14,7 +14,7 @@
   <%= f.text_field :rating %>
 
   <%= f.label "Passenger Name" %>
-  <%= f.select :passenger_id, options_from_collection_for_select(Passenger.all, "id", "name") %>
+  <%= f.select :passenger_id, options_from_collection_for_select(Passenger.all, "id", "name", selected: @trip.passenger_id ) %>
 
   <%= f.submit %>
 <% end %>
