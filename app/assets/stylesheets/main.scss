@@ -4,7 +4,13 @@
 
 /******** MAIN YIELD ********/
 
+section#main-wrapper {
+  height: 350px;
+  text-align: center;
+}
+
 h1#main-large-font {
   font-size: 5em;
-  text-align: center;
+  top: 50%;
+  color: white;
 }

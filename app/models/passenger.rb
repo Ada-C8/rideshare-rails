@@ -11,7 +11,6 @@ class Passenger < ApplicationRecord
     return sum
   end
 
-
   def passenger_trips # From Passenger Show Page
     trips = Trip.where(passenger_id: id).order(date: :desc)
     return trips
