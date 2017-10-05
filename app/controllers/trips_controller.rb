@@ -2,6 +2,8 @@ class TripsController < ApplicationController
   def index
     if params[:passenger_id] != nil
       @trips = Trip.where(passenger_id: params[:passenger_id])
+    elsif params[:driver_id] != nil
+      @trips = Trip.where(driver_id: params[:driver_id])
     else
       @trips = Trip.all
     end
