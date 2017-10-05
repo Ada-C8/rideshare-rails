@@ -6,8 +6,6 @@
     <% @trips.each do |trip| %>
     <li>
       <p>Date: <%= trip.date %></p>
-      <p>Rating: <%= trip.rating %></p>
-      <p>Cost: $<%= (trip.cost / 100).to_f.round(2) %></p>
       <p>Driver:
         <% if trip.driver.nil? %>
         Driver Not in Database
@@ -15,7 +13,15 @@
         <%= trip.driver.name %>
         <% end %>
       </p>
+      <p>Passenger:
+        <% if trip.passenger.nil? %>
+        Passenger Not in Database
+        <% else  %>
+        <%= trip.passenger.name %>
+        <% end %>
+      </p>
     </li>
+    <p><%=  link_to "More Information", href: "#"%></p>
     <% end %>
   <% else  %>
     <p>No trips for this passenger.</p>
