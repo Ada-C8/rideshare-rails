@@ -1,3 +1,74 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$default-color: black;
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+/* default fonts */
+h1 {
+  font-family: "Josefin Sans", Arial, sans-serif;
+  font-size: 2.5rem;
+}
+
+p, li, a {
+  font-family: "Quicksand", Arial, sans-serif;
+}
+
+/* === links styling === */
+a:link, a:visited {
+  color: $default-color;
+  text-decoration: none;
+}
+
+/* ==== NAV BAR STYLING ==== */
+.nav-bar {
+  display: inline-block;
+  width: 79%;
+  text-align: right;
+  vertical-align: middle;
+}
+
+.nav-bar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-bar li {
+  display: inline-block;
+  padding: 1rem;
+}
+
+.nav-bar a {
+  font-family: "Quicksand", Arial, sans-serif;
+  font-size: 1.5rem;
+}
+
+/*.nav-bar a:link, .nav-bar a:visited {
+  color: $default-color;
+  text-decoration: none;
+}*/
+
+/* ==== HEADER STYLING === */
+.logo {
+  display: inline-block;
+  width: 20%;
+}
+
+.logo a {
+  font-family: "Quicksand", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  vertical-align: middle;
+  padding-left: 1rem;
+}
+
+header {
+  padding: 1rem 0;
+}
