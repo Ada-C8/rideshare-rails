@@ -1,22 +1,12 @@
-<%# require 'money' %>
 <h1> Driver Details </h1>
 <h2><%= @driver.name %></h2>
 
-<% i = 1.0 %>
-<% sum = 0 %>
-<% earnings = 0 %>
-<% @driver.trips.each do |trip| %>
-  <% sum += trip.rating %>
-  <% earnings += trip.cost %>
-  <% i += 1%>
-<% end %>
-
 <ul>
   <li>
-    Total Earnings: $<%= sprintf('%.2f', (earnings + (0.15 * earnings)) / 100.0 )%>
+    Total Earnings: <%= @driver.total_earnings %>
   </li>
   <li>
-    Average Rating: <%= sprintf('%.2f', sum/(i - 1) )%>
+    Average Rating: <%= @driver.average_rating %>
   </li>
   <li>
     Trips (Click on trip name for details):
@@ -28,7 +18,7 @@
       <%=link_to "Trip #{i}:", trip_path(trip.id) %>
       Date: <%= trip.date %>,
       Rating: <%= trip.rating %>,
-      Cost: $<%= (trip.cost) / 100.0 %>,
+      Cost: <%= (Money.new(trip.cost, "USD")).format %>,
       <% i += 1%>
     </li>
     <% end %>

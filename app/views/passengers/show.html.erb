@@ -12,23 +12,21 @@
 </p>
 
 <% i = 1 %>
-<% total = 0 %>
 <% @passenger.trips.each do |trip| %>
 <p>
-
-  <% total += trip.cost %>
   <%= link_to "Trip #{i}:", trip_path(trip.id) %>
   Date: <%= trip.date %>,
   Rating: <%= trip.rating %>,
-  Cost: $<%= sprintf('%.2f', trip.cost / 100.0 )%>
+  Cost: <%= Money.new(trip.cost).format%>
     <% i += 1 %>
 </p>
 
 <% end %>
 
 <p>
-  Total Amount Charged: $<%= sprintf('%.2f', total / 100.0 )%>
+  Total Amount Charged: <%= @passenger.charged%>
 </p>
+
 
 <li>
   Add a new trip for this passenger
