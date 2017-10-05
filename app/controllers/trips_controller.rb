@@ -27,7 +27,7 @@ class TripsController < ApplicationController
     result = @trip.update(trip_params)
 
     if result
-      redirect_to trip_path(@trip.id)
+      redirect_back(fallback_location: trip_path(@trip.id))
     else
       render :edit
     end
