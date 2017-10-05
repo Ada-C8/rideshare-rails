@@ -4,10 +4,11 @@
   <h3>
     All Trips
   </h3>
-    <ul>
-      <% @trips.each do |trip| %>
-        <%= link_to edit_trip_path(trip.id), class: "link_to-style" do %>
-          <li>
+  <ul>
+    <% @trips.each do |trip| %>
+      <%= link_to edit_trip_path(trip.id), class: "link_to-style" do %>
+        <section class="link_to-style">
+          <li class="edit-link">
             <p>
               <strong>ID: <%= trip.id %></strong><br>
               Date: <%= trip.date %><br>
@@ -17,7 +18,8 @@
               Cost: <%= trip.cost %> <br>
             </p>
           </li>
-        <% end %>
+        </section>
       <% end %>
-    </ul>
+    <% end %>
+  </ul>
 </section> <%#cool-list%>
