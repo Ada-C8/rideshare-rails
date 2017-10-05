@@ -1,4 +1,4 @@
-<h1>Passengers#show</h1>
+<h1>Passenger Info</h1>
 
 <%=link_to("Edit Passenger", edit_passenger_path(@passenger.id)) %>
 <%= link_to("Delete Passenger", delete_passenger_path, method: :delete, data: { confirm: "Are you sure?" }) %>
@@ -18,7 +18,10 @@
     Phone Number: <%= @passenger[:phone_num] %>
   </li>
   <li>
-    Total Spent: <%= number_to_currency(@passenger.total_cost, precision: 2) %>
+    <% @trips.each do |trip| %>
+      cost <%= trip.cost %>
+    <% end %>
+    Total Spent: <%# number_to_currency(@passenger.total_cost, precision: 2) %>
   </li>
   <li>
     Trips

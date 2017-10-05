@@ -11,6 +11,7 @@ class Passenger < ApplicationRecord
     trip = Trip.new(passenger: self,
       driver: Driver.all.sample,
       date: Date.current,
+      # cost: 0,
       cost: rand(500..2000),
       rating: 0)
 
