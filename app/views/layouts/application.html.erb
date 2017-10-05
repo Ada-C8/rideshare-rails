@@ -10,10 +10,28 @@
 
   <body>
     <nav>
-      <%= link_to 'All Drivers', drivers_path%>
-      <%= link_to 'Add Driver', new_driver_path%>
-      <%= link_to 'All Riders', riders_path%>
-      <%= link_to 'Add Rider', new_rider_path%>
+      <%= link_to 'Home', root_path%>
+      <section class= 'dropdown'>
+        <button class = 'dropbtn'>
+          Drivers
+            <!-- <i class="fa fa-caret-down"></i> -->
+        </button>
+        <section class = 'dropdown-content'>
+          <%= link_to 'View All Drivers', drivers_path%>
+          <%= link_to 'Add New Driver', new_driver_path%>
+        </section>
+      </section>
+      <section class= 'dropdown'>
+        <button class = 'dropbtn'>
+          Riders
+          <!-- <i class="fa fa-caret-down"></i> -->
+        </button>
+        <section class = 'dropdown-content'>
+          <%= link_to 'View All Riders', riders_path%>
+          <%= link_to 'Add New Rider', new_rider_path%>
+        </section>
+      </section>
+
     </nav>
     <%= yield %>
   </body>
