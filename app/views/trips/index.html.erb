@@ -1,26 +1,23 @@
-<link href="/assets/style.css" media="screen" rel="stylesheet" />
 <%= render partial: 'layouts/nav' %>
 
 <section class="cool-list">
-<h2>
-  Trips
-</h2>
-
-  <ul>
-    <% @trips.each do |trip| %>
-      <li>
-        <p>
-          <strong>ID: <%= trip.id %></strong><br>
-          Date: <%= trip.date %><br>
-          Driver: <%= trip.driver.name %><br>
-          Passenger: <%= trip.passenger.name %>
-        </p>
-      </li>
-    <% end %>
-  </ul>
-  <section class="cool-list, float-right">
-    <h2>
-      <strong><%= link_to "Edit", edit_trip_path(@trips.id) %></strong>
-    </h2>
-  </section>
+  <h3>
+    All Trips
+  </h3>
+    <ul>
+      <% @trips.each do |trip| %>
+        <%= link_to edit_trip_path(trip.id), class: "link_to-style" do %>
+          <li>
+            <p>
+              <strong>ID: <%= trip.id %></strong><br>
+              Date: <%= trip.date %><br>
+              Driver: <%= trip.driver.name %><br>
+              Passenger: <%= trip.passenger.name %><br>
+              Rating: <%= trip.rating %> <br>
+              Cost: <%= trip.cost %> <br>
+            </p>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
 </section> <%#cool-list%>
