@@ -8,3 +8,31 @@ h1{
 #home{
   padding-left: 10px;
 }
+
+body{
+  font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue",
+  "Helvetica","Arial",sans-serif;
+}
+
+nav{
+  background-color: white;
+  height: 250px;
+  width: 100%;
+  margin-top: -15px;
+  padding-top: 5px;
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+}
+
+img{
+  height: 500px;
+  width: auto;
+  margin-left: 15%;
+}
+
+p{
+  margin-left: 10px;
+}
