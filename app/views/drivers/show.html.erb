@@ -8,7 +8,7 @@
       <% all_trips.each do |trip| %>
         <% if trip.driver_id == @driver.id %>
           <li>
-            <%= link_to trip.date, trip_path %>
+            <%= link_to trip.date, trip_path(trip.id) %>
           </li>
         <% end %>
       <% end %>
