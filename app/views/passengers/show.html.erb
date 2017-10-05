@@ -26,7 +26,7 @@
         <tr>
           <td class="icon"><i class="fa fa-usd"></i></td>
           <td class="title">Total spent</td>
-          <td class="data"><%= @passenger.total_money%></td>
+          <td class="data">$<%= @passenger.total_money%></td>
         </tr>
       </table>
     </div>
@@ -94,7 +94,7 @@
               <% end %>
             </span>
           </td>
-          <td><%= trip.cost%></td>
+          <td>$<%= trip.to_dollars%></td>
           <td>
             <%= link_to trip_path(trip[:id]) do %>
               <i class="fa fa-search"></i> View Details
