@@ -6,6 +6,10 @@
 
 <h3> Trip details</h3>
 
+
+<p><%= link_to "Edit Driver", edit_driver_path %> </p>
+<p><%= link_to "Delete Driver", driver_path(@driver), method: :delete, data: { confirm: "Are you sure you want to delete?" } %> </p>
+
 <ul>
   <%@trips.each do |trip|%>
   <li> Date:<%= trip.date %> </li>
@@ -14,5 +18,3 @@
   <li> Rating: <%= trip.rating %></li>
   <% end %>
 </ul>
-
-<p><%= link_to "Edit Driver", edit_driver_path %> </p>
