@@ -1,3 +1,40 @@
 // Place all the styles related to the drivers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  text-align: center;
+  font-weight: lighter;
+  padding: 1rem 0 2rem 0;
+}
+
+/* ==== STYLE LAYOUT === */
+.left, .right {
+  display: inline-block;
+}
+
+.left {
+  min-width: 285px;
+  width: 45%;
+  padding-left: 1rem;
+  vertical-align: top;
+}
+
+.right {
+  width: 54%;
+  padding-left: 1rem;
+}
+
+.right li {
+  min-width: 250px;
+  width: 70%;
+}
+
+.buttons {
+  padding-top: 3rem;
+}
+
+.buttons a {
+  display: inline-block;
+  width: 49%;
+}
