@@ -1,14 +1,26 @@
 <link href="/assets/style.css" media="screen" rel="stylesheet" />
 <%= render partial: 'layouts/nav' %>
 
-<h1>Trips</h1>
+<section class="cool-list">
+<h2>
+  Trips
+</h2>
 
-<ol>
-  <% @trips.each do |trip| %>
-    <li>
-      <h3> Trip# <%= link_to trip.id, trip_path(trip.id) %> </h3>
-      <p> Date: <%= trip.date %> </p>
-      <p> Total Number of Trips: insert code or delete later </p>
-    </li>
-  <% end %>
-</ol>
+  <ul>
+    <% @trips.each do |trip| %>
+      <li>
+        <p>
+          <strong>ID: <%= trip.id %></strong><br>
+          Date: <%= trip.date %><br>
+          Driver: <%= trip.driver.name %><br>
+          Passenger: <%= trip.passenger.name %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+  <section class="cool-list, float-right">
+    <h2>
+      <strong><%= link_to "Edit", edit_trip_path(@trips.id) %></strong>
+    </h2>
+  </section>
+</section> <%#cool-list%>
