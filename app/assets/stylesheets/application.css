@@ -82,6 +82,7 @@ h2 {
   color: tomato;
   display: inline-block;
   font-family: 'Comfortaa', sans-serif;
+  padding-left: 2rem;
 }
 
 a {
@@ -182,5 +183,30 @@ span.rating {
 }
 
 .form {
-  border: 1px solid red;
+  margin: auto;
+  text-align: center;
+  width: 40%;
+}
+
+.form label {
+  display: block;
+}
+
+.form-item [type="submit"] {
+  background-color: tomato;
+  border-radius: 1rem;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  padding: .25rem .5rem;
+}
+.form-item [type="submit"]:active {
+  background-color: deepskyblue;
+  border-radius: 1rem;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  padding: .25rem .5rem;
+}
+
+.form-item {
+  margin: 1rem;
 }
