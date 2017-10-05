@@ -3,7 +3,7 @@
 <h2>Params:<%= params %></h3>
 
 <h3>Status:</h3>
-<% if driver.available %>
+<% if @driver.available %>
   <p>Available</p>
   <%= link_to image_tag("Switch On.png"), driver_available_path, method: :patch %>
 <% else %>
