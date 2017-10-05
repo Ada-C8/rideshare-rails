@@ -30,5 +30,17 @@ class Driver < ApplicationRecord
     total *= 0.85
 
     return total
-  end 
+  end
+
+  def self.best_available(date)
+    drivers = Driver.all.sort_by {|driver| -driver.average_rating}
+
+    drivers.each do |driver|
+      return driver if driver.is_available?(date)
+    end
+  end
+
+  def is_available? (date)
+    return !trips.any?{|trip| trip.date.to_s == date.to_s}
+  end
 end
