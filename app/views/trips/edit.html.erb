@@ -32,7 +32,8 @@ BECAUSE OF THIS, I UPDATED THE AVERAGE RATING METHOD TO ACCOUNT FOR ONLY ACCOUNT
 
 <%= form_for @trip do |f| %>
   <%= f.label :rating %>
-  <%= f.text_field :rating %>
+  <%# f.text_field :rating %>
+  <%= f.number_field(:rating, in: 1..5) %>
 
   <%= f.label "Passenger Name" %>
   <%= f.select :passenger_id, options_from_collection_for_select(Passenger.all, "id", "name", selected: @trip.passenger_id ) %>
