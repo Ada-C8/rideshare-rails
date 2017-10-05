@@ -14,10 +14,14 @@ class Driver < ApplicationRecord
 
   def average_rating
     total = 0
+    counter = 0
     trips.each do |t|
-      total += t.rating
+      if t.rating
+        total += t.rating
+        counter += 1
+      end
     end
-    total /= trips.count.to_f
+    total /= counter
     return total.round(1)
   end
 

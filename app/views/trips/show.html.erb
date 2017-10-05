@@ -1,6 +1,14 @@
 <h1>Trips#show</h1>
 <p>Find me in app/views/trips/show.html.erb</p>
 
+<section>
+    <%= link_to("Edit Trip", edit_trip_path(@trip.id)) %>
+    <%= link_to("Delete Trip", delete_trip_path(@trip.id), method: :delete) %>
+</section>
+
+
+</section>
+
 <article>
   <ul>
     <li>
@@ -28,11 +36,11 @@
     </li>
     <li>
       <strong>Driver Name: </strong>
-      <%= @trip.driver.name %>
+      <%= link_to(@trip.driver.name, driver_path(@trip.driver.id)) %>
     </li>
     <li>
       <strong>Passenger Name: </strong>
-      <%= @trip.passenger.name %>
+      <%= link_to(@trip.passenger.name, passenger_path(@trip.passenger.id)) %>
     </li>
 
   </ul>

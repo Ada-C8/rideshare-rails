@@ -1,2 +1,31 @@
 <h1>Trips#edit</h1>
 <p>Find me in app/views/trips/edit.html.erb</p>
+
+<h2>Edit trip <%= @trip.id %></h2>
+
+<section>
+  <%= form_for @trip do |f| %>
+
+  <article>
+    <%= f.label :passenger %>
+    <%= f.select :passenger_id, options_from_collection_for_select(Passenger.all, :id, :name, :selected => @trip.passenger.id) %>
+  </article>
+
+  <article>
+    <%= f.label :driver %>
+    <%= f.select :driver_id, options_from_collection_for_select(Driver.all, :id, :name, :selected => @trip.driver.id) %>
+  </article>
+
+  <article>
+    <%= f.label :rating %>
+    <%= f.select :rating, options_for_select([1, 2, 3, 4, 5],:selected => @trip.rating) %>
+  </article>
+
+  <article>
+    <%= f.submit %>
+  </article>
+
+
+
+  <% end %>
+</section>
