@@ -1,5 +1,18 @@
 <h2>We have a new passenger!!!</h2>
 
+<% if @passenger.errors.messages.length > 0 %>
+<section class="error_messages">
+  <ul>
+    <% @passenger.errors.messages.each do |field, problems| %>
+      <li>
+        <strong><%= field %></strong>
+        <%= problems %>
+      </li>
+      <% end%>
+  </ul>
+</section>
+<% end %>
+
 <%= form_for @passenger do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
