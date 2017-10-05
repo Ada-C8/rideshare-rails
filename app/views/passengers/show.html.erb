@@ -20,23 +20,6 @@
   <li>
     Total Spent: <%= number_to_currency(@passenger.total_cost, precision: 2) %>
   </li>
-<<<<<<< HEAD
-</ul>
-<li>
-  <ul>
-    Trips
-    <% @trips.each do |trip| %>
-    <li>
-      <%= link_to("Date: #{trip.date}", trip_path(trip.id)) %>
-    </li>
-
-    <li>
-      Rating: <%= trip.rating %>
-      <% if trip.rating == nil || trip.rating == 0 %>
-        <%=link_to("Rate Trip", edit_trip_path(trip.id))%>
-      <% end %>
-=======
-
   <li>
     Trips
     <ul>
@@ -46,9 +29,10 @@
       </li>
       <li>
         Rating: <%= trip.rating %>
->>>>>>> 3f4c40ee8586f1c29b57af0da6f2c420b1992366
+        <% if trip.rating == nil || trip.rating == 0 %>
+          <%=link_to("Rate Trip", edit_trip_path(trip.id))%>
+        <% end %>
       </li>
-
       <li>
         Cost: <%= number_to_currency(trip.cost, precision: 2) %>
       </li>
@@ -57,6 +41,6 @@
   </li>
 </ul>
 
-  <% else %>
-  <h1>404: Not Found</h1>
-  <% end %>
+<% else %>
+<h1>404: Not Found</h1>
+<% end %>
