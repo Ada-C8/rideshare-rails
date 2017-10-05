@@ -11,10 +11,9 @@
   <% end %>
 <%= "passenger has spent $#{total_cost/100.round(2)}" %>
 
-
-
-<%=button_to "Edit", edit_passenger_path(@passenger.id), method: :get%>
-<%=button_to "Delete", passenger_path(@passenger), method: :delete, data: {confirm: "Are you sure you want to delete this passenger?"} %>
+<%= link_to "Edit", edit_passenger_path(@passenger.id) %>
+<%= button_to "Delete", passenger_path(@passenger), method: :delete, data: {confirm: "Are you sure you want to delete this passenger?"} %>
+<%= button_to "Add New Trip", new_trip_path(@passenger.id) %>
 
 <!-- I want to create logic that will show all the rides this passenger has taken -->
 <!-- number of trips -->

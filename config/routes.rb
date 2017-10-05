@@ -5,7 +5,10 @@ Rails.application.routes.draw do
     # get '/trips', to: 'trips#index'
   end
 
-  resources :passengers
+  resources :passengers do
+    post '/new_trip', to: 'trips#create '
+  end
+
   resources :trips
 
   get '/', to: 'main#index'
