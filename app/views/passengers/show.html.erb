@@ -7,13 +7,15 @@
 <%= link_to "Delete Passenger", passenger_path(@passenger), method: :delete %>
 
 
-<h3> Trip details</h3>
+<h3> Trips </h3>
 
 <ul>
   <%@trips.each do |trip|%>
-  <li> Date:<%= trip.date %> </li>
+
+  <li>  <%= link_to trip.id, trip_path(trip.id)  %> </li>
+  <!-- <li> Date:<%= trip.date %> </li>
   <li> Passenger: <%= trip.passenger_id %></li>
   <li> Cost: <%= trip.cost %></li>
-  <li> Rating: <%= trip.rating %></li>
+  <li> Rating: <%= trip.rating %></li> -->
   <% end %>
 </ul>
