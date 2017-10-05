@@ -1,2 +1,10 @@
 <h1>Drivers#new</h1>
 <p>Find me in app/views/drivers/new.html.erb</p>
+
+<section>
+  <h1 class="title">Create a New Driver</h1>
+</section>
+
+<p class="newpara">Add a new driver to the database: </p>
+
+<%= render partial: "form", locals: {action_name: "Create Driver"} %>
