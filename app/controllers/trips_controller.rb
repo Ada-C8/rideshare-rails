@@ -20,7 +20,19 @@ class TripsController < ApplicationController
     end
   end
 
+  def add_rating
+    @trip = Trip.find_by(id: params[:id].to_i)
+
+    if @trip.rating == nil
+      (@trip.update_attributes trip_params) ? (redirect_to passenger_path(@trip.passenger_id.to_i)) : (render :edit)
+    else
+      redirect_to passenger_path(@trip.passenger_id.to_i)
+    end
+
+  end
+
   private
+
   def find_driver_ids
     driver_ids = []
     Driver.all.each do |driver|
@@ -28,4 +40,9 @@ class TripsController < ApplicationController
     end
     return driver_ids
   end
+
+  def trip_params
+    params.permit(:rating)
+  end
+
 end

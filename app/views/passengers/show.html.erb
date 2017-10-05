@@ -2,10 +2,22 @@
 <h3>Passenger Name: <%= @passenger.name %></h3>
 <h3>Phone: <%= @passenger.phone_num %></h3>
 <p><%= link_to "Edit", edit_passenger_path(@passenger.id)%> | <%= link_to "Delete", passenger_path(@passenger.id), method: :delete %></p>
+<p>
+  <% if @needs_rating %>
+    <p>Please rate your last trip:</p>
+    <%= form_tag(rate_trip_path(id: @needs_rating.id), method: :patch) do %>
+      <%= label_tag('Rating') %>
+      <%= number_field_tag('rating', nil, min: 1, max: 5, step: 1)%>
+      <%= submit_tag('Save')%>
+    <% end %>
+  <% else %>
+    <%= link_to "Create a new trip", new_trip_path(@passenger.id)%>
+  <% end %>
+</p>
 
 <section>
-  <table>
 
+  <table>
     <tr>
       <th>ID</th>
       <th>Date</th>
