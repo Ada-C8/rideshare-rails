@@ -20,14 +20,21 @@ class TripsController < ApplicationController
     end
   end
 
-<<<<<<< HEAD
   def edit
     @trip = Trip.find_by(id: params[:id].to_i)
   end
 
   def update
     @trip = Trip.find_by(id: params[:id].to_i)
-=======
+    redirect_back(fallback: root_path) unless @trip
+
+    if @trip.update_attributes trip_params
+      redirect_to trip_path(@trip.id)
+    else
+      render :edit
+    end
+  end
+
   def add_rating
     @trip = Trip.find_by(id: params[:id].to_i)
 
@@ -36,8 +43,6 @@ class TripsController < ApplicationController
     else
       redirect_to passenger_path(@trip.passenger_id.to_i)
     end
-
->>>>>>> 6f5ab99ead0f78d137d2db8f84fc6ab660872336
   end
 
   private

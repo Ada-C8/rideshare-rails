@@ -5,10 +5,10 @@
     <tr>
       <th>ID</th>
       <th>Date</th>
-      <th>Rating</th>
       <th>Cost</th>
       <th>Driver</th>
       <th>Passenger</th>
+      <th>Rating</th>
       <th></th>
       <th></th>
     </tr>
@@ -20,9 +20,6 @@
     <%= @trip.date %>
   </td>
   <td>
-    <%= @trip.rating %>
-  </td>
-  <td>
     <%= @trip.cost %>
   </td>
   <td>
@@ -30,6 +27,9 @@
   </td>
   <td>
     <%= link_to @trip.passenger.name, passenger_path(id: @trip.passenger.id) %>
+  </td>
+  <td>
+    <%= @trip.rating %>
   </td>
   <td>
     <%= link_to "Edit", edit_trip_path(@trip.id)%>
