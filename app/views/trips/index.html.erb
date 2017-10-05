@@ -1,8 +1,8 @@
 <h2>ALL TRIPS</h2>
 <ol>
   <% @trips.order(date: :asc).each do |trip|%>
-    <li>
-      
+    <li class='single_trip'>
+
       <p>
         <strong >
           <%= link_to "Trip on: #{trip.date}", trip_path(trip) %>
