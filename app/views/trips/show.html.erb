@@ -3,7 +3,7 @@
 
 <section>
     <%= link_to("Edit Trip", edit_trip_path(@trip.id)) %>
-    <%= link_to("Delete Trip", delete_trip_path(@trip.id), method: :delete) %>
+    <%= link_to("Delete Trip", delete_trip_path(@trip.id), method: :delete, data: {confirm: "Noooooooo! I'm pregnant! It's your baby!"}) %>
 </section>
 
 

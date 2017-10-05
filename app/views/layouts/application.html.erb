@@ -9,9 +9,39 @@
   </head>
 
   <body>
-    <p>
+    <header>Rideshare!
+    <h3>Choose an option from the navigation</h3>
+    </header>
+
+    <div class="dropdown">
+      <button class="dropbtn">Passengers</button>
+      <div class="dropdown-content">
+        <%= link_to("View All Passengers", passengers_path) %>
+        <%= link_to("Add A New Passenger", new_passenger_path) %>
+
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Driver</button>
+      <div class="dropdown-content">
+        <%= link_to("View All Drivers", drivers_path) %>
+        <%= link_to("Add New Driver", new_driver_path) %>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#">Passengers</a>
+      <a href="#">Drivers</a>
+      <a href="#">Link</a>
+    </nav>
+    <article class="clearfix"></article>
+
+
+
+</div>
+    <!-- <p>
       Params are : <%= params %>
-    </p>
+    </p> -->
     <%= yield %>
   </body>
 </html>

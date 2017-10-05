@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  # get '/trips'
+  root to: "trips#index"
+
+  get "/trips", to: "trips#index", as: "trips"
 
   get '/trips/new', to: "trips#new", as: "new_trip"
   #
