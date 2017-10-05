@@ -1,7 +1,12 @@
 class DriversController < ApplicationController
 
   def index
-    @drivers = Driver.all.order(:name)
+    if session[:sorter] == 'rating'
+      @drivers = Driver.all.sort_by {|driver| -driver.average_rating}
+    else
+      @drivers = Driver.all.order(:name)
+    end
+    session[:sorter] = nil
   end
 
   def new
@@ -21,7 +26,6 @@ class DriversController < ApplicationController
 
   def show
     @driver = Driver.find(params[:id])
-    # @rating = Driver.average_rating(params[:id])
     @trips = @driver.trips
   end
 
@@ -31,10 +35,6 @@ class DriversController < ApplicationController
 
   def update
     @driver = Driver.find(params[:id])
-    # result = @driver.update({
-    #   name: params[:driver][:name],
-    #   vin: params[:driver][:vin]
-    #   })
     result = @driver.update(driver_params)
 
     if result
@@ -51,6 +51,11 @@ class DriversController < ApplicationController
     else
       #if unsuccessful show an error
     end
+  end
+
+  def by_rating
+    session[:sorter] = :rating
+    redirect_to drivers_path
   end
 
   private

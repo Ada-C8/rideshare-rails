@@ -14,6 +14,10 @@
 *= require_self
 */
 
+/*************/
+/*  GENERAL  */
+/*************/
+
 * {
   /*border: 1px solid lawngreen;*/
 }
@@ -22,6 +26,7 @@ body {
   background-color: whitesmoke;
   background-image: url(round.png);
   margin: 0;
+  /*min-width: 60rem;*/
 }
 
 header {
@@ -29,7 +34,7 @@ header {
   color: white;
   height: 5rem;
   left: 0;
-  min-width: 48rem;
+  min-width: 60rem;
   position: fixed;
   top: 0;
   width: 100%;
@@ -59,6 +64,7 @@ main {
   background-color: white;
   background-color: rgba(255, 255, 255, 0.7);
   margin: 0 auto;
+  min-width: 32rem;
   padding: 3%;
   position: relative;
   top: 3.75em;
@@ -76,6 +82,7 @@ h2 {
   color: tomato;
   display: inline-block;
   font-family: 'Comfortaa', sans-serif;
+  padding-left: 2rem;
 }
 
 a {
@@ -84,37 +91,12 @@ a {
   text-decoration: none;
 }
 
-p {
+p, label {
   font-family: 'Open Sans', sans-serif;
 }
 
 ul {
   list-style: none;
-}
-
-.index li a {
-  background-color: white;
-  border: 2px solid tomato;
-  border-radius: 5rem;
-  box-shadow: 2px 2px 3px lightgrey;
-  color: dimgrey;
-  display: block;
-  margin: 1rem auto;
-  max-width: 32rem;
-  min-width: 18rem;
-  padding: 1rem;
-}
-
-.index li a:hover {
-  color: deepskyblue;
-  box-shadow: -1px -1px 3px lightgrey;
-  left: 1px;
-  top: 2px;
-  position: relative;
-}
-
-.index span {
-  height: 1rem;
 }
 
 span.rating {
@@ -143,5 +125,87 @@ span.rating {
   background-color: deepskyblue;
 }
 
+/***********/
+/*  INDEX  */
+/***********/
+
+.index li a {
+  background-color: white;
+  border: 2px solid tomato;
+  border-radius: 5rem;
+  box-shadow: 2px 2px 3px lightgrey;
+  color: dimgrey;
+  display: block;
+  margin: 1rem auto;
+  max-width: 32rem;
+  min-width: 18rem;
+  padding: 1rem;
+}
+
+.index li a:hover {
+  color: deepskyblue;
+  box-shadow: -1px -1px 3px lightgrey;
+  left: 1px;
+  top: 2px;
+  position: relative;
+}
+
+.index span {
+  height: 1rem;
+}
+
+/**********/
+/*  SHOW  */
+/**********/
+
 .trip-list li a {
+}
+
+/***********/
+/*  FORMS  */
+/***********/
+
+.error-messages {
+  border: 2px solid crimson;
+  border-radius: 1rem;
+  color: crimson;
+  font-family: 'Comfortaa', sans-serif;
+  margin: 1rem auto;
+  padding: 1rem;
+  text-align: center;
+  width: 15rem;
+}
+
+.error-messages ul {
+  list-style: disc;
+  text-align: left;
+}
+
+.form {
+  margin: auto;
+  text-align: center;
+  width: 40%;
+}
+
+.form label {
+  display: block;
+}
+
+.form-item [type="submit"] {
+  background-color: tomato;
+  border-radius: 1rem;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  padding: .25rem .5rem;
+}
+.form-item [type="submit"]:active {
+  background-color: deepskyblue;
+  border-radius: 1rem;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  padding: .25rem .5rem;
+}
+
+.form-item {
+  margin: 1rem;
 }
