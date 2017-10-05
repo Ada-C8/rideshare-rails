@@ -10,7 +10,6 @@ class TripsController < ApplicationController
   end
 
   def new
-    # @passenger = Passenger.find(params[:passenger_id])
     @trip = Trip.new
     @trip.passenger = Passenger.find(params[:passenger_id])
   end
@@ -18,7 +17,8 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new(trip_params)
     @trip.passenger = Passenger.find(params[:passenger_id])
-    # @passenger = Passenger.find(params[:passenger_id])
+    @trip.driver_id = @trip.get_driver
+    @trip.cost = @trip.to_cents
     if @trip.save
      redirect_to passenger_path(@trip.passenger_id)
     else

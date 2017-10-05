@@ -14,7 +14,10 @@ class Trip < ApplicationRecord
     return '%.2f' % (self.cost.to_f / 100)
   end
 
-  # def to_cents
-  #   return self.cost.to_i * 100
-  # end
+  def get_driver
+    return Driver.all.sample.id
+  end
+  def to_cents
+    return self.cost.to_i * 100
+  end
 end
