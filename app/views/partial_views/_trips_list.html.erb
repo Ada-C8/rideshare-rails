@@ -17,12 +17,15 @@
     <th>
       Trip Rating
     </th>
+    <% if params[:controller] == "drivers"%>
     <th>
       Trip Rider
     </th>
+    <% elsif params[:controller] == "riders"%>
     <th>
       Trip Driver
     </th>
+    <% end %>
   </tr>
   <% @trips.each do |trip| %>
   <tr>
@@ -34,12 +37,16 @@
     <td>
       <%= trip.rating %>
     </td>
+
+    <% if params[:controller] == "drivers"%>
     <td>
       <%= trip.rider.name %>
     </td>
+    <% elsif params[:controller] == "riders"%>
     <td>
       <%= trip.driver.name %>
     </td>
+    <% end %>
   </tr>
   <% end %>
 </table>
