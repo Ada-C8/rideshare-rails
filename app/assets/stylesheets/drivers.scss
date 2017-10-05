@@ -6,7 +6,10 @@
   float: right;
 }
 
-
+ul{
+  padding-left: 0px;
+  padding-left: 10px;
+}
 
 #new_driver{
   background-color: blue;
@@ -26,7 +29,9 @@
 .driver_trip{
   border: 1px black solid;
   width: 300px;
-  //margin-left: 43%;
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
 }
 
 ol{
@@ -41,6 +46,7 @@ ol{
 #driver_metadata img{
   float:left;
   margin-right: 10px;
+  padding-left: 10px;
 }
 
 .single_trip{
