@@ -14,14 +14,31 @@
  *= require_self
 */
 
+/* import URLS */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css');
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700|Playfair+Display:900');
+
+
+/* Emoji font links*/
+@font-face {
+  font-family: "EmojiSymbols";
+  src: url('fonts/EmojiSymbols-Regular.woff') format('woff');
+  text-decoration: none;
+  font-style: normal;
+}
+.emj {
+  font-family: "EmojiSymbols";
+  line-height: 1;
+}
 
 /* colors */
 :root {
 --black: #333;
 --teal: #7de0d8;
---red: #ff0000;
+--dteal: #1bc1c1;
+--red: #D75757;
+--lred: #FAECEC;
 }
 
 /** { border: 1px solid red !important; }*/
@@ -35,7 +52,7 @@ section.content { flex: 1 0 auto; }
 body {
  width: 100%;
  color: var(--black);
- font-family: sans-serif;
+ font-family: 'PT Sans', sans-serif;
  font-size: 16px;
 }
 a {
@@ -43,6 +60,7 @@ a {
  text-decoration: none;
 }
 a:hover { cursor: pointer; }
+
 
 /* header */
 header {
@@ -100,6 +118,16 @@ div.nav-menu ul li {
 .passenger-dropdown:hover .passenger-content { display: block; }
 .driver-dropdown:hover .driver-content { display: block; }
 
+
+/* section */
+section.content {
+  display: flex;
+  flex-direction: column;
+  background: #fefefe;
+}
+article.page { margin: 2% 6% 4%; }
+
+
 /* footer */
 footer {
   text-align: center;
@@ -107,6 +135,22 @@ footer {
   background: #666;
   color: #fefefe;
 }
-footer p {
-  font-size: 12px;
+footer p { font-size: 12px; }
+
+
+/* error messages */
+section.error-message {
+  width: 50%;
+  padding: 2%;
+  background: var(--lred);
+  border-left: 7px solid var(--red);
 }
+section.error-message h3 {
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: 700;
+  color: var(--red);
+  margin-bottom: 3%;
+}
+section.error-message ul li { line-height: 1.4; }
+section.error-message ul li strong { font-weight: 700; margin-right: 2%; }

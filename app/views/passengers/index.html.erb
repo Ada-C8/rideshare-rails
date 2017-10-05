@@ -1,1 +1,17 @@
-<h2>PASSENGERS</h2>
+<article class="page">
+  <h2 class="page-title">Passengers List</h2>
+  <table class="main-list">
+    <% @passengers.each do |passenger|  %>
+    <tr>
+      <td>
+        <span class="emj">&#x1F4<%=rand(66..83)%>;</span>
+      </td>
+      <td>
+        <%= link_to passenger_path(passenger[:id]) do %>
+          <%= passenger[:name] %>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</article>

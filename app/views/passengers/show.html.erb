@@ -1,25 +1,107 @@
-<h2>SHOW PASSENGER</h2>
+<article class="page">
+  <h2 class="page-title">Passenger Details</h2>
+  
+  <section class="pass-info">
+    <h3 class="table-heading">Passenger Information</h3>
+    <div>
+      <figure class="pass-portrait">
+        <img src="http://www.placecage.com/c/220/220" alt="">
+      </figure>
+      <table class="pass-deets">
+        <tr>
+          <td class="icon"><i class="fa fa-hashtag"></i></td>
+          <td class="title">ID number</td>
+          <td class="data"><%= @passenger[:id] %></td>
+        </tr>
+        <tr>
+          <td class="icon"><i class="fa fa-user"></i></td>
+          <td class="title">Name</td>
+          <td class="data"><%= @passenger[:name] %></td>
+        </tr>
+        <tr>
+          <td class="icon"><i class="fa fa-phone"></i></td>
+          <td class="title">Phone number</td>
+          <td class="data"><%= @passenger[:phone_num] %></td>
+        </tr>
+        <tr>
+          <td class="icon"><i class="fa fa-usd"></i></td>
+          <td class="title">Total spent</td>
+          <td class="data"><%= @passenger.total_spent %></td>
+        </tr>
+      </table>
+    </div>
+  </section>
 
-<ul>
-  <li>Name: <%= @passenger[:name] %></li>
-  <li>Phone number: <%= @passenger[:phone_num] %></li>
-  <li>ID: <%= @passenger[:id] %></li>
-  <li>Total Spent: <%= @passenger.total_spent %></li>
-  <li><%= link_to 'DELETE', passenger_path(@passenger), method: :delete, data: { confirm: 'Are you sure you want to delete this passenger?'} %></li>
-  <li><%= link_to 'EDIT', edit_passenger_path(@passenger) %></li>
-  <li><%= link_to 'ADD TRIP', new_passenger_trip_path(@passenger[:id]) %></li>
-  <li>
-    Trips:
-    <table>
+  <section class="pass-actions">
+    <%= link_to edit_passenger_path(@passenger) do %>
+      <i class="fa fa-edit"></i> EDIT
+    <% end %>
+    <%= link_to passenger_path(@passenger), method: :delete, data: { confirm: 'Are you sure you want to delete this passenger?'} do %>
+      <i class="fa fa-trash-o"></i> DELETE
+    <% end %>
+    <%= link_to new_passenger_trip_path(@passenger[:id]) do %>
+      <i class="fa fa-plus-circle"></i> ADD TRIP
+    <% end %>
+  </section>
+
+  <section class="pass-info">
+    <h3 class="table-heading">Passenger Trips</h3>
+    <table class="pass-trips">
+      <tr>
+        <th>Driver ID</th>
+        <th>Date</th>
+        <th>Rating</th>
+        <th>Cost</th>
+        <th>More</th>
+      </tr>
       <% @passenger.trips.each do |trip|%>
         <tr>
           <td><%= trip.driver_id%></td>
           <td><%= trip.date%></td>
-          <td><%= trip.rating%></td>
+          <td>
+            <span class="stars">
+              <% case trip.rating
+              when 1 %>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+              <% when 2 %>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+              <% when 3 %>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+              <% when 4 %>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+              <% when 5 %>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              <% end %>
+            </span>
+          </td>
           <td><%= trip.cost%></td>
-          <td><%= link_to 'TRIP DEETS', trip_path(trip[:id])%></td>
+          <td>
+            <%= link_to trip_path(trip[:id]) do %>
+              <i class="fa fa-search"></i> View Details
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </table>
-  </li>
-</ul>
+  </section>
+</article>

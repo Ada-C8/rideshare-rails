@@ -1,9 +1,21 @@
-<%= form_for @passenger do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, placeholder: hide_placeholder_text ? "" : "name" %>
+<%= form_for @passenger, html: {id: "passenger-form"} do |f| %>
 
-  <%= f.label :phone_num %>
-  <%= f.text_field :phone_num, placeholder: hide_placeholder_text ? "" : "phone number" %>
+  <%= content_tag :div, class: "name-wrapper" do %>
+    <%= f.label :name do %>
+      <i class="fa fa-user"></i> Name
+    <% end %>
+    <%= f.text_field :name, placeholder: hide_placeholder_text ? "" : "Name" %>
+  <% end %>
 
-  <%= f.submit button_text %>
+  <%= content_tag :div, class: "phone-wrapper" do %>
+    <%= f.label :phone_num do %>
+      <i class="fa fa-phone"></i> Phone Number
+    <% end %>
+    <%= f.text_field :phone_num, placeholder: hide_placeholder_text ? "" : "Phone Number" %>
+  <% end %>
+
+  <%= content_tag :div, class: "submit-wrapper" do %>
+    <%= f.submit button_text %>
+  <% end %>
+
 <% end %>
