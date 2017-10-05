@@ -88,6 +88,7 @@ div.field_with_errors {
   font-weight: 700;
   border-radius: 4px;
 }
+#passenger-form div.submit-wrapper input:hover { cursor: pointer; }
 
 // show.html.erb
 h3.table-heading {
