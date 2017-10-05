@@ -53,7 +53,7 @@ class DriversController < ApplicationController
     end
   end
 
-  def sort_by_rating
+  def by_rating
     session[:sorter] = :rating
     redirect_to drivers_path
   end

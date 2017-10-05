@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'main#index'
 
-  get '/drivers/sort_by_rating', to: 'drivers#sort_by_rating', as: 'drivers_sort_by_rating'
+  get '/drivers/by_rating', to: 'drivers#by_rating', as: 'drivers_by_rating'
   resources :drivers
   resources :passengers do
     resources :trips, only: [:new]
