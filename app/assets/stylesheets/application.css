@@ -17,14 +17,15 @@
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-
 body {
   /* The image used */
   background-image: url('car.jpeg');
-  color: white;
+  color: black;
 
   /* Set a specific height */
   height: 100%;
+  width: 100%;
+  margin: 0;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -38,14 +39,16 @@ body {
 
 div#h1-nav-wrapper {
   padding: 2em;
+  color: white;
 }
 
-h1#brand  {
+h1#brand {
   float: left;
   margin: 0px;
+  color: white
 }
 
-nav {
+#main-header nav {
   float: right;
 }
 
@@ -56,13 +59,14 @@ nav {
   border: none;
   cursor: pointer;
   background-color: transparent;
+  text-decoration: none;
 }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
   display: inline-block;
-  padding: 0px 2em 0px 2em;
+  padding: 0 3em 0 3em;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -84,17 +88,25 @@ nav {
 }
 
 /* Change color of dropdown links on hover */
-/*.dropdown-content a:hover {background-color: #f1f1f1}*/
+.dropdown-content a:hover { background-color: #505050 }
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
-  /*background-color: grey;*/
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
   opacity: 0.5;
+}
+
+.visited-color:visited { color: black; }
+
+/******** FOOTER *********/
+
+footer {
+  width: 100%;
+  text-align: center;
 }
 
 /******** CLEARFIX *********/

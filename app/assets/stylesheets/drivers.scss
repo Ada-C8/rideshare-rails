@@ -1,3 +1,41 @@
 // Place all the styles related to the Drivers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/******** INDEX ALL PAGES ********/
+
+
+article.bg-color {
+  opacity: 0.9;
+  background-color: white;
+  padding-bottom: 5px;
+}
+
+header.style {
+  border-bottom: 1px black solid;
+  text-align: center;
+}
+
+header.style h1 {
+  margin: 0;
+  padding-top: 1em;
+}
+
+.columns {
+  -webkit-column-count: 5; /* Chrome, Safari, Opera */
+  -moz-column-count: 5; /* Firefox */
+  column-count: 5;
+  margin: 2em 0 2em 0;
+}
+
+.columns ol {
+  margin: 0;
+}
+
+.link-styles { /* This is for all style links */
+  color: black;
+  text-decoration: none;
+}
+
+.link-styles:hover { /* This is for all hover links */
+  opacity: 0.5;
+}
