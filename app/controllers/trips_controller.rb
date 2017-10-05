@@ -15,13 +15,13 @@ class TripsController < ApplicationController
 
   def new
     # **** TRIED TO ADD if params[:id]
-    @trip = Trip.new
-    if params[:id]
-      @trip.passenger_id = params[:id]
-    end
-    @trip.save
+    # @trip = Trip.new
+    # if params[:id]
+    #   @trip.passenger_id = params[:id]
+    # end
+    # @trip.save
     # ***********
-    create #Is this ok?, if not, how do we get the passenger id into create
+    #create #Is this ok?, if not, how do we get the passenger id into create
   end
 
   def edit
@@ -37,7 +37,8 @@ class TripsController < ApplicationController
   def create
     driver = driver_select
     cost = rand(1000..5000)
-    passenger_id = @trip.passenger_id
+    passenger_id = params[:id]
+    #@trip.passenger_id
     # ************ TOOK OUT PASSENGER ID??
     trip = Trip.new(passenger_id: passenger_id, cost: cost, driver_id: driver, rating: nil, date: Date.today)
     # ************
@@ -49,7 +50,7 @@ class TripsController < ApplicationController
   def update
 
     @trip = Trip.find(params[:id])
-    @trip.update_attributes(strong_params)
+    @trip.update_attributes(trip_params)
     # @passenger.name = params[:passenger][:name]
     # @passenger.phone_num = params[:passenger][:phone_num]
     @trip.save

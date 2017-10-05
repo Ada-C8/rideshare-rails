@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   #******* DIANES ATTEMPT
   get('passengers/:id/trips', to: 'trips#index', as: 'passenger_trips')
-  get('passengers/:id/trips/new', to:'trips#new', as: 'new_passenger_trip')
+  get('passengers/:id/trips/new', to:'trips#create', as: 'new_passenger_trip')
   post('passengers/:id/trips', to: 'trips#create')
   #*******
 end
