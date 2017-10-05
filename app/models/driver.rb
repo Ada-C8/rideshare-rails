@@ -21,6 +21,5 @@ class Driver < ApplicationRecord
     end
 
     return (sum/driver.trips.count)
-    
   end
 end
