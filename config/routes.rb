@@ -36,7 +36,7 @@ Rails.application.routes.draw do
   get '/trips/new/:passenger_id', to: 'trips#new', as: 'new_trip'
   post '/trips/create', to: 'trips#create', as: 'create_trip'
   get '/trips/:id', to: 'trips#show', as: 'trip'
-  get '/trips/:id', to: 'trips#edit', as: 'edit_trip'
+  get '/trips/:id/edit', to: 'trips#edit', as: 'edit_trip'
   patch '/trips/:id', to: 'trips#update', as: 'update_trip'
   delete '/trips/:id', to: 'trips#destroy', as: 'delete_trip'
 end

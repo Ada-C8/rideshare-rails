@@ -20,6 +20,14 @@ class TripsController < ApplicationController
     end
   end
 
+  def edit
+    @trip = Trip.find_by(id: params[:id].to_i)
+  end
+
+  def update
+    @trip = Trip.find_by(id: params[:id].to_i)
+  end
+
   private
   def find_driver_ids
     driver_ids = []
