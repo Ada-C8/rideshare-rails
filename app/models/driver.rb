@@ -40,7 +40,12 @@ class Driver < ApplicationRecord
     end
   end
 
-  def is_available? (date)
+  def is_available? (date, skiptrip = false)
+    if skiptrip
+      trips = self.trips.where.not(id: skiptrip)
+    else
+      trips = self.trips
+    end
     return !trips.any?{|trip| trip.date.to_s == date.to_s}
   end
 end
