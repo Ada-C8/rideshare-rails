@@ -13,10 +13,22 @@ class TripsController < ApplicationController
 
   def new
     @trip = Trip.new
+    if params[:id]
+      @trip.passenger_id = params[:id]
+    end
+    @trip.driver_id = Driver.where(available: true).sample.id
+    @trip.date = Date.today
+    @trip.rating = nil
   end
 
   def create
+    @trip = Trip.new(trip_params)
 
+    if @trip.save
+      redirect_to passenger_path(@trip.passenger_id)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -28,7 +40,7 @@ class TripsController < ApplicationController
     redirect_to edit_trip_path unless @trip
 
     if @trip.update_attributes trip_params
-      redirect_to trips_path
+      redirect_to passenger_path(@trip.passenger_id)
     else
       render :edit
     end
