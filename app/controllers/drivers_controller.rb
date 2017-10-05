@@ -3,6 +3,12 @@ class DriversController < ApplicationController
     @drivers = Driver.all
   end
 
+  def show
+    @driver = Driver.find(params[:id])
+
+    @trips = Trip.where(driver_id: params[:id])
+  end
+
   def new
     @driver = Driver.new
   end
@@ -33,11 +39,13 @@ class DriversController < ApplicationController
     end
   end
 
-  def show
+  def destroy
     @driver = Driver.find(params[:id])
+    @driver.destroy
 
-    @trips = Trip.where(driver_id: params[:id])
+    redirect_to drivers_path
   end
+
 
   private
   def driver_params
