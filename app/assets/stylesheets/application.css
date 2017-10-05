@@ -13,8 +13,10 @@
  *= require_tree .
  *= require_self
  */
-
-
  .field_with_errors {
    display: inline;
+ }
+body {
+   background-image: url('backdrop1.jpg');
+   background-size: cover;
  }

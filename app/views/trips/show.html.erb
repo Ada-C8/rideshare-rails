@@ -5,7 +5,7 @@
 <% if @trip.passenger_id == nil || @trip.passenger_id == 0 %>
 <p>passenger id does not exist </p>
 <% else %>
-<p> passenger id: <%= link_to @trip.passenger_id, passenger_path(@passenger) %></p>
+<p> passenger id: <%= link_to @trip.passenger_id, passenger_path(:id) %></p>
 <%end %>
 
 <p>date: <%= @trip.date %></p>
