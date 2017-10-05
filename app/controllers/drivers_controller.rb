@@ -1,7 +1,7 @@
 class DriversController < ApplicationController
 
   def index
-    @drivers = Driver.all
+    @drivers = Driver.all.order(:name)
   end
 
   def new

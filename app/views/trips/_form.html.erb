@@ -8,8 +8,12 @@
   <%= f.label :date %>
   <%= f.date_field :date %>
 
+  <% if rating_visible %>
   <%= f.label :rating %>
   <%= f.text_field :rating %>
+  <% else %>
+  <%= f.hidden_field :rating, :value => 0 %>
+  <% end %>
 
   <%= f.label :cost %>
   <%= f.text_field :cost %>
