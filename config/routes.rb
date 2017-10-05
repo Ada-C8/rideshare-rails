@@ -51,5 +51,5 @@ Rails.application.routes.draw do
   # patch "/trips/:id", to: "trips#update" YES
   #
   # delete "/trip/:id", to: "trips#destroy" NO?
-   resources :trips
+   resources :trips, except: :index  # we don't use index in out trip
 end
