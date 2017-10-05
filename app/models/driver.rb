@@ -1,5 +1,9 @@
 class Driver < ApplicationRecord
   has_many :trips, dependent: :nullify
+
+  validates :name, presence: true
+  validates :vin, presence: true
+  
   def total_earnings
     total_earnings = 0
     self.trips.each do |trip|
