@@ -1,1 +1,26 @@
+.label{
+  float: left;
+}
 
+.field {
+  float: right;
+}
+
+h2{
+  text-align: center;
+}
+
+#new_driver{
+  background-color: blue;
+  width: 200px;
+  margin-left: 44%;
+  color: white;
+}
+
+#new_driver input[name='commit']{
+  margin-left: 25%;
+}
+
+.driver{
+  text-align: center;
+}
