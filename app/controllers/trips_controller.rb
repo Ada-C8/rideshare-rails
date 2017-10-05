@@ -32,6 +32,9 @@ class TripsController < ApplicationController
 
   def edit
     @trip = Trip.find(params[:id])
+    if params[:passenger_id]
+      @trip.passenger_id = params[:passenger_id]
+    end
   end
 
   def update
