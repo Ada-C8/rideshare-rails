@@ -22,7 +22,7 @@ class TripsController < ApplicationController
   def create
     rider_passed_in = Rider.find_by(id: params[:id])
     @trip = Trip.new(rider: rider_passed_in, driver: Driver.all.sample, cost: rand(100..15000), rating: 0, date: Date.today)
-    #later logic: driver would be next available & cost would be based on something
+    #later logic could be put in respective models: driver would be next available & cost would be based on something
     @trip.save ? (redirect_to trip_path(@trip.id)) : (redirect_to rider_path(params[:id]))
   end
 
