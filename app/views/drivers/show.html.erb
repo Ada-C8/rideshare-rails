@@ -9,7 +9,7 @@
 <p> Total Earnings: <%= @driver.total_earnings %> <p>
 <%= link_to "Edit", edit_driver_path(@driver.id) %>
 
-<%= link_to "Delete", delete_driver_path(@driver.id) %>
+<%= link_to "Delete", driver_path(@driver), method: :delete %>
 </section>
 
 <h2> Trips: <% @driver.trips.each do |trip| %> </h2>
