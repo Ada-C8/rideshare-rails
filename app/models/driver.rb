@@ -5,14 +5,20 @@ class Driver < ApplicationRecord
   validates :name, presence: { message: "Name cannot be blank!"}
   validates :vin, presence: { message: "VIN cannot be blank!"}
 
-  def total_earnings
-    total = 0
-    trips.each do |trip|
-      total += trip.cost
-    end
+  def total_money
+    total = super
     total = total - (total * 0.15)
     return '%.2f' % (total / 100)
   end
+  
+  # def total_earnings
+  #   total = 0
+  #   trips.each do |trip|
+  #     total += trip.cost
+  #   end
+  #   total = total - (total * 0.15)
+  #   return '%.2f' % (total / 100)
+  # end
 
   def average_rating
     total = 0

@@ -10,7 +10,11 @@ class Trip < ApplicationRecord
   validates :date, presence: { message: "Date must not be empty!"}
   validates :cost, presence: { message: "Cost must not be empty!"}, numericality: { only_integer: true, greater_than: 0 }
 
-  def dollars
+  def to_dollars
     return self.cost.to_f / 100
+  end
+
+  def to_cents
+    return self.cost.to_i * 100
   end
 end
