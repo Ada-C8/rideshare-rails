@@ -18,7 +18,7 @@ class DriversController < ApplicationController
     driver = Driver.find_by(id: params[:id])
     redirect_to drivers_path unless driver
 
-    driver.update_attributes(driver_params) ? (redirect_to drivers_path) : (render :edit)
+    driver.update_attributes(driver_params) ? (redirect_to driver_path(params[:id])) : (render :edit)
   end
 
   def new

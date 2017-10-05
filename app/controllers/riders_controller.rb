@@ -19,7 +19,7 @@ class RidersController < ApplicationController
     rider = Rider.find_by(id: params[:id])
     redirect_to riders_path unless rider
 
-    rider.update_attributes(rider_params) ? (redirect_to riders_path) : (render :edit)
+    rider.update_attributes(rider_params) ? (redirect_to rider_path(params[:id])) : (render :edit)
   end
 
   def new

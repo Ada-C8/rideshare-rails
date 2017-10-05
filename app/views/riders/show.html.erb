@@ -20,8 +20,8 @@
 </section>
 
 <section class = "rider-page-links">
-  <%= link_to "Edit", edit_rider_path(@rider.id)%>
-  <%= link_to "Delete", delete_rider_path(@rider.id), method: :delete, data: {confirm: "Are you sure?"}%>
+  <%= link_to "Edit Rider", edit_rider_path(@rider.id)%>
+  <%= link_to "Delete Rider", delete_rider_path(@rider.id), method: :delete, data: {confirm: "Are you sure?"}%>
 
   <%= link_to "New Rando Trip", create_trip_path,  data: {confirm: "For real?", method: :post, remote: true, params: {id: @rider.id}.to_param}%>
 </section>
