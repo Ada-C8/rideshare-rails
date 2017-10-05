@@ -1,7 +1,45 @@
-<section>
+<!-- <section>
   <ul>
     <%@trips.each do |trip| %>
       <li><%= link_to "Trip #{trip.id} on #{trip.date}", trip_path(trip.id)%></li>
     <%end%>
   </ul>
-</section>
+</section> -->
+
+
+<table id = 'trips-table'>
+  <tr>
+    <th>Trip ID</th>
+    <th>Trip Date</th>
+    <th>
+      Trip Cost
+    </th>
+    <th>
+      Trip Rating
+    </th>
+    <th>
+      Trip Rider
+    </th>
+    <th>
+      Trip Driver
+    </th>
+  </tr>
+  <% @trips.each do |trip| %>
+  <tr>
+    <td><%= link_to "#{trip.id}", trip_path(trip.id)%></td>
+    <td><%= trip.date %></td>
+    <td>
+      $<%= '%.02f' % ((trip.cost).to_f/100) %>
+    </td>
+    <td>
+      <%= trip.rating %>
+    </td>
+    <td>
+      <%= trip.rider.name %>
+    </td>
+    <td>
+      <%= trip.driver.name %>
+    </td>
+  </tr>
+  <% end %>
+</table>

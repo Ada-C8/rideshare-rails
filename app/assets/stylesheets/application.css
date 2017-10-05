@@ -76,3 +76,8 @@ nav a:hover, .dropdown:hover .dropbtn {
 .dropdown-content a:hover {
     background-color: #ddd;
 }
+
+th, td {
+  text-align: center;
+  padding: 5px;
+}
