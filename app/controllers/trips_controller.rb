@@ -28,6 +28,13 @@ class TripsController < ApplicationController
   end
 
   def update_rating
+    @trip = Trip.find_by(id: params["id"])
+
+    @trip.rating = params[:trip][:rating].to_i
+    @trip.save
+    passenger = Trip.find(@trip.id).passenger
+
+    redirect_to passenger_path(passenger.id)
 
   end
 

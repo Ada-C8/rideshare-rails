@@ -2,7 +2,7 @@
 <p>Find me in app/views/trips/show.html.erb</p>
 
 <article>
-  <!-- <ul>
+  <ul>
     <li>
       <strong>ID: </strong>
       <%= @trip.id %>
@@ -16,13 +16,13 @@
       <%= @trip.date %>
     </li>
     <li>
-      <strong>Rating: </strong>
       <% if @trip.rating %>
-        <%= @trip.rating  %>
+        <strong><%= @trip.rating  %></strong>
       <% else %>
         <%= form_for @trip do |f| %>
-          <%= f.label :rating %>
+          <strong><%= f.label :rating %></strong>
           <%= f.select :rating, options_for_select([1, 2, 3, 4, 5]) %>
+          <%= f.submit %>
         <% end %>
       <% end %>
     </li>
@@ -35,7 +35,6 @@
       <%= @trip.passenger.name %>
     </li>
 
-  </ul> -->
+  </ul>
 
 </article>
-<!-- <%= link_to("Rate this Trip!", update_rating_path, method: :post %> -->
