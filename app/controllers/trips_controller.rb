@@ -7,6 +7,7 @@ class TripsController < ApplicationController
   end
 
   def edit
+    @trip = Trip.find_by(id: params["id"])
   end
 
   def edit_rating
@@ -14,6 +15,12 @@ class TripsController < ApplicationController
   end
 
   def update
+    @trip = Trip.find_by(id: params[:id])
+    if @trip.update_attributes trip_params
+      redirect_to trip_path
+    else
+      render :edit
+    end
   end
 
   def update_rating
