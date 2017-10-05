@@ -13,4 +13,6 @@ class Rider < ApplicationRecord
       return nil
     end
   end
+
+
 end

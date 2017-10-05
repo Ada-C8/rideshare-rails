@@ -3,7 +3,13 @@
   <% if @trip %>
     <h3>ID: <%= @trip.id %></h3>
     <p>Date: <%= @trip.date %></p>
-    <p>Rating: <%= @trip.rating %></p>
+    <% if @trip.needs_rating?%>
+      <p id = "add-rating">
+        Rating: <%= link_to "Please Add Rating", edit_trip_path(@trip.id)%>
+      </p>
+    <% else %>
+      <p>Rating: <%= @trip.rating %></p>
+    <% end %>
     <p>Cost: $<%= '%.02f' % ((@trip.cost).to_f/100) %></p>
     <p>Driver: <%= link_to "#{@trip.driver.name}", driver_path(@trip.driver.id) %></p>
     <p>Rider: <%= link_to "#{@trip.rider.name}", rider_path(@trip.rider.id) %></p>

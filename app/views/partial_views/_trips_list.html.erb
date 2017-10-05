@@ -6,6 +6,31 @@
   </ul>
 </section> -->
 
+<!-- <%= @trips.first.attributes %>
+
+<table id = 'trips-table'>
+
+  <tr>
+    <% @trips.first.attributes.keys.each do |key| %>
+      <th><%= key %></th>
+    <% end %>
+  </tr>
+  <% @trips.each do |trip| %>
+  <tr>
+    <td></td>
+
+    <% if params[:controller] == "drivers"%>
+    <td>
+      <%= trip.rider.name %>
+    </td>
+    <% elsif params[:controller] == "riders"%>
+    <td>
+      <%= trip.driver.name %>
+    </td>
+    <% end %>
+  </tr>
+  <% end %>
+</table> -->
 
 <table id = 'trips-table'>
   <tr>

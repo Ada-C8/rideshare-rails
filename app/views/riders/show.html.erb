@@ -10,12 +10,12 @@
   <% end %>
 </section>
 
-<section>
+<section class = "money-section">
   <h3>Rider's Total Spent</h3>
   <%= "$#{@rider.total_cost}" %>
 </section>
 
-<section>
+<section class = "trips-section">
   <h3>Rider's Trips</h3>
   <%= render partial: '/partial_views/trips_list'%>
 </section>

@@ -1,5 +1,15 @@
 <h1> Driver Detail Page </h1>
 
+<% if @driver.errors.any? %>
+  <ul class="errors">
+    <% @driver.errors.each do |column, message| %>
+      <li>
+        <strong><%= column.capitalize %></strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
 <section>
   <% if @driver %>
     <h3><%= "NAME: #{@driver.name}" %></h3>
@@ -10,7 +20,7 @@
   <% end %>
 </section>
 
-<section>
+<section class = "money-section">
   <h3>Driver's Total Earnings</h3>
   $<%= @driver.total_earnings %>
 </section>
@@ -20,7 +30,7 @@
   <%= @driver.avg_rating %>
 </section>
 
-<section>
+<section class = "trips-section">
   <h3>Driver's Trips</h3>
   <%= render partial: '/partial_views/trips_list'%>
 </section>
