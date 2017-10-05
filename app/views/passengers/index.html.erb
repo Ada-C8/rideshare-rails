@@ -1,15 +1,11 @@
-<h1>
-  List of all the PassengersController
-</h1>
-<p>
-  Below is a list of all the passengers
-</p>
+<h2>
+  List of all the Passengers
+</h2>
 
-<div>
+<div class=index_list>
   <ol>
-  <% @passengers.each do |passenger|  %>
+  <% @passengers.sort_by {|pass| pass.name}.each do |passenger|  %>
   <li>
-
     <%= link_to passenger.name, passenger_path(passenger.id) %>
   </li>
   <% end %>

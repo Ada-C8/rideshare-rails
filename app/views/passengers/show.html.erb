@@ -1,40 +1,62 @@
-<h1>This is the passengers summary page</h1>
+<h2>
+  Passenger <%= @passenger.name%>
+</h2>
 
+<section>
+  <div class="individual_info">
+    <ul>
+      <li>
+        Passenger name: <%= @passenger.name%>
+      </li>
+      <li>
+        Passenger's Phone number: <%= @passenger.phone_num%>
+      </li>
+      <li>
+        Passenger's total spent: $ <%= "%.2f" % @passenger.total_spent %>
+      </li>
+      <li>
+        Trips:
+        <% if Trip.all.where(passenger_id: @passenger.id).length == 0 %>
+          No trips taken yet!
+        <%else%>
+          <%trips = Trip.all.where(passenger_id: @passenger.id)%>
+          <ol>
+              <% trips.each do |trip| %>
+            <li>
+              <% if Driver.find_by_id(trip.driver_id) == nil %>
+              Driver: driver account deleted
+              <%else %>
+              <%driver_name = Driver.find(trip.driver_id).name %>
+              Driver: <%= link_to driver_name, driver_path(trip.driver_id) %>
+              <% end %>
+              Trip ID: <%=link_to trip.id, trip_path(trip.id) %>
+              Date: <%= trip.date %>
+            </li>
+            <%end%>
+            </ol>
+          <%end%>
+      </li>
+    </ul>
+  </div>
 
-<div>
-</h2>Passenger name: <%= @passenger.name%></h2>
-<ul>
-  <li>
-    Passenger's Phone number: <%= @passenger.phone_num%>
-  </li>
+  <fig>
+    <img src=" http://fillmurray.com/200/200">
+    <figcaption>
+      Photograph of <%=@passenger.name%>
+    </figcaption>
+  </fig>
 
-  <li>
-    Passenger's total spent: $ <%= "%.2f" % @passenger.total_spent %>
-  </li>
-</ul>
-
-<%trips = Trip.all.where(passenger_id: @passenger.id)%>
-<ol>
-  <% trips.each do |trip| %>
-  <li>
-  <% if Driver.find_by_id(trip.driver_id) == nil %>
-  Driver: driver account deleted
-  <%else %>
-  <%driver_name = Driver.find(trip.driver_id).name %>
-  Driver: <%= link_to driver_name, driver_path(trip.driver_id) %>
-  <% end %>
-
-  Trip ID: <%=link_to trip.id, trip_path(trip.id) %>
-  Date: <%= trip.date %>
-</li>
-
-  <%end%>
-</ol>
-
-<%= link_to "Edit passenger information", edit_passenger_path(@passenger.id), class: "link"%>
-
-<%= link_to "Create a new trip", new_passenger_trip_path(@passenger.id), class: "link" %>
-<%#= link_to "Create a new trip", new_trip_path, class: "link" %>
-
-<%= link_to "Delete", passenger_path(@passenger.id), method: :delete, data: {confirm: "Are you sure you want to delete this passenger from the database? You can not undo this action."}%>
-</div>
+  <div class="buttons">
+    <ul>
+      <li>
+        <%= link_to "Edit passenger information", edit_passenger_path(@passenger.id), class: "link"%>
+      </li>
+      <li>
+      <%= link_to "Create a new trip", new_passenger_trip_path(@passenger.id), class: "link" %>
+      </li>
+      <li>
+      <%= link_to "Delete", passenger_path(@passenger.id), method: :delete, data: {confirm: "Are you sure you want to delete #{@passenger.name} from the database? You can not undo this action."}, class: "link"%>
+      </li>
+    </ul>
+  </div>
+</section>

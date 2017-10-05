@@ -1,6 +1,6 @@
 
 <% if model.errors.messages.length > 0 %>
-<section class= "error-messages">
+<div class= "error-messages">
   <h3>Errors Happened!</h3>
   <ul>
     <% model.errors.messages.each do |field, problems| %>
@@ -11,5 +11,5 @@
     <% end %>
   <%end%>
   </ul>
-</section>
+</div>
 <%end%>

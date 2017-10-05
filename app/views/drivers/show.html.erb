@@ -1,46 +1,65 @@
-<h1>This is the driver summary page</h1>
+<h2>
+  Driver <%=@driver.name%>
+</h2>
 
-
-<div>
-</h2>Driver name: <%= @driver.name%></h2>
-  <ul>
-    <li>
-      Driver's VIN: <%= @driver.vin%>
-    </li>
-    <li>
-        Driver's Average Rating: <%= @driver.average_rating %>
-    </li>
-  <li>
-      Driver's total earnings: $<%= "%.2f" % @driver.total_earned %>
-  </li>
-  <li>
-    Driver Id: <%=@driver.id %>
-  </li>
+<section>
+  <div class="individual_info">
+    <ul>
+      <li>
+        Driver name: <%= @driver.name%>
+      </li>
+      <li>
+        Driver's VIN: <%= @driver.vin%>
+      </li>
+      <li>
+          Driver's Average Rating: <%= @driver.average_rating %>
+      </li>
+      <li>
+          Driver's total earnings: $<%= "%.2f" % @driver.total_earned %>
+      </li>
+      <li>
+        Driver Id: <%=@driver.id %>
+      </li>
+      <li>
+        Trips:
+        <%if  Trip.all.where(driver_id: @driver.id).length == 0%>
+          No trips driven yet!
+        <%else%>
+          <%trips = Trip.all.where(driver_id: @driver.id)%>
+          <ol>
+            <% trips.each do |trip| %>
+            <li>
+              <% if Passenger.find_by_id(trip.passenger_id) == nil %>
+              Passenger: passenger account deleted
+              <%else %>
+              <%passenger_name = Passenger.find(trip.passenger_id).name %>
+              Passenger: <%= link_to passenger_name, passenger_path(trip.passenger_id) %>
+              <% end %>
+              Trip ID: <%=link_to trip.id, trip_path(trip.id) %>
+              Date: <%= trip.date %>
+            </li>
+          <%end%>
+        <%end%>
+        </ol>
+      </li>
     </ul>
-  <p>
-  <h2>All the trips!</h2>
+  </div>
 
-  <%trips = Trip.all.where(driver_id: @driver.id)%>
-  <ol>
-  <% trips.each do |trip| %>
-    <li>
-      <% if Passenger.find_by_id(trip.passenger_id) == nil %>
-      Passenger: passenger account deleted
-      <%else %>
-      <%passenger_name = Passenger.find(trip.passenger_id).name %>
-      Passenger: <%= link_to passenger_name, passenger_path(trip.passenger_id) %>
-      <% end %>
-      Trip ID: <%=link_to trip.id, trip_path(trip.id) %>
-      Date: <%= trip.date %>
-    </li>
-  <%end%>
-  </ol>
+  <fig>
+    <img src="http://stevensegallery.com/200/200">
+    <figcaption>
+      Photograph of <%=@driver.name%>
+    </figcaption>
+  </fig>
 
-
-
-
-
-
-<%= link_to "Edit driver information", edit_driver_path(@driver.id), class: "link"%>
-<%= link_to "Delete", driver_path(@driver.id), method: :delete, data: {confirm: "Are you sure you want to delete this driver from the database? You can not undo this action."}%>
-</div>
+  <div class="buttons">
+    <ul>
+      <li>
+        <%= link_to "Edit driver information", edit_driver_path(@driver.id), class: "link"%>
+      </li>
+      <li>
+        <%= link_to "Delete", driver_path(@driver.id), method: :delete, data: {confirm: "Are you sure you want to delete #{@driver.name} from the database? You can not undo this action.", class: "link"}%>
+      </li>
+    <ul>
+  </div>
+</section>

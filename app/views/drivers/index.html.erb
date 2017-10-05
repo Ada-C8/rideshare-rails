@@ -1,18 +1,14 @@
-<h1>
-  List of all the drivers
-</h1>
-<p>
-  Below is a list of all the drivers
-</p>
+<h2>
+  List of all drivers
+</h2>
 
-<div>
+
+<div class=index_list>
   <ol>
-  <% @drivers.each do |driver|  %>
-  <li>
-    
-    <%= link_to driver.name, driver_path(driver.id) %>
-  </li>
+    <%@drivers.sort_by {|d| d.name}.each do |driver| %>
+    <li>
+      <%= link_to driver.name, driver_path(driver.id) %>
+    </li>
   <% end %>
-</ul>
-
+  </ol>
 </div>
