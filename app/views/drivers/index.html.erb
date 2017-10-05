@@ -1,32 +1,19 @@
-<article>
-  <header>
-    <h2> All drivers : </h2>
+<%# Look into a partial here - similar to passenger index %>
+
+<article class="bg-color">
+  <header class="style">
+    <h1>All Drivers by Name</h1>
+    <p>
+      Click on a driver to view more details
+    </p>
   </header>
-  <section>
+  <section class="columns">
     <ol>
       <% @drivers.each do |driver| %>
-        <li>
-          <%= link_to driver.name, driver_path(driver.id)%>
-        </li>
-        <% end %>
-      </ol>
-    </section>
-  </article>
-
-  <article class="bg-color">
-    <header class="style">
-      <h1>All Drivers by Name/h1>
-      <p>
-         Click on a passenger to view more details
-      </p>
-    </header>
-    <section class="columns">
-      <ol>
-        <% @drivers.each do |driver| %>
-        <li>
-          <%= driver.name, driver_path(driver.id), class: "visited-color link-styles" %>
-        </li>
-        <% end %>
-      </ol>
-    </section>
-  </article>
+      <li>
+        <%= link_to driver.name, driver_path(driver.id), class: "visited-color link-styles" %>
+      </li>
+      <% end %>
+    </ol>
+  </section>
+</article>

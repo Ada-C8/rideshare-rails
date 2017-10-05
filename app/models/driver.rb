@@ -6,11 +6,11 @@ class Driver < ApplicationRecord
 
   def total_earning
     trips = Trip.where(driver_id: id)
-    sum = 0
+    sum = 0.00
     trips.each do |trip|
       sum += trip.cost
     end
-    return sum
+    return "%.2f" % sum
   end
 
   def average_rating

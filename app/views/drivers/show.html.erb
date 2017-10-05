@@ -1,4 +1,4 @@
-<div class="requested">
+<!-- <div class="requested">
   <h2> Name: <%=@driver.name%> </h2>
   <p><strong>Total Earnings: </strong><%= @driver.total_earning%></p>
   <p><strong>Average Rating: </strong><%= @driver.average_rating%></p>
@@ -17,4 +17,31 @@
   <p><%= link_to "Edit", edit_driver_path(@driver.id) %></p>
   <p><%= link_to "Delete", driver_path(@driver), method: :delete , data: {confirm: "Are you sure?" }  %></p>
 
-</div>
+</div> -->
+
+<article class="bg-color height">
+  <header class="style">
+    <h1>Driver Details For: <%=@driver.name%> </h1>
+    <%= link_to "Edit", edit_driver_path(@driver.id), class: "inline-block link-styles" %>
+    <%= link_to "Delete", driver_path(@driver), method: :delete , data: {confirm: "Are you sure?" }, class: "inline-block link-styles" %>
+  </header>
+  <section>
+    <div class="pass-detail-wrapper">
+      <p><strong>Total Earnings: $ </strong><%= @driver.total_earning%></p>
+      <p><strong>Average Rating (1 - 5): </strong><%= @driver.average_rating%></p>
+      <p><strong>List of Trips by Date: </strong>
+        <ul>
+          <% all_trips = Trip.all.order(date: :desc) %>
+          <%# Do we need to separate this into a driver method that will pull all Trips that match this current driver? %>
+          <% all_trips.each do |trip| %>
+            <% if trip.driver_id == @driver.id %>
+              <li>
+                <%= link_to trip.date, trip_path(trip.id) %>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </p>
+    </div>
+  </section>
+</article>
