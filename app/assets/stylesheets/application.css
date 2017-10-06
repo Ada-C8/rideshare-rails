@@ -14,24 +14,26 @@
  *= require_self
  */
 
-
  .form-field {
    border: 1px solid red;
    border-radius: 10px;
    background-color: pink;
-   height: 50px;
-   margin-left: 40px;
-   width: 75%;
+   height: 40px;
+   margin-left: 20px;
+   width: 55%;
+ }
+
+ input {
+   font-size: 1em;
  }
 
  label {
    border: 1px solid red;
    float: left;
    font-size: 1.5em;
-   width: 100px;
+   width: 30%;
    text-align: right;
    padding-right: 10px;
-
  }
 
  li {
@@ -45,7 +47,7 @@
  ul {
    border: 2px solid green;
    text-align: center;
-   width: 50%;
+   width: 75%;
    padding: 20px;
  }
 
