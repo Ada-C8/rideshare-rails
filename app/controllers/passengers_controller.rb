@@ -49,6 +49,7 @@ class PassengersController < ApplicationController
   def create_trip
     @passenger = Passenger.find_by(id: params[:id].to_i)
     @passenger.create_trip
+    flash[:notice] = "Trip added"
     redirect_to passenger_path(@passenger.id)
   end
 
