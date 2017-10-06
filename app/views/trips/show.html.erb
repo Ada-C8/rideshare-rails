@@ -4,8 +4,7 @@
     <li> Driver: <%=link_to @trip.driver_id, driver_path(@trip.driver_id) %></li>
     <li> Cost: <%= @trip.cost %></li>
     <li> Rating: <%= @trip.rating %></li>
+
     <%= link_to "Edit Rating", edit_trip_path %>
-
     <%= link_to "Delete Trip", trip_path(@trip), method: :delete, data: { confirm: "Are you sure you want to delete?" } %>
-
 </ul>
