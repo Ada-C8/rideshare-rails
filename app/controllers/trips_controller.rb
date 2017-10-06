@@ -5,13 +5,14 @@ class TripsController < ApplicationController
 
   def new
     @trip = Trip.new
+    @trip.passenger_id = params[:passenger_id]
   end
 
   def create
     @trip = Trip.new(trip_params)
 
     if @trip.save
-      redirect_to('/trips')
+      redirect_to passenger_path(@passenger)
     else
       render :new
     end
@@ -45,4 +46,8 @@ class TripsController < ApplicationController
     redirect_to root_path
   end
 
+  private
+  def trip_params
+    return params.require(:trip).permit(:date, :cost, :passenger_id)
+  end
 end
