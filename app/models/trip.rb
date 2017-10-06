@@ -2,6 +2,17 @@ require_relative 'passenger'
 class Trip < ApplicationRecord
   belongs_to :driver
   belongs_to :passenger
+
+
+  def validate
+    if self.passenger.current
+      self.errors[:base] << "This person is already on a trip. "
+      return false
+    else
+      return true
+    end
+  end
+
 # def self.all_trips(input_sort)
 #   if input_sort == "passengers"
 #   trips = Trip.order(:date).group_by {|trip| trip.passenger_id}

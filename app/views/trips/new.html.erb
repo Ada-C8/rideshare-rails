@@ -1,3 +1,12 @@
 <h1>Trips#new</h1>
-<%= @passenger %>
+<%= link_to(@passenger.name, passenger_path(@passenger.id)) %>
+<% if @trip.errors.any? %>
+  <ul class="errors">
+    <% @trip.errors.each do |column, message| %>
+      <li>
+        <strong><%= column.capitalize %></strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
 <p>Find me in app/views/trips/new.html.erb</p>
