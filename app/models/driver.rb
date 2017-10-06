@@ -10,6 +10,7 @@ class Driver < ApplicationRecord
     trips.each do |trip|
       sum += trip.cost
     end
+    sum = sum * 0.85
     return "%.2f" % sum
   end
 
@@ -18,8 +19,10 @@ class Driver < ApplicationRecord
     result = 0
     counter = 0
     ratings.each do |r|
-      result += r.rating
-      counter += 1
+      if r.rating > 0
+        result += r.rating
+        counter += 1
+      end
     end
     if counter > 0
       return (result/counter)
@@ -29,7 +32,7 @@ class Driver < ApplicationRecord
   end
 
   def driver_trips # From Driver Show Page
-    trips = Trip.where(passenger_id: id).order(date: :desc)
+    trips = Trip.where(driver_id: id).order(date: :desc)
     return trips
   end
 end
