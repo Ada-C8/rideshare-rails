@@ -36,6 +36,11 @@
    display: inline;
  }
 
+/* ############*/
+/* header */
+/*############*/
+
+
 header{
   width: 100%;
   height: 75px;
@@ -83,4 +88,55 @@ header li {
 
  body {
    margin-top: 75px;
+ }
+
+ /* ############*/
+ /* trip lists */
+ /*############*/
+
+ .trip_list {
+   display: flex;
+   flex-wrap: wrap;
+   padding: 0;
+   list-style: none;
+   justify-content: center;
+ }
+
+ .trip_list li {
+   list-style: none;
+ }
+
+ .single_trip {
+   width: 27%;
+   margin: 2%;
+   border: 1px black solid;
+   /*border-radius: 1em;*/
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+ }
+
+ .single_trip h4 {
+   border-bottom: 1px black solid;
+   margin: 0;
+   padding: .5em 0;
+   width: 100%;
+   text-align: center;
+ }
+
+
+ .details {
+   padding: 2em .5em;
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+
+ }
+ .single_trip .edit_delete {
+   width: 100%;
+ }
+ .single_trip .edit_delete li {
+   width: 30%;
+   text-align: center;
  }

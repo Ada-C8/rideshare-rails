@@ -1,11 +1,11 @@
 <h2><%= @passenger.name %></h2>
 
 <section class="metadata">
-  <img src='http://fillmurray.com/100/100' alt='picture place holder'/>
+  <img src='http://fillmurray.com/200/200' alt='passenger photo'/>
 
-  <h4><%= link_to "New Trip", new_passenger_trip_path(@passenger) %></h4>
+  <h4 class = 'new_trip'><%= link_to "New Trip", new_passenger_trip_path(@passenger) %></h4>
 
-  <ul>
+  <ul class="personal_data">
     <li>
       Phone Number: <%= @passenger.phone_num %>
     </li>
@@ -29,7 +29,7 @@
 
 <ol class = 'trip_list'>
   <% @passenger.trips.order(date: :desc).each do | trip | %>
-    <li >
+    <li class =' single_trip' >
       <%= render partial: 'layouts/trip_details', locals: { trip: trip, route: @passenger } %>
     </li>
   <% end %>

@@ -1,13 +1,13 @@
 <h2><%= @driver.name %></h2>
 
 <section class="metadata">
-  <img src='http://fillmurray.com/100/100' alt='picture place holder'/>
+  <img src='http://fillmurray.com/200/200' alt='driver photo'/>
 
   <h4>
     Average Rating = <%= @driver.average_rating %> stars
   </h4>
 
-  <ul>
+  <ul class="personal_data">
     <li>
       Vin: <%= @driver.vin %>
     </li>
@@ -30,7 +30,7 @@
 
 <ol class = "trip_list">
   <% @driver.trips.order(date: :desc).each do | trip | %>
-    <li >
+    <li class =' single_trip' >
       <%= render partial: 'layouts/trip_details', locals: { trip: trip, route: @driver } %>
     </li>
   <% end %>
