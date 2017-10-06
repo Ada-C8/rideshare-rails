@@ -10,7 +10,7 @@ class Passenger < ApplicationRecord
     all_trips.each do |trip|
       sum += trip.cost
     end
-    return "%.2f" % sum
+    return sum
   end
 
   def passenger_trips # From Passenger Show Page

@@ -11,7 +11,7 @@ class Driver < ApplicationRecord
       sum += trip.cost
     end
     sum = sum * 0.85
-    return "%.2f" % sum
+    return sum
   end
 
   def average_rating
