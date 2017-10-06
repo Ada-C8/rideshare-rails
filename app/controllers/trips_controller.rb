@@ -11,8 +11,8 @@ class TripsController < ApplicationController
   end
 
   def new
-    driver_ids = find_driver_ids()
-    @trip = Trip.new(date: Date.today, cost: rand(100..2000), driver_id: driver_ids.sample.to_i, passenger_id: params[:passenger_id], rating: nil)
+    driver_id = find_driver()
+    @trip = Trip.new(date: Date.today, cost: rand(100..2000), driver_id: driver_id, passenger_id: params[:passenger_id], rating: nil)
     if @trip.save
       redirect_to passenger_path(params[:passenger_id])
     else
@@ -47,12 +47,9 @@ class TripsController < ApplicationController
 
   private
 
-  def find_driver_ids
-    driver_ids = []
-    Driver.all.each do |driver|
-      driver_ids << driver.id
-    end
-    return driver_ids
+  def find_driver
+    driver_id = Driver.where(status: 'online').sample.id.to_i
+    return driver_id
   end
 
   def trip_params
