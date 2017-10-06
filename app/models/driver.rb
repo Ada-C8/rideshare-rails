@@ -33,11 +33,15 @@ class Driver < ApplicationRecord
   end
 
   def self.best_available(date)
-    drivers = Driver.all.sort_by {|driver| -driver.average_rating}
+    drivers = Driver.by_rating
 
     drivers.each do |driver|
       return driver if driver.is_available?(date)
     end
+  end
+
+  def self.by_rating
+    Driver.all.sort_by {|driver| -driver.average_rating}
   end
 
   def is_available? (date, skiptrip = false)
@@ -47,5 +51,9 @@ class Driver < ApplicationRecord
       trips = self.trips
     end
     return !trips.any?{|trip| trip.date.to_s == date.to_s}
+  end
+
+  def trips_by_rating
+    return trips.sort_by{|trip| -trip.rating}
   end
 end
