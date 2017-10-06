@@ -15,14 +15,18 @@ class Driver < ApplicationRecord
     if trips.any? == false
       return "Nil"
     end
-
+    length = trips.length
     total = 0
 
     trips.each do |trip|
-      total += trip.rating
+      if trip.rating
+        total += trip.rating
+      else
+        length -= 1
+      end
     end
 
-    total /= trips.length
+    total /= length
     return total
   end
 end

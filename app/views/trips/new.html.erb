@@ -1,1 +1,7 @@
-<h3>new trip page</h3>
+<article class="page">
+  <h2 class="page-title">Add a New Trip</h2>
+
+  <%= render partial: 'layouts/errors', locals: { model: @trip } %>
+
+  <%= render partial: "form", locals: { hide_placeholder_text: true, form_class: "blue", button_text: "ADD" }%>
+</article>
