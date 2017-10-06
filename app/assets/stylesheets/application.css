@@ -160,8 +160,19 @@ span.rating {
 
 .trip-list li {
   background-color: white;
+  border: 2px solid whitesmoke;
   border-radius: 1rem;
+  padding: .5rem 1rem;
+  margin: .5rem auto;
   display: block;
+}
+
+.trip-list li:hover {
+  border-color: tomato;
+}
+
+.trip-list li:active {
+  border-color: deepskyblue;
 }
 
 .trip-list li div {
