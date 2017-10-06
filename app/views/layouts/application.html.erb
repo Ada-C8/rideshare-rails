@@ -3,7 +3,7 @@
   <head>
     <title>RideshareRails</title>
     <%= csrf_meta_tags %>
-
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i|Open+Sans:300,400,600i,800" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -11,30 +11,33 @@
   <body>
     <!-- <em><p>Params are: <%= params %></p></em> -->
 
+
     <header>
-      <h1><%= link_to("J&J's Rideshare App!", home_path, alt:'homepage')%></h1>
+      <h2><%= link_to("J&J's Rideshare", home_path, alt:'homepage')%></h1>
       <nav>
         <ul>
           <li>
-            <%= link_to("All Passengers", passengers_path) %>
+            <%= link_to("All Passengers |", passengers_path) %>
           </li>
           <li>
-            <%= link_to("Add A New Passenger", new_passenger_path) %>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <%= link_to("All Drivers", drivers_path)  %>
+            <%= link_to("Add Passenger |", new_passenger_path) %>
           </li>
           <li>
-            <%= link_to("Add A New Driver", new_driver_path) %>
+            <%= link_to("All Drivers |", drivers_path)  %>
+          </li>
+          <li>
+            <%= link_to("Add Driver |", new_driver_path) %>
           </li>
         </ul>
       </nav>
     </header>
 
-
-
     <%= yield %>
+
+
+    <footer>
+      <h3>&copy; 2017</h3>
+    </footer>
+
   </body>
 </html>
