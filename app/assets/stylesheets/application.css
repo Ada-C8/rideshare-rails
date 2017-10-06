@@ -43,7 +43,9 @@ body {
  .dropdown:hover .dropdown-content {
      display: block;
  }
-
+html {
+  font-family: courier;
+}
  /*more nav css */
 nav {
   background-color: rgba(215, 190, 217, 0.64);
