@@ -20,12 +20,14 @@ body {
    background-image: url('backdrop1.jpg');
    background-size: cover;
  }
+ /*drop down css for nav bar:*/
  .dropdown {
      position: relative;
      display: inline-block;
+     /*width: 100px;*/
+     padding: 3% 8%;
+     font-size: 20px;
  }
-
-/*drop down css for nav bar:*/
  .dropdown-content {
      display: none;
      position: absolute;
@@ -34,8 +36,22 @@ body {
      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
      padding: 12px 16px;
      z-index: 1;
+     font-size: 15px;
+
  }
 
  .dropdown:hover .dropdown-content {
      display: block;
  }
+
+ /*more nav css */
+nav {
+  background-color: rgba(215, 190, 217, 0.64);
+  height: 100px;
+  color: rgb(81, 18, 84);
+  font-family: courier;
+}
+footer {
+  font-family: courier;
+
+}

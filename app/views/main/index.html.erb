@@ -1,7 +1,11 @@
-<h1>Welcome to the homepage</h1>
+<head>
+  <% stylesheet_link_tag 'application', "https://fonts.googleapis.com/css?family=Amatic+SC" %>
+</head>
+<body>
+  <section>
 
-<%= link_to "All Passengers", passengers_path %>
-<%= link_to "All Drivers", drivers_path %>
-<%= link_to "New Passenger", new_passenger_path %>
-<%= link_to "New Driver", new_driver_path %>
-<%= link_to "All Trips", trips_path %>
+    <h1 class="intro" >Ride with Ada</h1>
+    <p class="ufo"><%= image_tag "ufo.jpg", alt:"ufo"%></p>
+  </section>
+</body>
+<footer>copyright 2017 Angela&Lauren</footer>
