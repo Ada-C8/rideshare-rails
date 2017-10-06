@@ -8,10 +8,14 @@
     </ul>
 </header>
 
-<h1>All Drivers</h1>
+<h1 class="page_names">All Drivers</h1>
 
 <ul>
 <% @drivers.each do |driver| %>
   <li> <%= link_to(driver.name, driver_path(driver.id)) %> </li>
 <% end %>
 </ul>
+
+<section class="apple_pagination">
+  <%= will_paginate @drivers %>
+</section>

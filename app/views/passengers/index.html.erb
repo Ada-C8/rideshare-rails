@@ -9,9 +9,13 @@
 </header>
 
 
-<h1>All Passengers</h1>
+<h1 class="page_names">All Passengers</h1>
 <ul>
   <% @passengers.each do |passenger| %>
     <li> <%= link_to(passenger.name, passenger_path(passenger.id))%> </li>
   <% end %>
 </ul>
+
+<section class="apple_pagination">
+  <%= will_paginate @passengers %>
+</section>
