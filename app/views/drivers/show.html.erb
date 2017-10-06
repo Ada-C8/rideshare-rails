@@ -16,7 +16,8 @@
 <h3>Driver: <%=@driver.name %> </h3>
 <h3>Average Rating: <%=@driver.average_rating %></h3>
 <h3>Vin: <%=@driver.vin %></h3>
-<h3>Trips: <%= Trip.where(driver_id: @driver.id).find_each do |trip| %>
+<!-- <h3>Trips: <%= Trip.where(driver_id: @driver.id).find_each do |trip| %>
 <h4>Trip ID:<%= link_to(trip.id, trip_path(trip.id)) %></h4>
-<% end %>
+<% end %> -->
 <h3>Total Earnings: <%=@driver.total_earnings %></h3>
+<%= render partial: 'shared/trips_table', locals: {person: @driver } %>

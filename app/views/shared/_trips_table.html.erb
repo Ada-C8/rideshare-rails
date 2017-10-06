@@ -1,0 +1,13 @@
+
+<h3>Trips: </h3>
+<ul>
+  <% person.trips.each do |trip| %>
+  <li>
+    <p>ID:<%= link_to(trip.id, trip_path(trip.id)) %></p>
+    <p>Date: <%= trip.date.strftime('%m-%d-%Y') %></p>
+    <p>Cost: $<%= trip.cost/100.0 %></p>
+    <p>Driver: <%= trip.driver_id %></p>
+    <p>Rating: <%= trip.rating %></p>
+  </li>
+  <% end %>
+</ul>

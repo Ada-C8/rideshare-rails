@@ -6,7 +6,7 @@
 <h3>Name: <%= @passenger.name %></h3>
 <h3>Phone: <%= @passenger.phone_num %></h3>
 <h3>Total Trips Cost: $<%= @passenger.trips.size > 0 ? @passenger.total_trip_cost/100.0 : 0 %>
-  <h3>Trips: </h3>
+  <!-- <h3>Trips: </h3>
   <ul>
     <% @passenger.trips.each do |trip| %>
     <li>
@@ -17,5 +17,6 @@
       <p>Rating: <%= trip.rating %></p>
     </li>
     <% end %>
-  </ul>
+  </ul> -->
+  <%= render partial: 'shared/trips_table', locals: { person: @passenger } %>
   <%= button_to("Add a Trip", new_passenger_trip_path(@passenger.id), method: :get) %>
