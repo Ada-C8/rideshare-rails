@@ -48,7 +48,6 @@ header {
 
 header h2, header nav, header nav li  {
   display: inline-block;
-  font-family: 'Mukta', sans-serif;
 }
 
 header h2 {
@@ -72,11 +71,13 @@ header nav {
   /*letter-spacing: 0.1em;*/
 }
 
-/*#yield {
-  margin: 0;
-  width: 100%;
+header, footer {
+    font-family: 'Mukta', sans-serif;
+}
 
-}*/
+body {
+  font-family: 'Open Sans', sans-serif;
+}
 .homepage_banner_text{
   padding-top: 5em;
   padding-bottom: 5em;
@@ -89,15 +90,14 @@ header nav {
 }
 
 footer {
-  /*padding: 0px 5px;*/
+  margin-top: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
   right: 0;
   bottom: 0;
   left: 0;
   background-color: black;
   text-align: center;
   color: white;
-  line-height: 1em;
-  /*margin: 1px;*/
-  position: relative;
 
 }
