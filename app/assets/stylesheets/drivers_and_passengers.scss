@@ -65,7 +65,7 @@ a:hover {
 }
 
 
-.edit_delete li, .new_trip {
+.edit_delete li, .new_trip_link {
   padding: .5em;
   background-color: darkgrey;
   border: black 1px solid;
@@ -74,7 +74,7 @@ a:hover {
   width: 10%;
 }
 
-.new_trip {
+.new_trip_link {
   // why is this going to the left?
 }
 .personal_data {

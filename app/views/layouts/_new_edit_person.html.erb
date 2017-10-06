@@ -1,0 +1,17 @@
+<ul class= "form">
+  <%= form_for person do |f| %>
+    <li>
+      <%= f.label :name, :class => "label" %>
+      <%= f.text_field :name, :class => "field" %>
+    </li>
+
+    <li>
+      <%= f.label other, :class => "label"%>
+      <%= f.text_field other, :class => "field" %>
+    </li>
+
+    <li>
+      <%= f.submit %>
+    </li>
+  <% end %>
+</ul>

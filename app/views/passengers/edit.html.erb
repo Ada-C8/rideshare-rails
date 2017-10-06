@@ -2,11 +2,4 @@
 
 <%= render partial: 'layouts/error_messages', locals: { model: @passenger } %>
 
-<%= form_for  @passenger do |f| %>
-
-  <%= f.label :name, :class => 'label' %>
-  <%= f.text_field :name, :class => 'field' %>
-  <%= f.label :phone_num, :class => 'label' %>
-  <%= f.text_field :phone_num, :class => 'field' %>
-  <%= f.submit %>
-<% end %>
+<%= render partial: 'layouts/new_edit_person', locals: { person: @passenger, other: :phone_num } %>
