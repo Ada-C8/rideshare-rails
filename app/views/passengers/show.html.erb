@@ -1,7 +1,7 @@
 <%= render partial: 'layouts/style' %>
 <%= render partial: 'layouts/nav' %>
 
-<section>
+<section class="cool-list heebo-list margin-left show">
 <h2>Passenger: <%= @passenger.name %> </h2>
 <p>Phone Number: <%= @passenger.phone_num %> </p>
 <p>Total Trips: <%= @passenger.trips.count %> </p>
@@ -27,4 +27,3 @@ Delete
       <% end %>
     </li>
   </ul>
-</h2>
