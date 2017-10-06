@@ -1,8 +1,8 @@
 <h1>Passengers#show</h1>
 
 <%= link_to("Edit Passenger", edit_passenger_path(@passenger.id)) %>
-<%= link_to("Delete Passenger", delete_passenger_path(@passenger.id), method: :delete, data: {confirm: "Noooooooo! I'm pregnant! It's your baby!"}) %>
-<%= link_to("New Trip", create_trip_path(:passenger => @passenger), method: :post) %>
+<%= link_to("Delete Passenger", passenger_path(@passenger.id), method: :delete, data: {confirm: "Noooooooo! I'm pregnant! It's your baby!"}) %>
+<%= link_to("New Trip", trip_path(:passenger => @passenger), method: :post) %>
 
 <h3>Passenger Total Charged:</h3>
 <p><%= (@passenger.total_charged / 100).round(2) %></p>
