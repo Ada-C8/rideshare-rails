@@ -7,10 +7,12 @@
   <ul class="row">
 
   <li class="profile-pic">
-    <img src="http://placekitten.com/150/150" alt: "Driver images" />
-    <span class="name">Passenger ID <%= passenger.id %></span>
-    <span><%= link_to passenger.name, passenger_path(passenger.id), alt: "link to individual passenger page" %></span>
-    <span class="vin"><%= passenger.phone_number %></span>
+    <%= link_to passenger_path(passenger.id) do %>
+    <img src="http://placekitten.com/150/150" alt: "Passenger images" />
+    <p class="name">Passenger ID <%= passenger.id %></p>
+    <p><%= passenger.name%></p>
+    <p class="vin"><%= passenger.phone_number %></p>
+    <% end %>
   </li>
 </ul>
 

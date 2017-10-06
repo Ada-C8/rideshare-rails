@@ -3,39 +3,16 @@
 
   <% @drivers.each do |driver| %>
   <ul class="row">
-
   <li class="profile-pic">
+    <%= link_to driver_path(driver.id) do %>
     <img src="http://placekitten.com/150/150" alt: "Driver images" />
-    <span class="name">Captain ID <%= driver.id %></span>
-    <span><%= link_to driver.name, driver_path(driver.id), alt: "Link to individual driver pages."%></span>
-    <span class="vin"><%= driver.vin %></span>
+    <p class="name">Captain ID <%= driver.id %></p>
+    <p><%= driver.name%></p>
+    <p class="vin"><%= driver.vin %></p>
+    <% end %>
   </li>
 </ul>
 
   <% end %>
 
 </section>
-
-<!--
-<table>
-  <div class="table-header">
-    <tr>
-    <th>Driver ID</th>
-    <th>Driver Name</th>
-    <th>Yacht Number</th>
-  </tr>
-</div>
-
-<div class="table-content">
-  <% @drivers.each do |driver| %>
-  <tbody>
-    <tr>
-    <td><%= driver.id %></td>
-    <td><%= link_to driver.name, driver_path(driver.id), alt: "Link to individual driver pages."%></td>
-    <td><%= driver.vin %></td>
-  </tr>
-    <% end %>
-  </tbody>
-
-  </div>
-</table> -->
