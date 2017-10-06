@@ -1,11 +1,3 @@
 <h2>Edit Driver</h2>
 
-<%= form_for @driver do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.label :vin %>
-  <%= f.text_field :vin %>
-
-  <%= f.submit %>
-<% end %>
+<%= render partial: "form"%>
