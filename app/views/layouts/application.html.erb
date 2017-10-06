@@ -22,12 +22,23 @@
         <%= link_to "create new driver", new_driver_path %>
       </section>
     </nav>
+    <section class =="container">
+    <% if params[:controller] == "main_page" %>
+    <%= yield %>
+    <% else %>
     <section class="content">
+    <article class="yield">
     <% if flash[:notice] %>
     <div class="notice"><%= flash[:notice] %></div>
     <% end %>
+    </article>
     <%= yield %>
   </section>
+  <section class="cat">
+    <%= image_tag 'rail_cat.gif' %>
+  </section>
   <%= params %>
+</section>
   </body>
 </html>
+<% end %>
