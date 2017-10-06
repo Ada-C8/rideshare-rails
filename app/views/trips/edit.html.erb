@@ -9,7 +9,6 @@
   <%= f.text_field :rating %>
 
   <%= f.collection_select(:driver_id, Driver.all, :id, :name)%>
-  <!-- this is a dropdown menu with all Drivers listed -->
   <%= f.collection_select(:passenger_id, Passenger.all, :id, :name)%>
 
   <%= f.label :cost %>
