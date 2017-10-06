@@ -14,36 +14,23 @@ class TripsController < ApplicationController
   end
 
   def new
-    # **** TRIED TO ADD if params[:id]
-    # @trip = Trip.new
-    # if params[:id]
-    #   @trip.passenger_id = params[:id]
-    # end
-    # @trip.save
-    # ***********
-    #create #Is this ok?, if not, how do we get the passenger id into create
   end
 
   def edit
     @trip = Trip.find(params[:id])
   end
 
-  def driver_select
-    answer = Driver.find(rand(1..Driver.all.length)).id
-    puts "driver id #{answer}"
-    return answer
-  end
-
   def create
-    driver = driver_select
-    cost = rand(1000..5000)
-    passenger_id = params[:id]
-    #@trip.passenger_id
-    # ************ TOOK OUT PASSENGER ID??
-    trip = Trip.new(passenger_id: passenger_id, cost: cost, driver_id: driver, rating: nil, date: Date.today)
-    # ************
-    trip.save
-    redirect_to trip_path(trip.id)
+    if Driver.all == []
+      redirect_to new_trip_path
+   else
+      driver = Driver.all.shuffle[0].id
+      cost = rand(1000..5000)
+      passenger_id = params[:id]
+      trip = Trip.new(passenger_id: passenger_id, cost:   cost, driver_id: driver, rating: nil, date:   Date.today)
+      trip.save
+      redirect_to trip_path(trip.id)
+    end
   end
 
   def update
