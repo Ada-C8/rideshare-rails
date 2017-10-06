@@ -85,9 +85,10 @@ ul {
 }
 /* home */
 .home {
-  height: 73vh;
+  height: 76vh;
   width: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 .home h1 {
