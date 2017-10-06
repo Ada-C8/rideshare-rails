@@ -1,3 +1,79 @@
 // Place all the styles related to the Drivers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.wrap{
+
+}
+.indextitle {
+text-align: center;
+font-size: 3em;
+}
+
+.indexlist {
+  margin-top:100px;
+  overflow: auto;
+  text-align: center;
+  // column-count: 4;
+  list-style-position: inside;
+  list-style-type: none;
+}
+.indexlist li {
+  height: 150px;
+  width: 300px;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  border-radius: 50px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+.indexlist li:before {
+  content: "RIP";
+}
+
+.edit:hover {
+  color: red;
+}
+
+.delete:hover{
+  color: red;
+}
+
+.passenger:hover {
+  color: red;
+}
+
+.passenger {
+  text-decoration: none;
+  color: brown;
+}
+
+.edit {
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  border-radius: 10px;
+}
+
+.delete {
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  border-radius: 10px;
+}
