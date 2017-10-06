@@ -25,7 +25,7 @@ body {
      position: relative;
      display: inline-block;
      /*width: 100px;*/
-     padding: 3% 8%;
+     padding: 3% 6%;
      font-size: 20px;
  }
  .dropdown-content {
@@ -53,5 +53,9 @@ nav {
 }
 footer {
   font-family: courier;
+  color: rgb(81, 18, 84);
 
+}
+td {
+  text-align: center;
 }
