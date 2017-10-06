@@ -5,7 +5,7 @@
 <ul class="driver_passenger_list">
   <% @drivers.each do |driver| %>
   <li>
-    <div><%= image_tag("driver.png") %></div>
+    <div><%= link_to(image_tag("driver.png"), driver_path(driver.id)) %></div>
     <div><%=link_to(driver.name, driver_path(driver.id)) %></div>
   </li>
   <% end %>
