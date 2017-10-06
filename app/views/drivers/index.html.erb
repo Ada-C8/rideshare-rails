@@ -1,0 +1,22 @@
+<h1>Rideshare Drivers</h1>
+<h2><%= link_to 'New Driver', new_driver_path %></h2>
+
+<table>
+  <% @drivers.each do |driver| %>
+  <tr>
+    <td><%=link_to driver.name, driver_path(driver.id) %></td>
+    <td> Average Rating:
+      <% if driver.average_rating == nil %>
+      Not Yet Rated
+      <% else %>
+    <%= driver.average_rating %>
+  <% end %>
+</td>
+    <div class="edit_delete">
+    <td> <%= link_to 'Edit', edit_driver_path(driver.id) %></td>
+    <td> <%= link_to 'Delete', driver_path(driver.id), method: :delete,
+    data: { confirm: "Are You Sure You Want to Delete This Driver?" }  %></td>
+  </div>
+  </tr>
+  <% end %>
+</table>

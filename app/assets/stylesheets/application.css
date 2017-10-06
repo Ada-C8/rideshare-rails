@@ -1,0 +1,141 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ body {
+   font-family: Verdana;
+ }
+
+ table {
+   border-spacing: 10px;
+ }
+
+ a:link {
+   text-decoration: none;
+ }
+
+ .form-field {
+   border-radius: 10px;
+   background-color: white;
+   height: 25px;
+   margin-left: 10px;
+   width: 65%;
+ }
+
+ input {
+   font-size: 1em;
+ }
+
+ label {
+   float: left;
+   font-size: 25px;
+   margin-right: 0px;
+   padding-right: 10px;
+   text-align: right;
+   width: 30%;
+ }
+
+ .error-messages {
+   text-align: center;
+ }
+
+ .error-messages li {
+   border: 2px solid green;
+   margin: 0px;
+   padding: 0px;
+   width: 100%;
+ }
+
+ .submit {
+   border-radius: 10px;
+   font-size: 25px;
+   text-align: right;
+ }
+
+ li {
+   list-style-type: none;
+   margin: 10px;
+   margin-left: 0px;
+   padding-bottom: 10px;
+   padding-left: 10px;
+   text-align: center;
+   width: 100%;
+ }
+
+ ul {
+   text-align: center;
+   width: 75%;
+ }
+
+ /*navbar*/
+ header nav {
+   background-color: rgb(128, 183, 189);
+   height: 80px;
+   width: 100%;
+   display: flex;
+ }
+
+ /* Dropdown Button */
+ #home-button {
+   display: inline-block;
+   padding: 16px;
+   flex: 3;
+font-size: 1.5em;
+font-weight: 400;
+/*font-style: bold;*/
+ }
+ .dropbtn {
+     color: white;
+     padding: 16px;
+     font-size: 16px;
+     border: none;
+     cursor: pointer;
+     background-color: rgb(198, 146, 209);
+     border-radius: 2em;
+     margin: 10% 0;
+ }
+
+ .dropdown {
+     position: relative;
+     display: inline-block;
+     flex: 0.5;
+     justify-content: center;
+ }
+
+ .dropdown-content {
+     display: none;
+     position: absolute;
+     background-color: #f9f9f9;
+     min-width: 160px;
+     z-index: 1;
+ }
+
+ .dropdown-content a {
+     color: black;
+     padding: 12px 16px;
+     text-decoration: none;
+     display: block;
+ }
+
+ .dropdown-content a:hover {background-color: rgb(198, 146, 209) }
+
+ .dropdown:hover .dropdown-content {
+     display: block;
+ }
+
+ .dropdown:hover .dropbtn {
+     background-color: purple;
+     color: black;
+ }

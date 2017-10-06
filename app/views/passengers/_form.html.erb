@@ -1,0 +1,16 @@
+<%= form_for @passenger do |f| %>
+
+<ul>
+  <li>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-field"%>
+  </li>
+  <li>
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_num, class: "form-field"%>
+  </li>
+  <li>
+    <%= f.submit class: "submit"%>
+  </li>
+</ul>
+<% end %>

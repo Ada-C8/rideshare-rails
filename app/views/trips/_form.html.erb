@@ -1,0 +1,24 @@
+<%= form_for @trip do |f| %>
+<ul>
+  <%= f.hidden_field :passenger_id %>
+  <%= f.hidden_field :driver_id %>
+
+  <li>
+    <%=f.label :date%>
+    <%=f.date_field :date, class: "form-field" %>
+  </li>
+  <li>
+     <% if Trip.exists?(id: @trip.id)  %>
+    <%=f.label :rating %>
+    <%=f.text_field :rating, class: "form-field" %>
+    <% end %>
+  </li>
+  <li>
+    <%=f.label :cost %>
+    <%=f.text_field :cost, class: "form-field" %>
+  </li>
+  <li><%=f.submit class: "submit"%></li>
+
+
+</ul>
+<% end %>

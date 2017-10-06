@@ -1,0 +1,87 @@
+<h1>Passenger Information</h1>
+
+<h2><%= @passenger.name %></h2>
+
+<p>
+  <strong>Phone Number:</strong> <%= @passenger.phone_num %>
+</p>
+
+<p>
+  <strong>Total Amount Charged: </strong><%= @passenger.charged%>
+</p>
+
+<p>
+  <%= link_to "Edit Passenger", edit_passenger_path(@passenger.id) %>
+  <%= link_to "Delete Passenger", passenger_path(@passenger.id), method: :delete, data: {:confirm => "Are you sure you want to delete this driver?"} %>
+</p>
+
+<h3 class="details-table-header"> Passenger Trips </h3>
+<p>
+<%= link_to 'Add trip', new_passenger_trip_path(:passenger_id => @passenger.id) %>
+</p>
+<table class="details-table">
+   <tr>
+     <th>
+       ID
+     </th>
+     <th>
+       Date
+     </th>
+     <th>
+       Passenger
+     </th>
+     <th>
+       Driver
+     </th>
+     <th>
+       Price
+     </th>
+     <th>
+       Rating
+     </th>
+     <th>
+       Edit
+     </th>
+     <th>
+       Delete
+     </th>
+   </tr>
+     <% @passenger.trips.each do |trip| %>
+     <tr>
+     <td>
+       <%= link_to trip.id, trip_path(trip.id) %>
+     </td>
+     <td>
+       <%= trip.date %>
+     </td>
+     <td>
+       <%= link_to trip.passenger.name, passenger_path(trip.passenger_id) %>
+     </td>
+     <td>
+       <%= link_to trip.driver.name, driver_path(trip.driver_id) %>
+     </td>
+     <td>
+       <%= (Money.new(trip.cost, "USD")).format %>
+     </td>
+     <td>
+       <% if trip.rating == nil %>
+        <%= "Not Yet Rated" %>
+        <% else %>
+       <%= trip.rating %>
+       <%end %>
+     </td>
+     <td>
+       <%= link_to "Edit Trip", edit_trip_path(trip.id) %>
+     </td>
+     <td>
+       <%= link_to "Delete Trip", trip_path(trip.id), method: :delete, data: {:confirm => "Are you sure you want to delete this trip?"} %>
+     </td>
+   </tr>
+     <% end %>
+</table>
+
+<% if @passenger.trips.size == 0 %>
+  <p class="no-trips" >
+    <%= "No Trips Found" %>
+    </p>
+<% end %>
