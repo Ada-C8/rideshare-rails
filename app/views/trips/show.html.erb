@@ -5,3 +5,10 @@
 <h3>Date: <%=@trip.date%></h3>
 <h3>Rating: <%=@trip.rating %></h3>
 <h3>Cost: <%="$#{"%.02f" % (@trip.cost/100)}"%></h3>
+
+
+<li><%= link_to "Go to Passenger: #{@passenger.name} detail's page", passenger_path(@passenger.id)%></li>
+<li><%= link_to "Go to Driver: #{@driver.name} detail's page", passenger_path(@driver.id)%></li>
+
+<li><%= link_to "Edit Trip", edit_trip_path %></li>
+<li><%= link_to "Delete Trip", trip_path(@trip.id), method: :delete%></li>

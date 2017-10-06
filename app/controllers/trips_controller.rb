@@ -10,9 +10,20 @@ class TripsController < ApplicationController
   end
 
   def edit
+    @trip = Trip.find_by(id: params[:id].to_i)
+    unless @trip
+      redirect_to trip_path
+    end
   end
 
   def update
+    @trip = Trip.find_by(id: params[:id].to_i)
+    redirect_to trip_path unless @trip
+    if @trip.update_attributes trip_params
+      redirect_to trip_path(@trip.id)
+    else
+      render :edit
+    end
   end
 
   def new
@@ -30,6 +41,8 @@ class TripsController < ApplicationController
   end
 
   def destroy
+    Trip.find_by(id: params[:id]).destroy
+    redirect_to root_path
   end
 
   private
