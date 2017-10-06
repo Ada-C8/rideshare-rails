@@ -1,7 +1,7 @@
 <%= render partial: 'layouts/style' %>
 <%= render partial: 'layouts/nav' %>
 
-<section class="cool-list heebo-list margin-left">
+<section class="cool-list heebo-list margin-left show">
 <h2> Trip # <%= @trip.id %> </h2>
   <ul>
     <li> Date: <%= @trip.date %> </li>
@@ -12,7 +12,7 @@
   </ul>
 </section>
 
-<section class="margin-left">
+<section class="margin-left show">
   <%= link_to 'Edit Trip', edit_trip_path %>
   <%= link_to "Delete", trip_path(@trip.id), method: :delete, data: { confirm: "Are you sure you'd like to delete this trip?" } %>
 </section>
