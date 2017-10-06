@@ -23,7 +23,7 @@
 /* Emoji font links*/
 @font-face {
   font-family: "EmojiSymbols";
-  src: url('fonts/EmojiSymbols-Regular.woff') format('woff');
+  src: url('EmojiSymbols-Regular.woff') format('woff');
   text-decoration: none;
   font-style: normal;
 }
