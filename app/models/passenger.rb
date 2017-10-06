@@ -1,5 +1,5 @@
 class Passenger < ApplicationRecord
-  has_many :trips
+  has_many :trips, dependent: :destroy
 
   validates :name, presence: {message: "%{value} must be given"}
   validates :phone_num, presence: {message: "%{value} must be given"}
