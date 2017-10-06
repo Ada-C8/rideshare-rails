@@ -4,12 +4,7 @@
 
 <%= "Phone number: #{@passenger.phone_num}" %>
 
-
-<% total_cost = 0 %>
-<% @passenger.trips.each do |trip| %>
-  <% total_cost += trip.cost %>
-  <% end %>
-<%= "passenger has spent $#{total_cost/100.round(2)}" %>
+<% @passenger.total_cost %>
 
 <%= link_to "Edit", edit_passenger_path(@passenger.id) %>
 <%= button_to "Delete", passenger_path(@passenger), method: :delete, data: {confirm: "Are you sure you want to delete this passenger?"} %>
@@ -26,7 +21,7 @@
 <li>
   <%= link_to "Trip #{trip.id}", trip_path(trip.id) %>
   <%= "Driver Id: #{trip.driver_id}" %>
-  <%= "Cost of trip: #{trip.cost/100.round(2)}" %>
+  <%= "Cost of trip: $#{trip.cost/100.round(2)}" %>
   <%= "Trip rating: #{trip.rating}" %>
 </li>
 <% end %>
