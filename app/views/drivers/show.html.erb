@@ -1,2 +1,28 @@
-<h1>Drivers#show</h1>
-<p>Find me in app/views/drivers/show.html.erb</p>
+<h2>One Driver at a Time!</h2>
+
+<%= "Hi my name is #{@driver.name}!  My average rating is " %>
+
+<hr />
+<% if !@trips.empty? %>
+<% @trips.each do |trip| %>
+Trip ID: <%= trip.id %>
+<ul>
+  <li>Date: <%=trip.date%>
+  </li>
+  <li>
+    Passenger: <%= trip.passenger.name %>
+  </li>
+  <li>
+    Rating: <%= trip.rating %>
+  </li>
+  <li>
+    Cost: $<%= trip.cost %>
+  </li>
+</ul>
+<% end %>
+<% else %>
+<p>
+  This driver has not given any rides, wow.  Help a driver out, will ya?
+</p>
+
+<% end %>

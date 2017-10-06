@@ -1,2 +1,16 @@
-<h1>Drivers#index</h1>
-<p>Find me in app/views/drivers/index.html.erb</p>
+<h1>All the Drivers!</h1>
+<% @driver.each do |driver| %>
+<ul>
+<li>Driver:
+  <strong><%= link_to(driver.name, driver_path(driver.id)) %></strong>
+</li>
+<li>VIN:
+  <strong><%= driver.vin %></strong>
+</li>
+<li>
+  <%= link_to "Edit", edit_driver_path(driver.id) %>
+  <%= link_to "Delete", driver_path(driver.id) , method: :delete, data: { confirm: 'Are you sure you want to delete this driver?' }  %>
+
+</li>
+</ul>
+<% end %>
