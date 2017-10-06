@@ -36,19 +36,26 @@
 </div>
 
 <div class="right">
-  <ul class="trips-list">
+  <table class="trips-list">
     Trips
-    <%# link_to("Sort by Date", driver_path) %>
-    <%# link_to("Sort by Cost", cost_sort_path(@order)) %>
+    <tr>
+      <th>
+        Date
+      </th>
+      <th>
+        Cost
+      </th>
+    </tr>
     <% @trips.each do |trip| %>
-    <li>
-      <%= link_to("Date: #{trip.date.to_formatted_s(:long)}", trip_path(trip.id)) %>
-    </li>
-
-    <li>
-      Cost <%= number_to_currency(trip.cost) %>
-    </li>
-
+    <tr>
+      <td>
+        <%= link_to(trip.date.to_formatted_s(:long), trip_path(trip.id)) %>
+      </td>
+      <td>
+        <%= link_to(number_to_currency(trip.cost), trip_path(trip.id)) %>
+      </td>
+    </tr>
     <% end %>
-  </ul>
+  </table>
+
 </div>
