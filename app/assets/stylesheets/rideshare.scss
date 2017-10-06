@@ -42,6 +42,10 @@ h3 {
   font-weight: normal;
 }
 
+h5 {
+  margin: 0.8em 0;
+}
+
 //Nav--------------------------------------
 nav {
   background: #adead1;
@@ -80,17 +84,13 @@ nav li a {
 }
 
 /*Dropdown*/
-.menu_item:hover{
-  background: #adead1;
+.menu_item a:hover{
+  background: #c2e7da;
 }
 
 nav li:hover ul a {
   height: 40px;
   line-height: 40px;
-}
-
-nav li:hover ul a:hover {
-  background: #c2e7da;
 }
 
 nav li ul li {
@@ -104,7 +104,6 @@ nav li ul {
   display: none;
 }
 
-/*Text wrapping*/
 nav li ul li a {
   width: auto;
   min-width: 150px;
@@ -117,7 +116,6 @@ nav ul li a:hover + .hidden,
   display: block;
 }
 
-/*Show menu*/
 .show-menu {
   text-align: center;
   line-height: 40px;
@@ -229,8 +227,14 @@ max-width: 450px;
   float: right;
 }
 
+.information img {
+  float: right;
+  border-radius: 50%;
+}
+
 //Tables--------------------------------------
 table {
+  margin-top: 30px;
   width: 100%;
 }
 
@@ -290,12 +294,22 @@ footer {
     width: 100%;
   }
 
+  nav li ul li {
+    display: block;
+    float: none;
+    background: rgba(255,255,255,0);
+  }
+
   nav li {
-    background: #c2e7da;
+    background: #adead1;
   }
 
   .show-menu {
     display: block;
+  }
+
+  .information h3 {
+    font-size: 0.9em;
   }
 
   table {

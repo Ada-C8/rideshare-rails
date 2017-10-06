@@ -1,9 +1,10 @@
 <section class="information">
-<h1>Driver ID: <%= @driver.id %></h1>
+<h1>Driver ID: <%= @driver.id %><span class="edit_delete"><%= link_to "Edit", edit_driver_path(@driver.id)%> | <%= link_to "Delete", driver_path(@driver.id), method: :delete %></span></h1>
+<img src="http://via.placeholder.com/90x90">
 <h3>Name: <%= @driver.name %></h3>
 <h3>VIN: <%= @driver.vin%></h3>
-<h5>Average rating: <%= @rating%> Total Earnings: $<%= @total%></h5>
-<p><%= link_to "Edit", edit_driver_path(@driver.id)%> | <%= link_to "Delete", driver_path(@driver.id), method: :delete %></p>
+<h5>Average rating: <%= @rating%></h5>
+<h5>Total Earnings: $<%= @total%></h5>
 </section>
 
 <section>
