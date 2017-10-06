@@ -50,8 +50,24 @@ class TripsController < ApplicationController
 
   def destroy
     trip = Trip.find(params[:id])
+    passenger_id = trip.passenger.id
+    # driver_id = trip.driver.id
     trip.destroy
 
-    redirect_to passengers_path
+    redirect_to passenger_path(passenger_id)
+    # if params[:passenger_id] != nil
+    #   redirect_to passenger_path(passenger_id)
+    # else
+    #   redirect_to passenger_path(passenger_id)
+    # end
+
+    # if passenger_path(passenger.id)
+    #   redirect_to passenger_path(passenger_id)
+    # elsif driver_path(driver.id)
+    #   redirect_to driver_path(driver_id)
+    # end
+
+    # "/passengers/#{passenger_id}"
+
   end
 end

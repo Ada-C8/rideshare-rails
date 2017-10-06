@@ -9,6 +9,7 @@
   <%= @driver.total_earnings %>
 </div>
 
+<div>
   <% total = 0 %>
   <% @driver.trips.each do |trip| %>
   <% "Sub total is #{total += trip.cost}" %>
