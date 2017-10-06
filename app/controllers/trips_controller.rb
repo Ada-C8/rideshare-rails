@@ -12,7 +12,14 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params)
-    @trip.driver_id = 1
+    @drivers = Driver.all
+
+    if @drivers.length > 0
+      d =  @drivers.shuffle.first
+      @trip.driver_id = d.id
+    else
+      redirect_to root_path
+    end
 
     if @trip.save
       redirect_to passenger_path(@trip.passenger_id)
