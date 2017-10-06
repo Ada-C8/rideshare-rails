@@ -1,0 +1,18 @@
+<h1>Edit Passenger </h1>
+
+<%= render partial: 'layouts/error_messages',
+    locals: { model: @driver } %>
+
+<%= form_for @driver do |d| %>
+
+
+  <%= d.label "Name" %>
+  <%= d.text_field :name %>
+
+  <%= d.label "VIN" %>
+  <%= d.text_field :vin %>
+
+  <%= d.submit "Edit" %>
+
+
+  <% end %>

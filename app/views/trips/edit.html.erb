@@ -1,0 +1,7 @@
+<h1>Edit Rating</h1>
+
+<%= form_for @trip do |f| %>
+  <%= f.label "Rating" %>
+  <%= f.select :rating, 1..5 %>
+  <p><%= f.submit "Update Rating"%></p>
+<% end %>

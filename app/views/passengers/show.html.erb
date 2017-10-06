@@ -1,0 +1,19 @@
+<h1>Passenger Details</h1>
+
+<p><%= @passenger.name %></p>
+<p><%= @passenger.phone_num %></p>
+
+<%= link_to "Add trip", new_passenger_trip_path(@passenger) %>
+<%= link_to "Edit Passenger", edit_passenger_path %>
+<%= link_to "Delete Passenger", passenger_path(@passenger), method: :delete %>
+
+<h3> Trips </h3>
+
+<ul>
+  <%@trips.each do |trip|%>
+    <li> <strong> Trip  </strong>  <%= link_to trip.id, trip_path(trip.id)  %> </li>
+  <% end %>
+<hr>
+
+<strong>Cost</strong>: <%= @passenger.total_amount %>
+</ul>

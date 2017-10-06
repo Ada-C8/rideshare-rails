@@ -1,0 +1,16 @@
+<%= render partial: 'layouts/error_messages',
+    locals: { model: @trip } %>
+
+<%= form_for @trip do |t| %>
+  <%= t.hidden_field :passenger_id %>
+  <%= t.hidden_field :driver_id %>
+
+  <%= t.label "Date" %>
+  <%= t.date_field :date %>
+
+  <%= t.label "Cost" %>
+  <%= t.text_field :cost %>
+
+  <%= t.submit "Submit" %>
+
+  <% end %>
