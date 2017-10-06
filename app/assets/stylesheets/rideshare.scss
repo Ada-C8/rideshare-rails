@@ -11,6 +11,15 @@ body {
   background: #fcfcfc;
 }
 
+html, body {
+  height: 100%;
+}
+
+.container {
+  min-height: 100%;
+  position: relative;
+}
+
 a {
   text-decoration: none;
   color: #6290c3;
@@ -139,6 +148,10 @@ main {
   border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
+.content {
+  padding-bottom: 150px;
+}
+
 .homepage {
   text-align: center;
 }
@@ -214,6 +227,10 @@ footer {
   text-transform: uppercase;
   font-size: 0.7em;
   letter-spacing: 0.05em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 /*----------------------------------------------*/
