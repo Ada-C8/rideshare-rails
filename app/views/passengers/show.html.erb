@@ -6,9 +6,14 @@
 <p>
   <% if @needs_rating %>
     <p>Please rate your last trip:</p>
-    <%= form_tag(rate_trip_path(id: @needs_rating.id), method: :patch) do %>
+    <%= form_tag(rate_trip_path(id: @needs_rating.id), method: :patch, class: 'rating') do %>
       <%= label_tag('Rating') %>
-      <%= number_field_tag('rating', nil, min: 1, max: 5, step: 1)%>
+      <%= radio_button_tag(:rating, 1) %>
+      <%= radio_button_tag(:rating, 2) %>
+      <%= radio_button_tag(:rating, 3) %>
+      <%= radio_button_tag(:rating, 4) %>
+      <%= radio_button_tag(:rating, 5) %>
+      <%#= number_field_tag('rating', nil, min: 1, max: 5, step: 1)%>
       <%= submit_tag('Save')%>
     <% end %>
   <% else %>
