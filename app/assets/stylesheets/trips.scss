@@ -1,3 +1,24 @@
 // Place all the styles related to the trips controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  padding: 0 1.5rem;
+}
+
+header {
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+
+label {
+  display: inline-block;
+  margin-right: 1rem;
+  font-family: "Quicksand", Arial, sans-serif;
+  padding: 1rem 0;
+}
+
+#rating-label {
+  display: inline-block;
+  margin-right: 1.5rem;
+}

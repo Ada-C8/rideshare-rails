@@ -22,4 +22,13 @@ class Driver < ApplicationRecord
     earnings = trips.sum { |trip| trip.cost }
     return (earnings * 0.85)
   end
+
+  def sort_trips(criteria)
+    case criteria
+    when "date"
+      trips.order("date DESC")
+    when "cost"
+      trips.order("cost DESC")
+    end
+  end
 end

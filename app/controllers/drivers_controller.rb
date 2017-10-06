@@ -5,7 +5,8 @@ class DriversController < ApplicationController
 
   def show
     @driver = Driver.find_by(id: params[:id].to_i)
-    @trips = Trip.where(driver_id: params[:id].to_i)
+    @trips = Trip.where(driver_id: params[:id].to_i).order("date DESC")
+
   end
 
   def create
@@ -42,6 +43,18 @@ class DriversController < ApplicationController
   def new
     @driver = Driver.new
   end
+
+  # def sort_trips_date
+  #   @order == "date DESC" ? @trips.order("date ASC") : @trips.order("date DESC")
+  #
+  #   redirect_back(fallback_location: root_path)
+  # end
+  #
+  # def sort_trips_cost
+  #   @order == "date DESC" || @order == "cost ASC" ? @trips.order("cost DESC") : @trips.order("cost ASC")
+  #
+  #   redirect_back(fallback_location: root_path)
+  # end
 
   private
 
