@@ -1,5 +1,5 @@
 <h1> Rider Detail Page </h1>
-
+<p id="notice"><%= notice %></p>
 <section>
   <% if @rider %>
     <h3>NAME: <%= @rider.name %></h3>
@@ -20,7 +20,7 @@
   <%= render partial: '/partial_views/trips_list'%>
 </section>
 
-<section class = "rider-page-links">
+<section class = "page-content-links">
   <%= link_to "Edit Rider", edit_rider_path(@rider.id)%>
   <%= link_to "Delete Rider", delete_rider_path(@rider.id), method: :delete, data: {confirm: "Are you sure?"}%>
 

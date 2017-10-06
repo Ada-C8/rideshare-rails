@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RideshareRails</title>
+    <title>Rando Rail Rides Admin Page</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   </head>
 
-  <body>
-    <nav>
-      <%= link_to 'Home', root_path%>
-      <section class= 'dropdown'>
-        <button class = 'dropbtn'>
-          Drivers
-            <!-- <i class="fa fa-caret-down"></i> -->
-        </button>
-        <section class = 'dropdown-content'>
-          <%= link_to 'View All Drivers', drivers_path%>
-          <%= link_to 'Add New Driver', new_driver_path%>
+  <body <%="id = home-background" if params[:controller] == 'pages' %>>
+    <header>
+      <nav>
+        <%= link_to 'Home', root_path%>
+        <section class= 'dropdown'>
+          <button class = 'dropbtn'>
+            Drivers
+          </button>
+          <section class = 'dropdown-content'>
+            <%= link_to 'View All Drivers', drivers_path%>
+            <%= link_to 'Add New Driver', new_driver_path%>
+          </section>
         </section>
-      </section>
-      <section class= 'dropdown'>
-        <button class = 'dropbtn'>
-          Riders
-          <!-- <i class="fa fa-caret-down"></i> -->
-        </button>
-        <section class = 'dropdown-content'>
-          <%= link_to 'View All Riders', riders_path%>
-          <%= link_to 'Add New Rider', new_rider_path%>
+        <section class= 'dropdown'>
+          <button class = 'dropbtn'>
+            Riders
+          </button>
+          <section class = 'dropdown-content'>
+            <%= link_to 'View All Riders', riders_path%>
+            <%= link_to 'Add New Rider', new_rider_path%>
+          </section>
         </section>
-      </section>
 
-    </nav>
-    <%= yield %>
+      </nav>
+    </header>
+    <section class = "content-container">
+      <%= yield %>
+    </section>
+    <footer>
+
+    </footer>
   </body>
 </html>

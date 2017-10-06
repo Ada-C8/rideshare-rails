@@ -28,7 +28,12 @@ class TripsController < ApplicationController
   end
 
   def destroy
-    redirect_to trips_path if Trip.find_by(id: params[:id]).destroy
+    # redirect_to trips_path if Trip.find_by(id: params[:id]).destroy
+    if Trip.find_by(id: params[:id]).destroy
+      flash[:notice] = "Trip deleted"
+      redirect_to root_path
+      # redirect_back(fallback_location: root_path)
+    end
   end
 
   private

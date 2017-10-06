@@ -1,18 +1,18 @@
 <h1> Edit Rating </h1>
 
 <h3><%= "Trip ID #{@trip.id}" %></h3>
-  <p><%= "for #{@trip.rider.name} on #{@trip.date} with #{@trip.driver.name}" %>
+  <p><%= "Rate the trip for #{@trip.rider.name} on #{@trip.date} with driver #{@trip.driver.name}" %>
 </p>
 
 <%= form_for @trip do |f| %>
 
 <%= f.label :rating %>
 <!-- <%= f.text_field :rating, :required => true %> -->
-  <%= f.radio_button(:rating, 1, :required => true) %> 1
-  <%= f.radio_button(:rating, 2)%> 2
-  <%= f.radio_button(:rating, 3)%> 3
+  <%= f.radio_button(:rating, 5, :required => true) %> 5
   <%= f.radio_button(:rating, 4)%> 4
-  <%= f.radio_button(:rating, 5)%> 5
+  <%= f.radio_button(:rating, 3)%> 3
+  <%= f.radio_button(:rating, 2)%> 2
+  <%= f.radio_button(:rating, 1)%> 1
 
 <%= f.submit "Update Rating" %>
 <% end %>

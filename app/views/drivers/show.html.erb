@@ -1,12 +1,12 @@
 <h1> Driver Detail Page </h1>
-
+<p id="notice"><%= notice %></p>
 <section>
   <% if @driver %>
     <h3><%= "NAME: #{@driver.name}" %></h3>
     <p><%= "ID: #{@driver.id}" %></p>
     <p><%= "VIN: #{@driver.vin}" %></p>
     <% else %>
-    <h2> Driver ID does not found </h2>
+    <h2> Driver ID not found </h2>
   <% end %>
 </section>
 
@@ -25,7 +25,7 @@
   <%= render partial: '/partial_views/trips_list'%>
 </section>
 
-<section class = "driver-page-links">
+<section class = "page-content-links">
   <%= link_to "Edit Driver", edit_driver_path(@driver.id)%>
   <%= link_to "Delete Driver", delete_driver_path(@driver.id), method: :delete, data: {confirm: "Are you sure?"}%>
 </section>
