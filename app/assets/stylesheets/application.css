@@ -31,7 +31,7 @@ html, body {
 nav {
     overflow: hidden;
     background-color: #333;
-    font-family: Arial;
+    font-family: 'Righteous', cursive;
     top: 0;
 }
 
@@ -57,6 +57,7 @@ nav a {
 
 .dropdown .dropbtn {
     font-size: 16px;
+    font-family: 'Righteous', cursive;
     border: none;
     outline: none;
     color: white;
@@ -115,7 +116,6 @@ th, td {
 
 .content-container {
   max-width: 60%;
-  /*90% of viewport height*/
   max-height: 90vh;
   position: relative;
   background-color: snow;
@@ -125,6 +125,7 @@ th, td {
 
 .content-container h1, .content-container h2 {
   color: black;
+  font-family: 'Righteous', cursive;
 }
 
 #welcome-home {
@@ -147,14 +148,12 @@ body {
   background-image: url(RandoRidesStatic.png);
   background-repeat:no-repeat;
   background-size: cover;
-  box-sizing: border-box;
 }
 
-#home-background{
+#home-background {
   background-image: url(RandoRidesBackground.gif);
   background-repeat:no-repeat;
   background-size: cover;
-  background-blend-mode: soft-light;
 }
 
 #home-background h1 {

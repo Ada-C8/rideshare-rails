@@ -5,19 +5,3 @@
     <p> <%= "#{driver.id}." %> <%= link_to "#{driver.name}", driver_path(driver.id)%></p>
   <% end %>
 </section>
-<!-- <table>
-  <tr>
-    <th>
-      Driver ID
-    </th>
-    <th>
-      Driver Name
-    </th>
-  </tr>
-  <% @drivers.each do |driver| %>
-    <tr>
-      <td><%= link_to "#{driver.id}", driver_path(driver.id)%></td>
-      <td><%= driver.name%></td>
-    </tr>
-  <%end%>
-</table> -->
