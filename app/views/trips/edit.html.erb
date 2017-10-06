@@ -1,11 +1,11 @@
 <h1>Trips#edit</h1>
-<p>Find me in app/views/trips/edit.html.erb</p>
+
 
 <p>
   Edit rating for your trip:
 </p>
 
 <%= form_for @trip do |f| %>
-<%=f.select("post", "trip_rating", [1, 2, 3, 4, 5], { include_blank: true }) %>
+<%= f.select :rating, options_for_select((1..5)) %>
 <%=f.submit %>
 <% end %>
