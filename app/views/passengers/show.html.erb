@@ -1,16 +1,13 @@
 <h1><%= @passenger.name %></h1>
 
-
-
-<h3>Passenger Total Charged:</h3>
-<p><%= (@passenger.total_charged / 100).round(2) %></p>
-
 <section>
-    <p>
-    <%= @passenger.phone_num %>
-    </p>
+<h3>Passenger Total Charged:</h3>
+  <p><%= (@passenger.total_charged / 100).round(2) %></p>
+<h3>Phone Number:</h3>
+  <p><%= @passenger.phone_num %></p>
 </section>
 
+<section>
 <table>
   <thead>
     <tr>
@@ -21,8 +18,6 @@
       <th>Rating</th>
     </tr>
   </thead>
-
-
   <tbody>
     <% @passenger.trips.each do |t|  %>
     <tr>
@@ -45,9 +40,10 @@
     <% end  %>
   </tbody>
 </table>
+</section>
 
+<section class = "button">
 <%= link_to("Edit Passenger", edit_passenger_path(@passenger.id)) %>
 <%= link_to("Delete Passenger", passenger_path(@passenger.id), method: :delete, data: {confirm: "Noooooooo! I'm pregnant! It's your baby!"}) %>
-
-
 <%= link_to("New Trip", create_trip_path(:passenger => @passenger.id), method: :post) %>
+</section>
