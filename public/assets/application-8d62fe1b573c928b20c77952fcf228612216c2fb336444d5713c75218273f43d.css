@@ -1,0 +1,375 @@
+/* line 6, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.icon {
+  border-style: solid;
+  height: 220px;
+  width: 220px;
+}
+
+/* line 12, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+h1 {
+  text-align: center;
+  font-weight: lighter;
+  padding: 1rem 0 2rem 0;
+}
+
+/* ==== STYLE LAYOUT === */
+/* line 19, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.left, .right {
+  display: inline-block;
+}
+
+/* line 23, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.left {
+  min-width: 285px;
+  width: 45%;
+  vertical-align: top;
+}
+
+/* line 30, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.right {
+  width: 54%;
+}
+
+/* line 35, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.right li {
+  min-width: 250px;
+  width: 70%;
+}
+
+/* ==== LINKS TO EDIT/DELETE STYLING ==== */
+/* line 41, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.buttons {
+  padding-top: 3rem;
+}
+
+/* line 45, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.buttons li {
+  display: inline-block;
+  width: 30%;
+  height: 2.5rem;
+  text-align: center;
+}
+
+/* line 52, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.edit input, .delete input {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 2.5rem;
+  text-align: center;
+  border-style: none;
+  background-color: inherit;
+  color: inherit;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+/* line 65, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.edit:hover, .delete:hover {
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+}
+
+/* ==== TABLE STYLING ==== */
+/* line 72, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+th {
+  font-family: "Quicksand", Arial, sans-serif;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+/* line 78, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+table {
+  border-spacing: 5px;
+  margin-left: 8%;
+}
+
+/* line 83, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+table caption {
+  font-size: 1.75rem;
+}
+
+/* line 87, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+table td, table th {
+  font-size: 1.25rem;
+}
+
+/* line 91, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+td, th {
+  padding: 2px;
+  text-align: center;
+  width: 30%;
+}
+
+/* line 97, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+th a {
+  font-size: 1.5rem;
+}
+
+/* line 101, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.trip-date {
+  text-align: left;
+}
+
+/* line 114, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.unrated a:link, .unrated a:visited {
+  color: blue;
+  font-weight: bold;
+}
+/* reset */
+/* line 8, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/home.scss */
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* default fonts */
+/* line 16, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/home.scss */
+h1 {
+  font-family: "Josefin Sans", Arial, sans-serif;
+  font-size: 2.5rem;
+}
+
+/* line 21, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/home.scss */
+p, ul, li, a, table {
+  font-family: "Quicksand", Arial, sans-serif;
+}
+
+/* === links styling === */
+/* line 26, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/home.scss */
+a:link, a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+/* line 31, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/home.scss */
+li {
+  list-style: none;
+}
+
+/* ==== NAV BAR STYLING ==== */
+/* line 36, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/home.scss */
+.nav-bar {
+  display: inline-block;
+  width: 79%;
+  text-align: right;
+  vertical-align: middle;
+}
+
+/* line 43, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/home.scss */
+.nav-bar ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* line 48, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/home.scss */
+.nav-bar li {
+  display: inline-block;
+  padding: 1rem;
+}
+
+/* line 53, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/home.scss */
+.nav-bar a {
+  font-family: "Quicksand", Arial, sans-serif;
+  font-size: 1.5rem;
+}
+
+/*.nav-bar a:link, .nav-bar a:visited {
+  color: $default-color;
+  text-decoration: none;
+}*/
+/* ==== HEADER STYLING === */
+/* line 64, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/home.scss */
+.logo {
+  display: inline-block;
+  width: 20%;
+}
+
+/* line 69, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/home.scss */
+.logo a {
+  font-family: "Quicksand", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  vertical-align: middle;
+  padding-left: 1rem;
+}
+
+/* line 77, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/home.scss */
+header {
+  padding: 1rem 0;
+}
+
+/* ==== NOTICES / ERRORS STYLING */
+/* line 82, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/home.scss */
+.notice, .errors, .error {
+  display: block;
+  font-family: "Josefin Sans", Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* line 91, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/home.scss */
+.notice {
+  color: green;
+}
+
+/* line 96, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/home.scss */
+.errors, .error {
+  color: red;
+}
+
+/* prevent error field from changing display from inline-block to block (in div) */
+/* line 101, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/home.scss */
+.field_with_errors {
+  display: inline-block;
+}
+
+/* line 105, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/home.scss */
+.container {
+  text-align: center;
+}
+
+/* line 109, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/home.scss */
+.welcome-image {
+  width: 100%;
+  height: auto;
+}
+
+/* line 114, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/home.scss */
+main {
+  margin: 1rem 1.75rem;
+}
+
+/* line 118, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/home.scss */
+input {
+  margin-right: 2rem;
+}
+/* line 9, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/passengers.scss */
+.pass_buttons {
+  padding-top: 3rem;
+}
+
+/* line 13, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/passengers.scss */
+.pass_buttons li {
+  display: inline-block;
+  min-width: 30%;
+  height: 2.5rem;
+  text-align: center;
+}
+
+/* line 20, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/passengers.scss */
+.edit input, .delete input, .new input {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 2.5rem;
+  text-align: center;
+  border-style: none;
+  background-color: inherit;
+  color: inherit;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+/* line 32, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/passengers.scss */
+.edit:hover, .delete:hover, .new:hover {
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+}
+
+/* line 40, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/passengers.scss */
+.trip-date, .trip-cost, .rated {
+  text-align: center;
+}
+
+/* line 46, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/passengers.scss */
+.trip-date:hover, .trip-cost:hover, .rated:hover {
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+}
+/* line 9, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/trips.scss */
+header {
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+
+/* line 14, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/trips.scss */
+label {
+  display: inline-block;
+  margin-right: 1rem;
+  font-family: "Quicksand", Arial, sans-serif;
+  padding: 1rem 0;
+}
+
+/* line 21, /Users/Marisa/Documents/ada developers academy/week_9/rideshare-rails/app/assets/stylesheets/trips.scss */
+#rating-label {
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+
+
+*/
+
+/* ======= DRIVER/PASSENGER INDEX STYLING ======== */
+
+
+a, a:visited, a:hover, a:active {
+  color: inherit;
+}
+
+.driver_passenger_list {
+  display: inline-block;
+  margin-left: 9%;
+  margin-right: 9%;
+  padding left: 0;
+  height: 95%;
+  width: 85%;
+
+}
+
+.driver_passenger_list li {
+  float: left;
+  display: inline;
+  margin: 4% 1% 2% 1%;
+  text-align: center;
+}
+
+.driver_passenger_list li:hover {
+  background-color: yellow;
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+
+.nav li:hover{
+  background-color: yellow;
+  border-radius:50%;
+
+  /*hover size increase*/*/
+  /*-webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);*/
+
+  /*swing hover*/
+  -webkit-transform: rotateZ(-15deg);
+  -ms-transform: rotateZ(-15deg);
+  transform: rotateZ(-15deg);
+}

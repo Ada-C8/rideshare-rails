@@ -13,4 +13,5 @@
     <div><%=link_to(passenger.name, passenger_path(passenger.id)) %></div>
   </li>
   <% end %>
+  <%= will_paginate @products %>
 </ul>

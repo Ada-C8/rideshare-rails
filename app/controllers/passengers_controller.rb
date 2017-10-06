@@ -1,8 +1,9 @@
 class PassengersController < ApplicationController
   helper_method :sort_column, :sort_direction
-  
+
   def index
     @passengers= Passenger.order(:id)
+    @passengers = Passenger.all.paginate(page: params[:page], per_page: 30)
   end
 
   def show
