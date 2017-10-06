@@ -1,0 +1,78 @@
+<article class="page">
+  <h2 class="page-title">Driver Details</h2>
+
+  <section class="driv-info">
+    <h3 class="table-heading">Driver Information</h3>
+    <div>
+      <figure class="driv-portrait">
+        <img src="http://www.placecage.com/c/220/220" alt="">
+      </figure>
+      <table class="driv-deets">
+        <tr>
+          <td class="icon"><i class="fa fa-hashtag"></i></td>
+          <td class="title">ID number</td>
+          <td class="data"><%= @driver[:id] %></td>
+        </tr>
+        <tr>
+          <td class="icon"><i class="fa fa-user"></i></td>
+          <td class="title">Name</td>
+          <td class="data"><%= @driver[:name] %></td>
+        </tr>
+        <tr>
+          <td class="icon"><i class="fa fa-car"></i></td>
+          <td class="title">VIN</td>
+          <td class="data"><%= @driver[:vin] %></td>
+        </tr>
+        <tr>
+          <td class="icon"><i class="fa fa-usd"></i></td>
+          <td class="title">Total earnings</td>
+          <td class="data">$<%= @driver.total_money%></td>
+        </tr>
+        <tr>
+          <td class="icon"><i class="fa fa-star"></i></td>
+          <td class="title">Average rating</td>
+          <td class="data">
+            <%= render partial: 'layouts/star', locals: { model: @driver.average_rating } %>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="driv-actions">
+    <%= link_to edit_driver_path(@driver) do %>
+      <i class="fa fa-edit"></i> EDIT
+    <% end %>
+    <%= link_to driver_path(@driver), method: :delete, data: { confirm: 'Are you sure you want to delete this driver?'} do %>
+      <i class="fa fa-trash-o"></i> DELETE
+    <% end %>
+  </section>
+
+  <section class="driv-info">
+    <h3 class="table-heading">Passenger Trips</h3>
+    <table class="driv-trips">
+      <tr>
+        <th>Passenger ID</th>
+        <th>Date</th>
+        <th>Rating</th>
+        <th>Cost</th>
+        <th>More</th>
+      </tr>
+      <% @driver.trips.each do |trip|%>
+        <tr>
+          <td><%= trip.passenger_id%></td>
+          <td><%= trip.date%></td>
+          <td>
+            <%= render partial: 'layouts/star', locals: { model: trip.rating } %>
+          </td>
+          <td>$<%= trip.to_dollars%></td>
+          <td>
+            <%= link_to trip_path(trip[:id]) do %>
+              <i class="fa fa-search"></i> View Details
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </section>
+</article>

@@ -1,0 +1,21 @@
+<%= form_for @driver, html: {id: "driver-form"} do |f| %>
+
+  <%= content_tag :div, class: "name-wrapper" do %>
+    <%= f.label :name do %>
+      <i class="fa fa-user"></i> Name
+    <% end %>
+    <%= f.text_field :name, placeholder: hide_placeholder_text ? "" : "Name" %>
+  <% end %>
+
+  <%= content_tag :div, class: "vin-wrapper" do %>
+    <%= f.label :vin do %>
+      <i class="fa fa-car"></i> VIN
+    <% end %>
+    <%= f.text_field :vin, placeholder: hide_placeholder_text ? "" : "VIN" %>
+  <% end %>
+
+  <%= content_tag :div, class: "submit-wrapper" do %>
+    <%= f.submit button_text %>
+  <% end %>
+  
+<% end %>

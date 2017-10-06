@@ -1,0 +1,18 @@
+<article class="page">
+  <h2 class="page-title">Drivers List</h2>
+  <table class="main-list">
+    <% @drivers.each do |driver| %>
+    <tr>
+      <td>
+        <span class="emj">&#x1F4<%=rand(66..83)%>;</span>
+      </td>
+      <td>
+        <%= link_to driver_path(driver[:id]) do %>
+          <%= driver[:name] %>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+  <%= paginate @drivers, window: 2, outer_window: 2 %>
+</article>

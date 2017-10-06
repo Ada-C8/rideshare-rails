@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RideshareRails</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'favicon.ico' %>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="nav-bar">
+        <div class="logo">
+          <%= link_to root_path do %>
+            <%= image_tag 'srbeek-w.png', height: 40, alt: 'ridershare logo'%>
+          <% end %>
+        </div>
+        <div class="nav-menu">
+          <ul>
+            <li class="driver-dropdown">
+              <a href="" class="drop-title">Drivers <i class="fa fa-caret-down"></i></a>
+                <div class="driver-content">
+                  <%= link_to drivers_path do %>
+                    <i class="fa fa-list-alt"></i> List All
+                  <% end %>
+                  <%= link_to new_driver_path do %>
+                    <i class="fa fa-plus-circle"></i> Add New
+                  <% end %>
+                </div>
+            </li>
+            <li class="passenger-dropdown">
+              <a href="" class="drop-title">Passengers <i class="fa fa-caret-down"></i></a>
+                <div class="passenger-content">
+                  <%= link_to passengers_path do %>
+                    <i class="fa fa-list-alt"></i> List All
+                  <% end %>
+                  <%= link_to new_passenger_path do %>
+                    <i class="fa fa-plus-circle"></i> Add New
+                  <% end %>
+                </div>
+            </li>
+          </ul>
+        </div>
+      </h1>
+    </header>
+    <section class="content">
+      <%= yield %>
+    </section>
+    <footer>
+      <p>Copyright &copy; 2017</p>
+    </footer>
+  </body>
+</html>

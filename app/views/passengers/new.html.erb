@@ -1,0 +1,7 @@
+<article class="page">
+  <h2 class="page-title">Add a New Passenger</h2>
+
+  <%= render partial: 'layouts/errors', locals: { model: @passenger } %>
+
+  <%= render partial: "form", locals: { hide_placeholder_text: true, button_text: "ADD" }%>
+</article>

@@ -1,0 +1,41 @@
+<%
+  if @trip.id
+    form_method = :patch
+    form_action = trip_path(@trip)
+  else
+    form_method = :post
+    form_action = passenger_trips_path(passenger_id: @trip.passenger_id)
+  end
+%>
+
+<%= form_for @trip, method: form_method, url: form_action, html: {id: "trip-form"} do |f| %>
+
+  <%= content_tag :div, class: "date-wrapper" do %>
+    <%= f.label :date do %>
+      <i class="fa fa-calendar"></i> Date
+    <% end %>
+    <%= f.date_field :date, value: Date.today %>
+  <% end %>
+
+  <%= content_tag :div, class: "cost-wrapper" do %>
+    <%= f.label :cost do %>
+      <i class="fa fa-usd"></i> Cost
+    <% end %>
+    <%= f.text_field :cost %>
+  <% end %>
+
+  <% if !@trip.new_record? %>
+    <%= content_tag :div, class: "rating-wrapper" do %>
+      <%= f.label :rating, class: "tooltip" do %>
+        <i class="fa fa-star"></i> Rating <i class="fa fa-info-circle"></i>
+        <span class="tooltip-text">Ratings must be 1-5</span>
+      <% end %>
+      <%= f.text_field :rating %>
+    <% end %>
+  <% end %>
+
+  <%= content_tag :div, class: "submit-wrapper" do %>
+    <%= f.submit button_text %>
+  <% end %>
+
+<% end %>
