@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>RideshareRails</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -14,21 +14,21 @@
         <label for="show-menu" class="show-menu">Menu</label>
         <input type="checkbox" id="show-menu" role="button">
             <ul id="menu">
-            <li>
+            <li class="menu_item">
                 <%= link_to "Drivers", drivers_path %>
                 <ul class="hidden">
-                    <li><%= link_to "Add Driver", new_driver_path %></li>
+                    <li class="menu_item"><%= link_to "Add Driver", new_driver_path %></li>
                 </ul>
             </li>
-            <li>
+            <li class="menu_item">
                 <%= link_to "Passengers", passengers_path %>
                 <ul class="hidden">
-                    <li><%= link_to "Add Passenger", new_passenger_path %></li>
+                    <li class="menu_item"><%= link_to "Add Passenger", new_passenger_path %></li>
                 </ul>
             </li>
         </ul>
     </nav>
-    
+
     <header>
       <h2><%= link_to "Tandemshare", root_path %></h2>
     </header>
