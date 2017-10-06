@@ -1,6 +1,8 @@
 <article class="page">
   <h2 class="page-title">Passengers List</h2>
   <table class="main-list">
+    <%= paginate @passengers %>
+    <br/>
     <% @passengers.each do |passenger|  %>
     <tr>
       <td>

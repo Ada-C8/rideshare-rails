@@ -1,5 +1,6 @@
 <article class="page">
   <h2 class="page-title">Drivers List</h2>
+  <%= paginate @drivers %>
   <table class="main-list">
     <% @drivers.each do |driver| %>
     <tr>

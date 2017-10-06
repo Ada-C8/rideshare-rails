@@ -4,6 +4,8 @@ class Driver < ApplicationRecord
   validates :name, presence: { message: "Name cannot be blank!"}
   validates :vin, presence: { message: "VIN cannot be blank!"}
 
+  paginates_per 10
+
   def total_money
     total = super.to_f
     total = total - (total * 0.15)
