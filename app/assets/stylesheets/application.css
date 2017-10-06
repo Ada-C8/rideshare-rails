@@ -158,8 +158,23 @@ span.rating {
 /*  SHOW  */
 /**********/
 
-.trip-list li a {
+.trip-list li {
+  background-color: white;
+  border-radius: 1rem;
+  display: block;
+}
 
+.trip-list li div {
+  display: inline-block;
+  width: 32%;
+}
+
+.trip-list .date {
+  text-align: center;
+}
+
+.trip-list .rating {
+  text-align: right;
 }
 
 /***********/
