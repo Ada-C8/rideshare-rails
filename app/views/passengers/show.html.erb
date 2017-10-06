@@ -5,7 +5,7 @@
     <h3 class="table-heading">Passenger Information</h3>
     <div>
       <figure class="pass-portrait">
-        <img src="http://www.placecage.com/c/220/220" alt="">
+        <img src="http://www.placecage.com/220/220" alt="">
       </figure>
       <table class="pass-deets">
         <tr>
@@ -91,6 +91,8 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
+              <% when nil %>
+                <i class="fa fa-question"></i>
               <% end %>
             </span>
           </td>

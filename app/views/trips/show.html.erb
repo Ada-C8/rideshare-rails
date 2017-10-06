@@ -1,18 +1,97 @@
-<h3>TRIPS DETAILS</h3>
-<br />
-<ul>
-  <li>Trip ID: <%= @trip[:id]%></li>
-  <li>Driver ID: <%= @trip[:driver_id]%></li>
-  <li>Passenger ID: <%= @trip[:passenger_id]%></li>
-  <li>Trip Date: <%= @trip[:date]%></li>
-  <li>Rating: <%= @trip[:rating]%></li>
-  <li>Cost: $<%= @trip.to_dollars%></li>
-</ul>
-<br />
-<h3>TRIP LINKS</h3>
-<p><%= link_to 'DRIVER DETAILS', driver_path(@trip[:driver_id])%></p>
-<p>PASSENGER DETAILS</p>
-<br />
-<h3>TRIP ACTIONS</h3>
-<p><%= link_to 'EDIT', edit_trip_path%></p>
-<p><%= link_to 'DELETE', trip_path(@trip), method: :delete, data: { confirm: 'Are you sure you want to delete this trip?'} %></p>
+<article class="page">
+  <h2 class="page-title">Trip Details</h2>
+
+  <section class="trip-info">
+    <h3 class="table-heading">Trip Information</h3>
+    <div>
+      <figure class="trip-portrait">
+        <img src="http://www.map2pic.com/css/1.png" alt="">
+      </figure>
+      <table class="trip-deets">
+        <tr>
+          <td class="icon"><i class="fa fa-hashtag"></i></td>
+          <td class="title">ID number</td>
+          <td class="data"><%= @trip[:id] %></td>
+        </tr>
+        <tr>
+          <td class="icon"><i class="fa fa-car"></i></td>
+          <td class="title">Driver ID</td>
+          <td class="data"><%= @trip[:driver_id] %></td>
+        </tr>
+        <tr>
+          <td class="icon"><i class="fa fa-user"></i></td>
+          <td class="title">Passenger ID</td>
+          <td class="data"><%= @trip[:passenger_id] %></td>
+        </tr>
+        <tr>
+          <td class="icon"><i class="fa fa-calendar"></i></td>
+          <td class="title">Date</td>
+          <td class="data"><%= @trip[:date] %></td>
+        </tr>
+        <tr>
+          <td class="icon"><i class="fa fa-star"></i></td>
+          <td class="title">Rating</td>
+          <td class="data">
+            <span class="stars">
+              <% case @trip[:rating]
+              when 1 %>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+              <% when 2 %>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+              <% when 3 %>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+              <% when 4 %>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+              <% when 5 %>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              <% when nil %>
+                <i class="fa fa-question"></i>
+              <% end %>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon"><i class="fa fa-usd"></i></td>
+          <td class="title">Cost</td>
+          <td class="data">$<%= @trip.to_dollars%></td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="trip-actions">
+    <%= link_to edit_trip_path(@trip) do %>
+      <i class="fa fa-edit"></i> EDIT
+    <% end %>
+    <%= link_to trip_path(@trip), method: :delete, data: { confirm: 'Are you sure you want to delete this trip?'} do %>
+      <i class="fa fa-trash-o"></i> DELETE
+    <% end %>
+    <%= link_to driver_path(@trip[:driver_id]) do %>
+      <i class="fa fa-car"></i> DRIVER DETAILS
+    <% end %>
+    <%= link_to passenger_path(@trip[:passenger_id]) do %>
+      <i class="fa fa-user"></i> PASSENGER DETAILS
+    <% end %>
+  </section>
+
+</article>

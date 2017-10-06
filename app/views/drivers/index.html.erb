@@ -1,19 +1,17 @@
-<h2>DRIVERS</h2>
-<table>
-  <% @drivers.each do |driver|  %>
-  <tr>
-    <!-- <td><%= driver[:id] %></td> -->
-    <!-- Add emoji icon here -->
-    <td>
-      Emoji
-    </td>
-    <td>
-      <%= link_to driver_path(driver[:id]) do %>
-        <%= driver[:name] %>
-      <% end %>
-    </td>
-
-    <!-- <td><%= driver[:vin] %></td> -->
-  </tr>
-  <% end  %>
-</table>
+<article class="page">
+  <h2 class="page-title">Drivers List</h2>
+  <table class="main-list">
+    <% @drivers.each do |driver|  %>
+    <tr>
+      <td>
+        <span class="emj">&#x1F4<%=rand(66..83)%>;</span>
+      </td>
+      <td>
+        <%= link_to driver_path(driver[:id]) do %>
+          <%= driver[:name] %>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</article>
