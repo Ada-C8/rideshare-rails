@@ -15,8 +15,8 @@ class TripsController < ApplicationController
 
   def new
     @trip = Trip.new
-    if params[:id]
-      @trip.passenger_id = params[:id]
+    if params[:passenger_id]
+      @trip.passenger_id = params[:passenger_id]
     end
     @trip.driver_id = Driver.where(available: true).sample.id
     @trip.date = Date.today
