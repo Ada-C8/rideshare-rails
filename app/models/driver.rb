@@ -53,7 +53,7 @@ class Driver < ApplicationRecord
     return !trips.any?{|trip| trip.date.to_s == date.to_s}
   end
 
-  def trips_by_rating
-    return trips.sort_by{|trip| -trip.rating}
+  def trips_by_date
+    return trips.order(:date).reverse
   end
 end
