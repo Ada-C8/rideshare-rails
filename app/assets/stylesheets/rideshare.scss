@@ -36,6 +36,16 @@ h1 {
   color: #6290c3;
 }
 
+h3 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+h5 {
+  margin: 0.8em 0;
+}
+
 //Nav--------------------------------------
 nav {
   background: #adead1;
@@ -74,17 +84,13 @@ nav li a {
 }
 
 /*Dropdown*/
-.menu_item:hover{
-  background: #adead1;
+.menu_item a:hover{
+  background: #c2e7da;
 }
 
 nav li:hover ul a {
   height: 40px;
   line-height: 40px;
-}
-
-nav li:hover ul a:hover {
-  background: #c2e7da;
 }
 
 nav li ul li {
@@ -98,7 +104,6 @@ nav li ul {
   display: none;
 }
 
-/*Text wrapping*/
 nav li ul li a {
   width: auto;
   min-width: 150px;
@@ -111,7 +116,6 @@ nav ul li a:hover + .hidden,
   display: block;
 }
 
-/*Show menu*/
 .show-menu {
   text-align: center;
   line-height: 40px;
@@ -194,8 +198,43 @@ main {
   vertical-align: middle;
 }
 
+//Forms driver & passenger--------------------
+.user_forms input, .user_forms label{
+margin: 0 auto 5px;
+display: block;
+width: 80%;
+max-width: 450px;
+}
+
+.user_forms input {
+  border-width: 0;
+}
+
+.user_forms label {
+  font-size: 0.8em;
+}
+
+.user_forms input[type="submit"] {
+  margin-top: 20px;
+  border-radius: 5px;
+  color: white;
+  background: #6290c3;
+  width: 150px;
+}
+
+//Show driver, passenger & trips--------------
+.edit_delete{
+  float: right;
+}
+
+.information img {
+  float: right;
+  border-radius: 50%;
+}
+
 //Tables--------------------------------------
 table {
+  margin-top: 30px;
   width: 100%;
 }
 
@@ -218,7 +257,6 @@ tr:nth-child(odd) {
 //Footer--------------------------------------
 footer {
   border-top: 0.3px solid rgba(0,0,0,0.05);
-  background: rgba(239,244,242,0.8);
   background: linear-gradient(-150deg, rgba(239,244,242,1), rgba(239,244,242,0.4));
   margin-top: 50px;
   padding: 50px 0;
@@ -233,7 +271,7 @@ footer {
   right: 0;
 }
 
-/*----------------------------------------------*/
+/*----------------------------------------------------*/
 
 @media screen and (max-width: 500px) {
   /*Dropdown displayed*/
@@ -256,12 +294,22 @@ footer {
     width: 100%;
   }
 
+  nav li ul li {
+    display: block;
+    float: none;
+    background: rgba(255,255,255,0);
+  }
+
   nav li {
-    background: #c2e7da;
+    background: #adead1;
   }
 
   .show-menu {
     display: block;
+  }
+
+  .information h3 {
+    font-size: 0.9em;
   }
 
   table {

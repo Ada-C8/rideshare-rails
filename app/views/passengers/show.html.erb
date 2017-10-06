@@ -1,8 +1,8 @@
 <section class="information">
-<h1>Passenger ID: <%= @passenger.id %></h1>
+<h1>Passenger ID: <%= @passenger.id %> <span class="edit_delete"><%= link_to "Edit", edit_passenger_path(@passenger.id)%> | <%= link_to "Delete", passenger_path(@passenger.id), method: :delete %></span></h1>
+<img src="http://via.placeholder.com/90x90">
 <h3>Passenger Name: <%= @passenger.name %></h3>
 <h3>Phone: <%= @passenger.phone_num %></h3>
-<p><%= link_to "Edit", edit_passenger_path(@passenger.id)%> | <%= link_to "Delete", passenger_path(@passenger.id), method: :delete %></p>
 <p>
   <% if @needs_rating %>
     <p>Please rate your last trip:</p>
