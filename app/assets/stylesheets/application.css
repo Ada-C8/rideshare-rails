@@ -39,3 +39,20 @@ body {
  .dropdown:hover .dropdown-content {
      display: block;
  }
+
+
+ /*     Passenger and Driver Indexes    */
+ol {
+  width: 40em;
+
+}
+
+li {
+  float: left;
+  width: 13em;
+
+}
+
+a {
+  text-decoration: none;
+}
