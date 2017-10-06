@@ -4,17 +4,16 @@
 <p><%= @driver.name %></p>
 <p><%= @driver.vin %> </p>
 
-<h3> Trip details</h3>
 
+<%= link_to "Edit Driver", edit_driver_path %>
+<%= link_to "Delete Driver", driver_path(@driver), method: :delete, data: { confirm: "Are you sure you want to delete?" } %>
 
-<p><%= link_to "Edit Driver", edit_driver_path %> </p>
-<p><%= link_to "Delete Driver", driver_path(@driver), method: :delete, data: { confirm: "Are you sure you want to delete?" } %> </p>
-
+<h3> Trips</h3>
 <ol>
   <%@trips.each do |trip|%>
-  <li><%=  link_to trip.date, trip_path(trip.id)  %>
+  <li>  <%=  link_to trip.date, trip_path(trip.id)  %> </li>
   <% end %>
-
-  <p> total earnings: <%= @driver.total_amount %></p>
-  <p> average rating: <%= @driver.average_rating %></p>
+<hr>
+  <p> <strong>Total earnings</strong>: <%= @driver.total_amount %></p>
+  <p> <strong>Average rating</strong>: <%= @driver.average_rating %></p>
 </ol>

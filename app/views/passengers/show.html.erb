@@ -13,9 +13,9 @@
 <ul>
   <%@trips.each do |trip|%>
 
-  <li>  <%= link_to trip.id, trip_path(trip.id)  %> </li>
+  <li> <strong> Trip  </strong>  <%= link_to trip.id, trip_path(trip.id)  %> </li>
 
   <% end %>
-
-  cost: <%= @passenger.total_amount %>
+<hr>
+<strong>Cost</strong>: <%= @passenger.total_amount %>
 </ul>
