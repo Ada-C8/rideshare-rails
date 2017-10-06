@@ -6,8 +6,7 @@
   }
 
   section {
-    margin-left: 20px;
-    height: 125px;
+    margin-left: 10px;
   }
 
   ul {
@@ -19,12 +18,12 @@
   }
 
   li {
-    padding: 10px;
+    // padding: 10px;
   }
 }
 
 .link_to-style {
-  li {
+  a {
    display: block;
    text-decoration: none;
    color:black;
@@ -32,16 +31,16 @@
    transition:all 0.5s ease;
   }
 
-  li:hover {
+  a:hover {
     background: #c9c9c9;
     cursor: default;
   }
 
-  li span {
+  a span {
     display: none;
   }
 
-  li:hover span {
+  a:hover span {
     font-size: 50px;
     display: block;
     width: 32px;
@@ -56,8 +55,8 @@ nav {
   }
 
   a {
-    float: left;
-    display: block;
+    justify-content: left;
+    display: inline;
     color: #f2f2f2;
     text-align: center;
     padding: 16px;
