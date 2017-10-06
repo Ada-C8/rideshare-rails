@@ -83,14 +83,23 @@ tr:hover {
 
 .trip-history {
   display: flex;
-  padding-top: 10px;
+  padding-top: 30px;
   padding-bottom: 10px;
   justify-content: center;
+  color: purple;
 }
 
 .stats-summary {
+  padding-top: 10px;
   display: flex;
   justify-content: center;
+  flex-direction: row;
+}
+
+.stat {
+  // display: inline-flex;
+  flex-wrap: nowrap;
+  padding-left: 30px;
 }
 
 

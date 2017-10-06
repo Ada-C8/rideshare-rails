@@ -12,13 +12,25 @@
   </div>
 </section>
 
+<section class="stats-summary">
+  <div class="stat">
+    <h3>Total Earnings: </h3>$<%= (@driver.total_earnings/100).round(2) %>
+  </div>
+  <div class="stat">
+    <h3>Average Rating: </h3><%= @driver.ave_rating %>
+  </div>
+</section>
+
 <%if @driver.trips.empty?%>
   <section class="no-trips">
     <p> This driver has not yet given any rides.</p>
   </section>
 <%else%>
   <section>
-    <h3>Trip History:</h3>
+    <div class="trip-history">
+      <h2>Trip History:</h2>
+    </div>
+    <section class="trip-history-container">
     <table>
       <thead>
         <tr>
@@ -46,20 +58,11 @@
 
       </tbody>
     </table>
+    </section>
   </section>
 <% end %>
 
-<section class="stats-summary">
-  <section>
-    <h3>Total Earnings:</h3>
-    <%= (@driver.total_earnings/100).round(2) %>
-  </section>
 
-  <section>
-    <h3>Average Rating:</h3>
-    <%= @driver.ave_rating %>
-  </section>
-</section>
 
 <!-- <footer class="add-page-footer">
   <h3>&copy; 2017</h3>
