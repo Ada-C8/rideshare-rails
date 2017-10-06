@@ -1,36 +1,22 @@
 <h1> Driver Details </h1>
 <h2><%= @driver.name %></h2>
+<p>
+  <%= link_to "Edit Driver", edit_driver_path(@driver.id) %>
+  <%= link_to "Delete Driver", driver_path(@driver.id), method: :delete, data: {:confirm => "Are you sure you want to delete this driver?"} %>
+</p>
+<p>
+  <strong>
+    Total Earnings:
+  </strong>
+  <%= @driver.total_earnings %>
+</p>
+<p>
+  <strong>
+  Average Rating:
+  </strong>
+  <%= @driver.average_rating %>
+</p>
 
-<ul>
-  <li>
-    Total Earnings: <%= @driver.total_earnings %>
-  </li>
-  <li>
-    Average Rating: <%= @driver.average_rating %>
-  </li>
-  <li>
-    Trips (Click on trip name for details):
-  </li>
-  <ul>
-    <% i = 1 %>
-    <% @driver.trips.each do |trip| %>
-    <li>
-      <%=link_to "Trip #{i}:", trip_path(trip.id) %>
-      Date: <%= trip.date %>,
-      Rating: <%= trip.rating %>,
-      Cost: <%= (Money.new(trip.cost, "USD")).format %>,
-      <% i += 1%>
-    </li>
-    <% end %>
-  </ul>
-  <li>
-    <%= link_to "Edit Driver", edit_driver_path(@driver.id) %>
-  </li>
-  <li>
-    <%= link_to "Delete Driver", driver_path(@driver.id), method: :delete, data: {:confirm => "Are you sure you want to delete this driver?"} %>
-  </li>
-
-</ul>
 <h3> Trip Details </h3>
 <table>
    <tr>
@@ -77,10 +63,14 @@
        <%= (Money.new(trip.cost, "USD")).format %>
      </td>
      <td>
+       <% if trip.rating == nil %>
+        <%= "Not Yet Rated" %>
+        <% else %>
        <%= trip.rating %>
+       <%end %>
      </td>
      <td>
-       <%=link_to "Edit Trip", trip_path(trip.id) %>
+       <%= link_to "Edit Trip", edit_trip_path(trip.id) %>
      </td>
      <td>
        <%= link_to "Delete Trip", trip_path(trip.id), method: :delete, data: {:confirm => "Are you sure you want to delete this trip?"} %>
@@ -88,3 +78,19 @@
    </tr>
      <% end %>
 </table>
+
+
+
+
+<ul>
+  <% i = 1 %>
+  <% @driver.trips.each do |trip| %>
+  <li>
+    <%=link_to "Trip #{i}:", trip_path(trip.id) %>
+    Date: <%= trip.date %>,
+    Rating: <%= trip.rating %>,
+    Cost: <%= (Money.new(trip.cost, "USD")).format %>,
+    <% i += 1%>
+  </li>
+  <% end %>
+</ul>
