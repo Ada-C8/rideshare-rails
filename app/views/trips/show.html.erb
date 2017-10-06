@@ -19,4 +19,7 @@
   <% end %>
 </p>
 
-<%= link_to "Delete", "#{@trip_show_route}/#{params[:id]}", method: :delete %>
+
+<%= link_to "Delete", "#{@trip_path}/#{params[:id]}", method: :delete %>
+
+<p><%= link_to("Edit Trip Rating", "#{@trip_path}/#{@trip.id}/edit")%></p>
