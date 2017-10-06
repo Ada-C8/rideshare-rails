@@ -6,18 +6,24 @@ class Driver < ApplicationRecord
   def total_earnings
     total = 0
     trips.each do |t|
-      total += t.cost
+        total += t.cost
     end
     return (total * 0.85)
   end
 
   def ave_rating
     total = 0
+    nil_counter = 0
     trips.each do |t|
-      total += t.rating
+      if t.rating != nil
+        total += t.rating
+      else
+        nil_counter += 1
+      end
     end
 
-    average = (total / trips.count)
+    denominator = (trips.count) - (nil_counter)
+    average = total / denominator
 
     return average.round(1)
   end
