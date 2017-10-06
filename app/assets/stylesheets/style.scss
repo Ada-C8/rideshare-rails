@@ -16,7 +16,7 @@ body {
   font-size: 75px;
   text-align: center;
   font-family: 'Righteous', cursive;
-  margin-left: -15%;
+  margin-left: -25%;
 
 }
 
@@ -25,12 +25,14 @@ body {
   // justify-content: center;
   position: absolute;
   top: 25%;
-  margin-right: 35%;
+  margin-right: 25%;
 }
 
 .homepage-text {
   left: 30%;
   position: relative;
+  line-height: 1.7em;
+  font-size: 20pt;
 }
 
 .homepage-text h3 {
