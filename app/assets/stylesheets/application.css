@@ -12,7 +12,6 @@ background-attachment: fixed;
 
 html {
   height: 100%;
-
 }
 
 ul, li{
@@ -119,17 +118,15 @@ a {
 }
 
 /*footer for all pages */
-footer {
+/*footer {
   font-size: 1em;
   width:100%;
-  height:44px;
-  padding-top:20px;
   background:transparent;
   position: fixed;
   bottom:0;
   text-align: center;
   color: white;
-}
+}*/
 
 /*different background for homepage only*/
 .homepage {
@@ -199,8 +196,9 @@ footer {
 
 .next {
   position: absolute;
-  text-align: center;
+  align-items: center;
   opacity: 0;
+  padding-left: 3.5em;
   animation-name: fadeInOut;
   animation-delay: 4s;
   animation-duration: 4s;
