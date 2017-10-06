@@ -2,8 +2,9 @@
   <header class="style">
     <h1>Edit Passenger: <%= @passenger.name %></h1>
   </header>
-  <section>
-    <%= render partial: "form", locals: { button_text: "Make Passenger Changes" } %>
+  <section class="detail-wrapper">
+    <%= render partial: "pass-error" %>
+    <%= render partial: "pass-form", locals: { button_text: "Make Passenger Changes" } %>
     <%# See _form.html.erb under passengers views for partial %>
   </section>
 </article>

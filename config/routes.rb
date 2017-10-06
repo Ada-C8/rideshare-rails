@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  # get '/passengers'
   # root 'main#index'
-
   get '/', to: 'main#index', as: 'root'
 
   ###### DRIVERS ######
   # # VERB    PATH    # CONTROLLERACTION   PREFIX
   # get "/drivers", to: "drivers#index", as: "drivers" YES
-  #
+
   # get "/drivers/new", to: "drivers#new", as: "new_driver" YES
   # post "/drivers", to: "drivers#create" YES
   #
@@ -33,8 +31,8 @@ Rails.application.routes.draw do
   # patch "/passengers/:id", to: "passengers#update"
   #
   # delete "/passenger/:id", to: "passengers#destroy"
-  get "/passengers/:id/trips/new", to: "trips#new", as: "new_passenger_trip"
 
+  get "/passengers/:id/trips/new", to: "trips#new", as: "new_passenger_trip"
   post "/passengers/:id/trips", to: "trips#create"
 
   resources :passengers
@@ -50,6 +48,6 @@ Rails.application.routes.draw do
   # get "/trip/:id/edit", to: "trips#edit", as: "edit_trip" YES
   # patch "/trips/:id", to: "trips#update" YES
   #
-  # delete "/trip/:id", to: "trips#destroy" NO?
-   resources :trips, except: :index  # we don't use index in out trip
+  # delete "/trip/:id", to: "trips#destroy" YES
+   resources :trips, except: :index  # we don't use index in our trip
 end

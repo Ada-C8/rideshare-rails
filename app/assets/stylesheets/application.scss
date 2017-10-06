@@ -14,7 +14,8 @@
 *= require_self
 */
 
-/******** STYLING CLASSES ACROSS ALL PAGES *********/
+/******** STYLING CLASSES ACROSS ALL CONTROLLERS *********/
+
 .error-color {
   color: red;
 }
@@ -29,9 +30,45 @@
   text-align: center;
 }
 
-.visited-color:visited { color: black; }
+.form-box-wrapper {
+  display: block;
+  padding: 1em;
+}
 
-/******** BACKROUND ********/
+.visited-color:visited {
+  color: black;
+}
+
+article.bg-color {
+  opacity: 0.9;
+  background-color: white;
+  padding-bottom: 5px;
+}
+
+header.style {
+  border-bottom: 1px black solid;
+  text-align: center;
+}
+
+header.style h1 {
+  margin: 0;
+  padding-top: 1em;
+}
+
+article.height {
+  height: 400px;
+}
+
+.link-styles { /* This is for all style links */
+  color: black;
+  text-decoration: none;
+}
+
+.link-styles:hover { /* This is for all hover links */
+  opacity: 0.5;
+}
+
+/******** BACKROUND FOR ENTIRE SITE ********/
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 

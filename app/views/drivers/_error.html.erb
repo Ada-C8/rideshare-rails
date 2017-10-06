@@ -1,0 +1,16 @@
+<% if @driver.errors.any? %>
+  <% @driver.errors.each do |column, message| %>
+    <h2 class="error-color align-center"><%= column.capitalize %> <%= message %></h2>
+  <% end %>
+<% end %>
+
+<!-- This is a different way to write an error
+<% if @driver.errors.messages.length > 0 %>
+  <ul>
+    <% @driver.errors.messages.each do |field, problems|%>
+      <% problems.each do |problem|%>
+        <li class="error-color align-center"><%= field.capitalize %> <%= problem %></li>
+      <%end%>
+    <%end%>
+  </ul>
+<%end%> -->

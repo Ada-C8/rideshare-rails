@@ -1,30 +1,9 @@
-<%# Look into a partial here - similar to driver index %>
 <article class="bg-color height">
   <header class="style">
     <h1>Create New Passenger</h1>
   </header>
-  <section>
-    <%= render partial: "form", locals: { button_text: "Add New Passenger" } %>
-    <%# See _form.html.erb under passengers views for partial %>
+  <section class="detail-wrapper">
+    <%= render partial: "pass-error" %>
+    <%= render partial: "pass-form", locals: { button_text: "Add New Passenger" } %>
   </section>
 </article>
-
-    <!-- <% if @passenger.errors.any? %>
-      <% @passenger.errors.each do |column, message| %>
-        <h2 class="error-color align-center"><%= column.capitalize %> <%= message %></h2>
-      <% end %>
-    <% end %>
-
-    <div class="detail-wrapper">
-      <%= form_for @passenger do |f| %>
-        <div class="form-box-wrapper">
-          <%= f.label :name %>
-          <%= f.text_field :name %>
-        </div>
-        <div class="form-box-wrapper">
-          <%= f.label "Phone Number" %>
-          <%= f.text_field :phone_num %>
-        </div>
-        <%= f.submit "Add Passenger" %>
-      <% end %>
-    </div> -->
