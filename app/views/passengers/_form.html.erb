@@ -1,5 +1,3 @@
-<h2>Partial Form</h2>
-
 <% if @passenger.errors.any? %>
   <ul class="errors">
     <% @passenger.errors.each do |column, message| %>
@@ -13,9 +11,8 @@
 <section class="nameform">
 <%= form_for @passenger do |f| %>
 <h4><%= f.label :name %></h4>
-<%= f.text_field :name %> </section>
-<section class="phoneform">
-<h4><%= f.label :phone_num, 'Phone Number' %></h4>
+<%= f.text_field :name %>
+<%= f.label :phone_num, 'Phone Number' %>
 <%= f.text_field :phone_num %>
 <%= f.submit action_name %>
 <% end %></section>

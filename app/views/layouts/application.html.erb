@@ -30,8 +30,11 @@
             <%= link_to("Add Driver", new_driver_path) %>
           </div>
         </li>
-        <li>
-          <%= link_to("Trips", trips_path)%>
+        <li class="dropdown">
+          <%= link_to("Trips", trips_path, class: "dropbtn")%>
+          <div class="dropdown-content">
+            <%= link_to("Add Trip", new_trip_path) %>
+          </div>
         </li>
       </ul>
     </nav>
