@@ -3,7 +3,7 @@
   <a name="top" id="top-of-page"></a>
 
   <nav class="flex-box-from-top">
-  <%= render partial: 'layouts/nav'%>
+    <%= render partial: 'layouts/nav'%>
   </nav>
 
   <section class="cool-list">
@@ -12,21 +12,18 @@
     </h2>
     <ul>
       <% @trips.each do |trip| %>
-      <section class="hover-style">
+        <section class="hover-style">
           <%= link_to trip_path(trip.id), class: "link_to-style" do %>
-              <li class="flex-box">
-                <p class="margin-left">
-                  <strong>ID: <%= trip.id %></strong><br>
-                  Date: <%= trip.date %><br>
-                  Driver: <%= trip.driver.name %><br>
-                  Passenger: <%= trip.passenger.name %><br>
-                  Rating: <%= trip.rating %> <br>
-                  Cost: <%= '%.2f'%(trip.cost/100) %>
-                </p>
-                <span class="heebo-font">
-                  MORE DETAILS
-                </span>
-              </li>
+            <li class="flex-box">
+              <p class="margin-left">
+                <strong>ID: <%= trip.id %></strong><br>
+                Date: <%= trip.date %><br>
+                Driver: <%= trip.driver.name %>
+              </p>
+              <span class="heebo-font">
+                MORE DETAILS
+              </span>
+            </li>
           <% end %>
         </section>
       <% end %>
