@@ -3,3 +3,4 @@
     <%= @trip.driver.name %>
     <%= "Cost of trip: #{@trip.cost/100.round(2)}" %>
     <%= "Trip rating: #{@trip.rating}" %>
+    <%= link_to "Edit rating", edit_trip_path %>

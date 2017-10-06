@@ -13,19 +13,7 @@
 </div>
 
 <div>
-  <% total_rating = 0 %>
-  <% counter = 0 %>
-    <% @driver.trips.each do |trip| %>
-    <% "Total rating is #{total_rating += trip.rating}" %>
-    <% counter += 1 %>
-    <% end %>
-
-    <% if counter == 0 %>
-    <% "No available average rating" %>
-    <% else %>
-    <% avg_rating = (total_rating / counter) %>
-      <%= "driver average rating is #{avg_rating}" %>
-      <% end %>
+  <%= @driver.avg_rating %>
           <!-- Any chance we could round up if the average is .5 or higher? -->
 </div>
 

@@ -39,7 +39,6 @@ class TripsController < ApplicationController
   def update
     @trip = Trip.find(params[:id])
     result = @trip.update({
-      cost: params[:trip][:cost],
       rating: params[:trip][:rating]
       })
       if result
