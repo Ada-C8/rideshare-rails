@@ -92,6 +92,10 @@ h2, h3 {
   margin: 5vw;
 }
 
+.list_of_people {
+  padding-left: 7vw;
+}
+
 .list_of_people ol{
   list-style: none;
 }
@@ -99,15 +103,15 @@ h2, h3 {
 .list_of_people ol li {
   display: inline-block;
   padding: 1vw;
-  margin-left: 1vw;
+
 }
 
 .list_of_people ul {
   display: inline-block;
   border: black solid 1px;
-  width: 20vw;
-  min-width: 100px;
-  max-width: 400px;
+  width: 15vw;
+  font-size: 1.2vw;
+  overflow: hidden;
 }
 
 .list_of_people a {
