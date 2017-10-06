@@ -3,6 +3,7 @@
 <p><%= @passenger.name %></p>
 <p><%= @passenger.phone_num %></p>
 
+<%= link_to "Add trip", new_trip_path %>
 <%= link_to "Edit Passenger", edit_passenger_path %>
 <%= link_to "Delete Passenger", passenger_path(@passenger), method: :delete %>
 
