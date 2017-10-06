@@ -38,5 +38,5 @@
 <% end %>
 <% end %>
 
-<!-- For some reason making this a button seems to actually change the HTTP Verb, messing everythig up--> 
-<%= link_to "Cancel", request.referer.present? ? request.referer : root_path %>
+<!-- For some reason making this a button seems to actually change the HTTP Verb, messing everythig up-->
+<%= button_to "Cancel", request.referer.present? ? request.referer : root_path, method: :get %>
