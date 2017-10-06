@@ -59,42 +59,7 @@
           <td><%= trip.driver_id%></td>
           <td><%= trip.date%></td>
           <td>
-            <span class="stars">
-              <% case trip.rating
-              when 1 %>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-              <% when 2 %>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-              <% when 3 %>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-              <% when 4 %>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-              <% when 5 %>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              <% when nil %>
-                <i class="fa fa-question"></i>
-              <% end %>
-            </span>
+            <%= render partial: 'layouts/star', locals: { model: trip.rating } %>
           </td>
           <td>$<%= trip.to_dollars%></td>
           <td>
