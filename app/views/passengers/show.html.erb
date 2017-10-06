@@ -15,7 +15,7 @@ Delete
 </section>
 
   <ul>
-    <li> Trips: <% @passenger.trips.each do |trip| %>
+    <li><% @passenger.trips.each do |trip| %>
         <ul>
           <li>
             <h4> Trip #<%= link_to trip.id, trip_path(trip.id) %> </h4>
