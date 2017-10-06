@@ -1,0 +1,19 @@
+<h1> List of All Cosmonaut Passengers! 🛰</h1>
+
+<p class="button">
+  <%= link_to "Become a New Cosmonaut Passenger today!", new_passenger_path %>
+</p>
+
+<div class="index-column">
+  <ol>
+      <% @passengers.each do |passenger| %>
+      <!-- <div class="passenger index-column"> -->
+
+          <li>
+            <strong><%= link_to passenger.name, passenger_path(passenger.id) %></strong>
+          </li>
+
+      <!-- </div> -->
+      <% end %>
+  </ol>
+</div>

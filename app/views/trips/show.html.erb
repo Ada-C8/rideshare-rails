@@ -1,0 +1,31 @@
+<h1> Individual trip detail </h1>
+<table>
+  <tr>
+    <th>Spaceship Captain ID:</th>
+    <th>Cosmonaut Passenger ID:</th>
+    <th>Date:</th>
+    <th>Rating:</th>
+    <th>Cost:</th>
+    <th>Trip ID:</th>
+  </tr>
+<tr>
+ <td><%= link_to @trip.driver_id, driver_path(@trip.driver_id) %> </td>
+
+<% if @trip.passenger_id == nil || @trip.passenger_id == 0 %>
+<td>Cosmonaut Passenger ID does not exist </td>
+<% else %>
+<td> <%= link_to @trip.passenger_id, passenger_path(@trip.passenger_id) %></td>
+<%end %>
+
+<td><%= @trip.date %></td>
+<td><%= @trip.rating %></td>
+<td><%= '%.02f' % (@trip.cost / 100) %></td>
+<td><%= @trip.id %></td>
+
+<td><%= link_to "edit", edit_trip_path %></td>
+<td><%= link_to 'delete',
+  trip_path(@trip),
+  method: :delete,
+  data: { confirm: 'Are you sure?' } %></td>
+</tr>
+</table>

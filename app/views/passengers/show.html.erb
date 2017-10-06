@@ -1,0 +1,43 @@
+<h1> Individual Cosmonaut Passenger detail </h1>
+<!-- <em><p>Params are : <%= params  %></p></em> -->
+<p>
+  <strong><%= @passenger.name %></strong>'s phone number is: <%= @passenger.phone_num %>
+</p>
+<table>
+  <tr>
+    <th>Trip Cost: </th>
+    <th>Trip Rating</th>
+    <th>Trip Date:</th>
+    <th>Spaceship Driver ID:</th>
+    <th>Edit</th>
+    <th>Details</th>
+  </tr>
+  <% total_cost = 0 %>
+  <p><% @passenger.trips.each do |trip| %></p>
+  <tr>
+    <td>$<%= Trip.total_cost(trip) %></td>
+    <% total_cost += trip.cost %>
+    <td><%= trip.rating %></td>
+    <td><%= trip.date %></td>
+    <td><%= trip.driver_id %></td>
+    <td><%= link_to "Edit", edit_trip_path(trip.id) %></td>
+    <td><%= link_to "Details", trip_path(trip.id) %></td>
+  </tr>
+  <% end %>
+</table>
+
+
+<!-- Since the model is a class the syntax to call a method is Trip.total_cost(total_cost) -->
+<%= "Total Cost: $" %><%= Trip.grand_total(total_cost) %>
+
+<!-- this was the previous code -->
+<!-- <% final_total_cost = total_cost/100%><%= "%.2f"%final_total_cost %> -->
+
+<%= link_to "Edit Passenger", edit_passenger_path(@passenger) %>
+
+<%= link_to 'Delete Passenger',
+passenger_path(:passenger_id),
+method: :delete,
+data: { confirm: 'Are you sure?' } %>
+
+<%= link_to 'Add NEW trip', new_passenger_trip_path(@passenger.id) %>

@@ -1,0 +1,13 @@
+<h1>List of All Spaceship Captains!👩🏾‍🚀 </h1>
+<p class="button" >
+  <%= link_to "Become a Spaceship Captain today!", new_driver_path %>
+</p>
+<div class="index-column">
+  <ol>
+    <% @drivers.each do |driver| %>
+    <li>
+      <strong><%= link_to driver.name, driver_path(driver.id) %></strong>
+    </li>
+    <% end %>
+  </ol>
+</div>

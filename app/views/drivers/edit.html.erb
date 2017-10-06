@@ -1,0 +1,13 @@
+<h1> Edit spaceship captain: </h1>
+<%= render partial: 'layouts/error_messages', locals: {model: @driver} %>
+
+
+<%= form_for @driver do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+<br>
+  <%= f.label :vin %>
+  <%= f.text_field :vin %>
+<br>
+  <%= f.submit %>
+<% end %>

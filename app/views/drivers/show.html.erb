@@ -1,0 +1,44 @@
+<h1> Individual spaceship captain detail</h1>
+
+<p>
+  <strong><%= @driver.name %></strong>'s Ship # is: <%= @driver.vin %>
+</p>
+<table>
+  <tr>
+    <th>Trip Earning: </th>
+    <th>Trip Rating: </th>
+    <th>Trip Date: </th>
+    <th>Trip Cosmonaut Passenger ID: </th>
+  </tr>
+
+<% average_rating = 0 %>
+<% counter = 0 %>
+<% @driver.trips.each do |trip| %>
+<tr>
+  <td>$<%= Trip.total_earning(trip)%></td>
+  <% if trip.rating == nil %>
+  <td><%= "no rating yet" %></td>
+  <% else %>
+  <td><%= trip.rating %></td>
+  <% average_rating += trip.rating %>
+  <% counter += 1 %>
+  <%end%>
+  <td><%= trip.date %></td>
+  <td><%= trip.passenger_id %></td>
+</tr>
+<% end %>
+</table>
+<br>
+
+<% if counter == 0 %>
+  <%= "Driver does not have a rating yet. " %>
+<% else %>
+  <%= "Average Rating: " %><%= average_rating/counter %>
+<% end %>
+
+<%= link_to "Edit Driver", edit_driver_path(@driver) %>
+
+<%= link_to 'Delete Driver',
+  driver_path(@driver),
+  method: :delete,
+  data: { confirm: 'Are you sure?' } %>
