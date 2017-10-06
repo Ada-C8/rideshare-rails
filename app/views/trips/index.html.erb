@@ -10,18 +10,16 @@
   <ul>
     <% @trips.each do |trip| %>
     <section class="hover-style">
-      <%= link_to edit_trip_path(trip.id), class: "link_to-style" do %>
+      <%= link_to trip_path(trip.id), class: "link_to-style" do %>
           <li>
             <p><br>
               <strong>ID: <%= trip.id %></strong><br>
               Date: <%= trip.date %>
                 <span>
-                  EDIT
+                  MORE DETAILS
                 </span><br>
               Driver: <%= trip.driver.name %><br>
               Passenger: <%= trip.passenger.name %><br>
-              Rating: <%= trip.rating %> <br>
-              Cost: <%= trip.cost %> <br><br>
             </p>
           </li>
       <% end %>
