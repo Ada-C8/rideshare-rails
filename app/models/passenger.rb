@@ -6,9 +6,9 @@ class Passenger < ApplicationRecord
 
   def total_amount
     total = 0
-    
+
     trips.each do |trip|
-      puts "trip : #{trip.cost}"
+      # puts "trip : #{trip.cost}"
       total += trip.cost
     end
     return total

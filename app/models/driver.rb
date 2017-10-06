@@ -24,8 +24,8 @@ class Driver < ApplicationRecord
     if trips.length == 0
       return "No trips yet"
     else
-      return total / trips.length
+      return (total / trips.length).round(2)
     end
-    
+
   end
 end
