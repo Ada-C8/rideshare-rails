@@ -11,7 +11,7 @@
 <section class="trip_info">
 <p>ID: <%= @trip.id %></p>
 <p>Date: <%= @trip.date %></p>
-<p>Cost: $<%= @trip.cost/100.0 %></p>
+<p>Cost: $<%= "#{'%.02f' % cost_with_decimal(@trip)}" %></p>
 <p>Rating: <%= @trip.rating %></p>
 <p>Driver #<%=@trip.driver_id%>: <%= link_to Driver.find(@trip.driver_id).name, driver_path(@trip.driver_id) %></p>
 <p> Passenger #<%=@trip.passenger_id%>: <%= link_to Passenger.find(@trip.passenger_id).name, passenger_path(@trip.passenger_id) %></p>

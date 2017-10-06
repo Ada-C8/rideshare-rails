@@ -6,7 +6,8 @@ class Driver < ApplicationRecord
 
   def total_earnings
     total_earnings = trips.inject(0) { |sum, trip| sum + trip.cost }
-    total_earnings *= 0.85
+    total_earnings *= 0.0085
+    '%.02f' % total_earnings
   end
   def average_rating
     if trips.length == 0

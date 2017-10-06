@@ -7,7 +7,7 @@
 
 <section class="person_info">
   <h3>Phone: <%= @passenger.phone_num %></h3>
-  <h3>Total Trips Cost: $<%= @passenger.trips.size > 0 ? @passenger.total_trip_cost/100.0 : 0 %>
+  <h3>Total Trips Cost: $<%= @passenger.trips.size > 0 ? @passenger.total_trip_cost : 0 %>
 </section>
 
 <section class="pass_buttons">

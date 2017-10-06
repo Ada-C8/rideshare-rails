@@ -5,7 +5,7 @@ def index
 end
 
 def show
-  @driver = Driver.find( params[:id].to_i )
+  @driver = Driver.find(params[:id].to_i)
 end
 
 def new
@@ -13,7 +13,7 @@ def new
 end
 
 def create
-  @driver = Driver.new(name: params[:driver][:name], vin: params[:driver][:vin])
+  @driver = Driver.new(drivers_params)
   if @driver.save
     redirect_to drivers_path
   else
