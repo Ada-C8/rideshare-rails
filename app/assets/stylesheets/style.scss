@@ -2,11 +2,11 @@
   * {
     margin: 0; padding: 0;
     font-family: 'Arimo', sans-serif;
-    width: 100%;
+    width: 85%;
   }
 
   section {
-    margin: 20px;
+    margin-left: 20px;
     height: 125px;
   }
 
@@ -18,23 +18,15 @@
     font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
   }
 
-   /*
-  li img {
-    float: left;
-    margin: 0 15px 0 0;
-   }*/
-
   li {
     padding: 10px;
-    overflow: auto;
-  border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
   }
 }
 
 .link_to-style {
-   li {
+  li {
    display: block;
-   margin-left:20px;
    text-decoration: none;
    color:black;
   }
@@ -49,9 +41,9 @@
   }
 
   li:hover span {
-    display: inline;
-    padding: 25px;
-    width:250px;
+    font-size: 30px;
+    display: block;
+    width: 32px;
     float: right;
   }
 }
