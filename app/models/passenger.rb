@@ -1,8 +1,8 @@
 class Passenger < ApplicationRecord
   has_many :trips, dependent: :destroy
-
-  validates :name, presence: true, format: {with: /[a-zA-Z]/}
   validates :phone_num, presence: true
+  validates :name, presence: true, format: {with: /[a-zA-Z]/}
+
 
   def calculate_total
     all_trips = Trip.where(passenger_id: id)
