@@ -18,8 +18,7 @@ class PassengersController < ApplicationController
   end
 
   def index
-    @passengers = Passenger.all #order(:name)
-    # @show_passenger = Passenger.find(params[:id].to_i)
+    @passengers = Passenger.all 
   end
 
   def new
@@ -46,10 +45,5 @@ class PassengersController < ApplicationController
   def passenger_params
     return params.require(:passenger).permit(:name, :phone_num)
   end
-
-# def nilpass
-#   if Passenger.find(params[:id])!= Passenger.find(params[:id])
-#     @passenger = nil
-
 
 end #end of class
