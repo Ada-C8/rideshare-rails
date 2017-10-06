@@ -3,13 +3,10 @@
 <div>
   <strong><%= @driver.name %></strong>
   <p><%= @driver.vin %></p>
+</div>
 
-  <% total = 0 %>
-  <% @driver.trips.each do |trip| %>
-  <% "Sub total is #{total += trip.cost}" %>
-  <% end %>
-  <% total_earning = total * (1 - 0.15) %>
-    <%= "driver earned $#{(total_earning/100).round(2)}" %>
+<div>
+  <%= @driver.total_earnings %>
 </div>
 
 <div>
