@@ -5,6 +5,6 @@ class ApplicationRecord < ActiveRecord::Base
     trips.each do |trip|
       total += trip.cost
     end
-    return '%.2f' % (total / 100)
+    return '%.2f' % (total.to_f / 100)
   end
 end

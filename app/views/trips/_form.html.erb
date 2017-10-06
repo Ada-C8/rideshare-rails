@@ -24,6 +24,15 @@ end
     <%= f.text_field :cost %>
   <% end %>
 
+  <% if !@trip.new_record? %>
+    <%= content_tag :div, class: "rating-wrapper" do %>
+      <%= f.label :rating do %>
+        <i class="fa fa-used"></i> Rating
+      <% end %>
+      <%= f.text_field :rating %>
+    <% end %>
+  <% end %>
+
   <%= content_tag :div, class: "submit-wrapper" do %>
     <%= f.submit button_text %>
   <% end %>

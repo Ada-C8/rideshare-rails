@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   resources :drivers do
     resources :trips, only: [:index]
   end
-  resources :trips, only: [:show, :edit, :destroy]
+  resources :trips, only: [:show, :edit, :destroy, :update]
 end
