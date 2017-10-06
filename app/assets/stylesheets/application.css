@@ -1,6 +1,12 @@
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
+
+--- sections that get styled here: ---
+ nav bar
+ header
+ footer
+
  *
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
  * vendor/assets/stylesheets directory can be referenced here using a relative path.
@@ -13,3 +19,20 @@
  *= require_tree .
  *= require_self
  */
+
+ h1 {
+   font-family: 'Nosifer', cursive;
+   color: #c80101;
+   background-color: #282828;
+ }
+
+ h2, h3 {
+   font-family: 'Amatic SC', cursive;
+   letter-spacing: 2px;
+   font-weight: 700;
+   font-size: 1.5em;
+ }
+
+ p {
+   font-family: 'Karla', sans-serif;
+ }

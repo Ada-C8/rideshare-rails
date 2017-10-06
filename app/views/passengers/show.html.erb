@@ -1,22 +1,22 @@
-<h1>passengers#show</h1>
-
+<h1><%= @passenger.name %></h1>
 <h2>Params:<%= params %></h2>
-<h2><%= link_to("Delete Passenger", passenger_path, method: :delete) %></h2>
-<h2><%= link_to("Edit Passenger", edit_passenger_path) %></h2>
-<h3>Name: <%= @passenger.name %></h3>
-<h3>Phone: <%= @passenger.phone_num %></h3>
-<h3>Total Trips Cost: $<%= @passenger.trips.size > 0 ? @passenger.total_trip_cost/100.0 : 0 %>
-  <!-- <h3>Trips: </h3>
-  <ul>
-    <% @passenger.trips.each do |trip| %>
-    <li>
-      <p>ID:<%= link_to(trip.id, trip_path(trip.id)) %></p>
-      <p>Date: <%= trip.date.strftime('%m-%d-%Y') %></p>
-      <p>Cost: $<%= trip.cost/100.0 %></p>
-      <p>Driver: <%= trip.driver_id %></p>
-      <p>Rating: <%= trip.rating %></p>
-    </li>
-    <% end %>
-  </ul> -->
+
+<div class="profile_pic">
+  <img src="" alt="member profile photo">
+</div>
+
+<section class="person_info">
+  <h3>Phone: <%= @passenger.phone_num %></h3>
+  <h3>Total Trips Cost: $<%= @passenger.trips.size > 0 ? @passenger.total_trip_cost/100.0 : 0 %>
+</section>
+
+<section class="pass_buttons">
+  <h2><%= link_to("Add a Trip", new_passenger_trip_path(@passenger.id)) %></h2>
+  <h2><%= link_to("Edit Passenger", edit_passenger_path) %></h2>
+</section>
+
+<table class="trips_table">
   <%= render partial: 'shared/trips_table', locals: { person: @passenger } %>
-  <%= button_to("Add a Trip", new_passenger_trip_path(@passenger.id), method: :get) %>
+</table>
+
+<h2 class="delete_button"><%= link_to("Delete Passenger", passenger_path, method: :delete) %></h2>
