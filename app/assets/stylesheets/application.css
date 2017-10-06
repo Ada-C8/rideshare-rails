@@ -263,26 +263,26 @@ header nav li a:hover {
 /*  STARS  */
 /***********/
 
-.zero-stars a{
+.zero-stars, .zero-stars a{
   color: lightgrey;
 }
 
-.one-star a{
+.one-star, .one-star a{
   color: #cc0000;
 }
 
-.two-stars a{
+.two-stars, .two-stars a{
   color: #ff8533;
 }
 
-.three-stars a{
+.three-stars, .three-stars a{
   color: #ffcc00;
 }
 
-.four-stars a{
+.four-stars, .four-stars a{
   color: #99db70;
 }
 
-.five-stars a{
+.five-stars, .five-stars a{
   color: #33AC33;
 }
