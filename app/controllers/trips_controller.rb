@@ -26,16 +26,15 @@ class TripsController < ApplicationController
 
   def new
     @trip = Trip.new
-    @passenger = Passenger.find(params[:passenger].to_i)
+    @passenger = Passenger.where(id: params[:passenger].to_i)[0]
     @trip.passenger_id = @passenger.id
     @trip.driver_id = @trip.random_driver
     if @trip.save
-        flash[:notice] = "Trip #{@trip.id} was successfully saved"
+      flash[:notice] = "Trip #{@trip.id} was successfully saved"
     else
       flash[:notice] = "#{@trip.errors[:passenger][0]} "
-      redirect_to passenger_path(@passenger.id)
-
     end
+    redirect_to passenger_path(@passenger.id)
   end
 
   def create

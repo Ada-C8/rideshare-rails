@@ -3,11 +3,25 @@ class Trip < ApplicationRecord
   belongs_to :driver
   belongs_to :passenger
   validates :rating, numericality: { only_integer: true, greater_than: 0, less_than: 6 }, allow_nil: true
+  validate :passenger_exists
+  validate :driver_exists
   validate :not_currently_on_trip
 
   def not_currently_on_trip
     if self.passenger.current
-      self.errors[:passenger] << "This person is already on a trip. Complete their trip by adding a cost and rating."
+      self.errors[:passenger] << "is currently on a trip. Complete their trip by adding a cost and rating."
+    end
+  end
+
+  def passenger_exists
+    if !self.passenger
+      self.errors[:passenger] << "does not exist."
+    end
+  end
+
+  def driver_exists
+    if !self.driver
+      self.errors[:driver] << "does not exist"
     end
   end
 
