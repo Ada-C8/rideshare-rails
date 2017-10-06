@@ -1,7 +1,7 @@
 module ApplicationHelper
   def toggle_sort(column_name)
-    sort_type = column_name == params[:sort] && params[:sort_type] == "DESC" ? "ASC" : "DESC"
+    direction = column_name == params[:sort] && params[:direction] == "DESC" ? "ASC" : "DESC"
 
-    link_to column_name, :sort => column_name, :sort_type => sort_type
+    link_to column_name, :sort => column_name, :direction => direction
   end
 end

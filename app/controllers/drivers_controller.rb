@@ -58,17 +58,15 @@ class DriversController < ApplicationController
   end
 
   def sort_string
-    default_sort
-    return params[:sort] + " " + params[:sort_type]
+    return sort_by_column + " " + sort_by_direction
   end
 
-  def default_sort
-    unless params[:sort]
-      params[:sort] = "date"
-    end
+  # sanitize input
+  def sort_by_column
+    ["date", "cost"].include?(params[:sort]) ? params[:sort] : "date"
+  end
 
-    unless params[:sort_type]
-      params[:sort_type] = "DESC"
-    end
+  def sort_by_direction
+    ["DESC", "ASC"].include?(params[:direction])? params[:direction] : "DESC"
   end
 end
