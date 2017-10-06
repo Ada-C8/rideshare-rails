@@ -1,3 +1,4 @@
+<%= render partial: 'layouts/style' %>
 <%= render partial: 'layouts/nav' %>
 
 
@@ -6,7 +7,7 @@
     <li> Date: <%= @trip.date %> </li>
     <li> Driver: <%= link_to @trip.driver.name, driver_path(@trip.driver.id) %> </li>
     <li> Rating: <%= @trip.rating %> </li>
-    <li> Cost: $<%= '%.2f'%(@trip.cost/100) %> </li>
+    <li> Cost: <%= @trip.cost %> </li>
     <li> Passenger: <%= link_to @trip.passenger.name, passenger_path(@trip.passenger.id) %> </li>
   </ul>
 
