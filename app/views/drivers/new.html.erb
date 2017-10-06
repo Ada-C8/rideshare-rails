@@ -1,22 +1,23 @@
-<h1>Drivers#new</h1>
-<p>Find me in app/views/drivers/new.html.erb</p>
 
 <% if @driver.errors.any? %>
-  <ul class="errors">
-    <% @driver.errors.each do |column, message| %>
-      <li>
-        <strong><%= column.capitalize %></strong> <%= message %>
-      </li>
-    <% end %>
-  </ul>
+<ul class="errors">
+  <% @driver.errors.each do |column, message| %>
+  <li>
+    <strong><%= column.capitalize %></strong> <%= message %>
+  </li>
+  <% end %>
+</ul>
 <% end %>
 
-<%= form_for @driver do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %>
-<br>
-<%= f.label :vin %>
-<%= f.text_field :vin %>
-<br>
-<%= f.submit %>
-<% end %>
+<section class="form">
+  <h2>Create a New Driver!</h2>
+  <%= form_for @driver do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :vin %>
+  <%= f.text_field :vin %>
+
+  <%= f.submit %>
+  <% end %>
+</section>

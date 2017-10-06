@@ -1,4 +1,4 @@
-<h1>Edit Passenger</h1>
+<h2>Edit Passenger</h2>
 <% if @passenger.errors.any? %>
   <ul class="errors">
     <% @passenger.errors.each do |column, message| %>
@@ -9,6 +9,8 @@
   </ul>
 <% end %>
 
+
+<section class="form">
 <%= form_for @passenger do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -17,3 +19,4 @@
   <%= f.text_field :phone_num %>
   <%= f.submit %>
 <%end%>
+</section>

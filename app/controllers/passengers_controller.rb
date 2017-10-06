@@ -18,7 +18,8 @@ class PassengersController < ApplicationController
   end
 
   def index
-    @passenger = Passenger.all #order(:name)
+    @passengers = Passenger.all #order(:name)
+    # @show_passenger = Passenger.find(params[:id].to_i)
   end
 
   def new
@@ -26,7 +27,7 @@ class PassengersController < ApplicationController
   end
 
   def show
-    @passenger = Passenger.find( params[:id].to_i)
+    @passenger = Passenger.find(params[:id].to_i)
     @trip = Trip.find( params[:id].to_i)
   end
 

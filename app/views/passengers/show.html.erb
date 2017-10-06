@@ -24,6 +24,8 @@
   <strong><%= @passenger.name %></strong>'s phone number is: <%= @passenger.phone_num %>
 
 <% total_cost = 0 %>
+
+<section class="trips_blocks">
 <% @passenger.trips.each do |trip| %>
 
 <article class="trip_details">
@@ -42,6 +44,7 @@
 </article>
   <% total_cost += trip.cost %>
 <% end %>
+</section>
 
 <%= "Total Spent: $" %>
 <% final_total_cost = total_cost/100%><%= "%.2f"%final_total_cost %>

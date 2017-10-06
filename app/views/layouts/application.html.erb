@@ -11,21 +11,12 @@
   <body>
     <h1>RideShare</h1>
     <nav>
-      <ul>
-        <li>
-          <%= link_to "Add new passenger", new_passenger_path(@passenger) %>
-        </li>
-        <li>
-          <%= link_to "Add new driver", new_driver_path(@driver) %>
-        </li>
-        <li>
-          <%= link_to "All passengers", passengers_path %>
-        </li>
-        <li>
-          <%= link_to "All drivers", drivers_path %>
-        </li>
-
-      </ul>
+      <article>
+        <%= link_to "Add new passenger", new_passenger_path(@passenger) %>
+        <%= link_to "Add new driver", new_driver_path(@driver) %>
+        <%= link_to "All passengers", passengers_path %>
+        <%= link_to "All drivers", drivers_path %>
+      </article>
     </nav>
     <%= yield %>
   </body>

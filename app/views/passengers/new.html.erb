@@ -1,4 +1,4 @@
-<h1>Create a new passenger</h1>
+
 
 <% if @passenger.errors.any? %>
   <ul class="errors">
@@ -10,11 +10,18 @@
   </ul>
 <% end %>
 
+<section class="form">
+  <h2>Create a New Passenger!</h2>
+
 <%= form_for @passenger do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %>
-<br>
+
 <%= f.label :phone_num %>
 <%= f.text_field :phone_num %>
+
 <%= f.submit %>
 <% end %>
+
+
+</section>

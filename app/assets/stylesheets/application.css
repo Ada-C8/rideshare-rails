@@ -14,16 +14,28 @@
  *= require_self
  */
 
+
+  body{
+    position: relative;
+    top: 5vw;
+    margin: 5vw;
+    padding: 5vw;
+  }
+
 h1 {
-  color: white;
   position: fixed;
-  top: 0;
-  left: 2vw;;
-  z-index: 1;
+  margin: 1vw;
+  padding: 1vw;
+  top: 0vw;
+  left: 2vw;
+  color: white;
+  z-index: 101;
+  font-size: 2em;
 }
 
 h2, h3 {
    text-align: center;
+   font-size: 2em;
  }
 
  nav {
@@ -34,30 +46,27 @@ h2, h3 {
    color: white;
    padding: 2vw;
    width: 100%;
+   text-overflow: hidden;
+   min-height: 30px;
+   z-index: 100;
  }
 
- nav ul {
+ nav article {
    position: absolute;
-   bottom: 0px;
-   right: 1vw;
- }
+   bottom: 1vw;
+   right: 0vw;
+   align-items: center;
+   overflow: hidden;
+   max-width: 60vw;
+   font-size: 1.5vw;
 
- nav li {
-  display: inline-block;
  }
-
 
 
  nav a{
   text-decoration: none;
   padding: 2vw;
   color: white;
- }
-
- body{
-   position: relative;
-   top: 5vw;
-   margin: 5vw;
  }
 
  ul {
@@ -70,11 +79,66 @@ h2, h3 {
  }
 
 .trip_details {
-  align-items: center;
+  align-content: center;
   border: black solid 1px;
   display: inline-block;
   /*flex-wrap: wrap;*/
-  max-width: 38vw;
-  min-width: 250px;
+  min-width: 300px;
   margin: 2vw;
+}
+
+.trips_blocks {
+  align-items: center;
+  margin: 5vw;
+}
+
+.list_of_people ol{
+  list-style: none;
+}
+
+.list_of_people ol li {
+  display: inline-block;
+  padding: 1vw;
+  margin-left: 1vw;
+}
+
+.list_of_people ul {
+  display: inline-block;
+  border: black solid 1px;
+  width: 20vw;
+  min-width: 100px;
+  max-width: 400px;
+}
+
+.list_of_people a {
+  color: black;
+  text-decoration: none;
+}
+
+.list_of_people a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.edit_delete {
+  text-align: center;
+  margin: 0;
+}
+
+.edit_delete li {
+  margin: 0;
+  padding: 1vw;
+  border: black solid 1px;
+}
+
+.form {
+  border: solid black 1px;
+  padding: 5vw;
+  padding-top: 2vw;
+  margin: 5vw;
+  margin-top: 2vw;
+}
+
+.form  {
+  text-align: center;
 }

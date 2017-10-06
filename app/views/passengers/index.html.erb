@@ -1,13 +1,19 @@
-<h1>Active Passengers</h1>
+<h2>Active Passengers</h2>
 
-  <%= link_to "Add new passenger", new_passenger_path(@passenger) %>
+<%= link_to "Add new passenger", new_passenger_path(@passenger) %>
 
-<ul>
-  <% @passenger.each do |passenger| %>
-  <li>
-    <strong>
-          <%= link_to(passenger.name, passenger_path(passenger.id), alt: 'link to', class:"title" ) %>
-    </strong>
-  </li>
-  <% end %>
-</ul>
+<section class="passengers">
+    <% @passengers.each do |passenger| %>
+
+    <article class="list_of_people">
+      <ul>
+        <li>
+          <strong>
+            <%= link_to(passenger.name, passenger_path(passenger.id), alt: 'link to', class:"title" ) %>
+          </strong>
+        </li>
+      </ul>
+    </article>
+
+    <% end %>
+</section>

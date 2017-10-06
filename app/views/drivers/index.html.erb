@@ -1,19 +1,25 @@
-<h1>Drivers#index</h1>
+<h2>All Drivers</h2>
 
 <%= link_to "New Driver", new_driver_path %>
 
-<ol>
-<% @drivers.each do |driver| %>
-<li class="driver_name">
-  <ul>
-    <li>
-      <%= link_to driver.name, driver_path(driver.id)%>
-    </li>
-    <li>
-      <%= driver.average_rating %>
-    </li>
-  </ul>
-</li>
 
-<%end%>
-</ol>
+
+
+
+<section class="list_of_people">
+  <ol>
+    <% @drivers.order(:name).each do |driver| %>
+    <li class="driver_name">
+      <ul>
+        <li>
+        <strong><%= link_to driver.name, driver_path(driver.id)%></strong> (<%= driver.average_rating %>)
+
+        </li>
+      </ul>
+    </li>
+
+    <%end%>
+  </ol>
+
+
+</section>
