@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RideshareRails</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <main>
+
+
+  <header>
+    <h1 id = "title">
+      <%= link_to "Uberlite", root_path,   class:   "link"%>
+    </h1>
+    <nav id = "links">
+      <ul >
+        <li>
+          <%= link_to "View drivers", drivers_path,   class:   "link"%>
+        </li>
+        <li>
+          <%= link_to "View passengers",   passengers_path,   class: "link"%>
+        </li>
+        <li>
+          <%= link_to "View trips", trips_path, class: "link"%>
+        </li>
+        <li>
+          <%= link_to "New driver", new_driver_path, class:"link"%>
+        </li>
+        <li>
+          <%= link_to "New passenger", new_passenger_path, class: "link"%>
+        </li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <body>
+    <%= yield %>
+  </body>
+
+  <footer>
+    <p>&copy 2017</p>
+    <p>Eva Sawer and Diane Lenertz</p>
+  </footer>
+</main>
+</html>

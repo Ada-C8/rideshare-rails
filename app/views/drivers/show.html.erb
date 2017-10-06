@@ -1,0 +1,68 @@
+<main>
+
+
+<h2>
+  Driver <%=@driver.name%>
+</h2>
+
+
+
+<section>
+
+  <div class="img_info">
+
+  <fig>
+    <img src="http://stevensegallery.com/200/200">
+    <figcaption>
+      Photograph of <%=@driver.name%>
+    </figcaption>
+  </fig>
+
+  <div class="individual_info">
+    <ul>
+      <li>
+        Name: <%= @driver.name%>
+      </li>
+      <li>
+        VIN: <%= @driver.vin%>
+      </li>
+      <li>
+          Average Rating: <%= @driver.average_rating %>
+      </li>
+      <li>
+          Total earnings: $<%= "%.2f" % @driver.total_earned %>
+      </li>
+      <li>
+        Driver Id: <%=@driver.id %>
+      </li>
+        </ul>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <ul>
+      <li>
+        <%= link_to "Edit driver information", edit_driver_path(@driver.id), class: "link"%>
+      </li>
+      <li>
+          <%= link_to "Delete Driver", driver_path(@driver.id), method: :delete, data: {confirm: "Are you sure you want to delete #{@driver.name} from the database? You can not undo this action."}, class: "link"%>
+      </li>
+      <ul>
+      </div>
+<div class="spacer">
+
+</div>
+
+
+    <div class="trips">
+        <p>Trips</p>
+        <%if  Trip.all.where(driver_id: @driver.id).length == 0%>
+          No trips driven yet!
+        <%else%>
+        <%= render partial: 'table'%>
+        <%end%>
+    </div>
+
+
+
+</section></main>

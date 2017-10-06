@@ -1,0 +1,66 @@
+<main>
+
+
+<h2>
+  Passenger <%= @passenger.name%>
+</h2>
+
+
+
+<section>
+  <div class="img_info">
+
+  <fig>
+    <img src=" http://fillmurray.com/200/200">
+    <figcaption>
+      Photograph of <%=@passenger.name%>
+    </figcaption>
+  </fig>
+
+  <div class="individual_info">
+    <ul>
+      <li>
+        Name: <%= @passenger.name%>
+      </li>
+      <li>
+        Phone number: <%= @passenger.phone_num%>
+      </li>
+      <li>
+        Total spent on Uberlite: $ <%= "%.2f" % @passenger.total_spent %>
+      </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="buttons">
+    <ul>
+      <li>
+        <%= link_to "Edit passenger information", edit_passenger_path(@passenger.id), class: "link"%>
+      </li>
+      <li>
+        <%= link_to "Create a new trip", passenger_trip_path(@passenger.id), class: "link" %>
+      </li>
+      <li>
+        <%= link_to "Delete Passenger", passenger_path(@passenger.id), method: :delete, data: {confirm: "Are you sure you want to delete #{@passenger.name} from the database? You can not undo this action."}, class: "link"%>
+      </li>
+    </ul>
+  </div>
+
+  <div class="spacer">
+
+  </div>
+
+    <div class="trips">
+        <p>Trips</p>
+        <% if Trip.all.where(passenger_id: @passenger.id).length == 0 %>
+          No trips taken yet!
+        <%else%>
+        <%= render partial: 'table'%>
+          <%end%>
+    </div>
+
+
+
+</section>
+</main>

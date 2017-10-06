@@ -1,0 +1,37 @@
+<table>
+  <tr>
+    <strong>
+    <th>Passenger Name</th>
+    <th>Trip ID</th>
+    <th>Rating</th>
+    <th>Trip ID</th>
+    <th>Date</th>
+    </strong>
+  </tr>
+  <tr>
+      <%trips = Trip.all.where(driver_id: @driver.id)%>
+      <% trips.each do |trip| %>
+      <th>
+        <% if Passenger.find_by_id(trip.passenger_id) == nil %>
+        Passenger account deleted
+        <%else %>
+        <%passenger_name = Passenger.find(trip.passenger_id).name   %>
+        <%= link_to passenger_name,          passenger_path(trip.passenger_id), class: "link"%>
+        <% end %>
+    </th>
+    <th>
+      $<%=trip.cost%>
+    </th>
+    <th>
+      <%=trip.rating%>
+    </th>
+    <th>
+      <%=link_to trip.id, trip_path(trip.id), class: "link" %>
+    </th>
+    <th>
+      <%= trip.date %>
+        </tr>
+    <%end%>
+
+
+</table>

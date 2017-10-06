@@ -1,0 +1,164 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ /*Main page and header and footer*/
+
+ @import url('https://fonts.googleapis.com/css?family=Mukta');
+
+
+header, footer {
+  border-style: solid;
+  border-color: Gold;
+  clear: both;
+  background-color: #E5B7B7;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin: 10vw 0 0 0;
+}
+
+#title {
+  display: inline-block;
+  width: 25%;
+  color: gold;
+}
+
+#links {
+  display: inline-block;
+  width: 74%;
+}
+
+nav ul {
+  margin-left: 0;
+}
+
+#links li {
+  display: inline-block;
+  width: 19%;
+  text-align: center;
+}
+
+footer p {
+  display: inline-block;
+  width: 40%
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/*Link Styling*/
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.link:hover {
+  color: gold;
+}
+
+/*Index Pages for Driver and Passengerr*/
+
+
+.index_list li:nth-child(even) {
+  background-color: white;
+}
+
+.index_list li:nth-child(odd) {
+  background-color: #E5B7B7;
+}
+
+
+
+
+/*Show Pages for Passenger and driver*/
+fig {
+  float: left;
+  /*display: inline-block;*/
+  width: 30%
+}
+
+h2 {
+  font-size: 3em;
+}
+
+body {
+  text-align: center;
+  background-color: #C16565;
+  font-family: 'Mukta';
+  height: 100vw;
+}
+
+.individual_info {
+  float: left;
+  position: relative;
+
+  /*right: 30%;*/
+
+}
+
+.trips {
+  padding: 0 0 10vw;
+  clear: both;
+  background-color: #E5B7B7;
+  border-style: solid;
+  border-color: #C16565;
+  margin: 25vw 15vw 15vw 15vw;
+
+
+}
+
+.spacer {
+  height: 5vw;
+}
+.trips p {
+  font-size: 3em;
+  padding: 0;
+  margin: 0;
+}
+
+
+.buttons {
+  float: right;
+  padding-right: 10%;
+}
+
+.buttons li {
+  background-color: #E5B7B7;
+  margin-top: 10px;
+}
+
+#trip_view {
+  display: inline-block;
+  width: 50%;
+  margin: 0 auto;
+
+}
+
+table tr:nth-child(even) {
+  background-color: white;
+}
+
+table {
+  background-color:  #E5B7B7;
+  margin: 0 auto 10vw;
+  /*padding-bottom: 20vw;*/
+}

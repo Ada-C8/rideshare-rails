@@ -1,0 +1,64 @@
+<main>
+  <h2>
+    Trip Details
+  </h2>
+
+<%= render partial: 'layouts/error_messages', locals: {model: @trip} %>
+
+<section id = "trip_view">
+  <div class="individual_info">
+    <ul>
+      <li>
+        Trip ID: <%=@trip.id %>
+      </li>
+      <li>
+        Date: <%=@trip.date %>
+      </li>
+      <li>
+      <% if Driver.find_by_id(@trip.driver_id) == nil %>
+        Driver: driver account deleted
+      <%else %>
+        <%driver_name = Driver.find(@trip.driver_id).name %>
+        Driver: <%= link_to driver_name, driver_path(@trip.driver_id), class: "link" %>
+      <% end %>
+      </li>
+      <li>
+        <% if Passenger.find_by_id(@trip.passenger_id) == nil %>
+        Passenger: passenger account deleted
+        <%else %>
+        <%passenger_name = Passenger.find(@trip.passenger_id).name %>
+        Passenger: <%= link_to passenger_name, passenger_path(@trip.passenger_id), class: "link" %>
+        <% end %>
+      </li>
+      <li>
+          <% if @trip.rating%>
+              Rating: <%=@trip.rating%>
+          <% else %>
+              <strong>Rating: Please select a rating</strong>
+              <%= form_for @trip do |f| %>
+                <%= f.select :rating, [nil, 1, 2, 3, 4, 5]%>
+                <%= f.submit "submit rating" %>
+              <%end%>
+            <% end %>
+      </li>
+      <li>
+        Cost: $
+        <% unless @trip.cost == nil %>
+        <%= "%.2f" % @trip.cost %>
+        <%end %>
+      </li>
+    </ul>
+  </div>
+
+  <div class="buttons">
+    <ul>
+      <li>
+        <%= link_to "Edit trip information", edit_trip_path(@trip.id), class: "link"%>
+      </li>
+      <li>
+        <%= link_to "Delete", trip_path(@trip.id), method: :delete, data: {confirm: "Are you sure you want to delete this trip from the   database? You can not undo this action."}, class: "link"%>
+      </li>
+    </ul>
+  </div>
+</section>
+</main>

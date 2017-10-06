@@ -1,0 +1,19 @@
+<main>
+<h2>
+  Uberlite Passengers
+</h2>
+
+<%#took out the sort_by for passengers as it was comparing a could not compare nil to string%>
+
+<div class=index_list>
+  <ul>
+
+  <%  @passengers.sort_by {|pass| pass.name}.each do |passenger| %>
+    <li>
+      <%= link_to passenger.name, passenger_path(passenger.id), class: "link" %>
+    </li>
+  <% end %>
+</ul>
+</div>
+
+  </main>

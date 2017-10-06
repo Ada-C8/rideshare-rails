@@ -1,0 +1,21 @@
+
+
+<%= render partial: 'layouts/error_messages', locals: {model: @passenger} %>
+
+<div class = "form">
+  <ul>
+   <%= form_for @passenger do |f| %>
+   <li>
+     <%= f.label "Name:"%>
+     <%= f.text_field :name %>
+   </li>
+   <li>
+     <%= f.label "Phone number:" %>
+     <%= f.text_field :phone_num %>
+   </li>
+   <li>
+     <%= f.submit button_text %>
+   </li>
+<% end %>
+  </ul>
+</div>
