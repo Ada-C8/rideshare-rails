@@ -1,5 +1,10 @@
 class TripsController < ApplicationController
   def show
+    if request.referrer.include?('driver')
+      session[:from] = :driver
+    else
+      session[:from] = nil
+    end
     @trip = Trip.find(params[:id])
   end
 
@@ -49,7 +54,13 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     result = @trip.destroy
 
-    redirect_to passenger_path(@trip.passenger_id)
+    if session[:from] == 'driver'
+      session[:from] = nil
+      redirect_to driver_path(@trip.driver_id)
+    else
+      session[:from] = nil
+      redirect_to passenger_path(@trip.passenger_id)
+    end
   end
 
   private
