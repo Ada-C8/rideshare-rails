@@ -8,12 +8,8 @@
 <% counter = 0 %>
 <p><% @driver.trips.each do |trip| %></p>
 
-<<<<<<< HEAD
-  <%= "Trip Earning: $" %><%= Trip.total_earning(trip) %>
-=======
-  <%= "Trip Earning: $" %><%= Trip.total_earning(trip)%>
->>>>>>> 0f0f1dedc3ae70aa9ec3b467a611057ad8f5df50
 
+  <%= "Trip Earning: $" %><%= Trip.total_earning(trip)%>
   <%= "Trip Rating: " %>
   <% if trip.rating == nil %>
   <%= "no rating yet" %>
