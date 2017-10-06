@@ -2,11 +2,21 @@
 
 <%=button_to "Add New Passenger", new_passenger_path, method: :get%>
 
-<ol>
-  <% @passengers.each do |passenger| %>
-  <li>
+<table>
+  <tr>
+    <th>
+      Passenger ID
+    </th>
+    <th>Passenger</th>
+  </tr>
+<% @passengers.each do |passenger| %>
+<tr>
+  <td>
+    <%= passenger.id %>
+  </td>
+  <td>
     <%= link_to(passenger.name, passenger_path(passenger.id)) %>
-  </li>
-  <% end %>
-
-</ol>
+  </td>
+</tr>
+<% end %>
+</table>

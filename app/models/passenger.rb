@@ -2,9 +2,8 @@ class Passenger < ApplicationRecord
   # has_many :trips
   has_many :trips, -> { order(date: :desc) }
 
-  validates :date, presence: { message: "You need to provide a date" }
-  validates :rating, presence: { message: "You need to provide a rating" }
-  validates :cost, presence: { message: "You need to provide a cost" }
+  validates :name, presence: {message: 'Please provide a valid name.'}
+  validates :phone_num, presence: {message: 'Please provide a valud phone number.'}
 
   def total_cost
     total_cost = 0
