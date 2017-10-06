@@ -1,28 +1,23 @@
 <h2>
 <%= "Passenger #{@passenger.id}: #{@passenger.name}" %>
-</h2>
-
 <%= "Phone number: #{@passenger.phone_num}" %>
+</h2>
 
 <% @passenger.total_cost %>
 
-<%= link_to "Edit", edit_passenger_path(@passenger.id) %>
+<%= button_to "Edit", edit_passenger_path(@passenger.id), method: :get %>
 <%= button_to "Delete", passenger_path(@passenger), method: :delete, data: {confirm: "Are you sure you want to delete this passenger?"} %>
 <%= button_to "Add New Trip", passenger_new_trip_path(@passenger.id), method: :post %>
 
 <%= "Passenger #{@passenger.name} has taken #{@passenger.trips.length} trip(s)" %>
 
 <ol>
-<% @passenger.trips.each do |trip| %>
-<li>
-  <%= link_to "Trip #{trip.id}", trip_path(trip.id) %>
-  <%= "Driver Id: #{trip.driver_id}" %>
-  <%= "Cost of trip: $#{trip.cost/100.round(2)}" %>
-  <%= "Trip rating: #{trip.rating}" %>
-</li>
-<% end %>
+  <% @passenger.trips.each do |trip| %>
+    <li>
+      <%= link_to "Trip #{trip.id}", trip_path(trip.id) %>
+      <%= "Driver Id: #{trip.driver_id}" %>
+      <%= "Cost of trip: $#{trip.cost/100.round(2)}" %>
+      <%= "Trip rating: #{trip.rating}" %>
+    </li>
+  <% end %>
 </ol>
-
-
-
-<!-- Need to add button to add new trip  -->
