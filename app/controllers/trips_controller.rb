@@ -1,15 +1,10 @@
 class TripsController < ApplicationController
-  # def index
-  #   @trips = Trip.all
-  # end
-
   def show
     @trip = Trip.find(params[:id])
   end
 
   def new
     @trip = Trip.new
-    # puts ">>> DPR in trip#new, params[:id] is #{params[:id]}"
     if params[:id]
       @trip.passenger_id = params[:id]
     end
@@ -17,8 +12,7 @@ class TripsController < ApplicationController
   end
 
   def create
-    # setting rating to default to 0
-    params[:trip][:rating] = 0
+    params[:trip][:rating] = 0 # Set Rating to a default of 0
     @trip = Trip.new(trip_params)
 
     if @trip.save
@@ -46,6 +40,7 @@ class TripsController < ApplicationController
   def destroy
     trip = Trip.find(params[:id])
     result = trip.destroy
+
     if result
       redirect_to root_path
     else
@@ -54,6 +49,7 @@ class TripsController < ApplicationController
   end
 
   private
+
   def trip_params
     return params.require(:trip).permit(:driver_id, :passenger_id, :cost, :rating, :date)
   end
