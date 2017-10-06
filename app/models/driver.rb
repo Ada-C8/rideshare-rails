@@ -16,8 +16,10 @@ class Driver < ApplicationRecord
     sum = 0
     counter = 0
     trips.each do |trip|
-      sum += trip.rating
-      counter += 1
+      if trip.rating != nil
+        sum += trip.rating
+        counter += 1
+      end
     end
     average = sprintf('%.2f', sum.to_f/counter)
     return average

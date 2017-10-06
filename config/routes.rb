@@ -13,7 +13,8 @@ Rails.application.routes.draw do
 
   resources :drivers
   # resources :passengers
-  resources :trips, only: [:create, :show, :edit, :update]
+  resources :trips, except: [:index, :new]
+  # resources :trips, only: [:create, :show, :edit, :update, :delete]
 
   root "main#index"
 
