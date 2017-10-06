@@ -1,7 +1,12 @@
-<h1>Passengers#index</h1>
+<!-- <h1>Passengers#index</h1> -->
 <!-- hotkey command for rails equal sign and tab -->
-<% @passengers.each do |passenger| %>
-<p>
-  <%= link_to(passenger.name, passenger_path(passenger.id), alt:'Link to Show Passenger view')%>
-</p>
-<% end %>
+
+<h1>Our Passengers Are Popstars!</h1>
+
+<ul class="name-columns">
+  <% @passengers.each do |passenger| %>
+  <li>
+    <%= link_to(passenger.name, passenger_path(passenger.id), alt:'Link to Show Passenger view')%>
+  </li>
+  <% end %>
+</ul>
