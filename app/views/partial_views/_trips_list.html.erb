@@ -21,8 +21,10 @@
         <%= "$ #{'%.02f' % ((trip.cost).to_f/100)}" %>
       <% elsif key == "date" %>
         <%= link_to "#{trip.date}", trip_path(trip.id)%>
-      <% elsif key == ("rider_id" || "driver_id") %>
-        <%= "<a href='#{key[0...-3]}_path(trip.attributes[key])'>#{trip.attributes[key]}</a>".html_safe %>
+      <% elsif key == "rider_id" %>
+        <%= link_to trip.attributes[key], rider_path(trip.attributes[key]) %>
+      <% elsif key == "driver_id" %>
+        <%= link_to trip.attributes[key], driver_path(trip.attributes[key]) %>
       <% else %>
         <%= trip.attributes[key] %>
       <% end %>
