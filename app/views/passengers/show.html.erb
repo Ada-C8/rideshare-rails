@@ -5,13 +5,12 @@
 <h2>Passenger: <%= @passenger.name %> </h2>
 <p>Phone Number: <%= @passenger.phone_num %> </p>
 <p>Total Trips: <%= @passenger.trips.count %> </p>
-<p>Total Charged: <%= @passenger.total_charged%> </p>
+<p>Total Charged: $<%= @passenger.total_charged%> </p>
 <%= link_to "Edit", edit_passenger_path(@passenger.id) %>
 
 <%= link_to "Delete", passenger_path(@passenger.id), method: :delete, data: { confirm: "Are you sure you'd like to delete this passenger?" } %>
 </section>
 
-<p>Total charged: <%= @passenger.total_charged %></p>
   <ul>
     <li> Trips: <% @passenger.trips.each do |trip| %>
         <ul>
@@ -20,8 +19,7 @@
             <h4> Date: <%= trip.date %> </h4>
           </li>
           <li> Rating: <%= trip.rating %> </li>
-          <li> Cost: <%= trip.cost %> </li>
-          <li> Passenger: <%= trip.passenger.name %> </li>
+          <li> Cost: $<%= '%.2f'%(trip.cost/100) %> </li>
         </ul>
       <% end %>
     </li>
