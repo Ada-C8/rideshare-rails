@@ -33,14 +33,10 @@ class DriversController < ApplicationController
   end
 
   def destroy
-  @driver = Driver.find(params[:id])
-  if @driver.trips.count > 0
-    redirect_to driver_path
-    return
-  end
+    @driver = Driver.find(params[:id])
     @driver.destroy
 
-  redirect_to drivers_path
+    redirect_to drivers_path
   end
 
   private

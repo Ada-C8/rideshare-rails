@@ -1,5 +1,5 @@
 class Driver < ApplicationRecord
-  has_many :trips
+  has_many :trips, dependent: :destroy
 
   validates :name, presence: {message: "Driver must have a name."}
   validates :vin, presence: {message: "VIN must be entered."}
