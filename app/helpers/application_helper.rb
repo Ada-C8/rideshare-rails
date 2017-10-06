@@ -1,7 +1,8 @@
 module ApplicationHelper
   def toggle_sort(column_name)
-    direction = column_name == params[:sort] && params[:direction] == "DESC" ? "ASC" : "DESC"
+    css_class = column_name == sort_column ? "current #{sort_direction}" : nil
+    direction = (column_name == sort_column && sort_direction == "DESC") ? "ASC" : "DESC"
 
-    link_to column_name, :sort => column_name, :direction => direction
+    link_to column_name, { :sort => column_name, :direction => direction }, { :class => css_class }
   end
 end

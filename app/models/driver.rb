@@ -17,18 +17,17 @@ class Driver < ApplicationRecord
     return (rating.to_f / counter)
   end
 
-
   def total_earnings
     earnings = trips.sum { |trip| trip.cost }
     return (earnings * 0.85)
   end
 
-  def sort_trips(criteria)
-    case criteria
-    when "date"
-      trips.order("date DESC")
-    when "cost"
-      trips.order("cost DESC")
-    end
+  def sort_column
+    ["date", "cost"].include?(params[:sort]) ? params[:sort] : "date"
   end
+
+  def sort_direction
+    ["DESC", "ASC"].include?(params[:direction])? params[:direction] : "DESC"
+  end
+
 end

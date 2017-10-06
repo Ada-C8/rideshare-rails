@@ -98,6 +98,23 @@ th a {
   font-size: 1.5rem;
 }
 
+/* icons for showing current sort field/direction */
+.current {
+  padding-right: 30px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.ASC {
+  background-image: image-url("up_arrow.png");
+  background-size: contain;
+}
+
+.DESC {
+  background-image: image-url("down_arrow.png");
+  background-size: contain;
+}
+
 .trip-date {
   // width: 20%;
   text-align: left;

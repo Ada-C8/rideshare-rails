@@ -1,4 +1,6 @@
 class PassengersController < ApplicationController
+  helper_method :sort_column, :sort_direction
+  
   def index
     @passengers= Passenger.order(:id)
   end
@@ -65,15 +67,15 @@ class PassengersController < ApplicationController
   end
 
   def sort_string
-    return sort_by_column + " " + sort_by_direction
+    return sort_column + " " + sort_direction
   end
 
   # sanitize input
-  def sort_by_column
+  def sort_column
     ["date", "cost", "rating"].include?(params[:sort]) ? params[:sort] : "date"
   end
 
-  def sort_by_direction
+  def sort_direction
     ["DESC", "ASC"].include?(params[:direction])? params[:direction] : "DESC"
   end
 
