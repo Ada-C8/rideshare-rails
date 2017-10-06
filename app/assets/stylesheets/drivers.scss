@@ -105,3 +105,8 @@ td, th {
 .trip-rating {
   // width: 10%;
 }
+
+.unrated a:link, .unrated a:visited {
+  color: blue;
+  font-weight: bold;
+}

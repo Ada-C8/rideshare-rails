@@ -5,7 +5,7 @@ class PassengersController < ApplicationController
 
   def show
     @passenger = Passenger.find_by(id: params[:id].to_i)
-    @trips = Trip.where(passenger_id: params[:id].to_i)
+    @trips = Trip.where(passenger_id: params[:id].to_i).order("date DESC")
 
     # if passenger not found
     unless @passenger
