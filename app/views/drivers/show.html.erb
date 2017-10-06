@@ -22,7 +22,7 @@
 <article class="bg-color height">
   <header class="style">
     <h1>Driver Details For: <%=@driver.name%> </h1>
-    <%= link_to "Edit", edit_driver_path(@driver.id), class: "inline-block link-styles" %>
+    <%= link_to "Edit", edit_driver_path(@driver), class: "inline-block link-styles" %>
     <%= link_to "Delete", driver_path(@driver), method: :delete , data: {confirm: "Are you sure?" }, class: "inline-block link-styles" %>
   </header>
 
