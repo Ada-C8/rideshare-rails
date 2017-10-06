@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: 'passengers#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   patch '/drivers/:id/available', to: 'drivers#available', as: 'driver_available'
-  resources :drivers
+  resources :drivers do
+    resources :trips, only: [:index]
+  end
   # get 'drivers', to: 'drivers#index', as: 'drivers'
   # get 'drivers/:id', to: 'drivers#show', as: 'driver'
 

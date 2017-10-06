@@ -1,7 +1,9 @@
 class TripsController < ApplicationController
   def index
-    if params[:id]
+    if params[:contoller] == "passengers"
       @trips = Passenger.find_by(id: params[:id]).trips
+    elsif params[:controller] == "drivers"
+      @trips = Driver.find_by(id: params[:id]).trips
     else
       @trips = Trip.all
     end
@@ -53,7 +55,7 @@ class TripsController < ApplicationController
   end
 
   private
-    def trip_params
-      return params.require(:trip).permit(:date, :rating, :cost, :driver_id, :passenger_id)
-    end
+  def trip_params
+    return params.require(:trip).permit(:date, :rating, :cost, :driver_id, :passenger_id)
+  end
 end
