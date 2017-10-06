@@ -55,10 +55,10 @@
        <%= trip.date %>
      </td>
      <td>
-       <%= link_to trip.passenger.name, driver_path(trip.driver_id) %>
+       <%= link_to trip.passenger.name, passenger_path(trip.passenger_id) %>
      </td>
      <td>
-       <%= link_to trip.driver.name, passenger_path(trip.passenger_id) %>
+       <%= link_to trip.driver.name, driver_path(trip.driver_id) %>
      </td>
      <td>
        <%= (Money.new(trip.cost, "USD")).format %>

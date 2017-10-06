@@ -1,6 +1,6 @@
 
 class Driver < ApplicationRecord
-  has_many :trips
+  has_many :trips, dependent: :destroy
 
   # must provide a name
   validates :name, presence: {message: "%{value} must be given"}
