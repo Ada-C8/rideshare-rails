@@ -41,6 +41,6 @@
   </li>
   <li>
     Driver Name:
-    <%= @trip.driver.name %>
+    <%= link_to(@trip.driver.name, driver_path(@trip.driver.id)) %>
   </li>
 </ul>
