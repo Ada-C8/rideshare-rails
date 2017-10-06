@@ -5,7 +5,8 @@
 </p>
 
 <p>
-  Rating: <%= @trip.rating %>
+  <% @rated = @trip.rating == 0 || @trip.rating == nil ? "unrated" : "rated" %>
+  Rating: <span class="<%=@rated%>"><%= @trip.rating %></span>
 </p>
 
 <p>

@@ -18,10 +18,7 @@
     Phone Number: <%= @passenger[:phone_num] %>
   </li>
   <li>
-    <% @trips.each do |trip| %>
-      cost <%= trip.cost %>
-    <% end %>
-    Total Spent: <%# number_to_currency(@passenger.total_cost, precision: 2) %>
+    Total Spent: <%= number_to_currency(@passenger.total_cost, precision: 2) %>
   </li>
   <li>
     Trips
@@ -31,8 +28,9 @@
         <%= link_to("Date: #{trip.date}", trip_path(trip.id)) %>
       </li>
       <li>
-        Rating: <%= trip.rating %>
-        <% if trip.rating == nil || trip.rating == 0 %>
+        <% @rated = trip.rating == nil || trip.rating == 0 ? "unrated" : "rated" %>
+        Rating: <span class="<%=@rated%>"><%= trip.rating %></span>
+        <% if @rated == "unrated" %>
           <%=link_to("Rate Trip", edit_trip_path(trip.id))%>
         <% end %>
       </li>
