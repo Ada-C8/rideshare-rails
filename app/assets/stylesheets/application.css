@@ -28,9 +28,26 @@ header {
 .title {
   float: left;
   margin-top: 0;
-    padding-left: 30px;
-    line-height: 100px;
+  padding-left: 30px;
+  line-height: 100px;
 }
+
+.title a {
+  text-decoration: none;
+}
+
 header ul {
-  display: none;
+  padding-left: 50px;
+}
+
+header li {
+  list-style: none;
+  display: inline;
+  line-height: 100px;
+  font-size: 1.2rem;
+  padding-right: 15px;
+}
+
+ul li a {
+  text-decoration: none;
 }

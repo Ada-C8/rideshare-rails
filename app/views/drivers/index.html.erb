@@ -1,4 +1,15 @@
+<header>
+  <h1 class="title"><%=link_to "RideShare", root_path %></h1>
+    <ul>
+      <li><%= link_to "All Passengers", passengers_path %></li>
+      <li><%= link_to "All Drivers", drivers_path %></li>
+      <li><%= link_to "Add a new Driver", new_driver_path %></li>
+      <li><%= link_to "Add a new Passenger", new_passenger_path %></li>
+    </ul>
+</header>
+
 <h1>All Drivers</h1>
+
 <ul>
 <% @drivers.each do |driver| %>
   <li> <%= link_to(driver.name, driver_path(driver.id)) %> </li>
