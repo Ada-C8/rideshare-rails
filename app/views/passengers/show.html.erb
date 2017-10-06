@@ -26,7 +26,7 @@
 <li>
   <%= link_to "Trip #{trip.id}", trip_path(trip.id) %>
   <%= "Driver Id: #{trip.driver_id}" %>
-  <%= "Cost of trip: #{trip.cost}" %>
+  <%= "Cost of trip: #{trip.cost/100.round(2)}" %>
   <%= "Trip rating: #{trip.rating}" %>
 </li>
 <% end %>
