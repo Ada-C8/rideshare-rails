@@ -36,13 +36,12 @@ class TripsController < ApplicationController
 
   def update
     @trip = Trip.find_by(id: params[:id])
-    result = @trip.update({
-      rating: params[:trip][:rating]})
-      if result
-        redirect_to trip_path(@trip.id)
-      else
-        render :edit
-      end
+    result = @trip.update({rating: params[:trip][:rating]})
+    if result
+      redirect_to trip_path(@trip.id)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -50,15 +49,13 @@ class TripsController < ApplicationController
 
     if trip.destroy
       redirect_to trip_index_path
-    else
-
     end
   end
 
-private
+  private
 
-def passenger_params
-  return params.require(:trip).permit(:date, :rating, :cost, :passenger_id, :driver_id)
-end
+  def passenger_params
+    return params.require(:trip).permit(:date, :rating, :cost, :passenger_id, :driver_id)
+  end
 
 end

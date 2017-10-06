@@ -1,43 +1,36 @@
 class Driver < ApplicationRecord
   has_many :trips, dependent: :destroy
-
   validates :name, presence: true
   validates :vin, presence: true
 
-
-def total_earnings
-  sum = 0
-
-  trips.each do |trip|
-    sum += trip.cost
-  end
-
-  sum = (sum * 0.85)
-
-  return sum
-end
-
-def average_rating
-  rating = 0.0
-
-  counter = 0
-  trips.each do |trip|
-    if trip.rating == nil
-      next
-    else
-      rating += trip.rating
-      counter += 1
+  def total_earnings
+    sum = 0
+    trips.each do |trip|
+      sum += trip.cost
     end
+
+    sum = (sum * 0.85)
+    return sum
   end
 
-  rating /= counter
+  def average_rating
+    rating = 0.0
+    counter = 0
+    trips.each do |trip|
+      if trip.rating == nil
+        next
+      else
+        rating += trip.rating
+        counter += 1
+      end
+    end
 
-  return rating
+    rating /= counter
+    return rating
+  end
 
-end
-
-def self.assign_driver
-  (Driver.find_by(status: true)).id
-end
+  def self.assign_driver
+    (Driver.find_by(status: true)).id
+  end
 
 end
