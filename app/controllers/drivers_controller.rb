@@ -33,6 +33,15 @@ class DriversController < ApplicationController
     end
   end
 
+  def update_status
+    @driver = Driver.find_by(id: params[:id].to_i)
+    redirect_to driver_path unless @driver
+
+    @driver.status = @driver.status == "online" ? "offline" : "online"
+    @driver.save
+    redirect_to driver_path
+  end
+
   def new
     @driver = Driver.new
   end

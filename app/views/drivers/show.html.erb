@@ -7,6 +7,11 @@
 </section>
 
 <section>
+  <% action = @driver.status == "online" ? "offline" : "online"%>
+  <%= link_to "Go #{action}", driver_status_path(@driver.id), method: :patch %>
+</section>
+
+<section>
   <table>
     <thead>
       <tr>
