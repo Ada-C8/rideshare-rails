@@ -49,6 +49,27 @@ h1 {
   margin: 0.67em 0;
 }
 
+/*PASSENGERS#INDEX AND DRIVERS#INDEX*/
+
+h1 {
+  text-align: center
+}
+
+.name-columns {
+    -moz-column-count: 4;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 20px;
+    column-count: 4;
+    column-gap: 30px;
+    line-height: 1.5em;
+    list-style: none;
+}
+
+li {
+
+}
+
 /* Grouping content
    ========================================================================== */
 
