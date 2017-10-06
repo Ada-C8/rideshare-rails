@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :drivers, :passengers, :trips
+  root to: 'main_page#index'
   # get 'passengers/index'
   #
   # get 'passengers/show'

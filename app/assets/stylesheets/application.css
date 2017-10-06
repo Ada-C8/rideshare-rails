@@ -13,6 +13,13 @@
  *= require_tree .
  *= require_self
  */
+ #draggable {
+   width: 250px;
+   height: 100px;
+   padding: 0.5em;
+   display:hidden }
+
+
 nav {
   position: fixed;
   background-color: black;
