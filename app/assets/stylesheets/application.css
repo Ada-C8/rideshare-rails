@@ -103,8 +103,6 @@ th, td {
   border: black solid 1px;
 }
 
-
-
 .content-container section {
   max-width: 80%;
   /*75% of viewport height*/
@@ -145,10 +143,11 @@ body {
   background-size: cover;
   background-blend-mode: soft-light;*/
   font-family: 'Open Sans', sans-serif;
+  text-align: center;
 }
 
 #home-background{
-  background-image: url(https://media.giphy.com/media/l41YvfeoWdnqBf7Fu/giphy.gif);
+  background-image: url('app/assets/images/RandoRidesBackground.gif');
   background-repeat:no-repeat;
   background-size: cover;
   background-blend-mode: soft-light;
@@ -199,15 +198,23 @@ h1 {
   font-size: 2em;
 }
 
-.page-content-links a[href] {
+.page-content-links a {
   background-color: lightgrey;
   padding: 20px;
-  border-radius: 25px;
+  border-radius: 5px;
+  color: black;
   /*border: black solid 1px;*/
 }
 
-.page-content-links a[href]:hover {
-  background-color
+.page-content-links a:hover {
+  background-color: orange;
+}
+
+#add-rating a {
+  background-color: red;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 620px) {

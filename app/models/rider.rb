@@ -15,7 +15,7 @@ class Rider < ApplicationRecord
   end
 
   def start_trip
-    if Driver.available.count < 1
+    if (Driver.available.count).count < 1
       return false #no drivers, no trip!
     else
       picked_driver = Driver.available.sample
