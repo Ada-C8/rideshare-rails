@@ -16,10 +16,15 @@
 </section>
 
 <%if @passenger.trips.empty?%>
+  <section class="no-trips">
     <p> This person has not yet taken any rides.</p>
+  </section>
 <%else%>
   <section>
-    <h3>Trip History:</h3>
+    <div class="trip-history">
+      <h3>Trip History:</h3>
+    </div>
+    <section class="trip-history-container">
     <table>
       <thead>
         <tr>
@@ -45,11 +50,11 @@
         <% end %>
       </tbody>
     </table>
+    </section>
   </section>
-
+<% end %>
 
   <section>
     <h3>Total Charges (All Trips):</h3>
     <%= (@passenger.total_charged)/100 %>
   </section>
-<% end %>

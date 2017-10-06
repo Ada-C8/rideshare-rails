@@ -1,43 +1,53 @@
-<h1>Drivers#show</h1>
+<!-- <h1>Drivers#show</h1> -->
 
-<section>
-  <%= link_to("Edit", edit_driver_path(@driver.id)) %>
-  <%= link_to("Delete", delete_driver_path(@driver.id), method: :delete, data: {confirm: "Are you sure you would like to delete this driver?"}) %>
+<section class="profile">
+  <img src="http://fillmurray.com/200/200">
+  <div class="contact-info">
+    <h2><%= @driver.name %></h2>
+    <h3><%= @driver.vin %></h3>
+    <section class="edit-delete-menu">
+      <div><%= link_to("Edit Driver Info", edit_driver_path(@driver.id)) %></div>
+      <div><%= link_to("Delete Driver", delete_driver_path(@driver.id), method: :delete, data: {confirm: "Are you sure you would like to delete this driver?"}) %></div>
+    </section>
+  </div>
 </section>
 
-<h2><%= @driver.name %></h2>
-
-<h3><%= @driver.vin %></h3>
-
-<section>
-  <<table>
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Date</th>
-        <th>Cost</th>
-        <th>Passenger Name</th>
-        <th>Rating</th>
-      </tr>
-    </thead>
-
-    <tbody>
-
-      <% @driver.trips.each do |t| %>
-
+<%if @driver.trips.empty?%>
+  <section class="no-trips">
+    <p> This driver has not yet given any rides.</p>
+  </section>
+<%else%>
+  <section>
+    <h3>Trip History:</h3>
+    <table>
+      <thead>
         <tr>
-          <td> <%=link_to(t.id, trip_path(t.id))%></td>
-          <td> <%= t.date %></td>
-          <td> <%= format("%.2f", t.cost/100)%></td>
-          <td> <%= t.passenger.name  %> </td>
-          <td> <%= t.rating %></td>
+          <th>Id</th>
+          <th>Date</th>
+          <th>Cost</th>
+          <th>Passenger Name</th>
+          <th>Rating</th>
         </tr>
+      </thead>
 
-      <% end %>
+      <tbody>
 
-    </tbody>
-  </table>
-</section>
+        <% @driver.trips.each do |t| %>
+
+          <tr>
+            <td> <%=link_to(t.id, trip_path(t.id))%></td>
+            <td> <%= t.date %></td>
+            <td> <%= format("%.2f", t.cost/100)%></td>
+            <td> <%= t.passenger.name  %> </td>
+            <td> <%= t.rating %></td>
+          </tr>
+
+        <% end %>
+
+      </tbody>
+    </table>
+  </section>
+<% end %>
 
 <section>
   <h3>Total Earnings:</h3>

@@ -1,6 +1,6 @@
 /*PASSENGERS#INDEX AND DRIVERS#INDEX*/
 
-.people-list-header.h1 {
+.people-list-header {
   text-align: center
 }
 
@@ -48,6 +48,16 @@
   line-height: 1.5em;
 }
 
+.no-trips {
+  text-align: center;
+}
+
+.trip-history-container {
+  display: flex;
+  justify-content: center;
+
+}
+
 table {
     border-collapse: collapse;
     background-color: #f1d6fc;
@@ -62,6 +72,11 @@ td, th {
 tr:hover {
   background-color: cyan;
 }
+
+.trip-history {
+  align-items: center;
+}
+
 
 
 /*PASSENGERS#SHOW*/
