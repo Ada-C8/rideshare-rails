@@ -349,3 +349,15 @@ span.tooltip-text::after {
   border-color: transparent transparent var(--teal) transparent;
 }
 label.tooltip:hover span.tooltip-text { visibility: visible; }
+
+
+/* pagination styling */
+nav.pagination {
+  width: 40%;
+  margin: 2% auto;
+  color: var(--dteal);
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+nav.pagination span a { color: #777; }
