@@ -35,6 +35,10 @@ h1 {
   font-family: cursive;
 }
 
+h1 a{
+  color: white;
+}
+
 h2, h3 {
    text-align: center;
    font-size: 3em;
