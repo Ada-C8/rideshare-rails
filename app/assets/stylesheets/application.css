@@ -58,6 +58,14 @@ header ul {
   margin-top: 2em;
 }
 
+@media screen and (max-width: 600px) {
+  body, header nav, header li {
+    display: block;
+    position: static;
+    float: none;
+  }
+}
+
 h1#logo, h1.form_title {
   display: inline-block;
   padding: 2px;
@@ -205,6 +213,16 @@ input {
   font-weight: 700;
   font-size: 1em;
   width = 100%;
+}
+
+.form_buttons input {
+  padding: 10px;
+  font-family: 'Amatic SC', cursive;
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 1em;
+  width: 100%;
+  background-color: red;
 }
 
 /*input[type="text"] {
