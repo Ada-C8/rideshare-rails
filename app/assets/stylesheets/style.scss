@@ -16,6 +16,7 @@ body {
   font-size: 75px;
   text-align: center;
   font-family: 'Righteous', cursive;
+  margin-left: -15%;
 
 }
 
@@ -24,22 +25,25 @@ body {
   // justify-content: center;
   position: absolute;
   top: 25%;
-  left: 0%;
+  margin-right: 35%;
 }
 
 .homepage-text {
-  left: 45%;
+  left: 30%;
   position: relative;
 }
 
 .homepage-text h3 {
   font-size: 30pt;
   font-family: 'Archivo Black', sans-serif;
+  position: relative;
+  // margin-left: -5%;
 }
 
 .homepage-text ul {
   font-size: 20pt;
   list-style-type: none;
+  font-family: 'Archivo Black', sans-serif;
 }
 
 .cool-list {
