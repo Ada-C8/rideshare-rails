@@ -1,4 +1,7 @@
-<h2>New Trip</h2>
+
+<section class="form">
+  <h2>New Trip</h2>
+
 <%= form_for @trip do |f| %>
 <%= f.label :date %>
 <%= f.date_field :date %>
@@ -13,3 +16,4 @@
 
 <%= f.submit %>
 <%end%>
+</section>

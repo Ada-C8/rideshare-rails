@@ -30,6 +30,7 @@ class TripsController < ApplicationController
 
   def new
     @trip = Trip.new
+    @passenger = params[:passenger]
   end
 
   def show
