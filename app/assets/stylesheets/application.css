@@ -22,11 +22,11 @@ a, a:visited, a:hover, a:active {
 
 .driver_passenger_list {
   display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 9%;
+  margin-right: 9%;
   padding left: 0;
   height: 95%;
-  width: 95%;
+  width: 82%;
 
 }
 
@@ -55,7 +55,7 @@ a, a:visited, a:hover, a:active {
   transform: scale(1.3);*/
 
   /*swing hover*/
-  -webkit-transform: rotateZ(-20deg);
-  -ms-transform: rotateZ(-20deg);
-  transform: rotateZ(-20deg);
+  -webkit-transform: rotateZ(-15deg);
+  -ms-transform: rotateZ(-15deg);
+  transform: rotateZ(-15deg);
 }
