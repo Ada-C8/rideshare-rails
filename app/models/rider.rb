@@ -14,5 +14,17 @@ class Rider < ApplicationRecord
     end
   end
 
+  def start_trip
+    if Driver.available.count < 1
+      return false #no drivers, no trip!
+    else
+      picked_driver = Driver.available.sample
+
+      new_trip = Trip.new(rider: self, driver: picked_driver, cost: rand(100..15000), rating: 0, date: Date.today)
+
+      self.trips << new_trip
+    end
+    return new_trip
+  end
 
 end

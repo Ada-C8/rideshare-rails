@@ -7,5 +7,4 @@ class Trip < ApplicationRecord
   def needs_rating?
     return true if self.rating == 0
   end
-
 end
