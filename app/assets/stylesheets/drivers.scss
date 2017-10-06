@@ -22,17 +22,21 @@ h1 {
 
 .left {
   min-width: 285px;
-  width: 45%;
+  width: 44%;
   vertical-align: top;
 }
 
 .right {
-  width: 54%;
+  width: 45%;
 }
 
-.right li {
+.right table {
   min-width: 250px;
   width: 70%;
+}
+
+.left, .right {
+  margin: 0 1.75rem;
 }
 
 /* ==== LINKS TO EDIT/DELETE STYLING ==== */
