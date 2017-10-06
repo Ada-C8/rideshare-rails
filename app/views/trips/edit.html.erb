@@ -15,7 +15,7 @@
   <%= f.text_field :date, readonly: true %>
 
   <%= f.label :rating %>
-  <%= f.text_field :rating, placeholder: "5" %>
+  <%= f.select :rating, [[1],[2],[3],[4],[5]] %>
 
   <%= f.label :cost %>
   <%= f.text_field :cost, placeholder: "20.00" %>
