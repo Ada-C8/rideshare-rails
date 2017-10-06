@@ -31,15 +31,15 @@
         <% end %>
       </li>
       <li>
-        <% if @trip.rating%>
-          Rating: <%=@trip.rating%>
-        <% else %>
-          <strong>Rating: Please select a rating</strong>
-          <%= form_for @trip do |f| %>
-          <%= f.select :rating, [nil, 1, 2, 3, 4, 5]%>
-          <%= f.submit "submit rating" %>
-          <% end %>
-        <% end %>
+          <% if @trip.rating%>
+              Rating: <%=@trip.rating%>
+          <% else %>
+              <strong>Rating: Please select a rating</strong>
+              <%= form_for @trip do |f| %>
+                <%= f.select :rating, [nil, 1, 2, 3, 4, 5]%>
+                <%= f.submit "submit rating" %>
+              <%end%>
+            <% end %>
       </li>
       <li>
         Cost: $

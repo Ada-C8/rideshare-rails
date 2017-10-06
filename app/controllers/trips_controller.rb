@@ -11,6 +11,7 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
+    @display_error = true
   end
 
   def new
@@ -34,11 +35,8 @@ class TripsController < ApplicationController
   end
 
   def update
-
     @trip = Trip.find(params[:id])
     @trip.update_attributes(trip_params)
-    # @passenger.name = params[:passenger][:name]
-    # @passenger.phone_num = params[:passenger][:phone_num]
     @trip.save
     redirect_to trip_path
   end
