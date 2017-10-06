@@ -242,18 +242,26 @@ span.rating {
 /*  STARS  */
 /***********/
 
-.one-star {
-  color: firebrick;
+.zero-stars a{
+  color: lightgrey;
 }
 
-.two-stars {
-  color: darkgoldenrod;
+.one-star a{
+  color: #cc0000;
 }
 
-.five-stars {
-  color: mediumseagreen;
+.two-stars a{
+  color: #ff8533;
 }
 
-.zero-stars {
-  color: grey;
+.three-stars a{
+  color: #ffcc00;
+}
+
+.four-stars a{
+  color: #70db70;
+}
+
+.five-stars a{
+  color: #228B22;
 }
