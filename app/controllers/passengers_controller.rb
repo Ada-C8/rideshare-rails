@@ -7,6 +7,11 @@ class PassengersController < ApplicationController
     @passenger = Passenger.find_by(id: params[:id].to_i)
     @trips = Trip.where(passenger_id: params[:id].to_i)
 
+    # if passenger not found
+    unless @passenger
+      flash[:error] = "Passenger not found"
+      redirect_to passengers_path
+    end
   end
 
   def create

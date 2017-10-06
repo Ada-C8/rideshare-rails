@@ -79,20 +79,21 @@ header {
 }
 
 /* ==== NOTICES / ERRORS STYLING */
-.notice, .errors {
+.notice, .errors, .error {
   display: block;
   font-family: "Josefin Sans", Arial, sans-serif;
   font-weight: 300;
   font-size: 1.5rem;
   padding-left: 2rem;
+  margin-bottom: 1rem;
 }
 
 .notice {
   color: green;
-  margin-bottom: 1rem;
+  // margin-bottom: 1rem;
 }
 
-.errors {
+.errors, .error {
   color: red;
 }
 

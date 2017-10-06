@@ -7,6 +7,11 @@ class DriversController < ApplicationController
     @driver = Driver.find_by(id: params[:id].to_i)
     @trips = Trip.where(driver_id: params[:id].to_i).order("date DESC")
 
+    # if driver not found
+    unless @driver
+      flash[:error] = "Driver not found"
+      redirect_to drivers_path
+    end
   end
 
   def create
