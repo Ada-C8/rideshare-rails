@@ -63,7 +63,7 @@ h1 {
   color: rgb(81, 18, 84);
 }
 
-/* Passenger*/
+/* Passenger and Driver index page styles */
 ol {
   width: 40em;
 
@@ -77,3 +77,9 @@ li {
 
 a {
   text-decoration: none;
+}
+
+.index-column {
+
+
+}
