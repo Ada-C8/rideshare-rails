@@ -28,13 +28,22 @@
  .clearfix { display: block; }
  /* close commented backslash hack */
 
+ .error-messages {
+   color: red;
+ }
+
+ .field_with_errors {
+   display: inline;
+ }
+
 header{
   width: 100%;
-  height: 50px;
+  height: 75px;
   background-color: darkgrey;
   color: white;
   position: fixed;
-
+  z-index: 100;
+  top: 0;
 }
 
 header a {
@@ -50,8 +59,9 @@ header a:hover {
 }
 header h1 {
   float: left;
+  /*clear: both;*/
   margin: .7em 0;
-  width: 25%;
+  width: 20%;
   padding: 0 1em;
 }
 
@@ -59,19 +69,17 @@ header nav {
   float: right;
   width: 70%;
   text-align: right;
+
+}
+header ul {
+  margin: 0;
+  padding: .5em 1em .5em 0;
 }
 header li {
   display: inline-block;
   list-style: none;
+  padding: 0 .5em;
 }
-
- .error-messages {
-   color: red;
- }
-
- .field_with_errors {
-   display: inline;
- }
 
  body {
    margin-top: 75px;
