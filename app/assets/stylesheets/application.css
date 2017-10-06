@@ -71,7 +71,7 @@ header nav {
 
 
 footer {
-  height: 3em;
+  padding: 1em;
   right: 0;
   bottom: 0;
   left: 0;
@@ -80,6 +80,6 @@ footer {
   color: white;
   line-height: 1em;
   margin: 1px;
-  /*position: absolute;*/
+  position: absolute;
 
 }
