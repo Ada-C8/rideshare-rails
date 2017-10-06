@@ -1,10 +1,14 @@
-<h2>One Driver at a Time!</h2>
-
-<%= "Hi my name is #{@driver.name}!  My average rating is " %>
-
 <%=link_to "Home", drivers_path %>
-
 <hr />
+
+<h2><%= "#{@driver.name}" %></h2>
+
+<h3><%= "Average rating is #{@driver.average_rating} out of 5." %></h3>
+<h3>Total Earnings: <%= money_format (@driver.total_earnings) %></h3>
+
+<hr / />
+
+</hr>
 <% if !@trips.empty? %>
 <% @trips.each do |trip| %>
 Trip ID: <%= trip.id %>
@@ -18,7 +22,7 @@ Trip ID: <%= trip.id %>
     Rating: <%= trip.rating %>
   </li>
   <li>
-    Total Earnings: $<%= trip.cost %>
+    Earnings: <%= money_format(trip.cost) %>
   </li>
 </ul>
 <% end %>
