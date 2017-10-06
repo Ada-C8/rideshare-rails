@@ -1,7 +1,11 @@
-<h1>Drivers#index</h1>
+<!-- <h1>Drivers#index</h1> -->
 
-<% @drivers.each do |driver| %>
-<p>
-  <%= link_to(driver.name, driver_path(driver.id), alt:'Link to show driver show view')%>
-</p>
-<% end %>
+<h1>DJ Drivers</h1>
+
+<ul class="name-columns">
+  <% @drivers.each do |driver| %>
+  <li>
+    <%= link_to(driver.name, driver_path(driver.id), alt:'Link to show driver show view')%>
+  </li>
+  <% end %>
+</ul>
