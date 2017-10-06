@@ -44,7 +44,7 @@
         <%= link_to "Edit driver information", edit_driver_path(@driver.id), class: "link"%>
       </li>
       <li>
-        <%= link_to "Delete Driver", driver_path(@driver.id), method: :delete, data: {confirm: "Are you sure you want to delete #{@driver.name} from the database? You can not undo this action.", class: "link"}%>
+          <%= link_to "Delete Driver", driver_path(@driver.id), method: :delete, data: {confirm: "Are you sure you want to delete #{@driver.name} from the database? You can not undo this action."}, class: "link"%>
       </li>
       <ul>
       </div>
