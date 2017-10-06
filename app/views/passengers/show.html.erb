@@ -7,15 +7,14 @@
 <section class="passenger_info">
   <h3>Phone: <%= @passenger.phone_num %></h3>
   <h3>Total Trips Cost: $<%= @passenger.trips.size > 0 ? @passenger.total_trip_cost : 0 %>
-</section>
+  </section>
 
-<section class="pass_buttons">
-  <h2><%= link_to("Add a Trip", new_passenger_trip_path(@passenger.id)) %></h2>
-  <h2><%= link_to("Edit Passenger", edit_passenger_path) %></h2>
-</section>
+  <section class="pass_buttons">
+    <h2><%= link_to("Add a Trip", new_passenger_trip_path(@passenger.id)) %></h2>
+    <h2><%= link_to("Edit Passenger", edit_passenger_path) %></h2>
+  </section>
 
-<table class="trips_table">
   <%= render partial: 'shared/trips_table', locals: { person: @passenger } %>
-</table>
 
-<h2 class="delete_button"><%= link_to("Delete Passenger", passenger_path, method: :delete) %></h2>
+  
+  <h2 class="delete_button"><%= link_to("Delete Passenger", passenger_path, method: :delete) %></h2>
