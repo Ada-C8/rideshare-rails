@@ -1,32 +1,35 @@
-<a name="top" id="top-of-page"></a>
-<nav>
-<%= render partial: 'layouts/nav'%>
-</nav>
+<div class="wrapper">
+  <a name="top" id="top-of-page"></a>
 
-<section class="cool-list">
-  <h3>
-    All Trips
-  </h3>
-  <ul>
-    <% @trips.each do |trip| %>
-    <section class="hover-style">
-      <%= link_to trip_path(trip.id), class: "link_to-style" do %>
-          <li class="flex-box">
-            <p><br>
-              <strong>ID: <%= trip.id %></strong><br>
-              Date: <%= trip.date %><br>
-              Driver: <%= trip.driver.name %><br>
-              Passenger: <%= trip.passenger.name %><br>
-              Rating: <%= trip.rating %> <br>
-              Cost: <%= '%.2f'%(trip.cost/100) %> <br><br>
-            </p>
-            <span>
-              MORE DETAILS
-            </span><br>
-          </li>
+  <nav class="flex-box-from-top">
+  <%= render partial: 'layouts/nav'%>
+  </nav>
+
+  <section class="cool-list">
+    <h3 class="margin-left">
+      All Trips
+    </h3>
+    <ul>
+      <% @trips.each do |trip| %>
+      <section class="hover-style">
+        <%= link_to trip_path(trip.id), class: "link_to-style" do %>
+            <li class="flex-box">
+              <p class="margin-left"><br>
+                <strong>ID: <%= trip.id %></strong><br>
+                Date: <%= trip.date %><br>
+                Driver: <%= trip.driver.name %><br>
+                Passenger: <%= trip.passenger.name %><br>
+                Rating: <%= trip.rating %> <br>
+                Cost: <%= '%.2f'%(trip.cost/100) %> <br><br>
+              </p>
+              <span>
+                MORE DETAILS
+              </span><br>
+            </li>
+        <% end %>
+      </section>
       <% end %>
-    </section>
-    <% end %>
-  </ul>
-  <a href="#top" id="top">Back to top</a>
-</section> <%#cool-list%>
+    </ul>
+    <a href="#top" id="top">Back to top</a>
+  </section> <%#cool-list%>
+</div>

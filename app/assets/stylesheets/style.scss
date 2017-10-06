@@ -29,7 +29,14 @@ body {
   }
 }
 
+.flex-box-from-top {
+  display: flex;
+  align-content: flex-start;
+}
 
+.margin-left {
+  margin-left: 10px;
+}
 
 .hover-style {
   a {
