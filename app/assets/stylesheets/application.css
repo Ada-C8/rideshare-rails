@@ -1,14 +1,15 @@
+/*general settings for all pages*/
 body {
   font-family: 'Slabo 13px', serif;
   background: linear-gradient(to bottom right, #8BDAEE, #17849F);
   background-size: cover;
-  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  margin: 0;
 }
 
-.homepage {
-  /*background-color: #79D2E9;*/
-  background:  url(ocean3.gif) no-repeat center center fixed;
-  background-size: cover;
+html {
+  height: 100%;
 }
 
 ul, li{
@@ -19,6 +20,7 @@ a {
   text-decoration: none;
 }
 
+/*header with logo and navigation*/
 .navigation {
   display: flex;
   flex-direction: row;
@@ -26,7 +28,6 @@ a {
   margin: 0;
   font-family: 'Libre Baskerville', serif;
   color: #0F5364;
-  /*background-color:  #C6ECF6 ;*/
   border-radius: 15px 50px;
   min-width: 500px;
   overflow: visible;
@@ -34,12 +35,9 @@ a {
   padding-bottom: 1em;
 }
 
-
-
 .navigation a{
   font-size: 6em;
   color: #0F5364;
-
   text-shadow: 1;
   padding-left: .5em;
   font-weight: bold;
@@ -49,6 +47,7 @@ a {
   color: #188BA9;
 }
 
+/*navigation dropdown menus*/
 .navigation .dropdown a{
   font-family: 'Arvo', serif;
   font-size: 2em;
@@ -57,58 +56,54 @@ a {
   text-decoration: none;
 }
 
+.dropdown a:hover {
+  color: #188BA9;
+}
 
 .dropdown-button-view, .dropdown-button-create  {
-    background-color: transparent;
-    color: white;
-    padding: 0;
-    font-size: 3em;
-    border: none;
-    cursor: pointer;
-    font-family: 'Arvo', serif;
-    margin: 0;
-
+  background-color: transparent;
+  color: white;
+  padding: 0;
+  font-size: 3em;
+  border: none;
+  cursor: pointer;
+  font-family: 'Arvo', serif;
+  margin: 0;
 }
 
 .dropdown {
-    position: relative;
-    display: flex;
-    text-align: right;
-    margin-left: 10em;
+  position: relative;
+  display: flex;
+  text-align: right;
+  margin-left: 10em;
 }
 
 .dropdown-content-view, .dropdown-content-create {
-    display: none;
-    position: absolute;
-    width: 20em;
-    min-width: 160px;
-    text-align: left;
-    overflow: visible;
-    margin: 0;
-    /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
-    z-index: 1;
-
+  display: none;
+  position: absolute;
+  width: 20em;
+  min-width: 160px;
+  text-align: left;
+  overflow: visible;
+  margin: 0;
+  z-index: 1;
 }
 
 .dropdown-content-view a, .dropdown-content-create a {
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
 
-/*.dropdown:hover + .dropdown-content-view {
-    display: block;
-}*/
-
-
 .dropdown:hover .dropdown-content-view {
-    display: block;
+  display: block;
 }
 
 .dropdown:hover .dropdown-content-create {
-    display: block;
+  display: block;
 }
 
+/*container for content on non-home pages */
 .information-box {
   align-items: center;
   width: 100%;
@@ -120,21 +115,7 @@ a {
   opacity: .75;
 }
 
-.individual-details {
-
-}
-
-/*.ride-share-body {
-  align-items: center;
-  width: 100%;
-  height: 500px;
-  min-width: 350px;
-  overflow: scroll;
-  display: flex;
-  flex-direction: column;
-  opacity: .75;
-}*/
-
+/*footer for all pages */
 footer {
   font-size: 1em;
   width:100%;
@@ -145,12 +126,16 @@ footer {
   bottom:0;
   text-align: center;
   color: white;
-
 }
 
+/*different background for homepage only*/
+.homepage {
+  /*background-color: #79D2E9;*/
+  background:  url(ocean3.gif) no-repeat center center fixed;
+  background-size: cover;
+}
 
-/*animation for home page*/
-
+/*animation for home page text*/
 @keyframes fadeInOut {
   0% {
     opacity: 0;
@@ -228,31 +213,12 @@ footer {
   color: white;
 }
 
-
-/*table {
-  width: 65%;
-  height: 90%;
-  border-radius: 15px 50px;
-  text-align: center;
-  background-color: transparent;
-  color: black;
-  overflow: scroll;
-}
-
-table, th, td {
-    border-bottom: .25px solid #0F5364;
-    border-right: .25px solid #0F5364;
-}
-
-th {
-  font-weight: bold;
-}*/
+/*table styling for trips views*/
 h1 {
   font-family: 'Slabo 13px', serif;
   font-size: 3em;
   color: #0F5364;
   font-weight: bold;
-
 }
 
 table, table a{
@@ -277,9 +243,7 @@ tr:hover, tr:hover a{
   color: #0F5364;
 }
 
-
-
-/*crazy stuff trying out*/
+/*circular images for viewing all passengers and drivers */
 .profiles {
   display: flex;
   flex-flow: row;
@@ -287,10 +251,10 @@ tr:hover, tr:hover a{
 }
 
 .row {
-    clear: both;
-    margin-left: -15px;
-    margin-right: -15px;
-    overflow: hidden;
+  clear: both;
+  margin-left: -15px;
+  margin-right: -15px;
+  overflow: hidden;
 }
 
 .profile-pic {
@@ -300,6 +264,7 @@ tr:hover, tr:hover a{
   text-align: center;
   color: #0F5364;
   font-family: 'Slabo 13px', serif;
+  width: 10em;
 }
 
 .profile-pic a {
@@ -324,6 +289,7 @@ tr:hover, tr:hover a{
   padding-bottom: 1.5em;
 }
 
+/*individual details for drivers and passengers, including edit and delete links*/
 .individual-details, .buttons a{
   font-size: 1.5em;
   color: white;
@@ -335,4 +301,36 @@ tr:hover, tr:hover a{
 
 .individual-details {
   color: #0F5364;
+}
+
+/*create driver, passenger, or edit rating forms*/
+form {
+  color: white;
+  font-weight: bold;
+  font-size: 2.5em;
+  width: 40%;
+}
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid teal;
+  border-radius: 4px;
+}
+
+input[type=text]:focus {
+  border: 3px solid #27cdb2;
+}
+
+input[type=submit] {
+    font-family: 'Slabo 13px', serif;
+    background-color: #8BDAEE;
+    color: #188BA9;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 16px 32px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
