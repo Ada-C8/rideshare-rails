@@ -2,6 +2,8 @@
 
 <%= "Hi my name is #{@driver.name}!  My average rating is " %>
 
+<%=link_to "Home", drivers_path %>
+
 <hr />
 <% if !@trips.empty? %>
 <% @trips.each do |trip| %>
@@ -16,7 +18,7 @@ Trip ID: <%= trip.id %>
     Rating: <%= trip.rating %>
   </li>
   <li>
-    Cost: $<%= trip.cost %>
+    Total Earnings: $<%= trip.cost %>
   </li>
 </ul>
 <% end %>

@@ -36,6 +36,24 @@ class DriversController < ApplicationController
     end
   end
 
+  def total_earnings
+    trips = self.trips
+    sum = 0
+    trips.each do |trip|
+      sum += trip.cost if trip.cost * '.15'.to_f
+    end
+    return sum 
+  end
+  #
+  # def average_rating
+  #   trips = self.trips
+  #   sum = 0
+  #   trips.each do |trip|
+  #     sum += trip.cost if trip.cost
+  #   end
+  #   return sum
+  # end
+
   def destroy
     @driver = Driver.find(params[:id]).destroy
     redirect_to drivers_path
