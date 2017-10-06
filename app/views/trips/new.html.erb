@@ -1,7 +1,28 @@
 <h1>Trips#new</h1>
 <p>Find me in app/views/trips/new.html.erb</p>
-<!-- does not work yet -->
-<% form_for @trip do |f| %>
-<%= f.select :driver_id, options_from_collection_for_select(Driver.all, "id", "name") %>
-<%= f.submit %>
+
+<% if @trip.errors.any? %>
+  <ul class="errors">
+    <% @driver.errors.each do |column, message| %>
+      <li>
+        <strong><%= column.capitalize %></strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
 <% end %>
+
+<section>
+  <%= form_for @trip do |f| %>
+    <%= f.label :passenger_id %>
+    <%= f.select :passenger_id, options_from_collection_for_select(Passenger.order(:name), "id", "name", params[:passenger_id]) %>
+    <%= f.label :driver_id %>
+    <%= f.select :driver_id, options_from_collection_for_select(Driver.order(:name), "id", "name", params[:driver_id]) %>
+    <%= f.label :date %>
+    <%= f.date_field :date%>
+    <%= f.label :rating %>
+    <%= f.label :cost %>
+    <%= f.number_field :cost, min: 0 %>
+    <%= f.select :rating, options_for_select((1..5)) %>
+    <%= f.submit "Create Trip" %>
+  <% end %>
+</section>

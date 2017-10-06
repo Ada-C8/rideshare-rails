@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root to: 'homepage#index'
 
-  get '/trips', to: 'trips#index'
+  resources :trips
 
   resources :passengers do
     resources :trips
