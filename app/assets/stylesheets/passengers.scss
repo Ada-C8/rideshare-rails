@@ -44,8 +44,7 @@ table.main-list tr td a { vertical-align: middle; }
 }
 
 // no errors
-#passenger-form div.name-wrapper label,
-#passenger-form div.phone-wrapper label {
+#passenger-form div[class*="wrapper"] label{
   width: 15%;
   margin-top: 0.5%;
 }

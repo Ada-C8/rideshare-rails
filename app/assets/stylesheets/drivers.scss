@@ -44,8 +44,7 @@ table.main-list tr td a { vertical-align: middle; }
 }
 
 // no errors
-#driver-form div.name-wrapper label,
-#driver-form div.vin-wrapper label {
+#driver-form div[class*="wrapper"] label {
   width: 15%;
   margin-top: 0.5%;
 }

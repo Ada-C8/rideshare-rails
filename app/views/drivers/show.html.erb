@@ -31,7 +31,44 @@
         <tr>
           <td class="icon"><i class="fa fa-star"></i></td>
           <td class="title">Average rating</td>
-          <td class="data">$<%= @driver.average_rating%></td>
+          <td class="data">
+            <span class="stars">
+              <% case @driver.average_rating
+              when 1 %>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+              <% when 2 %>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+              <% when 3 %>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+              <% when 4 %>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+              <% when 5 %>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              <% when nil %>
+                <i class="fa fa-question"></i>
+              <% end %>
+            </span>
+          </td>
         </tr>
       </table>
     </div>
