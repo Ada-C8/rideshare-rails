@@ -20,4 +20,5 @@
 <section class="trip_button">
 <h2><%= link_to "Edit", edit_trip_path(@trip.id) %></h2>
 <h2><%= link_to "Delete", trip_path(@trip.id), method: :delete, data: { confirm: "Delete trip?" } %></h2>
+<h2><%= link_to "Back", request.referer.present? ? request.referer : root_path %></h2>
 </section>
