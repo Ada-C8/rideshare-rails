@@ -1,14 +1,16 @@
+<main>
 <h2>
-  List of all drivers
+  Uberlite Drivers
 </h2>
 
 
 <div class=index_list>
-  <ol>
+  <ul>
     <%@drivers.sort_by {|d| d.name}.each do |driver| %>
     <li>
-      <%= link_to driver.name, driver_path(driver.id) %>
+      <%= link_to driver.name, driver_path(driver.id), class: "link" %>
     </li>
   <% end %>
-  </ol>
+</ul>
 </div>
+  </main>

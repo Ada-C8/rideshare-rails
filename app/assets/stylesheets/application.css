@@ -14,7 +14,117 @@
  *= require_self
  */
 
+ /*Main page and header and footer*/
+
+ @import url('https://fonts.googleapis.com/css?family=Mukta');
+
+
 header, footer {
   border-style: solid;
   border-color: Gold;
+  clear: both;
+  background-color: #E5B7B7;
+}
+
+#title {
+  display: inline-block;
+  width: 25%;
+  color: gold;
+}
+
+#links {
+  display: inline-block;
+  width: 74%;
+}
+
+nav ul {
+  margin-left: 0;
+}
+
+#links li {
+  display: inline-block;
+  width: 19%;
+  text-align: center;
+}
+
+footer p {
+  display: inline-block;
+  width: 40%
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/*Link Styling*/
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.link:hover {
+  color: gold;
+}
+
+/*Index Pages for Driver and Passengerr*/
+
+
+.index_list li:nth-child(even) {
+  background-color: white;
+}
+
+.index_list li:nth-child(odd) {
+  background-color: #E5B7B7;
+}
+
+
+
+
+/*Show Pages for Passenger and driver*/
+fig {
+  float: left;
+  /*display: inline-block;*/
+  width: 30%
+}
+
+h2 {
+  font-size: 3em;
+}
+
+main {
+  text-align: center;
+  background-color: #C16565;
+  font-family: 'Mukta';
+}
+
+.individual_info {
+  float: left;
+  position: relative;
+
+  /*right: 30%;*/
+
+}
+
+.trips {
+  padding: 5vw 22vw 5vw;
+  clear: both;
+  background-color: #E5B7B7;
+
+}
+
+
+.buttons {
+  float: right;
+  padding-right: 10%;
+}
+
+.buttons li {
+  background-color: #E5B7B7;
+  margin-top: 10px;
+}
+
+#trip_view {
+  display: block;
 }

@@ -1,8 +1,10 @@
-<h2>
-  Trip Details
-</h2>
+<main>
+  <h2>
+    Trip Details
+  </h2>
 
-<section>
+
+<section id = "trip_view">
   <div class="individual_info">
     <ul>
       <li>
@@ -16,7 +18,7 @@
         Driver: driver account deleted
       <%else %>
         <%driver_name = Driver.find(@trip.driver_id).name %>
-        Driver: <%= link_to driver_name, driver_path(@trip.driver_id) %>
+        Driver: <%= link_to driver_name, driver_path(@trip.driver_id), class: "link" %>
       <% end %>
       </li>
       <li>
@@ -24,7 +26,7 @@
         Passenger: passenger account deleted
         <%else %>
         <%passenger_name = Passenger.find(@trip.passenger_id).name %>
-        Passenger: <%= link_to passenger_name, passenger_path(@trip.passenger_id) %>
+        Passenger: <%= link_to passenger_name, passenger_path(@trip.passenger_id), class: "link" %>
         <% end %>
       </li>
       <li>
@@ -39,7 +41,10 @@
         <% end %>
       </li>
       <li>
-        Cost: $<%= "%.2f" % @trip.cost %>
+        Cost: $
+        <% unless @trip.cost == nil %>
+        <%= "%.2f" % @trip.cost %>
+        <%end %>
       </li>
     </ul>
   </div>
@@ -55,3 +60,4 @@
     </ul>
   </div>
 </section>
+</main>

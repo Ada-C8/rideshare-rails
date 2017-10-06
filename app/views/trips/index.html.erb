@@ -1,6 +1,6 @@
-
+<main>
 <h2>
-  Trip index page
+  Uberlite Trips
 </h2>
 <p>
   This is for debugging, I think we can delete it for our final project
@@ -12,7 +12,7 @@
   <li>
     <ul>
       <li>
-        Trip id:<%= link_to trip.id, trip_path(trip.id) %>
+        Trip id:<%= link_to trip.id, trip_path(trip.id), class: "link" %>
       </li>
       <li>
         Trip driver_id: <%= trip.driver_id %>
@@ -29,3 +29,4 @@
   <% end %>
   <ul>
 </div>
+  </main>

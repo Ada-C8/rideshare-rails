@@ -19,7 +19,7 @@ class Driver < ApplicationRecord
       unless x.rating == nil
       total += x.rating
       count += 1
-    end
+      end
     end
     answer = total/count
     return answer.round(2)
