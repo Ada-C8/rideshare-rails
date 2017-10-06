@@ -1,9 +1,17 @@
 <h2>Driver Details</h2>
 
 <nav class="page-menu">
-  <%= link_to "Edit", edit_driver_path(@driver.id) %>
-  <%= link_to "Delete", driver_path(@driver.id), method: :delete %>
-  <%= link_to "Back to index", drivers_path %>
+  <ul>
+    <li>
+      <%= link_to "Edit", edit_driver_path(@driver.id) %>
+    </li>
+    <li>
+      <%= link_to "Delete", driver_path(@driver.id), method: :delete %>
+    </li>
+    <li>
+      <%= link_to "Back to index", drivers_path %>
+    </li>
+  </ul>
 </nav>
 
 <section>
