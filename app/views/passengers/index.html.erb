@@ -13,8 +13,8 @@
     <ul>
       <%@passengers.each do |passenger|%>
         <section class="hover-style">
-            <%=link_to passenger_path(passenger.id), class: "link_to-style" do%>
-              <li class="flex-box">
+          <%=link_to passenger_path(passenger.id), class: "link_to-style" do%>
+            <li class="flex-box">
               <p class="margin-left">
                 <strong>ID: <%= passenger.id %></strong><br>
                 Name: <%= passenger.name %><br>
