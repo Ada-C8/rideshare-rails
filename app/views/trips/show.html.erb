@@ -1,0 +1,24 @@
+<h1> Trip Detail Page </h1>
+<section>
+  <% if @trip %>
+    <h3>ID: <%= @trip.id %></h3>
+    <p>Date: <%= @trip.date %></p>
+    <% if @trip.needs_rating?%>
+      <p id = "add-rating">
+        Rating: <%= link_to "Please Add Rating", edit_trip_path(@trip.id)%>
+      </p>
+    <% else %>
+      <p>Rating: <%= @trip.rating %></p>
+    <% end %>
+    <p>Cost: $<%= '%.02f' % ((@trip.cost).to_f/100) %></p>
+    <p>Driver: <%= link_to "#{@trip.driver.name}", driver_path(@trip.driver.id) %></p>
+    <p>Rider: <%= link_to "#{@trip.rider.name}", rider_path(@trip.rider.id) %></p>
+    <% else %>
+    <h2> Trip ID does not found </h2>
+  <% end %>
+</section>
+
+<section class = "page-content-links">
+  <%= link_to "Edit", edit_trip_path(@trip.id)%>
+  <%= link_to "Delete", delete_trip_path(@trip.id), method: :delete, data: {confirm: "Are you sure?"}%>
+</section>

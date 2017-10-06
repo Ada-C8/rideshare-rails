@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rando Rail Rides Admin Page</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Righteous" rel="stylesheet">
+  </head>
+
+  <body <%="id = home-background" if params[:controller] == 'pages' %>>
+    <header>
+      <nav>
+        <%= link_to 'Home', root_path%>
+        <section class= 'dropdown'>
+          <button class = 'dropbtn'>
+            Drivers
+          </button>
+          <section class = 'dropdown-content'>
+            <%= link_to 'View All Drivers', drivers_path%>
+            <%= link_to 'Add New Driver', new_driver_path%>
+          </section>
+        </section>
+        <section class= 'dropdown'>
+          <button class = 'dropbtn'>
+            Riders
+          </button>
+          <section class = 'dropdown-content'>
+            <%= link_to 'View All Riders', riders_path%>
+            <%= link_to 'Add New Rider', new_rider_path%>
+          </section>
+        </section>
+
+      </nav>
+    </header>
+    <section class = "content-container">
+      <%= yield %>
+    </section>
+    <footer>
+
+    </footer>
+  </body>
+</html>

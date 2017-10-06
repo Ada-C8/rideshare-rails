@@ -1,0 +1,28 @@
+<h1> Rider Detail Page </h1>
+<p id="notice"><%= notice %></p>
+<section>
+  <% if @rider %>
+    <h3>NAME: <%= @rider.name %></h3>
+    <p>ID: <%= @rider.id%></p>
+    <p>PHONE: <%= @rider.phone %></p>
+    <% else %>
+    <h2> Rider ID does not found </h2>
+  <% end %>
+</section>
+
+<section class = "money-section">
+  <h3>Rider's Total Spent</h3>
+  <%= "$#{@rider.total_cost}" %>
+</section>
+
+<section class = "trips-section">
+  <h3>Rider's Trips</h3>
+  <%= render partial: '/partial_views/trips_list'%>
+</section>
+
+<section class = "page-content-links">
+  <%= link_to "Edit Rider", edit_rider_path(@rider.id)%>
+  <%= link_to "Delete Rider", delete_rider_path(@rider.id), method: :delete, data: {confirm: "Are you sure?"}%>
+
+  <%= link_to "New Rando Trip", create_rider_trip_path,  method: :post, data: {confirm: "For real?"}%>
+</section>

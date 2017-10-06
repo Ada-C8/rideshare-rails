@@ -1,0 +1,20 @@
+<% if @driver.errors.any? %>
+  <ul class="errors">
+    <% @driver.errors.each do |column, message| %>
+      <li>
+        <strong><%= column.upcase %></strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @driver do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name , :required => true %>
+
+  <%= f.label :vin %>
+  <%= f.text_field :vin , :required => true %>
+
+  <%= f.submit button_text%>
+<% end %>

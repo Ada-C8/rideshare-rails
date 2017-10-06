@@ -1,0 +1,19 @@
+<ul class="errors">
+  <% @rider.errors.each do |column, message| %>
+    <li>
+      <strong><%= column.upcase %></strong> <%= message %>
+    </li>
+  <% end %>
+</ul>
+
+
+<%= form_for @rider do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name , :required => true %>
+
+  <%= f.label :phone %>
+  <%= f.text_field :phone , :required => true %>
+
+  <%= f.submit button_text%>
+<% end %>

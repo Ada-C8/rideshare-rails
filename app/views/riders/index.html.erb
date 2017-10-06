@@ -1,0 +1,8 @@
+<h1> List of All Riders </h1>
+
+<section>
+  <% @riders.each do |rider| %>
+    <p> <%= "#{rider.id}." %> <%= link_to "#{rider.name}", rider_path(rider.id)%></p>
+
+  <% end %>
+</section>

@@ -1,0 +1,44 @@
+<% trip_headers = %w(rating date cost) %>
+
+<% if params[:controller] == "riders" %>
+  <% trip_headers.insert(2, "driver_id") %>
+<% elsif params[:controller] == "drivers" %>
+  <% trip_headers.insert(2, "rider_id") %>
+<% end %>
+
+
+<section>
+  <% if @trips.count < 1 %>
+    <p>
+      No trips yet
+    </p>
+  <% else %>
+    <table id = 'trips-table'>
+    <tr>
+      <% trip_headers.each do |key| %>
+      <th><%= "Trip #{key.capitalize}" %></th>
+      <% end %>
+    </tr>
+
+    <% @trips.each do |trip| %>
+    <tr>
+      <% trip_headers.each do |key| %>
+      <td>
+        <% if key == "cost" %>
+          <%= "$ #{'%.02f' % ((trip.cost).to_f/100)}" %>
+        <% elsif key == "date" %>
+          <%= link_to "#{trip.date}", trip_path(trip.id)%>
+        <% elsif key == "rider_id" %>
+          <%= link_to trip.attributes[key], rider_path(trip.attributes[key]) %>
+        <% elsif key == "driver_id" %>
+          <%= link_to trip.attributes[key], driver_path(trip.attributes[key]) %>
+        <% else %>
+          <%= trip.attributes[key] %>
+        <% end %>
+      </td>
+      <% end %>
+    </tr>
+    <% end %>
+  </table>
+  <% end %>
+</section>
