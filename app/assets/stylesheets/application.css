@@ -30,6 +30,7 @@ header {
   top: 0;
   left: 0;
   padding: 2px;
+  z-index: 10;
 }
 
 header a, footer a {
@@ -94,8 +95,7 @@ h1 {
 
  main {
    margin-top: 6em;
-   background-color: #cccccc
-
+   background-color: #cccccc;
  }
 
  footer {
@@ -114,9 +114,32 @@ h1 {
    margin: 0 auto;
  }
 
- footer h3 {
+/* Drivers & Passengers _list styling */
 
- }
+article.person_thumb {
+  display: inline-block;
+  width: 16em;
+  padding: 4px;
+  margin: 2em .5em;
+  border: solid #3d3d3d 2px;
+  border-radius: 1em;
+  background-color: #e7e7e7;
+}
+
+.person_thumb img {
+  border: solid #3d3d3d 2px;
+  border-radius: 10em;
+  margin-top: 1em;
+}
+
+.person_thumb a {
+  text-decoration: none;
+  color: #282828;
+}
+
+.person_thumb a:hover {
+  color: #c80101;
+}
 
 /*Shout out to Laura and @AllThingSmitty's Code Pen for table styling*/
 
