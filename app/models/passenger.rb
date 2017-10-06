@@ -5,6 +5,7 @@ class Passenger < ApplicationRecord
   validates :name, presence: {message: 'Please provide a valid name.'}
   validates :phone_num, presence: {message: 'Please provide a valud phone number.'}
 
+# Calculate total cost of trip
   def total_cost
     total_cost = 0
     trips.each do |trip|
