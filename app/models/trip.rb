@@ -18,7 +18,16 @@ class Trip < ApplicationRecord
   def get_driver
     return Driver.all.sample.id
   end
+
   def to_cents
     return self.cost.to_i * 100
   end
+
+  def trip_create(passenger_input)
+    self.passenger = Passenger.find(passenger_input)
+    self.driver_id = self.get_driver
+    self.cost = self.to_cents
+    self.rating = nil
+  end
+
 end

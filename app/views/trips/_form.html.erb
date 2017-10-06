@@ -14,7 +14,7 @@ end
     <%= f.label :date do %>
       <i class="fa fa-calendar"></i> Date
     <% end %>
-    <%= f.date_field :date %>
+    <%= f.date_field :date, value: Date.today %>
   <% end %>
 
   <%= content_tag :div, class: "cost-wrapper" do %>

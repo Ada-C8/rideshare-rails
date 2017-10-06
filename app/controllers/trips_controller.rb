@@ -16,10 +16,7 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params)
-    @trip.passenger = Passenger.find(params[:passenger_id])
-    @trip.driver_id = @trip.get_driver
-    @trip.cost = @trip.to_cents
-    @trip.rating = nil
+    @trip.trip_create(params[:passenger_id])
     if @trip.save
      redirect_to passenger_path(@trip.passenger_id)
     else
