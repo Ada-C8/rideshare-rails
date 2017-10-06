@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'trips#index'
+  root to: 'trips#home'
 
 
   get '/drivers', to: 'drivers#index', as: 'drivers' #drivers_path
@@ -39,9 +39,9 @@ Rails.application.routes.draw do
 
 
 
+  get 'trips/home', to: "trips#home", as: 'home' #home_path
 
-
-  get '/trips', to: 'trips#index', as: 'trips' #drivers_path
+  get '/trips', to: 'trips#index', as: 'trips' #trips_path
 
   get 'trips/:id/edit/', to: 'trips#edit', as: 'edit_trip' #edit_driver_path
 

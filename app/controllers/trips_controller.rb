@@ -1,4 +1,7 @@
 class TripsController < ApplicationController
+  def home
+  end
+  
   def create
     @trip = Trip.new(trip_params)
 

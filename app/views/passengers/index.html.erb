@@ -1,7 +1,4 @@
 <h2>Active Passengers</h2>
-
-<%= link_to "Add new passenger", new_passenger_path(@passenger) %>
-
 <section class="list_of_people">
   <ol>
     <% @passengers.order(:name).each do |passenger| %>
@@ -15,6 +12,4 @@
 
     <%end%>
   </ol>
-
-
 </section>

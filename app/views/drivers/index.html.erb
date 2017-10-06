@@ -1,11 +1,5 @@
 <h2>All Drivers</h2>
 
-<%= link_to "New Driver", new_driver_path %>
-
-
-
-
-
 <section class="list_of_people">
   <ol>
     <% @drivers.order(:name).each do |driver| %>

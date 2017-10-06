@@ -24,7 +24,10 @@ class Driver < ApplicationRecord
       end
     end
     @rating /= @count/1.0
-    return @rating.round(2)
+    if @count > 0
+      return @rating.round(2)
+    else
+      return "Not Yet Rated!"
+    end 
   end
-
 end
