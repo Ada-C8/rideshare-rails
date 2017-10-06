@@ -5,6 +5,11 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Better Errors gem changes the error page
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end
 # Allows us to use InheritedResources:Base which DRYs up the controller
 gem 'inherited_resources'
 # Rails ERD, generates ERD models of application
