@@ -47,6 +47,21 @@ html {
   font-family: courier;
 }
 /*more nav css */
+table, td, th {
+    border: 1px solid black;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+td {
+  text-align: center;
+}
+th {
+    height: 50px;
+}
+
+/*general styling*/
 nav {
   background-color: rgba(215, 190, 217, 0.64);
   height: 100px;
@@ -54,9 +69,6 @@ nav {
 }
 footer {
   color: rgb(81, 18, 84);
-}
-td {
-  text-align: center;
 }
 h1 {
   text-align: center;
