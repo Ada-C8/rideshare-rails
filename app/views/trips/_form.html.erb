@@ -1,11 +1,11 @@
 <%
-if @trip.id
-  form_method = :patch
-  form_action = trip_path(@trip)
-else
-  form_method = :post
-  form_action = passenger_trips_path(passenger_id: @trip.passenger_id)
-end
+  if @trip.id
+    form_method = :patch
+    form_action = trip_path(@trip)
+  else
+    form_method = :post
+    form_action = passenger_trips_path(passenger_id: @trip.passenger_id)
+  end
 %>
 
 <%= form_for @trip, method: form_method, url: form_action, html: {id: "trip-form"} do |f| %>

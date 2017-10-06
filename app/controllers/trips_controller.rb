@@ -39,7 +39,6 @@ class TripsController < ApplicationController
     @trip.cost = @trip.to_cents
     if @trip.save
       redirect_to passenger_path(@trip.passenger_id)
-      # render :show
     else
       render :edit
     end
@@ -54,7 +53,6 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    # params.require(:passenger).require(:trip)
     return params.require(:trip).permit(:date, :cost, :driver_id, :passenger_id, :cost, :rating)
   end
 end
