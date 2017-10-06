@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  get '/', to: 'main#index', as: 'root'
+
   resources :drivers do
     # get '/trips', to: 'trips#index'
   end
@@ -10,6 +12,5 @@ Rails.application.routes.draw do
   end
 
   resources :trips
-
-  get '/', to: 'main#index'
+  # get '/', to: 'main#index' 
 end

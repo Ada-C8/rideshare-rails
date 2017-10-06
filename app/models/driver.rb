@@ -29,4 +29,22 @@ class Driver < ApplicationRecord
       return (total_rating / counter)
     end
   end
+
+  # def driver_trips
+  #   trips = Trip.where(driver_id: id).order(date: :desc).each do |trip|
+  #     return trips
+  #   end
+  # end
+  #
+  def driver_trips
+      driver_trip_summary = trips.order(date: :desc).each do |trip|
+        trip.date
+        # puts trip.date
+        trip.rating
+        # puts trip.rating
+        trip.cost
+        # puts trip.cost
+      end
+      return driver_trip_summary
+  end
 end
