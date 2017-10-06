@@ -1,0 +1,15 @@
+<% button_text ||= %>
+
+<div>
+  <%= form_for @passenger do |f| %>
+    <div class="form-box-wrapper">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="form-box-wrapper">
+      <%= f.label "Phone Number" %>
+      <%= f.text_field :phone_num %>
+    </div>
+    <%= f.submit button_text %>
+  <% end %>
+</div>

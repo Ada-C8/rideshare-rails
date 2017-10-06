@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Journey</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+
+  <header id="main-header">
+    <div id="h1-nav-wrapper" class="clearfix">
+      <h1 id="brand">Journey</h1>
+
+      <nav>
+        <div class="dropdown">
+          <button class="dropbtn"><%= link_to "HOME", root_path, class: "dropbtn visited-color"%></button>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">PASSENGERS</button>
+          <div class="dropdown-content">
+            <%= link_to "ALL PASSENGERS", passengers_path, class: "inside-dropdown" %>
+            <%= link_to "CREATE NEW PASSSENGER", new_passenger_path, class: "inside-dropdown" %>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">DRIVERS</button>
+          <div class="dropdown-content">
+            <%= link_to "ALL DRIVERS", drivers_path, class: "inside-dropdown"  %>
+            <%= link_to "CREATE NEW DRIVER", new_driver_path, class: "inside-dropdown"  %>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <%= yield %>
+
+  <footer>
+    <header>
+      <p>&copy; COPYRIGHT 2017 S.A. I.D</p>
+    </header>
+  </footer>
+
+</body>
+</html>

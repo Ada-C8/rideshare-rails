@@ -1,0 +1,13 @@
+<div class="yield-wrapper">
+  <article>
+    <header class="style">
+      <h1>Edit Driver: <%= @driver.name %></h1>
+    </header>
+    <section>
+      <%= render partial: "error" %>
+      <%# See _error.html.erb under drivers views for partial %>
+      <%= render partial: "form", locals: { button_text: "Make Driver Changes" } %>
+      <%# See _form.html.erb under drivers views for partial %>
+    </section>
+  </article>
+</div>

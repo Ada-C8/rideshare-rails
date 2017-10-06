@@ -1,0 +1,196 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+
+/******** STYLING CLASSES ACROSS ALL CONTROLLERS *********/
+
+.link-styles {
+  color: black;
+  text-decoration: none;
+}
+
+.link-styles:hover {
+  opacity: 0.5;
+}
+
+.no-list-bullets {
+  list-style-type: none;
+  padding: 0;
+}
+
+.error-color {
+  color: red;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.detail-wrapper {
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.form-box-wrapper {
+  display: block;
+  padding: 1em;
+}
+
+.visited-color:visited {
+  color: black;
+}
+
+header.style {
+  border-bottom: 1px black solid;
+  text-align: center;
+}
+
+header.style h1 {
+  margin: 0;
+  padding-top: 1em;
+}
+
+div.yield-wrapper {
+  opacity: 0.9;
+  background-color: white;
+  padding-bottom: 5px;
+  height: 430px;
+  overflow: scroll;
+}
+
+.columns {
+  -webkit-column-count: 5; /* Chrome, Safari, Opera */
+  -moz-column-count: 5; /* Firefox */
+  column-count: 5;
+  margin: 2em 0 2em 0;
+}
+
+.columns ol {
+  margin: 0;
+}
+
+/******** BACKROUND FOR ENTIRE SITE ********/
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+body {
+  /* The image used */
+  background-image: image-url("car.jpeg");
+  color: black;
+
+  /* Set a specific height */
+  height: 100%;
+  width: 100%;
+  margin: 0;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/******** HEADER ********/
+
+div#h1-nav-wrapper {
+  padding: 2em;
+  color: white;
+}
+
+h1#brand {
+  float: left;
+  margin: 0px;
+  color: white;
+  font-family: 'Roboto Slab', serif;
+}
+
+#main-header nav {
+  float: right;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding: 0 3em 0 3em;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #282828;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.inside-dropdown {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover { background-color: #505050 }
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  opacity: 0.5;
+}
+
+/******** FOOTER *********/
+
+footer {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+}
+
+/******** CLEARFIX *********/
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */

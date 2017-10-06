@@ -1,0 +1,19 @@
+<div class="yield-wrapper">
+  <article>
+    
+    <header class="style">
+      <h1>RATE THIS TRIP FOR: <%= Driver.find(@trip.driver_id).name %></h1>
+    </header>
+
+    <section class="detail-wrapper">
+      <%= form_for @trip do |f| %>
+        <div class="form-box-wrapper">
+          <%= f.label :rating %>
+          <%= f.select(:rating, options_for_select([['1 star', 1], ['2 stars', 2], ['3 stars', 3], ['4 stars', 4], ['5 stars', 5]])) %>
+        </div>
+        <%= f.submit "Submit" %>
+      <% end %>
+    </section>
+
+  </article>
+</div>

@@ -1,0 +1,15 @@
+<% button_text ||= "" %>
+
+<div class="detail-wrapper">
+  <%= form_for @driver do |f| %>
+    <div class="form-box-wrapper">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="form-box-wrapper">
+      <%= f.label :vin %>
+      <%= f.text_field :vin %>
+    </div>
+    <%= f.submit button_text %>
+  <% end %>
+</div>

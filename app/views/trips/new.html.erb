@@ -1,0 +1,33 @@
+<div class="yield-wrapper">
+  <article>
+    <header class="style">
+      <h1>Create A New Trip for <%= name = Passenger.find_by(id: @trip.passenger_id).name %></h1>
+    </header>
+    <section>
+      <% if @trip.errors.any? %>
+        <% @trip.errors.each do |column, message| %>
+          <h2 class="error-color align-center"><%= column.capitalize %> <%= message %></h2>
+        <% end %>
+      <% end %>
+
+      <div class="detail-wrapper">
+        <%= form_for @trip do |f| %>
+          <%= f.hidden_field :driver_id %>
+
+          <%= f.hidden_field :passenger_id %>
+
+          <div class="form-box-wrapper">
+            <%= f.label :date, "Date of Trip:" %>
+            <%= f.date_field :date %>
+          </div>
+          <div class="form-box-wrapper">
+            <%= f.label :cost, "Cost of Trip (Cost must be a whole number between 0 - 100):" %>
+            <%= f.text_field :cost %>
+          </div>
+
+          <%= f.submit "Add New Trip" %>
+        <% end %>
+      </div>
+    </section>
+  </article>
+</div>
