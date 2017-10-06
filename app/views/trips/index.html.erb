@@ -2,21 +2,7 @@
 <ol class = 'trip_list'>
   <% @trips.order(date: :asc).each do |trip|%>
     <li class='single_trip'>
-
-      <p>
-        <strong >
-          <%= link_to "Trip on: #{trip.date}", trip_path(trip) %>
-        </strong>
-      </p>
-      <ul>
-        <li>
-          <%= "Driver: #{trip.driver.name}"%>
-        </li>
-        <li>
-          <%= "Passenger: #{trip.passenger.name}"%>
-        </li>
-      </ul>
-
+      <%= render partial: 'layouts/trip_details', locals: { trip: trip, route: trip } %>
     </li>
     <% end %>
   </ol>
