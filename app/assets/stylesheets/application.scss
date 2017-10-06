@@ -16,12 +16,12 @@
 
 /******** STYLING CLASSES ACROSS ALL CONTROLLERS *********/
 
-.link-styles { /* This is for all style links */
+.link-styles {
   color: black;
   text-decoration: none;
 }
 
-.link-styles:hover { /* This is for all hover links */
+.link-styles:hover {
   opacity: 0.5;
 }
 
@@ -67,7 +67,7 @@ div.yield-wrapper {
   opacity: 0.9;
   background-color: white;
   padding-bottom: 5px;
-  height: 420px;
+  height: 430px;
   overflow: scroll;
 }
 
