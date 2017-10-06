@@ -43,6 +43,17 @@ class DriversController < ApplicationController
     redirect_to drivers_path
   end
 
+  def available
+  driver = Driver.find_by(id: params[:id])
+
+  if driver.available
+    driver.update_attribute(:available, false)
+  else
+    driver.update_attribute(:available, true)
+  end
+    redirect_to driver_path
+  end
+
 
   private
 

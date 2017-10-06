@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :trips
   resources :drivers
+  patch 'drivers/:id/available', to: 'drivers#available', as: 'available'
   resources :passengers
   resources :welcome, only: [:index]
 

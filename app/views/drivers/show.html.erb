@@ -1,5 +1,7 @@
 <h1>Driver information for: <%= @driver.name %></h1>
 
+<%= button_to @driver.available ? "Available" : "Unavailable", available_path(@driver.id), method: :patch %>
+
 <h4>VIN number: <%= @driver.vin %></h4>
 
   <% total_earned = 0 %>
@@ -11,9 +13,12 @@
 <% average_rating = 0 %>
 <% counter = 0 %>
 <% @trips.each do |trip| %>
-    <% average_rating += trip[:rating] %>
-    <% counter += 1 %>
+    <% unless trip[:rating] == nil %>
+      <% average_rating += trip[:rating] %>
+      <% counter += 1 %>
+    <% end %>
 <% end %>
+
 <h4>Average rating: <%= "#{"%.01f" % ((average_rating.to_f) / counter)}" %> </h4>
 
 <h4> List of Trips: </h4>
