@@ -1,6 +1,15 @@
 class DriversController < ApplicationController
+  @my_offset = 0
   def index
     @drivers = Driver.all
+        # @drivers = Driver.limit(10)
+
+  end
+  def next
+    @drivers = Driver.limit(10).offset(@my_offset + 10)
+  end
+  def previous
+    @drivers = Driver.limit(10).offset(@my_offset - 10)
   end
 
   def show
