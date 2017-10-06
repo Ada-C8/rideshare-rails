@@ -1,1 +1,11 @@
 <h2>Let's edit that trip!!!</h2>
+
+<%= form_for @TripsController do |f| %>
+  <%= f.label :cost %>
+  <%= f.number_field :cost %>
+
+  <%= f.label :rating %>
+  <%= f.number_field :rating %>
+
+  <%= f.submit "Edit trip!" %>
+<% end %>
