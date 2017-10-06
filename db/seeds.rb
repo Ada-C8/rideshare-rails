@@ -9,6 +9,7 @@ CSV.foreach(DRIVER_FILE, :headers => true) do |row|
   driver.id = row['id']
   driver.name = row['name']
   driver.vin = row['vin']
+  driver.status = row['status']
   puts "Created driver: #{driver.inspect}"
   successful = driver.save
   if !successful
@@ -54,6 +55,7 @@ CSV.foreach(TRIP_FILE, :headers => true) do |row|
   trip.date = Date.strptime(row['date'], '%Y-%m-%d')
   trip.rating = row['rating']
   trip.cost = row['cost']
+  trip.status = row['status']
   puts "Created trip: #{trip.inspect}"
   successful = trip.save
   if !successful
