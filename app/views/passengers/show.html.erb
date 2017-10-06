@@ -17,16 +17,22 @@
     </li>
   </ul>
 
-  <div class="buttons">
-    <!-- <%=link_to("Edit Passenger", edit_passenger_path(@passenger.id)) %> -->
-    <%=button_to("Edit Passenger", edit_passenger_path(@passenger.id), method: :get)%>
+  <div class="pass_buttons">
+    <ul>
+      <li class="edit"><!-- <%=link_to("Edit Passenger", edit_passenger_path(@passenger.id)) %> -->
+        <%=button_to("Edit Passenger", edit_passenger_path(@passenger.id), method: :get)%>
+      </li>
 
-    <!-- <%= link_to("Delete Passenger", delete_passenger_path, method: :delete, data: { confirm: "Are you sure?" })%> -->
-    <%=button_to("Delete Passenger", delete_passenger_path, method: :delete, data: {confirm: "Are you sure?" })%>
+      <li class="delete">
+        <!-- <%= link_to("Delete Passenger", delete_passenger_path, method: :delete, data: { confirm: "Are you sure?" })%> -->
+        <%=button_to("Delete Passenger", delete_passenger_path, method: :delete, data: {confirm: "Are you sure?" })%>
+      </li>
 
-    <!-- <%= link_to("New Trip", create_trip_passenger_path(@passenger.id), method: :post) %> -->
-    <%=button_to("New Trip", create_trip_passenger_path(@passenger.id), method: :post)%>
-
+      <li class="new">
+        <!-- <%= link_to("New Trip", create_trip_passenger_path(@passenger.id), method: :post) %> -->
+        <%=button_to("New Trip", create_trip_passenger_path(@passenger.id), method: :post)%>
+      </li>
+    </ul>
   </div>
 
 </div>
@@ -66,23 +72,23 @@
   </table>
 
   <!-- <li>
-    Trips
-    <ul>
-      <% @trips.each do |trip| %>
-      <li>
-        <%= link_to("Date: #{trip.date}", trip_path(trip.id)) %>
-      </li>
-      <li>
-        <% @rated = trip.rating == nil || trip.rating == 0 ? "unrated" : "rated" %>
-        Rating: <span class="<%=@rated%>"><%= trip.rating %></span>
-        <% if @rated == "unrated" %>
-          <%=link_to("Rate Trip", edit_trip_path(trip.id))%>
-        <% end %>
-      </li>
-      <li>
-        Cost: <%= number_to_currency(trip.cost, precision: 2) %>
-      </li>
-      <% end %>
-    </ul>
-  </li> -->
+  Trips
+  <ul>
+  <% @trips.each do |trip| %>
+  <li>
+  <%= link_to("Date: #{trip.date}", trip_path(trip.id)) %>
+</li>
+<li>
+<% @rated = trip.rating == nil || trip.rating == 0 ? "unrated" : "rated" %>
+Rating: <span class="<%=@rated%>"><%= trip.rating %></span>
+<% if @rated == "unrated" %>
+<%=link_to("Rate Trip", edit_trip_path(trip.id))%>
+<% end %>
+</li>
+<li>
+Cost: <%= number_to_currency(trip.cost, precision: 2) %>
+</li>
+<% end %>
+</ul>
+</li> -->
 </div>

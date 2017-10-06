@@ -1,3 +1,38 @@
 // Place all the styles related to the passengers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$btn-height: 2.5rem;
+
+// =======BUTTONS=======
+
+.pass_buttons {
+  padding-top: 3rem;
+}
+
+.pass_buttons li {
+  display: inline-block;
+  width: 25%;
+  height: $btn-height;
+  text-align: center;
+}
+
+.edit input, .delete input, .new input {
+  -webkit-appearance: none;
+  width: 100%;
+  height: $btn-height;
+  text-align: center;
+  border-style: none;
+  background-color: inherit;
+  color: inherit;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+.edit:hover, .delete:hover, .new:hover {
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+}
+
+// THREE DIV STYLING
