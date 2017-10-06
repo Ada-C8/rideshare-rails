@@ -1,1 +1,5 @@
-<%= render partial: 'layouts/trip_details', locals: { trip: @trip, route: @trip } %>
+<ol class='trip_list'>
+  <li class='single_trip'>
+    <%= render partial: 'layouts/trip_details', locals: { trip: @trip, route: @trip } %>
+  </li>
+</ol>

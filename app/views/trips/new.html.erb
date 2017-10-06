@@ -10,10 +10,8 @@
       <%= f.date_field :date, :value => Date.today, :class => 'field' %>
     </li>
 
-    <li>
-      <%= f.label :rating, :class => 'label' %>
-
-      <%= f.text_field :rating, :class => 'field'  %>
+    <li class='hidden'>
+      <%= f.hidden_field :rating %>
       <!-- , :value => 5 -->
     </li>
 
