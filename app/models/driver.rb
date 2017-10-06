@@ -13,7 +13,7 @@ class Driver < ApplicationRecord
       return 'No Ratings'
     else
       sum_ratings = trips.inject(0) { |sum, trip| sum + trip.rating }
-      average = sum_ratings/(trips.length)
+      average = sum_ratings/(trips.length.to_f.round(1))
       return average
     end
   end
