@@ -1,3 +1,151 @@
 // Place all the styles related to the Drivers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h2.page-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 2.4em;
+  padding-bottom: 1%;
+  margin-bottom: 2%;
+  border-bottom: 1px solid #efefef;
+}
+
+// index.html.erb
+table.main-list {
+  width: 95%;
+  margin: 0 auto;
+}
+table.main-list tr:hover { background: #fafafa; }
+table.main-list tr td { padding: 0.5%; }
+table.main-list tr td:nth-of-type(2):hover a { color: var(--dteal); }
+table.main-list tr td:nth-of-type(1) { width: 15%; text-align: center;}
+table.main-list tr td:nth-of-type(2) { width: 85%; }
+table.main-list tr td span.emj {
+  font-size: 2em;
+  vertical-align: middle;
+}
+table.main-list tr td a { vertical-align: middle; }
+
+// new.html.erb
+// edit.html.erb
+// form.html.erb
+#driver-form {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+#driver-form div[class*="wrapper"] {
+  margin: 2% 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+// no errors
+#driver-form div[class*="wrapper"] label {
+  width: 15%;
+  margin-top: 0.5%;
+}
+
+// yes errors
+div.field_with_errors {
+  display: flex;
+  justify-content: center;
+}
+#driver-form div[class*="wrapper"] div.field_with_errors:nth-of-type(1) {
+  width: 15%;
+}
+#driver-form div[class*="wrapper"] div.field_with_errors:nth-of-type(2) {
+  width: 30%;
+}
+#driver-form div[class*="wrapper"] div.field_with_errors label,
+#driver-form div[class*="wrapper"] div.field_with_errors input {
+  width: 100%;
+}
+#driver-form div[class*="wrapper"] div.field_with_errors input{
+  padding: 1.8% 3.6%;
+}
+#driver-form div[class*="wrapper"] label i {
+  color: var(--dteal);
+  margin-right: 4%;
+}
+#driver-form div[class*="wrapper"] input {
+  width: 30%;
+  padding: 0.5% 1%;
+}
+#driver-form div.submit-wrapper input {
+  width: 10%;
+  margin: 0 auto;
+  padding: 1% 0;
+  font-size: 1.1em;
+  border: none;
+  box-shadow: 0 0 0 0;
+  background: var(--dteal);
+  color: #fefefe;
+  font-weight: 700;
+  border-radius: 4px;
+}
+#driver-form div.submit-wrapper input:hover { cursor: pointer; }
+
+// show.html.erb
+h3.table-heading {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 2% 0 3%;
+}
+article.page section { margin: 2% auto; }
+section.driv-info {}
+section.driv-info div {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+figure.driv-portrait { width: 50%; text-align: center; }
+figure.driv-portrait img { vertical-align: middle; }
+table.driv-deets { width: 50%; }
+table.driv-deets tr td { padding: 2% 1%; }
+table.driv-deets tr td.icon {
+  width: 10%;
+  text-align: center;
+  color: var(--dteal);
+}
+table.driv-deets tr td.title {
+  width: 30%;
+  font-weight: 700;
+}
+table.driv-deets tr td.data { width: 60%; }
+section.driv-actions {
+  width: 80%;
+  margin: 0 auto;
+  padding: 2% 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+section.driv-actions a {
+  width: 20%;
+  padding: 1% 0;
+  background: var(--dteal);
+  color: #fefefe;
+  border-radius: 6px;
+  text-align: center;
+}
+section.driv-actions a:first-of-type { margin-right: 10%; }
+section.driv-actions a i { margin-right: 5%; }
+table.driv-trips { width: 90%; margin: 0 auto; }
+table.driv-trips tr th,
+table.driv-trips tr td {
+  padding: 1.5% 0;
+}
+table.driv-trips tr th {
+  font-weight: 700;
+  background: #efefef;
+  border: 1px solid #fefefe;
+}
+table.driv-trips tr td { text-align: center; }
+table.driv-trips tr td i { color: var(--dteal); }
+table.driv-trips tr td:nth-of-type(5) i { margin-right: 2%; }

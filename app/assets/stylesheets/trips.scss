@@ -1,3 +1,156 @@
 // Place all the styles related to the Trips controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+h2.page-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 2.4em;
+  padding-bottom: 1%;
+  margin-bottom: 2%;
+  border-bottom: 1px solid #efefef;
+}
+
+// index.html.erb
+table.main-list {
+  width: 95%;
+  margin: 0 auto;
+}
+table.main-list tr:hover { background: #fafafa; }
+table.main-list tr td { padding: 0.5%; }
+table.main-list tr td:nth-of-type(2):hover a { color: var(--dteal); }
+table.main-list tr td:nth-of-type(1) { width: 15%; text-align: center;}
+table.main-list tr td:nth-of-type(2) { width: 85%; }
+table.main-list tr td span.emj {
+  font-size: 2em;
+  vertical-align: middle;
+}
+table.main-list tr td a { vertical-align: middle; }
+
+// new.html.erb
+// edit.html.erb
+// form.html.erb
+#trip-form {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+#trip-form div[class*="wrapper"] {
+  margin: 2% 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+// no errors
+#trip-form div[class*="wrapper"] label {
+  width: 15%;
+  margin-top: 0.5%;
+}
+
+// yes errors
+div.field_with_errors {
+  display: flex;
+  justify-content: center;
+}
+#trip-form div[class*="wrapper"] div.field_with_errors:nth-of-type(1) {
+  width: 15%;
+}
+#trip-form div[class*="wrapper"] div.field_with_errors:nth-of-type(2) {
+  width: 30%;
+}
+#trip-form div[class*="wrapper"] div.field_with_errors label,
+#trip-form div[class*="wrapper"] div.field_with_errors input {
+  width: 100%;
+}
+#trip-form div[class*="wrapper"] div.field_with_errors input{
+  padding: 1.8% 3.6%;
+}
+#trip-form div[class*="wrapper"] label i {
+  color: var(--dteal);
+  margin-right: 4%;
+}
+#trip-form div[class*="wrapper"] input {
+  width: 30%;
+  padding: 0.5% 1%;
+}
+#trip-form div.submit-wrapper input {
+  width: 10%;
+  margin: 0 auto;
+  padding: 1% 0;
+  font-size: 1.1em;
+  border: none;
+  box-shadow: 0 0 0 0;
+  background: var(--dteal);
+  color: #fefefe;
+  font-weight: 700;
+  border-radius: 4px;
+}
+#trip-form div.submit-wrapper input:hover { cursor: pointer; }
+
+// show.html.erb
+h3.table-heading {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 2% 0 3%;
+}
+article.page section { margin: 2% auto; }
+section.trip-info {}
+section.trip-info div {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+figure.trip-portrait { width: 50%; text-align: center; }
+figure.trip-portrait img {
+  width: 220px;
+  height: 220px;
+  vertical-align: middle;
+}
+table.trip-deets { width: 50%; }
+table.trip-deets tr td { padding: 2% 1%; }
+table.trip-deets tr td.icon {
+  width: 10%;
+  text-align: center;
+  color: var(--dteal);
+}
+table.trip-deets tr td.title {
+  width: 30%;
+  font-weight: 700;
+}
+table.trip-deets tr td.data { width: 60%; }
+section.trip-actions {
+  width: 80%;
+  margin: 0 auto;
+  padding: 2% 0;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+section.trip-actions a {
+  width: 20%;
+  padding: 1% 0;
+  background: var(--dteal);
+  color: #fefefe;
+  border-radius: 6px;
+  text-align: center;
+}
+section.trip-actions a i { margin-right: 5%; }
+table.trip-trips { width: 90%; margin: 0 auto; }
+table.trip-trips tr th,
+table.trip-trips tr td {
+  padding: 1.5% 0;
+}
+table.trip-trips tr th {
+  font-weight: 700;
+  background: #efefef;
+  border: 1px solid #fefefe;
+}
+table.trip-trips tr td { text-align: center; }
+table.trip-trips tr td i { color: var(--dteal); }
+table.trip-trips tr td:nth-of-type(5) i { margin-right: 2%; }

@@ -8,7 +8,7 @@ else
 end
 %>
 
-<%= form_for @trip, method: form_method, url: form_action do |f| %>
+<%= form_for @trip, method: form_method, url: form_action, html: {id: "trip-form"} do |f| %>
 
   <%= content_tag :div, class: "date-wrapper" do %>
     <%= f.label :date do %>
@@ -19,7 +19,7 @@ end
 
   <%= content_tag :div, class: "cost-wrapper" do %>
     <%= f.label :cost do %>
-      <i class="fa fa-used"></i> Cost
+      <i class="fa fa-usd"></i> Cost
     <% end %>
     <%= f.text_field :cost %>
   <% end %>
