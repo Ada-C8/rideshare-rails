@@ -9,7 +9,7 @@
     <%= f.label :vin %>
     <%= f.text_field :vin %>
   </p>
-  <p>
+  <p class= "form_buttons">
     <%= f.submit button_name%>
     <%= button_to "Cancel", request.referer.present? ? request.referer : root_path, method: :get %>
   </p>
@@ -27,7 +27,7 @@
     <%= f.label :phone_num %>
     <%= f.text_field :phone_num %>
   </p>
-  <p>
+  <p class= "form_buttons">
     <%= f.submit button_name%>
     <%= button_to "Cancel", request.referer.present? ? request.referer : root_path, method: :get %>
   </p>
@@ -56,7 +56,7 @@
     <%= f.label :passenger %>
     <%= f.collection_select(:passenger_id, Passenger.all, :id, :name) %>
   </p>
-  <p>
+  <p class= "form_buttons">
     <%= f.submit %>
     <%= button_to "Cancel", request.referer.present? ? request.referer : root_path, method: :get %>
   </p>
