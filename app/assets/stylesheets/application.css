@@ -86,15 +86,22 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-.homepage_banner_text{
-  padding-top: 5em;
-  padding-bottom: 5em;
+.homepage_banner_text {
+  padding-top: 20px;
+  text-align: center;
+  font-family: 'Satisfy', cursive;
+  font-size: 4em;
+  color: #95818D;
 }
 
 .homepage_img {
   display: block;
   max-width: 100%;
   max-height: auto;
+}
+
+.home-footer {
+  position: absolute;
 }
 
 footer {
