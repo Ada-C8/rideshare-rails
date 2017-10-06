@@ -115,11 +115,16 @@ section.form input, section.form select{
   font-family: 'Permanent Marker';
 }
 
-section.form form input[type="submit"]{
+section.form form input[type="submit"], a.button{
   font-size: 20pt;
   height: 50px;
   padding: 0 40px;
   font-family: 'Permanent Marker';
   border: 0px;
   border-radius: 10px;
+}
+
+a.button{
+  background: #ccc;
+  padding: 10px 50px;
 }

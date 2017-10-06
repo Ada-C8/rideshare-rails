@@ -1,9 +1,8 @@
-<h1>Trips#index</h1>
-<p>Find me in app/views/trips/index.html.erb</p>
+<h1>List of Trips</h1>
 
-<%= link_to "Create New Trip", "#{@trip_show_route}/new" %>
+<%= link_to("Create New Trip", "#{@trip_show_route}/new", class:"button")%>
 
-<ol>
+<ol class="indexlist">
   <% if @trips.length > 0  %>
     <% @trips.each do |trip| %>
     <li>
@@ -22,8 +21,8 @@
         <%= trip.passenger.name %>
         <% end %>
       </p>
+      <p><%=  link_to("More Information", "#{@trip_show_route}/#{trip.id}")%></p>
     </li>
-    <p><%=  link_to("More Information", "#{@trip_show_route}/#{trip.id}")%></p>
     <% end %>
   <% else  %>
     <p>No trips for this passenger.</p>
