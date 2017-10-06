@@ -164,3 +164,7 @@ table th {
 section {
   padding: 20px;
 }
+
+.list p {
+  padding: 5px;
+}

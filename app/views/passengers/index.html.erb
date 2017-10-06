@@ -1,7 +1,21 @@
 <h1>Passengers</h1>
 
-<% @passengers.each do |p|  %>
-<p>
-<%=  link_to(p.name, passenger_path(p.id), alt: 'passenger link to')  %>
-</p>
-<% end  %>
+<section class="list">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @passengers.each do |p|  %>
+      <tr>
+        <td><%= p.id %></td>
+        <td><%=  link_to(p.name, passenger_path(p.id), alt: 'passenger link to')%></td>
+      </tr>
+      <% end  %>
+    </tbody>
+  </table>
+
+</section>
