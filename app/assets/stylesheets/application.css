@@ -66,14 +66,11 @@ h1 {
 /* Passenger*/
 ol {
   width: 40em;
-
 }
-
 li {
   float: left;
   width: 13em;
-
 }
-
 a {
   text-decoration: none;
+}
