@@ -8,8 +8,7 @@
 <% counter = 0 %>
 <p><% @driver.trips.each do |trip| %></p>
 
-  <%= "Trip Earning: $" %><% total = ((trip.cost - (trip.cost * 0.15)) /100)
-   %><%="%.2f"%total %>
+  <%= "Trip Earning: $" %><%= Trip.total_earning(trip)%>
 
   <%= "Trip Rating: " %>
   <% if trip.rating == nil %>

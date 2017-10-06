@@ -1,5 +1,5 @@
 <h1> Individual passenger detail </h1>
-<em><p>Params are : <%= params  %></p></em>
+<!-- <em><p>Params are : <%= params  %></p></em> -->
 
 
 
@@ -9,10 +9,7 @@
 <% total_cost = 0 %>
 <p><% @passenger.trips.each do |trip| %></p>
 
-  <%= "Trip Cost: $" %>
-
-  <% total = ((trip.cost) / 100) %><%= "%.2f"%total %>
-
+  <%= "Trip Cost: $" %><%= Trip.total_cost(trip) %>
   <% total_cost += trip.cost %>
   <%= "Trip Rating: " %><%= trip.rating %>
   <%= "Trip Date: " %><%= trip.date %>
