@@ -16,7 +16,7 @@
 <section class="buttons">
     <li><%= link_to "Edit Driver Details", edit_driver_path(@driver.id), alt: "link to edit driver details" %></li>
     <li><%= link_to "Delete Driver", driver_path(@driver.id), method: :delete, alt: "link to delete driver", data: {confirm: "Are you sure you want to delete this driver?"} %></li>
-    <li><%= link_to(@driver.status ? "Go Off Duty" : "Go Online", status_path(@driver.id), method: :patch, alt: "link to change driver availability status") %></li>
+    <li><%= link_to(@driver.status ? "Go Off Duty" : "Go Online", driver_status_path(@driver.id), method: :patch, alt: "link to change driver availability status") %></li>
 </section>
 </div>
 

@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 # trip routes
   root to: "trips#home", as: "root"
 
-  patch '/drivers/:id/status', to: 'drivers#status', as: 'status' #status_path
+  # patch '/drivers/:id/status', to: 'drivers#status', as: 'status' #status_path
+  
 #   get "/trips", to: "trips#index", as: "trips"
 #   get "trips/:id/edit", to: "trips#edit", as: "edit_trip"
 #   get "trips/new", to: "trips#new", as: "new_trip"
@@ -31,8 +32,16 @@ Rails.application.routes.draw do
 # patch "passengers/:id", to: "passengers#update"
 # post "passengers", to: "passengers#create"
 # delete "passengers/:id", to: "passengers#destroy"
-resources :passengers
-resources :drivers
-resources :trips
+resources :drivers do
+  patch 'status'
+end
+
+resources :trips, except: [:new, :create]
+
+resources :passengers do
+  resources :trips, only: [:new, :create]
+end
+
+# resources :passengers
 
 end
