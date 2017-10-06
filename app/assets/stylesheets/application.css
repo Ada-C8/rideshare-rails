@@ -24,10 +24,9 @@ a, a:visited, a:hover, a:active {
   display: inline-block;
   margin-left: 9%;
   margin-right: 9%;
-  padding left: 0;
+  padding-left: 0;
   height: 95%;
   width: 85%;
-
 }
 
 .driver_passenger_list li {
