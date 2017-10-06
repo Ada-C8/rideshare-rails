@@ -58,3 +58,12 @@ a, a:visited, a:hover, a:active {
   -ms-transform: rotateZ(-15deg);
   transform: rotateZ(-15deg);
 }
+
+// PAGINATE
+
+.digg_pagination {
+  width: 50%;
+  margin-right: 25%;
+  margin-left: 25%;
+  text-align: center;
+}
