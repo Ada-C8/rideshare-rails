@@ -41,12 +41,15 @@
 
 <section class="driver_stats">
   <section class="driver_earnings">
-    <h3>Total Earnings</h3>
-    $<%= @driver.earnings%>
+    <p>
+      Driver Earnings: <%= @driver.earnings%>
+    </p>
   </section>
 
   <section class="driver_rating">
-    <h3>Average Rating</h3>
-    <%= @driver.average_rating %> out of 5
+    <p>
+      Average Rating<%= @driver.average_rating %> out of 5
+    </p>
+
   </section>
 </section>
