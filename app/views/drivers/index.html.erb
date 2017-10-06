@@ -1,0 +1,14 @@
+<section class="user_list">
+  <h1>Drivers</h1>
+  <p>
+    Our drivers are the best. Everyday carry enamel pin vape beard jean shorts artisan. Knausgaard flexitarian wolf keytar affogato, kale chips helvetica subway tile craft beer YOLO cold-pressed cliche. Sustainable +1 ugh, air plant yuccie cold-pressed humblebrag chicharrones seitan chartreuse cray jianbing.
+  </p>
+  <ul>
+    <% @drivers.each do |driver| %>
+    <li>
+      <a href="https://placeholder.com"><img src="http://via.placeholder.com/40x40"></a>
+      <%= link_to driver.name, driver_path(driver.id), method: :get %>
+    </li>
+    <% end %>
+  </ul>
+</section>

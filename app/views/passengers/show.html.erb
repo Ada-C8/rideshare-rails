@@ -1,0 +1,62 @@
+<section class="information">
+<h1>Passenger ID: <%= @passenger.id %> <span class="edit_delete"><%= link_to "Edit", edit_passenger_path(@passenger.id)%> | <%= link_to "Delete", passenger_path(@passenger.id), method: :delete %></span></h1>
+<img src="http://via.placeholder.com/90x90">
+<h3>Passenger Name: <%= @passenger.name %></h3>
+<h3>Phone: <%= @passenger.phone_num %></h3>
+<p>
+  <% if @needs_rating %>
+    <p>Please rate your last trip:</p>
+    <%= form_tag(rate_trip_path(id: @needs_rating.id), method: :patch, class: 'rating') do %>
+      <%= label_tag('Rating') %>
+      <div class='rating-labels'>
+        <%= radio_button_tag(:rating, 5) %>
+        <label for='rating_5'></label>
+        <%= radio_button_tag(:rating, 4) %>
+        <label for='rating_4'></label>
+        <%= radio_button_tag(:rating, 3) %>
+        <label for='rating_3'></label>
+        <%= radio_button_tag(:rating, 2) %>
+        <label for='rating_2'></label>
+        <%= radio_button_tag(:rating, 1) %>
+        <label for='rating_1'></label>
+      </div>
+      <%= submit_tag('Save')%>
+    <% end %>
+  <% else %>
+    <%= link_to "Create a new trip", new_trip_path(@passenger.id)%>
+  <% end %>
+</p>
+</section>
+
+<section>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Rating</th>
+        <th>Cost</th>
+        <th>Driver</th>
+      </tr>
+    </thead>
+    <% @trips.each do |trip| %>
+    <tr>
+      <td data-label="ID">
+        <%= link_to trip.id, trip_path(trip.id), method: :get %>
+      </td>
+      <td data-label="Date">
+        <%= trip.date %>
+      </td>
+      <td data-label="Rating">
+        <%= trip.rating %>
+      </td>
+      <td data-label="Cost">
+        <%= trip.cost %>
+      </td>
+      <td data-label="Driver Name">
+        <%= link_to trip.driver.name, driver_path(id: trip.driver.id)%>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</section>

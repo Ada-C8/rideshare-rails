@@ -1,0 +1,39 @@
+<section>
+<h1>Trip ID: <%= @trip.id %></h1>
+<p><%= link_to "Edit", edit_trip_path(@trip.id)%> | <%= link_to "Delete", trip_path(@trip.id), method: :delete %></p>
+</section>
+
+<section>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Cost</th>
+        <th>Driver</th>
+        <th>Passenger</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tr>
+      <td data-label='ID'>
+        <%= @trip.id %><%# link_to 'Trip Details', trip_path(trip.id), method: :get %>
+      </td>
+      <td data-label='Date'>
+        <%= @trip.date %>
+      </td>
+      <td data-label='Cost'>
+        <%= @trip.cost %>
+      </td>
+      <td data-label='Driver'>
+        <%= link_to @trip.driver.name, driver_path(id: @trip.driver.id)%>
+      </td>
+      <td data-label='Passenger'>
+        <%= link_to @trip.passenger.name, passenger_path(id: @trip.passenger.id) %>
+      </td>
+      <td data-label='Rating'>
+        <%= @trip.rating %>
+      </td>
+    </tr>
+  </table>
+</section>

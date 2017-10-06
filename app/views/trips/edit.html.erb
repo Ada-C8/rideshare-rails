@@ -1,0 +1,44 @@
+<h1>Edit trip: <%= @trip.id %></h1>
+<section>
+  <table>
+
+    <tr>
+      <th>ID</th>
+      <th>Date</th>
+      <th>Cost</th>
+      <th>Driver</th>
+      <th>Passenger</th>
+      <th>Rating</th>
+      <th></th>
+      <th></th>
+    </tr>
+  <tr>
+  <td>
+    <%= @trip.id %>
+  </td>
+  <td>
+    <%= @trip.date %>
+  </td>
+  <td>
+    <%= @trip.cost %>
+  </td>
+  <td>
+    <%= link_to @trip.driver.name, driver_path(id: @trip.driver.id)%>
+  </td>
+  <td>
+    <%= link_to @trip.passenger.name, passenger_path(id: @trip.passenger.id) %>
+  </td>
+  <td>
+    <%= form_tag(update_trip_path(id: @trip.id), method: :patch) do %>
+      <%= number_field_tag('rating', @trip.rating, min: 1, max: 5, step: 1)%>
+      <%= submit_tag('Save')%>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to "Delete", trip_path(@trip.id), method: :delete %>
+  </td>
+  </tr>
+
+  </table>
+
+</section>

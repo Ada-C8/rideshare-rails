@@ -1,0 +1,14 @@
+<section class="user_list">
+  <h1>Passengers</h1>
+  <p>
+    Irony post-ironic food truck hoodie, iceland iPhone asymmetrical glossier beard 8-bit lomo gentrify twee. Scenester swag meditation gentrify drinking vinegar. Asymmetrical enamel pin cloud bread, gochujang vegan woke selvage tumblr austin pour-over live-edge forage williamsburg. Selfies flannel hot chicken single-origin coffee, cornhole salvia vinyl fashion axe unicorn subway tile fixie gastropub knausgaard.
+  </p>
+  <ul>
+    <% @passengers.each do |passenger| %>
+    <li>
+      <a href="https://placeholder.com"><img src="http://via.placeholder.com/40x40"></a>
+      <%= link_to passenger.name, passenger_path(passenger.id), method: :get %>
+    </li>
+    <% end %>
+  </ul>
+</section>

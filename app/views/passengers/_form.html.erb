@@ -1,0 +1,13 @@
+<% @passenger.errors.messages.each do |attr, message| %>
+  <p class='error'><%= message[0] %></p>
+<% end %>
+<%= form_for @passenger do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name, required: true %>
+
+<%= f.label :phone_num %>
+<%= f.text_field :phone_num, required: true %>
+
+<%= f.submit action_name %>
+<% end %>
