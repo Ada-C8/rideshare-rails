@@ -1,0 +1,103 @@
+// Place all the styles related to the Trips controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.form {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.form li {
+  list-style: none;
+  padding: 1em;
+  display: flex;
+  justify-content: space-around;
+}
+
+.form .hidden {
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+// #new_trip{
+//   background-color: blue;
+//   width: 300px;
+//   color: white;
+//   padding: 5px;
+//   margin-left: 10px;
+// }
+//
+// #new_trip input[name='commit']{
+//   margin-left: 25%;
+// }
+//
+// #trip_driver_id{
+//   float: right;
+// }
+//
+// .passenger_label{
+//   float: left;
+// }
+//
+// .passenger_field {
+//   float: right;
+// }
+//
+// #new_passenger{
+//   background-color: blue;
+//   width: 235px;
+//   color: white;
+//   padding: 5px;
+//   margin-left: 10px;
+// }
+//
+// #new_passenger input[name='commit']{
+//   margin-left: 25%;
+// }
+//
+// .edit_passenger{
+//   background-color: blue;
+//   width: 250px;
+//   margin-left: 10px;
+//   padding: 5px;
+//   color: white;
+// }
+//
+// .edit_passenger input[name='commit']{
+//   margin-left: 25%;
+// }
+//
+//
+//
+// #new_driver{
+//   background-color: blue;
+//   width: 200px;
+//   margin-left: 10px;
+//   padding: 5px;
+//   color: white;
+// }
+//
+// #new_driver input[name='commit']{
+//   margin-left: 25%;
+// }
+//
+// .edit_driver{
+//   background-color: blue;
+//   width: 200px;
+//   margin-left: 10px;
+//   padding: 5px;
+//   color: white;
+// }
+//
+// .edit_driver input[name='commit']{
+//   margin-left: 25%;
+// }
+// .label{
+//   float: left;
+// }
+//
+// .field {
+//   float: right;
+// }

@@ -1,0 +1,8 @@
+<h2>ALL TRIPS</h2>
+<ol class = 'trip_list'>
+  <% @trips.order(date: :asc).each do |trip|%>
+    <li class='single_trip'>
+      <%= render partial: 'layouts/trip_details', locals: { trip: trip, route: trip } %>
+    </li>
+    <% end %>
+  </ol>

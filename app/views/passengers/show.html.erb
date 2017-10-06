@@ -1,0 +1,36 @@
+<h2><%= @passenger.name %></h2>
+
+<section class="metadata">
+  <img src='http://fillmurray.com/200/200' alt='passenger photo'/>
+
+  <h4 class = 'new_trip_link'><%= link_to "New Trip", new_passenger_trip_path(@passenger) %></h4>
+
+  <ul class="personal_data">
+    <li>
+      Phone Number: <%= @passenger.phone_num %>
+    </li>
+
+    <li>
+      Total Spent = $<%= @passenger.total_spent %>
+    </li>
+
+  </ul>
+
+  <ul class="edit_delete">
+    <li>
+      <%= link_to "Edit", edit_passenger_path(@passenger)%>
+    </li>
+
+    <li>
+      <%= link_to 'Delete', passenger_path(@passenger), method: :delete, data: { confirm: "Are you sure?" } %>
+    </li>
+  </ul>
+</section>
+
+<ol class = 'trip_list'>
+  <% @passenger.trips.order(date: :desc).each do | trip | %>
+    <li class =' single_trip' >
+      <%= render partial: 'layouts/trip_details', locals: { trip: trip, route: @passenger } %>
+    </li>
+  <% end %>
+</ol>

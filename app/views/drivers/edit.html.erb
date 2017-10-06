@@ -1,0 +1,5 @@
+<h2> Edit Driver </h2>
+
+<%= render partial: 'layouts/error_messages', locals: { model: @driver } %>
+
+<%= render partial: 'layouts/new_edit_person', locals: { person: @driver, other: :vin } %>

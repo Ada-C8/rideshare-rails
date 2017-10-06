@@ -1,0 +1,10 @@
+<h2>ALL PASSENGERS</h2>
+
+<ul class = 'person_list'>
+  <% @passengers.each do |passenger| %>
+    <li class='passenger'>
+      <img src='http://fillmurray.com/100/100' alt='passenger photo' />
+      <h4><%= link_to "#{passenger.name}",  passenger_path(passenger)%></h4>
+    </li>
+  <%end%>
+</ul>

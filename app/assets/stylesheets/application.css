@@ -1,0 +1,142 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ .clearfix:after {
+   visibility: hidden;
+   display: block;
+   font-size: 0;
+   content: " ";
+   clear: both;
+   height: 0;
+ }
+ .clearfix { display: inline-block; }
+ /* start commented backslash hack \*/
+ * html .clearfix { height: 1%; }
+ .clearfix { display: block; }
+ /* close commented backslash hack */
+
+ .error-messages {
+   color: red;
+ }
+
+ .field_with_errors {
+   display: inline;
+ }
+
+/* ############*/
+/* header */
+/*############*/
+
+
+header{
+  width: 100%;
+  height: 75px;
+  background-color: darkgrey;
+  color: white;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+}
+header a:visited {
+  text-decoration: none;
+  color: white;
+}
+header a:hover {
+  text-decoration: underline;
+}
+header h1 {
+  float: left;
+  /*clear: both;*/
+  margin: .7em 0;
+  width: 20%;
+  padding: 0 1em;
+}
+
+header nav {
+  float: right;
+  width: 70%;
+  text-align: right;
+
+}
+header ul {
+  margin: 0;
+  padding: .5em 1em .5em 0;
+}
+header li {
+  display: inline-block;
+  list-style: none;
+  padding: 0 .5em;
+}
+
+ body {
+   margin-top: 75px;
+ }
+
+ /* ############*/
+ /* trip lists */
+ /*############*/
+
+ .trip_list {
+   display: flex;
+   flex-wrap: wrap;
+   padding: 0;
+   list-style: none;
+   justify-content: center;
+ }
+
+ .trip_list li {
+   list-style: none;
+ }
+
+ .single_trip {
+   width: 27%;
+   margin: 2%;
+   border: 1px black solid;
+   /*border-radius: 1em;*/
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+ }
+
+ .single_trip h4 {
+   border-bottom: 1px black solid;
+   margin: 0;
+   padding: .5em 0;
+   width: 100%;
+   text-align: center;
+ }
+
+
+ .details {
+   padding: 2em .5em;
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+
+ }
+ .single_trip .edit_delete {
+   width: 100%;
+ }
+ .single_trip .edit_delete li {
+   width: 30%;
+   text-align: center;
+ }

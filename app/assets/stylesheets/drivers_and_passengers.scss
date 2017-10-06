@@ -1,0 +1,85 @@
+h2 {
+  text-align: center;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+a:visited {
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+// ############
+// Index pages
+// ############
+
+
+.person_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+}
+
+.person_list li {
+  margin: 1%;
+  width: 20%;
+  list-style: none;
+  border: black 1px solid;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+.person_list img {
+  padding: 5%;
+}
+
+// ############
+// Show pages
+// ############
+
+
+.metadata {
+  text-align: center;
+}
+
+.metadata img {
+  width: 30%;
+}
+
+.metadata ul li {
+  list-style: none;
+}
+
+.edit_delete {
+  // width: 30%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+
+.edit_delete li, .new_trip_link {
+  padding: .5em;
+  background-color: darkgrey;
+  border: black 1px solid;
+  border-radius: 1em;
+  margin: .5em;
+  width: 10%;
+}
+
+.new_trip_link {
+  // why is this going to the left?
+}
+.personal_data {
+  padding: 0;
+}
+.personal_data li{
+  margin: 2em 0;
+}

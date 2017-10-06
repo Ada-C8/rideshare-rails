@@ -1,0 +1,5 @@
+<h2> Edit Passenger </h2>
+
+<%= render partial: 'layouts/error_messages', locals: { model: @passenger } %>
+
+<%= render partial: 'layouts/new_edit_person', locals: { person: @passenger, other: :phone_num } %>

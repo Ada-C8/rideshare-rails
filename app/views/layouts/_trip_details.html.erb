@@ -1,0 +1,35 @@
+
+<h4>
+  <strong>
+    Trip on: <%= link_to "#{trip.date}", trip_path(trip) %>
+  </strong>
+</h4>
+
+
+<ul class='details'>
+  <% unless route.class == Driver %>
+  <li>
+    Driver: <%= link_to "#{trip.driver.name}", driver_path(trip.driver_id)%>
+  </li>
+  <% end %>
+  <% unless route.class == Passenger %>
+  <li>
+    Passenger: <%= link_to "#{trip.passenger.name}", passenger_path(trip.passenger_id)%>
+  </li>
+  <% end %>
+  <li>
+    Cost: $<%=trip.to_dollars%>
+  </li>
+  <li>
+    <%= "Rating: #{trip.rating}"%>
+  </li>
+</ul>
+
+<ul class="edit_delete">
+  <li>
+    <%= link_to "Edit", edit_trip_path(trip)%>
+  </li>
+  <li>
+    <%= link_to 'Delete', trip_path(trip), method: :delete, data: { confirm: "Are you sure?" } %>
+  </li>
+</ul>

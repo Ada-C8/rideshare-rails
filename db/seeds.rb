@@ -1,4 +1,7 @@
 require 'csv'
+require 'rails'
+
+puts Rails.root
 
 DRIVER_FILE = Rails.root.join('db', 'seed_data', 'drivers.csv')
 puts "Loading raw driver data from #{DRIVER_FILE}"

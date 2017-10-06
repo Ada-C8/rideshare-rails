@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RideshareRails</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <header class = 'clearfix'>
+    <h1>
+      <%= link_to 'RideShare', root_path %>
+    </h1>
+    <nav>
+      <ul>
+        <li>
+          Drivers:
+        </li>
+        <li>
+          <%= link_to 'All', drivers_path %>
+        </li>
+        <li>
+          <%= link_to 'New', new_driver_path %>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          Passengers:
+        </li>
+        <li>
+          <%= link_to 'All', passengers_path %>
+        </li>
+        <li>
+          <%= link_to 'New', new_passenger_path %>
+        </li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

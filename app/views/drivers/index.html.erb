@@ -1,0 +1,10 @@
+<h2>ALL DRIVERS</h2>
+
+<ul  class = 'person_list'>
+  <% @drivers.each do |driver| %>
+    <li class='driver'>
+      <img src='http://fillmurray.com/100/100' alt='driver photo' />
+      <h4><%= link_to "#{driver.name}",  driver_path(driver)%></h4>
+    </li>
+  <%end%>
+</ul>
