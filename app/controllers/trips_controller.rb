@@ -1,7 +1,8 @@
 class TripsController < ApplicationController
   def home
+    render :layout => "home"
   end
-  
+
   def create
     @trip = Trip.new(trip_params)
 

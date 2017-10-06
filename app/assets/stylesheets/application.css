@@ -15,6 +15,19 @@
  *= require_self
  */
 
+.background {
+  background: url("https://tau0.files.wordpress.com/2012/11/high_road_bw.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.homepagetext{
+  text-shadow:2px 2px 4px #000000;
+  color: white;
+}
+
   body{
     position: relative;
     top: 1vw;
