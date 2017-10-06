@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require normalize
  */
 
 * {
@@ -33,8 +34,9 @@ header {
   height: 50px;
   padding: 0 2px;
   position: fixed
-  top: 0;   left: ;
-  right: ;
+  top: 0;
+  left:0;
+  right:0;
   min-width: 710px;   z-index: 999;
   border-bottom: 1px solid gray;
 }
