@@ -131,7 +131,7 @@ a {
 /*different background for homepage only*/
 .homepage {
   /*background-color: #79D2E9;*/
-  background:  url(ocean3.gif) no-repeat center center fixed;
+  background:  url(asset-path('ocean3.gif')) no-repeat center center fixed;
   background-size: cover;
 }
 
