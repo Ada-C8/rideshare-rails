@@ -9,9 +9,19 @@ class Passenger < ApplicationRecord
     trips = self.trips
     sum = 0
     trips.each do |trip|
-      sum += trip.cost
+      sum += trip.cost if trip.cost
     end
     return sum
+  end
+
+  def current
+    trips = self.trips
+    trips.each do |trip|
+      if trip.rating == nil
+        return trip
+      end
+    end
+    return false
   end
 
 end

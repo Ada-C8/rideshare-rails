@@ -18,7 +18,7 @@ Trip ID: <%= link_to(@trip.id, trip_path(@trip.id))  %>
     Passenger: <%= link_to(@trip.passenger.name, passenger_path(@trip.passenger.id)) %>
   </li>
   <li>
-    Rating: <%= @trip.rating %>
+    Rating: <%= rating_format(@trip.rating) %>
   </li>
   <li>
     Cost: <%= money_format(@trip.cost) %>

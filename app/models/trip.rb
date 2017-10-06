@@ -11,4 +11,12 @@ class Trip < ApplicationRecord
 #   else
 #     raise ArgumentError.new "Invalid sort parameters"
 #   end
+def random_driver
+  all_driver_ids = []
+  (Driver.all).each do |driver|
+    all_driver_ids << driver.id
+  end
+  all_driver_ids.shuffle!
+  return all_driver_ids[0]
+end
 end
