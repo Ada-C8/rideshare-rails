@@ -18,3 +18,5 @@
   <%= @trip.passenger.name %>
   <% end %>
 </p>
+
+<%= link_to "Delete", "#{@trip_show_route}/#{params[:id]}", method: :delete %>
