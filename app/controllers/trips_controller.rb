@@ -24,6 +24,8 @@ class TripsController < ApplicationController
     if @drivers.length > 0
       d =  @drivers.shuffle.first
       @trip.driver_id = d.id
+    else
+      render :new
     end
 
     if @trip.save
