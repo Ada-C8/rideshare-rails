@@ -6,21 +6,21 @@
   </nav>
 
   <section class="cool-list">
-    <h3 class="margin-left">
+    <h2 class="margin-left">
       All Trips
-    </h3>
+    </h2>
     <ul>
       <% @trips.each do |trip| %>
       <section class="hover-style">
         <%= link_to trip_path(trip.id), class: "link_to-style" do %>
             <li class="flex-box">
-              <p class="margin-left"><br>
+              <p class="margin-left">
                 <strong>ID: <%= trip.id %></strong><br>
                 Date: <%= trip.date %><br>
                 Driver: <%= trip.driver.name %><br>
                 Passenger: <%= trip.passenger.name %><br>
                 Rating: <%= trip.rating %> <br>
-                Cost: <%= '%.2f'%(trip.cost/100) %> <br><br>
+                Cost: <%= '%.2f'%(trip.cost/100) %>
               </p>
               <span>
                 MORE DETAILS

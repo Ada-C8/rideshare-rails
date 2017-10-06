@@ -13,8 +13,8 @@ body {
     padding: 0;
   }
 
-  h3 {
-    font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+  h2 {
+    font: bold 30px Helvetica, Verdana, sans-serif;
   }
 }
 
@@ -49,7 +49,7 @@ body {
 
   a:hover {
     background: #c9c9c9;
-    cursor: default;
+    cursor: alias;
   }
 
   a span {
