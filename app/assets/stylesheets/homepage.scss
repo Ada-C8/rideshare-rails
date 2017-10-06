@@ -13,6 +13,10 @@ body {
   height: 100vh;
 }
 
+.homepage{
+  background-image: url(background.jpg)
+}
+
 #homepage-container section{
   position: absolute;
   top: 9%;
@@ -28,5 +32,6 @@ body {
 
 #homepage-container section p{
   font-family: 'Permanent Marker', cursive;
+  color: white;
   margin: 0;
 }

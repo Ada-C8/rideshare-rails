@@ -7,7 +7,7 @@ class TripsController < ApplicationController
       @trips = Trip.where(driver_id: params[:driver_id])
       @trip_show_route = driver_trips_url
     else
-      @trips = Trip.all
+      @trips = Trip.order(:id)
       @trip_show_route = trips_url
     end
   end
@@ -19,12 +19,13 @@ class TripsController < ApplicationController
   def show
     if params[:passenger_id] != nil
       @trip = Trip.find_by(passenger_id: params[:passenger_id], id: params[:id])
-      @trip_edit_path = passenger_trips_url
+      @trip_path = passenger_trips_url
     elsif params[:driver_id] != nil
       @trip = Trip.find_by(driver_id: params[:driver_id], id: params[:id])
+      @trip_path = driver_trips_url
     else
       @trip = Trip.find(params[:id])
-      @trip_edit_path = trips_url
+      @trip_path = trips_url
     end
   end
 
@@ -54,7 +55,7 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new(trip_params)
     if @trip.save
-      redirect_to @trip
+        redirect_to passenger_trip_path(id: @trip.id, passenger_id: params[:trip][:passenger_id])
     else
       render :new
     end
@@ -62,7 +63,13 @@ class TripsController < ApplicationController
 
   def destroy
     Trip.find_by(id: params[:id]).destroy
-    redirect_to passenger_path
+    if params[:passenger_id] != nil
+      redirect_to passenger_trips_url
+    elsif params[:driver_id] != nil
+      redirect_to driver_trips_url
+    else
+      redirect_to trips_url
+    end
   end
 
   private

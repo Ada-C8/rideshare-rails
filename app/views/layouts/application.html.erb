@@ -9,28 +9,35 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   </head>
 
-  <nav>
-    <ul>
-      <li><%= link_to("Home", root_path) %></li>
-      <li class="dropdown">
-        <%= link_to("Passengers", passengers_path, class: "dropbtn")%>
-        <div class="dropdown-content">
-          <%= link_to("Add Passenger", new_passenger_path) %>
-        </div>
-      </li>
-      <li class="dropdown">
-        <%= link_to("Drivers", drivers_path, class: "dropbtn")%>
-        <div class="dropdown-content">
-          <%= link_to("Add Driver", new_driver_path) %>
-        </div>
-      </li>
-      <li>
-        <%= link_to("Trips", trips_path)%>
-      </li>
-    </ul>
-  </nav>
 
+  <% if !@homepage.nil? %>
+  <body class="homepage">
+  <% else %>
   <body>
+  <% end %>
+    <nav>
+      <ul>
+        <li><%= link_to("Home", root_path) %></li>
+        <li class="dropdown">
+          <%= link_to("Passengers", passengers_path, class: "dropbtn")%>
+          <div class="dropdown-content">
+            <%= link_to("Add Passenger", new_passenger_path) %>
+          </div>
+        </li>
+        <li class="dropdown">
+          <%= link_to("Drivers", drivers_path, class: "dropbtn")%>
+          <div class="dropdown-content">
+            <%= link_to("Add Driver", new_driver_path) %>
+          </div>
+        </li>
+        <li class="dropdown">
+          <%= link_to("Trips", trips_path, class: "dropbtn")%>
+          <div class="dropdown-content">
+            <%= link_to("Add Trip", new_trip_path) %>
+          </div>
+        </li>
+      </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>
