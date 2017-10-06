@@ -50,6 +50,38 @@ table.main-list tr td a { vertical-align: middle; }
   width: 15%;
   margin-top: 0.5%;
 }
+.rating-wrapper label {
+  position: relative;
+}
+i.fa-info-circle {
+  font-size: 0.8em;
+  margin-left: 5%;
+  color: #999;
+}
+span.tooltip-text {
+  visibility: hidden;
+  width: 170px;
+  background: var(--teal);
+  text-align: center;
+  border-radius: 6px;
+  padding: 5%;
+  position: absolute;
+  z-index: 99;
+  top: 150%;
+  left: 0;
+  font-size: 0.8em;
+}
+span.tooltip-text::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  margin-left: 83px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent var(--teal) transparent;
+}
+label.tooltip:hover span.tooltip-text { visibility: visible; }
 
 // yes errors
 div.field_with_errors {

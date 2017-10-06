@@ -26,8 +26,9 @@ end
 
   <% if !@trip.new_record? %>
     <%= content_tag :div, class: "rating-wrapper" do %>
-      <%= f.label :rating do %>
-        <i class="fa fa-star"></i> Rating
+      <%= f.label :rating, class: "tooltip" do %>
+        <i class="fa fa-star"></i> Rating <i class="fa fa-info-circle"></i>
+        <span class="tooltip-text">Ratings must be 1-5</span>
       <% end %>
       <%= f.text_field :rating %>
     <% end %>
