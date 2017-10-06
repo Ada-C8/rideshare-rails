@@ -1,5 +1,5 @@
 class Driver < ApplicationRecord
-  has_many :trips
+  has_many :trips, dependent: :destroy
 
   validates :name, presence: true, format: {with: /[a-zA-Z]/}
   validates :vin, presence: true
