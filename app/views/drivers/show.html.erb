@@ -1,9 +1,7 @@
 <h1> Driver Details </h1>
 
-
 <p><%= @driver.name %></p>
 <p><%= @driver.vin %> </p>
-
 
 <%= link_to "Edit Driver", edit_driver_path %>
 <%= link_to "Delete Driver", driver_path(@driver), method: :delete, data: { confirm: "Are you sure you want to delete?" } %>

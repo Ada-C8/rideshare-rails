@@ -6,8 +6,6 @@ class TripsController < ApplicationController
   def new
     @trip = Trip.new
     @trip.passenger_id = params[:passenger_id]
-    # @trip.driver_id = 1
-
   end
 
   def create
@@ -24,8 +22,6 @@ class TripsController < ApplicationController
     if @drivers.length > 0
       d =  @drivers.shuffle.first
       @trip.driver_id = d.id
-    else
-      render :new
     end
 
     if @trip.save
