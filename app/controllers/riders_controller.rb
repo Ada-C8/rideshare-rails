@@ -36,6 +36,17 @@ class RidersController < ApplicationController
     redirect_to riders_path if Rider.find_by(id: params[:id]).destroy
   end
 
+  def create_trip
+    trip =  Rider.find_by(id: params[:id]).start_trip
+
+    if trip
+      redirect_to trip_path(trip.id)
+    else
+      flash[:notice] = "No available Drivers today. So sorry!"
+      redirect_to rider_path(params[:id])
+    end
+  end
+
   private
   def rider_params
     return params.require(:rider).permit(:name,:phone)
