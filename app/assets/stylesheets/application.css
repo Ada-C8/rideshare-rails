@@ -6,7 +6,7 @@ body {
   height: 100%;
   margin: 0;
   background-repeat: no-repeat;
-background-attachment: fixed;
+  background-attachment: fixed;
 
 }
 
@@ -119,13 +119,13 @@ a {
 
 /*footer for all pages */
 /*footer {
-  font-size: 1em;
-  width:100%;
-  background:transparent;
-  position: fixed;
-  bottom:0;
-  text-align: center;
-  color: white;
+font-size: 1em;
+width:100%;
+background:transparent;
+position: fixed;
+bottom:0;
+text-align: center;
+color: white;
 }*/
 
 /*different background for homepage only*/
@@ -315,6 +315,8 @@ form {
   font-weight: bold;
   font-size: 2.5em;
   width: 40%;
+  display: flex;
+  flex-flow: column;
 }
 
 input {
@@ -330,13 +332,17 @@ input[type=text]:focus {
   border: 3px solid #27cdb2;
 }
 
+select {
+  font: inherit;
+}
+
 input[type=submit] {
-    font-family: 'Slabo 13px', serif;
-    background-color: #8BDAEE;
-    color: #188BA9;
-    font-weight: bold;
-    font-size: 1em;
-    padding: 16px 32px;
-    margin: 4px 2px;
-    cursor: pointer;
+  font-family: 'Slabo 13px', serif;
+  background-color: #8BDAEE;
+  color: #188BA9;
+  font-weight: bold;
+  font-size: 1em;
+  padding: 16px 32px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
