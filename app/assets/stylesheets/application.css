@@ -67,7 +67,7 @@ main {
   min-width: 32rem;
   padding: 3%;
   position: relative;
-  top: 3.75em;
+  top: 5rem;
   width: 74%;
 }
 
@@ -82,7 +82,7 @@ h2 {
   color: tomato;
   display: inline-block;
   font-family: 'Comfortaa', sans-serif;
-  padding-left: 2rem;
+  padding-left: 1.5rem;
 }
 
 a {
@@ -97,6 +97,7 @@ p, label {
 
 ul {
   list-style: none;
+  padding-left: 0;
 }
 
 span.rating {
