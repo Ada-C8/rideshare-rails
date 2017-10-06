@@ -67,3 +67,41 @@ h1 {
   border-radius: 5px;
   color: white;
 }
+
+/* ==== TABLE STYLING ==== */
+th {
+  font-family: "Quicksand", Arial, sans-serif;
+  font-weight: bold;
+}
+
+table {
+  border-spacing: 5px;
+  margin-left: 8%;
+}
+
+table caption {
+  font-size: 1.75rem;
+}
+
+table td, table th {
+  font-size: 1.25rem;
+}
+
+td, th {
+  padding: 2px;
+  text-align: center;
+  width: 30%;
+}
+
+.trip-date {
+  // width: 20%;
+  text-align: left;
+}
+
+.trip-cost {
+  // width: 10%;
+}
+
+.trip-rating {
+  // width: 10%;
+}
