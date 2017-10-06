@@ -2,7 +2,8 @@
 
 <section>
   <%= link_to("Edit Trip", edit_trip_path(@trip.id)) %>
-</section>  
+  <%= link_to("Delete Trip", delete_trip_path(@trip.id), method: :delete, data: {confirm: "Are you sure you would like to delete this trip?"}) %>
+</section>
 
 <ul>
   <li>

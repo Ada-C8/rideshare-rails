@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   post '/trips', to: 'trips#create', as: 'create_trip'
 
-  get '/trips/destroy/:id', to: 'trips#destroy', as: 'delete_trip'
+  delete '/trips/destroy/:id', to: 'trips#destroy', as: 'delete_trip'
 
 
   get '/passengers', to: 'passengers#index'
