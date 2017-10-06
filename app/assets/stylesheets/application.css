@@ -37,6 +37,6 @@ a, a:visited, a:hover, a:active {
   text-align: center;
 }
 
-.driver_passenger_list div:last-child {
-
+.driver_passenger_list li:hover { 
+    background-color: yellow;
 }
