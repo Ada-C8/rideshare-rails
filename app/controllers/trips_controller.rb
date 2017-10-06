@@ -19,15 +19,21 @@ class TripsController < ApplicationController
   def show
     if params[:passenger_id] != nil
       @trip = Trip.find_by(passenger_id: params[:passenger_id], id: params[:id])
+      @trip_edit_path = passenger_trips_url
     elsif params[:driver_id] != nil
       @trip = Trip.find_by(driver_id: params[:driver_id], id: params[:id])
     else
       @trip = Trip.find(params[:id])
+      @trip_edit_path = trips_url
     end
   end
 
   def edit
-    @trip = Trip.find_by(id: params[:id].to_i)
+    if params[:passenger_id] != nil
+    @trip = Trip.find_by(passenger_id: params[:passenger_id], id: params[:id])
+    else
+    @trip = Trip.find(params[:id])
+    end
 
     unless @trip
       redirect_to passenger_trips_path
@@ -38,8 +44,8 @@ class TripsController < ApplicationController
     trip = Trip.find_by(id: params[:id].to_i)
     redirect to passenger_trips_path unless trip
 
-    if trip.update_attributes passenger_params
-      redirect_to passenger
+    if trip.update_attributes trip_params
+      redirect_to trip
     else
       render :edit
     end

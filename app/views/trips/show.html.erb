@@ -18,3 +18,5 @@
   <%= @trip.passenger.name %>
   <% end %>
 </p>
+<p><%= link_to("Edit Trip Rating", "#{@trip_edit_path}/#{@trip.id}/edit")%></p>
+<%= params %>
