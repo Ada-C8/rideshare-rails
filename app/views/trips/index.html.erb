@@ -1,33 +1,19 @@
 <h2>ALL TRIPS</h2>
+
+<section class="trip_details">
 <ol>
-  <% @trips.each do |trip|%>
+  <% @trips.order(:date).each do |trip|%>
   <li>
-
-    <p>
-      <strong >
-        <%= link_to "Trip on: #{trip.date}", trip_path(trip) %>
-      </strong>
-    </p>
+    <h4><%= link_to "Trip on: #{trip.date}", trip_path(trip) %></h4>
     <ul>
-      <% if !trip.driver.nil? %>
       <li>
-        <%= "Driver: #{trip.driver.name}"%>
-
-        <% else %>
-        <%= "Passenger: Deactivated"%>
-        <% end %>
+        <%= "Driver: #{trip.driver_name}"%>
       </li>
-
-      <% if !trip.passenger.nil? %>
       <li>
-        <%= "Passenger: #{trip.passenger.name}"%>
+        <%= "Passenger: #{trip.passenger_name}"%>
       </li>
-      <% else %>
-      <%= "Passenger: Deactivated"%>
-      <% end %>
-
     </ul>
-
   </li>
   <% end %>
 </ol>
+</section

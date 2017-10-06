@@ -1,18 +1,32 @@
-<p>
-  <strong >
-    Trip on: <%= link_to "#{@trip.date}", trip_path(@trip) %>
-  </strong>
-</p>
+
+
+<h2>Trip on: <%= link_to "#{@trip.date}", trip_path(@trip) %></h2>
+
+<section class="trip_details">
 <ul>
+  <%if @trip.driver_name != "Deactivated"%>
   <li>
-    Driver:<%= link_to "#{@trip.driver.name}", driver_path(@trip.driver_id)%>
+    Driver:<%= link_to "#{@trip.driver_name}", driver_path(@trip.driver_id)%>
   </li>
+  <%else%>
+    <li>
+      Driver: <%= "#{@trip.driver_name}"%>
+    </li>
+  <%end %>
+
+  <%if @trip.passenger_name != "Deactivated"%>
   <li>
-    Passenger:<%= link_to "#{@trip.passenger.name}", passenger_path(@trip.passenger_id)%>
+    Passenger:<%= link_to "#{@trip.passenger_name}", passenger_path(@trip.passenger_id)%>
   </li>
+  <%else%>
+    <li>
+      Passenger: <%= "#{@trip.passenger_name}"%>
+    </li>
+  <%end %>
   <li>
     <%= "Cost: #{@trip.cost}"%>
   </li>
+
   <li>
     <%= "Rating: #{@trip.rating}"%>
     <%= form_for @trip do |f| %>
@@ -21,6 +35,9 @@
   <%end%>
   </li>
 </ul>
+</section>
+
+<section class="edit_delete">
 <ul>
   <li>
     <%= link_to "Edit", edit_trip_path(@trip)%>
@@ -28,3 +45,5 @@
   <li>
     <%= link_to 'Delete', trip_path(@trip), method: :delete, data: { confirm: "Are you sure?" } %>
   </li>
+</ul>
+</section>

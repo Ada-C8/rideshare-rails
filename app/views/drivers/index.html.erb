@@ -2,9 +2,18 @@
 
 <%= link_to "New Driver", new_driver_path %>
 
-
+<ol>
 <% @drivers.each do |driver| %>
-  <p>
-    <%= link_to driver.name, driver_path(driver.id)%>
-  </p>
+<li class="driver_name">
+  <ul>
+    <li>
+      <%= link_to driver.name, driver_path(driver.id)%>
+    </li>
+    <li>
+      <%= driver.average_rating %>
+    </li>
+  </ul>
+</li>
+
 <%end%>
+</ol>

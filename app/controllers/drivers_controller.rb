@@ -24,7 +24,7 @@ class DriversController < ApplicationController
   end
 
   def new
-    @driver = Driver.new()
+    @driver = Driver.new
   end
 
   #### ^^^^^ work on that later

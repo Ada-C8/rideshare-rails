@@ -1,62 +1,53 @@
-<h1>Drivers#show</h1>
-<p>Find me in app/views/drivers/show.html.erb</p>
 
-<section class="driver_details">
 <h2><%= @driver.name%></h2>
+
 <section class="edit_delete">
   <ul>
     <li>
-      <%=link_to "Edit", edit_driver_path(@driver.id)%>
+      <%=link_to "Edit Driver", edit_driver_path(@driver.id)%>
     </li>
     <li>
-      <%=link_to "Delete", driver_path(@driver.id), method: :delete, data: { confirm: 'You are about to delete a driver. Continue?' } %>
+      <%=link_to "Delete Driver", driver_path(@driver.id), method: :delete, data: { confirm: 'You are about to delete a driver. Continue?' } %>
     </li>
   </ul>
 </section>
 
+
 <section class="drivers_trips" >
   <% @driver.trips.each do |trip| %>
-  <article>
-      <p>
-        Trip id: <%= link_to trip.id, trip_path(trip.id) %>
-      </p>
-      <p>
+
+  <article class="trip_details">
+    <ul>
+      <li>
+         <%= link_to "Trip #{trip.id}", trip_path(trip.id) %> taken <%=trip.date %>
+
+      </li>
+      <li>
         Passenger: <%=link_to trip.passenger.name, passenger_path(trip.passenger.id) %>
-      </p>
-      <p>
-        trip date: <%=trip.date %>
-      </p>
-      <p>
-        total cost: <%=trip.cost %>
-      </p>
-      <p>
-        rating: <%=trip.rating%>
-      </p>
+      </li>
+
+      <li>
+       $<%=trip.cost_convert %>
+      </li>
+      <li>
+       Rated: <%= trip.rating%> / 5
+      </li>
+    </ul>
   </article>
+
     <%end%>
+
 </section>
 
 
-#move this to controller i think
+<section class="driver_stats">
+  <section class="driver_earnings">
+    <h3>Total Earnings</h3>
+    $<%= @driver.earnings%>
+  </section>
 
-<section class="driver_earnings">
-  <h3>Total Earnings</h3>
-  <%@earnings = 0 %>
-  <% @driver.trips.each do |trip| %>
-    <%@earnings += trip.cost%>
-  <% end %>
-  <% @earnings *= 0.85/100 %>
-  <%= @earnings.round(2) %>
-</section>
-
-<section class="driver_rating">
-  <h3>Average Rating</h3>
-  <%@rating = 0 %>
-  <% @driver.trips.each do |trip| %>
-    <%@rating += trip.rating %>
-  <% end %>
-  <% @rating /= @driver.trips.count/1.0 %>
-  <%= @rating.round(2) %>
-</section>
-
+  <section class="driver_rating">
+    <h3>Average Rating</h3>
+    <%= @driver.average_rating %> out of 5
+  </section>
 </section>

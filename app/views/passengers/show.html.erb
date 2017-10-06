@@ -3,40 +3,45 @@
 <h1>404: Not Found</h1>
 <% end %>
 
-<h1>Passenger Details for :  <%= @passenger.name %></h1>
+<h2>Passenger Details for:  <%= @passenger.name %></h2>
 
-<section class="links">
+<section class="edit_delete">
   <ul>
     <li>
     <%= link_to "New Trip", new_trip_path %>
     </li>
     <li>
-      <%=link_to "Edit", edit_passenger_path(@passenger.id) %>
+      <%=link_to "Edit Passenger Details", edit_passenger_path(@passenger.id) %>
     </li>
     <li>
-      <%=link_to "Delete", passenger_path(@passenger.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-    </li>
-    <li>
-    <%= link_to "All Passengers", passengers_path %>
+      <%=link_to "Delete Passenger", passenger_path(@passenger.id), method: :delete, data: { confirm: 'Are you sure?' } %>
     </li>
   </ul>
 </section>
 
-<h2>List of trips : </h2>
+<h2>Past Trips: </h2>
 
   <strong><%= @passenger.name %></strong>'s phone number is: <%= @passenger.phone_num %>
-</p>
+
 <% total_cost = 0 %>
-<p><% @passenger.trips.each do |trip| %></p>
+<% @passenger.trips.each do |trip| %>
 
-  <%= "Trip Cost: $" %><% total = ((trip.cost) / 100) %><%= "%.2f"%total %>
-
+<article class="trip_details">
+  <h4><%= "Details for "%><%= link_to "Trip #{trip.id}", trip_path(trip.id) %><%= " taken on " %><%= trip.date %></h4>
+  <ul>
+    <li>
+    <strong>Driver: </strong> <%= trip.driver.name %>
+    </li>
+    <li>
+      <strong>Cost: $</strong> <% total = ((trip.cost) / 100) %><%= "%.2f"%total %>
+    </li>
+    <li>
+      <strong>Rating:  </strong><%= trip.rating %>
+    </li>
+  </ul>
+</article>
   <% total_cost += trip.cost %>
-  <%= "Trip Rating: " %><%= trip.rating %>
-  <%= "Trip Date: " %><%= trip.date %>
-  <%= "Trip Driver: " %><%= trip.driver_id %>
-  <%= "Trip ID: " %> <%= link_to trip.id, trip_path(trip.id) %>
 <% end %>
 
-<%= "Total Cost: $" %>
+<%= "Total Spent: $" %>
 <% final_total_cost = total_cost/100%><%= "%.2f"%final_total_cost %>
