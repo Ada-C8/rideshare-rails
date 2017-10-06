@@ -21,6 +21,11 @@ class TripsController < ApplicationController
       redirect_to root_path
     end
 
+    if @drivers.length > 0
+      d =  @drivers.shuffle.first
+      @trip.driver_id = d.id
+    end
+
     if @trip.save
       redirect_to passenger_path(@trip.passenger_id)
     else
