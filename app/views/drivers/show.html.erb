@@ -2,12 +2,13 @@
 
 <section>
     <h1><%= @driver.name  %></h1>
-    <p>
-    <%= @driver.vin %>
-    </p>
 </section>
 
+
+
 <section>
+  <h3>VIN:</h3>
+  <p><%= @driver.vin %></p>
   <h3>Driver Total Earnings:</h3>
   <%=(@driver.total_earnings / 100).round(2) %>
 
