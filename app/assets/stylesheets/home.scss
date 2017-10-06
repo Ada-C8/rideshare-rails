@@ -38,6 +38,7 @@ li {
   width: 79%;
   text-align: right;
   vertical-align: middle;
+  padding-right: 1rem;
 }
 
 .nav-bar ul {
@@ -71,11 +72,12 @@ li {
   font-weight: bold;
   font-size: 3rem;
   vertical-align: middle;
-  padding-left: 1rem;
+  padding-left: 2rem;
 }
 
 header {
   padding: 1rem 0;
+  // background-color: white;
 }
 
 /* ==== NOTICES / ERRORS STYLING */
@@ -102,19 +104,32 @@ header {
   display: inline-block;
 }
 
+// main {
+//   margin: 1rem 1.75rem;
+// }
+h1 {
+  margin-top: 1rem;
+}
+
+input {
+  margin-right: 2rem;
+}
+
 .container {
   text-align: center;
+  margin: 0;
+  position: fixed;
+  bottom: 0;
+  background-image: image-url("background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
 }
 
 .welcome-image {
   width: 100%;
   height: auto;
-}
-
-main {
-  margin: 1rem 1.75rem;
-}
-
-input {
-  margin-right: 2rem;
 }
