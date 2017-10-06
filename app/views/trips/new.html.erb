@@ -19,9 +19,9 @@
     <%= f.select :driver_id, options_from_collection_for_select(Driver.order(:name), "id", "name", params[:driver_id]) %>
     <%= f.label :date %>
     <%= f.date_field :date%>
-    <%= f.label :rating %>
     <%= f.label :cost %>
     <%= f.number_field :cost, min: 0 %>
+    <%= f.label :rating %>
     <%= f.select :rating, options_for_select((1..5)) %>
     <%= f.submit "Create Trip" %>
   <% end %>
