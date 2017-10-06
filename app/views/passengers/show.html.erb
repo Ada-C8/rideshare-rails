@@ -10,10 +10,6 @@
 <%= button_to "Delete", passenger_path(@passenger), method: :delete, data: {confirm: "Are you sure you want to delete this passenger?"} %>
 <%= button_to "Add New Trip", passenger_new_trip_path(@passenger.id), method: :post %>
 
-<!-- I want to create logic that will show all the rides this passenger has taken -->
-<!-- number of trips -->
-<!-- Need to create list of trips taken with a link to the trip details   -->
-
 <%= "Passenger #{@passenger.name} has taken #{@passenger.trips.length} trip(s)" %>
 
 <ol>
