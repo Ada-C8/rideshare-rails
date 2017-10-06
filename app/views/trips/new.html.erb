@@ -6,7 +6,7 @@
     <section>
       <% if @trip.errors.any? %>
         <% @trip.errors.each do |column, message| %>
-          <strong><%= column.capitalize %></strong> <%= message %>
+          <h2 class="error-color align-center"><%= column.capitalize %> <%= message %></h2>
         <% end %>
       <% end %>
 
@@ -21,7 +21,7 @@
             <%= f.date_field :date %>
           </div>
           <div class="form-box-wrapper">
-            <%= f.label :cost, "Cost of Trip (Cost must be a whole number between 0 - 100):"%>
+            <%= f.label :cost, "Cost of Trip (Cost must be a whole number between 0 - 100):" %>
             <%= f.text_field :cost %>
           </div>
 
