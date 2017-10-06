@@ -1,0 +1,45 @@
+<h2>Welcome To RideShare!!</h2>
+
+<div id="trip-button">
+  <%= link_to "Get Started: Add A Trip Now", new_trip_path %>
+</div>
+
+<section class="container">
+  <div class="feature" id="potm">
+    <h4>Passenger of the Month</h4>
+    <img src="https://unsplash.it/200/300/?random" />
+    <div>
+      <p>
+        <span>
+          <strong>
+            <%= @passenger.name %>
+          </strong>
+        </span>
+        <span class="small">
+          - Member since <%= @passenger.created_at.strftime('%B %Y') %>
+        </span>
+      </p>
+      <blockquote>
+        <p>
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        </p>
+      </blockquote>
+    </div>
+  </div>
+
+  <div class="feature" id="top-drivers">
+    <h4>Top Rated Drivers</h4>
+    <ul>
+      <% @drivers.each do |driver| %>
+      <li>
+        <strong>
+          <%= link_to driver_path(driver.id) do %>
+          <span class="name"><%= driver.name %></span>
+          <span class="rating"><%= render partial:"/layouts/stars", locals: {rating: driver.average_rating} %></span>
+          <% end %>
+        </strong>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

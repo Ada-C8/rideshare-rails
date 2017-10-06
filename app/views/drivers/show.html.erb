@@ -1,0 +1,56 @@
+<h2>Driver Details</h2>
+
+<nav class="page-menu">
+  <ul>
+    <li>
+      <%= link_to "Edit", edit_driver_path(@driver.id) %>
+    </li>
+    <li>
+      <%= link_to "Delete", driver_path(@driver.id), method: :delete %>
+    </li>
+    <li>
+      <%= link_to "Back to index", drivers_path %>
+    </li>
+  </ul>
+</nav>
+
+<section>
+  <p>
+    <strong>Name: </strong>
+    <%= @driver.name %>
+  </p>
+  <p>
+    <strong>VIN: </strong>
+    <%= @driver.vin %>
+  </p>
+  <p class="stars">
+    <strong>Average Rating: </strong>
+    <%=  render partial: "/layouts/stars", locals: {rating: @driver.average_rating} %>
+  </p>
+  <p>
+    <strong>Total earnings: </strong>
+    <%=  "$#{(@driver.total_earnings.to_f / 100).round(2)}" %>
+  </p>
+
+  <p>
+    <strong>Trips: </strong>
+    <ul class="trip-list">
+      <% @driver.trips_by_date.each do |trip| %>
+        <li>
+          <%= link_to trip_path(trip.id) do%>
+            <div class="trip-list">
+              <%= trip.passenger.name %>
+            </div>
+            <div class="trip-list date">
+              <%= trip.date.strftime("%B %d, %Y") %>
+            </div>
+          <% end %>
+          <div class="trip-list rating">
+            <%= render partial: "/layouts/set_stars", locals: {trip: trip} %>
+          </div>
+
+        </li>
+      <% end %>
+    </ul>
+  </p>
+</section>

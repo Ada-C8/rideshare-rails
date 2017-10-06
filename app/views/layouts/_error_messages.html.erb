@@ -1,0 +1,14 @@
+<% if model.errors.any? %>
+    <section class="error-messages">
+      <h3>Errors!</h3>
+        <ul>
+          <% model.errors.messages.each do |field, messages| %>
+            <% messages.each do |message| %>
+            <li>
+              <strong><%= message %></strong>
+            </li>
+            <% end %>
+          <% end %>
+        </ul>
+    </section>
+<% end %>

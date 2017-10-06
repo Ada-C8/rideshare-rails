@@ -1,0 +1,12 @@
+<span class="
+<%= set_class(trip.rating) %>
+">
+  <% trip.rating.times do |i| %>
+   <%= link_to '★', trip_path(trip.id, :trip => {:rating => i + 1}), method: :patch, data: { confirm: "Are you sure??" } %>
+  <% end %>
+</span>
+<span class="zero-stars">
+  <% (5 - trip.rating).times do |j| %>
+   <%= link_to '☆', trip_path(trip.id, :trip => {:rating => trip.rating + j + 1}), method: :patch, data: { confirm: "Are you sure??" } %>
+  <% end %>
+</span>

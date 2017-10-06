@@ -1,0 +1,40 @@
+<h2>Trip #<%= @trip.id %></h2>
+
+<nav class="page-menu">
+  <ul>
+    <li>
+      <%= link_to "Edit", edit_trip_path %>
+    </li>
+    <li>
+      <%= link_to "Delete", trip_path, method: :delete, data: {confirm: "Are you sure??"} %>
+    </li>
+  </ul>
+</nav>
+
+<ul class="details">
+  <li>
+    <p>
+      <strong>Driver:</strong> <%= link_to @trip.driver.name, driver_path(@trip.driver.id), class: "profile-link" %>
+    </p>
+  </li>
+  <li>
+    <p>
+      <strong>Passenger:</strong> <%= link_to @trip.passenger.name, passenger_path(@trip.passenger.id), class: "profile-link" %>
+    </p>
+  </li>
+  <li>
+    <p>
+      <strong>Date:</strong> <%= @trip.date.strftime("%B %d, %Y") %>
+    </p>
+  </li>
+  <li>
+    <p>
+      <strong>Rating:</strong> <%= render partial: "/layouts/set_stars", locals: {trip: @trip} %>
+    </p>
+  </li>
+  <li>
+    <p>
+      <strong>Cost:</strong> <%= "$#{(@trip.cost.to_f / 100).round(2)}"%>
+    </p>
+  </li>
+</ul>

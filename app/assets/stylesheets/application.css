@@ -1,0 +1,288 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+
+/*************/
+/*  GENERAL  */
+/*************/
+
+* {
+  /*border: .1px solid lawngreen;*/
+}
+
+body {
+  background-color: whitesmoke;
+  background-image: url(round.png);
+  margin: 0;
+  /*min-width: 60rem;*/
+}
+
+main {
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 0 auto;
+  min-width: 32rem;
+  padding: 3%;
+  position: relative;
+  top: 5rem;
+  width: 74%;
+}
+
+h1 {
+  display: inline-block;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 2.5rem;
+  margin: 1rem 1rem 1rem 4rem;
+}
+
+h2 {
+  color: tomato;
+  display: inline-block;
+  font-family: 'Comfortaa', sans-serif;
+  padding-left: 1.5rem;
+}
+
+h4 {
+  color: white;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 2rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+a {
+  color: inherit;
+  font-family: 'Comfortaa', sans-serif;
+  text-decoration: none;
+}
+
+p, label {
+  font-family: 'Open Sans', sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+span.rating {
+  float: right;
+  line-height: 1;
+}
+
+.page-menu {
+  display: inline-block;
+  float: right;
+}
+
+.page-menu li {
+  display: inline;
+}
+
+.page-menu a {
+  background-color: tomato;
+  border-radius: 1rem;
+  color: white;
+  font-size: .75rem;
+  padding: 0.25rem 1rem;
+}
+
+.page-menu li a:hover {
+  background-color: deepskyblue;
+}
+
+.small {
+  font-size: 0.75rem;
+}
+
+/************/
+/*  HEADER  */
+/************/
+
+header {
+  background-color: tomato;
+  color: white;
+  height: 5rem;
+  left: 0;
+  min-width: 60rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+header nav {
+  float: right;
+  margin: 0;
+  padding: 0;
+  width: 60%;
+}
+
+header nav ul {
+  float: right;
+  list-style: none;
+  min-width: 30.5rem;
+  padding: 0;
+}
+
+header nav li {
+  display: inline-block;
+  padding: 1rem 2rem 1rem 0;
+}
+
+header nav li a:hover {
+  border-bottom: 2px solid white;
+}
+
+
+/***********/
+/*  INDEX  */
+/***********/
+
+.index li a {
+  background-color: white;
+  border: 2px solid tomato;
+  border-radius: 5rem;
+  box-shadow: 2px 2px 3px lightgrey;
+  color: dimgrey;
+  display: block;
+  margin: 1rem auto;
+  max-width: 32rem;
+  min-width: 18rem;
+  padding: 1rem;
+}
+
+.index li a:hover {
+  color: deepskyblue;
+  box-shadow: -1px -1px 3px lightgrey;
+  left: 1px;
+  top: 2px;
+  position: relative;
+}
+
+.index span {
+  height: 1rem;
+}
+
+/**********/
+/*  SHOW  */
+/**********/
+
+.trip-list li {
+  background-color: white;
+  border: 2px solid whitesmoke;
+  border-radius: 1rem;
+  padding: .5rem 1rem;
+  margin: .5rem auto;
+  display: block;
+}
+
+.trip-list li:hover {
+  border-color: tomato;
+}
+
+.trip-list li:active {
+  border-color: deepskyblue;
+}
+
+.trip-list li div {
+  display: inline-block;
+  width: 32%;
+}
+
+.trip-list .date {
+  text-align: center;
+}
+
+.trip-list .rating {
+  text-align: right;
+}
+
+/***********/
+/*  FORMS  */
+/***********/
+
+.error-messages {
+  border: 2px solid crimson;
+  border-radius: 1rem;
+  color: crimson;
+  font-family: 'Comfortaa', sans-serif;
+  margin: 1rem auto;
+  padding: 1rem;
+  text-align: center;
+  width: 15rem;
+}
+
+.error-messages ul {
+  list-style: disc;
+  text-align: left;
+}
+
+.form {
+  margin: auto;
+  text-align: center;
+  width: 40%;
+}
+
+.form label {
+  display: block;
+}
+
+.form-item [type="submit"] {
+  background-color: tomato;
+  border-radius: 1rem;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  padding: .25rem .5rem;
+}
+.form-item [type="submit"]:active {
+  background-color: deepskyblue;
+  border-radius: 1rem;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  padding: .25rem .5rem;
+}
+
+.form-item {
+  margin: 1rem;
+}
+
+/***********/
+/*  STARS  */
+/***********/
+
+.zero-stars, .zero-stars a{
+  color: lightgrey;
+}
+
+.one-star, .one-star a{
+  color: #cc0000;
+}
+
+.two-stars, .two-stars a{
+  color: #ff8533;
+}
+
+.three-stars, .three-stars a{
+  color: #ffcc00;
+}
+
+.four-stars, .four-stars a{
+  color: #99db70;
+}
+
+.five-stars, .five-stars a{
+  color: #33AC33;
+}

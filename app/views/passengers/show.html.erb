@@ -1,0 +1,52 @@
+<h2>Passenger Details</h2>
+
+<nav class="page-menu">
+  <ul>
+    <li>
+      <%= link_to "Edit", edit_passenger_path(@passenger.id) %>
+    </li>
+    <li>
+      <%= link_to "Delete", passenger_path(@passenger.id), method: :delete %>
+    </li>
+    <li>
+      <%= link_to "Back to index", passengers_path %>
+    </li>
+  </ul>
+</nav>
+
+<section>
+  <p>
+    <strong>Name: </strong>
+    <%= @passenger.name %>
+  </p>
+  <p>
+    <strong>Phone: </strong>
+    <%= @passenger.phone_num %>
+  </p>
+  <p>
+    <strong>Total amount charged: </strong>
+    <%=  "$#{(@passenger.total_spent.to_f / 100).round(2)}" %>
+  </p>
+
+  <p>
+    <strong>Trips: </strong>
+    <span class="page-menu"><%= link_to "Add Trip", new_passenger_trip_path(@passenger.id) %></span>
+    <ul class="trip-list">
+      <% @passenger.trips_by_date.each do |trip| %>
+      <li>
+        <%= link_to trip_path(trip.id) do %>
+          <div class="trip-list">
+            <%= trip.driver.name %>
+          </div>
+          <div class="trip-list date">
+            <%= trip.date.strftime("%B %d, %Y") %>
+          </div>
+          <% end %>
+          <div class="trip-list rating">
+            <%= render partial: "/layouts/set_stars", locals: {trip: trip} %>
+          </div>
+      </li>
+      <% end %>
+    </ul>
+  </p>
+</section>

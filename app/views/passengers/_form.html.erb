@@ -1,0 +1,17 @@
+<div class="form">
+  <%= form_for @passenger do |f| %>
+    <div class="form-item">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="form-item">
+      <%= f.label :phone_num, "Phone number" %>
+      <%= f.text_field :phone_num %>
+    </div>
+
+    <div class="form-item">
+      <%= f.submit action_name %>
+    </div>
+  <% end %>
+</div>

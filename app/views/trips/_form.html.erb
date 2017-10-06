@@ -1,0 +1,52 @@
+<div class="form">
+  <%= form_for @trip do |f| %>
+  <div class="form-item">
+    <%= f.label :driver_id %>
+    <%= f.collection_select(:driver_id, Driver.all.order(:name), :id, :name) %>
+    <%#  {include_blank: 'Select a driver'} %>
+  </div>
+
+  <div class="form-item">
+    <% if @trip.passenger_id == nil %>
+      <%= f.label :passenger_id %>
+      <%= f.collection_select(:passenger_id, Passenger.all.order(:name), :id, :name,  {include_blank: 'Select a passenger'} ) %>
+    <% else %>
+      <%= f.hidden_field :passenger_id %>
+    <% end %>
+  </div>
+
+  <div class="form-item">
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+
+  <%#<%= f.label :rating %>
+  <%#<%= f.text_field :rating %>
+
+
+  <% if rating_visible %>
+  <div class="form-item">
+    <%= f.label :rating %>
+
+    <% rating_array = [] %>
+    <% (1..5).each do |rating|
+        stars = render partial: "/layouts/stars", locals: {rating: rating}
+        rating_array << [stars, rating]
+      end %>
+
+    <%= f.select :rating, rating_array, {include_blank: 'Select a rating'}, :selected => rating_array[:rating.to_s.to_i - 1] %>
+  </div>
+  <% else %>
+    <%= f.hidden_field :rating, :value => 0 %>
+  <% end %>
+
+
+  <div class="form-item">
+    <%= f.label :cost %>
+    <%= f.text_field :cost %>
+  </div>
+
+  <div class="form-item">
+    <%= f.submit action_name %>
+  </div>
+  <% end %>
+</div>

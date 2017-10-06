@@ -1,0 +1,28 @@
+<h2> All Drivers </h2>
+
+<nav class="page-menu">
+  <ul>
+    <li>
+      <%= link_to "New Driver", new_driver_path %>
+    </li>
+    <li>
+      <%= link_to "Sort By Rating", drivers_by_rating_path %>
+    </li>
+    <li>
+      <%= link_to "Sort By Name", drivers_path %>
+    </li>
+  </ul>
+</nav>
+
+<ul class="index">
+  <% @drivers.each do |driver| %>
+    <li>
+      <strong>
+        <%= link_to driver_path(driver.id) do %>
+          <span><%= driver.name %></span>
+          <span class="rating"><%= render partial:"/layouts/stars", locals: {rating: driver.average_rating} %></span>
+        <% end %>
+      </strong>
+    </li>
+  <% end %>
+</ul>
