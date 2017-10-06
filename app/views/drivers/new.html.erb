@@ -1,9 +1,16 @@
-<%# Look into a partial here - similar to driver index %>
 <article class="bg-color height">
   <header class="style">
     <h1>Create New Driver</h1>
   </header>
   <section>
+    <%= render partial: "form", locals: { button_text: "Add driver" } %>
+    <%# See _form.html.erb under drivers views for partial %>
+  </section>
+</article>
+
+
+
+  <!-- <section>
     <% if @driver.errors.messages.length > 0 %>
       <ul>
         <% @driver.errors.messages.each do |field, problems|%>
@@ -12,10 +19,10 @@
           <%end%>
         <%end%>
       </ul>
-      </section>
     <%end%>
+  </section> -->
 
-    <div class="detail-wrapper">
+    <!-- <div class="detail-wrapper">
       <%= form_for @driver do |f| %>
         <div class="form-box-wrapper">
           <%= f.label :name %>
@@ -27,6 +34,4 @@
         </div>
         <%= f.submit "Add Driver" %>
       <% end %>
-    </div>
-  </section>
-</article>
+    </div> -->

@@ -1,25 +1,26 @@
-<% if @driver.errors.messages.length > 0 %>
+<article class="bg-color height">
+  <header class="style">
+    <h1>Edit Driver: <%= @driver.name %></h1>
+  </header>
   <section>
-      <h3> Oops Error!</h3>
-      <ul>
-        <% @driver.errors.messages.each do |field, problems|%>
-          <% problems.each do |problem|%>
-            <li>
-              <strong><%= field %></strong>
-              <%= problem %>
-            </li>
-          <%end%>
-        <%end%>
-      </ul>
+    <%= render partial: "form", locals: { button_text: "Make Driver Changes" } %>
+    <%# See _form.html.erb under drivers views for partial %>
   </section>
-<%end%>
+</article>
 
-<%= form_for @driver do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field:name %>
 
-  <%= f.label :vin%>
-  <%= f.text_field:vin%>
-
-  <%= f.submit "Submit" %>
-<% end %>
+<!-- # <% if @driver.errors.messages.length > 0 %>
+#   <section>
+#       <h3> Oops Error!</h3>
+#       <ul>
+#         <% @driver.errors.messages.each do |field, problems|%>
+#           <% problems.each do |problem|%>
+#             <li>
+#               <strong><%= field %></strong>
+#               <%= problem %>
+#             </li>
+#           <%end%>
+#         <%end%>
+#       </ul>
+#   </section>
+# <%end%> -->

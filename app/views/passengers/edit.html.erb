@@ -1,16 +1,28 @@
+<article class="bg-color height">
+  <header class="style">
+    <h1>Edit Passenger: <%= @passenger.name %></h1>
+  </header>
+  <section>
+    <%= render partial: "form", locals: { button_text: "Make Passenger Changes" } %>
+    <%# See _form.html.erb under passengers views for partial %>
+  </section>
+</article>
 
-<% if @passenger.errors.any? %>
-  <% @passenger.errors.each do |column, message| %>
-    <strong><%= column.capitalize %></strong> <%= message %>
-  <% end %>
-<% end %>
 
-<%= form_for @passenger do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<!-- # <% if @passenger.errors.any? %>
+#   <% @passenger.errors.each do |column, message| %>
+#     <strong><%= column.capitalize %></strong> <%= message %>
+#   <% end %>
+# <% end %> -->
 
-  <%= f.label :phone_num %>
-  <%= f.text_field :phone_num %>
 
-  <%= f.submit "Submit" %>
-<% end %>
+
+<!-- # <%= form_for @passenger do |f| %>
+#   <%= f.label :name %>
+#   <%= f.text_field :name %>
+#
+#   <%= f.label :phone_num %>
+#   <%= f.text_field :phone_num %>
+#
+#   <%= f.submit "Submit" %>
+# <% end %> -->
