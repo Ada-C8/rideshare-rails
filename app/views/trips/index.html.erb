@@ -21,7 +21,7 @@
               Driver: <%= trip.driver.name %><br>
               Passenger: <%= trip.passenger.name %><br>
               Rating: <%= trip.rating %> <br>
-              Cost: <%= trip.cost %> <br><br>
+              Cost: <%= '%.2f'%(trip.cost/100) %> <br><br>
             </p>
           </li>
       <% end %>
