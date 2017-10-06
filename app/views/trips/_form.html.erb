@@ -7,10 +7,10 @@
   <%= f.label :choose_a_date %>
   <%= f.date_field :date %>
 
-  <%= f.label :rating, "Enter a rating of 1-5" %>
-  <%= f.text_field :rating %>
+  <%= f.label :rating, "Select a rating" %>
+  <%= f.select :rating, options_for_select(1..5) %>
 
-  <%= f.label :cost %>
+  <%= f.label :cost, "Enter a cost" %>
   <%= f.text_field :cost %>
 
 
