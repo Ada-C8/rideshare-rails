@@ -27,7 +27,7 @@ end
   <% if !@trip.new_record? %>
     <%= content_tag :div, class: "rating-wrapper" do %>
       <%= f.label :rating do %>
-        <i class="fa fa-used"></i> Rating
+        <i class="fa fa-star"></i> Rating
       <% end %>
       <%= f.text_field :rating %>
     <% end %>
