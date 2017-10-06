@@ -1,9 +1,3 @@
 <h1>passengers#index</h1>
 
-<ol>
-  <% @passengers.each do |passenger| %>
-  <li>
-  <%= link_to(passenger.name, passenger_path(passenger.id)) %>
-  </li>
-  <% end %>
-</ol>
+<%= render partial: 'shared/list', locals: { persons: @passengers } %>
