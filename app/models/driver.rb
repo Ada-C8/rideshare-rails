@@ -15,12 +15,19 @@ class Driver < ApplicationRecord
   def average_rating
     total = 0
     counter = 0
+
+
     trips.each do |t|
       if t.rating
         total += t.rating
         counter += 1
       end
     end
+
+    if counter == 0
+      return "This driver currently has no ratings"
+    end
+
     total /= counter
     return total.round(1)
   end
