@@ -37,9 +37,9 @@ class PassengersController < ApplicationController
   def destroy
     passenger = Passenger.find(params[:id])
     passenger.destroy
+    
     redirect_to passengers_path
   end
-
 
   private
   def passenger_params

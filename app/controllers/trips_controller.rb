@@ -7,7 +7,6 @@ class TripsController < ApplicationController
   #   end
   # end
 
-
   def show
     @trip = Trip.find(params[:id])
   end
@@ -38,9 +37,8 @@ class TripsController < ApplicationController
 
   def update
     @trip = Trip.find(params[:id])
-    result = @trip.update({
-      rating: params[:trip][:rating]
-      })
+    result = @trip.update({rating: params[:trip][:rating]})
+    
       if result
         redirect_to "/passengers/#{params[:passenger_id]}"
       else
@@ -68,6 +66,5 @@ class TripsController < ApplicationController
     # end
 
     # "/passengers/#{passenger_id}"
-
   end
 end
