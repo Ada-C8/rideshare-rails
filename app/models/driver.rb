@@ -2,7 +2,7 @@ class Driver < ApplicationRecord
   has_many :trips, dependent: :nullify
 
   validates :name, presence: true
-  validates :vin, presence: true
+  validates :vin, presence: true, uniqueness: true
 
   def total_earnings
     total_earnings = trips.inject(0) { |sum, trip| sum + trip.cost }
