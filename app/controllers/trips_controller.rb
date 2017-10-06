@@ -9,6 +9,12 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params)
+    @trip.cost = @trip.to_cents
+
+    @trip.save
+
+
+
 
     if @trip.save
       redirect_to('/trips')
@@ -36,6 +42,7 @@ class TripsController < ApplicationController
   def update
     @trip = Trip.find(params[:id])
     @trip.update_attributes(trip_params)
+    @trip.cost = @trip.to_cents
     if @trip.save
       redirect_to(trip_path(@trip))
       # redirect_back(fallback_location: @trip)

@@ -27,9 +27,10 @@
     </li>
 
     <li>
-      <%= f.label :cost, :class => 'label' %>
+      <%= f.label :cost %>
 
-      <%= f.text_field :cost, :class => 'field' %>
+
+      <%= f.text_field :cost, value: @trip.to_dollars %>
     </li>
 
     <li>

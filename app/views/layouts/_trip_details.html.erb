@@ -18,7 +18,7 @@
   </li>
   <% end %>
   <li>
-    Cost: $<%='%.2f' % [trip.cost/100.0]%>
+    Cost: $<%=trip.to_dollars%>
   </li>
   <li>
     <%= "Rating: #{trip.rating}"%>
