@@ -4,12 +4,10 @@ class Driver < ApplicationRecord
   validates :vin, presence: true
 
   def total_earnings
-
     total = 0
     trips.each do |t|
       total += t.cost
     end
-
     return (total * 0.85)
   end
 
