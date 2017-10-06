@@ -117,3 +117,20 @@ tr:hover {
 .form-header-container {
   text-align: center;
 }
+
+// TRIP#SHOW
+
+.trip-details-container {
+  // display: flex;
+  line-height: 1.5em;
+  list-style: none;
+  text-align: left;
+  // flex-direction: column;
+  margin-left: 325px;
+  margin-top: 25px;
+}
+
+.trip-show-container {
+  display: block;
+  text-align: center;
+}
