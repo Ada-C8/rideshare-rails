@@ -1,6 +1,6 @@
 class PassengersController < ApplicationController
   def index
-    @passengers = Passenger.order(:id)
+    @passengers = Passenger.order(:id).paginate(page: params[:page], per_page: 20)
   end
 
   def show
