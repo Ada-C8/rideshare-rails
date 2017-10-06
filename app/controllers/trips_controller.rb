@@ -13,7 +13,7 @@ class TripsController < ApplicationController
   end
 
   def new
-    @trip = Trip.new
+    @trip = Trip.new(passenger_id: params[:passenger_id])
   end
 
   def create

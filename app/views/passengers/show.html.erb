@@ -14,7 +14,7 @@
 <section class="buttons">
   <li><%= link_to "Edit Passenger Details", edit_passenger_path(@passenger.id), alt: "link to edit passenger details" %></li>
   <li><%= link_to "Delete Passenger", passenger_path(@passenger.id), method: :delete, alt: "link to delete passenger", data: {confirm: "Are you sure you want to delete this passenger?"} %></li>
-  <li><%= link_to "Request a New Trip", new_trip_path, alt: "link to start a new trip"%></li>
+  <li><%= link_to "Request a New Trip", new_passenger_trip_path(@passenger.id), alt: "link to start a new trip"%></li>
 </section>
 </div>
 
