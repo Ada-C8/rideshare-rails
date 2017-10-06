@@ -1,9 +1,28 @@
 <h2>One Driver at a Time!</h2>
 
-<h3>
-  <%= @driver.name %>
-</h3>
+<%= "Hi my name is #{@driver.name}!  My average rating is " %>
 
+<hr />
+<% if !@trips.empty? %>
+<% @trips.each do |trip| %>
+Trip ID: <%= trip.id %>
+<ul>
+  <li>Date: <%=trip.date%>
+  </li>
+  <li>
+    Passenger: <%= trip.passenger.name %>
+  </li>
+  <li>
+    Rating: <%= trip.rating %>
+  </li>
+  <li>
+    Cost: $<%= trip.cost %>
+  </li>
+</ul>
+<% end %>
+<% else %>
 <p>
-  VIN: <%= @driver.vin %>
+  This driver has not given any rides, wow.  Help a driver out, will ya?
 </p>
+
+<% end %>
