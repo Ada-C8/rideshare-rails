@@ -19,18 +19,18 @@
   <article class="trip_details">
     <ul>
       <li>
-         <%= link_to "Trip #{trip.id}", trip_path(trip.id) %> taken <%=trip.date %>
+         <strong><%= link_to "Trip #{trip.id}", trip_path(trip.id) %></strong> taken <%=trip.date %>
 
       </li>
       <li>
-        Passenger: <%=link_to trip.passenger.name, passenger_path(trip.passenger.id) %>
+        <strong>Passenger:</strong> <%=link_to trip.passenger.name, passenger_path(trip.passenger.id) %>
       </li>
 
       <li>
-       $<%=trip.cost_convert %>
+       <strong>Cost:</strong> $<%=trip.cost_convert %>
       </li>
       <li>
-       Rated: <%= trip.rating%> / 5
+       <strong>Rated:</strong> <%= trip.rating%> / 5
       </li>
     </ul>
   </article>

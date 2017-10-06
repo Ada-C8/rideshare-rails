@@ -28,8 +28,10 @@
   <% @passenger.trips.each do |trip| %>
 
   <article class="trip_details">
-    <h4><%= "Details for "%><%= link_to "Trip #{trip.id}", trip_path(trip.id) %><%= " taken on " %><%= trip.date %></h4>
     <ul>
+      <li>
+        <strong><%= link_to "Trip #{trip.id}", trip_path(trip.id) %> </strong><%= " taken: " %></strong><%= trip.date %>
+      </li>
       <li>
         <strong>Driver: </strong> <%= trip.driver.name %>
       </li>
