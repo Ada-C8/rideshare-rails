@@ -1,0 +1,22 @@
+.details-table {
+  width: 90%;
+  justify-content: center;
+  margin: auto;
+  // border: solid;
+}
+
+.details-table tr td {
+  // border: solid;
+  text-align: center;
+}
+
+.no-trips {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.details-table-header {
+  text-align: center;
+}

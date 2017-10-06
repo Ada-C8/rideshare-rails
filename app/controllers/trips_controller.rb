@@ -1,8 +1,4 @@
 class TripsController < ApplicationController
-  def index
-    # CHECK IF NEEDED
-    # @trips = Trip.where(params[:driver_id])
-  end
 
   def show
     @trip = Trip.find(params[:id])

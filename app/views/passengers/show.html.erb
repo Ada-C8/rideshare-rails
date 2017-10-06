@@ -1,4 +1,6 @@
-<h1><%= @passenger.name %></h1>
+<h1>Passenger Information</h1>
+
+<h2><%= @passenger.name %></h2>
 
 <p>
   <strong>Phone Number:</strong> <%= @passenger.phone_num %>
@@ -13,11 +15,11 @@
   <%= link_to "Delete Passenger", passenger_path(@passenger.id), method: :delete, data: {:confirm => "Are you sure you want to delete this driver?"} %>
 </p>
 
-<h3> Passenger Trips </h3>
+<h3 class="details-table-header"> Passenger Trips </h3>
 <p>
 <%= link_to 'Add trip', new_passenger_trip_path(:passenger_id => @passenger.id) %>
 </p>
-<table>
+<table class="details-table">
    <tr>
      <th>
        ID
@@ -78,23 +80,8 @@
      <% end %>
 </table>
 
-
-<!-- <%# i = 1 %>
-<%# @passenger.trips.each do |trip| %>
-<p>
-  <%# link_to "Trip #{i}:", trip_path(trip.id) %>
-  Date: <%# trip.date %>,
-  Rating: <%# trip.rating %>,
-  Cost: <%# Money.new(trip.cost).format%>
-    <%# i += 1 %>
-</p>
-
-<%# end %> -->
-<!-- Clicking on a trip from the list will take me to a detail page for that trip
-Click links to edit and delete that passenger
-Add a new trip for this passenger
-An available driver is selected by the server
-The trip starts with no rating
-When adding a new passenger:
-The user must provide a name and phone number
-Don't worry about how the phone number is formatted -->
+<% if @passenger.trips.size == 0 %>
+  <p class="no-trips" >
+    <%= "No Trips Found" %>
+    </p>
+<% end %>
