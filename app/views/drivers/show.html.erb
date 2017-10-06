@@ -1,6 +1,5 @@
-<h1>Passenger information for: <%= @driver.name %></h1>
+<h1>Driver information for: <%= @driver.name %></h1>
 
-<h2><%= @driver.name %></h2>
 <h4>VIN number: <%= @driver.vin %></h4>
 
   <% total_earned = 0 %>
@@ -15,7 +14,7 @@
     <% average_rating += trip[:rating] %>
     <% counter += 1 %>
 <% end %>
-<h4>Average rating: <%= "#{((average_rating.to_f) / counter)}" %> </h4>
+<h4>Average rating: <%= "#{"%.01f" % ((average_rating.to_f) / counter)}" %> </h4>
 
 <h4> List of Trips: </h4>
   <ul>
