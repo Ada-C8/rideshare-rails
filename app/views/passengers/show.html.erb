@@ -17,7 +17,7 @@
 <%= "Passenger #{@passenger.name} has taken #{@passenger.trips.length} trip(s)" %>
 
 <ol>
-<% @passenger.trips.order(date: :desc).each do |trip| %>
+<% @passenger.trips.each do |trip| %>
 <li>
   <%= link_to "Trip #{trip.id}", trip_path(trip.id) %>
   <%= "Driver Id: #{trip.driver_id}" %>

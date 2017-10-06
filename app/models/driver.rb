@@ -30,5 +30,4 @@ class Driver < ApplicationRecord
       return (total_rating / counter)
     end
   end
-
 end
