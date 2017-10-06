@@ -22,6 +22,7 @@ html, body {
   height: 100%;
   width: 100%;
 }
+
 /*end remove default styling*/
  nav a:hover, .dropdown:hover .dropbtn {
     background-color: orange;
@@ -41,6 +42,12 @@ nav a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+}
+
+@media screen and (max-width: 320px) {
+    body {
+        background-color: snow;
+    }
 }
 
 .dropdown {
@@ -95,59 +102,56 @@ th, td {
 }
 
 #trips-table {
-  /*border: black solid 1px;*/
-  margin: 0px auto;
+  margin: 5px auto;
+  padding: 10px;
 }
 
 .trips-section {
-  border: black solid 1px;
+  background-color: AliceBlue;
+  margin: 0 auto;
+  width: 80%;
 }
 
-.content-container section {
-  max-width: 80%;
-  /*75% of viewport height*/
-  max-height: 75vh;
-  margin: auto;
+
+.content-container {
+  max-width: 60%;
+  /*90% of viewport height*/
+  max-height: 90vh;
   position: relative;
   background-color: snow;
   overflow: scroll;
+  margin: 10px auto;
 }
 
 .content-container h1, .content-container h2 {
   color: black;
-
 }
 
 #welcome-home {
   text-align: center;
-  position: absolute;
   display: block;
   border: green solid 1px;
-  padding-top: 20px;
-  width: 80%;
-  /*min-height: 300px;*/
-  margin: auto;
-  margin-top: 30px;
   color: lightgrey;
-  background: linear-gradient(180deg,rgba(0,0,0,.15),transparent 90%);
-  top: 30%;
-  left: 9%;
+  background: linear-gradient(180deg,rgba(0,0,0,.15), black 90%);
+  top: 200px;
 }
 
+#welcome-home h1 {
+  font-family: 'Righteous', cursive;
+  font-size: 2em;
+}
 
 body {
-  /*background-image: url(https://media.giphy.com/media/JQJ8fWKUgg97G/giphy.gif);*/
-  /*background-color: lightgreen;*/
-  /*background-image: url(https://media.giphy.com/media/l41YvfeoWdnqBf7Fu/giphy.gif);
-  background-repeat:no-repeat;
-  background-size: cover;
-  background-blend-mode: soft-light;*/
   font-family: 'Open Sans', sans-serif;
   text-align: center;
+  background-image: url(RandoRidesStatic.png);
+  background-repeat:no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
 }
 
 #home-background{
-  background-image: url('app/assets/images/RandoRidesBackground.gif');
+  background-image: url(RandoRidesBackground.gif);
   background-repeat:no-repeat;
   background-size: cover;
   background-blend-mode: soft-light;
@@ -163,14 +167,18 @@ body {
 }
 
 input {
-  /*min-width: 30vh;*/
   max-width: 50vh;
   padding: 12px 20px;
-  margin: 8px 0;
+  margin: 8px auto;
   box-sizing: border-box;
   display: block;
   border-radius: 15px;
-  font-size: 1em
+  font-size: 1em;
+  border-style: none;
+}
+
+input[type = text] {
+  border: lightgrey solid .5px;
 }
 
 input[type= radio] {
@@ -179,8 +187,6 @@ input[type= radio] {
 
 form {
   max-width: 80vh;
-  /*75% of viewport height*/
-  max-height: 75vh;
   margin: auto;
   position: relative;
   background-color: snow;
@@ -198,12 +204,15 @@ h1 {
   font-size: 2em;
 }
 
-.page-content-links a {
+.page-content-links {
+  padding: 10px;
+}
+.page-content-links a, input[type=submit] {
   background-color: lightgrey;
-  padding: 20px;
+  padding: 5px;
   border-radius: 5px;
   color: black;
-  /*border: black solid 1px;*/
+  border-style: none;
 }
 
 .page-content-links a:hover {
@@ -215,10 +224,4 @@ h1 {
   color: white;
   padding: 5px;
   border-radius: 5px;
-}
-
-@media screen and (max-width: 620px) {
-    body {
-        background-color: snow;
-    }
 }
