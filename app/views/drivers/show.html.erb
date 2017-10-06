@@ -1,17 +1,18 @@
 
-<h2><%= @driver.name%></h2>
+<h2>Driver: <%= @driver.name%></h2>
 
 <section class="edit_delete">
   <ul>
     <li>
-      <%=link_to "Edit Driver", edit_driver_path(@driver.id)%>
+      <%=link_to "Edit", edit_driver_path(@driver.id)%>
     </li>
     <li>
-      <%=link_to "Delete Driver", driver_path(@driver.id), method: :delete, data: { confirm: 'You are about to delete a driver. Continue?' } %>
+      <%=link_to "Delete", driver_path(@driver.id), method: :delete, data: { confirm: 'You are about to delete a driver. Continue?' } %>
     </li>
   </ul>
 </section>
 
+<h4 class="past_trips">Past Trips:</h4>
 
 <section class="trips_blocks" >
   <% @driver.trips.each do |trip| %>
@@ -42,13 +43,13 @@
 <section class="driver_stats">
   <section class="driver_earnings">
     <p>
-      Driver Earnings: <%= @driver.earnings%>
+      <strong>Driver Earnings:</strong> $<%= @driver.earnings%>
     </p>
   </section>
 
   <section class="driver_rating">
     <p>
-      Average Rating<%= @driver.average_rating %> out of 5
+      <strong>Average Rating:</strong> <%= @driver.average_rating %> out of 5
     </p>
 
   </section>

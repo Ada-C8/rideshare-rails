@@ -37,6 +37,10 @@ Rails.application.routes.draw do
   patch 'passengers/:id', to: 'passengers#update', as: 'update_passenger' #update_driver_path
 
 
+resources :passengers do
+  get 'trips/new', to: 'trips#new'
+end
+
 
 
   get 'trips/home', to: "trips#home", as: 'home' #home_path

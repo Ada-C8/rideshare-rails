@@ -31,6 +31,7 @@ class TripsController < ApplicationController
   def new
     @trip = Trip.new
     @passenger = params[:passenger]
+    @some_passenger = Passenger.find(params[:passenger_id])
   end
 
   def show
