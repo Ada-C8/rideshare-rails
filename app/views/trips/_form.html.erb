@@ -6,12 +6,14 @@
     <%#  {include_blank: 'Select a driver'} %>
   </div>
 
-  <%= f.hidden_field :passenger_id %>
-
-  <!-- <div class="form-item"> -->
-    <%#<%= f.label :passenger_id %>
-    <%#<%= f.collection_select(:passenger_id, Passenger.all.order(:name), :id, :name) %>
-  <%#</div>%>
+  <div class="form-item">
+    <% if @trip.passenger_id == nil %>
+      <%= f.label :passenger_id %>
+      <%= f.collection_select(:passenger_id, Passenger.all.order(:name), :id, :name,  {include_blank: 'Select a passenger'} ) %>
+    <% else %>
+      <%= f.hidden_field :passenger_id %>
+    <% end %>
+  </div>
 
   <div class="form-item">
     <%= f.label :date %>
