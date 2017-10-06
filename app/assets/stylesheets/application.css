@@ -61,3 +61,64 @@
    font-size: 25px;
    text-align: right;
  }
+
+ /*navbar*/
+ header nav {
+   background-color: rgb(128, 183, 189);
+   height: 80px;
+   width: 100%;
+   display: flex;
+ }
+
+ /* Dropdown Button */
+ #home-button {
+   display: inline-block;
+   padding: 16px;
+   flex: 3;
+font-size: 1.5em;
+font-weight: 400;
+/*font-style: bold;*/
+ }
+ .dropbtn {
+     color: white;
+     padding: 16px;
+     font-size: 16px;
+     border: none;
+     cursor: pointer;
+     background-color: rgb(198, 146, 209);
+     border-radius: 2em;
+     margin: 10% 0;
+ }
+
+ .dropdown {
+     position: relative;
+     display: inline-block;
+     flex: 0.5;
+     justify-content: center;
+ }
+
+ .dropdown-content {
+     display: none;
+     position: absolute;
+     background-color: #f9f9f9;
+     min-width: 160px;
+     z-index: 1;
+ }
+
+ .dropdown-content a {
+     color: black;
+     padding: 12px 16px;
+     text-decoration: none;
+     display: block;
+ }
+
+ .dropdown-content a:hover {background-color: rgb(198, 146, 209) }
+
+ .dropdown:hover .dropdown-content {
+     display: block;
+ }
+
+ .dropdown:hover .dropbtn {
+     background-color: purple;
+     color: black;
+ }
