@@ -35,4 +35,9 @@ def average_rating
   return rating
 
 end
+
+def self.assign_driver
+  (Driver.find_by(status: true)).id
+end
+
 end

@@ -17,7 +17,9 @@ class TripsController < ApplicationController
   end
 
   def create
-    @trip = Trip.new(date: params[:trip][:date], passenger_id: params[:trip][:passenger_id], cost: params[:trip][:cost], driver_id: 1)
+    @drivers = Driver.order(:id)
+    @trip = Trip.new(date: params[:trip][:date], passenger_id: params[:trip][:passenger_id], cost: params[:trip][:cost], driver_id: @drivers.assign_driver)
+
     if @trip.save
       redirect_to passenger_path(@trip.passenger_id)
     else
