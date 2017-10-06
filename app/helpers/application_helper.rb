@@ -13,6 +13,8 @@ module ApplicationHelper
   def rating_format(input)
     if !input
       return "Incomplete Rating"
+    else
+      return input
     end
   end
 end

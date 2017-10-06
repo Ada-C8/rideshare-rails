@@ -14,7 +14,7 @@ class TripsController < ApplicationController
   def update
     @trip = Trip.find_by(id: params[:id].to_i)
     redirect_to trips_path unless @trip
-    @trip.rating = params[:trip][:rating].to_i if [1..5].include? params[:trip][:rating].to_i
+    @trip.rating = params[:trip][:rating].to_i
     @trip.cost = params[:trip][:cost].to_f
     if @trip.save
       flash[:notice] = "Trip #{@trip.id} was successfully updated"
@@ -29,13 +29,12 @@ class TripsController < ApplicationController
     @passenger = Passenger.find(params[:passenger].to_i)
     @trip.passenger_id = @passenger.id
     @trip.driver_id = @trip.random_driver
-    if @trip.validate
-      if @trip.save
+    if @trip.save
         flash[:notice] = "Trip #{@trip.id} was successfully saved"
-        redirect_to passenger_path(@passenger.id)
-      else
-        render :new
-      end
+    else
+      flash[:notice] = "#{@trip.errors[:passenger][0]} "
+      redirect_to passenger_path(@passenger.id)
+
     end
   end
 
