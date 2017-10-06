@@ -2,27 +2,33 @@
 <%= render partial: 'layouts/style' %>
 <%= render partial: 'layouts/error_messages',
       locals: { model: @trip } %>
+
+<section class="form">
   <p>
     <%= form_for @trip do |f| %>
-  </p>
+
   <%= f.label :date %>
-  <%= f.text_field :date, size: 10, readonly: true %>
-  <p>
+  <%= f.text_field :date, size: 10, readonly: true, class: "text_field" %>
+
     <%= f.label :driver %>
-    <%= f.collection_select(:id, Driver.all, :id, :name) %>
-  </p>
-  <p>
+    <%= f.collection_select(:id, Driver.all, :id, :name, class: "text_field") %>
+
+
     <%= f.label :passenger %>
     <%= f.collection_select(:id, Passenger.all, :id, :name) %>
-  </p>
-  <p>
+
+
 
     <%= f.label :rating %>
     <%= f.select :rating, [[1],[2],[3],[4],[5]] %>
 
     <%= f.label :cost %>
-    <%= f.text_field :cost, size: 7 %>
+    <%= f.text_field :cost, size: 7, class: "text_field" %>
     <!-- Is there a way to input dollar amounts with decimals and convert to cents in db? -->
   </p>
+  <p>
   <%= f.submit %>
+  </p>
 <% end %>
+
+</section>
