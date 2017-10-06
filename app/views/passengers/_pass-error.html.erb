@@ -1,0 +1,5 @@
+<% if @passenger.errors.any? %>
+ <% @passenger.errors.each do |column, message| %>
+   <h2 class="error-color align-center"><%= column.capitalize %> <%= message %></h2>
+ <% end %>
+<% end %>

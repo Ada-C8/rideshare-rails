@@ -42,7 +42,7 @@ class DriversController < ApplicationController
   def destroy
     driver = Driver.find(params[:id])
     result = driver.destroy
-    if result
+    if result # Need to make the driver_id in Trips as nil? And render it in the view page as if nil, say Driver no longer exists for this Trip
       redirect_to drivers_path
     else
       redirect_to driver_path(params[:id])

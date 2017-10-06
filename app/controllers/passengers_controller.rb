@@ -30,7 +30,7 @@ class PassengersController < ApplicationController
   def update
     @passenger = Passenger.find(params[:id])
     result = @passenger.update_attributes(passenger_params)
-    
+
     if result
       redirect_to passenger_path(params[:id])
     else
@@ -41,7 +41,7 @@ class PassengersController < ApplicationController
   def destroy
     passenger = Passenger.find(params[:id])
     result = passenger.destroy
-    if result
+    if result # Need to make the passenger_id in Trips as nil? And render it in the view page as if nil, say Passenger no longer exists for this Trip
       redirect_to passengers_path
     else
       redirect_to passenger_path(params[:id])

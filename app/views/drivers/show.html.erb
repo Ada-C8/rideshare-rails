@@ -22,15 +22,16 @@
 <article class="bg-color height">
   <header class="style">
     <h1>Driver Details For: <%=@driver.name%> </h1>
-    <%= link_to "Edit", edit_driver_path(@driver.id), class: "inline-block link-styles" %>
+    <%= link_to "Edit", edit_driver_path(@driver), class: "inline-block link-styles" %>
     <%= link_to "Delete", driver_path(@driver), method: :delete , data: {confirm: "Are you sure?" }, class: "inline-block link-styles" %>
   </header>
 
   <section>
     <div class="detail-wrapper">
-      <p>Total Earnings: $ <%= @driver.total_earning%></p>
-      <p>Average Rating (1 - 5): <%= @driver.average_rating%> Stars!</p>
-      <p>List of Trips by Date:</p>
+      <h3>Car VIN: <%= @driver.vin %></h3>
+      <h3>Total Earnings: $ <%= @driver.total_earning%></h3>
+      <h3>Average Rating (1 - 5): <%= @driver.average_rating%> !</h3>
+      <h3>Most Recent Trips by Date:</h3>
         <ul class="no-list-bullets">
           <% trips = @driver.driver_trips %>
           <% if trips.length == 0 %>
@@ -43,17 +44,6 @@
             <% end %>
           <% end %>
         </ul>
-
-        <!-- <ul>
-          <% all_trips = Trip.all.order(date: :desc) %>
-          <% all_trips.each do |trip| %>
-            <% if trip.driver_id == @driver.id %>
-              <li>
-                <%= link_to trip.date, trip_path(trip.id) %>
-              </li>
-            <% end %>
-          <% end %>
-        </ul> -->
     </div>
   </section>
 </article>
