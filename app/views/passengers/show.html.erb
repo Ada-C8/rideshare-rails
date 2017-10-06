@@ -1,5 +1,9 @@
 <h1>Passenger Info</h1>
 
+<div class="notice">
+  <%= flash[:notice] %>
+</div>
+
 <%=link_to("Edit Passenger", edit_passenger_path(@passenger.id)) %>
 <%= link_to("Delete Passenger", delete_passenger_path, method: :delete, data: { confirm: "Are you sure?" }) %>
 <%= link_to("New Trip", create_trip_passenger_path(@passenger.id), method: :post) %>

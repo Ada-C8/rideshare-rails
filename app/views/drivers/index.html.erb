@@ -1,6 +1,9 @@
 <h1>Drivers</h1>
 <!-- <p>Find me in app/views/drivers/index.html.erb</p> -->
 
+<div class="notice">
+  <%= flash[:notice] %>
+</div>
 
 <ul class="driver_passenger_list">
   <% @drivers.each do |driver| %>

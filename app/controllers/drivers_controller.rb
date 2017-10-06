@@ -13,6 +13,7 @@ class DriversController < ApplicationController
     @driver = Driver.new(driver_params)
 
     if @driver.save
+      flash[:notice] = "Driver successfully created"
       redirect_to drivers_path
     else
       render :new
@@ -23,6 +24,7 @@ class DriversController < ApplicationController
     @driver = Driver.find_by(id: params[:id].to_i)
 
     if @driver.update_attributes(driver_params)
+      flash[:notice] = "Driver updated"
       redirect_to drivers_path
     else
       render :edit

@@ -1,6 +1,8 @@
 <h1>Passengers</h1>
 <!-- <p>Find me in app/views/passengers/index.html.erb</p> -->
-
+<div class="notice">
+  <%= flash[:notice] %>
+</div>
 
 <ul class="driver_passenger_list">
   <% @passengers.each do |passenger| %>

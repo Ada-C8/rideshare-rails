@@ -13,6 +13,7 @@ class PassengersController < ApplicationController
     @passenger = Passenger.new(passenger_params)
 
     if @passenger.save
+      flash[:notice] = "Passenger successfully created"
       redirect_to passengers_path
     else
       render :new
@@ -23,6 +24,7 @@ class PassengersController < ApplicationController
     @passenger = Passenger.find_by(id: params[:id])
 
     if @passenger.update_attributes(passenger_params)
+      flash[:notice] = "Passenger updated"
       redirect_to passengers_path
     else
       render :edit

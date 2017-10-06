@@ -14,6 +14,7 @@ class TripsController < ApplicationController
     @trip = Trip.find_by(id: params[:id])
 
     if @trip.update_attributes(trip_params)
+      flash[:notice] = "Trip updated"
       redirect_to trip_path
     else
       render :edit
