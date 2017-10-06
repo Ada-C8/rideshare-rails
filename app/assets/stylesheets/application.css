@@ -145,13 +145,13 @@ th, td {
 body {
   font-family: 'Open Sans', sans-serif;
   text-align: center;
-  background-image: url(RandoRidesStatic.png);
+  background-image: image-url("RandoRidesStatic.png");
   background-repeat:no-repeat;
   background-size: cover;
 }
 
 #home-background {
-  background-image: url(RandoRidesBackground.gif);
+  background-image: image-url("RandoRidesBackground.gif");
   background-repeat:no-repeat;
   background-size: cover;
 }
