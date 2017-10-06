@@ -49,62 +49,6 @@ h1 {
   margin: 0.67em 0;
 }
 
-/*PASSENGERS#INDEX AND DRIVERS#INDEX*/
-
-h1 {
-  text-align: center
-}
-
-.name-columns {
-    -moz-column-count: 4;
-    -moz-column-gap: 20px;
-    -webkit-column-count: 4;
-    -webkit-column-gap: 20px;
-    column-count: 4;
-    column-gap: 30px;
-    line-height: 1.5em;
-    list-style: none;
-}
-
-/*PASSENGERS#SHOW*/
-
-.edit-delete-menu {
-
-}
-
-.profile {
-  display: flex;
-  justify-content: center;
-  margin: 15px;
-  line-height: 1.5em;
-}
-
-.profile img {
-  border-radius: 50%;
-  overflow: hidden;
-  width: 100px;
-  height: 100px;
-  margin-right: 20px;
-
-}
-
-.contact-info {
-
-}
-
-table {
-    /*border-collapse: collapse;*/
-    background-color: #d9a5ef;
-}
-
-td, th {
-  padding: 2px;
-  text-align: left;
-}
-
-tr:hover {
-  background-color: cyan;
-}
 
 
 /* Grouping content

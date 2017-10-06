@@ -1,0 +1,80 @@
+/*PASSENGERS#INDEX AND DRIVERS#INDEX*/
+
+.people-list-header.h1 {
+  text-align: center
+}
+
+.name-columns {
+    -moz-column-count: 4;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 20px;
+    column-count: 4;
+    column-gap: 30px;
+    line-height: 1.5em;
+    list-style: none;
+}
+
+/*PASSENGERS#SHOW*/
+
+.edit-delete-menu {
+
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+  line-height: 1.5em;
+}
+
+.profile img {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+
+}
+
+.contact-info {
+
+}
+
+.add-trip {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+  line-height: 1.5em;
+}
+
+table {
+    border-collapse: collapse;
+    background-color: #f1d6fc;
+}
+
+td, th {
+  padding: 2px;
+  text-align: left;
+  border-bottom: 1px solid gray;
+}
+
+tr:hover {
+  background-color: cyan;
+}
+
+
+/*PASSENGERS#SHOW*/
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.form-header {
+
+}
+
+.form-header-container {
+  text-align: center;
+}

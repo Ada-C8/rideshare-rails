@@ -13,7 +13,9 @@
  *= require_tree .
  *= require_self
  *= require normalize
+ *= require main
  */
+
 
 * {
   margin: 0;
@@ -96,6 +98,6 @@ footer {
   color: white;
   line-height: 1em;
   /*margin: 1px;*/
-  position: absolute;
+  position: relative;
 
 }
