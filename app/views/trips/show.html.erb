@@ -9,10 +9,10 @@
 
     <section>
       <div class="detail-wrapper">
-        <h1>Driver for this trip: <%= link_to Driver.find(@trip.driver_id).name, driver_path(@trip.driver_id), class: "link-styles visited-color" %> </h1>
-        <h3>Passenger for this trip: <%= link_to Passenger.find(@trip.passenger_id).name, passenger_path(@trip.passenger_id), class: "link-styles visited-color" %></h3>
-        <h3>Cost for this trip: $ <%=  "%.2f" % @trip.cost %></h3>
-        <h3>Trip Rating: <%= @trip.rating %> Stars!</h3>
+        <h1>Driver for this trip: <%= link_to @trip.driver.name, driver_path(@trip.driver_id), class: "link-styles visited-color" %> </h1>
+        <h3>Passenger for this trip: <%= link_to @trip.passenger.name, passenger_path(@trip.passenger_id), class: "link-styles visited-color" %></h3>
+        <h3>Cost for this trip: $ <%= @trip.cost %></h3>
+        <h3>Trip Rating: <%= @trip.rating %></h3>
         <% if !@trip.has_rating? %>
           <h3><%= link_to "Rate the trip", edit_trip_path(@trip), class: "link-styles visited-color"%></h3>
         <% end %>
