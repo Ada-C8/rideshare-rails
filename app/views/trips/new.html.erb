@@ -1,1 +1,19 @@
-  
+<%= form_for @trip do |t| %>
+
+
+  <%= t.label "Date" %>
+  <%= t.date_field :date %>
+
+  <%= t.label "Rating" %>
+  <%= t.select :rating, 1..5 %>
+
+  <%= t.label "Cost" %>
+  <%= t.text_field :cost %>
+
+  <%= t.label "Driver" %>
+  <%= t.text_field :driver_id %>
+
+  <%= t.submit "Submit" %>
+
+
+  <% end %>
