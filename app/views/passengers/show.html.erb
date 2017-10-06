@@ -17,16 +17,22 @@
     </li>
   </ul>
 
-  <div class="buttons">
-    <!-- <%=link_to("Edit Passenger", edit_passenger_path(@passenger.id)) %> -->
-    <%=button_to("Edit Passenger", edit_passenger_path(@passenger.id), method: :get)%>
+  <div class="pass_buttons">
+    <ul>
+      <li class="edit"><!-- <%=link_to("Edit Passenger", edit_passenger_path(@passenger.id)) %> -->
+        <%=button_to("Edit Passenger", edit_passenger_path(@passenger.id), method: :get)%>
+      </li>
 
-    <!-- <%= link_to("Delete Passenger", delete_passenger_path, method: :delete, data: { confirm: "Are you sure?" })%> -->
-    <%=button_to("Delete Passenger", delete_passenger_path, method: :delete, data: {confirm: "Are you sure?" })%>
+      <li class="delete">
+        <!-- <%= link_to("Delete Passenger", delete_passenger_path, method: :delete, data: { confirm: "Are you sure?" })%> -->
+        <%=button_to("Delete Passenger", delete_passenger_path, method: :delete, data: {confirm: "Are you sure?" })%>
+      </li>
 
-    <!-- <%= link_to("New Trip", create_trip_passenger_path(@passenger.id), method: :post) %> -->
-    <%=button_to("New Trip", create_trip_passenger_path(@passenger.id), method: :post)%>
-
+      <li class="new">
+        <!-- <%= link_to("New Trip", create_trip_passenger_path(@passenger.id), method: :post) %> -->
+        <%=button_to("New Trip", create_trip_passenger_path(@passenger.id), method: :post)%>
+      </li>
+    </ul>
   </div>
 
 </div>
@@ -66,5 +72,6 @@
     </tr>
     <% end %>
   </table>
+
 
 </div>
