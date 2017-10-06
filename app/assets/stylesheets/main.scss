@@ -19,6 +19,10 @@
   position: relative;
 }
 
+.add-page-footer {
+  position: absolute;
+}
+
 /*PASSENGERS#SHOW*/
 
 .edit-delete-menu {
@@ -68,7 +72,7 @@ table {
 }
 
 td, th {
-  padding: 2px;
+  padding: 5px;
   text-align: left;
   border-bottom: 1px solid gray;
 }
@@ -78,7 +82,15 @@ tr:hover {
 }
 
 .trip-history {
-  align-items: center;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  justify-content: center;
+}
+
+.stats-summary {
+  display: flex;
+  justify-content: center;
 }
 
 

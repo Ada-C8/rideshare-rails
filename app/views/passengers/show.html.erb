@@ -15,6 +15,12 @@
   <%= link_to("Add A New Trip", create_trip_path(:passenger => @passenger), method: :post) %>
 </section>
 
+<section class="stats-summary">
+  <section>
+    <h3>Total Charges (All Trips):  $<%= (@passenger.total_charged)/100 %></h3>
+  </section>
+</section>
+
 <%if @passenger.trips.empty?%>
   <section class="no-trips">
     <p> This person has not yet taken any rides.</p>
@@ -53,8 +59,3 @@
     </section>
   </section>
 <% end %>
-
-  <section>
-    <h3>Total Charges (All Trips):</h3>
-    <%= (@passenger.total_charged)/100 %>
-  </section>

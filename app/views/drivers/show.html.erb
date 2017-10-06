@@ -49,14 +49,16 @@
   </section>
 <% end %>
 
-<section>
-  <h3>Total Earnings:</h3>
-  <%= (@driver.total_earnings/100).round(2) %>
-</section>
+<section class="stats-summary">
+  <section>
+    <h3>Total Earnings:</h3>
+    <%= (@driver.total_earnings/100).round(2) %>
+  </section>
 
-<section>
-  <h3>Average Rating:</h3>
-  <%= @driver.ave_rating %>
+  <section>
+    <h3>Average Rating:</h3>
+    <%= @driver.ave_rating %>
+  </section>
 </section>
 
 <footer class="add-page-footer">
