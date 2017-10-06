@@ -1,0 +1,15 @@
+<%= render partial: 'layouts/nav' %>
+
+
+<h2> Trip # <%= @trip.id %> </h2>
+  <ul>
+    <li> Date: <%= @trip.date %> </li>
+    <li> Driver: <%= link_to @trip.driver.name, driver_path(@trip.driver.id) %> </li>
+    <li> Rating: <%= @trip.rating %> </li>
+    <li> Cost: <%= @trip.cost %> </li>
+    <li> Passenger: <%= link_to @trip.passenger.name, passenger_path(@trip.passenger.id) %> </li>
+  </ul>
+
+<section>
+  <%= link_to 'Edit Trip', edit_trip_path %>
+</section>
