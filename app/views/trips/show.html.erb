@@ -1,0 +1,40 @@
+<h1>Trip Number <%= @trip.id %></h1>
+
+<article>
+  <table>
+    <thead>
+      <tr>
+        <th><strong>ID: </strong></th>
+        <th><strong>Cost: </strong></th>
+        <th><strong>Date: </strong></th>
+        <th><strong>Rating: </strong></th>
+        <th><strong>Driver Name: </strong></th>
+        <th><strong>Passenger Name: </strong></th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @trip.id %></td>
+        <td><%= @trip.cost/100 %></td>
+        <td><%= @trip.date %></td>
+        <td>
+          <% if @trip.rating %>
+            <strong><%= @trip.rating  %></strong>
+          <% else %>
+            <%= form_for @trip do |f| %>
+              <strong><%= f.label :rating %></strong>
+              <%= f.select :rating, options_for_select([1, 2, 3, 4, 5]) %>
+              <%= f.submit %>
+            <% end %>
+          <% end %>
+        </td>
+        <td><%= link_to(@trip.driver.name, driver_path(@trip.driver.id)) %></td>
+        <td><%= link_to(@trip.passenger.name, passenger_path(@trip.passenger.id)) %></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+<section class = "button">
+    <%= link_to("Edit Trip", edit_trip_path(@trip.id)) %>
+    <%= link_to("Delete Trip", trip_path(@trip.id), method: :delete, data: {confirm: "Noooooooo! I'm pregnant! It's your baby!"}) %>
+</section>

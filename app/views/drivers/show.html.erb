@@ -1,0 +1,63 @@
+<h1>Driver Info</h1>
+
+<section>
+    <h1><%= @driver.name  %></h1>
+</section>
+
+
+
+<section>
+  <h3>VIN:</h3>
+  <p><%= @driver.vin %></p>
+  <h3>Driver Total Earnings:</h3>
+  <%=(@driver.total_earnings / 100).round(2) %>
+
+  <h3>Driver Rating Average:</h3>
+  <%= @driver.average_rating %>
+</section>
+
+<section>
+  <h3>Trip Information:</h3>
+  <% if @driver.trips.size == 0 %>
+    <p><em>This driver does not have any trip information.</em></p>
+  <% else %>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Date</th>
+          <th>Cost</th>
+          <th>Passenger Name</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+
+    <tbody>
+      <% @driver.trips.each do |t|  %>
+      <tr>
+        <td>
+          <%= link_to(t.id, trip_path(t.id)) %>
+        </td>
+        <td>
+          <%= t.date %>
+        </td>
+        <td>
+          <%= format("%.2f", t.cost / 100) %>
+        </td>
+        <td>
+          <%= t.passenger.name %>
+        </td>
+        <td>
+          <%= t.rating %>
+        </td>
+      </tr>
+      <% end  %>
+      </tbody>
+    </table>
+  <% end %>
+</section>
+
+<section class= "button">
+<%= link_to("Edit Driver", edit_driver_path(@driver.id)) %>
+<%= link_to("Delete Driver", driver_path(@driver.id), method: :delete, data: {confirm: "Noooooooo! I'm pregnant! It's your baby!"}) %>
+</section>

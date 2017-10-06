@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RideshareRails</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css">
+  </head>
+
+  <body>
+    <header>
+      <h1><%= link_to("Rideshare!", root_path) %></h1>
+      <h3>Choose an option from the navigation</h3>
+    </header>
+
+    <nav>
+      <ul class = "navigation">
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Passengers</a>
+          <div class="dropdown-content">
+            <%= link_to("View All Passengers", passengers_path) %>
+            <%= link_to("Add A New Passenger", new_passenger_path) %>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Drivers</a>
+          <div class="dropdown-content">
+            <%= link_to("View All Drivers", drivers_path) %>
+            <%= link_to("Add New Driver", new_driver_path) %>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+</div>
+    <!-- <p>
+      Params are : <%= params %>
+    </p> -->
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<h1>Drivers</h1>
+<section class = "page">
+  <%= will_paginate @drivers %>
+</section>
+
+<section class="list">
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @drivers.each do |d|  %>
+      <tr>
+        <td><%= d.id %></td>
+        <td><%=  link_to(d.name, driver_path(d.id))%></td>
+      </tr>
+      <% end  %>
+    </tbody>
+  </table>
+</section>
+
+<section class = "page">
+  <%= will_paginate @drivers %>
+</section>
