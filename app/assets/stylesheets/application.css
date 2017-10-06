@@ -58,10 +58,14 @@ header ul {
   margin-top: 2em;
 }
 
-h1#logo {
+h1#logo, h1.form_title {
   display: inline-block;
   padding: 2px;
   margin: .5em 1em;
+}
+
+h1.form_title {
+  margin-left: .8em;
 }
 
 h1 {
@@ -69,7 +73,7 @@ h1 {
   color: #c80101;
  }
 
- h2, h3, header li {
+ h2, h3, header li, .trips_table, div.form p, form p {
    font-family: 'Amatic SC', cursive;
    letter-spacing: 2px;
    font-weight: 700;
@@ -83,6 +87,7 @@ h1 {
  main {
    margin-top: 6em;
    background-color: #cccccc
+
  }
 
  footer {
@@ -104,3 +109,112 @@ h1 {
  footer h3 {
 
  }
+
+/*Shout out to Laura and @AllThingSmitty's Code Pen for table styling*/
+
+.trips_table {
+  line-height: 1.25;
+  /*width: 80%;*/
+}
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+table tr {
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+  table caption {
+    font-size: 1.3em;
+  }
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  table td:before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+div.form {
+  justify-content: center;
+  min-height: 30em;
+}
+
+form.edit_trip, form.new_driver, form.new_passenger, form.new_trip, form.edit_driver, form.edit_passenger {
+  /*position: relative;*/
+  padding-left: em;
+  margin: 0 auto;
+  width: max-content;
+}
+
+input {
+  padding: 10px;
+  font-family: 'Amatic SC', cursive;
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 1em;
+  width = 100%;
+}
+
+/*input[type="text"] {
+  line-height: 1em;
+  padding: 10px;
+}*/
+
+/*input[type="submit" i] {
+  font-family: 'Amatic SC', cursive;
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 1.5em;
+}*/
