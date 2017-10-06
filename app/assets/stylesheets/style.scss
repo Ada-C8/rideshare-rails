@@ -6,11 +6,16 @@ body {
 // h1 {
 //   font-family: 'Anton';
 // }
+#righteous_nav {
+  font-family: 'Righteous', cursive;
+  font-size: 1.5em;
+}
 
 .banner {
 
   font-size: 75px;
   text-align: center;
+  font-family: 'Righteous', cursive;
 
 }
 
@@ -19,8 +24,22 @@ body {
   // justify-content: center;
   position: absolute;
   top: 25%;
-  left: 35%;
+  left: 0%;
+}
 
+.homepage-text {
+  left: 45%;
+  position: relative;
+}
+
+.homepage-text h3 {
+  font-size: 30pt;
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.homepage-text ul {
+  font-size: 20pt;
+  list-style-type: none;
 }
 
 .cool-list {
@@ -50,7 +69,8 @@ body {
 }
 
 .heebo-font {
-  font-family: 'Fjalla One', sans-serif;
+  font-family: 'heebo', sans-serif;
+  font-size: 30px;
 }
 
 .flex-box-from-top {
@@ -96,7 +116,7 @@ nav {
   align-items: center;
   top: 0;
   left: 0;
-  font-size: 35px;
+  font-size: 30px;
 
   a {
     display: inline-block;
