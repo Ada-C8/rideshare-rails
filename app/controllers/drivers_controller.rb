@@ -5,7 +5,7 @@ class DriversController < ApplicationController
 
   def show
     @driver = Driver.find_by(id: params[:id].to_i)
-    @trips = Trip.where(driver_id: params[:id].to_i).order("date DESC")
+    @trips = Trip.where(driver_id: params[:id].to_i).order(sort_string)
 
     # if driver not found
     unless @driver
@@ -51,21 +51,22 @@ class DriversController < ApplicationController
     @driver = Driver.new
   end
 
-  # def sort_trips_date
-  #   @order == "date DESC" ? @trips.order("date ASC") : @trips.order("date DESC")
-  #
-  #   redirect_back(fallback_location: root_path)
-  # end
-  #
-  # def sort_trips_cost
-  #   @order == "date DESC" || @order == "cost ASC" ? @trips.order("cost DESC") : @trips.order("cost ASC")
-  #
-  #   redirect_back(fallback_location: root_path)
-  # end
-
   private
 
   def driver_params
     return params.require(:driver).permit(:name, :vin)
+  end
+
+  def sort_string
+    return sort_by_column + " " + sort_by_direction
+  end
+
+  # sanitize input
+  def sort_by_column
+    ["date", "cost"].include?(params[:sort]) ? params[:sort] : "date"
+  end
+
+  def sort_by_direction
+    ["DESC", "ASC"].include?(params[:direction])? params[:direction] : "DESC"
   end
 end

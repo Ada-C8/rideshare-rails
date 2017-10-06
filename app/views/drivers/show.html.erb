@@ -42,10 +42,10 @@
     </caption>
     <tr>
       <th class="trip-date">
-        Date
+        <%= toggle_sort("date") %>
       </th>
       <th class="trip-cost">
-        Cost
+        <%= toggle_sort("cost") %>
       </th>
     </tr>
     <% @trips.each do |trip| %>

@@ -5,7 +5,7 @@ class PassengersController < ApplicationController
 
   def show
     @passenger = Passenger.find_by(id: params[:id].to_i)
-    @trips = Trip.where(passenger_id: params[:id].to_i)
+    @trips = Trip.where(passenger_id: params[:id].to_i).order(sort_string)
 
     # if passenger not found
     unless @passenger
@@ -64,6 +64,17 @@ class PassengersController < ApplicationController
     return params.require(:passenger).permit(:name, :phone_num)
   end
 
+  def sort_string
+    return sort_by_column + " " + sort_by_direction
+  end
 
+  # sanitize input
+  def sort_by_column
+    ["date", "cost", "rating"].include?(params[:sort]) ? params[:sort] : "date"
+  end
+
+  def sort_by_direction
+    ["DESC", "ASC"].include?(params[:direction])? params[:direction] : "DESC"
+  end
 
 end

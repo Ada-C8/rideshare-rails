@@ -72,6 +72,7 @@ h1 {
 th {
   font-family: "Quicksand", Arial, sans-serif;
   font-weight: bold;
+  text-transform: capitalize;
 }
 
 table {
@@ -93,6 +94,10 @@ td, th {
   width: 30%;
 }
 
+th a {
+  font-size: 1.5rem;
+}
+
 .trip-date {
   // width: 20%;
   text-align: left;
@@ -104,4 +109,9 @@ td, th {
 
 .trip-rating {
   // width: 10%;
+}
+
+.unrated a:link, .unrated a:visited {
+  color: blue;
+  font-weight: bold;
 }

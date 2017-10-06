@@ -44,13 +44,15 @@
     </caption>
     <tr>
       <th class="trip-date">
-        Date
+        <%= toggle_sort("date") %>
       </th>
       <th class="trip-cost">
-        Cost
+        <%= toggle_sort("cost") %>
+        <%# link_to("Cost", :sort => "cost") %>
       </th>
       <th class="trip-rating">
-        Rating
+        <%= toggle_sort("rating") %>
+        <%# link_to("Rating", :sort => "rating") %>
       </th>
     </tr>
     <% @trips.each do |trip| %>
@@ -71,24 +73,5 @@
     <% end %>
   </table>
 
-  <!-- <li>
-  Trips
-  <ul>
-  <% @trips.each do |trip| %>
-  <li>
-  <%= link_to("Date: #{trip.date}", trip_path(trip.id)) %>
-</li>
-<li>
-<% @rated = trip.rating == nil || trip.rating == 0 ? "unrated" : "rated" %>
-Rating: <span class="<%=@rated%>"><%= trip.rating %></span>
-<% if @rated == "unrated" %>
-<%=link_to("Rate Trip", edit_trip_path(trip.id))%>
-<% end %>
-</li>
-<li>
-Cost: <%= number_to_currency(trip.cost, precision: 2) %>
-</li>
-<% end %>
-</ul>
-</li> -->
+
 </div>
