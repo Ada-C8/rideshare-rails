@@ -93,11 +93,14 @@ h1 {
 }
 
 .homepage_banner_text {
+  margin: 0 auto;
   padding-top: 20px;
+  padding-bottom: 20px;
   text-align: center;
   font-family: 'Satisfy', cursive;
-  font-size: 4em;
+  font-size: 3em;
   color: #95818D;
+  /*background: #E3C0D3;*/
 }
 
 .homepage_img {
@@ -107,7 +110,7 @@ h1 {
 }
 
 .home-footer {
-  position: relative;
+  position: absolute;
 }
 
 footer {
