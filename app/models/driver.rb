@@ -21,7 +21,11 @@ class Driver < ApplicationRecord
         counter += 1
       end
     end
-    average = sprintf('%.2f', sum.to_f/counter)
+    if sum != 0
+      average = sprintf('%.2f', sum.to_f/counter)
+    else
+      average = nil
+    end
     return average
   end
 

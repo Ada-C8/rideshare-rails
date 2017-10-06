@@ -17,7 +17,7 @@
   <%= @driver.average_rating %>
 </p>
 
-<h3> Trip Details </h3>
+<h3> Driver Trips </h3>
 <table>
    <tr>
      <th>
@@ -81,16 +81,16 @@
 
 
 
-
+<!-- 
 <ul>
-  <% i = 1 %>
-  <% @driver.trips.each do |trip| %>
+  <%# i = 1 %>
+  <%# @driver.trips.each do |trip| %>
   <li>
-    <%=link_to "Trip #{i}:", trip_path(trip.id) %>
-    Date: <%= trip.date %>,
-    Rating: <%= trip.rating %>,
-    Cost: <%= (Money.new(trip.cost, "USD")).format %>,
-    <% i += 1%>
+    <%#link_to "Trip #{i}:", trip_path(trip.id) %>
+    Date: <%# trip.date %>,
+    Rating: <%# trip.rating %>,
+    Cost: <%# (Money.new(trip.cost, "USD")).format %>,
+    <%# i += 1%>
   </li>
-  <% end %>
-</ul>
+  <%# end %>
+</ul> -->
