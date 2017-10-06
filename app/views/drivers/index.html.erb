@@ -1,0 +1,18 @@
+<h2>All Drivers</h2>
+
+<section class="list_of_people">
+  <ol>
+    <% @drivers.order(:name).each do |driver| %>
+    <li class="driver_name">
+      <ul>
+        <li>
+        <strong><%= link_to driver.name, driver_path(driver.id)%></strong> (<%= driver.average_rating %>)
+        </li>
+      </ul>
+    </li>
+
+    <%end%>
+  </ol>
+
+
+</section>

@@ -1,0 +1,56 @@
+
+<h2>Driver: <%= @driver.name%></h2>
+
+<section class="edit_delete">
+  <ul>
+    <li>
+      <%=link_to "Edit", edit_driver_path(@driver.id)%>
+    </li>
+    <li>
+      <%=link_to "Delete", driver_path(@driver.id), method: :delete, data: { confirm: 'You are about to delete a driver. Continue?' } %>
+    </li>
+  </ul>
+</section>
+
+<h4 class="past_trips">Past Trips:</h4>
+
+<section class="trips_blocks" >
+  <% @driver.trips.each do |trip| %>
+  <article class="trip_details">
+    <ul>
+      <li>
+         <strong><%= link_to "Trip #{trip.id}", trip_path(trip.id) %></strong> taken <%=trip.date %>
+
+      </li>
+      <li>
+        <strong>Passenger:</strong> <%=link_to trip.passenger.name, passenger_path(trip.passenger.id) %>
+      </li>
+
+      <li>
+       <strong>Cost:</strong> $<%=trip.cost_convert %>
+      </li>
+      <li>
+       <strong>Rated:</strong> <%= trip.rating%> / 5
+      </li>
+    </ul>
+  </article>
+
+    <%end%>
+
+</section>
+
+
+<section class="driver_stats">
+  <section class="driver_earnings">
+    <p>
+      <strong>Driver Earnings:</strong> $<%= @driver.earnings%>
+    </p>
+  </section>
+
+  <section class="driver_rating">
+    <p>
+      <strong>Average Rating:</strong> <%= @driver.average_rating %> out of 5
+    </p>
+
+  </section>
+</section>

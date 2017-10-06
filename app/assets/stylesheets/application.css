@@ -1,0 +1,190 @@
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.background {
+  background: url("https://tau0.files.wordpress.com/2012/11/high_road_bw.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.homepagetext{
+  text-shadow:2px 2px 4px #000000;
+  color: white;
+}
+
+  body{
+    position: relative;
+    top: 1vw;
+    margin: 5vw;
+    padding: 5vw;
+    font-family: monospace;
+  }
+
+h1 {
+  position: fixed;
+  margin: 1vw;
+  padding: 1vw;
+  top: 0vw;
+  left: 2vw;
+  color: white;
+  z-index: 101;
+  font-size: 2em;
+  font-family: cursive;
+}
+
+h1 a{
+  color: white;
+}
+
+h2, h3 {
+   text-align: center;
+   font-size: 3em;
+   font-family: cursive;
+ }
+
+ nav {
+   position: fixed;
+   top: 0px;
+   right: 0px;
+   background: black;
+   color: white;
+   padding: 2vw;
+   width: 100%;
+   text-overflow: hidden;
+   min-height: 30px;
+   z-index: 100;
+   font-family: 'Nosifer', cursive;
+ }
+
+ nav article {
+   position: absolute;
+   bottom: 1vw;
+   right: 0vw;
+   align-items: center;
+   overflow: hidden;
+   max-width: 60vw;
+   font-size: 1.5vw;
+
+ }
+
+
+ nav a{
+  text-decoration: none;
+  padding: 2vw;
+  color: white;
+ }
+
+ ul {
+   list-style: none;
+ }
+
+ .edit_delete li{
+   display: inline-block;
+   padding: 2vw;
+   background: black;
+ }
+
+ .edit_delete a {
+    color: white;
+ }
+
+.past_trips {
+  text-decoration: underline;
+}
+
+.trip_details {
+  align-content: center;
+  border: black solid 1px;
+  display: inline-block;
+  /*flex-wrap: wrap;*/
+  min-width: 300px;
+  margin: .5vw;
+}
+
+.trips_blocks {
+  align-items: center;
+  margin: 5vw;
+}
+
+.list_of_people {
+  padding-left: 7vw;
+}
+
+.list_of_people ol{
+  list-style: none;
+}
+
+.list_of_people ol li {
+  display: inline-block;
+  padding: 1vw;
+}
+
+.list_of_people ul {
+  display: inline-block;
+  border: black solid 1px;
+  width: 15vw;
+  font-size: 1vw;
+  overflow: hidden;
+}
+
+.list_of_people a {
+  color: black;
+  text-decoration: none;
+}
+
+.list_of_people a:hover {
+  color: pink;
+  text-decoration: underline;
+
+}
+
+.edit_delete {
+  text-align: center;
+  margin: 0;
+}
+
+.edit_delete li {
+  margin: 0;
+  padding: 1vw;
+  border: black solid 1px;
+}
+
+.form {
+  border: solid black 1px;
+  padding: 5vw;
+  padding-top: 2vw;
+  margin: 5vw;
+  margin-top: 2vw;
+}
+
+.form  {
+  text-align: center;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  color: pink;
+}
+
+#phone {
+  text-align: center;
+}

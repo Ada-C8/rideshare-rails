@@ -1,0 +1,23 @@
+
+<% if @some_passenger %>
+  <h2>Ride for <%= @some_passenger.name %> !</h2>
+<% end %>
+
+<section class="form">
+  <h2>New Trip</h2>
+
+<%= form_for @trip do |f| %>
+<%= f.label :date %>
+<%= f.date_field :date %>
+
+<% rating = nil %>
+
+<%= f.collection_select(:driver_id, Driver.all, :id, :name)%>
+<%= f.collection_select(:passenger_id, Passenger.where(id: @some_passenger.id), :id, :name)%>
+
+<%= f.label :cost %>
+<%= f.text_field :cost %>
+
+<%= f.submit %>
+<%end%>
+</section>
