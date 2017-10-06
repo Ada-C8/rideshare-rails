@@ -1,2 +1,5 @@
 <h2>Show the trip!!!</h2>
     <%= @trip.passenger.name %>
+    <%= @trip.driver.name %>
+    <%= "Cost of trip: #{@trip.cost/100.round(2)}" %>
+    <%= "Trip rating: #{@trip.rating}" %>
