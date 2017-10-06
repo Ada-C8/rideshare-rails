@@ -7,7 +7,7 @@ class PassengersController < ApplicationController
     @passenger = Passenger.find_by(id: params[:id].to_i)
 
     unless @passenger
-      redirect_to passenger_index_path
+      redirect_to passengers_path
       return
     end
 
