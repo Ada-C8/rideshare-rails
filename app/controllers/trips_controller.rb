@@ -22,7 +22,7 @@ class TripsController < ApplicationController
       driver_id: Driver.order("RANDOM()").first.id,
       passenger_id: params[:passenger_id],
       rating: 0,
-      cost: 0,
+      cost: rand(1000..10000),
       date: Date.today
     )
     if @trip.save
@@ -31,4 +31,22 @@ class TripsController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @trip = Trip.find(params[:id])
+  end
+
+  def update
+    @trip = Trip.find(params[:id])
+    result = @trip.update({
+      cost: params[:trip][:cost],
+      rating: params[:trip][:rating]
+      })
+      if result
+        redirect_to "/passengers/#{params[:passenger_id]}"
+      else
+        render :edit
+      end
+  end
+
 end
