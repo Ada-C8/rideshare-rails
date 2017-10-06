@@ -13,3 +13,45 @@
  *= require_tree .
  *= require_self
  */
+
+
+ .form-field {
+   border: 1px solid red;
+   border-radius: 10px;
+   background-color: pink;
+   height: 50px;
+   margin-left: 40px;
+   width: 75%;
+ }
+
+ label {
+   border: 1px solid red;
+   float: left;
+   font-size: 1.5em;
+   width: 100px;
+   text-align: right;
+   padding-right: 10px;
+
+ }
+
+ li {
+   border: 1px solid blue;
+   list-style-type: none;
+   margin: 10px;
+   padding-bottom: 10px;
+   width: 100%;
+ }
+
+ ul {
+   border: 2px solid green;
+   text-align: center;
+   width: 50%;
+   padding: 20px;
+ }
+
+ .submit {
+   border: 2px solid purple;
+   border-radius: 10px;
+   font-size: 1.5em;
+   text-align: right;
+ }
