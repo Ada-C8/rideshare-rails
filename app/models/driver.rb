@@ -23,6 +23,9 @@ class Driver < ApplicationRecord
     total = 0
 
     trips.each do |trip|
+      if trip.rating == nil
+        next
+      end
       total += trip.rating
     end
 
