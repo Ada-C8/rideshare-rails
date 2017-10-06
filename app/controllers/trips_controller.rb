@@ -6,13 +6,16 @@ class TripsController < ApplicationController
   def new
     @trip = Trip.new
     @trip.passenger_id = params[:passenger_id]
+    # @trip.driver_id = 1
+
   end
 
   def create
     @trip = Trip.new(trip_params)
+    @trip.driver_id = 1
 
     if @trip.save
-      redirect_to passenger_path(@passenger)
+      redirect_to passenger_path(@trip.passenger_id)
     else
       render :new
     end
@@ -48,6 +51,6 @@ class TripsController < ApplicationController
 
   private
   def trip_params
-    return params.require(:trip).permit(:date, :cost, :passenger_id)
+    return params.require(:trip).permit(:date, :cost, :passenger_id, :driver_id)
   end
 end
