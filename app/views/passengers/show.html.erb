@@ -8,7 +8,10 @@
 <p>Total Charged: $<%= @passenger.total_charged%> </p>
 <%= link_to "Edit", edit_passenger_path(@passenger.id) %>
 
-<%= link_to "Delete", passenger_path(@passenger.id), method: :delete, data: { confirm: "Are you sure you'd like to delete this passenger?" } %>
+<%= link_to passenger_path(@passenger.id), method: :delete, data: { confirm: "Are you sure you'd like to delete this passenger?" } do %>
+<img src="assets/delete.png"><br>
+Delete
+<% end %>
 </section>
 
   <ul>
