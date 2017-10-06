@@ -1,14 +1,27 @@
-<!-- Make this into a table! -->
+<table class="trips_table">
+  <caption>Trips</caption>
+  <thead>
+    <tr>
+      <th scope="col">Trip ID</th>
+      <th scope="col">Date</th>
+      <th scope="col">Cost</th>
+      <th scope="col">Driver</th>
+      <th scope="col">Passenger</th>
+      <th scope="col">Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% person.trips.each do |trip| %>
+    <tr>
+      <td data-label="ID"><%= link_to(trip.id, trip_path(trip.id)) %></td>
+      <td data-label="Date"><%= trip.date.strftime('%m-%d-%Y') %></td>
+      <td data-label="Cost">$<%= "#{'%.02f' % cost_with_decimal(trip)}" %></td>
+      <td data-label="Driver"><%= Driver.find(trip.driver_id).name %></td>
+      <td data-label="Passenger"><%= Passenger.find(trip.passenger_id).name %></td>
+      <td data-label="Rating"><%= trip.rating %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<h3>Trips: </h3>
-<ul>
-  <% person.trips.each do |trip| %>
-  <li>
-    <p>ID:<%= link_to(trip.id, trip_path(trip.id)) %></p>
-    <p>Date: <%= trip.date.strftime('%m-%d-%Y') %></p>
-    <p>Cost: $<%= "#{'%.02f' % cost_with_decimal(trip)}" %></p>
-    <p>Driver: <%= trip.driver_id %></p>
-    <p>Rating: <%= trip.rating %></p>
-  </li>
-  <% end %>
-</ul>
+<!--Shout out to Laura and @AllThingSmitty's Code Pen-->

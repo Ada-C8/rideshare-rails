@@ -1,4 +1,4 @@
-<h1>New Trip</h1>
+<h1 class= "form_title">New Trip</h1>
 
 <% if @trip.errors.any? %>
 <ul class="errors">
@@ -11,17 +11,24 @@
 <% end %>
 
 <%= form_for @trip do |f| %>
-<%= f.label :date %>
-<p><%= @trip.date.strftime('%m-%d-%Y') %></p>
+<p>
+  <%= f.label :date %>:
+  <%= @trip.date.strftime('%m-%d-%Y') %>
+</p>
 <%= f.hidden_field :date %>
 <%= f.hidden_field :rating %>
-<%= f.label :driver %>
-<p><%= Driver.find_by(id: @trip.driver_id).name %></p>
+<p>
+  <%= f.label :driver %>:
+  <%= Driver.find_by(id: @trip.driver_id).name %>
+</p>
 <%= f.hidden_field :driver_id %>
 <%= f.hidden_field :passenger_id %>
+<p>
 <%= f.label :cost %>
-<p><%= f.text_field :cost %></p>
-
+<%= f.text_field :cost %>
+</p>
+<p>
 <%= f.submit %>
-<% end %>
 <%= button_to "Cancel", request.referer.present? ? request.referer : root_path, method: :get %>
+</p>
+<% end %>
