@@ -83,3 +83,31 @@ ul {
   margin-left: 0;
   padding-left: 0
 }
+/* home */
+.home {
+  height: 73vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.home h1 {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 4em;
+  text-shadow: 2px 2px 5px #78718E;
+}
+
+img {
+  /*padding-top: 10%;*/
+  /*display: cover;*/
+  /*position: absolute;*/
+  /*clip: rect(300px, 0, 0, 0);*/
+  min-width: 100vw;
+  min-height: auto;
+  position: absolute;
+  bottom: 0;
+  z-index: -1
+}
