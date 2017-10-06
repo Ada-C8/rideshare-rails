@@ -1,55 +1,33 @@
-<!-- <%# Look into a partial here - similar to passnger index %>
-
-<% if @trip.errors.any? %>
-  <% @trip.errors.each do |column, message| %>
-    <strong><%= column.capitalize %></strong> <%= message %>
-  <% end %>
-<% end %>
-
-<%= form_for @trip do |f| %>
-  <%= f.hidden_field :driver_id %>
-
-  <%= f.hidden_field :passenger_id %>
-
-  <%= f.label :date %>
-  <%= f.date_field :date %>
-
-  <%= f.label :cost %>
-  <%= f.text_field :cost %>
-
-  <%= f.submit "Add New Trip" %>
-<% end %> -->
-
-<%# Look into a partial here - similar to driver index %>
-
-<article class="bg-color height">
-  <header class="style">
-    <h1>Create A New Trip for <%= name = Passenger.find_by(id: @trip.passenger_id).name %></h1>
-  </header>
-  <section>
-    <% if @trip.errors.any? %>
-      <% @trip.errors.each do |column, message| %>
-        <strong><%= column.capitalize %></strong> <%= message %>
+<div class="yield-wrapper">
+  <article>
+    <header class="style">
+      <h1>Create A New Trip for <%= name = Passenger.find_by(id: @trip.passenger_id).name %></h1>
+    </header>
+    <section>
+      <% if @trip.errors.any? %>
+        <% @trip.errors.each do |column, message| %>
+          <strong><%= column.capitalize %></strong> <%= message %>
+        <% end %>
       <% end %>
-    <% end %>
 
-    <div class="detail-wrapper">
-      <%= form_for @trip do |f| %>
-        <%= f.hidden_field :driver_id %>
+      <div class="detail-wrapper">
+        <%= form_for @trip do |f| %>
+          <%= f.hidden_field :driver_id %>
 
-        <%= f.hidden_field :passenger_id %>
+          <%= f.hidden_field :passenger_id %>
 
-        <div class="form-box-wrapper">
-          <%= f.label :date, "Date of Trip:" %>
-          <%= f.date_field :date %>
-        </div>
-        <div class="form-box-wrapper">
-          <%= f.label :cost, "Cost of Trip:"%>
-          <%= f.text_field :cost %>
-        </div>
+          <div class="form-box-wrapper">
+            <%= f.label :date, "Date of Trip:" %>
+            <%= f.date_field :date %>
+          </div>
+          <div class="form-box-wrapper">
+            <%= f.label :cost, "Cost of Trip:"%>
+            <%= f.text_field :cost %>
+          </div>
 
-        <%= f.submit "Add New Trip" %>
-      <% end %>
-    </div>
-  </section>
-</article>
+          <%= f.submit "Add New Trip" %>
+        <% end %>
+      </div>
+    </section>
+  </article>
+</div>
