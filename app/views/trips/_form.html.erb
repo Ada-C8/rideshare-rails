@@ -8,7 +8,7 @@
     <%=f.date_field :date, class: "form-field" %>
   </li>
   <li>
-     <% if !(current_page?(new_passenger_trip_path @trip.passenger_id)) %>
+     <% if Trip.exists?(id: @trip.id)  %>
     <%=f.label :rating %>
     <%=f.text_field :rating, class: "form-field" %>
     <% end %>
@@ -18,7 +18,7 @@
     <%=f.text_field :cost, class: "form-field" %>
   </li>
   <li><%=f.submit %></li>
-  
+
 
 </ul>
 <% end %>
