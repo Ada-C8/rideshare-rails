@@ -15,6 +15,10 @@
 */
 
 /******** STYLING CLASSES ACROSS ALL CONTROLLERS *********/
+.no-list-bullets {
+  list-style-type: none;
+  padding: 0;
+}
 
 .error-color {
   color: red;
