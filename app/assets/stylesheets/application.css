@@ -225,3 +225,23 @@ span.rating {
 .form-item {
   margin: 1rem;
 }
+
+/***********/
+/*  STARS  */
+/***********/
+
+.one-star {
+  color: firebrick;
+}
+
+.two-stars {
+  color: darkgoldenrod;
+}
+
+.five-stars {
+  color: mediumseagreen;
+}
+
+.zero-stars: {
+  color: grey;
+}

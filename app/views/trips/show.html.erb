@@ -1,13 +1,22 @@
-<h2>Trip #<%= @trip.id %></h2><br />
-<%= link_to "Edit", edit_trip_path %> |
-<%= link_to "Delete", trip_path, method: :delete, data: {confirm: "Are you sure??"} %>
+<h2>Trip #<%= @trip.id %></h2>
+
+<nav class="page-menu">
+  <ul>
+    <li>
+      <%= link_to "Edit", edit_trip_path %>
+    </li>
+    <li>
+      <%= link_to "Delete", trip_path, method: :delete, data: {confirm: "Are you sure??"} %>
+    </li>
+  </ul>
+</nav>
 
 <ul>
   <li>
-    Driver: <%= link_to @trip.driver.name, driver_path(@trip.driver.id) %>
+    Driver: <%= link_to @trip.driver.name, driver_path(@trip.driver.id), class: "profile-link" %>
   </li>
   <li>
-    Passenger: <%= link_to @trip.passenger.name, passenger_path(@trip.passenger.id) %>
+    Passenger: <%= link_to @trip.passenger.name, passenger_path(@trip.passenger.id), class: "profile-link" %>
   </li>
   <li>
     Date: <%= @trip.date.strftime("%B %d, %Y") %>
