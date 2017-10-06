@@ -4,12 +4,15 @@ body {
   background: linear-gradient(to bottom right, #8BDAEE, #17849F);
   background-size: cover;
   height: 100%;
-  width: 100%;
   margin: 0;
+  background-repeat: no-repeat;
+background-attachment: fixed;
+
 }
 
 html {
   height: 100%;
+
 }
 
 ul, li{
