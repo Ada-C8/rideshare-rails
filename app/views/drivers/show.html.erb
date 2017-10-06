@@ -1,26 +1,33 @@
-<h1> Individual driver detail</h1>
+<h1> Individual spaceship captain detail</h1>
 
 <p>
-  <strong><%= @driver.name %></strong>'s VIN # is: <%= @driver.vin %>
+  <strong><%= @driver.name %></strong>'s Ship # is: <%= @driver.vin %>
 </p>
+<table>
+  <tr>
+    <th>Trip Earning: </th>
+    <th>Trip Rating: </th>
+    <th>Trip Date: </th>
+    <th>Trip Cosmonaut Passenger ID: </th>
+  </tr>
 
 <% average_rating = 0 %>
 <% counter = 0 %>
-<p><% @driver.trips.each do |trip| %></p>
-
-
-  <%= "Trip Earning: $" %><%= Trip.total_earning(trip)%>
-  <%= "Trip Rating: " %>
+<% @driver.trips.each do |trip| %>
+<tr>
+  <td>$<%= Trip.total_earning(trip)%></td>
   <% if trip.rating == nil %>
-  <%= "no rating yet" %>
+  <td><%= "no rating yet" %></td>
   <% else %>
-  <%= trip.rating %>
+  <td><%= trip.rating %></td>
   <% average_rating += trip.rating %>
   <% counter += 1 %>
   <%end%>
-  <%= "Trip Date: " %><%= trip.date %>
-  <%= "Trip Passenger: " %><%= trip.passenger_id %>
+  <td><%= trip.date %></td>
+  <td><%= trip.passenger_id %></td>
+</tr>
 <% end %>
+</table>
 <br>
 
 <% if counter == 0 %>

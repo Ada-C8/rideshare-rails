@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RideshareRails</title>
+  <title>RideWithAda</title>
   <%= csrf_meta_tags %>
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
 </head>
 
 <body>
 
   <nav>
-<!-- drop down css prep: -->
+    <!-- drop down css prep: -->
     <div class="dropdown">
-      <span>Passenger</span>
+      <span>Cosmonaut Passenger</span>
       <div class="dropdown-content">
-        <p><%= link_to "New Passenger", new_passenger_path %></p>
-        <p><%= link_to "All Passengers", passengers_path %></p>
+        <p><%= link_to "New Cosmonaut Passenger", new_passenger_path %></p>
+        <p><%= link_to "All Cosmonaut Passengers", passengers_path %></p>
       </div>
     </div>
     <div class="dropdown">
-      <span>Driver</span>
+      <span>Spaceship Captain</span>
       <div class="dropdown-content">
-        <p><%= link_to "New Driver", new_driver_path %></p>
-        <p><%= link_to "All Drivers", drivers_path %></p>
+        <p><%= link_to "New Spaceship Captains", new_driver_path %></p>
+        <p><%= link_to "All Spaceship Captains", drivers_path %></p>
       </div>
     </div>
     <div class="dropdown">
@@ -50,4 +51,6 @@
   </nav>
   <%= yield %>
 </body>
+
+
 </html>
