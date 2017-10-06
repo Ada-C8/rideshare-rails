@@ -11,7 +11,7 @@ class Driver < ApplicationRecord
       total += trip.cost
     end
     total -= (total *0.15)
-    return total
+    return "$#{(total/100).round(2)}"
   end
 
   def average_rating

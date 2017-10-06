@@ -6,8 +6,6 @@ class TripsController < ApplicationController
   def new
     @trip = Trip.new
     @trip.passenger_id = params[:passenger_id]
-    # @trip.driver_id = 1
-
   end
 
   def create

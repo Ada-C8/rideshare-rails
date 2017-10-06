@@ -6,4 +6,6 @@ class Trip < ApplicationRecord
   validates :cost, presence: { message: "Please enter cost" }
   validates :driver_id, presence: { message: "No drivers available"}
   # Passenger.find(@trip.passenger_id)
+
+  
 end

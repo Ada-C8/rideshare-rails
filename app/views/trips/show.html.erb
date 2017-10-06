@@ -2,7 +2,7 @@
     <li> Date:<%= @trip.date %> </li>
     <li> Passenger: <%=link_to  @trip.passenger_id, passenger_path(@trip.passenger_id) %></li>
     <li> Driver: <%=link_to @trip.driver_id, driver_path(@trip.driver_id) %></li>
-    <li> Cost: <%= @trip.cost %></li>
+    <li> Cost: $<%= (@trip.cost/100).round(2) %></li>
     <li> Rating: <%= @trip.rating %></li>
 
     <%= link_to "Edit Rating", edit_trip_path %>
