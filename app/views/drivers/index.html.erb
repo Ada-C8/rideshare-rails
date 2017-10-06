@@ -1,17 +1,19 @@
-<article class="bg-color">
-  <header class="style">
-    <h1>All Drivers by Name</h1>
-    <p>
-      Click on a driver to view more details
-    </p>
-  </header>
-  <section class="columns">
-    <ol>
-      <% @drivers.each do |driver| %>
-      <li>
-        <%= link_to driver.name, driver_path(driver.id), class: "visited-color link-styles" %>
-      </li>
-      <% end %>
-    </ol>
-  </section>
-</article>
+<div class="yield-wrapper">
+  <article>
+    <header class="style">
+      <h1>All Drivers by Name</h1>
+      <p>
+        Click on a driver to view more details
+      </p>
+    </header>
+    <section class="columns">
+      <ol>
+        <% @drivers.each do |driver| %>
+        <li>
+          <%= link_to driver.name, driver_path(driver.id), class: "visited-color link-styles" %>
+        </li>
+        <% end %>
+      </ol>
+    </section>
+  </article>
+</div>

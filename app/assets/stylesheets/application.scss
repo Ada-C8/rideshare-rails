@@ -15,6 +15,16 @@
 */
 
 /******** STYLING CLASSES ACROSS ALL CONTROLLERS *********/
+
+.link-styles { /* This is for all style links */
+  color: black;
+  text-decoration: none;
+}
+
+.link-styles:hover { /* This is for all hover links */
+  opacity: 0.5;
+}
+
 .no-list-bullets {
   list-style-type: none;
   padding: 0;
@@ -43,12 +53,6 @@
   color: black;
 }
 
-article.bg-color {
-  opacity: 0.9;
-  background-color: white;
-  padding-bottom: 5px;
-}
-
 header.style {
   border-bottom: 1px black solid;
   text-align: center;
@@ -59,22 +63,29 @@ header.style h1 {
   padding-top: 1em;
 }
 
-article.height {
-  height: 400px;
+div.yield-wrapper {
+  opacity: 0.9;
+  background-color: white;
+  padding-bottom: 5px;
+  height: 420px;
+  overflow: scroll;
 }
 
-.link-styles { /* This is for all style links */
-  color: black;
-  text-decoration: none;
+.columns {
+  -webkit-column-count: 5; /* Chrome, Safari, Opera */
+  -moz-column-count: 5; /* Firefox */
+  column-count: 5;
+  margin: 2em 0 2em 0;
 }
 
-.link-styles:hover { /* This is for all hover links */
-  opacity: 0.5;
+.columns ol {
+  margin: 0;
 }
 
 /******** BACKROUND FOR ENTIRE SITE ********/
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 
 body {
   /* The image used */
@@ -103,7 +114,8 @@ div#h1-nav-wrapper {
 h1#brand {
   float: left;
   margin: 0px;
-  color: white
+  color: white;
+  font-family: 'Roboto Slab', serif;
 }
 
 #main-header nav {

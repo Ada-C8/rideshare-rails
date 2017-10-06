@@ -1,39 +1,16 @@
-<article class="bg-color height">
-  <header class="style">
-    <h1>Create New Driver</h1>
-  </header>
-  <section>
-    <%= render partial: "error" %>
-    <%# See _error.html.erb under drivers views for partial %>
-    <%= render partial: "form", locals: { button_text: "Add driver" } %>
-    <%# See _form.html.erb under drivers views for partial %>
-  </section>
-</article>
+<div class="yield-wrapper">
+  <article>
 
+    <header class="style">
+      <h1>Create New Driver</h1>
+    </header>
 
-
-  <!-- <section>
-    <% if @driver.errors.messages.length > 0 %>
-      <ul>
-        <% @driver.errors.messages.each do |field, problems|%>
-          <% problems.each do |problem|%>
-            <li class="error-color align-center"><%= field.capitalize %> <%= problem %></li>
-          <%end%>
-        <%end%>
-      </ul>
-    <%end%>
-  </section> -->
-
-    <!-- <div class="detail-wrapper">
-      <%= form_for @driver do |f| %>
-        <div class="form-box-wrapper">
-          <%= f.label :name %>
-          <%= f.text_field :name %>
-        </div>
-        <div class="form-box-wrapper">
-          <%= f.label :vin %>
-          <%= f.text_field :vin %>
-        </div>
-        <%= f.submit "Add Driver" %>
-      <% end %>
-    </div> -->
+    <section>
+      <%= render partial: "error" %>
+      <%# See _error.html.erb under drivers views for partial %>
+      <%= render partial: "form", locals: { button_text: "Add driver" } %>
+      <%# See _form.html.erb under drivers views for partial %>
+    </section>
+  </article>
+  
+</div>

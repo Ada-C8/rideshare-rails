@@ -2,19 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/******** PASSENGER INDEX ********/
-
-.columns {
-  -webkit-column-count: 5; /* Chrome, Safari, Opera */
-  -moz-column-count: 5; /* Firefox */
-  column-count: 5;
-  margin: 2em 0 2em 0;
-}
-
-.columns ol {
-  margin: 0;
-}
-
 /******** PASSENGER SHOW ********/
 
 .inline-block {

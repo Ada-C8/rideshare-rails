@@ -1,30 +1,32 @@
-<article class="bg-color">
-  <header class="style">
-    <h1>Passenger Details For: <%= @passenger.name %></h1>
-    <%= link_to "Edit", edit_passenger_path(@passenger.id), class: "inline-block link-styles" %>
-    <%= link_to "Delete", passenger_path(@passenger), method: :delete , data: {confirm: "Are you sure?"}, class: "inline-block link-styles" %>
-  </header>
+<div class="yield-wrapper">
+  <article>
+    <header class="style">
+      <h1>Passenger Details For: <%= @passenger.name %></h1>
+      <%= link_to "Edit", edit_passenger_path(@passenger.id), class: "inline-block link-styles" %>
+      <%= link_to "Delete", passenger_path(@passenger), method: :delete , data: {confirm: "Are you sure?"}, class: "inline-block link-styles" %>
+    </header>
 
-  <section>
-    <div class="detail-wrapper">
-      <h3>Spent a total of: $ <%= @passenger.calculate_total %></h3>
-      <h3>All Trips by Date:</h3>
-      <ul class="no-list-bullets">
-        <% trips = @passenger.passenger_trips %>
-        <% if trips.length == 0 %>
-          <h3 style="color:red">No trips found for this passenger</h3>
-        <% else %>
-          <% trips.each do |trip| %>
-            <li>
-              <%= link_to trip.date, trip_path(trip.id), class: "link-styles" %>
-            </li>
+    <section>
+      <div class="detail-wrapper">
+        <h3>Spent a total of: $ <%= @passenger.calculate_total %></h3>
+        <h3>All Trips by Date:</h3>
+        <ul class="no-list-bullets">
+          <% trips = @passenger.passenger_trips %>
+          <% if trips.length == 0 %>
+            <h3 style="color:red">No trips found for this passenger</h3>
+          <% else %>
+            <% trips.each do |trip| %>
+              <li>
+                <%= link_to trip.date, trip_path(trip.id), class: "link-styles" %>
+              </li>
+            <% end %>
           <% end %>
-        <% end %>
-      </ul>
-      <nav>
-        <%= link_to " Add new trip", new_passenger_trip_path(@passenger), class: "link-styles" %>
-      </nav>
-    </div>
+        </ul>
+        <nav>
+          <%= link_to " Add new trip", new_passenger_trip_path(@passenger), class: "link-styles" %>
+        </nav>
+      </div>
 
-  </section>
-</article>
+    </section>
+  </article>
+</div>
