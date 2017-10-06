@@ -1,8 +1,13 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
 .cool-list {
+  width: 70%;
+  margin: 0; padding: 0;
   * {
-    margin: 0; padding: 0;
     font-family: 'Arimo', sans-serif;
-    width: 85%;
   }
 
   section {
@@ -22,7 +27,7 @@
   }
 }
 
-.link_to-style {
+.hover-style {
   a {
    display: block;
    text-decoration: none;
@@ -50,13 +55,16 @@
 }
 
 nav {
-  * {
-    background-color: #333;
-  }
+  position: fixed;
+  width: 100%;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
 
   a {
-    justify-content: left;
-    display: inline;
+    display: inline-block;
     color: #f2f2f2;
     text-align: center;
     padding: 16px;
