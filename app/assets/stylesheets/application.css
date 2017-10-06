@@ -38,5 +38,15 @@ a, a:visited, a:hover, a:active {
 }
 
 .driver_passenger_list li:hover {
-    : yellow;
+    background-color: yellow;
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+     transform: scale(1.3);
 }
+
+ .nav li:hover{
+   background-color: yellow;
+   -webkit-transform: scale(1.3);
+   -ms-transform: scale(1.3);
+    transform: scale(1.3);
+ }
