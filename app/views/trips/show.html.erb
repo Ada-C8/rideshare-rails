@@ -1,11 +1,11 @@
 <h1> Individual trip detail </h1>
 
-<p> driver id: <%= link_to @trip.driver_id, driver_path %></p>
+<p> driver id: <%= link_to @trip.driver_id, driver_path(@trip.driver_id) %></p>
 
 <% if @trip.passenger_id == nil || @trip.passenger_id == 0 %>
 <p>passenger id does not exist </p>
 <% else %>
-<p> passenger id: <%= link_to @trip.passenger_id, passenger_path(:id) %></p>
+<p> passenger id: <%= link_to @trip.passenger_id, passenger_path(@trip.passenger_id) %></p>
 <%end %>
 
 <p>date: <%= @trip.date %></p>

@@ -10,10 +10,19 @@ class Trip < ApplicationRecord
       return "%.2f"%total
   end
 
+  def self.total_cost(input)
+    total = input.cost/100
+    return "%.2f"%total
+  end
+
   def self.grand_total(total_cost)
     final_total_cost = total_cost/100
-
     return "%.2f"%final_total_cost
+  end
+
+  def self.total_earning(trip)
+    total = ((trip.cost - (trip.cost * 0.15)) / 100)
+    return "%.2f"%total
   end
 
 

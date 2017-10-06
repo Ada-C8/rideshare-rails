@@ -1,5 +1,5 @@
 <h1> Individual passenger detail </h1>
-<em><p>Params are : <%= params  %></p></em>
+<!-- <em><p>Params are : <%= params  %></p></em> -->
 
 
 
@@ -9,11 +9,8 @@
 <% total_cost = 0 %>
 <p><% @passenger.trips.each do |trip| %></p>
 
-  <%= "Trip Cost: $" %>
-
-  <!-- Here want the total cost per trip. So I created a total_cost method in trips model. Since the model is a class you utilize the Trip.method syntax. then you pass in the trip object to be manipulated. See trip.rb model for method's logic. -->
-  <%= Trip.total_cost(trip) %>
-
+  <%= "Trip Cost: $" %><%= Trip.total_cost(trip) %>
+  <% total_cost += trip.cost %>
   <%= "Trip Rating: " %><%= trip.rating %>
   <%= "Trip Date: " %><%= trip.date %>
   <%= "Trip Driver: " %><%= trip.driver_id %>
