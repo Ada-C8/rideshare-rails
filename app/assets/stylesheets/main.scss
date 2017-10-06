@@ -77,9 +77,12 @@
 
 #top-drivers li span {
   display: inline-block;
-  max-width: 70%;
   overflow-x: hidden;
   white-space: nowrap;
+}
+
+#top-drivers .name {
+  max-width: 70%;
 }
 
 // ############
