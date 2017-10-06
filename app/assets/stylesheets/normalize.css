@@ -69,8 +69,43 @@ h1 {
 /*PASSENGERS#SHOW*/
 
 .edit-delete-menu {
-  
+
 }
+
+.profile {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+  line-height: 1.5em;
+}
+
+.profile img {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+
+}
+
+.contact-info {
+
+}
+
+table {
+    /*border-collapse: collapse;*/
+    background-color: #d9a5ef;
+}
+
+td, th {
+  padding: 2px;
+  text-align: left;
+}
+
+tr:hover {
+  background-color: cyan;
+}
+
 
 /* Grouping content
    ========================================================================== */
