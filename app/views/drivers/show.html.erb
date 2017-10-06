@@ -35,7 +35,7 @@
 <div>
   <ul>
     this is from html
-    <% @driver.trips.order(date: :desc).each do |trip| %>
+    <% @driver.trips.each do |trip| %>
       <li>
         <%= link_to "Trip #{trip.id}", trip_path(trip.id) %>
         <%= trip.date %>

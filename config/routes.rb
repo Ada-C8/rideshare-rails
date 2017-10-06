@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   end
 
   resources :trips
-  # get '/', to: 'main#index' 
+  # get '/', to: 'main#index'
 end
