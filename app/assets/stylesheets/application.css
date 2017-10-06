@@ -25,6 +25,10 @@ html, body {
   height: 100%;
 }
 
+body a:hover {
+  color: #E3C0D3;
+}
+
 /*.wrapper {
   min-height: 100%;
   height: auto !important;
@@ -44,6 +48,7 @@ header {
   padding-bottom: .8em;
   -moz-box-shadow:0px 1px 2px gray;
   box-shadow:0px 1px 10px #2A2B2A;
+  background: #272635;
 }
 
 header h2, header nav, header nav li  {
@@ -55,11 +60,13 @@ header h2 {
 }
 
 header nav li {
+  padding-top: 5px;
   list-style: none;
 }
 
 header a {
   text-decoration: none;
+  color: #E9FAE3;
 }
 
 header nav {
@@ -67,7 +74,7 @@ header nav {
   text-align: right;
   font-size: 0.9em;
   text-transform: uppercase;
-  margin-left: 10px;
+  margin-right: 10px;
   /*letter-spacing: 0.1em;*/
 }
 
@@ -78,6 +85,7 @@ header, footer {
 body {
   font-family: 'Open Sans', sans-serif;
 }
+
 .homepage_banner_text{
   padding-top: 5em;
   padding-bottom: 5em;
@@ -96,8 +104,8 @@ footer {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: black;
+  background-color: #272635;
   text-align: center;
-  color: white;
+  color: #E9FAE3;
 
 }
