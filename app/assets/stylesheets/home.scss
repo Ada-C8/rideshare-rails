@@ -78,12 +78,26 @@ header {
   padding: 1rem 0;
 }
 
-.notice {
-  color: green;
+/* ==== NOTICES / ERRORS STYLING */
+.notice, .errors {
+  display: block;
   font-family: "Josefin Sans", Arial, sans-serif;
   font-weight: 300;
   font-size: 1.5rem;
   padding-left: 2rem;
+}
+
+.notice {
+  color: green;
+}
+
+.errors {
+  color: red;
+}
+
+/* prevent error field from changing display from inline-block to block (in div) */
+.field_with_errors {
+  display: inline-block;
 }
 
 .container {
@@ -93,4 +107,12 @@ header {
 .welcome-image {
   width: 100%;
   height: auto;
+}
+
+main {
+  margin: 1rem 1.75rem;
+}
+
+input {
+  margin-right: 2rem;
 }

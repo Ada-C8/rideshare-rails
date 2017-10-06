@@ -1,6 +1,7 @@
 // Place all the styles related to the drivers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$btn-height: 2.5rem;
 
 .icon {
   border-style: solid;
@@ -22,13 +23,13 @@ h1 {
 .left {
   min-width: 285px;
   width: 45%;
-  padding-left: 1rem;
+  // padding-left: 1rem;
   vertical-align: top;
 }
 
 .right {
   width: 54%;
-  padding-left: 1rem;
+  // padding-left: 1rem;
 }
 
 .right li {
@@ -36,11 +37,33 @@ h1 {
   width: 70%;
 }
 
+/* ==== LINKS TO EDIT/DELETE STYLING ==== */
 .buttons {
   padding-top: 3rem;
 }
 
-.buttons a {
+.buttons li {
   display: inline-block;
   width: 49%;
+  height: $btn-height;
+  text-align: center;
+}
+
+.edit input, .delete input {
+  -webkit-appearance: none;
+  width: 100%;
+  height: $btn-height;
+  text-align: center;
+  border-style: none;
+  background-color: inherit;
+  color: inherit;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+
+.edit:hover, .delete:hover {
+  background-color: black;
+  border-radius: 5px;
+  color: white;
 }

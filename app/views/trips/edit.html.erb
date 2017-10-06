@@ -1,6 +1,9 @@
 <h1>Trip Info</h1>
 
 <!-- stuff you can't edit -->
+<div class="notice">
+  <%= flash[:notice] %>
+</div>
 
 <p>
   <%= @trip.date %>
@@ -55,5 +58,6 @@ BECAUSE OF THIS, I UPDATED THE AVERAGE RATING METHOD TO ACCOUNT FOR ONLY ACCOUNT
     <%= f.label "Passenger Name", id: "passenger-label" %>
     <%= f.select :passenger_id, options_from_collection_for_select(Passenger.all, "id", "name", selected: @trip.passenger_id ) %>
   </div>
+  
   <%= f.submit %>
 <% end %>

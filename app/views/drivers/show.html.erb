@@ -22,8 +22,16 @@
   </ul>
 
   <div class="buttons">
-    <%= link_to("Edit Driver", edit_driver_path, alt: "Edit Driver form") %>
-    <%= link_to("Delete Driver", delete_driver_path, method: :delete, data: { confirm: "Are you sure?" }) %>
+    <ul>
+      <li class="edit">
+        <%# link_to("Edit Driver", edit_driver_path, alt: "Edit Driver form") %>
+        <%= button_to("Edit Driver", edit_driver_path, method: :edit) %>
+      </li>
+      <li class="delete">
+        <%# link_to("Delete Driver", delete_driver_path, method: :delete, data: { confirm: "Are you sure?" }) %>
+        <%= button_to("Delete Driver", delete_driver_path, method: :delete) %>
+      </li>
+    </ul>
   </div>
 </div>
 
