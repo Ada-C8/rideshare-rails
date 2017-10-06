@@ -1,29 +1,34 @@
 <h2><%= @driver.name %></h2>
-<div id="driver_metadata">
-  <img src='/assets/160x160.jpg' alt='picture place holder'/>
-  <p>
-    ID: <%=  @driver.id %>
-  </p>
 
+<section class="metadata">
+  <img src='http://fillmurray.com/100/100' alt='picture place holder'/>
 
-
-  <p>
-    Vin: <%= @driver.vin %>
-  </p>
-
-  <%= link_to "Edit", edit_driver_path(@driver) %>
-
-  <%= link_to 'Delete', driver_path(@driver), method: :delete, data: { confirm: "Are you sure?" } %>
-
-  <p>
-    Total Earned = $<%= @driver.total_earned %>
-  </p>
-
-  <p>
+  <h4>
     Average Rating = <%= @driver.average_rating %> stars
-  </p>
-</div>
-<ol>
+  </h4>
+
+  <ul>
+    <li>
+      Vin: <%= @driver.vin %>
+    </li>
+
+    <li>
+      Total Earned = $<%= @driver.total_earned %>
+    </li>
+  </ul>
+
+  <ul class="edit_delete">
+    <li>
+      <%= link_to "Edit", edit_driver_path(@driver) %>
+    </li>
+
+    <li>
+      <%= link_to 'Delete', driver_path(@driver), method: :delete, data: { confirm: "Are you sure?" } %>
+    </li>
+  </ul>
+</section>
+
+<ol class = "trip_list">
   <% @driver.trips.order(date: :desc).each do | trip | %>
     <li >
       <%= render partial: 'layouts/trip_details', locals: { trip: trip, route: @driver } %>

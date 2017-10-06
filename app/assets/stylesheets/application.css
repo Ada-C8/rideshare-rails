@@ -14,28 +14,55 @@
  *= require_self
  */
 
+ .clearfix:after {
+   visibility: hidden;
+   display: block;
+   font-size: 0;
+   content: " ";
+   clear: both;
+   height: 0;
+ }
+ .clearfix { display: inline-block; }
+ /* start commented backslash hack \*/
+ * html .clearfix { height: 1%; }
+ .clearfix { display: block; }
+ /* close commented backslash hack */
 
-
-nav{
+header{
   width: 100%;
   height: 50px;
-  
-}
-
-nav ul{
-  margin-left: 25%
+  background-color: darkgrey;
+  color: white;
+  position: fixed;
 
 }
 
-li{
-  list-style-type: none;
+header a {
+  text-decoration: none;
+  color: white;
 }
-
-nav ul li{
+header a:visited {
+  text-decoration: none;
+  color: white;
+}
+header a:hover {
+  text-decoration: underline;
+}
+header h1 {
   float: left;
-  padding-left: 2%;
-  font-size: 16pt;
+  margin: .7em 0;
+  width: 25%;
+  padding: 0 1em;
+}
 
+header nav {
+  float: right;
+  width: 70%;
+  text-align: right;
+}
+header li {
+  display: inline-block;
+  list-style: none;
 }
 
  .error-messages {
@@ -44,4 +71,8 @@ nav ul li{
 
  .field_with_errors {
    display: inline;
+ }
+
+ body {
+   margin-top: 75px;
  }

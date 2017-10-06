@@ -1,27 +1,33 @@
 <h2><%= @passenger.name %></h2>
 
-<div id="passenger_metadata">
+<section class="metadata">
+  <img src='http://fillmurray.com/100/100' alt='picture place holder'/>
+
   <h4><%= link_to "New Trip", new_passenger_trip_path(@passenger) %></h4>
 
+  <ul>
+    <li>
+      Phone Number: <%= @passenger.phone_num %>
+    </li>
 
-  <p>
-    ID: <%=  @passenger.id %>
-  </p>
+    <li>
+      Total Spent = $<%= @passenger.total_spent %>
+    </li>
 
-  <p>
-    Phone Number: <%= @passenger.phone_num %>
-  </p>
+  </ul>
 
+  <ul class="edit_delete">
+    <li>
+      <%= link_to "Edit", edit_passenger_path(@passenger)%>
+    </li>
 
-  <%= link_to "Edit", edit_passenger_path(@passenger)%>
+    <li>
+      <%= link_to 'Delete', passenger_path(@passenger), method: :delete, data: { confirm: "Are you sure?" } %>
+    </li>
+  </ul>
+</section>
 
-  <%= link_to 'Delete', passenger_path(@passenger), method: :delete, data: { confirm: "Are you sure?" } %>
-
-  <p>
-    Total Spent = $<%= @passenger.total_spent %>
-  </p>
-</div>
-<ol>
+<ol class = 'trip_list'>
   <% @passenger.trips.order(date: :desc).each do | trip | %>
     <li >
       <%= render partial: 'layouts/trip_details', locals: { trip: trip, route: @passenger } %>

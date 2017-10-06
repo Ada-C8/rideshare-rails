@@ -7,12 +7,12 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <header>
+  <header class = 'clearfix'>
+    <h1>
+      <%= link_to 'RideShare', root_path %>
+    </h1>
     <nav>
       <ul>
-        <li>
-          <%= link_to 'Home', root_path %>
-        </li>
         <li>
           <%= link_to 'All Drivers', drivers_path %>
         </li>
