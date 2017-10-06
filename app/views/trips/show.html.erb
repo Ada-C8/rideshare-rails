@@ -12,4 +12,5 @@
 
 <section>
   <%= link_to 'Edit Trip', edit_trip_path %>
+  <%= link_to "Delete", trip_path(@trip.id), method: :delete, data: { confirm: "Are you sure you'd like to delete this trip?" } %>
 </section>
