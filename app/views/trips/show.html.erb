@@ -11,20 +11,30 @@
   </ul>
 </nav>
 
-<ul>
+<ul class="details">
   <li>
-    Driver: <%= link_to @trip.driver.name, driver_path(@trip.driver.id), class: "profile-link" %>
+    <p>
+      <strong>Driver:</strong> <%= link_to @trip.driver.name, driver_path(@trip.driver.id), class: "profile-link" %>
+    </p>
   </li>
   <li>
-    Passenger: <%= link_to @trip.passenger.name, passenger_path(@trip.passenger.id), class: "profile-link" %>
+    <p>
+      <strong>Passenger:</strong> <%= link_to @trip.passenger.name, passenger_path(@trip.passenger.id), class: "profile-link" %>
+    </p>
   </li>
   <li>
-    Date: <%= @trip.date.strftime("%B %d, %Y") %>
+    <p>
+      <strong>Date:</strong> <%= @trip.date.strftime("%B %d, %Y") %>
+    </p>
   </li>
   <li>
-    Rating: <%= render partial: "/layouts/set_stars", locals: {trip: @trip} %>
+    <p>
+      <strong>Rating:</strong> <%= render partial: "/layouts/set_stars", locals: {trip: @trip} %>
+    </p>
   </li>
   <li>
-    Cost: <%= "$#{(@trip.cost.to_f / 100).round(2)}"%>
+    <p>
+      <strong>Cost:</strong> <%= "$#{(@trip.cost.to_f / 100).round(2)}"%>
+    </p>
   </li>
 </ul>
