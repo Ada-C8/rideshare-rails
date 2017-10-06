@@ -20,13 +20,56 @@
  *= require_self
  */
 
- h1 {
-   font-family: 'Nosifer', cursive;
-   color: #c80101;
-   background-color: #282828;
+ body, header, footer {
+  background-color: #282828;
  }
 
- h2, h3 {
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 2px;
+}
+
+header a, footer a {
+  color: #c80101;
+  text-decoration: none;
+}
+
+header a:hover, footer a:hover {
+  color: white;
+}
+
+header nav {
+  display: inline-block;
+  float: right;
+}
+
+header li {
+  display: inline-block;
+  text-decoration: none;
+  margin: 2px;
+  padding: 2px 4px;
+}
+
+header ul {
+  margin-right: 1em;
+  margin-top: 2em;
+}
+
+h1#logo {
+  display: inline-block;
+  padding: 2px;
+  margin: .5em 1em;
+}
+
+h1 {
+  font-family: 'Nosifer', cursive;
+  color: #c80101;
+ }
+
+ h2, h3, header li {
    font-family: 'Amatic SC', cursive;
    letter-spacing: 2px;
    font-weight: 700;
@@ -35,4 +78,29 @@
 
  p {
    font-family: 'Karla', sans-serif;
+ }
+
+ main {
+   margin-top: 6em;
+   background-color: #cccccc
+ }
+
+ footer {
+   background-color: #282828;
+   clear: both;
+   margin: 0 auto;
+ }
+
+ footer h1 {
+   font-size: 16px;
+ }
+
+ footer h1, footer h3 {
+   display: inline-block;
+   padding: 1em;
+   margin: 0 auto;
+ }
+
+ footer h3 {
+
  }

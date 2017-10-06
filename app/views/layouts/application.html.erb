@@ -12,15 +12,20 @@
   <header>
     <h1 id="logo"><%= link_to "DieShare", root_path %></h1>
     <nav>
-      <h3><%= link_to("See All Drivers", drivers_path) %></h3>
-      <h3><%= link_to("See All Passengers", passengers_path) %></h3>
-      <h3><%= link_to("New Driver", new_driver_path) %></h3>
-      <h3><%= link_to("New Passenger", new_passenger_path) %></h3>
+      <ul>
+        <li><%= link_to("Drivers", drivers_path) %></li>
+        <li><%= link_to("Passengers", passengers_path) %></li>
+        <li><%= link_to("New Driver", new_driver_path) %></li>
+        <li><%= link_to("New Passenger", new_passenger_path) %></li>
+      </ul>
     </nav>
   </header>
-  <%= yield %>
+  <main>
+    <%= yield %>
+  </main>
 </body>
 <footer>
-  <p>&copy 2017</p>
+  <h1>&copy 2017</h1>
+  <h3><%= link_to "Help", static_pages_help_path %></h3> 
 </footer>
 </html>
