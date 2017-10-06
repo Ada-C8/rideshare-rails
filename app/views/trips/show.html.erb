@@ -1,5 +1,4 @@
-<h1>Trips#show</h1>
-<p>Find me in app/views/trips/show.html.erb</p>
+<h1>Trip Number <%= @trip.id %></h1>
 
 <section>
     <%= link_to("Edit Trip", edit_trip_path(@trip.id)) %>
@@ -10,39 +9,37 @@
 
 
 <article>
-  <ul>
-    <li>
-      <strong>ID: </strong>
-      <%= @trip.id %>
-    </li>
-    <li>
-      <strong>Cost: </strong>
-      <%= @trip.cost/100 %>
-    </li>
-    <li>
-      <strong>Date: </strong>
-      <%= @trip.date %>
-    </li>
-    <li>
-      <% if @trip.rating %>
-        <strong><%= @trip.rating  %></strong>
-      <% else %>
-        <%= form_for @trip do |f| %>
-          <strong><%= f.label :rating %></strong>
-          <%= f.select :rating, options_for_select([1, 2, 3, 4, 5]) %>
-          <%= f.submit %>
-        <% end %>
-      <% end %>
-    </li>
-    <li>
-      <strong>Driver Name: </strong>
-      <%= link_to(@trip.driver.name, driver_path(@trip.driver.id)) %>
-    </li>
-    <li>
-      <strong>Passenger Name: </strong>
-      <%= link_to(@trip.passenger.name, passenger_path(@trip.passenger.id)) %>
-    </li>
-
-  </ul>
+  <table>
+    <thead>
+      <tr>
+        <th><strong>ID: </strong></th>
+        <th><strong>Cost: </strong></th>
+        <th><strong>Date: </strong></th>
+        <th><strong>Rating: </strong></th>
+        <th><strong>Driver Name: </strong></th>
+        <th><strong>Passenger Name: </strong></th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @trip.id %></td>
+        <td><%= @trip.cost/100 %></td>
+        <td><%= @trip.date %></td>
+        <td>
+          <% if @trip.rating %>
+            <strong><%= @trip.rating  %></strong>
+          <% else %>
+            <%= form_for @trip do |f| %>
+              <strong><%= f.label :rating %></strong>
+              <%= f.select :rating, options_for_select([1, 2, 3, 4, 5]) %>
+              <%= f.submit %>
+            <% end %>
+          <% end %>
+        </td>
+        <td><%= link_to(@trip.driver.name, driver_path(@trip.driver.id)) %></td>
+        <td><%= link_to(@trip.passenger.name, passenger_path(@trip.passenger.id)) %></td>
+      </tr>
+    </tbody>
+  </table>
 
 </article>

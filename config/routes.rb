@@ -1,20 +1,24 @@
 Rails.application.routes.draw do
   root to: "trips#index"
 
-  resources :trips
   resources :passengers
   resources :drivers
+  resources :trips, except: [:create]
+
+  post '/trips', to: "trips#create", as: "create_trip"
 
   get '/trips/:id/edit_rating', to: 'trips#edit_rating', as: 'edit_rating'
 
   patch '/trips/:id/update_rating', to: 'trips#update_rating'
 
+
+
+  #
   # get "/trips", to: "trips#index", as: "trips"
   #
   # get '/trips/new', to: "trips#new", as: "new_trip"
   # #
   # get '/trips/:id', to: "trips#show", as: "trip"
-  #
   #
   #
   # get '/trips/:id/edit', to: 'trips#edit', as: "edit_trip"
@@ -26,7 +30,7 @@ Rails.application.routes.draw do
   # post '/trips', to: "trips#create", as: "create_trip"
   #
   # delete '/trips/:id', to: 'trips#destroy', as: "delete_trip"
-  #
+
 
 
   #
