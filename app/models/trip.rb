@@ -6,4 +6,12 @@ class Trip < ApplicationRecord
   validates :rating, numericality: { only_integer: true, allow_nil: true, less_than_or_equal_to: 5, greater_than_or_equal_to: 0, message: "Rating must be a number between 0-5." }
 
 
+
+  def self.grand_total(total_cost)
+    final_total_cost = total_cost/100
+
+    return "%.2f"%final_total_cost
+  end
+
+
 end

@@ -5,7 +5,9 @@
 <% total_cost = 0 %>
 <p><% @passenger.trips.each do |trip| %></p>
 
-  <%= "Trip Cost: $" %><% total = ((trip.cost) / 100) %><%= "%.2f"%total %>
+  <%= "Trip Cost: $" %><%= Trip.total_cost(total_cost) %>
+
+  <% total = ((trip.cost) / 100) %><%= "%.2f"%total %>
 
   <% total_cost += trip.cost %>
   <%= "Trip Rating: " %><%= trip.rating %>
@@ -15,8 +17,12 @@
   <%= link_to "Details", trip_path(trip.id) %>
 <% end %>
 
-<%= "Total Cost: $" %>
-<% final_total_cost = total_cost/100%><%= "%.2f"%final_total_cost %>
+
+<!-- Since the model is a class the syntax to call a method is Trip.total_cost(total_cost) -->
+<%= "Total Cost: $" %><%= Trip.grand_total(total_cost) %>
+
+<!-- this was the previous code -->
+<!-- <% final_total_cost = total_cost/100%><%= "%.2f"%final_total_cost %> -->
 
 <%= link_to "Edit Passenger", edit_passenger_path(@passenger) %>
 
