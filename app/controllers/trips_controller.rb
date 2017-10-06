@@ -14,7 +14,8 @@ class TripsController < ApplicationController
   def update
     @trip = Trip.find_by(id: params[:id].to_i)
     redirect_to trips_path unless @trip
-    @trip.rating = params[:trip][:rating].to_i
+    @trip.rating = params[:trip][:rating].to_i if [1..5].include? params[:trip][:rating].to_i
+    @trip.cost = params[:trip][:cost].to_f
     if @trip.save
       flash[:notice] = "Trip #{@trip.id} was successfully updated"
       redirect_to trip_path(@trip.id)
