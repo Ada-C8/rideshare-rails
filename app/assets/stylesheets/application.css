@@ -84,7 +84,16 @@ h2, h3 {
  .edit_delete li{
    display: inline-block;
    padding: 2vw;
+   background: black;
  }
+
+ .edit_delete a {
+    color: white;
+ }
+
+.past_trips {
+  text-decoration: underline;
+}
 
 .trip_details {
   align-content: center;
@@ -92,7 +101,7 @@ h2, h3 {
   display: inline-block;
   /*flex-wrap: wrap;*/
   min-width: 300px;
-  margin: 2vw;
+  margin: .5vw;
 }
 
 .trips_blocks {
@@ -111,7 +120,6 @@ h2, h3 {
 .list_of_people ol li {
   display: inline-block;
   padding: 1vw;
-
 }
 
 .list_of_people ul {
@@ -162,4 +170,8 @@ a {
 }
 a:hover {
   color: pink;
+}
+
+#phone {
+  text-align: center;
 }
