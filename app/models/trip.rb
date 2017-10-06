@@ -20,8 +20,7 @@ class Trip < ApplicationRecord
     return Driver.all.sample.id
   end
 
-  def trip_create(passenger_input)
-    self.passenger = Passenger.find(passenger_input)
+  def default_values
     self.driver_id = self.get_driver
     self.cost = self.to_cents
     self.rating = nil
