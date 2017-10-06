@@ -1,6 +1,7 @@
 <h1>Passengers</h1>
 <!-- <p>Find me in app/views/passengers/index.html.erb</p> -->
-<div class="notice error">
+<% @notice_type = flash[:notice] ? "notice" : "error" %>
+<div class="<%=@notice_type%>">
   <%= flash[:notice] %>
   <%= flash[:error] %>
 </div>
