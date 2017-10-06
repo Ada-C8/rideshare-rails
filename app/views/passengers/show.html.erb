@@ -47,8 +47,12 @@
     </ul>
   </div>
 
+  <div class="spacer">
+
+  </div>
+
     <div class="trips">
-        <p>Trips:</p>
+        <p>Trips</p>
         <% if Trip.all.where(passenger_id: @passenger.id).length == 0 %>
           No trips taken yet!
         <%else%>

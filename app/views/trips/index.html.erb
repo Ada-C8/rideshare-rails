@@ -2,31 +2,54 @@
 <h2>
   Uberlite Trips
 </h2>
-<p>
-  This is for debugging, I think we can delete it for our final project
-</p>
 
-<div>
-  <ul>
-  <% @trips.each do |trip|  %>
-  <li>
-    <ul>
-      <li>
-        Trip id:<%= link_to trip.id, trip_path(trip.id), class: "link" %>
-      </li>
-      <li>
-        Trip driver_id: <%= trip.driver_id %>
-      </li>
-      <li>
-        Trip passenger_id: <%= trip.passenger_id %>
-      </li>
-      <li>
-        Trip rating: <%= trip.rating %>
-      </li>
-    </ul>
-    <br />
-  </li>
-  <% end %>
-  <ul>
-</div>
-</main>
+<table>
+  <tr>
+    <th>Trip ID</th>
+    <th>Cost</th>
+    <th>Rating</th>
+    <th>Driver</th>
+    <th>Passenger</th>
+    <th>Date</th>
+  </tr>
+  <tr>
+
+
+      <% Trip.all.each do |trip| %>
+      <th>
+        <%= link_to "Trip #{trip.id}", trip_path(trip.id), class: "link" %>
+</th>
+
+    <th>
+      $<%=trip.cost%>
+    </th>
+
+    <th>
+      <%=trip.rating%>
+    </th>
+
+    <th>
+      <% if !Driver.find_by_id(trip.driver_id) %>
+        Driver account deleted
+      <%else %>
+        <%driver_name = Driver.all.find(trip.driver_id).name %>
+        <%= link_to driver_name, driver_path(trip.driver_id), class: "link" %>
+      <% end %>
+    </th>
+
+    <th>
+      <% if !Passenger.find_by_id(trip.passenger_id) %>
+        Passenger account deleted
+      <%else %>
+        <%passenger_name = Passenger.all.find(trip.passenger_id).name %>
+        <%= link_to passenger_name, passenger_path(trip.passenger_id), class: "link" %>
+      <% end %>
+    </th>
+
+    <th>
+      <%= trip.date %>
+    </tr>
+
+    <%end%>
+
+</table>

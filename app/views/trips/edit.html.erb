@@ -5,13 +5,13 @@
 <div class = "form">
   <ul>
     <%= form_for @trip do |f| %>
+    <li>Trip ID:<%=@trip.id%></li>
     <li>
-      Trip ID:<%=@trip.id%>
       <% if Driver.find_by_id(@trip.driver_id) == nil %>
         Driver: driver account deleted
       <%else %>
         <%driver_name = Driver.find(@trip.driver_id).name %>
-        Driver: <%= link_to driver_name, driver_path(@trip.driver_id) %>
+        Driver: <%= link_to driver_name, driver_path(@trip.driver_id), class: "link" %>
       <% end %>
     </li>
     <li>
@@ -19,7 +19,7 @@
         Passenger: passenger account deleted
       <%else %>
         <%passenger_name = Passenger.find(@trip.passenger_id).name %>
-        Passenger: <%= link_to passenger_name, passenger_path(@trip.passenger_id) %>
+        Passenger: <%= link_to passenger_name, passenger_path(@trip.passenger_id), class: "link" %>
       <% end %>
     </li>
     <li>

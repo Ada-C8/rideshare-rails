@@ -26,6 +26,13 @@ header, footer {
   background-color: #E5B7B7;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin: 10vw 0 0 0;
+}
+
 #title {
   display: inline-block;
   width: 25%;
@@ -93,10 +100,11 @@ h2 {
   font-size: 3em;
 }
 
-main {
+body {
   text-align: center;
   background-color: #C16565;
   font-family: 'Mukta';
+  height: 100vw;
 }
 
 .individual_info {
@@ -108,10 +116,23 @@ main {
 }
 
 .trips {
-  padding: 5vw 22vw 5vw;
+  padding: 0 0 10vw;
   clear: both;
   background-color: #E5B7B7;
+  border-style: solid;
+  border-color: #C16565;
+  margin: 25vw 15vw 15vw 15vw;
 
+
+}
+
+.spacer {
+  height: 5vw;
+}
+.trips p {
+  font-size: 3em;
+  padding: 0;
+  margin: 0;
 }
 
 
@@ -126,5 +147,18 @@ main {
 }
 
 #trip_view {
-  display: block;
+  display: inline-block;
+  width: 50%;
+  margin: 0 auto;
+
+}
+
+table tr:nth-child(even) {
+  background-color: white;
+}
+
+table {
+  background-color:  #E5B7B7;
+  margin: 0 auto 10vw;
+  /*padding-bottom: 20vw;*/
 }

@@ -8,6 +8,7 @@
 
 
 <section>
+
   <div class="img_info">
 
   <fig>
@@ -48,9 +49,13 @@
       </li>
       <ul>
       </div>
+<div class="spacer">
+
+</div>
+
 
     <div class="trips">
-        <p>Trips:</p>
+        <p>Trips</p>
         <%if  Trip.all.where(driver_id: @driver.id).length == 0%>
           No trips driven yet!
         <%else%>
