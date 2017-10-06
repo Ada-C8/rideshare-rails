@@ -2,7 +2,7 @@ class PassengersController < ApplicationController
   def create
     @passenger = Passenger.new(passenger_params)
     if @passenger.save
-      redirect_to passengers_path
+      redirect_to (passenger_path(@passenger))
     else
       render :new
     end
@@ -10,7 +10,7 @@ class PassengersController < ApplicationController
 
   def destroy
     Passenger.find_by(id: params[:id]).destroy
-    redirect_to root_path
+    redirect_to passengers_path
   end
 
   def edit
