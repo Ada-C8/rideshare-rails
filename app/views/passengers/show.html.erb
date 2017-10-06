@@ -32,7 +32,7 @@
     <strong>Trips: </strong>
     <span class="page-menu"><%= link_to "Add Trip", new_passenger_trip_path(@passenger.id) %></span>
     <ul class="trip-list">
-      <% @trips.each do |trip| %>
+      <% @passenger.trips_by_date.each do |trip| %>
       <li>
         <%= link_to trip_path(trip.id) do %>
         <div class="trip-list">

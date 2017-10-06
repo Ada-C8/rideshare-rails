@@ -13,4 +13,7 @@ class Passenger < ApplicationRecord
     return total
   end
 
+  def trips_by_date
+    return trips.order(:date).reverse
+  end
 end
