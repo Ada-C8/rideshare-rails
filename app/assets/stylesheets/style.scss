@@ -20,7 +20,6 @@
 
   li {
     padding: 10px;
-    border-bottom: 1px solid #ccc;
   }
 }
 
@@ -29,10 +28,12 @@
    display: block;
    text-decoration: none;
    color:black;
+   background-color: white;
+   transition:all 0.5s ease;
   }
 
   li:hover {
-    background: #eee;
+    background: #c9c9c9;
     cursor: default;
   }
 
@@ -41,9 +42,10 @@
   }
 
   li:hover span {
-    font-size: 30px;
+    font-size: 50px;
     display: block;
     width: 32px;
     float: right;
+    align-items: center;
   }
 }
