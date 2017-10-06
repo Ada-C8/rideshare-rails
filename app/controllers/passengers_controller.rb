@@ -34,10 +34,10 @@ class PassengersController < ApplicationController
 
   def destroy
   @passenger = Passenger.find(params[:id])
-    if @passenger.trips.count > 0 #without this it will error when passenger has trips
-      redirect_to passenger_path
-      return
-    end
+    # if @passenger.trips.count > 0 #without this it will error when passenger has trips
+    #   redirect_to passenger_path(@passenger)
+    #   return
+    # end
       @passenger.destroy
 
     redirect_to passengers_path
