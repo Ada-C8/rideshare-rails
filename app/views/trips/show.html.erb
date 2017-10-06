@@ -1,5 +1,9 @@
 <h1>Trip on <%= @trip.date %></h1>
 
+<div class="notice">
+  <%= flash[:notice] %>
+</div>
+
 <p>
   Cost: <%= number_to_currency(@trip.cost, precision: 2) %>
 </p>
