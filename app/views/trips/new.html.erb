@@ -1,17 +1,20 @@
-<h1>Trips#new</h1>
-<p>Find me in app/views/trips/new.html.erb</p>
+<section>
+  <h1 class="title">Create a New Trip</h1>
+</section>
 
 <% if @trip.errors.any? %>
-  <ul class="errors">
-    <% @trip.errors.each do |column, message| %>
-      <li>
-        <strong><%= column.capitalize %></strong> <%= message %>
-      </li>
-    <% end %>
-  </ul>
+  <section class="errors">
+    <ul>
+      <% @trip.errors.each do |column, message| %>
+        <li>
+          <strong><%= column.capitalize %></strong> <%= message %>
+        </li>
+      <% end %>
+    </ul>
+  </section>
 <% end %>
 
-<section>
+<section class="form">
   <%= form_for @trip do |f| %>
     <%= f.label :passenger_id %>
     <%= f.select :passenger_id, options_from_collection_for_select(Passenger.order(:name), "id", "name", params[:passenger_id]) %>
@@ -23,6 +26,6 @@
     <%= f.number_field :cost, min: 0 %>
     <%= f.label :rating %>
     <%= f.select :rating, options_for_select((1..5)) %>
-    <%= f.submit "Create Trip" %>
+    <%= f.submit "Create Trip", class: "button" %>
   <% end %>
 </section>

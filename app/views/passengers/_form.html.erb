@@ -1,18 +1,20 @@
 <% if @passenger.errors.any? %>
-  <ul class="errors">
-    <% @passenger.errors.each do |column, message| %>
+  <section class="errors">
+    <ul>
+      <% @passenger.errors.each do |column, message| %>
       <li>
         <strong><%= column.capitalize %></strong> <%= message %>
       </li>
-    <% end %>
-  </ul>
+      <% end %>
+    </ul>
+  </section>
 <% end %>
 
-<section class="nameform">
+<section class="form">
 <%= form_for @passenger do |f| %>
-<h4><%= f.label :name %></h4>
+<%= f.label :name %>
 <%= f.text_field :name %>
-<h4><%= f.label :phone_num, 'Phone Number' %></h4>
+<%= f.label :phone_num, 'Phone Number' %>
 <%= f.text_field :phone_num %>
-<%= f.submit action_name %>
+<%= f.submit action_name, class: "button" %>
 <% end %></section>

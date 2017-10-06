@@ -15,7 +15,14 @@
  */
 
  body{
+   color: white;
+   background-image: url("https://images.unsplash.com/photo-1481819434877-23b892ca68ff?dpr=1&auto=compress,format&fit=crop&w=2550&h=&q=80&cs=tinysrgb&crop=");
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
    font-family: 'Permanent Marker';
+   text-align: center;
  }
 
 nav ul {
@@ -68,4 +75,51 @@ nav ul li.dropdown {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+.errors{
+  border: 2px red solid;
+  padding: 20px 30px;
+  width: 300px;
+  border-radius: 10px;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.errors ul{
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+section.form{
+  background-color: rgba(100, 100, 100, 0.6);
+  border-radius: 10px;
+  width: 350px;
+  margin: auto;
+  text-align: center;
+  padding: 30px;
+  font-size: 20pt;
+  margin-bottom: 100px;
+}
+
+section.form label{
+  display: block;
+}
+
+section.form input, section.form select{
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+  height: 40px;
+  font-size: 20pt;
+  font-family: 'Permanent Marker';
+}
+
+section.form form input[type="submit"]{
+  font-size: 20pt;
+  height: 50px;
+  padding: 0 40px;
+  font-family: 'Permanent Marker';
+  border: 0px;
+  border-radius: 10px;
 }
