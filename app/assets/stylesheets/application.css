@@ -85,6 +85,14 @@ h2 {
   padding-left: 1.5rem;
 }
 
+h4 {
+  color: white;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 2rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
 a {
   color: inherit;
   font-family: 'Comfortaa', sans-serif;
@@ -124,6 +132,10 @@ span.rating {
 
 .page-menu li a:hover {
   background-color: deepskyblue;
+}
+
+.small {
+  font-size: 0.75rem;
 }
 
 /***********/

@@ -1,3 +1,71 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.feature {
+  background-color: tomato;
+  border-radius: 2rem;
+  margin: 1rem auto;
+  min-height: 19rem;
+  min-width: 20rem;
+  // width: 45%;
+  padding: 1.5rem;
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: top;
+  align-items: top;
+}
+
+#potm {
+  width: 50%;
+}
+
+#potm img {
+  float: left;
+  margin: 1rem;
+  min-width: 6rem;
+  width: 30%;
+}
+
+#potm div {
+  display: inline;
+  // margin-left: 0.5rem;
+  width: 65%;
+}
+
+#potm p {
+  color: white;
+}
+
+
+#potm blockquote {
+  margin: 0 0.75rem;
+  font-style: italic;
+}
+
+#top-drivers {
+  width: 35%;
+}
+
+#top-drivers li a {
+  border: 2px solid white;
+  border-radius: 1rem;
+  color: white;
+  display: block;
+  margin: 0.5rem;
+  padding: 0.25rem;
+}
+
+#top-drivers li span {
+  display: inline-block;
+  max-width: 65%;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+#top-drivers .name {
+  padding-left: 1rem;
+}
