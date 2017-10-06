@@ -1,52 +1,52 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
- .field_with_errors {
-   display: inline;
- }
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+.field_with_errors {
+  display: inline;
+}
 body {
-   background-image: url('backdrop1.jpg');
-   background-size: cover;
- }
- /*drop down css for nav bar:*/
- .dropdown {
-     position: relative;
-     display: inline-block;
-     /*width: 100px;*/
-     padding: 3% 6%;
-     font-size: 20px;
- }
- .dropdown-content {
-     display: none;
-     position: absolute;
-     background-color: #f9f9f9;
-     min-width: 160px;
-     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-     padding: 12px 16px;
-     z-index: 1;
-     font-size: 15px;
+  background-image: url('backdrop1.jpg');
+  background-size: cover;
+}
+/*drop down css for nav bar:*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+  /*width: 100px;*/
+  padding: 3% 6%;
+  font-size: 20px;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  font-size: 15px;
 
- }
+}
 
- .dropdown:hover .dropdown-content {
-     display: block;
- }
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 html {
   font-family: courier;
 }
- /*more nav css */
+/*more nav css */
 nav {
   background-color: rgba(215, 190, 217, 0.64);
   height: 100px;
@@ -66,20 +66,25 @@ h1 {
 /* Passenger and Driver index page styles */
 ol {
   width: 40em;
-
 }
-
 li {
   float: left;
   width: 13em;
-
 }
-
 a {
   text-decoration: none;
 }
 
-.index-column {
+/*button styling*/
+.button {
+  margin-left: 30%;
+  padding-left: 55px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  background-color: rgba(228, 155, 232, 0.47);
+  width: 370px;
+}
 
+.index-column {
 
 }
