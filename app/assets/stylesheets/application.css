@@ -19,7 +19,7 @@
 /*************/
 
 * {
-  /*border: 1px solid lawngreen;*/
+  /*border: .1px solid lawngreen;*/
 }
 
 body {
@@ -27,37 +27,6 @@ body {
   background-image: url(round.png);
   margin: 0;
   /*min-width: 60rem;*/
-}
-
-header {
-  background-color: tomato;
-  color: white;
-  height: 5rem;
-  left: 0;
-  min-width: 60rem;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 9999;
-}
-
-header nav {
-  float: right;
-  margin: 0;
-  padding: 0;
-  width: 60%;
-}
-
-header nav ul {
-  float: right;
-  list-style: none;
-  min-width: 30.5rem;
-  padding: 0;
-}
-
-header nav li {
-  display: inline-block;
-  padding: 1rem 2rem 1rem 0;
 }
 
 main {
@@ -83,6 +52,14 @@ h2 {
   display: inline-block;
   font-family: 'Comfortaa', sans-serif;
   padding-left: 1.5rem;
+}
+
+h4 {
+  color: white;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 2rem;
+  margin: 0 auto;
+  text-align: center;
 }
 
 a {
@@ -125,6 +102,50 @@ span.rating {
 .page-menu li a:hover {
   background-color: deepskyblue;
 }
+
+.small {
+  font-size: 0.75rem;
+}
+
+/************/
+/*  HEADER  */
+/************/
+
+header {
+  background-color: tomato;
+  color: white;
+  height: 5rem;
+  left: 0;
+  min-width: 60rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+header nav {
+  float: right;
+  margin: 0;
+  padding: 0;
+  width: 60%;
+}
+
+header nav ul {
+  float: right;
+  list-style: none;
+  min-width: 30.5rem;
+  padding: 0;
+}
+
+header nav li {
+  display: inline-block;
+  padding: 1rem 2rem 1rem 0;
+}
+
+header nav li a:hover {
+  border-bottom: 2px solid white;
+}
+
 
 /***********/
 /*  INDEX  */

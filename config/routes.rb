@@ -8,10 +8,9 @@ Rails.application.routes.draw do
   resources :passengers do
     resources :trips, only: [:new]
   end
-  resources :trips, except: [:index, :new]
+  resources :trips, except: [:index]
   #
   # get '/trips/new/:id', to: 'trips#new', as: 'new_trip'
-
 
 
 end

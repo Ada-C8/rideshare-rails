@@ -5,7 +5,14 @@ class TripsController < ApplicationController
 
   def new
     default_date = Date.today
+
     @trip = Trip.new(driver_id: Driver.best_available(default_date).id, passenger_id: params[:passenger_id], date: default_date)
+
+    # if request.referer.include?(root_path)
+    #   @trip = Trip.new(driver_id: params[:driver_id], passenger_id: params[:passenger_id], date: default_date)
+    # else
+    #   @trip = Trip.new(driver_id: Driver.best_available(default_date).id, passenger_id: params[:passenger_id], date: default_date)
+    # end
   end
 
   def create
