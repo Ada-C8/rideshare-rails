@@ -1,0 +1,25 @@
+<h1>Trips#show</h1>
+<p>Find me in app/views/trips/show.html.erb</p>
+
+<p>Date: <%= @trip.date %></p>
+<p>Rating: <%= @trip.rating %></p>
+<p>Cost: $<%= (@trip.cost / 100).to_f.round(2) %></p>
+<p>Driver:
+  <% if @trip.driver.nil? %>
+  Driver Not in Database
+  <% else  %>
+  <%= @trip.driver.name %>
+  <% end %>
+</p>
+<p>Passenger:
+  <% if @trip.passenger.nil? %>
+  Passenger Not in Database
+  <% else  %>
+  <%= @trip.passenger.name %>
+  <% end %>
+</p>
+
+
+<%= link_to "Delete", "#{@trip_path}/#{params[:id]}", method: :delete %>
+
+<p><%= link_to("Edit Trip Rating", "#{@trip_path}/#{@trip.id}/edit")%></p>

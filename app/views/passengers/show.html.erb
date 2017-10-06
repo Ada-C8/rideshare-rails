@@ -1,0 +1,11 @@
+<h1>Passengers Profile:</h1>
+
+<% if @passenger %>
+  <h2><%= @passenger.name %></h2>
+  <p>ID: <%= @passenger.id %></p>
+  <p>Phone Number: <%= @passenger.phone_num %></p>
+  <%= link_to "Trips", passenger_trips_path(@passenger.id) %>
+  <%= link_to "New Trip", new_passenger_trip_path(@passenger.id) %>
+  <%= link_to "Edit", edit_passenger_path(@passenger.id) %>
+  <%= link_to "Delete", passenger_path(@passenger.id), method: :delete %>
+<% end %>

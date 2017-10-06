@@ -1,0 +1,13 @@
+<h1 class="indextitle">Driver List</h1>
+<section class="wrap">
+<ul class="indexlist">
+  <% @drivers.each do |driver| %>
+  <li>
+    <p><%= link_to(driver.name, driver_path(driver.id), alt: "link to", class:"passenger") %>
+      - <%= driver.vin %></p>
+    <%= link_to("Edit", edit_driver_path(driver.id),class:"edit")%>
+    <%= link_to("Delete", driver_path(driver.id), method: :delete, data: {confirm: "Delete this FOREVER?" },class:"delete")%>
+  </li>
+  <% end %>
+</ul>
+</section>

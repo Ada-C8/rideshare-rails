@@ -1,0 +1,11 @@
+<h1><%= @driver.name %>'s Profile</h1>
+
+<% if @driver %>
+  <p>ID: <%= @driver.id %></p>
+  <p>VIN: <%= @driver.vin %></p>
+  <p>Average Rating: <%= @driver.average_rating %> </p>
+  <p>Money Made: $<%= @driver.total_cost %> </p>
+  <%= link_to "Trips", driver_trips_path(@driver.id) %>
+  <%= link_to "Edit", edit_driver_path(@driver.id) %>
+  <%= link_to "Delete", driver_path(@driver.id), method: :delete %>
+<% end %>

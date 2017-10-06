@@ -1,0 +1,130 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ body{
+   color: white;
+   background-image: url("https://images.unsplash.com/photo-1481819434877-23b892ca68ff?dpr=1&auto=compress,format&fit=crop&w=2550&h=&q=80&cs=tinysrgb&crop=");
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+   font-family: 'Permanent Marker';
+   text-align: center;
+ }
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover, .dropdown:hover .dropbtn {
+  color: black;
+  background-color: #ccc;
+}
+
+nav ul li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.errors{
+  border: 2px red solid;
+  padding: 20px 30px;
+  width: 300px;
+  border-radius: 10px;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.errors ul{
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+section.form{
+  background-color: rgba(100, 100, 100, 0.6);
+  border-radius: 10px;
+  width: 350px;
+  margin: auto;
+  text-align: center;
+  padding: 30px;
+  font-size: 20pt;
+  margin-bottom: 100px;
+}
+
+section.form label{
+  display: block;
+}
+
+section.form input, section.form select{
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+  height: 40px;
+  font-size: 20pt;
+  font-family: 'Permanent Marker';
+}
+
+section.form form input[type="submit"], a.button{
+  font-size: 20pt;
+  height: 50px;
+  padding: 0 40px;
+  font-family: 'Permanent Marker';
+  border: 0px;
+  border-radius: 10px;
+}
+
+a.button{
+  background: #ccc;
+  padding: 10px 50px;
+}

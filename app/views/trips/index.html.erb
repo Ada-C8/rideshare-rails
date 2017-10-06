@@ -1,0 +1,32 @@
+
+<h1>List of Trips</h1>
+
+
+<%= link_to("Create New Trip", "#{@trip_show_route}/new", class:"button")%>
+
+<ol class="indexlist">
+  <% if @trips.length > 0  %>
+    <% @trips.each do |trip| %>
+    <li>
+      <p>Date: <%= trip.date %></p>
+      <p>Driver:
+        <% if trip.driver.nil? %>
+        Driver Not in Database
+        <% else  %>
+        <%= trip.driver.name %>
+        <% end %>
+      </p>
+      <p>Passenger:
+        <% if trip.passenger.nil? %>
+        Passenger Not in Database
+        <% else  %>
+        <%= trip.passenger.name %>
+        <% end %>
+      </p>
+      <p><%=  link_to("More Information", "#{@trip_show_route}/#{trip.id}")%></p>
+    </li>
+    <% end %>
+  <% else  %>
+    <p>No trips for this passenger.</p>
+  <% end  %>
+</ol>
