@@ -11,9 +11,9 @@
 
   <%= "Trip Cost: $" %>
 
-  <% total = ((trip.cost) / 100) %><%= "%.2f"%total %>
+  <!-- Here want the total cost per trip. So I created a total_cost method in trips model. Since the model is a class you utilize the Trip.method syntax. then you pass in the trip object to be manipulated. See trip.rb model for method's logic. -->
+  <%= Trip.total_cost(trip) %>
 
-  <% total_cost += trip.cost %>
   <%= "Trip Rating: " %><%= trip.rating %>
   <%= "Trip Date: " %><%= trip.date %>
   <%= "Trip Driver: " %><%= trip.driver_id %>
