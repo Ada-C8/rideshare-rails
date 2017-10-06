@@ -1,0 +1,62 @@
+// Place all the styles related to the Drivers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.driver-header{
+  font-size: 36px;
+  background-color: rgba(58, 80, 107, 1);
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#all-drivers{
+  display: flex;
+  padding: 10px;
+  background-color: rgba(91, 192, 190, .5);
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left,rgba(91, 192, 190, .5),rgba(28, 37, 65, 1)); /*Safari 5.1-6*/
+  background: -o-linear-gradient(right,rgba(91, 192, 190, .5),rgba(28, 37, 65, 1)); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(right,rgba(91, 192, 190, .5),rgba(28, 37, 65, 1)); /*Fx 3.6-15*/
+  background: linear-gradient(to right, rgba(91, 192, 190, .5), rgba(58, 80, 107, 1)); /*Standard*/
+  margin: 50px;
+}
+#driver-nav li{
+  display:inline-block;
+  padding:10px;
+  margin: 5px;
+  background-color:  rgba(28, 37, 65, 1);
+  border-radius: 10px;
+  box-shadow: 1px 2px 4px  rgba(91, 192, 190, 1);
+
+}
+#driver-nav li a{
+  color: rgba(111, 255, 233, 1);
+}
+#all-drivers ul li{
+  padding: 5px;
+  list-style-type: none;
+  display: inline-block;
+  vertical-align: middle;
+  text-shadow: 1px 1px 2px black;
+  color: white;
+}
+#all-drivers ul li a{
+  color:white;
+}
+
+.label-field{
+  display:  -webkit-inline-box;
+  width: 100%;
+  background-color: rgba(91, 192, 190, 1);
+}
+.label{
+  width: 10%;
+  text-align: center;
+
+}
+#vintage-car, #truck{
+  width: 90%;
+  display: block;
+  margin: auto;
+  padding: 20px;
+}

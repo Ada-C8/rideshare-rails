@@ -1,0 +1,64 @@
+
+<div class="wrapper">
+  <section class="trip-show">
+  <p>
+    <%= link_to "Back to all trips", passenger_path(@trip.passenger)%>
+  </p>
+  <table>
+    <thead>
+    <tr>
+      <th>
+        Trip ID
+      </th>
+      <th>
+        Date
+      </th>
+      <th>
+        Passenger ID
+      </th>
+      <th>
+        Driver ID
+      </th>
+      <th>
+        Cost
+      </th>
+      <th>
+        Rating
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        <%=@trip.id%>
+      </td>
+      <td>
+        <%= @trip.date %>
+      </td>
+      <td>
+        <%= link_to @trip.passenger_id, passenger_path(@trip.passenger_id) %>
+      </td>
+      <td>
+        <%=  link_to @trip.driver_id, driver_path(@trip.driver_id) %>
+      </td>
+      <td>
+        <%# TODO: move this logic somewhere else? %>
+        $<%= (@trip.cost/100).round(2) %>
+      </td>
+      <td>
+        <% if @trip.rating.nil? %>
+          <%= render partial: "add_rating" %>
+        <% else %>
+          <%= @trip.rating %>
+        <% end %>
+      </td>
+      <td>
+          <%= link_to "Edit", edit_trip_path(@trip) %>
+
+          <%= link_to "Delete", trip_path(@trip), method: :delete, data: {confirm: "Are you sure you want to delete this trip?"} %>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+</div>

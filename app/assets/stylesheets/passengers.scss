@@ -1,0 +1,112 @@
+// Place all the styles related to the Passengers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/***********************/
+/* INDEX CSS           */
+/***********************/
+
+.index {
+
+}
+.index h2 {
+  text-align: left;
+  margin-top: 2%;
+  font-size: 200%;
+  background-color: #C7EBF0;
+  text-align: center;
+  padding: 2% 0%;
+}
+.list-passengers {
+
+}
+.index ul {
+  -webkit-column-count: 4;
+  -webkit-column-gap: 20px;
+  border-left: solid #C7EBF0;
+  border-right: solid #C7EBF0;
+  border-bottom: solid #C7EBF0;
+  padding: 3.5% 0% 3.5% 3.5%;
+}
+
+.index li {
+  font-size: 125%;
+  list-style-type: none;
+}
+
+/***********************/
+/* show CSS           */
+/***********************/
+
+.passenger-pic {
+  margin: 2% 0%;
+  max-width: 12%;
+}
+
+.passenger-show {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.passenger-show h2 {
+  margin: 5% 5% 0% 5%;
+  font-size: 200%;
+  width: 30%;
+  border: solid #C7EBF0;
+  border-width: 0.3rem;
+  text-align: center;
+  padding: 1%;
+}
+
+.passenger-show ul {
+  margin-right: -6%;
+  margin-bottom: 7%;
+  width: 30%;
+}
+
+.passenger-show li {
+  display: inline-block;
+  padding: 2%;
+  background-color: #B2ABBF;
+  border-radius: 0.2rem;
+  margin: 2% 3% 0% 3%;
+
+/* should work to separate into two columns, but it doesn't */
+  // -webkit-column-count: 2;
+  // -webkit-column-gap: 40px;
+
+
+}
+
+.passenger-info {
+  clear: both;
+}
+
+.passenger-info p {
+  font-size: 125%;
+  text-align: center;
+}
+
+.passenger-info p:last-child {
+  margin-bottom: 15%;
+}
+
+
+
+/***********************/
+/* new and edit CSS           */
+/***********************/
+
+.new-edit {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.new-edit h2 {
+  margin: 5% 0%;
+  background-color: #C7EBF0;
+  padding: 2%;
+  border-radius: 0.2rem;
+}

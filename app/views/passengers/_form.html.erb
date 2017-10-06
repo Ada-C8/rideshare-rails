@@ -1,0 +1,12 @@
+
+<%= render partial: "layouts/error_messages", locals: { model: @passenger} %>
+
+  <%= form_for @passenger,  :html => {:class => 'form'}  do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, size: "50" %>
+
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number, size: "30" %>
+
+    <%= f.submit %>
+  <% end %>

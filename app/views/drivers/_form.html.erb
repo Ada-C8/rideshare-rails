@@ -1,0 +1,23 @@
+<%= render partial: "layouts/error_messages", locals: { model: @driver} %>
+
+
+<%= form_for @driver,  :html => {:class => 'form'}  do |f| %>
+<div class = "label-field">
+  <div class= "label">
+    <%= f.label :name %>
+  </div>
+  <%= f.text_field :name, size: "50" %>
+</div>
+<div class="label-field">
+  <div class= "label">
+    <%= f.label :vin %>
+  </div>
+  <%= f.text_field :vin, size: "30" %>
+
+</div>
+<div id="submit">
+
+  <%= f.submit %>
+
+</div>
+<% end %>

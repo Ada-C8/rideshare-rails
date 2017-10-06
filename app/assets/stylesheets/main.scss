@@ -1,0 +1,50 @@
+// Place all the styles related to the Main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/***********************/
+/* WELCOME CSS    */
+/***********************/
+
+.wrapper {
+  margin-right: auto;
+  margin-left:  auto;
+  max-width: 960px;
+  padding-right: 10px;
+  padding-left:  10px;
+}
+
+.welcome-page {
+  text-align: center;
+}
+
+ .welcome-page h2 {
+   margin-top: 5%;
+  background-color: #B2ABBF;
+  padding: 12% 5%;
+  font-size: 350%;
+  color: #C7EBF0;
+  text-shadow: 1px 1px 2px gray; 
+}
+
+.checkout {
+  display: flex;
+  justify-content: center;
+}
+
+.checkout article {
+  background-color: #C7EBF0;
+  padding: 7% 5%;
+  width: 25%;
+  margin: 5%;
+}
+
+.checkout a:hover {
+  color: #B2ABBF;
+}
+
+
+.checkout p {
+  font-size: 125%;
+}

@@ -1,0 +1,16 @@
+
+
+
+<div class="wrapper">
+  <h2 class = "driver-header">All Drivers</h2>
+
+  <section id = "all-drivers">
+    <ul>
+      <% @drivers.each do |driver| %>
+      <li>
+        <%= link_to driver.name, driver_path(driver) %>
+      </li>
+      <% end %>
+    </ul>
+  </section>
+</div>

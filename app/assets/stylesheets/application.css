@@ -1,0 +1,158 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ /***********************/
+ /* color pallet */
+ /***********************/
+/*
+#BAA7B0
+#B2ABBF
+#B1B5C8
+#BFD5E2
+#C7EBF0
+*/
+
+/***********************/
+/* GENERAL ELEMENT CSS */
+/***********************/
+
+@import url('https://fonts.googleapis.com/css?family=Gafata');
+
+body {
+  font-family: 'Gafata';
+  color: #676571;
+}
+
+a {
+  text-decoration: none;
+  color: #676571;
+}
+
+a:hover {
+  color: #C7EBF0;
+}
+
+main {
+  clear: both;
+}
+
+/***********************/
+/*  HEADER CSS    */
+/***********************/
+
+header {
+  border-bottom: solid;
+  height: 100px;
+}
+
+header h1 {
+  font-size: 50px;
+  /* why isn't this working to change the color of the h1 in header? */
+  color: #29CEA8;
+  display: inline-block;
+  float: left;
+  width: 40%;
+  margin-top: 1.5%;
+}
+
+header nav {
+  float: right;
+  width: 40%;
+  margin-top: 3%;
+}
+
+header h1 a:hover {
+  color: #C7EBF0;;
+}
+
+header ul li {
+  display: inline-block;
+  padding: 1%;
+}
+
+/***********************/
+/*  TABLE CSS    */
+/***********************/
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+
+table, th, td {
+   border: 1px solid black;
+}
+
+
+th {
+    height: 50px;
+    background-color: #C7EBF0;
+}
+
+th, td {
+  padding: 1%;
+}
+
+tr:hover {
+  background-color: #B2ABBF;
+}
+
+/***********************/
+/* KEEP FOOTER AT BOTTOM*/
+/***********************/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+}
+
+main {
+  overflow: auto;
+  padding-bottom: 80px;
+  /* must be same height as the footer */
+}
+
+footer {
+  position: relative;
+  /*margin-top: -180px;*/
+  margin-bottom: 0;
+  /* negative value of footer height */
+  height: 80px;
+  clear: both;
+  background-color: #BFD5E2;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body:before {
+  content: "";
+  height: 100%;
+  float: left;
+  width: 0;
+  margin-top: -32767px;
+
+}

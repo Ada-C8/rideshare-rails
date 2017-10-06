@@ -1,0 +1,32 @@
+<%= render partial: "layouts/error_messages", locals: { model: @trip} %>
+
+  <%= form_for @trip,  :html => {:class => 'form'}  do |f| %>
+
+    <%= f.label :driver_id %>
+    <% if @trip.driver_id.nil? %>
+      <%= f.collection_select( :driver_id, @drivers, :id, :name, :selected => @drivers.sample.id )%>
+    <% else %>
+      <%= f.number_field :driver_id %>
+    <% end %>
+
+    <% if @trip.passenger_id %>
+    <%= f.hidden_field :passenger_id %>
+    <%else %>
+    <%= f.label :passenger_id %>
+    <%= f.number_field :passenger_id %>
+      <% end %>
+    <%= f.label :date %>
+    <%= f.date_field :date, value: Date.today%>
+
+    <%# value: @trip.cost_in_dollars make the cost display in decimal form %>
+    <%#  step: :any allow the user to increment the cost by any amount, not just in increments of 1) %>
+    <%= f.label :cost %>
+    <%= f.number_field :cost, value: @trip.cost_in_dollars, step: :any %>
+
+    <%# will only display the rating box if the trip already has a rating.... so it won't display in the new form, but it will display in the edit form %>
+    <% if @trip.rating %>
+      <%= f.label :rating %>
+      <%= f.number_field :rating %>
+    <% end %>
+    <%= f.submit %>
+  <% end %>

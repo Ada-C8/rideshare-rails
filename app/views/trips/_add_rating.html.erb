@@ -1,0 +1,6 @@
+<%= form_for @trip, :html => {:class => 'form'} do |f| %>
+    <%= f.label :rating %>
+    <%= f.number_field :rating %>
+
+    <%= f.submit "Add rating" %>
+<% end %>

@@ -1,0 +1,66 @@
+<%# TODO: make every td a link to the show page for that trip! %>
+<% if model.trips.count > 0 %>
+  <table>
+    <thead>
+    <tr>
+      <th>
+        Trip ID
+      </th>
+      <th>
+        Date
+      </th>
+      <th>
+        Passenger ID
+      </th>
+      <th>
+        Driver ID
+      </th>
+      <th>
+        Cost
+      </th>
+      <th>
+        Rating
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+
+      <%# display trip in decending order by date %>
+    <% all_trips = model.trips.order(:date) %>
+    <% all_trips.each do |trip| %>
+    <tr>
+
+      <td>
+        <%= link_to trip.id, trip_path(trip) %>
+      </td>
+      <td>
+        <%= link_to trip.date, trip_path(trip) %>
+      </td>
+      <td>
+        <%=  link_to trip.passenger_id, trip_path(trip) %>
+      </td>
+      <td>
+        <%=  link_to trip.driver_id, trip_path(trip) %>
+      </td>
+      <td>
+        <%# TODO: move this logic somewhere else? %>
+
+        $<%=  link_to (trip.cost.to_f/100).round(2), trip_path(trip) %>
+
+      </td>
+      <td>
+        <% if trip.rating %>
+          <%=  link_to trip.rating, trip_path(trip) %>
+        <% else %>
+          <%= link_to "Unrated", trip_path(trip) %>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <% else %>
+    <p class="no-trips">
+      <%= model.name %> has no trips
+    </p>
+  <% end %>

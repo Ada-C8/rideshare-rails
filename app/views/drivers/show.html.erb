@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <h1 class = "driver-header"><%= @driver.name %>'s Details</h1>
+  <%# trip_list =  trips.find_all[:driver_id] %>
+  <section>
+    <nav id = "driver-nav">
+      <li>
+      <%= link_to "Edit", edit_driver_path(@driver) %>
+    </li>
+    <li>
+      <%= link_to "Delete", driver_path(@driver), method: :delete, data: {confirm: "Are you sure you want to delete this driver?"} %>
+    </li>
+    </nav>
+
+    <ul>
+      <li>
+          Earnings: <%= @driver.total_cost %>
+      </li>
+      <li>
+        Rating: <%= @driver.rating %>
+      </li>
+      <li>
+      Trips:
+      <%= render partial: "layouts/all_trips", locals: { model: @driver} %>
+      </li>
+
+    </ul>
+  </div>
