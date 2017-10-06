@@ -7,7 +7,6 @@
   <p>Average Rating: <%= @driver.average_rating %> </p>
   <p>Money Made: $<%= @driver.total_cost %> </p>
   <%= link_to "Trips", driver_trips_path(@driver.id) %>
-  <%= link_to "New Trip", new_driver_trip_path(@driver.id) %>
   <%= link_to "Edit", edit_driver_path(@driver.id) %>
   <%= link_to "Delete", driver_path(@driver.id), method: :delete %>
 <% end %>
