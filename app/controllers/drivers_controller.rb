@@ -14,7 +14,6 @@ class DriversController < ApplicationController
   end
 
   def create
-    # @driver = Driver.new(name: params[:driver][:name], vin: params[:driver][:vin])
     @driver = Driver.new(driver_params)
 
     if @driver.save
@@ -46,11 +45,8 @@ class DriversController < ApplicationController
 
   def destroy
     driver = Driver.find(params[:id])
-    if driver.destroy
-      redirect_to drivers_path
-    else
-      #if unsuccessful show an error
-    end
+    driver.destroy
+    redirect_to drivers_path
   end
 
   def by_rating

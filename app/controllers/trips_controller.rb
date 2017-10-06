@@ -28,7 +28,11 @@ class TripsController < ApplicationController
     result = @trip.update(trip_params)
 
     if result
-      redirect_back(fallback_location: trip_path(@trip.id))
+      if request.referer.include?(edit_trip_path)
+        redirect_to trip_path(@trip.id)
+      else
+        redirect_back(fallback_location: trip_path(@trip.id))
+      end
     else
       render :edit
     end
@@ -38,11 +42,7 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     result = @trip.destroy
 
-    if result
-      redirect_to passenger_path(@trip.passenger_id)
-    else
-      # error
-    end
+    redirect_to passenger_path(@trip.passenger_id)
   end
 
   private

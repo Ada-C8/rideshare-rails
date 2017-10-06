@@ -40,11 +40,8 @@ class PassengersController < ApplicationController
 
   def destroy
     passenger = Passenger.find(params[:id])
-    if passenger.destroy
-      redirect_to passengers_path
-    else
-      #if unsuccessful show an error
-    end
+    passenger.destroy
+    redirect_to passengers_path
   end
 
   private
