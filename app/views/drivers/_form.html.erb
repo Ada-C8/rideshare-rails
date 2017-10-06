@@ -1,5 +1,11 @@
 <% button_text ||= "" %>
 
+<% if @driver.errors.any? %>
+  <% @driver.errors.each do |column, message| %>
+    <h2 class="error-color align-center"><%= column.capitalize %> <%= message %></h2>
+  <% end %>
+<% end %>
+
 <div class="detail-wrapper">
   <%= form_for @driver do |f| %>
     <div class="form-box-wrapper">
