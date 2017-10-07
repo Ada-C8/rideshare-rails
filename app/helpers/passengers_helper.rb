@@ -1,0 +1,3 @@
+module PassengersHelper
+
+end

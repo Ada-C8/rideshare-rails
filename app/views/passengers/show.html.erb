@@ -1,0 +1,58 @@
+<!-- require 'app/helpers/application_helper' -->
+<h1>Passengers#show</h1>
+<%= "Hi my name is #{@passenger.name}.  You can reach me at #{@passenger.phone_num}.  I have spent $#{@passenger.total_spent}" %>
+<hr />
+
+<% if @current_trip %>
+Current Trip ID: <%= link_to(@current_trip.id, trip_path(@current_trip.id))  %>
+<ul>
+  <li>Date: <%=@current_trip.date%>
+  </li>
+  <li>
+    Driver: <%= link_to(@current_trip.driver.name, driver_path(@current_trip.driver.id)) %>
+  </li>
+  <li>
+    <%if !@current_trip.rating %>
+    Rating : <%= link_to "Incomplete Rating", edit_trip_path(@current_trip.id) %>
+    <% else %>
+    Rating: <%= rating_format(@current_trip.rating) %>
+  </li>
+    <% end %>
+  <li>
+    <%if !@current_trip.cost %>
+    Rating : <%= link_to "Incomplete Cost", edit_trip_path(@current_trip.id) %>
+    <% else %>
+    Cost: <%= money_format(@current_trip.cost) %>
+  </li>
+  <% end %>
+</ul>
+<hr />
+<%end %>
+<%=link_to "make new trip", new_trip_path(:passenger => "#{@passenger.id}") %>
+<hr />
+<% if !@trips.empty? %>
+<% @trips.each do |trip| %>
+<% if trip.rating %>
+Trip ID: <%= link_to(trip.id, trip_path(trip.id))  %>
+<ul>
+  <li>Date: <%=trip.date%>
+  </li>
+  <li>
+    Driver: <%= link_to(trip.driver.name, driver_path(trip.driver.id)) %>
+  </li>
+  <li>
+    Rating: <%= trip.rating %>
+  </li>
+  <li>
+    Cost: <%= money_format(trip.cost) %>
+  </li>
+</ul>
+<% end %>
+<% end %>
+<% else %>
+<p>
+  This passenger has not gone on any rides wow.
+</p>
+
+<% end %>
+<p>Find me in app/views/passengers/show.html.erb</p>

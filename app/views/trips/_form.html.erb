@@ -1,0 +1,19 @@
+<% if @trip.errors.any? %>
+  <ul class="errors">
+    <% @trip.errors.each do |column, message| %>
+      <li>
+        <strong><%= column.capitalize %></strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @trip do |f| %>
+<%= f.label :rating %>
+<%= f.text_field :rating %>
+
+<%= f.label :cost %>
+$<%= f.text_field :cost %>
+
+<%= f.submit %>
+<% end %>

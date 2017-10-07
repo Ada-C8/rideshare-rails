@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  driver_id: 1
+  passenger_id: 1
+  date: 2017-10-02
+
+two:
+  driver_id: 1
+  passenger_id: 1
+  date: 2017-10-02

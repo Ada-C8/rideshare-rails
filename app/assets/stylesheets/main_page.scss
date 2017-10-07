@@ -1,0 +1,62 @@
+// Place all the styles related to the MainPage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@keyframes transparent_cat {
+  0% {
+    opacity: 0.0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100%{
+    opacity: 1.0;
+  }
+
+}
+@keyframes transparent_text {
+  0% {
+    opacity: 0.0;
+  }
+  75% {
+    opacity: 0.25;
+  }
+  85% {
+    opacity: 0.5;
+  }
+  95% {
+    opacity: 0.75;
+  }
+  100%{
+    opacity: 1.0;
+  }
+
+}
+body {
+  background-color: black;
+}
+
+img {
+  animation-name: transparent_cat;
+  animation-duration: 10s;
+  animation-iteration-count: 1;
+}
+
+
+#draggable {
+  background-color: black;
+  border-color: color;
+  p {
+  color: white;
+  font-style: oblique;
+  font-size: 2em;
+  animation-name: transparent_text;
+  animation-duration: 10s;
+  animation-iteration-count: 1;
+  }
+}
