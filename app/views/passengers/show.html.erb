@@ -1,0 +1,76 @@
+<h1>Passenger Info</h1>
+
+<div class="notice">
+  <%= flash[:notice] %>
+</div>
+
+<div class="left">
+  <ul class="info">
+    <li>
+      Name: <%=@passenger[:name] %>
+    </li>
+    <li>
+      Phone Number: <%= @passenger[:phone_num] %>
+    </li>
+    <li>
+      Total Spent: <%= number_to_currency(@passenger.total_cost, precision: 2) %>
+    </li>
+  </ul>
+
+  <div class="pass_buttons">
+    <ul>
+      <li class="edit"><!-- <%=link_to("Edit Passenger", edit_passenger_path(@passenger.id)) %> -->
+        <%=button_to("Edit Passenger", edit_passenger_path(@passenger.id), method: :get)%>
+      </li>
+
+      <li class="delete">
+        <!-- <%= link_to("Delete Passenger", delete_passenger_path, method: :delete, data: { confirm: "Are you sure?" })%> -->
+        <%=button_to("Delete Passenger", delete_passenger_path, method: :delete, data: {confirm: "Are you sure?" })%>
+      </li>
+
+      <li class="new">
+        <!-- <%= link_to("New Trip", create_trip_passenger_path(@passenger.id), method: :post) %> -->
+        <%=button_to("New Trip", create_trip_passenger_path(@passenger.id), method: :post)%>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="right">
+  <table class="trips-list">
+    <caption>
+      Trips
+    </caption>
+    <tr>
+      <th class="trip-date">
+        <%= toggle_sort("date") %>
+      </th>
+      <th class="trip-cost">
+        <%= toggle_sort("cost") %>
+        <%# link_to("Cost", :sort => "cost") %>
+      </th>
+      <th class="trip-rating">
+        <%= toggle_sort("rating") %>
+        <%# link_to("Rating", :sort => "rating") %>
+      </th>
+    </tr>
+    <% @trips.each do |trip| %>
+    <tr>
+      <td class="trip-date">
+        <%= link_to trip.date, trip_path(trip.id) %>
+      </td>
+      <td class="trip-cost">
+        <%= link_to number_to_currency(trip.cost, precision: 2), trip_path(trip.id) %>
+      </td class="trip-rating">
+      <% @rated = trip.rating == nil || trip.rating == 0 ? "unrated" : "rated" %>
+      <% @rating = @rated == "rated" ? trip.rating : "Rate Trip" %>
+      <% @path = @rated == "rated" ? trip_path(trip.id) : edit_trip_path(trip.id) %>
+      <td class="<%= @rated %>">
+        <%= link_to @rating, @path %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+
+</div>

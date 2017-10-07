@@ -1,0 +1,33 @@
+<h1>Trip on <%= @trip.date %></h1>
+
+<div class="notice">
+  <%= flash[:notice] %>
+</div>
+
+<p>
+  Cost: <%= number_to_currency(@trip.cost, precision: 2) %>
+</p>
+
+<p>
+  <% @rated = @trip.rating == 0 || @trip.rating == nil ? "unrated" : "rated" %>
+  Rating: <span class="<%=@rated%>"><%= @trip.rating %></span>
+</p>
+
+<p>
+  <% @driver = Driver.find_by(id: @trip.driver_id) %>
+  Driver was: <%= link_to(@driver.name, driver_path(@driver.id)) %>
+</p>
+
+
+<p>
+  <% @passenger = Passenger.find_by(id: @trip.passenger_id) %>
+   Passenger was: <%= link_to(@passenger.name, passenger_path(@passenger.id)) %>
+</p>
+
+<p>
+  <%= link_to("Delete Trip", delete_trip_path(@trip.id),method: :delete) %>
+</p>
+
+<p>
+  <%= link_to("Edit Trip", edit_trip_path(@trip.id)) %>
+</p>

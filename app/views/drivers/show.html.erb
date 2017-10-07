@@ -1,0 +1,63 @@
+<h1>Driver Details</h1>
+
+<div class="notice">
+  <%= flash[:notice] %>
+</div>
+
+<div class="left">
+
+  <ul class="info">
+    <li>
+      Name: <%= @driver.name %>
+    </li>
+    <li>
+      VIN number: <%= @driver.vin %>
+    </li>
+    <li>
+      Average rating: <%= @driver.average_rating.round(1) %>
+    </li>
+    <li>
+      Total earnings: <%= number_to_currency(@driver.total_earnings, precision: 2) %>
+    </li>
+  </ul>
+
+  <div class="buttons">
+    <ul>
+      <li class="edit">
+        <%# link_to("Edit Driver", edit_driver_path, alt: "Edit Driver form") %>
+        <%= button_to("Edit Driver", edit_driver_path, method: :get) %>
+      </li>
+      <li class="delete">
+        <%# link_to("Delete Driver", delete_driver_path, method: :delete, data: { confirm: "Are you sure?" }) %>
+        <%= button_to("Delete Driver", delete_driver_path, method: :delete) %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="right">
+  <table class="trips-list">
+    <caption>
+      Trips
+    </caption>
+    <tr>
+      <th class="trip-date">
+        <%= toggle_sort("date") %>
+      </th>
+      <th class="trip-cost">
+        <%= toggle_sort("cost") %>
+      </th>
+    </tr>
+    <% @trips.each do |trip| %>
+    <tr>
+      <td class="trip-date">
+        <%= link_to(trip.date, trip_path(trip.id)) %>
+      </td>
+      <td class="trip-cost">
+        <%= link_to(number_to_currency(trip.cost), trip_path(trip.id)) %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+
+</div>

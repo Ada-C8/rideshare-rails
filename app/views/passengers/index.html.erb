@@ -1,0 +1,30 @@
+<h1>Passengers</h1>
+
+<!-- <div class="apple_pagination">
+  <div class="page_info">
+    <%= page_entries_info @posts %>
+  </div>
+  <%= will_paginate @posts, :container => false %>
+</div> -->
+
+<div class="apple_pagination"><%= will_paginate @passengers %></div>
+
+
+
+<!-- <p>Find me in app/views/passengers/index.html.erb</p> -->
+<% @notice_type = flash[:notice] ? "notice" : "error" %>
+<div class="<%=@notice_type%>">
+  <%= flash[:notice] %>
+  <%= flash[:error] %>
+</div>
+
+
+
+<ul class="driver_passenger_list">
+  <% @passengers.each do |passenger| %>
+  <li>
+    <div><%= link_to(image_tag("rider.png"), passenger_path(passenger.id)) %></div>
+    <div><%=link_to(passenger.name, passenger_path(passenger.id)) %></div>
+  </li>
+  <% end %>
+</ul>

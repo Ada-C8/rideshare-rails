@@ -1,0 +1,136 @@
+// Place all the styles related to the drivers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$btn-height: 2.5rem;
+
+.icon {
+  border-style: solid;
+  height: 220px;
+  width: 220px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: lighter;
+  padding: 1rem 0 2rem 0;
+}
+
+/* ==== STYLE LAYOUT === */
+.left, .right {
+  display: inline-block;
+}
+
+.left {
+  min-width: 285px;
+  width: 44%;
+  vertical-align: top;
+}
+
+.right {
+  width: 45%;
+}
+
+.right table {
+  min-width: 250px;
+  width: 70%;
+}
+
+.left, .right {
+  margin: 0 1.75rem;
+}
+
+/* ==== LINKS TO EDIT/DELETE STYLING ==== */
+.buttons {
+  padding-top: 3rem;
+}
+
+.buttons li {
+  display: inline-block;
+  width: 30%;
+  height: $btn-height;
+  text-align: center;
+}
+
+.edit input, .delete input {
+  -webkit-appearance: none;
+  width: 100%;
+  height: $btn-height;
+  text-align: center;
+  border-style: none;
+  background-color: inherit;
+  color: inherit;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+
+.edit:hover, .delete:hover {
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+}
+
+/* ==== TABLE STYLING ==== */
+th {
+  font-family: "Quicksand", Arial, sans-serif;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+table {
+  border-spacing: 5px;
+  margin-left: 8%;
+}
+
+table caption {
+  font-size: 1.75rem;
+}
+
+table td, table th {
+  font-size: 1.25rem;
+}
+
+td, th {
+  padding: 2px;
+  text-align: center;
+  width: 30%;
+}
+
+th a {
+  font-size: 1.5rem;
+}
+
+/* icons for showing current sort field/direction */
+.current {
+  padding-right: 30px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.ASC {
+  background-image: image-url("up_arrow.png");
+  background-size: contain;
+}
+
+.DESC {
+  background-image: image-url("down_arrow.png");
+  background-size: contain;
+}
+
+.trip-date {
+  // width: 20%;
+  text-align: left;
+}
+
+.trip-cost {
+  // width: 10%;
+}
+
+.trip-rating {
+  // width: 10%;
+}
+
+.unrated a:link, .unrated a:visited {
+  color: blue;
+  font-weight: bold;
+}

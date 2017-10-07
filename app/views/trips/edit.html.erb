@@ -1,0 +1,63 @@
+<h1>Trip Info</h1>
+
+<!-- stuff you can't edit -->
+<div class="notice">
+  <%= flash[:notice] %>
+</div>
+
+<p>
+  <%= @trip.date %>
+</p>
+
+<p>
+  <%= number_to_currency(@trip.cost, precision: 2) %>
+</p>
+
+
+<!-- ADDED THIS TO RAISE AN ERROR IF AN ADMIN/USER EDITS A RIDE BUT REMOVES THE RATING.
+
+BUT! WHEN YOU ADD THE VALIDATION FOR RATING IN THE TRIP MODEL, YOU CAN NO LONGER CREATE A NEW RIDE FOR A PASSENGER BECAUSE THE THE NEW RIDE IS NOT CREATED WITH A RATING
+
+SO I ADDED A SECTION WHEN YOU INSTANTIATE A TRIP TO INCLUDE A RATING OF 0.
+
+BECAUSE OF THIS, I UPDATED THE AVERAGE RATING METHOD TO ACCOUNT FOR ONLY ACCOUNTING FOR RATINGS THAT ARE != NIL && != 0-->
+
+
+ <% if @trip.errors.any? %>
+   <ul class="errors">
+     <% @trip.errors.each do |column, message| %>
+       <li>
+         <strong><%= column.capitalize %></strong> <%= message %>
+       </li>
+     <% end %>
+   </ul>
+ <% end %>
+
+
+<%= form_for @trip do |f| %>
+  <%= f.label :rating, id: "rating-label" %>
+  <%# f.text_field :rating %>
+  <%= f.radio_button :rating, 1 %>
+  <%= f.label :rating, "1 (Terrible)", :value => 1 %>
+
+  <%= f.radio_button :rating, 2 %>
+  <%= f.label :rating, "2 (Not so good)", :value => 2 %>
+
+  <%= f.radio_button :rating, 3 %>
+  <%= f.label :rating, "3 (Can't complain)", :value => 3 %>
+
+  <%= f.radio_button :rating, 4 %>
+  <%= f.label :rating, "4 (Pretty good)", :value => 4 %>
+
+  <%= f.radio_button :rating, 5 %>
+  <%= f.label :rating, "5 (Great!)", :value => 5 %>
+
+  <%# f.number_field(:rating, in: 1..5) %>
+
+  <div class="passenger">
+    <%= f.label "Passenger Name", id: "passenger-label" %>
+    <%= f.select :passenger_id, options_from_collection_for_select(Passenger.all, "id", "name", selected: @trip.passenger_id ) %>
+  </div>
+  
+  <%= f.submit %>
+<% end %>
