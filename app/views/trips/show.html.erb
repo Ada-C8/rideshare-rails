@@ -7,6 +7,8 @@
     <%= link_to("Delete Trip", delete_trip_path(@trip.id), method: :delete, data: {confirm: "Are you sure you would like to delete this trip?"}) %>
   </section>
 
+<section class="trip-details-container-big">
+
   <ul class="trip-details-container">
     <li>
       <strong>Trip ID:</strong>
@@ -46,5 +48,7 @@
       <%= link_to(@trip.driver.name, driver_path(@trip.driver.id)) %>
     </li>
   </ul>
+
+</section>
 
 </section>

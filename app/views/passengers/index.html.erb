@@ -1,7 +1,13 @@
 <!-- <h1>Passengers#index</h1> -->
 <!-- hotkey command for rails equal sign and tab -->
 
-<h1 class="people-list-header">Popstar Passengers</h1>
+<section class="people-list-header">
+  <h1>Popstar Passengers</h1>
+
+  <div class="home-logo-index">
+    <%=image_tag("purple-logo.png", alt: "Logo", height:"100")%>
+  </div>
+</section>
 
 <ul class="name-columns">
   <% @passengers.each do |passenger| %>

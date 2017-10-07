@@ -3,9 +3,16 @@
 //   padding-top: 50px;
 // }
 
+.home-logo-index {
+  max-height: 10px;
+}
+
 
 .people-list-header {
-  text-align: center
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+
 }
 
 .name-columns {
@@ -125,13 +132,15 @@ tr:hover {
 // TRIP#SHOW
 
 .trip-details-container {
-  // display: flex;
   line-height: 1.5em;
   list-style: none;
   text-align: left;
-  // flex-direction: column;
-  margin-left: 325px;
   margin-top: 25px;
+}
+
+.trip-details-container-big {
+  display: flex;
+  justify-content: center;
 }
 
 .trip-show-container {
