@@ -38,7 +38,7 @@ class TripsController < ApplicationController
   def update
     @trip = Trip.find(params[:id])
     result = @trip.update({rating: params[:trip][:rating]})
-    
+
       if result
         redirect_to "/passengers/#{params[:passenger_id]}"
       else
@@ -48,11 +48,18 @@ class TripsController < ApplicationController
 
   def destroy
     trip = Trip.find(params[:id])
-    passenger_id = trip.passenger.id
+    # passenger_id = trip.passenger.id
     # driver_id = trip.driver.id
     trip.destroy
 
-    redirect_to passenger_path(passenger_id)
+    redirect_to root_path
+
+    ### NOTE ###
+    #Ideally we would have liked to be able to direct to passenger page if passenger deleted the trip
+    #and to driver page if the driver deleted the page
+    #we have a hunch that we have to do nested routes and modify our controller form
+
+
     # if params[:passenger_id] != nil
     #   redirect_to passenger_path(passenger_id)
     # else
