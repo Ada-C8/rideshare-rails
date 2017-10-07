@@ -140,7 +140,21 @@ tr:hover {
 }
 
 // TRIP#edit
-.trip-form-container {
+.trip-edit-form-container {
   display: flex;
   justify-content: center;
 }
+
+.trip-edit-line1 {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.trip-edit-box {
+  margin-right: 10px;
+}
+
+// .trip-edit-save {
+//   margin-left: 10px;
+// }

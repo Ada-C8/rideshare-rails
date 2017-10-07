@@ -15,21 +15,28 @@
   <% end %>
 </section>
 
-<section class="trip-form-container">
+<section class="trip-edit-form-container">
   <%= form_for @trip do |f| %>
-    <%= f.label "Passenger" %>
-    <%= f.select :passenger_id, options_from_collection_for_select(Passenger.all, "id", "name", :selected => @trip.passenger.id) %>
+    <div class="trip-edit-line1">
+      <div class="trip-edit-box">
+        <%= f.label "Passenger" %>
+        <%= f.select :passenger_id, options_from_collection_for_select(Passenger.all, "id", "name", :selected => @trip.passenger.id) %>
+      </div>
 
-    <%= f.label :date %>
-    <%= f.date_field :date, :selected => @trip.date %>
+      <div class="trip-edit-box">
+        <%= f.label :date %>
+        <%= f.date_field :date, :selected => @trip.date %>
+      </div>
+    </div>
 
-    <%= f.label "Trip Rating:" %>
-    <%= f.select :rating, options_for_select([1,2,3,4,5], :selected => @trip.rating) %>
+        <%= f.label "Driver:" %>
+        <%= f.select :driver_id, options_from_collection_for_select(Driver.all, "id", "name", :selected => @trip.driver.id) %>
 
-    <%= f.label "Driver:" %>
-    <%= f.select :driver_id, options_from_collection_for_select(Driver.all, "id", "name", :selected => @trip.driver.id) %>
+        <%= f.label "Trip Rating:" %>
+        <%= f.select :rating, options_for_select([1,2,3,4,5], :selected => @trip.rating) %>
 
-    <%= f.submit "Save Data"%>
+        <%= f.submit "Save Data"%>
+
   <% end %>
 </section>
 
