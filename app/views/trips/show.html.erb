@@ -1,7 +1,19 @@
-<h2>Show the trip!!!</h2>
-    <%= @trip.passenger.name %>
-    <%= @trip.driver.name %>
-    <%= "Cost of trip: #{@trip.cost/100.round(2)}" %>
-    <%= "Trip rating: #{@trip.rating}" %>
+<h2>Your Trip Details</h2>
+
+<table>
+  <tr>
+    <th>Passenger Name</th>
+    <th>Driver Name</th>
+    <th>Cost of Trip</th>
+    <th>Trip Rating</th>
+  </tr>
+  <tr>
+    <td><%= @trip.passenger.name %></td>
+    <td><%= @trip.driver.name %></td>
+    <td><%= "$#{@trip.cost/100.round(2)}" %></td>
+    <td><%= "#{@trip.rating}" %></td>
+  </tr>
+</table>
+
     <%= link_to "Edit rating", edit_trip_path %>
     <%= button_to "Delete", trip_path(@trip.id), method: :delete %>

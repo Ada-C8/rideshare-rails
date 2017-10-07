@@ -2,16 +2,15 @@
 <html>
 <head>
   <title>KabuKabu</title>
-  <!-- <link rel="shortcut icon" type="image/png" href="tourism.png" /> -->
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
 </head>
 
 <body>
   <header>
     <h1>
+      <%= image_tag("tourism.png", :alt => "tuk tuk image") %>
       <%=link_to "KabuKabu", '/', method: :get%>
     </h1>
     <div class="header_link">
@@ -25,11 +24,12 @@
   <main>
     <%= yield %>
   </main>
-  
+
   <footer>
-    <p>
-      N&B Inc
-    </p>
+    <div>
+        N&B Inc
+    </div>
+
   </footer>
 </body>
 </html>

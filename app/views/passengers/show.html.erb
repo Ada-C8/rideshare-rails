@@ -14,19 +14,21 @@
 <!-- number of trips -->
 <!-- Need to create list of trips taken with a link to the trip details   -->
 
-<%= "Passenger #{@passenger.name} has taken #{@passenger.trips.length} trip(s)" %>
+<%= "#{@passenger.name} has taken #{@passenger.trips.length} trip(s)" %>
 
-<ol>
+<table>
+  <tr>
+    <th>Trip Number</th>
+    <th>Driver ID</th>
+    <th>Cost of Trip</th>
+    <th>Trip Rating</th>
+  </tr>
 <% @passenger.trips.each do |trip| %>
-<li>
-  <%= link_to "Trip #{trip.id}", trip_path(trip.id) %>
-  <%= "Driver Id: #{trip.driver_id}" %>
-  <%= "Cost of trip: $#{trip.cost/100.round(2)}" %>
-  <%= "Trip rating: #{trip.rating}" %>
-</li>
-<% end %>
-</ol>
-
-
-
-<!-- Need to add button to add new trip  -->
+<tr>
+  <td><%= link_to "Trip #{trip.id}", trip_path(trip.id) %></td>
+  <td><%= "Driver Id: #{trip.driver_id}" %></td>
+  <td><%= "Cost of trip: $#{trip.cost/100.round(2)}" %></td>
+  <td><%= "Trip rating: #{trip.rating}" %></td>
+  </tr>
+  <% end %>
+</table>
