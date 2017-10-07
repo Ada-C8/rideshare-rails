@@ -6,7 +6,6 @@ class Driver < ApplicationRecord
     trips = self.trips
     sum = 0
     trips.each do |trip|
-      # sum += trip.cost if trip.cost * (1 - 0.15)
       if trip.cost
         app_cut = trip.cost * (0.15)
         sum += trip.cost - app_cut

@@ -1,14 +1,31 @@
-<h1>Passengers#index</h1>
+<h1>Passengers</h1>
+<table class="table">
+  <th>
+    Passenger ID
+  </th>
+  <th>
+    Name
+  </th>
+  <th>
+    Modify
+  </th>
+</tr>
 <% @passengers.each do |passenger| %>
+<tr>
+<td>
+<article class="listing">
 Passenger ID: <%= passenger.id %>
-<ul>
-  <li>Name:
+</td>
+<td>
     <strong><%= link_to(passenger.name, passenger_path(passenger.id)) %></strong>
-  </li>
-  <li>
+</td>
+<td>
     <strong><%= link_to "edit", edit_passenger_path(passenger.id) %></strong>
     <strong><%=link_to "delete", passenger_path(passenger.id), method: :delete, data: { confirm: "ru sure" } %></strong>
-  </li>
-</ul>
+
+</td>
+</article>
 <% end %>
+</table>
+
 <p>Find me in app/views/passengers/index.html.erb</p>

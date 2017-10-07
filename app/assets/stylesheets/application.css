@@ -17,7 +17,9 @@
    width: 250px;
    height: 100px;
    padding: 0.5em;
-   display:hidden }
+   opacity: 0.5;
+  font-style: oblique;
+}
 
 
 nav {
@@ -26,6 +28,9 @@ nav {
   height: 10%;
   width: 100%;
   box-shadow: #AAA 0px 10px 40px;
+  top: 0;
+  left: 0;
+  /*padding-top: 5px;*/
 }
 nav h1 {
   margin-left: 5%;
@@ -52,19 +57,49 @@ nav h1 {
   font-weight: bolder;
 }
 
+.container {
+  margin-top: 100px;
+}
+
 .content {
-  padding-top: 100px;
+  /*padding-top: 100px;*/
   margin-left: 10%;
   margin-right: 40%;
-  max-height: 500px;
+  height: 500px;
   overflow-y: scroll;
   background-color: #e5e5ea;
   border-radius: 10%;
+  width: 50%;
+
+}
+
+.content h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+.table {
+  clear: both;
+  display: block;
+  margin-left: 10%;
+}
+
+.table td {
+  padding: 10px;
+}
+
+.table th {
+  font-style: oblique;
+}
+
+.listing {
+  width: 150px;
 }
 
 
+
 .cat {
-  margin-left: 40%;
+  margin-left: 45%;
   position: absolute;
-  top: 40%;
+  top: 35%;
 }

@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#draggable" ).draggable();
+  } );
+  </script>
 <html>
   <head>
     <title>CatsOnRails</title>
@@ -11,7 +20,7 @@
   <body>
     <nav>
       <h1>
-        Cats on Rails
+        <%= link_to "Cats on Rails", root_path %>
       </h1>
       <section class="nav_links">
         <%= link_to "list of passengers", passengers_path %>
@@ -22,19 +31,18 @@
         <%= link_to "create new driver", new_driver_path %>
       </section>
     </nav>
-    <section class =="container">
     <% if params[:controller] == "main_page" %>
     <%= yield %>
     <% else %>
+    <section class="container">
     <section class="content">
-    <article class="yield">
     <% if flash[:notice] %>
     <div class="notice"><%= flash[:notice] %></div>
     <% end %>
-    </article>
     <%= yield %>
   </section>
-  <section class="cat">
+  <section class="cat" id="draggable">
+    do dream belong_to cats
     <%= image_tag 'rail_cat.gif' %>
   </section>
   <%= params %>

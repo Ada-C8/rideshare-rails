@@ -18,10 +18,10 @@ class TripsController < ApplicationController
     @trip.cost = params[:trip][:cost].to_f
     if @trip.save
       flash[:notice] = "Trip #{@trip.id} was successfully updated"
-      redirect_to trip_path(@trip.id)
     else
-      render :edit
+      flash[:notice] = "#{@trip.errors[:passenger][0]} "
     end
+    redirect_to passenger_path(@passenger.id)
   end
 
   def new

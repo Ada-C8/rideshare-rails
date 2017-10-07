@@ -17,7 +17,7 @@ class Passenger < ApplicationRecord
   def current
     trips = self.trips
     trips.each do |trip|
-      if trip.rating == nil
+      if trip.rating == nil || trip.cost == nil
         return trip
       end
     end
