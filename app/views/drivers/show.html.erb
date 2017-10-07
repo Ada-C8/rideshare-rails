@@ -9,17 +9,8 @@
   <%= @driver.total_earnings %>
 </div>
 
-  <% total = 0 %>
-  <% @driver.trips.each do |trip| %>
-  <% "Sub total is #{total += trip.cost}" %>
-  <% end %>
-  <% total_earning = total * (1 - 0.15) %>
-    <%= "driver earned $#{(total_earning/100).round(2)}" %>
-</div>
-
 <div>
   <%= @driver.avg_rating %>
-          <!-- Any chance we could round up if the average is .5 or higher? -->
 </div>
 
 <div>
@@ -29,7 +20,6 @@
 
 <div>
   <ul>
-    this is from html
     <% @driver.trips.each do |trip| %>
       <li>
         <%= link_to "Trip #{trip.id}", trip_path(trip.id) %>

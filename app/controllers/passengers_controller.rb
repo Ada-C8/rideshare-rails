@@ -19,15 +19,15 @@ class PassengersController < ApplicationController
   end
 
   def show
-    @passenger = Passenger.find (params[:id])
+    @passenger = Passenger.find(params[:id])
   end
 
   def edit
-    @passenger = Passenger.find (params[:id])
+    @passenger = Passenger.find(params[:id])
   end
 
   def update
-    @passenger = Passenger.find (params[:id])
+    @passenger = Passenger.find(params[:id])
     @passenger.update_attributes(passenger_params)
     @passenger.save
 
@@ -37,9 +37,9 @@ class PassengersController < ApplicationController
   def destroy
     passenger = Passenger.find(params[:id])
     passenger.destroy
+    
     redirect_to passengers_path
   end
-
 
   private
   def passenger_params
