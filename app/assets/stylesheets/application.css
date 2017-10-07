@@ -54,7 +54,7 @@ header {
 
 header ul {
   padding-left: 50px;
-
+  margin-top: 0;
 }
 
 header li {
@@ -98,12 +98,19 @@ ul {
   list-style: none;
   padding-bottom: 50px;
 }
+
 .lists {
-  /*background-color: magenta;*/
   height: 350px;
   position: relative;
-  width: 500px;
-  
+}
+
+.lists ul {
+  width: 20%;
+  text-align: center;
+  margin-left: calc((100% - 20%)/2);
+  padding-left: 0;
+  padding-bottom: 0;
+  height: 250px;
 }
 
 .apple_pagination {
@@ -117,11 +124,11 @@ ul {
   .apple_pagination a, .apple_pagination span {
     padding: 0.2em 0.3em; }
   .apple_pagination .disabled {
-    color: #aaaaaa; }
+    color: white; }
   .apple_pagination .current {
     font-style: normal;
     font-weight: bold;
-    background-color: #bebebe;
+    background-color: white;
     display: inline-block;
     width: 1.4em;
     height: 1.4em;
@@ -131,8 +138,6 @@ ul {
     border-radius: 1em;
     text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px;
     position: relative;
-
-
   }
 
   .apple_pagination a {
