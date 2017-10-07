@@ -38,7 +38,7 @@ class TripsController < ApplicationController
   def update
     @trip = Trip.find(params[:id])
     result = @trip.update({rating: params[:trip][:rating]})
-    
+
       if result
         redirect_to "/passengers/#{params[:passenger_id]}"
       else
@@ -53,6 +53,7 @@ class TripsController < ApplicationController
     trip.destroy
 
     redirect_to passenger_path(passenger_id)
+    
     # if params[:passenger_id] != nil
     #   redirect_to passenger_path(passenger_id)
     # else

@@ -11,6 +11,6 @@ Rails.application.routes.draw do
     post '/new_trip', to: 'trips#create'
   end
 
-  resources :trips
+  resources :trips, :except => [:index]
   # get '/', to: 'main#index'
 end
