@@ -1,0 +1,54 @@
+<!-- <h1>Trips#show</h1> -->
+<section class="trip-show-container">
+
+  <h1>Trip Details</h1>
+  <section>
+    <%= link_to("Edit Trip", edit_trip_path(@trip.id)) %>
+    <%= link_to("Delete Trip", delete_trip_path(@trip.id), method: :delete, data: {confirm: "Are you sure you would like to delete this trip?"}) %>
+  </section>
+
+<section class="trip-details-container-big">
+
+  <ul class="trip-details-container">
+    <li>
+      <strong>Trip ID:</strong>
+      <%= @trip.id %>
+    </li>
+    <li>
+      <strong>Date:</strong>
+      <%= @trip.date %>
+    </li>
+    <li>
+      <strong>Cost:</strong>
+      $<%= @trip.cost/100 %>
+    </li>
+    <li>
+      <strong>Rating:</strong>
+      <% if @trip.rating %>
+        <%= @trip.rating %>
+      <% else %>
+        <%= form_for @trip do |f| %>
+          <!-- <input type="number" name="rating" id="age" min="1" max="5" step="1"> -->
+          <!-- <%= link_to("Rate this Trip", edit_rating_path) %> -->
+          <!-- <input type="submit" value="Rate This Trip"> -->
+
+          <%= f.label :rating %>
+          <%= f.select :rating, options_for_select([1,2,3,4,5]) %>
+          <%= f.submit "Update Rating"%>
+
+        <% end %>
+      <% end %>
+    </li>
+    <li>
+      <strong>Passenger Name:</strong>
+      <%= link_to(@trip.passenger.name, passenger_path(@trip.passenger.id)) %>
+    </li>
+    <li>
+      <strong>Driver Name:</strong>
+      <%= link_to(@trip.driver.name, driver_path(@trip.driver.id)) %>
+    </li>
+  </ul>
+
+</section>
+
+</section>

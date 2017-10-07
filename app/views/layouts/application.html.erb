@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KaraokeCab</title>
+    <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i|Open+Sans:300,400,600i,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- <link rel=icon href="purple-logo.png"> -->
+  </head>
+
+  <body>
+    <!-- <em><p>Params are: <%= params %></p></em> -->
+
+
+    <header>
+      <strong><h2><%= link_to("Karaoke Cab", home_path, alt:'homepage')%></h2></strong>
+      <nav>
+        <ul>
+          <li>
+            <%= link_to("All Passengers |", passengers_path) %>
+          </li>
+          <li>
+            <%= link_to("Add Passenger |", new_passenger_path) %>
+          </li>
+          <li>
+            <%= link_to("All Drivers |", drivers_path)  %>
+          </li>
+          <li>
+            <%= link_to("Add Driver ", new_driver_path) %>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <%= yield %>
+
+  </body>
+</html>

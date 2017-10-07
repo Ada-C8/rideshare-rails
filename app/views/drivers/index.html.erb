@@ -1,0 +1,20 @@
+<!-- <h1>Drivers#index</h1> -->
+
+<section class="people-list-header">
+  <h1>DJ Drivers</h1>
+  <div class="home-logo-index">
+    <%=image_tag("purple-logo.png", alt: "Logo", height:"100")%>
+  </div>
+</section>
+
+<ul class="name-columns">
+  <% @drivers.each do |driver| %>
+  <li>
+    <%= link_to(driver.name, driver_path(driver.id), alt:'Link to show driver show view')%>
+  </li>
+  <% end %>
+</ul>
+
+<footer class="index-footer">
+  <h3>&copy; 2017</h3>
+</footer>

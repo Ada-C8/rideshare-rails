@@ -1,0 +1,67 @@
+  <!-- <h1>Passengers#show</h1> -->
+<div class="container">
+  <section class="profile">
+    <img src="http://fillmurray.com/200/200">
+    <div class="contact-info">
+      <h2><%= @passenger.name %></h2>
+      <h3><%= @passenger.phone_num %></h3>
+      <section class="edit-delete-menu">
+        <div><%= link_to("Edit Profile Info", edit_passenger_path(@passenger.id)) %></div>
+        <div><%= link_to("Delete Passenger", delete_passenger_path(@passenger.id), method: :delete, data: {confirm: "Are you sure you would like to delete this passenger?"}) %></div>
+      </section>
+    </div>
+  </section>
+
+  <section class="add-trip">
+    <%= link_to("Add A New Trip", create_trip_path(:passenger => @passenger), method: :post) %>
+  </section>
+
+  <section class="stats-summary">
+    <section>
+      <h3>Total Charges (All Trips): $<%= (@passenger.total_charged)/100 %></h3>
+    </section>
+  </section>
+
+  <%if @passenger.trips.empty?%>
+    <section class="no-trips">
+      <p> This person has not yet taken any rides.</p>
+    </section>
+  <%else%>
+    <section>
+      <div class="trip-history">
+        <h2>Trip History:</h2>
+      </div>
+      <section class="trip-history-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Trip ID</th>
+            <th>Date</th>
+            <th>Cost</th>
+            <th>Driver Name</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <% @passenger.trips.each do |t| %>
+          <tr>
+            <td><%= link_to(t.id, trip_path(t.id)) %></td>
+            <td> <%= t.date %></td>
+            <td> <%= format("%.2f", t.cost/100) %></td>
+            <td> <%= t.driver.name  %> </td>
+            <td> <%= t.rating %></td>
+          </tr>
+
+          <% end %>
+        </tbody>
+      </table>
+      </section>
+    </section>
+  <% end %>
+
+</div>
+  <!-- <footer class="add-page-footer">
+    <h3>&copy; 2017</h3>
+  </footer> -->

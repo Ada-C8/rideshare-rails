@@ -1,0 +1,22 @@
+<!-- <h1>Passengers#index</h1> -->
+<!-- hotkey command for rails equal sign and tab -->
+
+<section class="people-list-header">
+  <h1>Popstar Passengers</h1>
+
+  <div class="home-logo-index">
+    <%=image_tag("purple-logo.png", alt: "Logo", height:"100")%>
+  </div>
+</section>
+
+<ul class="name-columns">
+  <% @passengers.each do |passenger| %>
+  <li>
+    <%= link_to(passenger.name, passenger_path(passenger.id), alt:'Link to Show Passenger view')%>
+  </li>
+  <% end %>
+</ul>
+
+<footer class="index-footer">
+  <h3>&copy; 2017</h3>
+</footer>
