@@ -1,0 +1,454 @@
+/* line 6, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.icon {
+  border-style: solid;
+  height: 220px;
+  width: 220px;
+}
+
+/* line 12, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+h1 {
+  text-align: center;
+  font-weight: lighter;
+  padding: 1rem 0 2rem 0;
+}
+
+/* ==== STYLE LAYOUT === */
+/* line 19, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.left, .right {
+  display: inline-block;
+}
+
+/* line 23, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.left {
+  min-width: 285px;
+  width: 44%;
+  vertical-align: top;
+}
+
+/* line 29, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.right {
+  width: 45%;
+}
+
+/* line 33, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.right table {
+  min-width: 250px;
+  width: 70%;
+}
+
+/* line 38, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.left, .right {
+  margin: 0 1.75rem;
+}
+
+/* ==== LINKS TO EDIT/DELETE STYLING ==== */
+/* line 43, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.buttons {
+  padding-top: 3rem;
+}
+
+/* line 47, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.buttons li {
+  display: inline-block;
+  width: 30%;
+  height: 2.5rem;
+  text-align: center;
+}
+
+/* line 54, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.edit input, .delete input {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 2.5rem;
+  text-align: center;
+  border-style: none;
+  background-color: inherit;
+  color: inherit;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+/* line 67, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.edit:hover, .delete:hover {
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+}
+
+/* ==== TABLE STYLING ==== */
+/* line 74, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+th {
+  font-family: "Quicksand", Arial, sans-serif;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+/* line 80, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+table {
+  border-spacing: 5px;
+  margin-left: 8%;
+}
+
+/* line 85, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+table caption {
+  font-size: 1.75rem;
+}
+
+/* line 89, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+table td, table th {
+  font-size: 1.25rem;
+}
+
+/* line 93, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+td, th {
+  padding: 2px;
+  text-align: center;
+  width: 30%;
+}
+
+/* line 99, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+th a {
+  font-size: 1.5rem;
+}
+
+/* icons for showing current sort field/direction */
+/* line 104, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.current {
+  padding-right: 30px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+/* line 110, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.ASC {
+  background-image: url(/assets/up_arrow-7f809cc7be6db79f8782be524f048823195884d7a7a447896f1093f8d3c94f72.png);
+  background-size: contain;
+}
+
+/* line 115, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.DESC {
+  background-image: url(/assets/down_arrow-c2ed6adeb67fd5a9072bb96d009ab6d9aa1861cb915ffde582e426abd0ee509f.png);
+  background-size: contain;
+}
+
+/* line 120, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.trip-date {
+  text-align: left;
+}
+
+/* line 133, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/drivers.scss */
+.unrated a:link, .unrated a:visited {
+  color: blue;
+  font-weight: bold;
+}
+/* reset */
+/* line 8, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/home.scss */
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* default fonts */
+/* line 16, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/home.scss */
+h1 {
+  font-family: "Josefin Sans", Arial, sans-serif;
+  font-size: 2.5rem;
+}
+
+/* line 21, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/home.scss */
+p, ul, li, a, table {
+  font-family: "Quicksand", Arial, sans-serif;
+}
+
+/* === links styling === */
+/* line 26, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/home.scss */
+a:link, a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+/* line 31, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/home.scss */
+li {
+  list-style: none;
+}
+
+/* ==== NAV BAR STYLING ==== */
+/* line 36, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/home.scss */
+.nav-bar {
+  display: inline-block;
+  width: 79%;
+  text-align: right;
+  vertical-align: middle;
+  padding-right: 1rem;
+}
+
+/* line 44, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/home.scss */
+.nav-bar ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* line 49, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/home.scss */
+.nav-bar li {
+  display: inline-block;
+  padding: 1rem;
+}
+
+/* line 54, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/home.scss */
+.nav-bar a {
+  font-family: "Quicksand", Arial, sans-serif;
+  font-size: 1.5rem;
+}
+
+/*.nav-bar a:link, .nav-bar a:visited {
+  color: $default-color;
+  text-decoration: none;
+}*/
+/* ==== HEADER STYLING === */
+/* line 65, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/home.scss */
+.logo {
+  display: inline-block;
+  width: 20%;
+}
+
+/* line 70, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/home.scss */
+.logo a {
+  font-family: "Quicksand", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  vertical-align: middle;
+  padding-left: 2rem;
+}
+
+/* line 78, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/home.scss */
+header {
+  padding: 1rem 0;
+}
+
+/* ==== NOTICES / ERRORS STYLING */
+/* line 84, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/home.scss */
+.notice, .errors, .error {
+  display: block;
+  font-family: "Josefin Sans", Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* line 93, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/home.scss */
+.notice {
+  color: green;
+}
+
+/* line 98, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/home.scss */
+.errors, .error {
+  color: red;
+}
+
+/* prevent error field from changing display from inline-block to block (in div) */
+/* line 103, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/home.scss */
+.field_with_errors {
+  display: inline-block;
+}
+
+/* line 110, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/home.scss */
+h1 {
+  margin-top: 1rem;
+}
+
+/* line 114, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/home.scss */
+input {
+  margin-right: 2rem;
+}
+
+/* line 118, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/home.scss */
+.container {
+  text-align: center;
+  margin: 0;
+  position: fixed;
+  bottom: 0;
+  background-image: url(/assets/background-955f259b09d7d49539c17680b808d0677bfdc2f1a9e22dcde5a2894674868758.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+/* line 132, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/home.scss */
+.welcome-image {
+  width: 100%;
+  height: auto;
+}
+/* line 9, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/passengers.scss */
+.pass_buttons {
+  padding-top: 3rem;
+}
+
+/* line 13, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/passengers.scss */
+.pass_buttons li {
+  display: inline-block;
+  min-width: 30%;
+  height: 2.5rem;
+  text-align: center;
+}
+
+/* line 20, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/passengers.scss */
+.edit input, .delete input, .new input {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 2.5rem;
+  text-align: center;
+  border-style: none;
+  background-color: inherit;
+  color: inherit;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+/* line 32, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/passengers.scss */
+.edit:hover, .delete:hover, .new:hover {
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+}
+
+/* line 40, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/passengers.scss */
+.trip-date, .trip-cost, .rated {
+  text-align: center;
+}
+
+/* line 46, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/passengers.scss */
+.trip-date:hover, .trip-cost:hover, .rated:hover {
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+}
+/* line 9, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/trips.scss */
+header {
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+
+/* line 14, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/trips.scss */
+label {
+  display: inline-block;
+  margin-right: 1rem;
+  font-family: "Quicksand", Arial, sans-serif;
+  padding: 1rem 0;
+}
+
+/* line 21, /Users/cyril/ada/week9/rideshare-rails/app/assets/stylesheets/trips.scss */
+#rating-label {
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+
+
+*/
+
+/* ======= DRIVER/PASSENGER INDEX STYLING ======== */
+
+
+a, a:visited, a:hover, a:active {
+  color: inherit;
+}
+
+.driver_passenger_list {
+  display: inline-block;
+  margin-left: 9%;
+  margin-right: 9%;
+  padding-left: 0;
+  height: 95%;
+  width: 85%;
+}
+
+.driver_passenger_list li {
+  float: left;
+  display: inline;
+  margin: 4% 1% 2% 1%;
+  text-align: center;
+}
+
+.driver_passenger_list li:hover {
+  background-color: yellow;
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+
+.nav li:hover{
+  background-color: yellow;
+  border-radius:50%;
+
+  /*hover size increase*/
+  /*-webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);*/
+
+  /*swing hover*/
+  -webkit-transform: rotateZ(-15deg);
+  -ms-transform: rotateZ(-15deg);
+  transform: rotateZ(-15deg);
+}
+
+/*// PAGINATE*/
+
+.apple_pagination {
+  /*background: #f1f1f1;*/
+  /*border: 1px solid #e5e5e5;*/
+  text-align: center;
+  padding: 1em;
+  cursor: default;
+
+  width: 50%;
+  margin-right: 25%;
+  margin-left: 25%;
+  text-align: center;
+}
+
+.apple_pagination a, .apple_pagination span {
+    padding: 0.2em 0.3em; }
+
+.apple_pagination .disabled {
+    color: #aaaaaa; }
+
+.apple_pagination .current {
+  font-style: normal;
+  font-weight: bold;
+  background-color: #bebebe;
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  line-height: 1.5;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+  text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px;
+}
+
+.apple_pagination a {
+  text-decoration: none;
+  color: black;
+}
+
+.apple_pagination a:hover, .apple_pagination a:focus {
+  text-decoration: underline;
+}
