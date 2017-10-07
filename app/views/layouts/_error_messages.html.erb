@@ -1,13 +1,15 @@
 <% if model.errors.messages.length > 0 %>
   <section class="error-messages">
-    <h3>Something Went Wrong!</h3>
+    <h3>
+      Something Went Wrong!
+    </h3>
     <ul>
       <% model.errors.messages.each do |field, problems| %>
         <% problems.each do |problem| %>
           <li>
             <strong>
-            <%= problem %>
-          </strong>
+              <%= problem %>
+            </strong>
           </li>
         <% end %>
       <% end %>

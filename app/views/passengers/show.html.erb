@@ -2,28 +2,44 @@
 <%= render partial: 'layouts/nav' %>
 
 <section class="cool-list heebo-list margin-left show">
-<h2>Passenger: <%= @passenger.name %> </h2>
-<p>Phone Number: <%= @passenger.phone_num %> </p>
-<p>Total Trips: <%= @passenger.trips.count %> </p>
-<p>Total Charged: $<%= @passenger.total_charged%> </p>
-<%= link_to "Edit", edit_passenger_path(@passenger.id) %>
+  <h2>
+    Passenger: <%= @passenger.name %>
+  </h2>
+  <p>
+    Phone Number: <%= @passenger.phone_num %>
+  </p>
+  <p>
+    Total Trips: <%= @passenger.trips.count %>
+  </p>
+  <p>
+    Total Charged: $<%= @passenger.total_charged%>
+  </p>
 
-<%= link_to passenger_path(@passenger.id), method: :delete, data: { confirm: "Are you sure you'd like to delete this passenger?" } do %>
-<img src="assets/delete.png">
-Delete
-<% end %>
+  <%= link_to "Edit", edit_passenger_path(@passenger.id) %>
+  <%= link_to "Delete", passenger_path(@passenger.id), method: :delete, data: { confirm: "Are you sure you'd like to delete this passenger?" } %>
 </section>
 
+<section>
   <ul>
-    <li><% @passenger.trips.each do |trip| %>
+    <li>
+      <% @passenger.trips.each do |trip| %>
         <ul>
           <li>
-            <h4> Trip #<%= link_to trip.id, trip_path(trip.id) %> </h4>
-            <h4> Date: <%= trip.date %> </h4>
+            <h4>
+              Trip #<%= link_to trip.id, trip_path(trip.id) %>
+            </h4>
+            <h4>
+              Date: <%= trip.date %>
+            </h4>
           </li>
-          <li> Rating: <%= trip.rating %> </li>
-          <li> Cost: $<%= '%.2f'%(trip.cost/100) %> </li>
+          <li>
+            Rating: <%= trip.rating %>
+          </li>
+          <li>
+            Cost: $<%= '%.2f'%(trip.cost/100) %>
+          </li>
         </ul>
       <% end %>
     </li>
   </ul>
+</section>

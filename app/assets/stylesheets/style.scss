@@ -147,8 +147,12 @@ nav {
   bottom: 20px;
   right: 30px;
   z-index: 99;
+  color: gray;
+  border: solid gray;
+  text-decoration: none;
   border-radius: 5px;
-  background-color: #333;
+  font-size: 20px;
+  padding: 10px;
 }
 
 .form {
