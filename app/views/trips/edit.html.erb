@@ -1,4 +1,7 @@
-<h1>Trips#edit</h1>
+<!-- <h1>Trips#edit</h1> -->
+<section class="form-header-container">
+  <h1>Edit the Trip Info:</h1>
+</section>
 
 <section>
   <% if @trip.errors.any? %>
@@ -12,20 +15,22 @@
   <% end %>
 </section>
 
-<%= form_for @trip do |f| %>
-  <%= f.label "Passenger" %>
-  <%= f.select :passenger_id, options_from_collection_for_select(Passenger.all, "id", "name", :selected => @trip.passenger.id) %>
+<section class="trip-form-container">
+  <%= form_for @trip do |f| %>
+    <%= f.label "Passenger" %>
+    <%= f.select :passenger_id, options_from_collection_for_select(Passenger.all, "id", "name", :selected => @trip.passenger.id) %>
 
-  <%= f.label :date %>
-  <%= f.date_field :date, :selected => @trip.date %>
+    <%= f.label :date %>
+    <%= f.date_field :date, :selected => @trip.date %>
 
-  <%= f.label "Trip Rating:" %>
-  <%= f.select :rating, options_for_select([1,2,3,4,5], :selected => @trip.rating) %>
+    <%= f.label "Trip Rating:" %>
+    <%= f.select :rating, options_for_select([1,2,3,4,5], :selected => @trip.rating) %>
 
-  <%= f.label "Driver:" %>
-  <%= f.select :driver_id, options_from_collection_for_select(Driver.all, "id", "name", :selected => @trip.driver.id) %>
+    <%= f.label "Driver:" %>
+    <%= f.select :driver_id, options_from_collection_for_select(Driver.all, "id", "name", :selected => @trip.driver.id) %>
 
-  <%= f.submit "Save Data"%>
-<% end %>
+    <%= f.submit "Save Data"%>
+  <% end %>
+</section>
 
-<p>Find me in app/views/trips/edit.html.erb</p>
+<!-- <p>Find me in app/views/trips/edit.html.erb</p> -->

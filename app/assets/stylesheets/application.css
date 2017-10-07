@@ -37,7 +37,6 @@ body a:hover {
 }*/
 
 header {
-  position: fixed;
   top: 0;
   left:0;
   right:0;
@@ -124,4 +123,9 @@ footer {
   text-align: center;
   color: #E9FAE3;
 
+}
+
+.home-logo {
+  height: 40px;
+  margin: 10px;
 }

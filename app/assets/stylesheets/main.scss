@@ -1,4 +1,8 @@
 /*PASSENGERS#INDEX AND DRIVERS#INDEX*/
+// .container {
+//   padding-top: 50px;
+// }
+
 
 .people-list-header {
   text-align: center
@@ -133,4 +137,10 @@ tr:hover {
 .trip-show-container {
   display: block;
   text-align: center;
+}
+
+// TRIP#edit
+.trip-form-container {
+  display: flex;
+  justify-content: center;
 }
