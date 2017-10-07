@@ -13,4 +13,9 @@ class Passenger < ApplicationRecord
     end
     return "$ #{total_cost/100.round(2)}"
   end
+
+  # Action plan: will like to figure out a way to dry the code in show for cost
+  # def cent_dollar
+  #   return trip.cost / 100.round(2)
+  # end
 end
