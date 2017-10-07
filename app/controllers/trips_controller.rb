@@ -21,7 +21,7 @@ class TripsController < ApplicationController
     else
       flash[:notice] = "#{@trip.errors[:passenger][0]} "
     end
-    redirect_to passenger_path(@passenger.id)
+    redirect_to passenger_path(@trip.passenger.id)
   end
 
   def new

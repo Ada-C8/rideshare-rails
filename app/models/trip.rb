@@ -3,7 +3,7 @@ class Trip < ApplicationRecord
   belongs_to :driver
   belongs_to :passenger
   validates :rating, numericality: { only_integer: true, greater_than: 0, less_than: 6 }, allow_nil: true
-  validate :not_currently_on_trip
+  validate :not_currently_on_trip, :on => :create
 
   def not_currently_on_trip
     if self.passenger.current
