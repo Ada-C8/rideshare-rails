@@ -22,7 +22,7 @@
 <tr>
   <td><%= link_to "Trip #{trip.id}", trip_path(trip.id) %></td>
   <td><%= "Driver Id: #{trip.driver_id}" %></td>
-  <td><%= "Cost of trip: $#{trip.cost/100.round(2)}" %></td>
+  <td><%= "Cost of trip: $#{trip.cost_in_dollars}" %></td>
   <td><%= "Trip rating: #{trip.rating}" %></td>
   </tr>
   <% end %>
