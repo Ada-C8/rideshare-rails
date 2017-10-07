@@ -1,0 +1,32 @@
+<h2>Driver Details</h2>
+
+<div>
+  <strong><%= @driver.name %></strong>
+  <p><%= @driver.vin %></p>
+</div>
+
+<div>
+  <%= @driver.total_earnings %>
+</div>
+
+<div>
+  <%= @driver.avg_rating %>
+</div>
+
+<div>
+  <%= button_to "Edit", edit_driver_path(@driver.id), method: :get %>
+  <%= button_to "Delete", driver_path(@driver.id), method: :delete %>
+</div>
+
+<div>
+  <ul>
+    <% @driver.trips.each do |trip| %>
+      <li>
+        <%= link_to "Trip #{trip.id}", trip_path(trip.id) %>
+        <%= trip.date %>
+        <%= trip.rating %>
+        <%= trip.cost %>
+      </li>
+    <% end %>
+  </ul>
+</div>

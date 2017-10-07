@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KabuKabu</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <header>
+    <h1>
+      <%= image_tag("tourism.png", :alt => "tuk tuk image") %>
+      <%=link_to "KabuKabu", '/', method: :get%>
+    </h1>
+    <div class="header_link">
+      <%=link_to "All Passengers", passengers_path, method: :get%>
+      <%=link_to "Add New Passenger", new_passenger_path, method: :get%>
+      <%=link_to "All Drivers", drivers_path, method: :get%>
+      <%=link_to "Add New Driver", new_driver_path, method: :get%>
+    </div>
+  </header>
+
+  <main>
+    <%= yield %>
+  </main>
+
+  <footer>
+    <div>
+        N&B Inc
+    </div>
+
+  </footer>
+</body>
+</html>

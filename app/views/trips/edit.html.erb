@@ -1,0 +1,8 @@
+<h2>Let's edit that trip!!!</h2>
+
+<%= form_for @trip do |f| %>
+  <%= f.label :rating %>
+  <%= f.number_field :rating, in: 1.0..5.0 %>
+
+  <%= f.submit "Edit trip!" %>
+<% end %>

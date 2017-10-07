@@ -1,0 +1,16 @@
+<h2>Add New Driver</h2>
+
+<% if @driver.errors.messages.length > 0 %>
+<section class="error_messages">
+  <ul>
+    <% @driver.errors.messages.each do |field, problems| %>
+      <li>
+        <strong><%= field %></strong>
+        <%= problems %>
+      </li>
+      <% end%>
+  </ul>
+</section>
+<% end %>
+
+<%= render partial: "form"%>
