@@ -226,7 +226,7 @@ form.edit_trip, form.new_driver, form.new_passenger, form.new_trip, form.edit_dr
   /*position: relative;*/
   padding-left: em;
   margin: 0 auto;
-  width: max-content;
+  max-width: 65%;
 }
 
 input {
@@ -245,7 +245,7 @@ input {
   font-weight: 700;
   font-size: 1em;
   width: 100%;
-  background-color: red;
+  background-color: #c80101;
 }
 
 /*input[type="text"] {
