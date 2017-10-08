@@ -12,11 +12,7 @@
 
 <h4>Phone number: <%= @passenger.phone_num %></h4>
 
-  <% total_charged = 0 %>
-  <% @trips.each do |trip| %>
-      <% total_charged += trip[:cost] %>
-  <% end %>
-<h4> Total charged: <%= "$#{(total_charged.to_f/100)}" %> </h4>
+<h4> Total charged: <%= "$#{(@passenger.total_charged.to_f/100)}" %> </h4>
 
 <h4> List of Trips: </h4>
   <ul>
