@@ -27,19 +27,9 @@ class TripsController < ApplicationController
   end
 
   def new
-
-
-    @trip = Trip.new(driver_id: Driver.where(available: true).sample.id, passenger_id: params[:pass_id], date: Date.new, rating: nil, cost: rand(10..50) )
   end
 
   def create
-    @trip = Trip.new(driver_id: params[:trip][:driver_id], passenger_id: params[:trip][:passenger_id], date: params[:trip][:date], rating: params[:trip][:rating], cost: params[:trip][:cost] )
-
-    if @trip.save
-      redirect_to passenger_path(@trip.passenger_id)
-    else
-      render :new
-    end
   end
 
   def destroy
