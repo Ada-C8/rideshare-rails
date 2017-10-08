@@ -1,0 +1,21 @@
+<header>
+  <h1 class="title"><%=link_to "RideShare", root_path %></h1>
+    <ul>
+      <li><%= link_to "All Passengers", passengers_path %></li>
+      <li><%= link_to "All Drivers", drivers_path %></li>
+      <li><%= link_to "Add a new Driver", new_driver_path %></li>
+      <li><%= link_to "Add a new Passenger", new_passenger_path %></li>
+    </ul>
+</header>
+
+<h1 class="page_names">Add a New Passenger</h1>
+
+<% if @passenger.errors.any? %>
+  <ul class="errors">
+    <% @passenger.errors.each do |column, message| %>
+    <li> <strong><%= column.capitalize %> </strong> <%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render partial: "form", locals: { submit_name: "Create A New Passenger" }%>

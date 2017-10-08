@@ -1,0 +1,23 @@
+<header>
+  <h1 class="title"><%=link_to "RideShare", root_path %></h1>
+    <ul>
+      <li><%= link_to "All Passengers", passengers_path %></li>
+      <li><%= link_to "All Drivers", drivers_path %></li>
+      <li><%= link_to "Add a new Driver", new_driver_path %></li>
+      <li><%= link_to "Add a new Passenger", new_passenger_path %></li>
+    </ul>
+</header>
+
+  <h1 class="page_names">All Passengers</h1>
+
+  <section class="lists">
+    <ul>
+      <% @passengers.each do |passenger| %>
+        <li> <%= link_to(passenger.name, passenger_path(passenger.id))%> </li>
+      <% end %>
+    </ul>
+
+    <section class="apple_pagination">
+      <%= will_paginate @passengers %>
+    </section>
+</section>

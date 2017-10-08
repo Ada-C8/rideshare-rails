@@ -1,0 +1,18 @@
+<%= form_for @trip do |f| %>
+
+  <%= f.hidden_field :driver_id %>
+
+  <%= f.hidden_field :passenger_id %>
+
+  <%= f.label :choose_a_date %>
+  <%= f.date_field :date %>
+
+  <%= f.label :rating, "Select a rating" %>
+  <%= f.select :rating, options_for_select(1..5) %>
+
+  <%= f.label :cost, "Enter a cost" %>
+  <%= f.text_field :cost %>
+
+
+  <%= f.submit submit_name %>
+<% end %>

@@ -1,0 +1,31 @@
+<header>
+  <h1 class="title"><%=link_to "RideShare", root_path %></h1>
+    <ul>
+      <li><%= link_to "All Passengers", passengers_path %></li>
+      <li><%= link_to "All Drivers", drivers_path %></li>
+      <li><%= link_to "Add a new Driver", new_driver_path %></li>
+      <li><%= link_to "Add a new Passenger", new_passenger_path %></li>
+    </ul>
+</header>
+
+<h1>Driver information for: <%= @driver.name %></h1>
+
+<%= button_to @driver.available ? "Available" : "Unavailable", available_path(@driver.id), method: :patch %>
+
+<h4>VIN number: <%= @driver.vin %></h4>
+
+<h4> Total earned: <%= "$#{"%.02f" % (@driver.total_earned/100)}" %> </h4>
+
+<h4>Average rating: <%= "#{"%.01f" % @driver.average_rating}" %> </h4>
+
+<h4> List of Trips: </h4>
+  <ul>
+  <% @trips.each do |trip| %>
+    <li><%= link_to(trip.date, trip_path(trip.id)) %></li>
+  <% end %>
+  </ul>
+
+<ul>
+  <li><%= link_to "Edit Driver", edit_driver_path %></li>
+  <li><%= link_to "Delete Driver", driver_path(@driver.id), method: :delete%></li>
+</ul>

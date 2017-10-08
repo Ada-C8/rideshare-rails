@@ -1,0 +1,24 @@
+<header>
+  <h1 class="title"><%=link_to "RideShare", root_path %></h1>
+    <ul>
+      <li><%= link_to "All Passengers", passengers_path %></li>
+      <li><%= link_to "All Drivers", drivers_path %></li>
+      <li><%= link_to "Add a new Driver", new_driver_path %></li>
+      <li><%= link_to "Add a new Passenger", new_passenger_path %></li>
+    </ul>
+</header>
+
+<h1 class="page_names">Trip info</h1>
+
+<h3>Passenger: <%=@passenger.name%></h3>
+<h3>Driver: <%=@driver.name%></h3>
+<h3>Date: <%=@trip.date%></h3>
+<h3>Rating: <%=@trip.rating %></h3>
+<h3>Cost: <%="$#{"%.02f" % (@trip.cost.to_f/100)}"%></h3>
+
+
+<li><%= link_to "Go to Passenger: #{@passenger.name} detail's page", passenger_path(@passenger.id)%></li>
+<li><%= link_to "Go to Driver: #{@driver.name} detail's page", passenger_path(@driver.id)%></li>
+
+<li><%= link_to "Edit Trip", edit_trip_path %></li>
+<li><%= link_to "Delete Trip", trip_path(@trip.id), method: :delete%></li>

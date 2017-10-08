@@ -1,0 +1,9 @@
+<%= form_for @driver do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :vin, "VIN" %>
+  <%= f.text_field :vin %>
+
+  <%= f.submit submit_name %>
+<% end %>

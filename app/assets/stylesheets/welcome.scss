@@ -1,0 +1,50 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// HOME NAVIGATION
+
+.title {
+  float: left;
+  margin-top: 0;
+  padding-left: 30px;
+  line-height: 100px;
+  font-family: 'Stalinist One', cursive;
+  font-size: 1.8rem;
+  color: white;
+
+}
+
+.title a {
+  text-decoration: none;
+  color: white;
+}
+
+.home-navigation {
+  position: relative;
+  clear: both;
+  margin-top: 150px;
+}
+
+.home-navigation ul {
+  padding: 0px;
+  width: 300px;
+  margin-left: calc((100% - 300px)/2);
+}
+
+.home-navigation li {
+  list-style: none;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.home-navigation ul li a {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #86CB92;
+  width: 300px;
+  height: 50px;
+  margin-bottom: 15px;
+  line-height: 50px;
+  border-radius: 25px;
+}

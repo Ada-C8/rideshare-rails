@@ -1,0 +1,29 @@
+<header>
+  <h1 class="title"><%=link_to "RideShare", root_path %></h1>
+    <ul>
+      <li><%= link_to "All Passengers", passengers_path %></li>
+      <li><%= link_to "All Drivers", drivers_path %></li>
+      <li><%= link_to "Add a new Driver", new_driver_path %></li>
+      <li><%= link_to "Add a new Passenger", new_passenger_path %></li>
+    </ul>
+</header>
+
+<h1 class="page_names">Add a New Driver</h1>
+
+<% if @driver.errors.any? %>
+  <ul class="errors">
+    <% @driver.errors.each do |column, message| %>
+    <li> <strong><%= column.capitalize %> </strong> <%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @driver do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :vin, "VIN" %>
+  <%= f.text_field :vin %>
+
+  <%= f.submit "Create a new driver" %>
+<% end %>
