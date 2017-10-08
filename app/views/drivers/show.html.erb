@@ -14,22 +14,9 @@
 
 <h4>VIN number: <%= @driver.vin %></h4>
 
-  <% total_earned = 0 %>
-  <% @trips.each do |trip| %>
-      <% total_earned += trip[:cost] %>
-  <% end %>
-<h4> Total earned: <%= "$#{"%.02f" % (((total_earned) - ((total_earned)*0.15))/100)}" %> </h4>
+<h4> Total earned: <%= "$#{"%.02f" % (@driver.total_earned/100)}" %> </h4>
 
-<% average_rating = 0 %>
-<% counter = 0 %>
-<% @trips.each do |trip| %>
-    <% unless trip[:rating] == nil %>
-      <% average_rating += trip[:rating] %>
-      <% counter += 1 %>
-    <% end %>
-<% end %>
-
-<h4>Average rating: <%= "#{"%.01f" % ((average_rating.to_f) / counter)}" %> </h4>
+<h4>Average rating: <%= "#{"%.01f" % @driver.average_rating}" %> </h4>
 
 <h4> List of Trips: </h4>
   <ul>

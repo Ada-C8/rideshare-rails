@@ -44,6 +44,13 @@ class PassengersController < ApplicationController
     redirect_to passengers_path
   end
 
+  def create_trip
+    @passenger = Passenger.find_by(id: params[:passenger_id].to_i)
+    @trip = @passenger.new_trip
+
+    redirect_to passenger_path(@passenger.id)
+  end
+
   private
 
   def passenger_params

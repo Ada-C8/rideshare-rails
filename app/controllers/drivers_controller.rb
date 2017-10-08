@@ -45,7 +45,7 @@ class DriversController < ApplicationController
     redirect_to drivers_path
   end
 
-  def available
+  def available #a controller action vs a method, not actually calling this method we're calling an attribute value
   driver = Driver.find_by(id: params[:id])
 
   if driver.available

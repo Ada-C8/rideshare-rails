@@ -14,7 +14,7 @@
 <h3>Driver: <%=@driver.name%></h3>
 <h3>Date: <%=@trip.date%></h3>
 <h3>Rating: <%=@trip.rating %></h3>
-<h3>Cost: <%="$#{"%.02f" % (@trip.cost/100)}"%></h3>
+<h3>Cost: <%="$#{"%.02f" % (@trip.cost.to_f/100)}"%></h3>
 
 
 <li><%= link_to "Go to Passenger: #{@passenger.name} detail's page", passenger_path(@passenger.id)%></li>

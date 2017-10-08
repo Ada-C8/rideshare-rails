@@ -27,6 +27,8 @@ class TripsController < ApplicationController
   end
 
   def new
+
+
     @trip = Trip.new(driver_id: Driver.where(available: true).sample.id, passenger_id: params[:pass_id], date: Date.new, rating: nil, cost: rand(10..50) )
   end
 
