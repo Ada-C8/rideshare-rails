@@ -1,0 +1,32 @@
+// Place all the styles related to the Passengers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+main {
+  text-align: center;
+}
+
+h1.name {
+  text-align: left;
+  margin: 1em 2em;
+  padding: 1em .5em;
+}
+
+div.profile_pic img {
+  border: solid #3d3d3d 1px;
+  border-radius: 6em;
+}
+
+.pass_buttons h2, h2.delete_button {
+  display: inline-block;
+  width: 6em;
+  margin: .5em;
+  padding: .5em;
+  border: solid #3d3d3d 2px;
+  background-color: #e7e7e7;
+  text-align: center;
+}
+
+.pass_buttons a, h2.delete_button a {
+  text-decoration: none;
+  color: #c80101;
+}

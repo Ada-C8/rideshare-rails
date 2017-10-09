@@ -1,0 +1,24 @@
+<h1>Trip Details</h1>
+
+<% if @trip.rating.nil? %>
+  <%= form_for @trip do |f| %>
+  <p><%= f.label "Add a rating to this trip!" %></p>
+  <p><%= f.range_field :rating, in: 1..5, :step => 1 %></p>
+  <p><%= f.submit %></p>
+  <% end %>
+<% end %>
+
+<section class="trip_info">
+<p>ID: <%= @trip.id %></p>
+<p>Date: <%= @trip.date %></p>
+<p>Cost: $<%= "#{'%.02f' % cost_with_decimal(@trip)}" %></p>
+<p>Rating: <%= @trip.rating %></p>
+<p>Driver #<%=@trip.driver_id%>: <%= link_to Driver.find(@trip.driver_id).name, driver_path(@trip.driver_id) %></p>
+<p> Passenger #<%=@trip.passenger_id%>: <%= link_to Passenger.find(@trip.passenger_id).name, passenger_path(@trip.passenger_id) %></p>
+</section>
+
+<section class="trip_button">
+<h2><%= link_to "Edit", edit_trip_path(@trip.id) %></h2>
+<h2><%= link_to "Delete", trip_path(@trip.id), method: :delete, data: { confirm: "Delete trip?" } %></h2>
+<h2><%= link_to "Back", request.referer.present? ? request.referer : root_path %></h2>
+</section>

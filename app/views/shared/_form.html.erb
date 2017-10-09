@@ -1,0 +1,65 @@
+<div class="form">
+  <% if params[:controller] == "drivers" %>
+  <%= form_for @driver do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :vin %>
+    <%= f.text_field :vin %>
+  </p>
+  <p class= "form_buttons">
+    <%= f.submit button_name%>
+    <%= button_to "Cancel", request.referer.present? ? request.referer : root_path, method: :get %>
+  </p>
+
+  <% end %>
+  <% end %>
+
+  <% if params[:controller] == "passengers" %>
+  <%= form_for @passenger do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :phone_num %>
+    <%= f.text_field :phone_num %>
+  </p>
+  <p class= "form_buttons">
+    <%= f.submit button_name%>
+    <%= button_to "Cancel", request.referer.present? ? request.referer : root_path, method: :get %>
+  </p>
+  <% end %>
+  <% end %>
+
+  <% if params[:controller] == "trips" %>
+  <%= form_for @trip do |f| %>
+  <p>
+    <%= f.label :date %>
+    <%= f.date_select :date %>
+  </p>
+  <p>
+    <%= f.label :rating %>
+    <%= f.range_field :rating, in: 1..5, :step => 1 %>
+  </p>
+  <p>
+    <%= f.label :cost %>
+    <%= f.text_field :cost %>
+  </p>
+  <p>
+    <%= f.label :driver %>
+    <%= f.collection_select(:driver_id, Driver.all, :id, :name) %>
+  </p>
+  <p>
+    <%= f.label :passenger %>
+    <%= f.collection_select(:passenger_id, Passenger.all, :id, :name) %>
+  </p>
+  <p class= "form_buttons">
+    <%= f.submit %>
+    <%= button_to "Cancel", request.referer.present? ? request.referer : root_path, method: :get %>
+  </p>
+  <% end %>
+  <% end %>
+</div>

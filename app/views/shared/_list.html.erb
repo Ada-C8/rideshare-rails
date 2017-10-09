@@ -1,0 +1,8 @@
+
+<% persons.each do |person| %>
+<article class="person_thumb">
+  <img src="http://www.placecage.com/c/200/200" alt="member profile photo">
+  <!-- <%= id = person.id %> -->
+  <h3><%= link_to person.name, path + "/#{id}" %></h3>
+</article>
+<% end %>

@@ -1,0 +1,68 @@
+// Place all the styles related to the Drivers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+main {
+  text-align: center;
+}
+
+h1.name {
+  text-align: left;
+  margin: 1em 2em 0 2em;
+  padding: 1em .5em;
+}
+
+div.profile_pic, section.driver_status, section.driver_status p, section.person_info, section.driver_buttons {
+  display: inline-block;
+}
+div.profile_pic, section.driver_status, section#driver_info {
+  padding: 1em;
+}
+
+section.driver_status img, section.driver_status p, section.driver_status h2 {
+  padding: 4px;
+}
+
+section.driver_status img {
+  border: none;
+  position: relative;
+  bottom: -1.1em;
+}
+
+section.driver_status p {
+  margin: 0;
+  font-size: 1.75em;
+}
+
+section.driver_status h2 {
+  text-align: left;
+  margin: 0 auto;
+  font-size: 2em;
+}
+
+section.person_info, section.driver_buttons {
+  text-align: left;
+  position: relative;
+}
+
+section.person_info {
+  left: -1em;
+}
+
+section.driver_buttons {
+  bottom: 1em;
+  right: -1em;
+}
+
+.driver_buttons h2 {
+  width: 6em;
+  margin: .5em;
+  padding: .5em;
+  border: solid #3d3d3d 2px;
+  background-color: #e7e7e7;
+  text-align: center;
+}
+
+.driver_buttons a {
+  text-decoration: none;
+  color: #c80101;
+}

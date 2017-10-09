@@ -1,0 +1,33 @@
+<h1 class="name"><%=@driver.name %></h1>
+
+<div class="profile_pic">
+  <img src="https://www.placecage.com/200/200" alt="member profile photo">
+</div>
+
+<section class="driver_status">
+  <h2>Status:</h2>
+  <% if @driver.available %>
+  <p>Available</p>
+  <%= link_to image_tag("Switch On.png"), driver_available_path(@driver.id), method: :patch %>
+  <% else %>
+  <p>Unavailable</p>
+  <%= link_to image_tag("Switch Off.png"), driver_available_path(@driver.id), method: :patch %>
+  <% end %>
+</section>
+
+<section id="driver_info">
+<section class="person_info">
+  <h3>Average Rating: <%=@driver.average_rating %></h3>
+  <h3>Vin: <%=@driver.vin %></h3>
+  <h3>Total Earnings: <%=@driver.total_earnings %></h3>
+</section>
+
+<section class="driver_buttons">
+  <h2><%= link_to("Delete Driver", driver_path, method: :delete) %></h2>
+  <h2><%= link_to("Edit Driver", edit_driver_path)%></h2>
+</section>
+</section>
+
+<table class="trips_table">
+<%= render partial: 'shared/trips_table', locals: {person: @driver } %>
+</table>
