@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RideshareRails</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Libre+Baskerville|Open+Sans|Poppins|Arvo|Slabo+13px" rel="stylesheet">
+  </head>
+
+    <body class="<%= @homepage ? 'homepage' : ''%>">
+  <div class="nav-image">
+  </div>
+  <header class="navigation">
+    <%= link_to "Adryft", root_path %>
+    <section class="dropdown">
+      <ul class "view-menu">
+          <button class="dropdown-button-view">View</button>
+          <div class="dropdown-content-view">
+          <li><%= link_to "All Drivers", drivers_path %></li>
+          <li><%= link_to "All Passengers", passengers_path %></li>
+          </div>
+        </ul>
+    </section>
+    <section class="dropdown">
+      <ul class="create-menu">
+      <button class="dropdown-button-create">Create</button>
+        <div class="dropdown-content-create">
+        <li><%= link_to "Create Driver", new_driver_path %></li>
+        <li><%= link_to "Create Passenger", new_passenger_path %></li>
+      </div>
+      </ul>
+    </div>
+  </section>
+
+
+  </header>
+
+  <section class="ride-share-body">
+
+    <div class="information-box">
+      <%= yield %>
+    </div>
+
+  </section>
+
+  <!-- <footer>
+    &copy; Severin Wiggenhorn & Kimberley Mackenzie 2017
+  </footer> -->
+</body>
+
+</html>

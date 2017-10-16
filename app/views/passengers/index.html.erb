@@ -1,0 +1,17 @@
+<h1>List of All Passengers</h1>
+
+<section class="profiles">
+  <% @passengers.each do |passenger| %>
+  <ul class="row">
+    <li class="profile-pic">
+      <%= link_to passenger_path(passenger.id) do %>
+      <img src="http://placekitten.com/150/150" alt: "Passenger images" />
+      <p class="name">Passenger ID <%= passenger.id %></p>
+      <p><%= passenger.name%></p>
+      <p class="vin"><%= passenger.phone_number %></p>
+      <% end %>
+    </li>
+  </ul>
+  <% end %>
+
+</section>

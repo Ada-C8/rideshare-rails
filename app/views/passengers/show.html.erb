@@ -1,0 +1,40 @@
+<div class="show-header">
+  <section class="individual-image">
+    <img src="http://placekitten.com/150/150" alt: "Driver images" />
+  </section>
+
+  <section class="individual-details">
+    <ul>
+      <li>Passenger Name: <%= @passenger.name %></li>
+      <li>Phone Number: <%= @passenger.phone_number %></li>
+      <li>Passenger Lifetime Cost on Yachts: $<%= '%.02f' % (@passenger.total_cost / 100) %></li>
+    </ul>
+  </section>
+
+  <section class="buttons">
+    <li><%= link_to "Edit Passenger Details", edit_passenger_path(@passenger.id), alt: "link to edit passenger details" %></li>
+    <li><%= link_to "Delete Passenger", passenger_path(@passenger.id), method: :delete, alt: "link to delete passenger", data: {confirm: "Are you sure you want to delete this passenger?"} %></li>
+    <li><%= link_to "Request a New Trip", new_passenger_trip_path(@passenger.id), alt: "link to start a new trip"%></li>
+  </section>
+</div>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Trip ID</th>
+    <th>Driver ID</th>
+    <th>Passenger ID</th>
+    <th>Rating</th>
+    <th>Cost</th>
+  </tr>
+  <% (@passenger.trips).each do |trip| %>
+    <tr>
+      <td><%=trip.date%></td>
+      <td><%=link_to trip.id, trip_path(trip.id), alt: "link to trip details"%></td>
+      <td><%=trip.driver_id%></td>
+      <td><%=trip.passenger_id%></td>
+      <td><%=trip.rating%></td>
+      <td>$<%='%.02f' % (trip.cost / 100)%></td>
+    </tr>
+  <% end %>
+</table>

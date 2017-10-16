@@ -1,0 +1,16 @@
+<h1>List of All Drivers</h1>
+
+<section class="profiles">
+<% @drivers.each do |driver| %>
+  <ul class="row">
+    <li class="profile-pic">
+      <%= link_to driver_path(driver.id) do %>
+      <img src="http://placekitten.com/150/150" alt: "Driver images" />
+      <p class="name">Captain ID <%= driver.id %></p>
+      <p><%= driver.name%></p>
+      <p class="vin"><%= driver.vin %></p>
+      <% end %>
+    </li>
+  </ul>
+<% end %>
+</section>
