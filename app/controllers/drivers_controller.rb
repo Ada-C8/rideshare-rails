@@ -44,7 +44,7 @@ class DriversController < ApplicationController
     driver = Driver.find_by(id: params[:id])
 
     if driver.destroy
-      redirect_to driver_path
+      redirect_to drivers_path
     else
 
     end

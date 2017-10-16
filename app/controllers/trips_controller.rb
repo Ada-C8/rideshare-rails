@@ -18,7 +18,7 @@ class TripsController < ApplicationController
 
   def create
     @drivers = Driver.order(:id)
-    @trip = Trip.new(date: params[:trip][:date], passenger_id: params[:trip][:passenger_id], cost: params[:trip][:cost], driver_id: @drivers.assign_driver)
+    @trip = Trip.new(date: params[:trip][:date], passenger_id: params[:trip][:passenger_id], cost: (params[:trip][:cost]!= nil ? params[:trip][:cost] : 0), driver_id: @drivers.assign_driver)
 
     if @trip.save
       redirect_to passenger_path(@trip.passenger_id)

@@ -6,6 +6,9 @@ class Driver < ApplicationRecord
   def total_earnings
     sum = 0
     trips.each do |trip|
+      if trip.cost == nil
+        trip.cost = 0
+      end
       sum += trip.cost
     end
 
@@ -30,7 +33,11 @@ class Driver < ApplicationRecord
   end
 
   def self.assign_driver
-    (Driver.find_by(status: true)).id
+    if Driver.find_by(status: true)
+      return (Driver.find_by(status: true)).id
+    else
+      puts "No Drivers Available. Please try again later"
+    end
   end
 
 end

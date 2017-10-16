@@ -1,3 +1,13 @@
+<% if @trip.errors.any? %>
+  <ul class="errors">
+    <% @trip.errors.each do |column, message| %>
+      <li>
+        <strong><%= column.capitalize %></strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @trip do |f| %>
   <%= f.label :date %>
   <%= f.text_field :date %>
