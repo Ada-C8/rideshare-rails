@@ -1,0 +1,13 @@
+<section class="form">
+  <%= render partial: 'layouts/error_messages', locals: { model: @driver } %>
+
+  <%= form_for @driver do |f| %>
+    <%= f.label :driver %>
+    <%= f.text_field :name, placeholder: "Grace Hopper", class:"text_field" %>
+
+    <%= f.label :vin %>
+    <%= f.text_field :vin, placeholder: "A-999999", class:"text_field" %>
+
+    <%= f.submit %>
+  <% end %>
+</section>

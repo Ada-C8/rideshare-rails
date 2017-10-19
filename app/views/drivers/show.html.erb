@@ -1,0 +1,29 @@
+<%= render partial: 'layouts/style' %>
+<%= render partial: 'layouts/nav' %>
+
+
+<section>
+  <h2>
+    Driver: <%= @driver.name %>
+  </h2>
+  <p>
+    VIN: <%= @driver.vin %>
+  </p>
+  <p>
+    Number of trips: <%= @driver.trips.count %><br>
+    Averate Rating: <%= @driver.avg_rating %><br>
+    Total Earnings: $<%= @driver.total_earnings %>
+  </p>
+
+  <%= link_to "Edit", edit_driver_path(@driver.id) %>
+  <%= link_to "Delete", driver_path(@driver), method: :delete, data: { confirm: "Are you sure you'd like to delete this driver?" } %>
+</section>
+
+<h2><% @driver.trips.each do |trip| %> </h2>
+  <ul>
+    <li>
+      <p> Trip #<%= link_to trip.id, trip_path(trip.id) %> </p>
+      <p> Date: <%= trip.date %> </p>
+    </li>
+  </ul>
+<% end %>

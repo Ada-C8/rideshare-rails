@@ -1,0 +1,14 @@
+<section class="form">
+
+  <%= render partial: 'layouts/error_messages', locals: { model: @passenger } %>
+
+  <%= form_for @passenger do |f| %>
+    <%= f.label "Passenger" %>
+    <%= f.text_field :name, placeholder: "Ada Lovelace", class:"text_field" %>
+
+    <%= f.label "Phone Number"%>
+    <%= f.text_field :phone_num, placeholder: "(206)123-4567", class:"text_field" %>
+
+    <%= f.submit %>
+  <% end %>
+</section>

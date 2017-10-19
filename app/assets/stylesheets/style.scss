@@ -1,0 +1,202 @@
+body {
+  padding: 0;
+  margin-top: 60px;
+}
+
+.main-bg {
+background-image: url('car-inside-hands.jpg');
+background-size: cover;
+}
+
+// h1 {
+//   font-family: 'Anton';
+// }
+#righteous_nav {
+  font-family: 'Righteous', cursive;
+  font-size: 1.5em;
+}
+
+.banner {
+
+  font-size: 75px;
+  text-align: center;
+  font-family: 'Righteous', cursive;
+  margin-left: -25%;
+}
+
+.homepage {
+  // height: 100%;
+  // justify-content: center;
+  position: absolute;
+  top: 25%;
+  margin-right: 25%;
+}
+
+.homepage-text {
+  left: 30%;
+  position: relative;
+  line-height: 1.7em;
+  font-size: 20pt;
+}
+
+.homepage-text h3 {
+  font-size: 30pt;
+  font-family: 'Archivo Black', sans-serif;
+  position: relative;
+  // margin-left: -5%;
+}
+
+.homepage-text ul {
+  font-size: 20pt;
+  list-style-type: none;
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.cool-list {
+  margin-top: 125px;
+  padding: 0;
+  font-family: 'Arimo', sans-serif;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  h2 {
+    font: bold 30px Helvetica, Verdana, sans-serif;
+  }
+}
+
+.flex-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p,
+  li {
+    width: 47%;
+  }
+}
+
+.heebo-font {
+  font-family: 'heebo', sans-serif;
+  font-size: 30px;
+}
+
+.flex-box-from-top {
+  display: flex;
+  align-content: flex-start;
+}
+
+.margin-left {
+  margin-left: 50px;
+}
+
+.hover-style {
+  a {
+   display: block;
+   text-decoration: none;
+   color:black;
+   background-color: white;
+   transition:all 0.5s ease;
+  }
+
+  a:hover {
+    background: #c9c9c9;
+    cursor: alias;
+  }
+
+  a span {
+    display: none;
+    margin-right: 50px;
+  }
+
+  a:hover span {
+    font-size: 30px;
+    display: block;
+  }
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  background-color: #01796f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  font-size: 30px;
+
+  a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+
+  a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+}
+
+#top {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  color: gray;
+  border: solid gray;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.form {
+
+  font-family: 'Heebo', sans-serif;
+  font-size: 20pt;
+  font-weight: bold;
+  color: white;
+  border: solid;
+  padding: 5%;
+  background-color: #7fabab;
+  margin: 200px 5% 0 5%;
+  border-radius: 10em;
+  text-align: center;
+
+}
+
+li {
+  font-size: 20px;
+  list-style-type: none;
+}
+// .button {
+//   display: block;
+//   height: 100px;
+// }
+// .form-trips {
+//   font-family: 'Heebo', sans-serif;
+//   font-size: 20pt;
+//   font-weight: bold;
+//   color: white;
+//   border: solid;
+//   padding: 5%;
+//   background-color: #7fabab;
+//   margin: 200px 5% 0 5%;
+//   border-radius: 10em;
+//   text-align: left;
+// }
+
+.text_field {
+  height: 25px;
+  font-size: 20px;
+  display:inline-block;
+}
+
+.show {
+  font-size: 20pt;
+}

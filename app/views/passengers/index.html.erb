@@ -1,0 +1,34 @@
+<%= render partial: 'layouts/style' %>
+<div class="wrapper">
+  <a name="top" id="top-of-page"></a>
+
+  <nav class="flex-box-from-top">
+    <%= render partial: 'layouts/nav' %>
+  </nav>
+
+  <section class="cool-list">
+    <h2 class="margin-left">
+      Passengers
+    </h2>
+    <ul>
+      <%@passengers.each do |passenger|%>
+        <section class="hover-style">
+          <%=link_to passenger_path(passenger.id), class: "link_to-style" do%>
+            <li class="flex-box">
+              <p class="margin-left">
+                <strong>ID: <%= passenger.id %></strong><br>
+                Name: <%= passenger.name %><br>
+              </p>
+              <span class="heebo-font">
+                MORE DETAILS
+              </span>
+            </li>
+          <% end %>
+        </section>
+      <%end%>
+    </ul>
+    <a href="#" id="top">
+      Back to top
+    </a>
+  </section>
+</div>

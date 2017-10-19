@@ -1,0 +1,35 @@
+<%= render partial: 'layouts/style' %>
+<div class="wrapper">
+  <a name="top" id="top-of-page"></a>
+  <nav class="flex-box-from-top">
+    <%= render partial: 'layouts/nav' %>
+  </nav>
+
+  <section class="cool-list">
+    <h2 class="margin-left">
+      Drivers
+    </h2>
+    <ul>
+      <% @drivers.each do |driver| %>
+        <section class="hover-style">
+          <%= link_to driver_path(driver.id), class: "link_to-style" do %>
+            <li class="flex-box">
+              <p class="margin-left">
+                <strong>
+                  Name: <%= driver.name %>
+                </strong><br>
+                VIN: <%= driver.vin %><br>
+              </p>
+              <span class="heebo-font">
+                MORE DETAILS
+              </span>
+            </li>
+          <%end%>
+        </section>
+      <% end %>
+    </ul>
+    <a href="#" id="top">
+      Back to top
+    </a>
+  </section>
+</div>
