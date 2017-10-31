@@ -149,22 +149,28 @@ h1 {
   font-weight:bolder;
 }
 
-.person {
-  /*float: left;*/
+.items {
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  border: 3px solid #0c0c0c;
   display: inline-block;
   text-align: center;
   padding: 10px;
+  background-color: blanchedalmond;
+  opacity: 0.9;
 }
-.person a {
+
+.items a {
   text-decoration: none;
   color: #323232;
 }
 
-.person img {
-    width: 30%;
+.items img {
+    width: 40%;
 }
 
-.person img:hover {
+.items img:hover {
   -webkit-filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.8));
 }
 
