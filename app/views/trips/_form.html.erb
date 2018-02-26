@@ -1,0 +1,29 @@
+<% if @trip.errors.any? %>
+<ul>
+  <% @trip.errors.each do |column, message| %>
+  <li>
+    <strong> <%= column.capitalize %></strong> <%= message %>
+  </li>
+  <% end %>
+</ul>
+<% end %>
+
+
+<%= form_for(@trip) do |f|%>
+<%= f.label :date, "Date: "  %>
+<%= f.date_field :date  %>
+<%= f.label :rating, "Rating: "  %>
+<%= f.radio_button :rating, 1 %>
+<%= f.label :rating, '1'  %>
+<%= f.radio_button :rating, 2 %>
+<%= f.label :rating, '2'  %>
+<%= f.radio_button :rating, 3 %>
+<%= f.label :rating, '3'  %>
+<%= f.radio_button :rating, 4 %>
+<%= f.label :rating, '4'  %>
+<%= f.radio_button :rating, 5 %>
+<%= f.label :rating, '5'  %>
+<%= f.label :cost, "Cost: "  %>
+<%= f.number_field :cost %>
+<%= f.submit "Save Changes"%>
+<% end %>

@@ -1,0 +1,27 @@
+<h2> Trip #<%= @trip.id %> </h2>
+
+
+<table>
+    <tr>
+      <th>ID</th>
+      <th>Driver ID</th>
+      <th>Passenger ID</th>
+      <th>Date</th>
+      <th>Rating</th>
+      <th>Cost</th>
+    </tr>
+
+    <tr>
+      <td> <%=@trip.id%> </td>
+      <td> <%= link_to @trip.driver_id, driver_path(@trip.driver_id)%> </td>
+      <td> <%=link_to @trip.passenger_id, passenger_path(@trip.passenger_id)%> </td>
+      <td> <%=@trip.date%> </td>
+      <td> <%=@trip.rating%> </td>
+      <td> $<%=(@trip.cost/100).round(2)%> </td>
+    </tr>
+
+</table>
+
+<%= link_to "Delete", trip_path(@trip), method: :delete, data: {confirm: "Are you sure?"}, class:"button" %>
+<%= link_to "Edit", edit_trip_path(@trip), class:"button" %>
+<%= link_to "Back", passenger_path(@trip.passenger_id), class:"button" %>

@@ -1,0 +1,37 @@
+<h2> <strong><%= @passenger.name %> </strong></h2>
+<h3> Phone number: <%= @passenger.phone_number %> </h3>
+<h3> Total spent:  <%= @passenger.total_cost %> </h3>
+
+<%= link_to "Start a Trip", trips_path(:pax_id => @passenger.id), method: :post, class: "button" %>
+
+<% if @passenger.trips.empty? %>
+    <p>
+      This passenger has no trips.
+    </p>
+    <% else %>
+<table>
+    <tr>
+      <th>ID</th>
+      <th>Driver ID</th>
+      <th>Date</th>
+      <th>Rating</th>
+      <th>Cost</th>
+    </tr>
+    <% @passenger.trips.each do |trip| %>
+    <tr>
+      <td> <%= link_to trip.id, trip_path(trip.id)%> </td>
+      <td> <%=link_to trip.driver_id, driver_path(trip.driver_id)%> </td>
+      <td> <%=trip.date%> </td>
+      <td> <%=trip.rating%> </td>
+      <td> $<%=(trip.cost/100).round(2)%> </td>
+    </tr>
+    <% end %>
+</table>
+<% end %>
+
+
+<%= link_to image_tag("004-user-1.png",alt:"delete", class:"button_img"), passenger_path(@passenger), method: :delete, data: {confirm: "Are you sure?"} %>
+<%= link_to image_tag("003-user-2.png",alt:"edit", class:"button_img"), edit_passenger_path(@passenger) %>
+<article>
+  <%= link_to "Back", passengers_path, class:"button" %>
+</article>

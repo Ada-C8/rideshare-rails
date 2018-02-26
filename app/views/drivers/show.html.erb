@@ -1,0 +1,36 @@
+<h2><%= @driver.name %> </h2>
+<h3>VIN: <%= @driver.vin %> </h3>
+<h3>Average Rating: <%= @driver.average_rating %></h3>
+<h3>Total Earnings: <%= @driver.total_earnings %></h3>
+
+<% if @driver.trips.empty? %>
+    <p>
+      This driver has not given any rides yet.
+    </p>
+    <% else %>
+<table>
+    <tr>
+      <th>ID</th>
+      <th>Passenger ID</th>
+      <th>Date</th>
+      <th>Rating</th>
+      <th>Cost</th>
+    </tr>
+    <% @driver.trips.each do |trip| %>
+    <tr>
+      <td> <%=link_to trip.id, trip_path(trip.id)%> </td>
+      <td> <%=link_to trip.passenger_id, passenger_path(trip.passenger_id)%> </td>
+      <td> <%=trip.date%> </td>
+      <td> <%=trip.rating%> </td>
+      <td> $<%=(trip.cost/100).round(2)%> </td>
+    </tr>
+    <% end %>
+</table>
+<% end %>
+
+
+<%= link_to image_tag("004-user-1.png",alt:"delete", class:"button_img"), driver_path(@driver), method: :delete, data: {confirm: "Are you sure?"} %>
+<%= link_to image_tag("003-user-2.png",alt:"edit", class:"button_img"), edit_driver_path(@driver) %>
+<article>
+  <%= link_to "Back", drivers_path(@driver), class:"button" %>
+</article>

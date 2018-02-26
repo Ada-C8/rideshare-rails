@@ -1,0 +1,22 @@
+<h1>All Passengers</h1>
+<%= link_to "Add Passenger", new_passenger_path, class:"button" %>
+<%= link_to "Home", root_path, class:"button" %>
+
+<%= will_paginate(@passengers) %>
+
+<%= form_tag(passengers_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Passengers" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+
+
+<% if @passengers.blank? %>
+    <h3>There are no passengers to display</h3>
+<% else %>
+    <% @passengers.each do |passenger| %>
+    <div class="person">
+      <%= link_to image_tag("002-user-3.png", alt:"user"), passenger_path(passenger) %>
+      <h3><%= link_to passenger.name, passenger_path(passenger) %></h3>
+    </div>
+    <% end %>
+<%end%>

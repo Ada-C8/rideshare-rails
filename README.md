@@ -1,5 +1,10 @@
 # Rideshare Rails
 
+
+
+APP COMPLETED  >> FIND IT HERE http://rideshare-tanja-averi.herokuapp.com/
+
+
 ## Introduction
 
 In this project you will build a website to model a small community ridesharing app.

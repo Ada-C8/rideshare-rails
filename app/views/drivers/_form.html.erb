@@ -1,0 +1,20 @@
+
+<% if @driver.errors.any? %>
+<ul>
+  <% @driver.errors.each do |column, message| %>
+  <li>
+    <strong> <%= column.capitalize %></strong> <%= message %>
+  </li>
+  <% end %>
+</ul>
+<% end %>
+
+
+<%= form_for(@driver) do |f|%>
+<%= f.label :name, "Name: "  %>
+<%= f.text_field :name  %>
+<%= f.label :vin, "VIN: "  %>
+<%= f.text_field :vin %>
+<%= f.submit "Save Changes"%>
+<% end %>
+<%= link_to "Back", drivers_path, class:"button"%>

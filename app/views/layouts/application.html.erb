@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RideshareRails</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Pacifico">
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Raleway">
+</head>
+<body>
+<div id="wrapper">
+  <header>
+    <!-- <a id="logo" href="#">RideShare</a> -->
+    <%= link_to "RideShare", root_path, id: "logo" %>
+    <nav id="primary_nav_wrap">
+      <ul>
+        <!-- <li class="current-menu-item"><a href="#">Home</a></li> -->
+        <li><a href="#">Drivers</a>
+          <ul>
+            <li id="driver_link"><%= link_to "View All Drivers", drivers_path %></li>
+            <li><%= link_to "Add A Driver", new_driver_path %></li>
+          </ul>
+        </li>
+        <li id="pax_link"><a href="#">Passengers</a>
+          <ul>
+            <li><%= link_to "View All Passengers", passengers_path %></li>
+            <li><%= link_to "Add a Passenger", new_passenger_path %></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+<section>
+  <%= yield %>
+</section>
+
+
+<footer>
+  <p>&copy;2017 💻 built by Tanja & Averi
+          </p>
+</footer>
+</div>
+</body>
+</html>
